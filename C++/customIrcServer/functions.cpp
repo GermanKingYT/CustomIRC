@@ -24,10 +24,34 @@ string tagToStr(logTags tag){
     }
     return ret;
 }
-const char* fromQstringToCharArray(QString str){
-    return str.toStdString().c_str();
+
+const string qts(const QString str){
+    return str.toStdString();
 }
 
+QStringList getStatus(const QString nick){
+    QStringList ret;
+    if(nick.indexOf("|") >= 0){
+        ret.append(nick.mid(nick.indexOf("|")+1));
+        ret.append(nick.left(nick.indexOf("|")));
+    }else{
+        ret.append("");
+        ret.append(nick);
+    }
+    return ret;
+}
+
+QString getId(const QString full){
+    return full.mid(full.indexOf("!")+1);
+}
+
+
+
+
+
+bool inCommand(const QString *command, const char* search){
+    return (command->indexOf(search) >= 0);
+}
 
 
 void doLog(const logTags tag, const char* msg, ...){

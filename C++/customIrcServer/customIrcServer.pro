@@ -14,14 +14,20 @@ CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
+QMAKE_CXXFLAGS = -Wno-switch
 
 
 SOURCES += main.cpp \
     ircclient.cpp \
     functions.cpp \
-    mainapp.cpp
+    mainapp.cpp \
+    ircuser.cpp
 
 HEADERS += \
     ircclient.h \
     functions.h \
-    mainapp.h
+    mainapp.h \
+    ircCodes.h \
+    ircuser.h
+
+
