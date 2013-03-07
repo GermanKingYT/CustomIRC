@@ -1,14 +1,15 @@
 #include "mainapp.h"
 
-mainApp::mainApp(QObject *parent) :
-    QObject(parent),
-    users(new ircUserList())
+mainApp::mainApp(QObject *parent)
+    :QObject(parent)
+    ,users(new ircUserList())
+    ,log(clsLog(LOGTAGS_MAIN))
 {
 }
 
 
 void mainApp::run(){
-    doLog(this->TAG, "Starting up");
+    this->log << "Starting up" << endl;
     this->irc = new ircClient("digi-online.net");
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
@@ -29,8 +30,9 @@ void mainApp::run(){
 }
 
 void mainApp::chatReceived(const QString channel, const QString user, const QString message){
-    doLog(this->TAG,"Chat received: \t<%s>\t%s", qts(user).c_str(),
-          qts(message).c_str());
+    this->log << "Chat received:\t<" << user << ":\t" << message << endl;
+    //doLog(this->TAG,"Chat received: \t<%s>\t%s", qts(user).c_str(),
+    //      qts(message).c_str());
     if(message == QString("who")){
         this->irc->sendChat("Gebruikers online:");
         foreach(ircUser user, this->users->getAll()){
@@ -48,7 +50,9 @@ void mainApp::userOnline(const QString nick, const QString id){
     }else{
         user->setStatus(getStatus(nick)[0]);
         user->setOnline(true);
-        doLog(this->TAG,"%s is online gekomen: %s",qts(user->getName()).c_str(),
-              qts(user->getStatus()).c_str());
+        this->log << user->getName() << " is actief met status: "
+                  << user->getStatus() << endl;
+        //doLog(this->TAG,"%s is online gekomen: %s",qts(user->getName()).c_str(),
+        //      qts(user->getStatus()).c_str());
     }
 }

@@ -1,29 +1,14 @@
-#include <QDateTime>
+
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 #include "functions.h"
 
 
 using namespace std;
-
-string tagToStr(logTags tag){
-    string ret = "";
-    switch(tag){
-        case LOGTAGS_IRC:
-            ret = "IRC";
-            break;
-        case LOGTAGS_MAIN:
-            ret = "MAIN";
-            break;
-        default:
-            ret = "UNK";
-            break;
-    }
-    return ret;
-}
 
 const string qts(const QString str){
     return str.toStdString();
@@ -47,14 +32,27 @@ QString getId(const QString full){
 
 
 
-
-
 bool inCommand(const QString *command, const char* search){
     return (command->indexOf(search) >= 0);
 }
 
+char getS(const char* msg, ...){
+    char endString[255];
+    va_list ap;
+    va_start(ap,msg);
 
-void doLog(const logTags tag, const char* msg, ...){
+    vsprintf(endString, msg, ap);
+    va_end(ap);
+
+    return *endString;
+}
+/*
+void doLog(const logTags tag, const QStringstream){
+
+}*/
+
+/*
+void doLog(const logTags tag, const char* msg, QStringList args){
     va_list ap;
 
     QDateTime dateTime = QDateTime::currentDateTime();
@@ -67,3 +65,4 @@ void doLog(const logTags tag, const char* msg, ...){
 
     cout << endl;
 }
+*/

@@ -28,6 +28,7 @@ private:
     const static logTags TAG = LOGTAGS_MAIN;
     ircClient *irc;
     ircUserList *users;
+    clsLog log;
 };
 
 #endif // MAINAPP_H

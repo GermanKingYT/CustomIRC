@@ -6,19 +6,24 @@
 #include <QString>
 #include <QTcpSocket>
 #include <QStringList>
+#include <QTextStream>
 #include "ircCodes.h"
 #include "functions.h"
+#include "clslog.h"
 
 
 
 #define CHANNEL "mattiechat"
+#define NICK    "KoeBot"
 class ircClient : public QObject{
     Q_OBJECT
 
 public:
-    ircClient(const char *hostname, const int port, const char *channel);
-    ircClient(const char *hostname, const int port);
+    ircClient(const char *hostname, const int port, const char *channel,
+              const char *nick);
     ircClient(const char *hostname, const char *channel);
+    ircClient(const char *hostname, const char *channel, const char *nick);
+    ircClient(const char *hostname, const int port);
     ircClient(const char *hostname);
     ~ircClient();
 
@@ -26,6 +31,7 @@ public:
 
     void sendChat(const char *msg, const char *channel);
     void sendChat(const char *msg);
+
 
 signals:
     void startupComplete();
@@ -38,6 +44,7 @@ signals:
 
 private:
     void init();
+    void send(const QString data);
     void send(const char *data);
     void handleCommand(const QString &sender, const QStringList &command);
     void sendPong(const QString packet);
@@ -59,9 +66,8 @@ private:
     QTcpSocket *sock;
     QBuffer *buffer;
 
+    clsLog log;
 
-    //CONFIG
-    const static logTags TAG = LOGTAGS_IRC;
     const static int PORT = 6667;
 };
 

@@ -6,49 +6,73 @@ using namespace std;
 
 ircClient::ircClient(const char *hostname, const int port)
     :hostname(QString(hostname))
+    ,nick(NICK)
     ,port(port)
     ,channel(CHANNEL)
+    ,log(clsLog(LOGTAGS_IRC))
 {
     this->init();
 }
 
 ircClient::ircClient(const char *hostname, const char *channel)
     :hostname(QString(hostname))
+    ,nick(NICK)
     ,port(this->PORT)
     ,channel(QString(channel))
+    ,log(clsLog(LOGTAGS_IRC))
 {
     this->init();
 }
 
-ircClient::ircClient(const char *hostname, const int port, const char *channel)
+ircClient::ircClient(const char *hostname, const char *channel, const char *nick)
     :hostname(QString(hostname))
+    ,nick(nick)
+    ,port(this->PORT)
+    ,channel(QString(channel))
+    ,log(clsLog(LOGTAGS_IRC))
+{
+    this->init();
+}
+
+ircClient::ircClient(const char *hostname, const int port, const char *channel
+                     ,const char *nick)
+    :hostname(QString(hostname))
+    ,nick(nick)
     ,port(port)
     ,channel(QString(channel))
+    ,log(clsLog(LOGTAGS_IRC))
 {
     this->init();
 }
 
 ircClient::ircClient(const char *hostname)
     :hostname(QString(hostname))
+    ,nick(NICK)
     ,port(this->PORT)
     ,channel(QString(CHANNEL))
+    ,log(clsLog(LOGTAGS_IRC))
 {
     this->init();
 }
 
 void ircClient::init(){
-    doLog(this->TAG, "Initializing IRC client for host %s:%i", qts(this->hostname).c_str(),this->port);
+    this->log << "Initializing IRC Client for host " << this->hostname << ":";
+    this->log << this->port << endl;
+
     buffer = new QBuffer(this);
     buffer->open(QIODevice::ReadWrite);
 
     this->sock = new QTcpSocket(this);
-    this->sock->connect(this->sock, SIGNAL(readyRead()), this, SLOT(readData()));
-    this->sock->connect(this->sock, SIGNAL(connected()), this, SLOT(connected()));
-    this->sock->connect(this->sock, SIGNAL(disconnected()), this, SLOT(disconnected()));
+    this->sock->connect(this->sock, SIGNAL(readyRead()), this,
+                        SLOT(readData()));
+    this->sock->connect(this->sock, SIGNAL(connected()), this,
+                        SLOT(connected()));
+    this->sock->connect(this->sock, SIGNAL(disconnected()), this,
+                        SLOT(disconnected()));
 }
 
 void ircClient::disconnected(){
-    doLog(this->TAG, "Disconnected");
+    this->log << "Disconnected" << endl;
 }
 
 ircClient::~ircClient(){
@@ -57,17 +81,21 @@ ircClient::~ircClient(){
 }
 
 void ircClient::connect(){
-    doLog(this->TAG, "Connecting");
+    //doLog(this->TAG, "Connecting");
+    this->log << "Connecting" << endl;
     this->sock->connectToHost(this->hostname,this->port);
 }
 
 void ircClient::connected(){
-    doLog(this->TAG, "Connected!");
+    //doLog(this->TAG, "Connected!");
+    this->send(QString("USER %1 0 * :%1").arg(this->nick));
 
-    this->send("USER KoeBot 0 * :KoeBot");
-    this->send("NICK KoeBot");
-
+    this->send(QString("NICK %1").arg(this->nick));
+    //this->send("USER KoeBot 0 * :KoeBot");
+    //this->send("NICK KoeBot");
 }
+
+
 
 void ircClient::handleCommand(const QString &sender, const QStringList &command){
     if(sender == this->hostname){
@@ -80,13 +108,13 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
         case ERR_NOMOTD:
             //OH YES!
             this->motdReceived = true;
-            this->send("JOIN #mattiechat");
+            this->send(QString("JOIN #%1").arg(this->channel));
             break;
          case RPL_WHOREPLY:
             //Create ID
             if(inCommand(&command[2],qts(this->channel).c_str())){
                 userNick = command[6];
-                if(userNick != "KoeBot"){
+                if(userNick != this->nick){
                     userId = userNick + "!" + command[2] + "@" + command[3];
                     emit this->userOnline(userNick,userId);
                 }
@@ -134,13 +162,21 @@ void ircClient::sendChat(const char *msg){
 }
 
 
-void ircClient::send(const char* data){
-    doLog(this->TAG, "Sending data: \t%s",data);
-    this->sock->write(data);
+void ircClient::send(const QString data){
+    //doLog(this->TAG, "Sending data: \t%s",data);
+    this->log << "Sending data: \t" << data << endl;
+    this->sock->write(qts(data).c_str());
     this->sock->write("\r\n");
     this->sock->flush();
 }
 
+void ircClient::send(const char *data){
+    //doLog(this->TAG, "Sending data: \t%s",data);
+    this->log << "Sending data: \t" << data << endl;
+    this->sock->write(data);
+    this->sock->write("\r\n");
+    this->sock->flush();
+}
 
 void ircClient::readData(){
     qint64 bytes = this->buffer->write(this->sock->readAll());
@@ -149,7 +185,8 @@ void ircClient::readData(){
     while (this->buffer->canReadLine()){
         QString line = this->buffer->readLine();
         line = line.simplified();
-        doLog(this->TAG, "Data received: \t%s",qts(line).c_str());
+        //doLog(this->TAG, "Data received: \t%s",qts(line).c_str());
+        this->log << "Data received: \t" << line << endl;
         if(line.left(4) == QString("PING")){
             //Send a pong:
             QString toSend = "PONG" + line.mid(4);
@@ -172,5 +209,4 @@ void ircClient::readData(){
 const QString ircClient::getNicKFromId(const QString id){
     return id.left(id.indexOf("!"));
 }
-
 

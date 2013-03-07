@@ -21,13 +21,15 @@ SOURCES += main.cpp \
     ircclient.cpp \
     functions.cpp \
     mainapp.cpp \
-    ircuser.cpp
+    ircuser.cpp \
+    clslog.cpp
 
 HEADERS += \
     ircclient.h \
     functions.h \
     mainapp.h \
     ircCodes.h \
-    ircuser.h
+    ircuser.h \
+    clslog.h
 
 
