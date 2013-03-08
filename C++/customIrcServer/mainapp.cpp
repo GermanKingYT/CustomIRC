@@ -14,11 +14,24 @@ void mainApp::run(){
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
 
-    connect(this->irc,SIGNAL(chatReceived(QString,QString,QString)), this,
-            SLOT(chatReceived(QString,QString,QString)));
+    connect(this->irc,SIGNAL(chatReceived(QString,nickAndStatus,QString)), this,
+            SLOT(chatReceived(QString,nickAndStatus,QString)));
 
-    connect(this->irc, SIGNAL(userOnline(QString, QString)), this,
-            SLOT(userOnline(QString, QString)));
+    connect(this->irc, SIGNAL(userOnline(nickAndStatus, QString, QString)), this,
+            SLOT(userOnline(nickAndStatus, QString, QString )));
+
+    connect(this->irc, SIGNAL(userOffline(nickAndStatus, QString, QString)), this,
+            SLOT(userOffline(nickAndStatus, QString, QString )));
+
+
+    connect(this->irc, SIGNAL(userChangeNick(nickAndStatus, nickAndStatus,
+                                             QString))
+            ,this,SLOT(userChangeNick(nickAndStatus,nickAndStatus,QString)));
+
+    connect(this->irc, SIGNAL(userChangeStatus(nickAndStatus, nickAndStatus,
+                                               QString))
+            ,this, SLOT(userChangeStatus(nickAndStatus,nickAndStatus,QString)));
+
     //Init db of 'standard' irc users:
     this->users->add(new ircUser("Koenk",true));
     this->users->add(new ircUser("Joep",true));
@@ -29,30 +42,68 @@ void mainApp::run(){
     this->irc->connect();
 }
 
-void mainApp::chatReceived(const QString channel, const QString user, const QString message){
-    this->log << "Chat received:\t<" << user << ":\t" << message << endl;
+void mainApp::chatReceived(const QString channel, const nickAndStatus user,
+                           const QString message){
+    this->log << "Chat received:\t<" << user.nick << ">\t" << message << endl;
     //doLog(this->TAG,"Chat received: \t<%s>\t%s", qts(user).c_str(),
     //      qts(message).c_str());
-    if(message == QString("who")){
+    /*if(message == QString("who")){
         this->irc->sendChat("Gebruikers online:");
         foreach(ircUser user, this->users->getAll()){
-            this->irc->sendChat(qts(QString(user.getName() + " Status: " + user.getStatus())).c_str());
+            this->irc->sendChat(qts(QString(user.getName() + " Status: "
+                                            + user.getStatus())).c_str());
+        }
+    }*/
+}
+
+
+void mainApp::userOnline(const nickAndStatus nick, const QString id, const QString channel){
+    this->log << "Online\t" << nick.nick << "\t" << nick.status << endl;
+    ircUser *user = this->users->getUser(nick,id);
+    if(user->getName() == "NaN"){
+        this->users->add(new ircUser(nick,id));
+    }else{
+        user->setStatus(nick.status);
+        user->setOnline(true);
+    }
+}
+
+void mainApp::userOffline(const nickAndStatus nick, const QString id, const QString channel){
+    this->log << "Offline\t" << nick.nick << "\t" << nick.status << endl;
+    ircUser *user = this->users->getUser(nick,id);
+    if(user->getName() == "NaN"){
+        //Say WHAT!?
+        this->log << nick.nick << " bestaat niet!?" << endl;
+    }else{
+        user->setStatus("");
+        user->setOnline(false);
+        if(user->isStandard() == false){
+            this->users->del(user);
         }
     }
 }
 
+void mainApp::userChangeNick(const nickAndStatus oldNickName,
+                             const nickAndStatus newNickName, const QString id){
+    this->log << oldNickName.nick << " changed nick to " << newNickName.nick << endl;
 
-void mainApp::userOnline(const QString nick, const QString id){
-    ircUser *user = this->users->getUser(nick,id);
+    ircUser *user = this->users->getUser(oldNickName,id);
     if(user->getName() == "NaN"){
-        //User doesn't exists..
-        this->users->add(new ircUser(nick,id));
+        //Say WHAT!?
+        this->log << oldNickName.nick << " bestaat niet!?" << endl;
     }else{
-        user->setStatus(getStatus(nick)[0]);
-        user->setOnline(true);
-        this->log << user->getName() << " is actief met status: "
-                  << user->getStatus() << endl;
-        //doLog(this->TAG,"%s is online gekomen: %s",qts(user->getName()).c_str(),
-        //      qts(user->getStatus()).c_str());
+    }
+}
+
+void mainApp::userChangeStatus(const nickAndStatus oldNick,
+                               const nickAndStatus newNick, const QString id){
+    this->log << oldNick.nick << " changed status to " << newNick.status << endl;
+
+    ircUser *user = this->users->getUser(oldNick,id);
+    if(user->getName() == "NaN"){
+        //Say WHAT!?
+        this->log << oldNick.nick << " bestaat niet!?" << endl;
+    }else{
+        user->setStatus(newNick.status);
     }
 }

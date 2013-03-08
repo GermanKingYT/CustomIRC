@@ -12,6 +12,15 @@ clsLog &clsLog::operator <<(clsLog &(*manip)(clsLog &)){
     return manip(*this);
 }
 
+clsLog &clsLog::operator <<(bool msg){
+    if(msg == true){
+        std::cout << "True";
+    }else{
+        std::cout << "False";
+    }
+    return *this;
+}
+
 clsLog &endl(clsLog &log){
     log.doEndl();
     return log;
@@ -70,6 +79,9 @@ std::string clsLog::getTag(){
             break;
         case LOGTAGS_MAIN:
             ret = "MAIN";
+            break;
+        case LOGTAGS_USER:
+            ret= "USER";
             break;
         default:
             ret = "UNK";

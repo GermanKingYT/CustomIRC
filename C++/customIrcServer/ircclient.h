@@ -13,7 +13,7 @@
 
 
 
-#define CHANNEL "mattiechat"
+#define CHANNEL "bottest"
 #define NICK    "KoeBot"
 class ircClient : public QObject{
     Q_OBJECT
@@ -35,11 +35,17 @@ public:
 
 signals:
     void startupComplete();
-    void chatReceived(const QString channel, const QString user,
+    void chatReceived(const QString channel, const nickAndStatus user,
                       const QString message);
-    void userOnline(const QString nickName, const QString id);
-    void userOffline(const QString nickName, const QString id);
-    void userChangeNick(const QString oldNickName, const QString newNickName,
+    void userOnline(const nickAndStatus nickName, const QString id,
+                    const QString channel);
+    void userOffline(const nickAndStatus nickName, const QString id,
+                     const QString channel);
+    void userChangeNick(const nickAndStatus oldNickName,
+                        const nickAndStatus newNickName,
+                        const QString id);
+    void userChangeStatus(const nickAndStatus oldNick,
+                          const nickAndStatus newNick,
                           const QString id);
 
 private:
@@ -48,8 +54,6 @@ private:
     void send(const char *data);
     void handleCommand(const QString &sender, const QStringList &command);
     void sendPong(const QString packet);
-
-    const QString getNicKFromId(const QString id);
 
 public slots:
     void disconnected();

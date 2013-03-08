@@ -116,7 +116,8 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
                 userNick = command[6];
                 if(userNick != this->nick){
                     userId = userNick + "!" + command[2] + "@" + command[3];
-                    emit this->userOnline(userNick,userId);
+                    emit this->userOnline(getNickAndStatus(userNick),userId,
+                                          this->channel);
                 }
             }
             break;
@@ -131,18 +132,40 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
             QString channel = args[0];
             args.pop_front();
 
-            emit this->chatReceived(channel,sender,args.join(" ").mid(1));
+            emit this->chatReceived(channel, getNickAndStatus(sender), args.join(" ").mid(1));
         }else if(command[0] == "NICK"){
             //Somebody changed nick!
+            if(getNickAndStatus(sender).nick == "KoeBot"){
+
+            }else{
+                if(getNickAndStatusFromId(sender).nick ==
+                        getNickAndStatus(command[1]).nick){
+                    //Probably a status change:
+                    emit this->userChangeStatus(getNickAndStatusFromId(sender),
+                                                getNickAndStatus(command[1]),
+                            getId(sender));
+                }else{
+                    emit this->userChangeNick(getNickAndStatusFromId(sender),
+                                              getNickAndStatus(command[1]),
+                            getId(sender));
+                }
+            }
         }else if(command[0] == "JOIN"){
             //Somebody joined, goody! :D
-            if(this->getNicKFromId(sender) == "KoeBot"){
+            if(getNickAndStatusFromId(sender).nick == "KoeBot"){
                 //We have succesfully joined the channel
                 //Yay, we can save our own ID.
                 //Also, get a list of all the people in there
                 this->send("WHO");
             }else{
-                emit this->userOnline(this->getNicKFromId(sender), sender);
+                emit this->userOnline(getNickAndStatusFromId(sender), sender,
+                                      command[1].mid(1));
+            }
+        }else if(command[0] == "PART"){
+            if(getNickAndStatusFromId(sender).nick == "KoeBot"){
+            }else{
+                emit this->userOffline(getNickAndStatusFromId(sender), sender,
+                                       command[1]);
             }
         }
     }
@@ -206,7 +229,4 @@ void ircClient::readData(){
 }
 
 
-const QString ircClient::getNicKFromId(const QString id){
-    return id.left(id.indexOf("!"));
-}
 

@@ -6,9 +6,17 @@
 #include <QVariantList>
 
 
+struct nickAndStatus{
+    QString nick;
+    QString status;
+};
+
 extern bool inCommand(const QString *command, const char* search);
 extern const std::string qts(const QString str);
-extern QStringList getStatus(const QString nick);
+extern nickAndStatus getNickAndStatus(const QString nick);
+extern nickAndStatus getNickAndStatusFromId(const QString id);
 extern char getS(const char *msg, ...);
+
+extern const QString getId(const QString fullId);
 
 #endif // FUNCTIONS_H

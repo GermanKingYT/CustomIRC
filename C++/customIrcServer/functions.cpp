@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <QDebug>
 
 #include "functions.h"
 
@@ -14,19 +15,21 @@ const string qts(const QString str){
     return str.toStdString();
 }
 
-QStringList getStatus(const QString nick){
-    QStringList ret;
+nickAndStatus getNickAndStatus(const QString nick){
+    nickAndStatus ret;
     if(nick.indexOf("|") >= 0){
-        ret.append(nick.mid(nick.indexOf("|")+1));
-        ret.append(nick.left(nick.indexOf("|")));
+        ret.nick = nick.left(nick.indexOf("|"));
+        ret.status =  nick.mid(nick.indexOf("|")+1);
     }else{
-        ret.append("");
-        ret.append(nick);
+        ret.nick = nick;
+    }
+    if(ret.nick.left(1) == ":"){
+        ret.nick = ret.nick.mid(1);
     }
     return ret;
 }
 
-QString getId(const QString full){
+const QString getId(const QString full){
     return full.mid(full.indexOf("!")+1);
 }
 
@@ -46,23 +49,11 @@ char getS(const char* msg, ...){
 
     return *endString;
 }
-/*
-void doLog(const logTags tag, const QStringstream){
 
-}*/
-
-/*
-void doLog(const logTags tag, const char* msg, QStringList args){
-    va_list ap;
-
-    QDateTime dateTime = QDateTime::currentDateTime();
-    QString dateTimeString = dateTime.toString();
-    cout << "[" << tagToStr(tag) << "]\t" << dateTimeString.toStdString() << "\t";
-
-    va_start(ap, msg); //Requires the last fixed parameter (to get the address)
-    vprintf(msg, ap);
-    va_end(ap);
-
-    cout << endl;
+nickAndStatus getNickAndStatusFromId(const QString id){
+    QString nick(id.left(id.indexOf("!")));
+    return getNickAndStatus(nick);
 }
-*/
+
+
+

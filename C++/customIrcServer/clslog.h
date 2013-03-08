@@ -8,7 +8,8 @@
 enum logTags{
     LOGTAGS_UNKNOWN = 0xFF,
     LOGTAGS_IRC = 0x00,
-    LOGTAGS_MAIN
+    LOGTAGS_MAIN,
+    LOGTAGS_USER
 };
 
 
@@ -19,11 +20,13 @@ public:
     clsLog& operator<<(clsLog& (*manip)(clsLog&));
 
 
-    clsLog& operator<< (QString msg);
-    clsLog& operator<< (const QString *msg);
-    clsLog& operator<< (const char* msg);
-    clsLog& operator<< (int msg);
-    clsLog& operator<< (clsLog *log);
+    clsLog& operator << (QString msg);
+    clsLog& operator << (const QString *msg);
+    clsLog& operator << (const char* msg);
+    clsLog& operator << (int msg);
+    clsLog& operator << (clsLog *log);
+    clsLog& operator << (bool msg);
+
 
     void doEndl();
 private:
