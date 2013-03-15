@@ -9,9 +9,10 @@ enum logTags{
     LOGTAGS_UNKNOWN = 0xFF,
     LOGTAGS_IRC = 0x00,
     LOGTAGS_MAIN,
-    LOGTAGS_USER
+    LOGTAGS_USER,
+    LOGTAGS_SERVER,
+    LOGTAGS_UI
 };
-
 
 class clsLog{
 public:
@@ -26,15 +27,21 @@ public:
     clsLog& operator << (int msg);
     clsLog& operator << (clsLog *log);
     clsLog& operator << (bool msg);
+    clsLog& operator << (QVariantMap &map);
+    clsLog& operator << (const QVariantMap &map);
+    clsLog& operator << (const QVariant &msg);
+    clsLog& operator << (QVariant &msg);
 
 
     void doEndl();
+    void setPrefix(QString prefix);
 private:
     bool isFirst;
     logTags tag;
 
     void prefix();
     std::string getTag();
+    QString prf;
 };
 
 clsLog& endl(clsLog& log);

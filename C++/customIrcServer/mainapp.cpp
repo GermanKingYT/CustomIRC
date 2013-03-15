@@ -11,6 +11,7 @@ mainApp::mainApp(QObject *parent)
 void mainApp::run(){
     this->log << "Starting up" << endl;
     this->irc = new ircClient("digi-online.net");
+    this->ui = new uiServer(this);
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
 
@@ -39,7 +40,8 @@ void mainApp::run(){
     this->users->add(new ircUser("BlueWolf",true));
     this->users->add(new ircUser("KoBe",true));
 
-    this->irc->connect();
+    //this->irc->connect();
+    this->ui->startListen();
 }
 
 void mainApp::chatReceived(const QString channel, const nickAndStatus user,

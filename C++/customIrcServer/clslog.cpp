@@ -21,6 +21,34 @@ clsLog &clsLog::operator <<(bool msg){
     return *this;
 }
 
+clsLog &clsLog::operator <<(QVariantMap &map){
+    foreach(QString key, map.keys()){
+        *this << key << "\t"
+                  << map[key] << endl;
+    }
+    return *this;
+}
+
+clsLog &clsLog::operator <<(const QVariantMap &map){
+    foreach(const QString key, map.keys()){
+        *this << key << "\t"
+                  << map[key] << endl;
+    }
+    return *this;
+}
+
+clsLog &clsLog::operator <<(const QVariant &msg){
+    *this << msg.toString();
+
+    return *this;
+}
+
+clsLog &clsLog::operator <<(QVariant &msg){
+    *this << msg.toString();
+
+    return *this;
+}
+
 clsLog &endl(clsLog &log){
     log.doEndl();
     return log;
@@ -31,6 +59,10 @@ void clsLog::doEndl(){
     isFirst = true;
 }
 
+void clsLog::setPrefix(QString prefix){
+    this->prf = prefix;
+}
+
 void clsLog::prefix(){
     if(isFirst == true){
         isFirst = false;
@@ -38,7 +70,13 @@ void clsLog::prefix(){
         QString dateTimeString = dateTime.toString();
 
         std::cout << "[" << this->getTag() << "]\t";
-        std::cout << dateTimeString.toStdString() << "\t\t";
+        std::cout << dateTimeString.toStdString() << "\t";
+        if(this->prf != ""){
+            std::cout << this->prf.toStdString() << "\t";
+        }else{
+            std::cout << "\t";
+        }
+        std::cout << "\t";
     }
 }
 
@@ -82,6 +120,12 @@ std::string clsLog::getTag(){
             break;
         case LOGTAGS_USER:
             ret= "USER";
+            break;
+        case LOGTAGS_SERVER:
+            ret = "SRVR";
+            break;
+        case LOGTAGS_UI:
+            ret = "UI";
             break;
         default:
             ret = "UNK";

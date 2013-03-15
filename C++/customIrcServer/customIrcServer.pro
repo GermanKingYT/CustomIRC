@@ -16,13 +16,16 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 QMAKE_CXXFLAGS = -Wno-switch
 
-
 SOURCES += main.cpp \
     ircclient.cpp \
     functions.cpp \
     mainapp.cpp \
     ircuser.cpp \
-    clslog.cpp
+    clslog.cpp \
+    uiclient.cpp \
+    uiserver.cpp \
+    jsoncommand.cpp \
+    json.cpp
 
 HEADERS += \
     ircclient.h \
@@ -30,6 +33,10 @@ HEADERS += \
     mainapp.h \
     ircCodes.h \
     ircuser.h \
-    clslog.h
+    clslog.h \
+    uiclient.h \
+    uiserver.h \
+    jsoncommand.h \
+    json.h
 
 

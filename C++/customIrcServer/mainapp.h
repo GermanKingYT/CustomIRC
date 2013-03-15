@@ -6,6 +6,7 @@
 #include "ircclient.h"
 #include "functions.h"
 #include "ircuser.h"
+#include "uiserver.h"
 
 
 class mainApp : public QObject
@@ -39,6 +40,8 @@ private:
     ircClient *irc;
     ircUserList *users;
     clsLog log;
+    uiServer *ui;
+
 };
 
 #endif // MAINAPP_H

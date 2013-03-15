@@ -89,10 +89,7 @@ void ircClient::connect(){
 void ircClient::connected(){
     //doLog(this->TAG, "Connected!");
     this->send(QString("USER %1 0 * :%1").arg(this->nick));
-
     this->send(QString("NICK %1").arg(this->nick));
-    //this->send("USER KoeBot 0 * :KoeBot");
-    //this->send("NICK KoeBot");
 }
 
 
@@ -100,17 +97,17 @@ void ircClient::connected(){
 void ircClient::handleCommand(const QString &sender, const QStringList &command){
     if(sender == this->hostname){
         //Message from the server:
-        ircCode code = (ircCode) atoi(qts(command[0]).c_str());
+        ircCodes::ircCode code = (ircCodes::ircCode) atoi(qts(command[0]).c_str());
         QString userNick;
         QString userId;
         switch (code) {
-        case RPL_ENDOFMOTD:
-        case ERR_NOMOTD:
+        case ircCodes::RPL_ENDOFMOTD:
+        case ircCodes::ERR_NOMOTD:
             //OH YES!
             this->motdReceived = true;
             this->send(QString("JOIN #%1").arg(this->channel));
             break;
-         case RPL_WHOREPLY:
+         case ircCodes::RPL_WHOREPLY:
             //Create ID
             if(inCommand(&command[2],qts(this->channel).c_str())){
                 userNick = command[6];
