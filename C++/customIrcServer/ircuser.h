@@ -3,10 +3,17 @@
 
 #include <QString>
 #include <QVector>
+#include <QVariantMap>
 #include "functions.h"
 #include "clslog.h"
 
 class ircUser {
+    struct userColor{
+        int r;
+        int g;
+        int b;
+    };
+
 public:
     ircUser(const nickAndStatus name, const QString id);
     ircUser(const nickAndStatus name, const bool standard);
@@ -20,6 +27,8 @@ public:
     bool getOnline() const;
     QString getStatus() const;
     bool isStandard() const;
+    QVariantMap toVariantMap() const;
+
 
     //Setters
     void setOnline(const bool isOnline);
@@ -31,12 +40,15 @@ public:
     friend clsLog& operator<<(clsLog& log, const ircUser* user);
 
 
+
 private:
     QString name;
     QString id;
     QString status;
     bool online;
     bool standard;
+
+    userColor uColor;
 
     clsLog log;
 };

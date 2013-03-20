@@ -40,13 +40,23 @@ void mainApp::run(){
     this->users->add(new ircUser("BlueWolf",true));
     this->users->add(new ircUser("KoBe",true));
 
-    //this->irc->connect();
+    this->irc->connect();
     this->ui->startListen();
 }
 
 void mainApp::chatReceived(const QString channel, const nickAndStatus user,
                            const QString message){
     this->log << "Chat received:\t<" << user.nick << ">\t" << message << endl;
+
+    jsonCommand chatMessage(JSONCOMMAND_CHAT);
+    chatMessage.addToData("user",
+                          QVariant(
+                              this->users->getUserByNick(user)->toVariantMap()));
+    chatMessage.addToData("chat",message);
+
+    this->ui->send(chatMessage);
+
+
     //doLog(this->TAG,"Chat received: \t<%s>\t%s", qts(user).c_str(),
     //      qts(message).c_str());
     /*if(message == QString("who")){

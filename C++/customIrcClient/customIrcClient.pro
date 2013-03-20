@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+QT       += core gui network webkit
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,14 +17,18 @@ SOURCES += main.cpp\
     clsserverconn.cpp \
     clslog.cpp \
     chatentry.cpp \
-    chatbox.cpp
+    chatbox.cpp \
+    ircuser.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
     clslog.h \
     chatentry.h \
-    chatbox.h
+    chatbox.h \
+    ircuser.h
 
 FORMS    += mainwindow.ui \
     chatentry.ui \
     chatbox.ui
+
+RESOURCES +=

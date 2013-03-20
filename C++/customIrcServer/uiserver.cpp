@@ -2,6 +2,7 @@
 #include <QBuffer>
 #include <QTcpSocket>
 #include <iostream>
+#include <QDebug>
 
 uiServer::uiServer(QObject* parent) : QTcpServer(parent), log(LOGTAGS_SERVER)
 {
@@ -13,6 +14,16 @@ uiServer::~uiServer(){ }
 void uiServer::startListen(){
     this->log << "Started listening on port " << this->port << endl;
     this->listen(QHostAddress::Any,this->port);
+}
+
+
+void uiServer::send(jsonCommand &toSend){
+    //this->log << "Sending json object: " << docToSend->toJson() << endl;
+    this->log << "Sending JSON: " << toSend << endl;
+
+    foreach(uiClient *cl, this->connections){
+        cl->send(toSend.toJsonString() + "\r\n");
+    }
 }
 
 void uiServer::acceptConnection(){

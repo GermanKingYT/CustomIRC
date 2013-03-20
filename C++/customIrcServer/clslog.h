@@ -4,6 +4,7 @@
 #include <QDateTime>
 #include <string>
 #include <iostream>
+#include <QStringList>
 
 enum logTags{
     LOGTAGS_UNKNOWN = 0xFF,
@@ -11,7 +12,8 @@ enum logTags{
     LOGTAGS_MAIN,
     LOGTAGS_USER,
     LOGTAGS_SERVER,
-    LOGTAGS_UI
+    LOGTAGS_UI,
+    LOGTAGS_WEB
 };
 
 class clsLog{
@@ -31,6 +33,9 @@ public:
     clsLog& operator << (const QVariantMap &map);
     clsLog& operator << (const QVariant &msg);
     clsLog& operator << (QVariant &msg);
+    clsLog& operator << (QByteArray &bArr);
+    clsLog& operator << (const QByteArray &bArr);
+
 
 
     void doEndl();

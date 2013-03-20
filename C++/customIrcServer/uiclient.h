@@ -4,10 +4,10 @@
 #include <QTcpSocket>
 #include <QHostAddress>
 #include <QBuffer>
+#include <QJsonDocument>
 
 #include "clslog.h"
 #include "jsoncommand.h"
-#include "json.h"
 
 
 class uiClient: public QObject{
@@ -15,6 +15,7 @@ class uiClient: public QObject{
 public:
     uiClient(QTcpSocket *parent);
     
+    void send(QString data);
 signals:
     void disconnected(uiClient *client);
 public slots:

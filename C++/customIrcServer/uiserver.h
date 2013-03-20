@@ -6,6 +6,7 @@
 #include <QHash>
 #include "uiclient.h"
 #include "clslog.h"
+#include "jsoncommand.h"
 
 class QBuffer;
 class QTcpSocket;
@@ -19,6 +20,10 @@ public:
     ~uiServer();
 
     void startListen();
+
+
+    void send(jsonCommand &toSend);
+
 private slots:
     void acceptConnection();
     void lostConnection(uiClient* client);

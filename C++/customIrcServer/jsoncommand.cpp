@@ -56,6 +56,14 @@ void jsonCommand::addToData(const QString key, const QVariant &data){
     this->data.insert(key,data);
 }
 
+QString jsonCommand::toJsonString() const{
+    QVariantMap vmRet;
+    vmRet["command"] = this->getCommandString();
+    vmRet["data"] = QVariant(this->getData());
+
+    return QtJson::serialize(QVariant(vmRet));
+}
+
 clsLog& operator <<(clsLog &log, jsonCommand &command){
     log << "JSON command: " << command.getCommandString();
     log << " Data: " << endl << command.getData();

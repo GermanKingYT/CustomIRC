@@ -15,6 +15,7 @@ public:
     explicit clsServerConn(const QString hostName, const int port,
                            QObject *parent = 0);
     
+    void doConnect();
 signals:
     
 public slots:

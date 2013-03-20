@@ -15,6 +15,11 @@ uiClient::uiClient(QTcpSocket *parent)
     connect(this->sock, SIGNAL(readyRead()),	SLOT(receiveMessage()));
 }
 
+
+void uiClient::send(QString data){
+    this->sock->write(data.toStdString().c_str());
+}
+
 void uiClient::removeConnection(){
     this->log << "Connection lost" << endl;
     //Tell our parent class to remove this item
@@ -34,8 +39,7 @@ void uiClient::receiveMessage(){
         line = line.simplified();
         this->log << line << endl;
 
-        bool isParsed;
-        jsonCommand myCommand(QtJson::parse(line, isParsed).toMap());
-        this->log << myCommand << endl;
+        //jsonCommand myCommand(QtJson::parse(line, isParsed).toMap());
+        //this->log << myCommand << endl;
     }
 }

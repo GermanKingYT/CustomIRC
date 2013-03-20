@@ -49,6 +49,17 @@ clsLog &clsLog::operator <<(QVariant &msg){
     return *this;
 }
 
+clsLog &clsLog::operator <<(QByteArray &bArr){
+    *this << QString(bArr);
+    return *this;
+}
+
+clsLog &clsLog::operator <<(const QByteArray &bArr){
+    *this << QString(bArr);
+    return *this;
+}
+
+
 clsLog &endl(clsLog &log){
     log.doEndl();
     return log;
@@ -126,6 +137,9 @@ std::string clsLog::getTag(){
             break;
         case LOGTAGS_UI:
             ret = "UI";
+            break;
+        case LOGTAGS_WEB:
+            ret = "WEB";
             break;
         default:
             ret = "UNK";

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "chatentry.h"
 #include <QVector>
+#include "ircuser.h"
 
 namespace Ui {
 class chatBox;
@@ -17,9 +18,12 @@ public:
     explicit chatBox(QWidget *parent = 0);
     ~chatBox();
     
+
+    void addChat(ircUser &user, QString message);
+    void setAllUserNameSize(int newSize);
 private:
     Ui::chatBox *ui;
-    QVector<chatEntry> entries;
+    QVector<chatEntry*> entries;
 
 
 };

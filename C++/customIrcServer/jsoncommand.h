@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QVariantMap>
 
+#include "json.h"
 #include "clslog.h"
 
 
@@ -30,8 +31,10 @@ public:
     void setData(const QVariantMap& newData);
     void addToData(const QString key, const QVariant &data);
 
+
     friend clsLog& operator<<(clsLog& log, jsonCommand &command);
 
+    QString toJsonString() const;
 private:
     jsonCommands command;
     QVariantMap data;

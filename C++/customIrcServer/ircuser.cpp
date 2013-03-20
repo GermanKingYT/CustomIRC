@@ -101,6 +101,24 @@ bool ircUser::isStandard() const{
     return this->standard;
 }
 
+QVariantMap ircUser::toVariantMap() const{
+    QVariantMap ret;
+    QVariantMap color;
+    color["r"] = this->uColor.r;
+    color["g"] = this->uColor.g;
+    color["b"] = this->uColor.b;
+
+    ret["uColor"] = QVariant(color);
+    ret["nick"] = this->name;
+    ret["id"] = this->id; //Will be replaced by a number
+    ret["status"] = this->status;
+    ret["standard"] = this->standard;
+    ret["isOnline"] = this->online;
+
+    return ret;
+
+}
+
 void ircUser::setOnline(const bool isOnline){
     this->online = isOnline;
 }

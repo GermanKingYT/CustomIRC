@@ -21,6 +21,11 @@ clsServerConn::clsServerConn(const QString hostName, const int port,
                         SLOT(disconnected()));
 }
 
+void clsServerConn::doConnect(){
+    this->sock->connectToHost(this->hostName,this->port);
+    this->log << "Connecting" << endl;
+}
+
 void clsServerConn::connected(){
     this->log << "Connected!" << endl;
 }
