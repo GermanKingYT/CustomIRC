@@ -13,7 +13,7 @@ struct nickAndStatus{
 
 extern bool inCommand(const QString *command, const char* search);
 extern const std::string qts(const QString str);
-extern nickAndStatus getNickAndStatus(const QString nick);
+extern nickAndStatus getNickAndStatus(const QString dNick);
 extern nickAndStatus getNickAndStatusFromId(const QString id);
 extern char getS(const char *msg, ...);
 

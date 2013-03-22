@@ -18,14 +18,20 @@ SOURCES += main.cpp\
     clslog.cpp \
     chatentry.cpp \
     chatbox.cpp \
-    ircuser.cpp
+    ircuser.cpp \
+    jsoncommand.cpp \
+    json.cpp \
+    chatinput.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
     clslog.h \
     chatentry.h \
     chatbox.h \
-    ircuser.h
+    ircuser.h \
+    jsoncommand.h \
+    json.h \
+    chatinput.h
 
 FORMS    += mainwindow.ui \
     chatentry.ui \

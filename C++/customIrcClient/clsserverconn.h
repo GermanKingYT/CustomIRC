@@ -6,6 +6,9 @@
 #include <QTextStream>
 #include "clslog.h"
 #include <QBuffer>
+#include "ircuser.h"
+#include "jsoncommand.h"
+#include "json.h"
 
 
 class clsServerConn : public QObject
@@ -16,7 +19,11 @@ public:
                            QObject *parent = 0);
     
     void doConnect();
+    void sendCommand(jsonCommand &toSend);
+
 signals:
+    void chatReceived(ircUser user, QString message);
+
     
 public slots:
     void disconnected();

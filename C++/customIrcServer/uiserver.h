@@ -28,6 +28,11 @@ private slots:
     void acceptConnection();
     void lostConnection(uiClient* client);
 
+    void chatReceived(QString message);
+
+
+signals:
+    void sgnChatReceived(QString message);
 
 private:
     QList<uiClient*> connections;

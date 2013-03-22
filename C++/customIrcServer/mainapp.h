@@ -33,8 +33,7 @@ public slots:
     void userChangeStatus(const nickAndStatus oldNick,
                           const nickAndStatus newNick,
                           const QString id);
-
-    
+    void uiSendChat(const QString message);
 private:
     const static logTags TAG = LOGTAGS_MAIN;
     ircClient *irc;

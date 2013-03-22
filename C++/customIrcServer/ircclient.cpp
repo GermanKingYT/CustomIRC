@@ -6,52 +6,52 @@ using namespace std;
 
 ircClient::ircClient(const char *hostname, const int port)
     :hostname(QString(hostname))
-    ,nick(NICK)
     ,port(port)
     ,channel(CHANNEL)
     ,log(clsLog(LOGTAGS_IRC))
 {
+    this->ownNickAndStatus.nick = NICK;
     this->init();
 }
 
 ircClient::ircClient(const char *hostname, const char *channel)
     :hostname(QString(hostname))
-    ,nick(NICK)
     ,port(this->PORT)
     ,channel(QString(channel))
     ,log(clsLog(LOGTAGS_IRC))
 {
+    this->ownNickAndStatus.nick = NICK;
     this->init();
 }
 
 ircClient::ircClient(const char *hostname, const char *channel, const char *nick)
     :hostname(QString(hostname))
-    ,nick(nick)
     ,port(this->PORT)
     ,channel(QString(channel))
     ,log(clsLog(LOGTAGS_IRC))
 {
+    this->ownNickAndStatus.nick = nick;
     this->init();
 }
 
 ircClient::ircClient(const char *hostname, const int port, const char *channel
                      ,const char *nick)
     :hostname(QString(hostname))
-    ,nick(nick)
     ,port(port)
     ,channel(QString(channel))
     ,log(clsLog(LOGTAGS_IRC))
 {
+    this->ownNickAndStatus.nick = nick;
     this->init();
 }
 
 ircClient::ircClient(const char *hostname)
     :hostname(QString(hostname))
-    ,nick(NICK)
     ,port(this->PORT)
     ,channel(QString(CHANNEL))
     ,log(clsLog(LOGTAGS_IRC))
 {
+    this->ownNickAndStatus.nick = NICK;
     this->init();
 }
 
@@ -88,8 +88,8 @@ void ircClient::connect(){
 
 void ircClient::connected(){
     //doLog(this->TAG, "Connected!");
-    this->send(QString("USER %1 0 * :%1").arg(this->nick));
-    this->send(QString("NICK %1").arg(this->nick));
+    this->send(QString("USER %1 0 * :%1").arg(this->ownNickAndStatus.nick));
+    this->send(QString("NICK %1").arg(this->ownNickAndStatus.nick));
 }
 
 
@@ -111,7 +111,7 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
             //Create ID
             if(inCommand(&command[2],qts(this->channel).c_str())){
                 userNick = command[6];
-                if(userNick != this->nick){
+                if(userNick != this->ownNickAndStatus.nick){
                     userId = userNick + "!" + command[2] + "@" + command[3];
                     emit this->userOnline(getNickAndStatus(userNick),userId,
                                           this->channel);
@@ -173,12 +173,24 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
 void ircClient::sendChat(const char* msg, const char* channel){
     QString cmd = "PRIVMSG #" + QString(channel) + " :" + QString(msg);
     this->send(qts(cmd).c_str());
+
+    emit this->chatReceived(QString(channel),this->ownNickAndStatus,QString(msg));
 }
 
 void ircClient::sendChat(const char *msg){
     QString cmd = "PRIVMSG #" + this->channel + " :" + QString(msg);
     this->send(qts(cmd).c_str());
+    emit this->chatReceived(QString(channel),this->ownNickAndStatus,QString(msg));
+}
 
+void ircClient::sendChat(const QString &msg){
+    QString cmd = "PRIVMSG #" + this->channel + " :" + QString(msg);
+    this->send(qts(cmd).c_str());
+    emit this->chatReceived(QString(channel),this->ownNickAndStatus,QString(msg));
+}
+
+nickAndStatus ircClient::getOwnNick() const{
+    return this->ownNickAndStatus;
 }
 
 

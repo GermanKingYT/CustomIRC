@@ -15,6 +15,9 @@ ircUser::ircUser(const nickAndStatus name, const QString id)
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
     }
+    this->uColor.r = 0;
+    this->uColor.g = 0;
+    this->uColor.b = 0;
 }
 
 
@@ -38,6 +41,9 @@ ircUser::ircUser(const nickAndStatus name, const bool standard)
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
     }
+    this->uColor.r = 0;
+    this->uColor.g = 0;
+    this->uColor.b = 0;
 }
 
 ircUser::ircUser(const nickAndStatus name)
@@ -55,6 +61,9 @@ ircUser::ircUser(const nickAndStatus name)
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
     }
+    this->uColor.r = 0;
+    this->uColor.g = 0;
+    this->uColor.b = 0;
 }
 
 ircUser::ircUser(const QString name, const bool standard)
@@ -78,6 +87,33 @@ ircUser::ircUser(const QString name, const bool standard)
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
     }
+    this->uColor.r = 0;
+    this->uColor.g = 0;
+    this->uColor.b = 0;
+}
+
+ircUser::ircUser(const QString name, const bool standard, const ircUser::userColor color)
+  :name(name)
+  ,id("NaN")
+  ,status("Offline")
+  ,online(false)
+  ,standard(standard)
+  ,uColor(color)
+  ,log(LOGTAGS_USER)
+{
+  this->log << name << endl;
+  if(this->name.left(1) == ":"){
+      this->name = this->name.mid(1);
+  }
+  if(!standard){
+      this->online = true;
+      this->status = "";
+  }
+
+  if(this->name.indexOf("|") >= 0){
+      this->status = this->name.mid(this->name.indexOf("|")+1);
+      this->name = this->name.left(this->name.indexOf("|"));
+  }
 }
 
 ircUser::ircUser()
@@ -87,6 +123,9 @@ ircUser::ircUser()
     ,online(false)
     ,log(LOGTAGS_USER)
 {
+    this->uColor.r = 0;
+    this->uColor.g = 0;
+    this->uColor.b = 0;
 }
 
 QString ircUser::getName() const{
@@ -139,6 +178,16 @@ void ircUser::setNick(const QString &newNick){
     this->name = newNick;
 }
 
+void ircUser::setColor(const int r, const int g, const int b){
+    this->uColor.r = r;
+    this->uColor.g = g;
+    this->uColor.b = b;
+}
+
+void ircUser::setColor(const ircUser::userColor &newColor){
+    this->uColor = newColor;
+}
+
 
 QString ircUser::getId() const{
     return this->id;
@@ -154,7 +203,60 @@ clsLog &operator <<(clsLog &log, const ircUser *user){
 ircUserList::ircUserList(){
 }
 
+ircUser::userColor getColor(int length){
+    ircUser::userColor retColor;
+    switch(length){
+        case 0:
+            retColor.r = 160;
+            retColor.g = 25;
+            retColor.b = 25;
+            break;
+        case 1:
+            retColor.r = 25;
+            retColor.g = 25;
+            retColor.b = 160;
+            break;
+        case 2:
+            retColor.r = 25;
+            retColor.g = 160;
+            retColor.b = 25;
+            break;
+        case 3:
+            retColor.r = 160;
+            retColor.g = 160;
+            retColor.b = 25;
+            break;
+        case 4:
+            retColor.r = 25;
+            retColor.g = 160;
+            retColor.b = 160;
+            break;
+        case 5:
+            retColor.r = 255;
+            retColor.g = 0;
+            retColor.b = 0;
+            break;
+        case 6:
+            retColor.r = 0;
+            retColor.g = 255;
+            retColor.b = 0;
+            break;
+        case 7:
+            retColor.r = 0;
+            retColor.g = 0;
+            retColor.b = 255;
+            break;
+        default:
+            retColor.r = 0;
+            retColor.g = 0;
+            retColor.b = 0;
+            break;
+    }
+    return retColor;
+}
+
 void ircUserList::add(ircUser *userToAdd){
+    userToAdd->setColor(getColor(this->users.count()));
     this->users.append(*userToAdd);
 }
 

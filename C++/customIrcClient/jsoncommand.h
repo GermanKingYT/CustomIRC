@@ -31,8 +31,8 @@ public:
     void setCommand(const jsonCommands& newCommand);
     void setCommandInt(QString command);
 
-    QVariant getData(const QString key);
     QVariantMap getData() const;
+    QVariant getData(const QString key);
     void setData(const QVariantMap& newData);
     void addToData(const QString key, const QVariant &data);
 
@@ -40,6 +40,7 @@ public:
     friend clsLog& operator<<(clsLog& log, jsonCommand &command);
 
     QString toJsonString() const;
+
 private:
     jsonCommands command;
     QVariantMap data;

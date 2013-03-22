@@ -29,13 +29,13 @@
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="chatBox" name="scrollAreaWidgetContents">
+      <widget class="chatBox" name="chatbox">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
          <width>531</width>
-         <height>317</height>
+         <height>280</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -74,17 +74,48 @@
     </rect>
    </property>
   </widget>
-  <widget class="QDockWidget" name="dockWidget">
+  <widget class="QDockWidget" name="chatDock">
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>100</height>
+    </size>
+   </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
    </property>
+   <property name="windowTitle">
+    <string>Chat</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents"/>
+   <widget class="QWidget" name="chatDock_Widget">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="chatInput" name="mChatInput">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="lineWrapMode">
+        <enum>QPlainTextEdit::NoWrap</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
@@ -94,6 +125,11 @@
    <extends>QWidget</extends>
    <header>chatbox.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>chatInput</class>
+   <extends>QPlainTextEdit</extends>
+   <header>chatinput.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

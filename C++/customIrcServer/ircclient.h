@@ -31,7 +31,9 @@ public:
 
     void sendChat(const char *msg, const char *channel);
     void sendChat(const char *msg);
+    void sendChat(const QString &msg);
 
+    nickAndStatus getOwnNick() const;
 
 signals:
     void startupComplete();
@@ -48,6 +50,7 @@ signals:
                           const nickAndStatus newNick,
                           const QString id);
 
+
 private:
     void init();
     void send(const QString data);
@@ -62,7 +65,6 @@ public slots:
 
 private:
     QString hostname;
-    QString nick;
     int port;
     QString channel;
     bool motdReceived;
@@ -71,6 +73,9 @@ private:
     QBuffer *buffer;
 
     clsLog log;
+
+    nickAndStatus ownNickAndStatus;
+
 
     const static int PORT = 6667;
 };

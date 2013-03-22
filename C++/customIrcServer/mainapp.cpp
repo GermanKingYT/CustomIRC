@@ -10,7 +10,7 @@ mainApp::mainApp(QObject *parent)
 
 void mainApp::run(){
     this->log << "Starting up" << endl;
-    this->irc = new ircClient("digi-online.net");
+    this->irc = new ircClient("digi-online.net","mattiechat","KoeBot");
     this->ui = new uiServer(this);
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
@@ -33,12 +33,15 @@ void mainApp::run(){
                                                QString))
             ,this, SLOT(userChangeStatus(nickAndStatus,nickAndStatus,QString)));
 
+    connect(this->ui,SIGNAL(sgnChatReceived(QString)),this,SLOT(uiSendChat(QString)));
+
     //Init db of 'standard' irc users:
     this->users->add(new ircUser("Koenk",true));
     this->users->add(new ircUser("Joep",true));
     this->users->add(new ircUser("Jesper",true));
     this->users->add(new ircUser("BlueWolf",true));
     this->users->add(new ircUser("KoBe",true));
+    this->users->add(new ircUser("KoeBot",true));
 
     this->irc->connect();
     this->ui->startListen();
@@ -49,6 +52,8 @@ void mainApp::chatReceived(const QString channel, const nickAndStatus user,
     this->log << "Chat received:\t<" << user.nick << ">\t" << message << endl;
 
     jsonCommand chatMessage(JSONCOMMAND_CHAT);
+
+    ircUser *ourUser = this->users->getUserByNick(user);
     chatMessage.addToData("user",
                           QVariant(
                               this->users->getUserByNick(user)->toVariantMap()));
@@ -118,4 +123,8 @@ void mainApp::userChangeStatus(const nickAndStatus oldNick,
     }else{
         user->setStatus(newNick.status);
     }
+}
+
+void mainApp::uiSendChat(const QString message){
+    this->irc->sendChat(message);
 }

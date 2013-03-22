@@ -21,6 +21,9 @@ public:
     ~MainWindow();
     
 private slots:
+    void chatReceived(ircUser user, QString message);
+    void sendChat(QString message);
+
 
 private:
     Ui::MainWindow *ui;

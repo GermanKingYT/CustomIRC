@@ -14,6 +14,11 @@ chatEntry::chatEntry(ircUser &user, QString message, QWidget *parent) :
     this->setMinimumWidth(parent->width());
     this->ui->lblTime->setText(this->timeOfMessage.toString());
     this->ui->lblNick->setText(this->name.getNick() + ":");
+    QPalette palette = ui->lblNick->palette();
+    palette.setColor(ui->lblNick->foregroundRole(), this->name.getColor());
+    ui->lblNick->setPalette(palette);
+
+
     this->ui->lblChat->setText(this->message);
 
     if(this->getWidth(this->ui->lblNick) > this->ui->lblNick->width()){

@@ -30,9 +30,14 @@ void uiServer::acceptConnection(){
     uiClient *connection = new uiClient(this->nextPendingConnection());
     connect(connection, SIGNAL(disconnected(uiClient*)),
             this, SLOT(lostConnection(uiClient*)));
+    connect(connection, SIGNAL(chatReceived(QString)),this,SLOT(chatReceived(QString)));
     connections.append(connection);
 }
 
 void uiServer::lostConnection(uiClient *client){
     this->connections.removeAll(client);
+}
+
+void uiServer::chatReceived(QString message){
+    emit this->sgnChatReceived(message);
 }

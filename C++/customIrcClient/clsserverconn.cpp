@@ -1,4 +1,5 @@
 #include "clsserverconn.h"
+#include "jsoncommand.h"
 
 
 clsServerConn::clsServerConn(const QString hostName, const int port,
@@ -26,6 +27,13 @@ void clsServerConn::doConnect(){
     this->log << "Connecting" << endl;
 }
 
+void clsServerConn::sendCommand(jsonCommand &toSend){
+    //this->log << "Sending json object: " << docToSend->toJson() << endl;
+    this->log << "Sending JSON: " << toSend << endl;
+    this->sock->write(QString(toSend.toJsonString() + "\r\n").toAscii());
+
+}
+
 void clsServerConn::connected(){
     this->log << "Connected!" << endl;
 }
@@ -45,5 +53,16 @@ void clsServerConn::readData(){
         line = line.simplified();
         //doLog(this->TAG, "Data received: \t%s",qts(line).c_str());
         this->log << "Data received: \t" << line << endl;
+        //Let' s just hope it received EVERYTHING
+        //If not.. fuck
+        jsonCommand comm(line);
+        switch (comm.getCommand()) {
+        case JSONCOMMAND_CHAT:
+            emit this->chatReceived(ircUser(comm.getData("user")),
+                                    comm.getData("chat").toString());
+            break;
+        default:
+            break;
+        }
     }
 }

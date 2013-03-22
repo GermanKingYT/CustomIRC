@@ -39,6 +39,16 @@ void uiClient::receiveMessage(){
         line = line.simplified();
         this->log << line << endl;
 
+        //Let' s just hope it received EVERYTHING
+        //If not.. fuck
+        jsonCommand comm(line);
+        switch (comm.getCommand()) {
+            case JSONCOMMAND_OWNCHAT:
+                emit this->chatReceived(comm.getData("chat").toString());
+                break;
+            default:
+                break;
+        }
         //jsonCommand myCommand(QtJson::parse(line, isParsed).toMap());
         //this->log << myCommand << endl;
     }

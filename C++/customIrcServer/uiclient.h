@@ -18,6 +18,8 @@ public:
     void send(QString data);
 signals:
     void disconnected(uiClient *client);
+    void chatReceived(QString message);
+
 public slots:
     void removeConnection();
     void receiveMessage();

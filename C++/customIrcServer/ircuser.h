@@ -8,16 +8,18 @@
 #include "clslog.h"
 
 class ircUser {
+
+
+public:
     struct userColor{
         int r;
         int g;
         int b;
     };
-
-public:
     ircUser(const nickAndStatus name, const QString id);
     ircUser(const nickAndStatus name, const bool standard);
     ircUser(const QString name, const bool standard);
+    ircUser(const QString name, const bool standard, const userColor color);
     ircUser(const nickAndStatus name);
 
     ircUser();
@@ -35,6 +37,8 @@ public:
     void setStatus(const QString &newStatus);
     void setId(const QString &newId);
     void setNick(const QString &newNick);
+    void setColor(const int r, const int g, const int b);
+    void setColor(const userColor &newColor);
 
     QString getId() const;
     friend clsLog& operator<<(clsLog& log, const ircUser* user);

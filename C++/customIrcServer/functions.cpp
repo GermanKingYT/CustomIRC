@@ -15,8 +15,13 @@ const string qts(const QString str){
     return str.toStdString();
 }
 
-nickAndStatus getNickAndStatus(const QString nick){
+nickAndStatus getNickAndStatus(const QString dNick){
     nickAndStatus ret;
+    QString nick = dNick;
+
+    if(dNick.indexOf("!") >= 0){
+        nick = dNick.left(nick.indexOf("!"));
+    }
     if(nick.indexOf("|") >= 0){
         ret.nick = nick.left(nick.indexOf("|"));
         ret.status =  nick.mid(nick.indexOf("|")+1);

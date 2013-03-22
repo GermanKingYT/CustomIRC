@@ -70,11 +70,9 @@ void jsonCommand::setCommandInt(QString command){
     this->command = set;
 }
 
-
 void jsonCommand::setCommand(const jsonCommands &newCommand){
     this->command = newCommand;
 }
-
 
 QVariantMap jsonCommand::getData() const{
     return this->data;
@@ -83,7 +81,6 @@ QVariantMap jsonCommand::getData() const{
 QVariant jsonCommand::getData(const QString key){
     return this->data[key];
 }
-
 
 void jsonCommand::setData(const QVariantMap &newData){
     this->data = newData;

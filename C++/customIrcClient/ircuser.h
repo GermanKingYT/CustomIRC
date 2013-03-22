@@ -8,7 +8,8 @@
 class ircUser
 {
 public:
-    ircUser(qint32 id, QString nick, QString status, QColor uColor);
+    ircUser(QVariant jsonData);
+    ircUser(qint32 id, QString nick, QString status, QColor uColor, bool standard);
 
     //Getters
     const QString getNick() const;
@@ -26,6 +27,7 @@ private:
     QString nick;
     QString status;
     QColor uColor;
+    bool standard;
 
     clsLog log;
 };
