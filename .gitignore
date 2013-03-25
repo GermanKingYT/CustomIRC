@@ -34,5 +34,10 @@ nosetests.xml
 .project
 .pydevproject
 
-#QT Creator user preferences
+#QT Creator
 *.pro.user
+*.pro.user.*
+moc_*.cpp
+qrc_*.cpp
+Makefile
+*-build-*
