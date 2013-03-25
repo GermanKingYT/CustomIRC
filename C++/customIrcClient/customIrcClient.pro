@@ -21,7 +21,10 @@ SOURCES += main.cpp\
     ircuser.cpp \
     jsoncommand.cpp \
     json.cpp \
-    chatinput.cpp
+    chatinput.cpp \
+    ../resources/jsoncommand.cpp \
+    ../resources/json.cpp \
+    ../resources/clslog.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
@@ -31,7 +34,10 @@ HEADERS  += mainwindow.h \
     ircuser.h \
     jsoncommand.h \
     json.h \
-    chatinput.h
+    chatinput.h \
+    ../resources/jsoncommand.h \
+    ../resources/json.h \
+    ../resources/clslog.h
 
 FORMS    += mainwindow.ui \
     chatentry.ui \

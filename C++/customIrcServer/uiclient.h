@@ -6,8 +6,8 @@
 #include <QBuffer>
 #include <QJsonDocument>
 
-#include "clslog.h"
-#include "jsoncommand.h"
+#include "../resources/clslog.h"
+#include "../resources/jsoncommand.h"
 
 
 class uiClient: public QObject{

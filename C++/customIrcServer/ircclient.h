@@ -9,7 +9,7 @@
 #include <QTextStream>
 #include "ircCodes.h"
 #include "functions.h"
-#include "clslog.h"
+#include "../resources/clslog.h"
 
 
 

@@ -5,8 +5,8 @@
 #include <QList>
 #include <QHash>
 #include "uiclient.h"
-#include "clslog.h"
-#include "jsoncommand.h"
+#include "../resources/clslog.h"
+#include "../resources/jsoncommand.h"
 
 class QBuffer;
 class QTcpSocket;

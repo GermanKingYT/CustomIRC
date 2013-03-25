@@ -5,7 +5,7 @@
 #include <QVector>
 #include <QVariantMap>
 #include "functions.h"
-#include "clslog.h"
+#include "../resources/clslog.h"
 
 class ircUser {
 
