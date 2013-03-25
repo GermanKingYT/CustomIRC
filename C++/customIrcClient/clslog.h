@@ -1,1 +1,0 @@
-/home/koen/repositories/git/CustomIRC/C++/customIrcServer/clslog.h
