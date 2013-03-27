@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QString>
-#include "clslog.h"
+#include <QScrollArea>
+#include <QScrollBar>
+#include "../resources/clslog.h"
 #include "chatbox.h"
 #include "clsserverconn.h"
 
@@ -20,11 +22,16 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
+
 private slots:
     void chatReceived(ircUser user, QString message);
     void sendChat(QString message);
+    void moveScrollBarToBottom(int min, int max);
 
 
+    void serverConnected();
+    void serverDisconnected();
+    void userQueryCompleted(QVector<ircUser*> users);
 private:
     Ui::MainWindow *ui;
 

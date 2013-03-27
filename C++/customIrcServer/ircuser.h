@@ -70,9 +70,9 @@ public:
     ircUser *getUser(const nickAndStatus nick, const QString id);
     ircUser *findUser(ircUser &userToFind);
     ircUser *getUserById(QString id);
-    QVector<ircUser> getAll() const;
+    QVector<ircUser*> getAll() const;
 
 private:
-    QVector<ircUser> users;
+    QVector<ircUser*> users;
 };
 #endif // IRCUSER_H

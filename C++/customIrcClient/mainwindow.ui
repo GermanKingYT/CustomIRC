@@ -34,8 +34,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>531</width>
-         <height>280</height>
+         <width>423</width>
+         <height>258</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -50,18 +50,60 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QDockWidget" name="dockWidget_2">
+  <widget class="QDockWidget" name="userDock">
+   <property name="minimumSize">
+    <size>
+     <width>148</width>
+     <height>122</height>
+    </size>
+   </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
+   <property name="windowTitle">
+    <string>Users</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QHBoxLayout" name="horizontalLayout"/>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QScrollArea" name="scrollArea_2">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="clsUserList" name="userList">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>140</width>
+          <height>235</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -130,6 +172,12 @@
    <class>chatInput</class>
    <extends>QPlainTextEdit</extends>
    <header>chatinput.h</header>
+  </customwidget>
+  <customwidget>
+   <class>clsUserList</class>
+   <extends>QWidget</extends>
+   <header>clsuserlist.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

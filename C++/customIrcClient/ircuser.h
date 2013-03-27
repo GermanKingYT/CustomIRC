@@ -3,7 +3,7 @@
 
 #include <QString>
 #include <QColor>
-#include "clslog.h"
+#include "../resources/clslog.h"
 
 class ircUser
 {

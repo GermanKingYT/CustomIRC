@@ -14,6 +14,7 @@ enum jsonCommands{
     JSONCOMMAND_PING = 0x01,
     JSONCOMMAND_USERINFO,
     JSONCOMMAND_USERINFOREQ,
+    JSONCOMMAND_USERQUERY,
     JSONCOMMAND_CHAT,
     JSONCOMMAND_OWNCHAT
 };
@@ -38,6 +39,7 @@ public:
 
 
     friend clsLog& operator<<(clsLog& log, jsonCommand &command);
+    friend clsLog& operator<<(clsLog& log, const jsonCommand &command);
 
     QString toJsonString() const;
 private:

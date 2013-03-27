@@ -17,7 +17,7 @@ void uiServer::startListen(){
 }
 
 
-void uiServer::send(jsonCommand &toSend){
+void uiServer::send(const jsonCommand &toSend){
     //this->log << "Sending json object: " << docToSend->toJson() << endl;
     this->log << "Sending JSON: " << toSend << endl;
 
@@ -26,11 +26,19 @@ void uiServer::send(jsonCommand &toSend){
     }
 }
 
+void uiServer::send(uiClient *client, const jsonCommand &toSend){
+    //this->log << "Sending json object: " << docToSend->toJson() << endl;
+    this->log << "Sending JSON: " << toSend << endl;
+
+    client->send(toSend.toJsonString() + "\r\n");
+}
+
 void uiServer::acceptConnection(){
     uiClient *connection = new uiClient(this->nextPendingConnection());
     connect(connection, SIGNAL(disconnected(uiClient*)),
             this, SLOT(lostConnection(uiClient*)));
     connect(connection, SIGNAL(chatReceived(QString)),this,SLOT(chatReceived(QString)));
+    connect(connection, SIGNAL(userQuery(uiClient*)), this, SLOT(doUserQuery(uiClient*)));
     connections.append(connection);
 }
 
@@ -40,4 +48,8 @@ void uiServer::lostConnection(uiClient *client){
 
 void uiServer::chatReceived(QString message){
     emit this->sgnChatReceived(message);
+}
+
+void uiServer::doUserQuery(uiClient *client){
+    emit this->sgnUserQuery(client);
 }

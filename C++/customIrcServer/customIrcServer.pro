@@ -21,11 +21,8 @@ SOURCES += main.cpp \
     functions.cpp \
     mainapp.cpp \
     ircuser.cpp \
-    clslog.cpp \
     uiclient.cpp \
     uiserver.cpp \
-    jsoncommand.cpp \
-    json.cpp \
     ../resources/jsoncommand.cpp \
     ../resources/json.cpp \
     ../resources/clslog.cpp
@@ -36,11 +33,8 @@ HEADERS += \
     mainapp.h \
     ircCodes.h \
     ircuser.h \
-    clslog.h \
     uiclient.h \
     uiserver.h \
-    jsoncommand.h \
-    json.h \
     ../resources/jsoncommand.h \
     ../resources/json.h \
     ../resources/clslog.h

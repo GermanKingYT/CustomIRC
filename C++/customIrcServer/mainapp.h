@@ -7,6 +7,7 @@
 #include "functions.h"
 #include "ircuser.h"
 #include "uiserver.h"
+#include "uiclient.h"
 
 
 class mainApp : public QObject
@@ -34,6 +35,8 @@ public slots:
                           const nickAndStatus newNick,
                           const QString id);
     void uiSendChat(const QString message);
+
+    void doUserQuery(uiClient *client);
 private:
     const static logTags TAG = LOGTAGS_MAIN;
     ircClient *irc;

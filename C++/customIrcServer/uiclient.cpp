@@ -46,6 +46,9 @@ void uiClient::receiveMessage(){
             case JSONCOMMAND_OWNCHAT:
                 emit this->chatReceived(comm.getData("chat").toString());
                 break;
+            case JSONCOMMAND_USERQUERY:
+                emit this->userQuery(this);
+                break;
             default:
                 break;
         }

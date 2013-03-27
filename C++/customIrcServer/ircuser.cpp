@@ -74,7 +74,6 @@ ircUser::ircUser(const QString name, const bool standard)
     ,standard(standard)
     ,log(LOGTAGS_USER)
 {
-    this->log << name << endl;
     if(this->name.left(1) == ":"){
         this->name = this->name.mid(1);
     }
@@ -87,6 +86,7 @@ ircUser::ircUser(const QString name, const bool standard)
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
     }
+
     this->uColor.r = 0;
     this->uColor.g = 0;
     this->uColor.b = 0;
@@ -238,7 +238,7 @@ ircUser::userColor getColor(int length){
             break;
         case 6:
             retColor.r = 0;
-            retColor.g = 255;
+            retColor.g = 160;
             retColor.b = 0;
             break;
         case 7:
@@ -257,12 +257,12 @@ ircUser::userColor getColor(int length){
 
 void ircUserList::add(ircUser *userToAdd){
     userToAdd->setColor(getColor(this->users.count()));
-    this->users.append(*userToAdd);
+    this->users.append(userToAdd);
 }
 
 void ircUserList::del(ircUser *userToDel){
     for(int i = 0; i < this->users.size(); i++){
-        if(this->users[i].getName() == userToDel->getName()){
+        if(this->users[i]->getName() == userToDel->getName()){
             this->users.remove(i);
         }
     }
@@ -284,8 +284,8 @@ ircUser *ircUserList::getUser(const nickAndStatus nick, const QString id){
 
 ircUser *ircUserList::getUserByNick(nickAndStatus nick) {
     for(int i=0; i < this->users.size(); i++){
-        if(this->users[i].getName() == nick.nick){
-            return &this->users[i];
+        if(this->users[i]->getName() == nick.nick){
+            return &*this->users[i];
         }
     }
     return new ircUser();
@@ -293,13 +293,13 @@ ircUser *ircUserList::getUserByNick(nickAndStatus nick) {
 
 ircUser *ircUserList::getUserById(QString id){
     for(int i=0; i < this->users.size(); i++){
-        if(this->users[i].getId() == id){
-            return &this->users[i];
+        if(this->users[i]->getId() == id){
+            return &*this->users[i];
         }
     }
     return new ircUser();
 }
 
-QVector<ircUser> ircUserList::getAll() const{
+QVector<ircUser *> ircUserList::getAll() const{
     return this->users;
 }

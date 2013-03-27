@@ -1,5 +1,5 @@
 #include "clsserverconn.h"
-#include "jsoncommand.h"
+#include "../resources/jsoncommand.h"
 
 
 clsServerConn::clsServerConn(const QString hostName, const int port,
@@ -17,9 +17,9 @@ clsServerConn::clsServerConn(const QString hostName, const int port,
     this->sock->connect(this->sock, SIGNAL(readyRead()), this,
                         SLOT(readData()));
     this->sock->connect(this->sock, SIGNAL(connected()), this,
-                        SLOT(connected()));
+                        SLOT(srvConnected()));
     this->sock->connect(this->sock, SIGNAL(disconnected()), this,
-                        SLOT(disconnected()));
+                        SLOT(srvDisconnected()));
 }
 
 void clsServerConn::doConnect(){
@@ -30,17 +30,28 @@ void clsServerConn::doConnect(){
 void clsServerConn::sendCommand(jsonCommand &toSend){
     //this->log << "Sending json object: " << docToSend->toJson() << endl;
     this->log << "Sending JSON: " << toSend << endl;
-    this->sock->write(QString(toSend.toJsonString() + "\r\n").toAscii());
-
+    QByteArray bAToSend;
+    bAToSend.append(toSend.toJsonString() + "\r\n");
+    this->sock->write(bAToSend);
 }
 
-void clsServerConn::connected(){
+void clsServerConn::srvConnected(){
     this->log << "Connected!" << endl;
+    emit this->connected();
 }
 
 
-void clsServerConn::disconnected(){
+void clsServerConn::srvDisconnected(){
     this->log << "Disconnected" << endl;
+    emit this->disconnected();
+}
+
+void clsServerConn::handleCompletedQuery(jsonCommand *comm){
+    QVector<ircUser*> users;
+    foreach(QVariant user, comm->getData("users").toList()){
+        users.append(new ircUser(user));
+    }
+    emit this->userQueryCompleted(users);
 }
 
 
@@ -60,6 +71,9 @@ void clsServerConn::readData(){
         case JSONCOMMAND_CHAT:
             emit this->chatReceived(ircUser(comm.getData("user")),
                                     comm.getData("chat").toString());
+            break;
+        case JSONCOMMAND_USERQUERY:
+            this->handleCompletedQuery(&comm);
             break;
         default:
             break;

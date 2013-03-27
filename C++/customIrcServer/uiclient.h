@@ -19,6 +19,7 @@ public:
 signals:
     void disconnected(uiClient *client);
     void chatReceived(QString message);
+    void userQuery(uiClient *client);
 
 public slots:
     void removeConnection();

@@ -44,6 +44,9 @@ QString jsonCommand::getCommandString() const{
         case JSONCOMMAND_USERINFOREQ:
             ret = "USERINFOREQ";
             break;
+        case JSONCOMMAND_USERQUERY:
+            ret = "USERQUERY";
+            break;
         case JSONCOMMAND_NONE:
             ret = "NONE";
             break;
@@ -64,6 +67,8 @@ void jsonCommand::setCommandInt(QString command){
         set = JSONCOMMAND_USERINFO;
     }else if(command == "USERINFOREQ"){
         set = JSONCOMMAND_USERINFOREQ;
+    }else if(command == "USERQUERY"){
+        set = JSONCOMMAND_USERQUERY;
     }else if(command == "OWNCHAT"){
         set = JSONCOMMAND_OWNCHAT;
     }
@@ -102,6 +107,13 @@ QString jsonCommand::toJsonString() const{
 }
 
 clsLog& operator <<(clsLog &log, jsonCommand &command){
+    log << "JSON command: " << command.getCommandString();
+    log << " Data: " << endl << command.getData() << endl;
+    return log;
+}
+
+
+clsLog& operator <<(clsLog &log, const jsonCommand &command){
     log << "JSON command: " << command.getCommandString();
     log << " Data: " << endl << command.getData() << endl;
     return log;

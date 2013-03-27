@@ -4,11 +4,11 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QTextStream>
-#include "clslog.h"
+#include "../resources/clslog.h"
 #include <QBuffer>
 #include "ircuser.h"
-#include "jsoncommand.h"
-#include "json.h"
+#include "../resources/jsoncommand.h"
+#include "../resources/json.h"
 
 
 class clsServerConn : public QObject
@@ -21,13 +21,16 @@ public:
     void doConnect();
     void sendCommand(jsonCommand &toSend);
 
+    void handleCompletedQuery(jsonCommand *comm);
 signals:
     void chatReceived(ircUser user, QString message);
-
-    
-public slots:
-    void disconnected();
     void connected();
+    void disconnected();
+    void userQueryCompleted(QVector<ircUser*> users);
+
+public slots:
+    void srvDisconnected();
+    void srvConnected();
     void readData();
 
 

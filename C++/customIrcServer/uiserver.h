@@ -22,7 +22,8 @@ public:
     void startListen();
 
 
-    void send(jsonCommand &toSend);
+    void send(const jsonCommand &toSend);
+    void send(uiClient *client, const jsonCommand &toSend);
 
 private slots:
     void acceptConnection();
@@ -30,9 +31,12 @@ private slots:
 
     void chatReceived(QString message);
 
+    void doUserQuery(uiClient *client);
+
 
 signals:
     void sgnChatReceived(QString message);
+    void sgnUserQuery(uiClient *client);
 
 private:
     QList<uiClient*> connections;

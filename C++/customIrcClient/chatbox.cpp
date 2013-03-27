@@ -17,16 +17,33 @@ chatBox::~chatBox()
 }
 
 void chatBox::addChat(ircUser &user, QString message){
-    chatEntry *tE = new chatEntry(user,message,this);
-    this->entries.append(tE);
-    this->ui->verticalLayout->addWidget(tE);
+    content *myContent = new content;
+    myContent->widget = new chatEntry(user,message,this);
+    myContent->type = WIDGETTYPES_CHATENTRY;
 
-    QScrollArea *pr = (QScrollArea*)this->parentWidget();
-    pr->scroll(0,0-tE->height());
+    this->entries.append(myContent);
+    this->ui->verticalLayout->addWidget(myContent->widget);
+}
+
+void chatBox::addMessage(QString &message){
+    content *myContent = new content;
+    myContent->widget = new chatNotification(message,this);
+    myContent->type = WIDGETTYPES_NOTIFICATION;
+
+    this->entries.append(myContent);
+    this->ui->verticalLayout->addWidget(myContent->widget);
+}
+
+void chatBox::addMessage(const char *msg){
+    QString newMsg(msg);
+    this->addMessage(newMsg);
 }
 
 void chatBox::setAllUserNameSize(int newSize){
-    foreach (chatEntry *ce, this->entries) {
-        ce->setUserWidth(newSize);
+    foreach (content *ce, this->entries) {
+        if(ce->type == WIDGETTYPES_CHATENTRY){
+            chatEntry *myWidget = dynamic_cast<chatEntry*>(ce->widget);
+            myWidget->setUserWidth(newSize);
+        }
     }
 }

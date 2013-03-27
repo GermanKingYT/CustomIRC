@@ -10,7 +10,7 @@ mainApp::mainApp(QObject *parent)
 
 void mainApp::run(){
     this->log << "Starting up" << endl;
-    this->irc = new ircClient("digi-online.net","mattiechat","KoeBot");
+    this->irc = new ircClient("digi-online.net","bottest","KoeBot");
     this->ui = new uiServer(this);
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
@@ -34,6 +34,7 @@ void mainApp::run(){
             ,this, SLOT(userChangeStatus(nickAndStatus,nickAndStatus,QString)));
 
     connect(this->ui,SIGNAL(sgnChatReceived(QString)),this,SLOT(uiSendChat(QString)));
+    connect(this->ui,SIGNAL(sgnUserQuery(uiClient*)), this,SLOT(doUserQuery(uiClient*)));
 
     //Init db of 'standard' irc users:
     this->users->add(new ircUser("Koenk",true));
@@ -53,24 +54,13 @@ void mainApp::chatReceived(const QString channel, const nickAndStatus user,
 
     jsonCommand chatMessage(JSONCOMMAND_CHAT);
 
-    ircUser *ourUser = this->users->getUserByNick(user);
     chatMessage.addToData("user",
                           QVariant(
                               this->users->getUserByNick(user)->toVariantMap()));
-    chatMessage.addToData("chat",message);
+    chatMessage.addToData("chat", message);
+    chatMessage.addToData("channel", channel);
 
     this->ui->send(chatMessage);
-
-
-    //doLog(this->TAG,"Chat received: \t<%s>\t%s", qts(user).c_str(),
-    //      qts(message).c_str());
-    /*if(message == QString("who")){
-        this->irc->sendChat("Gebruikers online:");
-        foreach(ircUser user, this->users->getAll()){
-            this->irc->sendChat(qts(QString(user.getName() + " Status: "
-                                            + user.getStatus())).c_str());
-        }
-    }*/
 }
 
 
@@ -78,11 +68,16 @@ void mainApp::userOnline(const nickAndStatus nick, const QString id, const QStri
     this->log << "Online\t" << nick.nick << "\t" << nick.status << endl;
     ircUser *user = this->users->getUser(nick,id);
     if(user->getName() == "NaN"){
-        this->users->add(new ircUser(nick,id));
+        user = new ircUser(nick,id);
+        this->users->add(user);
     }else{
         user->setStatus(nick.status);
         user->setOnline(true);
     }
+    jsonCommand uUser(JSONCOMMAND_USERINFO);
+    uUser.addToData("user",user->toVariantMap());
+    uUser.addToData("change","STATE");
+    this->ui->send(uUser);
 }
 
 void mainApp::userOffline(const nickAndStatus nick, const QString id, const QString channel){
@@ -97,6 +92,11 @@ void mainApp::userOffline(const nickAndStatus nick, const QString id, const QStr
         if(user->isStandard() == false){
             this->users->del(user);
         }
+
+        jsonCommand uUser(JSONCOMMAND_USERINFO);
+        uUser.addToData("user",user->toVariantMap());
+        uUser.addToData("change","STATE");
+        this->ui->send(uUser);
     }
 }
 
@@ -122,9 +122,27 @@ void mainApp::userChangeStatus(const nickAndStatus oldNick,
         this->log << oldNick.nick << " bestaat niet!?" << endl;
     }else{
         user->setStatus(newNick.status);
+        jsonCommand uUser(JSONCOMMAND_USERINFO);
+        uUser.addToData("user",user->toVariantMap());
+        uUser.addToData("change","STATUS");
+        this->ui->send(uUser);
     }
+
 }
 
 void mainApp::uiSendChat(const QString message){
     this->irc->sendChat(message);
+}
+
+void mainApp::doUserQuery(uiClient *client){
+    //Send all the users back
+    jsonCommand uQuery(JSONCOMMAND_USERQUERY);
+    QList<QVariant> users;
+    foreach(ircUser *user, this->users->getAll()){
+        users.append(QVariant(user->toVariantMap()));
+    }
+    uQuery.addToData("users",QVariant::fromValue(users));
+
+    this->ui->send(client,uQuery);
+
 }

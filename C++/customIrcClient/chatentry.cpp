@@ -18,6 +18,7 @@ chatEntry::chatEntry(ircUser &user, QString message, QWidget *parent) :
     palette.setColor(ui->lblNick->foregroundRole(), this->name.getColor());
     ui->lblNick->setPalette(palette);
 
+    this->message.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");
 
     this->ui->lblChat->setText(this->message);
 
@@ -42,13 +43,10 @@ void chatEntry::calculateMessageWidth(){
 
     this->setMinimumHeight(lines * 20);
     this->ui->lblChat->setMinimumHeight(this->minimumHeight() + 4);
-
-
 }
 
 int chatEntry::getWidth(QLabel *l) const{
     return l->fontMetrics().width(l->text());
-
 }
 
 chatEntry::~chatEntry(){
