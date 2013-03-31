@@ -1,6 +1,7 @@
 #include "clsuserentry.h"
 #include "ui_clsuserentry.h"
 
+
 clsUserEntry::clsUserEntry(ircUser *user, QWidget *parent)
     :QWidget(parent)
     ,ui(new Ui::clsUserEntry)
@@ -18,9 +19,18 @@ clsUserEntry::clsUserEntry(ircUser *user, QWidget *parent)
     QPalette palette = ui->lblUserName->palette();
     palette.setColor(ui->lblUserName->foregroundRole(), this->user->getColor());
     ui->lblUserName->setPalette(palette);
+
+    connect(this->user, SIGNAL(iconChanged()), this, SLOT(iconChanged()));
+    this->ui->lblGravatar->setPixmap(this->user->getIcon().scaled(
+                                         this->ui->lblGravatar->size()));
 }
 
-clsUserEntry::~clsUserEntry()
-{
+clsUserEntry::~clsUserEntry(){
     delete ui;
 }
+
+void clsUserEntry::iconChanged(){
+    this->ui->lblGravatar->setPixmap(this->user->getIcon().scaled(
+                                         this->ui->lblGravatar->size()));
+}
+

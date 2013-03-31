@@ -23,7 +23,7 @@ public:
 
     void handleCompletedQuery(jsonCommand *comm);
 signals:
-    void chatReceived(ircUser user, QString message);
+    void chatReceived(ircUser *user, QString message);
     void connected();
     void disconnected();
     void userQueryCompleted(QVector<ircUser*> users);

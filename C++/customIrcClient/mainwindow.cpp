@@ -14,8 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
             this,SLOT(moveScrollBarToBottom(int,int)));
 
 
-    connect(this->server,SIGNAL(chatReceived(ircUser,QString))
-            ,this,SLOT(chatReceived(ircUser,QString)));
+    connect(this->server,SIGNAL(chatReceived(ircUser*,QString))
+            ,this,SLOT(chatReceived(ircUser*,QString)));
     connect(this->ui->mChatInput,SIGNAL(sendChat(QString))
             ,this,SLOT(sendChat(QString)));
     connect(this->server, SIGNAL(connected()), this, SLOT(serverConnected()));
@@ -33,7 +33,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::chatReceived(ircUser user, QString message){
+void MainWindow::chatReceived(ircUser *user, QString message){
     this->ui->chatbox->addChat(user,message);
 }
 

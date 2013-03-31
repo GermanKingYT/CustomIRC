@@ -1,16 +1,20 @@
 #include "mainapp.h"
 
-mainApp::mainApp(QObject *parent)
+mainApp::mainApp(QString parentPath, QObject *parent)
     :QObject(parent)
     ,users(new ircUserList())
     ,log(clsLog(LOGTAGS_MAIN))
 {
+    this->settings = new clsSettings(parentPath);
 }
 
 
 void mainApp::run(){
     this->log << "Starting up" << endl;
-    this->irc = new ircClient("digi-online.net","bottest","KoeBot");
+
+    this->irc = new ircClient(this->settings->getServer(),
+                              this->settings->getChannel(),
+                              this->settings->getUserName());
     this->ui = new uiServer(this);
     //this->irc = new ircClient("irc.k-4u.nl");
     //this->irc = new ircClient("localhost");
@@ -37,12 +41,12 @@ void mainApp::run(){
     connect(this->ui,SIGNAL(sgnUserQuery(uiClient*)), this,SLOT(doUserQuery(uiClient*)));
 
     //Init db of 'standard' irc users:
-    this->users->add(new ircUser("Koenk",true));
-    this->users->add(new ircUser("Joep",true));
-    this->users->add(new ircUser("Jesper",true));
-    this->users->add(new ircUser("BlueWolf",true));
-    this->users->add(new ircUser("KoBe",true));
-    this->users->add(new ircUser("KoeBot",true));
+    ircUser *ownUser = this->settings->getOwnUser();
+    this->users->add(ownUser);
+    foreach(ircUser* user, this->settings->getUsers()){
+        this->users->add(user);
+    }
+
 
     this->irc->connect();
     this->ui->startListen();

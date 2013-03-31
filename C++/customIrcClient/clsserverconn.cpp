@@ -69,7 +69,7 @@ void clsServerConn::readData(){
         jsonCommand comm(line);
         switch (comm.getCommand()) {
         case JSONCOMMAND_CHAT:
-            emit this->chatReceived(ircUser(comm.getData("user")),
+            emit this->chatReceived(new ircUser(comm.getData("user")),
                                     comm.getData("chat").toString());
             break;
         case JSONCOMMAND_USERQUERY:

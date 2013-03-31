@@ -3,7 +3,7 @@
 #include <math.h>
 #include "chatbox.h"
 
-chatEntry::chatEntry(ircUser &user, QString message, QWidget *parent) :
+chatEntry::chatEntry(ircUser *user, QString message, QWidget *parent) :
     QFrame(parent),
     ui(new Ui::chatEntry),
     name(user),
@@ -13,9 +13,9 @@ chatEntry::chatEntry(ircUser &user, QString message, QWidget *parent) :
     ui->setupUi(this);
     this->setMinimumWidth(parent->width());
     this->ui->lblTime->setText(this->timeOfMessage.toString());
-    this->ui->lblNick->setText(this->name.getNick() + ":");
+    this->ui->lblNick->setText(this->name->getNick() + ":");
     QPalette palette = ui->lblNick->palette();
-    palette.setColor(ui->lblNick->foregroundRole(), this->name.getColor());
+    palette.setColor(ui->lblNick->foregroundRole(), this->name->getColor());
     ui->lblNick->setPalette(palette);
 
     this->message.replace(QRegExp("((?:https?|ftp)://\\S+)"), "<a href=\"\\1\">\\1</a>");

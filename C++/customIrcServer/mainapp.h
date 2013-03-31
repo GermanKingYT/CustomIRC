@@ -8,13 +8,14 @@
 #include "ircuser.h"
 #include "uiserver.h"
 #include "uiclient.h"
+#include "clssettings.h"
 
 
 class mainApp : public QObject
 {
     Q_OBJECT
 public:
-    explicit mainApp(QObject *parent = 0);
+    explicit mainApp(QString parentPath, QObject *parent = 0);
     void run();
 
 
@@ -43,6 +44,8 @@ private:
     ircUserList *users;
     clsLog log;
     uiServer *ui;
+
+    clsSettings *settings;
 
 };
 

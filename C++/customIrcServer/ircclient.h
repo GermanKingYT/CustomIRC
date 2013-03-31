@@ -10,21 +10,21 @@
 #include "ircCodes.h"
 #include "functions.h"
 #include "../resources/clslog.h"
-
-
+#include "ircuser.h"
 
 #define CHANNEL "bottest"
 #define NICK    "KoeBot"
+
 class ircClient : public QObject{
     Q_OBJECT
 
 public:
-    ircClient(const char *hostname, const int port, const char *channel,
-              const char *nick);
-    ircClient(const char *hostname, const char *channel);
-    ircClient(const char *hostname, const char *channel, const char *nick);
-    ircClient(const char *hostname, const int port);
-    ircClient(const char *hostname);
+    ircClient(const QString &hostname, const int port, const QString &channel,
+              const QString &nick);
+    ircClient(const QString &hostname, const QString &channel);
+    ircClient(const QString &hostname, const QString &channel, const QString &nick);
+    ircClient(const QString &hostname, const int port);
+    ircClient(const QString &hostname);
     ~ircClient();
 
     void connect();
@@ -33,7 +33,10 @@ public:
     void sendChat(const char *msg);
     void sendChat(const QString &msg);
 
+
+    void setUser(ircUser &user);
     nickAndStatus getOwnNick() const;
+
 
 signals:
     void startupComplete();
@@ -75,6 +78,7 @@ private:
     clsLog log;
 
     nickAndStatus ownNickAndStatus;
+    ircUser ownUser;
 
 
     const static int PORT = 6667;

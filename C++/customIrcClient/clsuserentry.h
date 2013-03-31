@@ -16,7 +16,10 @@ class clsUserEntry : public QWidget
 public:
     explicit clsUserEntry(ircUser *user, QWidget *parent = 0);
     ~clsUserEntry();
-    
+
+private slots:
+    void iconChanged();
+
 private:
     Ui::clsUserEntry *ui;
     ircUser *user;

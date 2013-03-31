@@ -39,6 +39,7 @@ public:
     void setNick(const QString &newNick);
     void setColor(const int r, const int g, const int b);
     void setColor(const userColor &newColor);
+    void setEmail(const QString &email);
 
     QString getId() const;
     friend clsLog& operator<<(clsLog& log, const ircUser* user);
@@ -49,6 +50,7 @@ private:
     QString name;
     QString id;
     QString status;
+    QString email;
     bool online;
     bool standard;
 
@@ -64,7 +66,6 @@ public:
 
     void add(ircUser *userToAdd);
     void del(ircUser *userToDel);
-
 
     ircUser *getUserByNick(nickAndStatus nick);
     ircUser *getUser(const nickAndStatus nick, const QString id);

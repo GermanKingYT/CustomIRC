@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ircClient::ircClient(const char *hostname, const int port)
+ircClient::ircClient(const QString &hostname, const int port)
     :hostname(QString(hostname))
     ,port(port)
     ,channel(CHANNEL)
@@ -14,7 +14,7 @@ ircClient::ircClient(const char *hostname, const int port)
     this->init();
 }
 
-ircClient::ircClient(const char *hostname, const char *channel)
+ircClient::ircClient(const QString &hostname, const QString &channel)
     :hostname(QString(hostname))
     ,port(this->PORT)
     ,channel(QString(channel))
@@ -24,7 +24,8 @@ ircClient::ircClient(const char *hostname, const char *channel)
     this->init();
 }
 
-ircClient::ircClient(const char *hostname, const char *channel, const char *nick)
+ircClient::ircClient(const QString &hostname, const QString &channel,
+                     const QString &nick)
     :hostname(QString(hostname))
     ,port(this->PORT)
     ,channel(QString(channel))
@@ -34,8 +35,8 @@ ircClient::ircClient(const char *hostname, const char *channel, const char *nick
     this->init();
 }
 
-ircClient::ircClient(const char *hostname, const int port, const char *channel
-                     ,const char *nick)
+ircClient::ircClient(const QString &hostname, const int port, const QString &channel
+                     ,const QString &nick)
     :hostname(QString(hostname))
     ,port(port)
     ,channel(QString(channel))
@@ -45,7 +46,7 @@ ircClient::ircClient(const char *hostname, const int port, const char *channel
     this->init();
 }
 
-ircClient::ircClient(const char *hostname)
+ircClient::ircClient(const QString &hostname)
     :hostname(QString(hostname))
     ,port(this->PORT)
     ,channel(QString(CHANNEL))
@@ -187,6 +188,10 @@ void ircClient::sendChat(const QString &msg){
     QString cmd = "PRIVMSG #" + this->channel + " :" + QString(msg);
     this->send(qts(cmd).c_str());
     emit this->chatReceived(QString(channel),this->ownNickAndStatus,QString(msg));
+}
+
+void ircClient::setUser(ircUser &user){
+    this->ownUser = user;
 }
 
 nickAndStatus ircClient::getOwnNick() const{

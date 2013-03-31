@@ -16,7 +16,7 @@ chatBox::~chatBox()
     delete ui;
 }
 
-void chatBox::addChat(ircUser &user, QString message){
+void chatBox::addChat(ircUser *user, QString message){
     content *myContent = new content;
     myContent->widget = new chatEntry(user,message,this);
     myContent->type = WIDGETTYPES_CHATENTRY;

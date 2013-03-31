@@ -4,10 +4,10 @@
 #include <QtCore>
 #include "mainapp.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]){
     QCoreApplication a(argc, argv);
-    mainApp mApp(&a);
+
+    mainApp mApp(a.applicationDirPath(),&a);
 
 
     mApp.run();

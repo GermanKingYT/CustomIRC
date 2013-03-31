@@ -153,6 +153,7 @@ QVariantMap ircUser::toVariantMap() const{
     ret["status"] = this->status;
     ret["standard"] = this->standard;
     ret["isOnline"] = this->online;
+    ret["email"] = this->email;
 
     return ret;
 
@@ -186,6 +187,10 @@ void ircUser::setColor(const int r, const int g, const int b){
 
 void ircUser::setColor(const ircUser::userColor &newColor){
     this->uColor = newColor;
+}
+
+void ircUser::setEmail(const QString &email){
+    this->email = email;
 }
 
 

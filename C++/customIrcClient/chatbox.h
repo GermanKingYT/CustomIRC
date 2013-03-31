@@ -30,7 +30,7 @@ public:
     ~chatBox();
     
 
-    void addChat(ircUser &user, QString message);
+    void addChat(ircUser *user, QString message);
     void addMessage(QString &message);
     void addMessage(const char* msg);
     void setAllUserNameSize(int newSize);
