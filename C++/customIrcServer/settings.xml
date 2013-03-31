@@ -1,28 +1,16 @@
 <settings>
     <server>
-        <server>digi-online.net</server>
-        <channel>mattiechat</channel>
+        <server></server>
+        <channel></channel>
     </server>
     <userInfo>
-        <username>KoeBot</username>
-        <email>koen@k-4u.nl</email>
+        <username>MyBot</username>
+        <email></email>
     </userInfo>
     <users>
         <user>
-            <username>Koenk</username>
-            <email>koenkoning@gmail.com</email>
-        </user>
-        <user>
-            <username>Joep</username>
-            <email>digiknoops@gmail.com</email>
-        </user>
-        <user>
-            <username>Jesper</username>
-            <email>jeppi_rae@hotmail.com</email>
-        </user>
-        <user>
-            <username>BlueWolf</username>
-            <email>josr91@gmail.com</email>
+            <username></username>
+            <email></email> <!-- for gravatar -->
         </user>
     </users>
 </settings>
