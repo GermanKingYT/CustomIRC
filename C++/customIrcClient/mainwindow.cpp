@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     log(LOGTAGS_UI),
-    server(new clsServerConn("localhost",1337))
+    server(new clsServerConn("home.k-4u.nl",1337))
 {
     ui->setupUi(this);
 
