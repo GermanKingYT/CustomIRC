@@ -10,7 +10,6 @@ dist
 build
 eggs
 parts
-bin
 var
 sdist
 develop-eggs
@@ -37,7 +36,4 @@ nosetests.xml
 #QT Creator
 *.pro.user
 *.pro.user.*
-moc_*.cpp
-qrc_*.cpp
-Makefile
 *-build-*
