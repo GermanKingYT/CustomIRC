@@ -7,6 +7,7 @@
 #include <QScrollArea>
 #include <QScrollBar>
 #include "../resources/clslog.h"
+#include "../resources/clsevent.h"
 #include "chatbox.h"
 #include "clsserverconn.h"
 
@@ -26,7 +27,8 @@ public:
     
 
 private slots:
-    void chatReceived(int userId, QString message);
+    void chatReceived(eventChat *chatEvent);
+    //void chatReceived(int userId, QString message, QTime timeOfMessage);
     void sendChat(QString message);
     void commandGiven(QString command, QList<QString> args);
     void moveScrollBarToBottom(int min, int max);

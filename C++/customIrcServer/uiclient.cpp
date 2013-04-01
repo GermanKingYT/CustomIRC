@@ -52,6 +52,9 @@ void uiClient::receiveMessage(){
             case JSONCOMMAND_CHANGEOWNUSER:
                 emit this->changeOwnUser(comm);
                 break;
+            case JSONCOMMAND_GETEVENTS:
+                emit this->getEvents(this);
+                break;
             default:
                 break;
         }

@@ -17,11 +17,14 @@ class chatEntry : public QFrame
 public:
     explicit chatEntry(ircUser *user, QString message, int width,
                        QWidget *parent = 0);
+    explicit chatEntry(ircUser *user, QString message, int width,
+                       QTime timeOfMessage, QWidget *parent = 0);
     ~chatEntry();
     
     void setUserWidth(int newWidth);
 
     void resizeEvent(QResizeEvent *event);
+
 
 private:
     Ui::chatEntry *ui;
@@ -29,6 +32,7 @@ private:
     QString message;
     int getWidth(QLabel *l) const;
     int getHeight(QLabel *l) const;
+    void init(QWidget *parent, int width);
     void calculateMessageWidth();
 
     QTime timeOfMessage;

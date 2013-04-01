@@ -39,6 +39,7 @@ void mainApp::run(){
 
     connect(this->ui,SIGNAL(sgnChatReceived(QString)),this,SLOT(uiSendChat(QString)));
     connect(this->ui,SIGNAL(sgnUserQuery(uiClient*)), this,SLOT(doUserQuery(uiClient*)));
+    connect(this->ui, SIGNAL(sgnSendEvents(uiClient*)), this, SLOT(doSendEvents(uiClient*)));
     connect(this->ui,SIGNAL(sgnChangeOwnUserStatus(QString)),
             this, SLOT(ownUserChangeStatus(QString)));
 
@@ -59,15 +60,16 @@ void mainApp::chatReceived(const QString channel, const nickAndStatus user,
                            const QString message){
     this->log << "Chat received:\t<" << user.nick << ">\t" << message << endl;
 
-    jsonCommand chatMessage(JSONCOMMAND_CHAT);
+    //Create event:
+    eventChat *chatEvent = new eventChat(
+                this->users->getUserByNick(user)->getId(), message);
 
-    chatMessage.addToData("user",
-                          QVariant(
-                              this->users->getUserByNick(user)->getId()));
-    chatMessage.addToData("chat", message);
-    chatMessage.addToData("channel", channel);
+    this->events.append(chatEvent);
+    jsonCommand chatMessage(JSONCOMMAND_CHAT);
+    chatMessage.addToData("event",chatEvent->toVariant());
 
     this->ui->send(chatMessage);
+
 }
 
 
@@ -169,6 +171,17 @@ void mainApp::doUserQuery(uiClient *client){
 
     this->ui->send(client,uQuery);
 
+}
+
+void mainApp::doSendEvents(uiClient *client){
+    jsonCommand toSend(JSONCOMMAND_GETEVENTS);
+    QList<QVariant> events;
+    foreach(clsEvent *ev, this->events){
+        events.append(ev->toVariant());
+    }
+    toSend.addToData("events",QVariant(events));
+
+    this->ui->send(toSend);
 }
 
 void mainApp::ownUserChangeStatus(QString newStatus){

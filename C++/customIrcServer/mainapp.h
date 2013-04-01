@@ -9,7 +9,13 @@
 #include "uiserver.h"
 #include "uiclient.h"
 #include "clssettings.h"
+#include "../resources/clsevent.h"
 
+struct chatMessage {
+    int userId;
+    QString message;
+    QTime timeOfMessage;
+};
 
 class mainApp : public QObject
 {
@@ -38,6 +44,7 @@ public slots:
     void uiSendChat(const QString message);
 
     void doUserQuery(uiClient *client);
+    void doSendEvents(uiClient *client);
     void ownUserChangeStatus(QString newStatus);
 
 private:
@@ -48,6 +55,7 @@ private:
     uiServer *ui;
 
     ircUser *ownUser;
+    QVector<clsEvent *> events;
 
     clsSettings *settings;
 

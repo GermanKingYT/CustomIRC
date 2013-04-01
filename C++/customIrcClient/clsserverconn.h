@@ -4,11 +4,13 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QTextStream>
+#include <QTime>
 #include "../resources/clslog.h"
 #include <QBuffer>
 #include "ircuser.h"
 #include "../resources/jsoncommand.h"
 #include "../resources/json.h"
+#include "../resources/clsevent.h"
 
 
 class clsServerConn : public QObject
@@ -24,8 +26,11 @@ public:
     void handleCompletedQuery(jsonCommand *comm);
     void handleUserInfo(jsonCommand *command);
     void handleOwnUserChange(jsonCommand *comm);
+    void handleEventRequest(jsonCommand *comm);
+
 signals:
-    void chatReceived(int userId, QString message);
+    //void chatReceived(int userId, QString message, QTime timeOfMessage);
+    void chatReceived(eventChat* event);
     void connected();
     void disconnected();
     void userQueryCompleted(QVector<ircUser*> users);

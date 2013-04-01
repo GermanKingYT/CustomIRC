@@ -41,6 +41,7 @@ void uiServer::acceptConnection(){
     connect(connection, SIGNAL(userQuery(uiClient*)), this, SLOT(doUserQuery(uiClient*)));
     connect(connection, SIGNAL(changeOwnUser(jsonCommand&)),
             this, SLOT(changeOwnUser(jsonCommand&)));
+    connect(connection, SIGNAL(getEvents(uiClient*)), this, SLOT(doSendEvents(uiClient*)));
     connections.append(connection);
 }
 
@@ -54,6 +55,10 @@ void uiServer::chatReceived(QString message){
 
 void uiServer::doUserQuery(uiClient *client){
     emit this->sgnUserQuery(client);
+}
+
+void uiServer::doSendEvents(uiClient *client){
+    emit this->sgnSendEvents(client);
 }
 
 void uiServer::changeOwnUser(jsonCommand &comm){

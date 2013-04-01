@@ -25,6 +25,15 @@ void chatBox::addChat(ircUser *user, QString message){
     this->ui->verticalLayout->addWidget(myContent->widget);
 }
 
+void chatBox::addChat(ircUser *user, QString message, QTime timeOfMessage){
+    content *myContent = new content;
+    myContent->widget = new chatEntry(user,message,this->widthOfNick, timeOfMessage, this);
+    myContent->type = WIDGETTYPES_CHATENTRY;
+
+    this->entries.append(myContent);
+    this->ui->verticalLayout->addWidget(myContent->widget);
+}
+
 void chatBox::addMessage(QString &message){
     content *myContent = new content;
     myContent->widget = new chatNotification(message,this);

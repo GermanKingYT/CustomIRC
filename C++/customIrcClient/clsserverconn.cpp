@@ -78,6 +78,15 @@ void clsServerConn::handleOwnUserChange(jsonCommand *comm){
     }
 }
 
+void clsServerConn::handleEventRequest(jsonCommand *comm){
+    //Let them flow, all the chats!
+    QList<QVariant> events = comm->getData("events").toList();
+    foreach(QVariant chat, events){
+        QVariantMap cChat = chat.toMap();
+        emit this->chatReceived(new eventChat(cChat));
+    }
+}
+
 void clsServerConn::readData(){
     qint64 bytes = this->buffer->write(this->sock->readAll());
     this->buffer->seek(this->buffer->pos() - bytes);
@@ -92,8 +101,7 @@ void clsServerConn::readData(){
         jsonCommand comm(line);
         switch (comm.getCommand()) {
         case JSONCOMMAND_CHAT:
-            emit this->chatReceived(comm.getData("user").toInt(),
-                                    comm.getData("chat").toString());
+            emit this->chatReceived(new eventChat(comm.getData("event").toMap()));
             break;
         case JSONCOMMAND_USERQUERY:
             this->handleCompletedQuery(&comm);
@@ -104,6 +112,8 @@ void clsServerConn::readData(){
         case JSONCOMMAND_CHANGEOWNUSER:
             this->handleOwnUserChange(&comm);
             break;
+        case JSONCOMMAND_GETEVENTS:
+            this->handleEventRequest(&comm);
         default:
             break;
         }

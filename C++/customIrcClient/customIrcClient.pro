@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     chatnotification.cpp \
     clsuserlist.cpp \
     clsuserentry.cpp \
-    clsnotify.cpp
+    clsnotify.cpp \
+    ../resources/clsevent.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
@@ -45,7 +46,8 @@ HEADERS  += mainwindow.h \
     chatnotification.h \
     clsuserlist.h \
     clsuserentry.h \
-    clsnotify.h
+    clsnotify.h \
+    ../resources/clsevent.h
 
 FORMS    += mainwindow.ui \
     chatentry.ui \

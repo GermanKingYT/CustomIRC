@@ -21,6 +21,7 @@ signals:
     void disconnected(uiClient *client);
     void chatReceived(QString message);
     void userQuery(uiClient *client);
+    void getEvents(uiClient *client);
     void changeOwnUser(jsonCommand &comm);
 
 public slots:

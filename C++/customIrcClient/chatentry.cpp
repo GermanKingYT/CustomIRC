@@ -10,9 +10,12 @@ chatEntry::chatEntry(ircUser *user, QString message, int width, QWidget *parent)
     message(message),
     timeOfMessage(QTime::currentTime())
 {
+    this->init(parent, width);
+}
+
+void chatEntry::init(QWidget *parent, int width){
     ui->setupUi(this);
     this->setMinimumWidth(parent->width());
-    this->setMaximumWidth(parent->width());
     this->ui->lblTime->setText(this->timeOfMessage.toString());
     this->ui->lblNick->setText(this->name->getNick() + ":");
     QPalette palette = ui->lblNick->palette();
@@ -32,12 +35,22 @@ chatEntry::chatEntry(ircUser *user, QString message, int width, QWidget *parent)
     this->calculateMessageWidth();
 }
 
+chatEntry::chatEntry(ircUser *user, QString message, int width, QTime timeOfMessage, QWidget *parent)
+    :QFrame(parent)
+    ,ui(new Ui::chatEntry)
+    ,name(user)
+    ,message(message)
+    ,timeOfMessage(timeOfMessage)
+{
+    this->init(parent,width);
+}
+
 void chatEntry::calculateMessageWidth(){
     this->ui->lblChat->setGeometry(this->ui->lblNick->width() +
                                    this->ui->lblTime->width() + 8,0,
                                    this->width() -
-                                   (this->ui->lblNick->width() + 0 +
-                                   this->ui->lblTime->width() + 0),
+                                   (this->ui->lblNick->width() + 16 +
+                                   this->ui->lblTime->width() + 16),
                                    16);
 
     int lines = ceil((double)this->getWidth(this->ui->lblChat) /

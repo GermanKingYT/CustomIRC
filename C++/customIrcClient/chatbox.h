@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QTime>
+#include "../resources/clsevent.h"
 #include "ircuser.h"
 
 #include "chatentry.h"
@@ -31,6 +33,7 @@ public:
     
 
     void addChat(ircUser *user, QString message);
+    void addChat(ircUser *user, QString message, QTime timeOfMessage);
     void addMessage(QString &message);
     void addMessage(const QString &message);
     void addMessage(const char* msg);

@@ -14,8 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
             this,SLOT(moveScrollBarToBottom(int,int)));
 
 
-    connect(this->server,SIGNAL(chatReceived(int,QString))
-            ,this,SLOT(chatReceived(int,QString)));
+    /*connect(this->server,SIGNAL(chatReceived(int,QString, QTime))
+            ,this,SLOT(chatReceived(int,QString, QTime)));*/
+    connect(this->server, SIGNAL(chatReceived(eventChat*)),
+            this, SLOT(chatReceived(eventChat*)));
     connect(this->ui->mChatInput,SIGNAL(sendChat(QString))
             ,this,SLOT(sendChat(QString)));
     connect(this->ui->mChatInput, SIGNAL(commandGiven(QString,QList<QString>)),
@@ -46,9 +48,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::chatReceived(int userId, QString message){
-    this->ui->chatbox->addChat(this->users[userId],message);
+void MainWindow::chatReceived(eventChat *chatEvent){
+    this->ui->chatbox->addChat(this->users[chatEvent->getUser()],
+            chatEvent->getMessage(), chatEvent->getTime());
 }
+
+/*void MainWindow::chatReceived(int userId, QString message, QTime timeOfMessage){
+    this->ui->chatbox->addChat(this->users[userId],message,timeOfMessage);
+}*/
 
 void MainWindow::sendChat(QString message){
     jsonCommand toSend(JSONCOMMAND_OWNCHAT);
@@ -94,6 +101,9 @@ void MainWindow::userQueryCompleted(QVector<ircUser *> users){
         this->ui->userList->addUser(user);
         this->users.insert(user->getId(),user);
     }
+    //Ask for events that happened in the last time..
+    jsonCommand messageQuery(JSONCOMMAND_GETEVENTS);
+    this->server->sendCommand(messageQuery);
 }
 
 void MainWindow::userStatusChange(int id, QString newStatus){
