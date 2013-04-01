@@ -33,10 +33,11 @@ private slots:
 
     void doUserQuery(uiClient *client);
 
-
+    void changeOwnUser(jsonCommand &comm);
 signals:
     void sgnChatReceived(QString message);
     void sgnUserQuery(uiClient *client);
+    void sgnChangeOwnUserStatus(QString newStatus);
 
 private:
     QList<uiClient*> connections;

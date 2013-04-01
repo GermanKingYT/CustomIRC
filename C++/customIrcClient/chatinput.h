@@ -2,6 +2,8 @@
 #define CHATINPUT_H
 
 #include <QPlainTextEdit>
+#include <QList>
+#include <QString>
 
 class chatInput : public QPlainTextEdit
 {
@@ -10,13 +12,15 @@ public:
     explicit chatInput(QWidget *parent = 0);
     
 
-signals:
+Q_SIGNALS:
     void sendChat(QString message);
+    void commandGiven(QString command, QList<QString> args);
 public slots:
     
 
 private:
     void keyPressEvent(QKeyEvent *e);
+    void checkForCommand(QString text);
 };
 
 #endif // CHATINPUT_H

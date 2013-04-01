@@ -18,11 +18,9 @@ public:
     ~chatNotification();
     
     void resizeEvent(QResizeEvent *event);
-
-
-
 private:
     void calculateMessageWidth();
+    int getHeight(QLabel *l) const;
     int getWidth(QLabel *l) const;
 
     Ui::chatNotification *ui;

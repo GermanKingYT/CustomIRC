@@ -6,7 +6,13 @@
 
 QT       += core gui network webkit
 
+
+# To support for pkg-config
+CONFIG += link_pkgconfig
+PKGCONFIG += libnotify
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 
 TARGET = customIrcClient
 TEMPLATE = app
@@ -24,7 +30,8 @@ SOURCES += main.cpp\
     ../resources/clslog.cpp \
     chatnotification.cpp \
     clsuserlist.cpp \
-    clsuserentry.cpp
+    clsuserentry.cpp \
+    clsnotify.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
@@ -37,7 +44,8 @@ HEADERS  += mainwindow.h \
     ../resources/clslog.h \
     chatnotification.h \
     clsuserlist.h \
-    clsuserentry.h
+    clsuserentry.h \
+    clsnotify.h
 
 FORMS    += mainwindow.ui \
     chatentry.ui \

@@ -19,7 +19,7 @@ void uiServer::startListen(){
 
 void uiServer::send(const jsonCommand &toSend){
     //this->log << "Sending json object: " << docToSend->toJson() << endl;
-    this->log << "Sending JSON: " << toSend << endl;
+    this->log << "Sending JSON: " << toSend.toJsonString() << endl;
 
     foreach(uiClient *cl, this->connections){
         cl->send(toSend.toJsonString() + "\r\n");
@@ -28,7 +28,7 @@ void uiServer::send(const jsonCommand &toSend){
 
 void uiServer::send(uiClient *client, const jsonCommand &toSend){
     //this->log << "Sending json object: " << docToSend->toJson() << endl;
-    this->log << "Sending JSON: " << toSend << endl;
+    this->log << "Sending JSON: " << toSend.toJsonString() << endl;
 
     client->send(toSend.toJsonString() + "\r\n");
 }
@@ -39,6 +39,8 @@ void uiServer::acceptConnection(){
             this, SLOT(lostConnection(uiClient*)));
     connect(connection, SIGNAL(chatReceived(QString)),this,SLOT(chatReceived(QString)));
     connect(connection, SIGNAL(userQuery(uiClient*)), this, SLOT(doUserQuery(uiClient*)));
+    connect(connection, SIGNAL(changeOwnUser(jsonCommand&)),
+            this, SLOT(changeOwnUser(jsonCommand&)));
     connections.append(connection);
 }
 
@@ -52,4 +54,12 @@ void uiServer::chatReceived(QString message){
 
 void uiServer::doUserQuery(uiClient *client){
     emit this->sgnUserQuery(client);
+}
+
+void uiServer::changeOwnUser(jsonCommand &comm){
+    if(comm.getData("change") == "STATUS"){
+        emit this->sgnChangeOwnUserStatus(comm.getData("new").toString());
+    }
+    //Immediately forward this to other clients:
+    this->send(comm);
 }

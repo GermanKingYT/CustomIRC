@@ -3,7 +3,7 @@
 #include <math.h>
 #include "chatbox.h"
 
-chatEntry::chatEntry(ircUser *user, QString message, QWidget *parent) :
+chatEntry::chatEntry(ircUser *user, QString message, int width, QWidget *parent) :
     QFrame(parent),
     ui(new Ui::chatEntry),
     name(user),
@@ -12,6 +12,7 @@ chatEntry::chatEntry(ircUser *user, QString message, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setMinimumWidth(parent->width());
+    this->setMaximumWidth(parent->width());
     this->ui->lblTime->setText(this->timeOfMessage.toString());
     this->ui->lblNick->setText(this->name->getNick() + ":");
     QPalette palette = ui->lblNick->palette();
@@ -22,6 +23,7 @@ chatEntry::chatEntry(ircUser *user, QString message, QWidget *parent) :
 
     this->ui->lblChat->setText(this->message);
 
+    this->ui->lblNick->setMinimumWidth(width);
     if(this->getWidth(this->ui->lblNick) > this->ui->lblNick->width()){
         chatBox *pr = qobject_cast<chatBox*>(parent);
         this->setUserWidth(this->getWidth(this->ui->lblNick)+8);
@@ -31,22 +33,26 @@ chatEntry::chatEntry(ircUser *user, QString message, QWidget *parent) :
 }
 
 void chatEntry::calculateMessageWidth(){
-    this->ui->lblChat->setGeometry(this->ui->lblNick->width() + 8 +
+    this->ui->lblChat->setGeometry(this->ui->lblNick->width() +
                                    this->ui->lblTime->width() + 8,0,
                                    this->width() -
-                                   this->ui->lblNick->width() - 8 -
-                                   this->ui->lblTime->width() - 8,
+                                   (this->ui->lblNick->width() + 0 +
+                                   this->ui->lblTime->width() + 0),
                                    16);
 
     int lines = ceil((double)this->getWidth(this->ui->lblChat) /
                      (double)this->ui->lblChat->width());
 
-    this->setMinimumHeight(lines * 20);
-    this->ui->lblChat->setMinimumHeight(this->minimumHeight() + 4);
+    this->setMinimumHeight(lines * this->getHeight(this->ui->lblChat));
+    this->ui->lblChat->setMinimumHeight(this->minimumHeight() + 2);
 }
 
 int chatEntry::getWidth(QLabel *l) const{
     return l->fontMetrics().width(l->text());
+}
+
+int chatEntry::getHeight(QLabel *l) const{
+    return l->fontMetrics().height();
 }
 
 chatEntry::~chatEntry(){

@@ -23,12 +23,14 @@ public:
     
 
     void addUser(ircUser *user);
+    void refreshUser(ircUser *user);
+    void removeUser(ircUser *user);
 private:
     void setupUi();
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer;
 
-    QVector<clsUserEntry*> users;
+    QMap<ircUser*,clsUserEntry*> users;
 
 
 };

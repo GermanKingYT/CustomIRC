@@ -22,11 +22,17 @@ public:
     void sendCommand(jsonCommand &toSend);
 
     void handleCompletedQuery(jsonCommand *comm);
+    void handleUserInfo(jsonCommand *command);
+    void handleOwnUserChange(jsonCommand *comm);
 signals:
-    void chatReceived(ircUser *user, QString message);
+    void chatReceived(int userId, QString message);
     void connected();
     void disconnected();
     void userQueryCompleted(QVector<ircUser*> users);
+    void userStatusChange(int userId, QString newStatus);
+    void userChangeNick(int userId, QString newNick);
+    void userLeave(int userId);
+    void userEnter(ircUser *newUser);
 
 public slots:
     void srvDisconnected();

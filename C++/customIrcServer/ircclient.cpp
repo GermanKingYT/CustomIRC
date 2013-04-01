@@ -113,7 +113,7 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
             if(inCommand(&command[2],qts(this->channel).c_str())){
                 userNick = command[6];
                 if(userNick != this->ownNickAndStatus.nick){
-                    userId = userNick + "!" + command[2] + "@" + command[3];
+                    userId = userNick + "!" + command[3] + "@" + command[4];
                     emit this->userOnline(getNickAndStatus(userNick),userId,
                                           this->channel);
                 }
@@ -196,6 +196,11 @@ void ircClient::setUser(ircUser &user){
 
 nickAndStatus ircClient::getOwnNick() const{
     return this->ownNickAndStatus;
+}
+
+void ircClient::setOwnNick(const QString &newNick){
+    QString cmd = "NICK " + newNick;
+    this->send(cmd);
 }
 
 

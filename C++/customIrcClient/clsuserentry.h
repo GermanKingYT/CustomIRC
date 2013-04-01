@@ -17,11 +17,13 @@ public:
     explicit clsUserEntry(ircUser *user, QWidget *parent = 0);
     ~clsUserEntry();
 
+    void refresh();
 private slots:
     void iconChanged();
 
 private:
     Ui::clsUserEntry *ui;
+
     ircUser *user;
 };
 

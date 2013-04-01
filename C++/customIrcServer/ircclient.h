@@ -37,7 +37,7 @@ public:
     void setUser(ircUser &user);
     nickAndStatus getOwnNick() const;
 
-
+    void setOwnNick(const QString &newNick);
 signals:
     void startupComplete();
     void chatReceived(const QString channel, const nickAndStatus user,

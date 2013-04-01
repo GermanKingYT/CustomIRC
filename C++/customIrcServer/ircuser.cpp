@@ -1,10 +1,12 @@
 #include "ircuser.h"
 
-ircUser::ircUser(const nickAndStatus name, const QString id)
+ircUser::ircUser(const nickAndStatus name, const QString ircId)
     :name(name.nick)
-    ,id(id)
+    ,ircId(ircId)
+    ,id(0)
     ,status(name.status)
     ,online(true)
+    ,standard(false)
     ,log(LOGTAGS_USER)
 {
     if(this->name.left(1) == ":"){
@@ -20,10 +22,10 @@ ircUser::ircUser(const nickAndStatus name, const QString id)
     this->uColor.b = 0;
 }
 
-
 ircUser::ircUser(const nickAndStatus name, const bool standard)
     :name(name.nick)
-    ,id("NaN")
+    ,ircId("NaN")
+    ,id(0)
     ,status("Offline")
     ,online(false)
     ,standard(standard)
@@ -48,9 +50,11 @@ ircUser::ircUser(const nickAndStatus name, const bool standard)
 
 ircUser::ircUser(const nickAndStatus name)
     :name(name.nick)
-    ,id("NaN")
+    ,ircId("NaN")
+    ,id(0)
     ,status(name.status)
     ,online(true)
+    ,standard(false)
     ,log(LOGTAGS_USER)
 {
     if(this->name.left(1) == ":"){
@@ -68,7 +72,8 @@ ircUser::ircUser(const nickAndStatus name)
 
 ircUser::ircUser(const QString name, const bool standard)
     :name(name)
-    ,id("NaN")
+    ,ircId("NaN")
+    ,id(0)
     ,status("Offline")
     ,online(false)
     ,standard(standard)
@@ -94,7 +99,8 @@ ircUser::ircUser(const QString name, const bool standard)
 
 ircUser::ircUser(const QString name, const bool standard, const ircUser::userColor color)
   :name(name)
-  ,id("NaN")
+  ,ircId("NaN")
+  ,id(0)
   ,status("Offline")
   ,online(false)
   ,standard(standard)
@@ -118,9 +124,11 @@ ircUser::ircUser(const QString name, const bool standard, const ircUser::userCol
 
 ircUser::ircUser()
     :name("NaN")
-    ,id("NaN")
+    ,ircId("NaN")
+    ,id(0)
     ,status("Offline")
     ,online(false)
+    ,standard(false)
     ,log(LOGTAGS_USER)
 {
     this->uColor.r = 0;
@@ -149,7 +157,8 @@ QVariantMap ircUser::toVariantMap() const{
 
     ret["uColor"] = QVariant(color);
     ret["nick"] = this->name;
-    ret["id"] = this->id; //Will be replaced by a number
+    ret["ircId"] = this->ircId;
+    ret["id"] = this->id;
     ret["status"] = this->status;
     ret["standard"] = this->standard;
     ret["isOnline"] = this->online;
@@ -171,8 +180,8 @@ void ircUser::setStatus(const QString &newStatus){
     this->status = newStatus;
 }
 
-void ircUser::setId(const QString &newId){
-    this->id = newId;
+void ircUser::setIrcId(const QString &newId){
+    this->ircId = newId;
 }
 
 void ircUser::setNick(const QString &newNick){
@@ -194,8 +203,16 @@ void ircUser::setEmail(const QString &email){
 }
 
 
-QString ircUser::getId() const{
+QString ircUser::getIrcId() const{
+    return this->ircId;
+}
+
+int ircUser::getId() const {
     return this->id;
+}
+
+void ircUser::setId(const int &newId){
+    this->id = newId;
 }
 
 clsLog &operator <<(clsLog &log, const ircUser *user){
@@ -206,6 +223,7 @@ clsLog &operator <<(clsLog &log, const ircUser *user){
 
 
 ircUserList::ircUserList(){
+    this->lastId = 0;
 }
 
 ircUser::userColor getColor(int length){
@@ -261,7 +279,9 @@ ircUser::userColor getColor(int length){
 }
 
 void ircUserList::add(ircUser *userToAdd){
-    userToAdd->setColor(getColor(this->users.count()));
+    userToAdd->setColor(getColor(this->lastId % 8));
+    this->lastId++;
+    userToAdd->setId(this->lastId);
     this->users.append(userToAdd);
 }
 
@@ -273,8 +293,8 @@ void ircUserList::del(ircUser *userToDel){
     }
 }
 
-ircUser *ircUserList::getUser(const nickAndStatus nick, const QString id){
-    ircUser *searched = this->getUserById(id);
+ircUser *ircUserList::getUser(const nickAndStatus nick, const QString ircId){
+    ircUser *searched = this->getUserByIrcId(ircId);
     if(searched->getName() == "NaN"){
         searched = this->getUserByNick(nick);
         if(searched->getName() == "NaN"){
@@ -296,9 +316,9 @@ ircUser *ircUserList::getUserByNick(nickAndStatus nick) {
     return new ircUser();
 }
 
-ircUser *ircUserList::getUserById(QString id){
+ircUser *ircUserList::getUserByIrcId(QString ircId){
     for(int i=0; i < this->users.size(); i++){
-        if(this->users[i]->getId() == id){
+        if(this->users[i]->getIrcId() == ircId){
             return &*this->users[i];
         }
     }
@@ -308,3 +328,5 @@ ircUser *ircUserList::getUserById(QString id){
 QVector<ircUser *> ircUserList::getAll() const{
     return this->users;
 }
+
+

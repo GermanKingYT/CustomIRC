@@ -32,11 +32,13 @@ public:
 
     void addChat(ircUser *user, QString message);
     void addMessage(QString &message);
+    void addMessage(const QString &message);
     void addMessage(const char* msg);
     void setAllUserNameSize(int newSize);
 private:
     Ui::chatBox *ui;
     QVector<content*> entries;
+    int widthOfNick;
 
 
 };

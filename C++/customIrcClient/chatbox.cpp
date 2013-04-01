@@ -18,7 +18,7 @@ chatBox::~chatBox()
 
 void chatBox::addChat(ircUser *user, QString message){
     content *myContent = new content;
-    myContent->widget = new chatEntry(user,message,this);
+    myContent->widget = new chatEntry(user,message,this->widthOfNick,this);
     myContent->type = WIDGETTYPES_CHATENTRY;
 
     this->entries.append(myContent);
@@ -34,12 +34,18 @@ void chatBox::addMessage(QString &message){
     this->ui->verticalLayout->addWidget(myContent->widget);
 }
 
+void chatBox::addMessage(const QString &message){
+    QString newMsg(message);
+    this->addMessage(newMsg);
+}
+
 void chatBox::addMessage(const char *msg){
     QString newMsg(msg);
     this->addMessage(newMsg);
 }
 
 void chatBox::setAllUserNameSize(int newSize){
+    this->widthOfNick = newSize;
     foreach (content *ce, this->entries) {
         if(ce->type == WIDGETTYPES_CHATENTRY){
             chatEntry *myWidget = dynamic_cast<chatEntry*>(ce->widget);

@@ -17,6 +17,7 @@ ircUser::ircUser(QVariant jsonData)
             data["uColor"].toMap()["g"].toInt(),
             data["uColor"].toMap()["b"].toInt());
     this->email = data["email"].toString();
+    this->online = data["online"].toBool();
     //Fetch gravatar here plox
     //Fetch gravatar
     QNetworkAccessManager *m_netwManager = new QNetworkAccessManager();
@@ -40,6 +41,13 @@ ircUser::ircUser(qint32 id, QString nick, QString status, QColor uColor, bool st
     ,log(LOGTAGS_USER)
 {}
 
+void ircUser::copyFrom(ircUser *userToCopy){
+    this->nick = userToCopy->nick;
+    this->status = userToCopy->status;
+    this->uColor = userToCopy->uColor;
+    this->online = userToCopy->online;
+}
+
 const QString ircUser::getNick() const{
     return this->nick;
 }
@@ -61,12 +69,24 @@ const QPixmap ircUser::getIcon() const{
     return this->icon;
 }
 
+bool ircUser::getStandard() const{
+    return this->standard;
+}
+
+bool ircUser::getOnline() const{
+    return this->online;
+}
+
 void ircUser::setNick(const QString &newNick){
     this->nick = newNick;
 }
 
 void ircUser::setStatus(const QString &newStatus){
-    this->status = newStatus;
+    if(newStatus == ""){
+        this->status = "Online";
+    }else{
+        this->status = newStatus;
+    }
 }
 
 void ircUser::setColor(const QColor &newColor){
@@ -86,3 +106,10 @@ void ircUser::slot_netwManagerFinished(QNetworkReply *reply){
     emit this->iconChanged();
 }
 
+
+void ircUser::setOnline(const bool isOnline){
+    this->online = isOnline;
+    if(this->online == false){
+        this->status = "Offline";
+    }
+}

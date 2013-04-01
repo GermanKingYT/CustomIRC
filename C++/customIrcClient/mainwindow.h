@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QList>
 #include <QString>
 #include <QScrollArea>
 #include <QScrollBar>
@@ -9,6 +10,7 @@
 #include "chatbox.h"
 #include "clsserverconn.h"
 
+#include "clsnotify.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,14 +26,20 @@ public:
     
 
 private slots:
-    void chatReceived(ircUser *user, QString message);
+    void chatReceived(int userId, QString message);
     void sendChat(QString message);
+    void commandGiven(QString command, QList<QString> args);
     void moveScrollBarToBottom(int min, int max);
 
 
     void serverConnected();
     void serverDisconnected();
     void userQueryCompleted(QVector<ircUser*> users);
+    void userStatusChange(int id, QString newStatus);
+    void userChangeNick(int id, QString newNick);
+    void userLeave(int userId);
+    void userEnter(ircUser *newUser);
+
 private:
     Ui::MainWindow *ui;
 
@@ -39,6 +47,8 @@ private:
     chatBox *cb;
 
     clsServerConn *server;
+
+    QMap<int, ircUser *> users;
 };
 
 #endif // MAINWINDOW_H

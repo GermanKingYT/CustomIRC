@@ -10,6 +10,8 @@
 #include <QNetworkReply>
 #include "../resources/clslog.h"
 
+
+
 class ircUser : public QObject
 {
     Q_OBJECT
@@ -18,6 +20,7 @@ public:
     explicit ircUser(QVariant jsonData);
     explicit ircUser(qint32 id, QString nick, QString status, QColor uColor, bool standard);
 
+    void copyFrom(ircUser *userToCopy);
     ~ircUser();
 
     //Getters
@@ -27,12 +30,17 @@ public:
     const QColor getColor() const;
     const QString getEmail() const;
     const QPixmap getIcon() const;
+    bool getStandard() const;
+    bool getOnline() const;
 
     //Setters
     void setNick(const QString &newNick); //Probably never used
     void setStatus(const QString &newStatus);
     void setColor(const QColor &newColor); //Also probably never used
     void setEmail(const QString &email);
+    void setOnline(const bool isOnline);
+
+
 
 signals:
     void iconChanged() const;
@@ -48,6 +56,7 @@ private:
     bool standard;
     QString email;
     QPixmap icon;
+    bool online;
 
     clsLog log;
 };

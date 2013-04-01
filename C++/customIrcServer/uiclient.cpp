@@ -49,6 +49,9 @@ void uiClient::receiveMessage(){
             case JSONCOMMAND_USERQUERY:
                 emit this->userQuery(this);
                 break;
+            case JSONCOMMAND_CHANGEOWNUSER:
+                emit this->changeOwnUser(comm);
+                break;
             default:
                 break;
         }

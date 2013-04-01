@@ -54,6 +54,29 @@ void clsServerConn::handleCompletedQuery(jsonCommand *comm){
     emit this->userQueryCompleted(users);
 }
 
+void clsServerConn::handleUserInfo(jsonCommand *command){
+    if(command->getData("change") == "STATUS"){
+        emit this->userStatusChange(command->getData("user").toInt(),
+                                    command->getData("new").toString());
+    }else if(command->getData("change") == "LEAVE"){
+        emit this->userLeave(command->getData("user").toInt());
+    }else if(command->getData("change") == "ENTER"){
+        emit this->userEnter(new ircUser(command->getData("user")));
+    }else if(command->getData("change") == "NICK"){
+        emit this->userChangeNick(command->getData("user").toInt(),
+                                   command->getData("new").toString());
+    }
+}
+
+void clsServerConn::handleOwnUserChange(jsonCommand *comm){
+    //This function might have the same body as handleUserInfo.
+    //But for now this is the only thing changeable.
+    //Maybe later there will be more stuff added here
+    if(comm->getData("change") == "STATUS"){
+        //Own user is always ID 1..
+        emit this->userStatusChange(1, comm->getData("new").toString());
+    }
+}
 
 void clsServerConn::readData(){
     qint64 bytes = this->buffer->write(this->sock->readAll());
@@ -69,11 +92,17 @@ void clsServerConn::readData(){
         jsonCommand comm(line);
         switch (comm.getCommand()) {
         case JSONCOMMAND_CHAT:
-            emit this->chatReceived(new ircUser(comm.getData("user")),
+            emit this->chatReceived(comm.getData("user").toInt(),
                                     comm.getData("chat").toString());
             break;
         case JSONCOMMAND_USERQUERY:
             this->handleCompletedQuery(&comm);
+            break;
+        case JSONCOMMAND_USERINFO:
+            this->handleUserInfo(&comm);
+            break;
+        case JSONCOMMAND_CHANGEOWNUSER:
+            this->handleOwnUserChange(&comm);
             break;
         default:
             break;

@@ -53,6 +53,9 @@ QString jsonCommand::getCommandString() const{
         case JSONCOMMAND_OWNCHAT:
             ret = "OWNCHAT";
             break;
+        case JSONCOMMAND_CHANGEOWNUSER:
+            ret = "CHANGEOWNUSER";
+            break;
     }
     return ret;
 }
@@ -71,6 +74,8 @@ void jsonCommand::setCommandInt(QString command){
         set = JSONCOMMAND_USERQUERY;
     }else if(command == "OWNCHAT"){
         set = JSONCOMMAND_OWNCHAT;
+    }else if(command == "CHANGEOWNUSER"){
+        set = JSONCOMMAND_CHANGEOWNUSER;
     }
     this->command = set;
 }

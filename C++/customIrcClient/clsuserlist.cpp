@@ -13,12 +13,25 @@ clsUserList::~clsUserList()
 void clsUserList::addUser(ircUser *user){
     //TODO: Alphabetical order
     this->verticalLayout->removeItem(this->verticalSpacer);
-    clsUserEntry *nE = new clsUserEntry(user, this);
+
+    clsUserEntry *nE = new clsUserEntry(user);
+
     this->verticalLayout->addWidget(nE);
-    this->users.append(nE);
+    this->users.insert(user,nE);
 
     this->verticalLayout->addItem(this->verticalSpacer);
     this->setMinimumHeight(this->users.count() * nE->minimumHeight());
+}
+
+void clsUserList::refreshUser(ircUser *user){
+    this->users[user]->refresh();
+}
+
+void clsUserList::removeUser(ircUser *user){
+    clsUserEntry *ourUser = this->users[user];
+    delete this->users[user];
+    //this->verticalLayout->removeWidget(ourUser);
+    //this->users.remove(user);
 }
 
 void clsUserList::setupUi(){

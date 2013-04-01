@@ -24,7 +24,7 @@ signals:
 public slots:
     void chatReceived(const QString channel, const nickAndStatus user,
                       const QString message);
-    void userOnline(const nickAndStatus nick, const QString id,
+    void userOnline(const nickAndStatus nick, const QString ircId,
                     const QString channel);
     void userOffline(const nickAndStatus nick, const QString id,
                      const QString channel);
@@ -38,12 +38,16 @@ public slots:
     void uiSendChat(const QString message);
 
     void doUserQuery(uiClient *client);
+    void ownUserChangeStatus(QString newStatus);
+
 private:
     const static logTags TAG = LOGTAGS_MAIN;
     ircClient *irc;
     ircUserList *users;
     clsLog log;
     uiServer *ui;
+
+    ircUser *ownUser;
 
     clsSettings *settings;
 
