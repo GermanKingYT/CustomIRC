@@ -6,10 +6,11 @@
 
 QT       += core gui network webkit
 
-
-# To support for pkg-config
-CONFIG += link_pkgconfig
-PKGCONFIG += libnotify
+!win32 {
+	# To support for pkg-config
+	CONFIG += link_pkgconfig
+	PKGCONFIG += libnotify
+}
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
