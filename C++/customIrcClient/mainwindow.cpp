@@ -2,12 +2,16 @@
 #include "ui_mainwindow.h"
 
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QApplication *a, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     log(LOGTAGS_UI),
-    server(new clsServerConn("home.k-4u.nl",1337))
+    server()
 {
+    this->settings = new clsSettings(a->applicationDirPath());
+
+    this->server = new clsServerConn(settings->getServer(),settings->getPort());
+
     ui->setupUi(this);
 
     connect(this->ui->scrollArea->verticalScrollBar(),SIGNAL(rangeChanged(int,int)),

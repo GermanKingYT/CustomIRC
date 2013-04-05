@@ -1,8 +1,11 @@
 #include "clssettings.h"
 
-clsSettings::clsSettings(const QString &fileName){
+clsSettings::clsSettings(const QString &filePath)
+    :listeningPort(DEFAULT_LISTEN_PORT)
+{
+    QString fileName = filePath + "/settings.xml";
     QXmlStreamReader Rxml;
-    QFile file(fileName + "/settings.xml");
+    QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)){
         std::cerr << "Error: Cannot read file " << fileName.toStdString()
          << ": " << qPrintable(file.errorString())
@@ -50,6 +53,16 @@ ircUser *clsSettings::getOwnUser() const{
 
 QVector<ircUser *> clsSettings::getUsers() const{
     return this->users;
+}
+
+void clsSettings::readUiSettings(QXmlStreamReader &reader){
+    while(!reader.isEndElement()){
+        QString name = reader.name().toString();
+        if(name == "listenPort"){
+            this->listeningPort = reader.readElementText().toInt();
+        }
+        reader.readNext();
+    }
 }
 
 

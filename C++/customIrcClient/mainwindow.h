@@ -12,6 +12,7 @@
 #include "clsserverconn.h"
 
 #include "clsnotify.h"
+#include "clssettings.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,7 +23,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QApplication *a, QWidget *parent = 0);
     ~MainWindow();
     
 
@@ -51,6 +52,8 @@ private:
     clsServerConn *server;
 
     QMap<int, ircUser *> users;
+
+    clsSettings *settings;
 };
 
 #endif // MAINWINDOW_H

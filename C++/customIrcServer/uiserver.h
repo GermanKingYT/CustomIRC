@@ -47,7 +47,7 @@ private:
 
     clsLog log;
 
-    static const int port = 1337;
+    int port;
 };
 
 #endif // SIMPLECHATSERVER_H

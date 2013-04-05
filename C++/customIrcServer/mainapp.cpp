@@ -16,8 +16,6 @@ void mainApp::run(){
                               this->settings->getChannel(),
                               this->settings->getUserName());
     this->ui = new uiServer(this);
-    //this->irc = new ircClient("irc.k-4u.nl");
-    //this->irc = new ircClient("localhost");
 
     connect(this->irc,SIGNAL(chatReceived(QString,nickAndStatus,QString)), this,
             SLOT(chatReceived(QString,nickAndStatus,QString)));
@@ -58,6 +56,7 @@ void mainApp::run(){
 
 void mainApp::chatReceived(const QString channel, const nickAndStatus user,
                            const QString message){
+    Q_UNUSED(channel);
     this->log << "Chat received:\t<" << user.nick << ">\t" << message << endl;
 
     //Create event:
@@ -181,7 +180,7 @@ void mainApp::doSendEvents(uiClient *client){
     }
     toSend.addToData("events",QVariant(events));
 
-    this->ui->send(toSend);
+    this->ui->send(client, toSend);
 }
 
 void mainApp::ownUserChangeStatus(QString newStatus){
