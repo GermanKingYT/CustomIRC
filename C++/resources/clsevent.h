@@ -8,12 +8,15 @@
 
 enum eventTypes{
     EVENTTYPE_NONE = 0x00,
-    EVENTTYPE_CHAT
+    EVENTTYPE_CHAT,
+    EVENTTYPE_USER_LEFT,
+    EVENTTYPE_USER_STATUS,
+    EVENTTYPE_USER_JOIN
 };
 
-class clsEvent : public QObject
+
+class clsEvent
 {
-    Q_OBJECT
 public:
     explicit clsEvent();
     explicit clsEvent(QVariantMap data);
@@ -23,17 +26,13 @@ public:
 
     QVariant getData(QString key) const;
 
+    eventTypes getType() const;
 protected:
     QVariantMap data;
     eventTypes ourType;
     QDateTime timeOfEvent;
     QString getEventType() const;
     void setEventType(const QString eventString);
-
-signals:
-    
-public slots:
-    
 };
 
 class eventChat : public clsEvent
@@ -47,5 +46,15 @@ public:
     QTime getTime() const;
 };
 
+class eventUserJoin : public clsEvent
+{
+public:
+    eventUserJoin(const int userId, QVariantMap user);
+    eventUserJoin(QVariantMap data);
 
+    int getUserId() const;
+    QVariantMap getUser();
+    QTime getTime() const;
+
+};
 #endif // CLSEVENT_H

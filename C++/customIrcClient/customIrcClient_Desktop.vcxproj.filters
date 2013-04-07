@@ -119,12 +119,6 @@
     <ClCompile Include="Release\moc_chatnotification.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_clsevent.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_clsevent.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="Debug\moc_clsnotify.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>

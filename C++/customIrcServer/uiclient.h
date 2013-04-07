@@ -3,7 +3,6 @@
 
 #include <QTcpSocket>
 #include <QHostAddress>
-#include <QBuffer>
 #include <QJsonDocument>
 
 #include "../resources/clslog.h"
@@ -17,6 +16,8 @@ public:
     
     void send(QString data);
 
+private:
+    jsonCommand checkForJsonCommand(QByteArray &toAdd);
 signals:
     void disconnected(uiClient *client);
     void chatReceived(QString message);
@@ -31,7 +32,8 @@ public slots:
 private:
     QTcpSocket *sock;
     clsLog log;
-    QBuffer *buffer;
+    QString *buffer;
+    int depth;
 };
 
 #endif // UICLIENT_H

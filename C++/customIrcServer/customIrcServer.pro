@@ -14,7 +14,7 @@ CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
-QMAKE_CXXFLAGS = -Wno-switch
+#QMAKE_CXXFLAGS = -Wno-switch
 
 SOURCES += main.cpp \
     ircclient.cpp \

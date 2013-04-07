@@ -27,6 +27,10 @@ public:
     void handleUserInfo(jsonCommand *command);
     void handleOwnUserChange(jsonCommand *comm);
     void handleEventRequest(jsonCommand *comm);
+	void handleEventReceived(QVariantMap data);
+
+private:
+    jsonCommand checkForJsonCommand(QByteArray &toAdd);
 
 signals:
     //void chatReceived(int userId, QString message, QTime timeOfMessage);
@@ -37,7 +41,8 @@ signals:
     void userStatusChange(int userId, QString newStatus);
     void userChangeNick(int userId, QString newNick);
     void userLeave(int userId);
-    void userEnter(ircUser *newUser);
+    //void userEnter(ircUser *newUser);
+	void userEnter(eventUserJoin *newUser);
 
 public slots:
     void srvDisconnected();
@@ -51,7 +56,8 @@ private:
     int port;
 
     QTcpSocket *sock;
-    QBuffer *buffer;
+    QString *buffer;
+    int depth;
 
     clsLog log;
 

@@ -28,11 +28,18 @@ clsSettings::clsSettings(const QString &filePath)
             } else if(Rxml.name() == "userInfo"){
                 Rxml.readNext();
                 this->readUserInfo(Rxml);
+            } else if(Rxml.name() == "uiServer"){
+                Rxml.readNext();
+                this->readUiSettings(Rxml);
             }
         }
         Rxml.readNext();
    }
     file.close();
+}
+
+int clsSettings::getListeningPort() const{
+    return this->listeningPort;
 }
 
 QString clsSettings::getServer() const{

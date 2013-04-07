@@ -8,6 +8,8 @@
 #include "../resources/clslog.h"
 #include "../resources/jsoncommand.h"
 
+#define DEFAULT_LISTENING_PORT 1337
+
 class QBuffer;
 class QTcpSocket;
 
@@ -16,7 +18,7 @@ class uiServer : public QTcpServer
 	Q_OBJECT
 
 public:
-    uiServer(QObject* parent = 0);
+    uiServer(int port = DEFAULT_LISTENING_PORT, QObject* parent = 0);
     ~uiServer();
 
     void startListen();

@@ -13,7 +13,7 @@
 #include "clssettings.h"
 
 #ifdef DESKTOP
-#include "clsnotify.h"
+#include "desktop/clsnotify.h"
 #endif
 
 namespace Ui {
@@ -54,7 +54,8 @@ private slots:
     void userStatusChange(int id, QString newStatus);
     void userChangeNick(int id, QString newNick);
     void userLeave(int userId);
-    void userEnter(ircUser *newUser);
+    //void userEnter(ircUser *newUser);
+	void userEnter(eventUserJoin *newUser);
 
 private:
     Ui::MainWindow *ui;

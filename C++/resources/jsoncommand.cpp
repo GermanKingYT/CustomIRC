@@ -35,11 +35,8 @@ QString jsonCommand::getCommandString() const{
         case JSONCOMMAND_PING:
             ret = "PING";
             break;
-        case JSONCOMMAND_CHAT:
-            ret = "CHAT";
-            break;
-        case JSONCOMMAND_USERINFO:
-            ret = "USERINFO";
+        case JSONCOMMAND_EVENT:
+            ret = "EVENT";
             break;
         case JSONCOMMAND_USERINFOREQ:
             ret = "USERINFOREQ";
@@ -67,10 +64,8 @@ void jsonCommand::setCommandInt(QString command){
     jsonCommands set = JSONCOMMAND_NONE;
     if(command == "PING"){
         set = JSONCOMMAND_PING;
-    }else if(command == "CHAT"){
-        set = JSONCOMMAND_CHAT;
-    }else if(command == "USERINFO"){
-        set = JSONCOMMAND_USERINFO;
+    }else if(command == "EVENT"){
+        set = JSONCOMMAND_EVENT;
     }else if(command == "USERINFOREQ"){
         set = JSONCOMMAND_USERINFOREQ;
     }else if(command == "USERQUERY"){

@@ -15,7 +15,7 @@ void mainApp::run(){
     this->irc = new ircClient(this->settings->getServer(),
                               this->settings->getChannel(),
                               this->settings->getUserName());
-    this->ui = new uiServer(this);
+    this->ui = new uiServer(this->settings->getListeningPort(), this);
 
     connect(this->irc,SIGNAL(chatReceived(QString,nickAndStatus,QString)), this,
             SLOT(chatReceived(QString,nickAndStatus,QString)));
@@ -64,7 +64,7 @@ void mainApp::chatReceived(const QString channel, const nickAndStatus user,
                 this->users->getUserByNick(user)->getId(), message);
 
     this->events.append(chatEvent);
-    jsonCommand chatMessage(JSONCOMMAND_CHAT);
+    jsonCommand chatMessage(JSONCOMMAND_EVENT);
     chatMessage.addToData("event",chatEvent->toVariant());
 
     this->ui->send(chatMessage);
@@ -83,9 +83,13 @@ void mainApp::userOnline(const nickAndStatus nick, const QString ircId, const QS
         user->setStatus(nick.status);
         user->setOnline(true);
     }
-    jsonCommand uUser(JSONCOMMAND_USERINFO);
-    uUser.addToData("user",user->toVariantMap());
-    uUser.addToData("change","ENTER");
+    //Create event
+    eventUserJoin *joinEvent = new eventUserJoin(
+                user->getId(),user->toVariantMap());
+    this->events.append(joinEvent);
+    jsonCommand uUser(JSONCOMMAND_EVENT);
+
+    uUser.addToData("event",joinEvent->toVariant());
     this->ui->send(uUser);
 }
 
@@ -103,10 +107,10 @@ void mainApp::userOffline(const nickAndStatus nick, const QString id, const QStr
             this->users->del(user);
         }
 
-        jsonCommand uUser(JSONCOMMAND_USERINFO);
+        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
         uUser.addToData("user",user->getId());
         uUser.addToData("change","LEAVE");
-        this->ui->send(uUser);
+        this->ui->send(uUser);*/
     }
 }
 
@@ -122,11 +126,11 @@ void mainApp::userChangeNick(const nickAndStatus oldNickName,
     }else{
         user->setNick(newNickName.nick);
 
-        jsonCommand uUser(JSONCOMMAND_USERINFO);
+        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
         uUser.addToData("user",user->getId());
         uUser.addToData("change","NICK");
         uUser.addToData("new",newNickName.nick);
-        this->ui->send(uUser);
+        this->ui->send(uUser);*/
     }
 }
 
@@ -140,7 +144,7 @@ void mainApp::userChangeStatus(const nickAndStatus oldNick,
         this->log << oldNick.nick << " bestaat niet!?" << endl;
     }else{
         user->setStatus(newNick.status);
-        jsonCommand uUser(JSONCOMMAND_USERINFO);
+        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
         uUser.addToData("user",user->getId());
         if(user->getStatus().toLower() == "offline"){
             uUser.addToData("change","OFFLINE");
@@ -150,7 +154,7 @@ void mainApp::userChangeStatus(const nickAndStatus oldNick,
             uUser.addToData("new",user->getStatus());
             user->setOnline(true);
         }
-        this->ui->send(uUser);
+        this->ui->send(uUser);*/
     }
 
 }

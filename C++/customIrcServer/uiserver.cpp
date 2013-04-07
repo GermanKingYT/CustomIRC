@@ -4,7 +4,10 @@
 #include <iostream>
 #include <QDebug>
 
-uiServer::uiServer(QObject* parent) : QTcpServer(parent), log(LOGTAGS_SERVER)
+uiServer::uiServer(int port, QObject* parent)
+    :QTcpServer(parent)
+    ,port(port)
+    ,log(LOGTAGS_SERVER)
 {
     connect(this, SIGNAL(newConnection()), this, SLOT(acceptConnection()));
 }
@@ -68,3 +71,4 @@ void uiServer::changeOwnUser(jsonCommand &comm){
     //Immediately forward this to other clients:
     this->send(comm);
 }
+
