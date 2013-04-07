@@ -9,7 +9,6 @@ MainWindow::MainWindow(QApplication *a, QWidget *parent) :
     server()
 {
     this->settings = new clsSettings(a->applicationDirPath());
-
     this->server = new clsServerConn(settings->getServer(),settings->getPort());
 
     ui->setupUi(this);
@@ -102,7 +101,9 @@ void MainWindow::serverDisconnected(){
 void MainWindow::userQueryCompleted(QVector<ircUser *> users){
     this->users.clear();
     foreach(ircUser* user, users){
+#ifdef DESKTOP
         this->ui->userList->addUser(user);
+#endif
         this->users.insert(user->getId(),user);
     }
     //Ask for events that happened in the last time..
@@ -112,7 +113,9 @@ void MainWindow::userQueryCompleted(QVector<ircUser *> users){
 
 void MainWindow::userStatusChange(int id, QString newStatus){
     this->users[id]->setStatus(newStatus);
+#ifdef DESKTOP
     this->ui->userList->refreshUser(this->users[id]);
+#endif
     this->ui->chatbox->addMessage(QString(this->users[id]->getNick()) + " is nu " +
                                   this->users[id]->getStatus());
 }
@@ -120,7 +123,9 @@ void MainWindow::userStatusChange(int id, QString newStatus){
 void MainWindow::userChangeNick(int id, QString newNick){
     QString oldNick = this->users[id]->getNick();
     this->users[id]->setNick(newNick);
+#ifdef DESKTOP
     this->ui->userList->refreshUser(this->users[id]);
+#endif
     this->ui->chatbox->addMessage(oldNick + " is nu bekend als " +
                                   this->users[id]->getNick());
 }
@@ -130,9 +135,13 @@ void MainWindow::userLeave(int userId){
     if(this->users[userId]->getStandard()){
         this->users[userId]->setOnline(false);
         username = this->users[userId]->getNick();
+#ifdef DESKTOP
         this->ui->userList->refreshUser(this->users[userId]);
+#endif
     }else{
+#ifdef DESKTOP
         this->ui->userList->removeUser(this->users[userId]);
+#endif
         username = this->users[userId]->getNick();
         this->users.remove(userId);
     }
@@ -144,11 +153,62 @@ void MainWindow::userEnter(ircUser *newUser){
     QString username = newUser->getNick();;
     if(newUser->getStandard()){
         this->users[newUser->getId()]->copyFrom(newUser);
+#ifdef DESKTOP
         this->ui->userList->refreshUser(this->users[newUser->getId()]);
+#endif
     }else{
         //Just add it
+#ifdef DESKTOP
         this->ui->userList->addUser(newUser);
+#endif
         this->users.insert(newUser->getId(),newUser);
     }
     this->ui->chatbox->addMessage(username + " is binnengekomen");
 }
+
+
+#ifdef ANDROID
+
+void MainWindow::setOrientation(ScreenOrientation orientation)
+{
+    Qt::WidgetAttribute attribute;
+    switch (orientation) {
+#if QT_VERSION < 0x040702
+    // Qt < 4.7.2 does not yet have the Qt::WA_*Orientation attributes
+    case ScreenOrientationLockPortrait:
+        attribute = static_cast<Qt::WidgetAttribute>(128);
+        break;
+    case ScreenOrientationLockLandscape:
+        attribute = static_cast<Qt::WidgetAttribute>(129);
+        break;
+    default:
+    case ScreenOrientationAuto:
+        attribute = static_cast<Qt::WidgetAttribute>(130);
+        break;
+#else // QT_VERSION < 0x040702
+    case ScreenOrientationLockPortrait:
+        attribute = Qt::WA_LockPortraitOrientation;
+        break;
+    case ScreenOrientationLockLandscape:
+        attribute = Qt::WA_LockLandscapeOrientation;
+        break;
+    default:
+    case ScreenOrientationAuto:
+        attribute = Qt::WA_AutoOrientation;
+        break;
+#endif // QT_VERSION < 0x040702
+    };
+    setAttribute(attribute, true);
+}
+
+void MainWindow::showExpanded()
+{
+#if defined(Q_WS_SIMULATOR)
+    showFullScreen();
+#elif defined(Q_WS_MAEMO_5)
+    showMaximized();
+#else
+    show();
+#endif
+}
+#endif /* ANDROID */

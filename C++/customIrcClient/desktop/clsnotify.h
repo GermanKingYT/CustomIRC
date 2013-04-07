@@ -7,7 +7,6 @@
 #undef signals
 #include <libnotify/notify.h>
 #else
-#warn "Derp"
 
 #endif
 

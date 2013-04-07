@@ -14,10 +14,10 @@ QT       += core gui network webkit
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-
 TARGET = customIrcClient
 TEMPLATE = app
 
+DEFINES += DESKTOP
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -30,9 +30,9 @@ SOURCES += main.cpp\
     ../resources/json.cpp \
     ../resources/clslog.cpp \
     chatnotification.cpp \
-    clsuserlist.cpp \
-    clsuserentry.cpp \
-    clsnotify.cpp \
+    desktop/clsuserlist.cpp \
+    desktop/clsuserentry.cpp \
+    desktop/clsnotify.cpp \
     ../resources/clsevent.cpp \
     clssettings.cpp
 
@@ -46,16 +46,16 @@ HEADERS  += mainwindow.h \
     ../resources/json.h \
     ../resources/clslog.h \
     chatnotification.h \
-    clsuserlist.h \
-    clsuserentry.h \
-    clsnotify.h \
+    desktop/clsuserlist.h \
+    desktop/clsuserentry.h \
+    desktop/clsnotify.h \
     ../resources/clsevent.h \
     clssettings.h
 
-FORMS    += mainwindow.ui \
-    chatentry.ui \
-    chatbox.ui \
-    chatnotification.ui \
-    clsuserentry.ui
+FORMS    += desktop/mainwindow.ui \
+    desktop/chatentry.ui \
+    desktop/chatbox.ui \
+    desktop/chatnotification.ui \
+    desktop/clsuserentry.ui
 
 RESOURCES +=

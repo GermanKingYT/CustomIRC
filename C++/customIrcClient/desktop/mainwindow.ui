@@ -40,8 +40,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>429</width>
-         <height>259</height>
+         <width>433</width>
+         <height>267</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -103,7 +103,7 @@
           <x>0</x>
           <y>0</y>
           <width>130</width>
-          <height>240</height>
+          <height>247</height>
          </rect>
         </property>
        </widget>
@@ -118,7 +118,7 @@
      <x>0</x>
      <y>0</y>
      <width>602</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -182,7 +182,7 @@
   <customwidget>
    <class>clsUserList</class>
    <extends>QWidget</extends>
-   <header>clsuserlist.h</header>
+   <header>desktop/clsuserlist.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

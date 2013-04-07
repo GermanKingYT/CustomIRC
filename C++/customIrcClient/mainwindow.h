@@ -10,9 +10,11 @@
 #include "../resources/clsevent.h"
 #include "chatbox.h"
 #include "clsserverconn.h"
-
-#include "clsnotify.h"
 #include "clssettings.h"
+
+#ifdef DESKTOP
+#include "clsnotify.h"
+#endif
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +28,17 @@ public:
     explicit MainWindow(QApplication *a, QWidget *parent = 0);
     ~MainWindow();
     
+#ifdef ANDROID
+    enum ScreenOrientation {
+        ScreenOrientationLockPortrait,
+        ScreenOrientationLockLandscape,
+        ScreenOrientationAuto
+    };
+    // Note that this will only have an effect on Fremantle.
+    void setOrientation(ScreenOrientation orientation);
+    void showExpanded();
+#endif
+
 
 private slots:
     void chatReceived(eventChat *chatEvent);

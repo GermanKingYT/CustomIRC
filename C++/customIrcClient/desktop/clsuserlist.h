@@ -7,7 +7,7 @@
 #include <QWidget>
 #include <QVector>
 #include "clsuserentry.h"
-#include "ircuser.h"
+#include "../ircuser.h"
 
 namespace Ui {
 class clsUserList;

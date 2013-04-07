@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
-#include "ircuser.h"
+#include "../ircuser.h"
 
 namespace Ui {
 class clsUserEntry;
