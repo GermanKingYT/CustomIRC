@@ -1,0 +1,6 @@
+<settings>
+    <server>
+        <server>localhost</server>
+        <port>1337</port>
+    </server>
+</settings>
