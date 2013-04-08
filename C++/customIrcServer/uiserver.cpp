@@ -4,10 +4,11 @@
 #include <iostream>
 #include <QDebug>
 
+namespace server {
 uiServer::uiServer(int port, QObject* parent)
     :QTcpServer(parent)
-    ,port(port)
     ,log(LOGTAGS_SERVER)
+    ,port(port)
 {
     connect(this, SIGNAL(newConnection()), this, SLOT(acceptConnection()));
 }
@@ -72,3 +73,4 @@ void uiServer::changeOwnUser(jsonCommand &comm){
     this->send(comm);
 }
 
+}

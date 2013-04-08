@@ -1,5 +1,6 @@
 #include "clssettings.h"
 
+namespace server {
 clsSettings::clsSettings(const QString &filePath)
     :listeningPort(DEFAULT_LISTEN_PORT)
 {
@@ -127,3 +128,6 @@ void clsSettings::readUserInfo(QXmlStreamReader &reader){
     this->ownUser->setEmail(email);
     this->ownUser->setOnline(true);
 }
+
+
+} /*End of namespace*/

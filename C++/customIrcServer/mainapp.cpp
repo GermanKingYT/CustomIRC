@@ -1,5 +1,7 @@
 #include "mainapp.h"
 
+namespace server {
+
 mainApp::mainApp(QString parentPath, QObject *parent)
     :QObject(parent)
     ,users(new ircUserList())
@@ -51,7 +53,14 @@ void mainApp::run(){
     }
 
     this->irc->connect();
-    this->ui->startListen();
+	this->ui->startListen();
+}
+
+void mainApp::addToEventHistory(clsEvent *event){
+	this->events.append(event);
+	while(this->events.count() > MAX_EVENTS){
+		this->events.pop_front();
+	}
 }
 
 void mainApp::chatReceived(const QString channel, const nickAndStatus user,
@@ -63,7 +72,7 @@ void mainApp::chatReceived(const QString channel, const nickAndStatus user,
     eventChat *chatEvent = new eventChat(
                 this->users->getUserByNick(user)->getId(), message);
 
-    this->events.append(chatEvent);
+	this->addToEventHistory(chatEvent);
     jsonCommand chatMessage(JSONCOMMAND_EVENT);
     chatMessage.addToData("event",chatEvent->toVariant());
 
@@ -86,7 +95,7 @@ void mainApp::userOnline(const nickAndStatus nick, const QString ircId, const QS
     //Create event
     eventUserJoin *joinEvent = new eventUserJoin(
                 user->getId(),user->toVariantMap());
-    this->events.append(joinEvent);
+	this->addToEventHistory(joinEvent);
     jsonCommand uUser(JSONCOMMAND_EVENT);
 
     uUser.addToData("event",joinEvent->toVariant());
@@ -107,6 +116,14 @@ void mainApp::userOffline(const nickAndStatus nick, const QString id, const QStr
             this->users->del(user);
         }
 
+		//Create event
+		eventUserLeave *leaveEvent = new eventUserLeave(
+					user->getId());
+		this->addToEventHistory(leaveEvent);
+		jsonCommand uUser(JSONCOMMAND_EVENT);
+
+		uUser.addToData("event",leaveEvent->toVariant());
+		this->ui->send(uUser);
         /*jsonCommand uUser(JSONCOMMAND_USERINFO);
         uUser.addToData("user",user->getId());
         uUser.addToData("change","LEAVE");
@@ -200,4 +217,6 @@ void mainApp::ownUserChangeStatus(QString newStatus){
         this->irc->setOwnNick(this->ownUser->getName() + "|" +
                               this->ownUser->getStatus());
     }
+}
+
 }

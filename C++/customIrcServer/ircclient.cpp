@@ -3,56 +3,16 @@
 #include "ircclient.h"
 
 using namespace std;
+namespace server {
 
-ircClient::ircClient(const QString &hostname, const int port)
-    :hostname(QString(hostname))
-    ,port(port)
-    ,channel(CHANNEL)
-    ,log(clsLog(LOGTAGS_IRC))
-{
-    this->ownNickAndStatus.nick = NICK;
-    this->init();
-}
-
-ircClient::ircClient(const QString &hostname, const QString &channel)
-    :hostname(QString(hostname))
-    ,port(this->PORT)
-    ,channel(QString(channel))
-    ,log(clsLog(LOGTAGS_IRC))
-{
-    this->ownNickAndStatus.nick = NICK;
-    this->init();
-}
-
-ircClient::ircClient(const QString &hostname, const QString &channel,
-                     const QString &nick)
-    :hostname(QString(hostname))
-    ,port(this->PORT)
-    ,channel(QString(channel))
-    ,log(clsLog(LOGTAGS_IRC))
-{
-    this->ownNickAndStatus.nick = nick;
-    this->init();
-}
-
-ircClient::ircClient(const QString &hostname, const int port, const QString &channel
-                     ,const QString &nick)
+ircClient::ircClient(const QString &hostname, const QString &channel
+					 , const QString &nick, const int port)
     :hostname(QString(hostname))
     ,port(port)
     ,channel(QString(channel))
     ,log(clsLog(LOGTAGS_IRC))
 {
     this->ownNickAndStatus.nick = nick;
-    this->init();
-}
-
-ircClient::ircClient(const QString &hostname)
-    :hostname(QString(hostname))
-    ,port(this->PORT)
-    ,channel(QString(CHANNEL))
-    ,log(clsLog(LOGTAGS_IRC))
-{
-    this->ownNickAndStatus.nick = NICK;
     this->init();
 }
 
@@ -212,14 +172,6 @@ void ircClient::send(const QString data){
     this->sock->flush();
 }
 
-void ircClient::send(const char *data){
-    //doLog(this->TAG, "Sending data: \t%s",data);
-    this->log << "Sending data: \t" << data << endl;
-    this->sock->write(data);
-    this->sock->write("\r\n");
-    this->sock->flush();
-}
-
 void ircClient::readData(){
     qint64 bytes = this->buffer->write(this->sock->readAll());
     this->buffer->seek(this->buffer->pos() - bytes);
@@ -248,4 +200,4 @@ void ircClient::readData(){
 }
 
 
-
+}

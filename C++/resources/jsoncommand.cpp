@@ -1,5 +1,6 @@
 #include "jsoncommand.h"
 
+namespace K4U{
 
 jsonCommand::jsonCommand(QString json){
     QVariant data = QtJson::parse(json);
@@ -17,12 +18,7 @@ jsonCommand::jsonCommand(QVariantMap parent)
 
 jsonCommand::jsonCommand(jsonCommands command)
     :command(command)
-{
-
-}
-
-jsonCommand::~jsonCommand(){
-}
+{ }
 
 
 jsonCommands jsonCommand::getCommand() const{
@@ -122,4 +118,5 @@ clsLog& operator <<(clsLog &log, const jsonCommand &command){
     log << "JSON command: " << command.getCommandString();
     log << " Data: " << endl << command.getData() << endl;
     return log;
+}
 }

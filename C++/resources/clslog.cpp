@@ -2,6 +2,8 @@
 
 using namespace std;
 
+namespace K4U{
+
 clsLog::clsLog(logTags tag)
     :isFirst(true)
     ,tag(tag)
@@ -148,3 +150,5 @@ std::string clsLog::getTag(){
     return ret;
 }
 
+
+}

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <QStringList>
 
+namespace K4U {
 enum logTags{
     LOGTAGS_UNKNOWN = 0xFF,
     LOGTAGS_IRC = 0x00,
@@ -16,12 +17,24 @@ enum logTags{
     LOGTAGS_WEB
 };
 
+/*!
+ * \brief Custom logging class
+ * \author Koen Beckers (K-4U)
+ * Because std::out doesn't allow for QT-objects, i wrote my own parser on top of this.
+ * It also allows tags and date, so that you can allways see where the debug came from
+ */
 class clsLog{
 public:
+	/*!
+	 * \brief clsLog constructor
+	 * \param tag The tag to use while printing
+	 */
     clsLog(logTags tag);
 
+	/*!
+	 * \brief Used for end line
+	 */
     clsLog& operator<<(clsLog& (*manip)(clsLog&));
-
 
     clsLog& operator << (QString msg);
     clsLog& operator << (const QString *msg);
@@ -39,6 +52,10 @@ public:
 
 
     void doEndl();
+	/*!
+	 * \brief Sets a custom prefix, used for when more than one object uses the same log tag
+	 * \param prefix The prefix to show
+	 */
     void setPrefix(QString prefix);
 private:
     bool isFirst;
@@ -52,6 +69,6 @@ private:
 clsLog& endl(clsLog& log);
 
 
-
+}
 
 #endif // CLSLOG_H

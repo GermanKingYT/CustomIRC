@@ -1,5 +1,6 @@
 #include "clsevent.h"
 
+namespace shared{
 
 clsEvent::clsEvent(){
     this->timeOfEvent = QDateTime::currentDateTime();
@@ -30,6 +31,11 @@ QVariant clsEvent::getData(QString key) const{
 
 eventTypes clsEvent::getType() const{
     return this->ourType;
+}
+
+
+QTime clsEvent::getTime() const{
+	return this->timeOfEvent.time();
 }
 
 void clsEvent::setEventType(const QString eventString){
@@ -91,10 +97,6 @@ QString eventChat::getMessage() const{
     return this->getData("message").toString();
 }
 
-QTime eventChat::getTime() const{
-    return this->timeOfEvent.time();
-}
-
 
 eventUserJoin::eventUserJoin(const int userId, QVariantMap user){
     ourType = EVENTTYPE_USER_JOIN;
@@ -103,8 +105,34 @@ eventUserJoin::eventUserJoin(const int userId, QVariantMap user){
 }
 
 eventUserJoin::eventUserJoin(QVariantMap data){
-    QVariantMap d = data;
+	ourType = EVENTTYPE_USER_JOIN;
     this->data = data["data"].toMap();//Makes sense?
-    this->setEventType(data["type"].toString());
-    this->timeOfEvent = data["dateTime"].toDateTime();
+	this->timeOfEvent = data["dateTime"].toDateTime();
+}
+
+int eventUserJoin::getUserId() const{
+	return this->getData("userId").toInt();
+}
+
+QVariantMap eventUserJoin::getUser() const{
+	return this->getData("user").toMap();
+}
+
+
+eventUserLeave::eventUserLeave(const int userId){
+	ourType = EVENTTYPE_USER_LEFT;
+	this->addToData("userId", userId);
+}
+
+eventUserLeave::eventUserLeave(QVariantMap data){
+	ourType = EVENTTYPE_USER_LEFT;
+	QVariantMap d = data;
+	this->data = data["data"].toMap();//Makes sense?
+	this->timeOfEvent = data["dateTime"].toDateTime();
+}
+
+int eventUserLeave::getUserId() const{
+	return this->getData("userId").toInt();
+}
+
 }

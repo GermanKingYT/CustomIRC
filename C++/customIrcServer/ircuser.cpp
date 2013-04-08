@@ -1,5 +1,7 @@
 #include "ircuser.h"
 
+namespace server {
+
 ircUser::ircUser(const nickAndStatus name, const QString ircId)
     :name(name.nick)
     ,ircId(ircId)
@@ -13,32 +15,6 @@ ircUser::ircUser(const nickAndStatus name, const QString ircId)
         this->name = this->name.mid(1);
     }
     this->online = false;
-    if(this->name.indexOf("|") >= 0){
-        this->status = this->name.mid(this->name.indexOf("|")+1);
-        this->name = this->name.left(this->name.indexOf("|"));
-    }
-    this->uColor.r = 0;
-    this->uColor.g = 0;
-    this->uColor.b = 0;
-}
-
-ircUser::ircUser(const nickAndStatus name, const bool standard)
-    :name(name.nick)
-    ,ircId("NaN")
-    ,id(0)
-    ,status("Offline")
-    ,online(false)
-    ,standard(standard)
-    ,log(LOGTAGS_USER)
-{
-    if(this->name.left(1) == ":"){
-        this->name = this->name.mid(1);
-    }
-    if(!standard){
-        this->online = true;
-        this->status = "";
-    }
-
     if(this->name.indexOf("|") >= 0){
         this->status = this->name.mid(this->name.indexOf("|")+1);
         this->name = this->name.left(this->name.indexOf("|"));
@@ -97,30 +73,6 @@ ircUser::ircUser(const QString name, const bool standard)
     this->uColor.b = 0;
 }
 
-ircUser::ircUser(const QString name, const bool standard, const ircUser::userColor color)
-  :name(name)
-  ,ircId("NaN")
-  ,id(0)
-  ,status("Offline")
-  ,online(false)
-  ,standard(standard)
-  ,uColor(color)
-  ,log(LOGTAGS_USER)
-{
-  this->log << name << endl;
-  if(this->name.left(1) == ":"){
-      this->name = this->name.mid(1);
-  }
-  if(!standard){
-      this->online = true;
-      this->status = "";
-  }
-
-  if(this->name.indexOf("|") >= 0){
-      this->status = this->name.mid(this->name.indexOf("|")+1);
-      this->name = this->name.left(this->name.indexOf("|"));
-  }
-}
 
 ircUser::ircUser()
     :name("NaN")
@@ -330,3 +282,4 @@ QVector<ircUser *> ircUserList::getAll() const{
 }
 
 
+} /*End of namespace*/

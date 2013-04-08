@@ -4,6 +4,8 @@
 #include <QtCore>
 #include "mainapp.h"
 
+using namespace server;
+
 int main(int argc, char *argv[]){
     QCoreApplication a(argc, argv);
 

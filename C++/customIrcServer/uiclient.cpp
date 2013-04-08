@@ -1,5 +1,6 @@
 #include "uiclient.h"
 
+namespace server {
 
 uiClient::uiClient(QTcpSocket *parent)
     :sock(parent)
@@ -12,7 +13,7 @@ uiClient::uiClient(QTcpSocket *parent)
     this->buffer = new QString();
 
     connect(this->sock, SIGNAL(disconnected()), SLOT(removeConnection()));
-    connect(this->sock, SIGNAL(readyRead()),	SLOT(receiveMessage()));
+    connect(this->sock, SIGNAL(readyRead()),    SLOT(receiveMessage()));
 }
 
 
@@ -27,9 +28,9 @@ void uiClient::removeConnection(){
 }
 
 
-jsonCommand uiClient::checkForJsonCommand(QByteArray &toAdd){
+bool uiClient::checkForJsonCommand(QByteArray toAdd, jsonCommand *comm){
     int depth = 0;
-    jsonCommand *newCommand;
+    bool ret = false;
     foreach(int b, toAdd){
         if(b == '{' || b == '['){
             depth++;
@@ -40,31 +41,37 @@ jsonCommand uiClient::checkForJsonCommand(QByteArray &toAdd){
 
         if(depth == 0){
             //Clear the buffer.
-            newCommand = new jsonCommand(*this->buffer);
-            this->log << "Data received: \t" << this->buffer << endl;
-            this->buffer->clear();
-            break;
+			if(comm->getCommand() == JSONCOMMAND_NONE){
+				ret = true;
+				comm = new jsonCommand(*this->buffer);
+				this->log << "Data received: \t" << this->buffer << endl;
+				this->buffer->clear();
+			}
         }
     }
-    return *newCommand;
+    return ret;
 }
 
 void uiClient::receiveMessage(){
-    jsonCommand comm = this->checkForJsonCommand(this->sock->readAll());
-    switch (comm.getCommand()) {
-        case JSONCOMMAND_OWNCHAT:
-            emit this->chatReceived(comm.getData("chat").toString());
-            break;
-        case JSONCOMMAND_USERQUERY:
-            emit this->userQuery(this);
-            break;
-        case JSONCOMMAND_CHANGEOWNUSER:
-            emit this->changeOwnUser(comm);
-            break;
-        case JSONCOMMAND_GETEVENTS:
-            emit this->getEvents(this);
-            break;
-        default:
-            break;
+    jsonCommand *comm = new jsonCommand(JSONCOMMAND_NONE);
+    if(this->checkForJsonCommand(this->sock->readAll(), comm)){
+        switch (comm->getCommand()) {
+            case JSONCOMMAND_OWNCHAT:
+                emit this->chatReceived(comm->getData("chat").toString());
+                break;
+            case JSONCOMMAND_USERQUERY:
+                emit this->userQuery(this);
+                break;
+            case JSONCOMMAND_CHANGEOWNUSER:
+                emit this->changeOwnUser(*comm);
+                break;
+            case JSONCOMMAND_GETEVENTS:
+                emit this->getEvents(this);
+                break;
+            default:
+                break;
+        }
     }
+}
+
 }
