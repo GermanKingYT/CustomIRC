@@ -35,13 +35,13 @@
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="chatBox" name="chatbox">
+      <widget class="client::chatBox" name="chatbox">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>433</width>
-         <height>267</height>
+         <width>429</width>
+         <height>259</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -97,13 +97,13 @@
        <property name="widgetResizable">
         <bool>true</bool>
        </property>
-       <widget class="clsUserList" name="userList">
+       <widget class="client::clsUserList" name="userList">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
           <width>130</width>
-          <height>247</height>
+          <height>240</height>
          </rect>
         </property>
        </widget>
@@ -118,7 +118,7 @@
      <x>0</x>
      <y>0</y>
      <width>602</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
@@ -144,7 +144,7 @@
    <widget class="QWidget" name="chatDock_Widget">
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="chatInput" name="mChatInput">
+      <widget class="client::chatInput" name="mChatInput">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -169,18 +169,18 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>chatBox</class>
+   <class>client::chatBox</class>
    <extends>QWidget</extends>
    <header>chatbox.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>chatInput</class>
+   <class>client::chatInput</class>
    <extends>QPlainTextEdit</extends>
    <header>chatinput.h</header>
   </customwidget>
   <customwidget>
-   <class>clsUserList</class>
+   <class>client::clsUserList</class>
    <extends>QWidget</extends>
    <header>desktop/clsuserlist.h</header>
    <container>1</container>

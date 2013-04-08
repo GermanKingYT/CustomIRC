@@ -9,22 +9,28 @@
 #else
 
 #endif
+namespace client{
+	/*!
+	 * \brief Notification class.
+	 * \warning Does not work yet!
+	 * \author Koen Beckers (K-4U)
+	 */
+    class clsNotify : public QObject
+    {
+        Q_OBJECT
+        public:
+            explicit clsNotify(const QString title, const QString body, QObject *parent = 0);
+
+            void show() const;
+            public slots:
 
 
-class clsNotify : public QObject
-{
-    Q_OBJECT
-public:
-    explicit clsNotify(const QString title, const QString body, QObject *parent = 0);
-    
-    void show() const;
-public slots:
-    
-
-private:
+        private:
 #ifdef Q_OS_LINUX
-    NotifyNotification *thisNot;
+			NotifyNotification *thisNot;
 #endif
-};
+    };
+
+}
 
 #endif // CLSNOTIFY_H
