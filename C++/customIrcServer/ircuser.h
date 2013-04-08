@@ -12,7 +12,7 @@ namespace server {
 /*!
  * \brief The ircUser class
  * \author Koen Beckers (K-4U)
- * Contains a IRC User
+ * Contains an IRC User
  * There are more than one way to create a user.
  * Please look at the options carefully!
  */

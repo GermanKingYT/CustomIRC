@@ -8,8 +8,8 @@
 
 #include "functions.h"
 
-
 using namespace std;
+namespace server{
 
 const string qts(const QString str){
     return str.toStdString();
@@ -62,3 +62,4 @@ nickAndStatus getNickAndStatusFromId(const QString id){
 
 
 
+}

@@ -5,6 +5,7 @@
 #include <QStringList>
 #include <QVariantList>
 
+namespace server{
 /*!
  * \brief The nickAndStatus struct
  *
@@ -26,4 +27,5 @@ extern char getS(const char *msg, ...);
 
 extern const QString getId(const QString fullId);
 
+}
 #endif // FUNCTIONS_H
