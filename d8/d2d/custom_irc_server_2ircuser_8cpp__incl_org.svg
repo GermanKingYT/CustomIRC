@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d6/d32/custom_irc_server_2ircuser_8h.xhtml" target="_top" xlink:title="ircuser.h">
+<g id="a_node2"><a xlink:href="../../d6/d32/custom_irc_server_2ircuser_8h.html" target="_top" xlink:title="ircuser.h">
 <polygon fill="white" stroke="black" points="250,-112.5 250,-131.5 304,-131.5 304,-112.5 250,-112.5"/>
 <text text-anchor="middle" x="277" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ircuser.h</text>
 </a>
@@ -60,7 +60,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d8/d5c/functions_8h.xhtml" target="_top" xlink:title="functions.h">
+<g id="a_node6"><a xlink:href="../../d8/d5c/functions_8h.html" target="_top" xlink:title="functions.h">
 <polygon fill="white" stroke="black" points="142,-56.5 142,-75.5 206,-75.5 206,-56.5 142,-56.5"/>
 <text text-anchor="middle" x="174" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">functions.h</text>
 </a>
@@ -73,7 +73,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node10"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="224.5,-56.5 224.5,-75.5 329.5,-75.5 329.5,-56.5 224.5,-56.5"/>
 <text text-anchor="middle" x="277" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>

@@ -47,7 +47,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../db/d97/clsevent_8h.xhtml" target="_top" xlink:title="../resources/clsevent.h">
+<g id="a_node5"><a xlink:href="../../db/d97/clsevent_8h.html" target="_top" xlink:title="../resources/clsevent.h">
 <polygon fill="white" stroke="black" points="601.5,-112.5 601.5,-131.5 716.5,-131.5 716.5,-112.5 601.5,-112.5"/>
 <text text-anchor="middle" x="659" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clsevent.h</text>
 </a>
@@ -60,7 +60,7 @@
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.xhtml" target="_top" xlink:title="ircuser.h">
+<g id="a_node15"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.html" target="_top" xlink:title="ircuser.h">
 <polygon fill="white" stroke="black" points="444,-112.5 444,-131.5 498,-131.5 498,-112.5 444,-112.5"/>
 <text text-anchor="middle" x="471" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ircuser.h</text>
 </a>
@@ -73,7 +73,7 @@
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="../../d4/d48/chatentry_8h.xhtml" target="_top" xlink:title="chatentry.h">
+<g id="a_node21"><a xlink:href="../../d4/d48/chatentry_8h.html" target="_top" xlink:title="chatentry.h">
 <polygon fill="white" stroke="black" points="369.5,-168.5 369.5,-187.5 434.5,-187.5 434.5,-168.5 369.5,-168.5"/>
 <text text-anchor="middle" x="402" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">chatentry.h</text>
 </a>
@@ -86,7 +86,7 @@
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="../../d1/d3d/chatnotification_8h.xhtml" target="_top" xlink:title="chatnotification.h">
+<g id="a_node24"><a xlink:href="../../d1/d3d/chatnotification_8h.html" target="_top" xlink:title="chatnotification.h">
 <polygon fill="white" stroke="black" points="223,-168.5 223,-187.5 313,-187.5 313,-168.5 223,-168.5"/>
 <text text-anchor="middle" x="268" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">chatnotification.h</text>
 </a>
@@ -139,7 +139,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="clslog.h">
+<g id="a_node10"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="clslog.h">
 <polygon fill="white" stroke="black" points="599,-56.5 599,-75.5 649,-75.5 649,-56.5 599,-56.5"/>
 <text text-anchor="middle" x="624" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">clslog.h</text>
 </a>

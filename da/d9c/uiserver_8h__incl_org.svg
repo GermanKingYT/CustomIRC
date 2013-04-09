@@ -47,7 +47,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d1/de1/uiclient_8h.xhtml" target="_top" xlink:title="uiclient.h">
+<g id="a_node5"><a xlink:href="../../d1/de1/uiclient_8h.html" target="_top" xlink:title="uiclient.h">
 <polygon fill="white" stroke="black" points="245,-168.5 245,-187.5 301,-187.5 301,-168.5 245,-168.5"/>
 <text text-anchor="middle" x="273" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">uiclient.h</text>
 </a>
@@ -60,7 +60,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node9"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="247.5,-56.5 247.5,-75.5 352.5,-75.5 352.5,-56.5 247.5,-56.5"/>
 <text text-anchor="middle" x="300" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>
@@ -73,7 +73,7 @@
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="../../dc/d96/jsoncommand_8h.xhtml" target="_top" xlink:title="../resources/jsoncommand.h">
+<g id="a_node15"><a xlink:href="../../dc/d96/jsoncommand_8h.html" target="_top" xlink:title="../resources/jsoncommand.h">
 <polygon fill="white" stroke="black" points="369,-112.5 369,-131.5 509,-131.5 509,-112.5 369,-112.5"/>
 <text text-anchor="middle" x="439" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/jsoncommand.h</text>
 </a>
@@ -196,7 +196,7 @@
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d4/d05/json_8h.xhtml" target="_top" xlink:title="json.h">
+<g id="a_node18"><a xlink:href="../../d4/d05/json_8h.html" target="_top" xlink:title="json.h">
 <polygon fill="white" stroke="black" points="534.5,-56.5 534.5,-75.5 577.5,-75.5 577.5,-56.5 534.5,-56.5"/>
 <text text-anchor="middle" x="556" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">json.h</text>
 </a>

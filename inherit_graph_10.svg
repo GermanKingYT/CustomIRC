@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-24 135,-24 135,5 -4,5"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:href="d1/d5b/classorg_1_1k4u_1_1custom_irc_client_1_1_r.xhtml" target="_top" xlink:title="org.k4u.customIrcClient.R">
+<g id="a_node1"><a xlink:href="d1/d5b/classorg_1_1k4u_1_1custom_irc_client_1_1_r.html" target="_top" xlink:title="org.k4u.customIrcClient.R">
 <polygon fill="white" stroke="black" points="0.5,-0.5 0.5,-19.5 129.5,-19.5 129.5,-0.5 0.5,-0.5"/>
 <text text-anchor="middle" x="65" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">org.k4u.customIrcClient.R</text>
 </a>

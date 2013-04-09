@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../df/dd2/classserver_1_1ui_server.xhtml#af8accf173f4aa7dc5f59c56016645726" target="_top" xlink:title="Emitted when a chatmessage has been send from a client.">
+<g id="a_node2"><a xlink:href="../../df/dd2/classserver_1_1ui_server.html#af8accf173f4aa7dc5f59c56016645726" target="_top" xlink:title="Emitted when a chatmessage has been send from a client.">
 <polygon fill="white" stroke="black" points="182.5,-0 182.5,-30 307.5,-30 307.5,-0 182.5,-0"/>
 <text text-anchor="start" x="190.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiServer::sgnChat</text>
 <text text-anchor="middle" x="245" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Received</text>

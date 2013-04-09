@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../da/d72/classclient_1_1chat_box.xhtml#ade0d82e9e4a985f239abc201693c2a58" target="_top" xlink:title="Adds a notification to the chatbox.">
+<g id="a_node2"><a xlink:href="../../da/d72/classclient_1_1chat_box.html#ade0d82e9e4a985f239abc201693c2a58" target="_top" xlink:title="Adds a notification to the chatbox.">
 <polygon fill="white" stroke="black" points="180.5,-0.5 180.5,-19.5 323.5,-19.5 323.5,-0.5 180.5,-0.5"/>
 <text text-anchor="middle" x="252" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatBox::addMessage</text>
 </a>

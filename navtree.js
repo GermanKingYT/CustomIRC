@@ -1,35 +1,35 @@
 var NAVTREE =
 [
-  [ "Custom IRC", "index.xhtml", [
-    [ "Todo List", "dd/da0/todo.xhtml", null ],
+  [ "Custom IRC", "index.html", [
+    [ "Todo List", "dd/da0/todo.html", null ],
     [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.xhtml", "namespaces" ],
-      [ "Namespace Members", "namespacemembers.xhtml", [
-        [ "All", "namespacemembers.xhtml", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.xhtml", null ],
-        [ "Enumerations", "namespacemembers_enum.xhtml", null ],
-        [ "Enumerator", "namespacemembers_eval.xhtml", "namespacemembers_eval" ]
+      [ "Namespace List", "namespaces.html", "namespaces" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", "namespacemembers_dup" ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", "namespacemembers_eval" ]
       ] ]
     ] ],
     [ "Classes", null, [
-      [ "Class List", "annotated.xhtml", "annotated" ],
-      [ "Class Index", "classes.xhtml", null ],
-      [ "Class Hierarchy", "hierarchy.xhtml", "hierarchy" ],
-      [ "Class Members", "functions.xhtml", [
-        [ "All", "functions.xhtml", "functions_dup" ],
-        [ "Functions", "functions_func.xhtml", "functions_func" ],
-        [ "Variables", "functions_vars.xhtml", null ],
-        [ "Enumerations", "functions_enum.xhtml", null ],
-        [ "Enumerator", "functions_eval.xhtml", null ],
-        [ "Related Functions", "functions_rela.xhtml", null ]
+      [ "Class List", "annotated.html", "annotated" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
+        [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.xhtml", "files" ],
-      [ "File Members", "globals.xhtml", [
-        [ "All", "globals.xhtml", null ],
-        [ "Functions", "globals_func.xhtml", null ],
-        [ "Macros", "globals_defs.xhtml", null ]
+      [ "File List", "files.html", "files" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -37,12 +37,12 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.xhtml",
-"d5/d08/classclient_1_1cls_settings.xhtml#a20136a6f81cb641f096b262f33f4a3b2",
-"db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a2bc1f780c3200c091102bbed2f65e169",
-"df/dd2/classserver_1_1ui_server.xhtml#a960211cb9716f5d3b403d10ccface8b8",
-"df/df2/irc_codes_8h.xhtml#a8113647a5ff54d42c1c26e7a0a555286a8256844f5fdff300f50b5185bc3c8c84",
-"functions_func.xhtml"
+"annotated.html",
+"d4/d05/json_8h.html#ad92865ae39b2b148f6c788d7cf28c894",
+"da/d66/eventservermessage_8h.html#ac45ebac56812e48d57e16c9cf057a1db",
+"dd/d55/json_8cpp.html#ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885",
+"df/df2/irc_codes_8h.html#a8113647a5ff54d42c1c26e7a0a555286a63f97eb746bd9f0bc604431a89e6ab4a",
+"df/df2/irc_codes_8h.html#a8113647a5ff54d42c1c26e7a0a555286aff7efa24f48b4ac1ad9131f020c88363"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

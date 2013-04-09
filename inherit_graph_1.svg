@@ -11,7 +11,7 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-24 125,-24 125,5 -4,5"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:href="d9/d25/structclient_1_1chat_box_1_1content.xhtml" target="_top" xlink:title="client::chatBox::content">
+<g id="a_node1"><a xlink:href="d9/d25/structclient_1_1chat_box_1_1content.html" target="_top" xlink:title="client::chatBox::content">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 120,-19.5 120,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="60" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatBox::content</text>
 </a>

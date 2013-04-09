@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../df/dd2/classserver_1_1ui_server.xhtml#a1097da2f20a545c302e9f4cab29a4a87" target="_top" xlink:title="Emitted when a client wants all the events.">
+<g id="a_node2"><a xlink:href="../../df/dd2/classserver_1_1ui_server.html#a1097da2f20a545c302e9f4cab29a4a87" target="_top" xlink:title="Emitted when a client wants all the events.">
 <polygon fill="white" stroke="black" points="158.5,-0 158.5,-30 285.5,-30 285.5,-0 158.5,-0"/>
 <text text-anchor="start" x="166.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiServer::sgnSend</text>
 <text text-anchor="middle" x="222" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Events</text>

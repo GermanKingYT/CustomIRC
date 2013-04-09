@@ -10,14 +10,14 @@
 <title>C++/customIrcClient/android/gen/org/kde/necessitas</title>
 <polygon fill="white" stroke="white" points="-4,5 -4,-107 189,-107 189,5 -4,5"/>
 <g id="clust1" class="cluster"><title>clusterdir_ef41fc326564b21140295e037089578e</title>
-<g id="a_clust1"><a xlink:href="dir_ef41fc326564b21140295e037089578e.xhtml" target="_top" xlink:title="kde">
+<g id="a_clust1"><a xlink:href="dir_ef41fc326564b21140295e037089578e.html" target="_top" xlink:title="kde">
 <polygon fill="#ddddee" stroke="black" points="8,-8 8,-95 176,-95 176,-8 8,-8"/>
 <text text-anchor="middle" x="92" y="-83" font-family="Helvetica,sans-Serif" font-size="10.00">kde</text>
 </a>
 </g>
 </g>
 <g id="clust2" class="cluster"><title>clusterdir_a8b8aa2e8285c2d7c9bfc512325455f0</title>
-<g id="a_clust2"><a xlink:href="dir_a8b8aa2e8285c2d7c9bfc512325455f0.xhtml" target="_top">
+<g id="a_clust2"><a xlink:href="dir_a8b8aa2e8285c2d7c9bfc512325455f0.html" target="_top">
 <polygon fill="#eeeeff" stroke="black" points="16,-16 16,-68 168,-68 168,-16 16,-16"/>
 </a>
 </g>
@@ -28,7 +28,7 @@
 </g>
 <!-- dir_b601898d9aa56bb1560ba048ec1a08f0 -->
 <g id="node2" class="node"><title>dir_b601898d9aa56bb1560ba048ec1a08f0</title>
-<g id="a_node2"><a xlink:href="dir_b601898d9aa56bb1560ba048ec1a08f0.xhtml" target="_top" xlink:title="ministro">
+<g id="a_node2"><a xlink:href="dir_b601898d9aa56bb1560ba048ec1a08f0.html" target="_top" xlink:title="ministro">
 <polygon fill="white" stroke="black" points="78,-60 24,-60 24,-24 78,-24 78,-60"/>
 <text text-anchor="middle" x="51" y="-39.5" font-family="Helvetica,sans-Serif" font-size="10.00">ministro</text>
 </a>

@@ -44,7 +44,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml" target="_top" xlink:title="The ircUser class.">
+<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html" target="_top" xlink:title="The ircUser class.">
 <polygon fill="white" stroke="black" points="73,-217 73,-439 217,-439 217,-217 73,-217"/>
 <text text-anchor="middle" x="145" y="-427" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser</text>
 <polyline fill="none" stroke="black" points="73,-420 217,-420 "/>
@@ -91,7 +91,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml" target="_top" xlink:title="Custom logging class.">
+<g id="a_node5"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html" target="_top" xlink:title="Custom logging class.">
 <polygon fill="white" stroke="black" points="147.5,-489 147.5,-667 226.5,-667 226.5,-489 147.5,-489"/>
 <text text-anchor="middle" x="187" y="-655" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog</text>
 <polyline fill="none" stroke="black" points="147.5,-648 226.5,-648 "/>

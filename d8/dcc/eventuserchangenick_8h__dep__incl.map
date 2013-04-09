@@ -1,12 +1,12 @@
 <map id="C++/resources/events/eventuserchangenick.h" name="C++/resources/events/eventuserchangenick.h">
-<area shape="rect" id="node2" href="$db/dd2/events_8h.xhtml" title="C++/resources/events\l/events.h" alt="" coords="248,97,396,138"/>
-<area shape="rect" id="node11" href="$dd/d4b/eventuserchangenick_8cpp.xhtml" title="C++/resources/events\l/eventuserchangenick.cpp" alt="" coords="422,97,593,138"/>
-<area shape="rect" id="node3" href="$d5/dbc/clsserverconn_8h.xhtml" title="C++/customIrcClient\l/clsserverconn.h" alt="" coords="169,187,309,229"/>
-<area shape="rect" id="node8" href="$db/df6/mainapp_8h.xhtml" title="C++/customIrcServer\l/mainapp.h" alt="" coords="335,187,479,229"/>
-<area shape="rect" id="node4" href="$db/d1f/clsserverconn_8cpp.xhtml" title="C++/customIrcClient\l/clsserverconn.cpp" alt="" coords="4,278,144,319"/>
-<area shape="rect" id="node5" href="$d9/d53/mainwindow_8h.xhtml" title="C++/customIrcClient\l/mainwindow.h" alt="" coords="169,278,309,319"/>
-<area shape="rect" id="node6" href="$df/d94/custom_irc_client_2main_8cpp.xhtml" title="C++/customIrcClient\l/main.cpp" alt="" coords="87,369,227,410"/>
-<area shape="rect" id="node7" href="$d8/dd9/mainwindow_8cpp.xhtml" title="C++/customIrcClient\l/mainwindow.cpp" alt="" coords="252,369,392,410"/>
-<area shape="rect" id="node9" href="$dc/d17/custom_irc_server_2main_8cpp.xhtml" title="C++/customIrcServer\l/main.cpp" alt="" coords="335,278,479,319"/>
-<area shape="rect" id="node10" href="$d8/d88/mainapp_8cpp.xhtml" title="C++/customIrcServer\l/mainapp.cpp" alt="" coords="503,278,647,319"/>
+<area shape="rect" id="node2" href="$db/dd2/events_8h.html" title="C++/resources/events\l/events.h" alt="" coords="248,97,396,138"/>
+<area shape="rect" id="node11" href="$dd/d4b/eventuserchangenick_8cpp.html" title="C++/resources/events\l/eventuserchangenick.cpp" alt="" coords="422,97,593,138"/>
+<area shape="rect" id="node3" href="$d5/dbc/clsserverconn_8h.html" title="C++/customIrcClient\l/clsserverconn.h" alt="" coords="169,187,309,229"/>
+<area shape="rect" id="node8" href="$db/df6/mainapp_8h.html" title="C++/customIrcServer\l/mainapp.h" alt="" coords="335,187,479,229"/>
+<area shape="rect" id="node4" href="$db/d1f/clsserverconn_8cpp.html" title="C++/customIrcClient\l/clsserverconn.cpp" alt="" coords="4,278,144,319"/>
+<area shape="rect" id="node5" href="$d9/d53/mainwindow_8h.html" title="C++/customIrcClient\l/mainwindow.h" alt="" coords="169,278,309,319"/>
+<area shape="rect" id="node6" href="$df/d94/custom_irc_client_2main_8cpp.html" title="C++/customIrcClient\l/main.cpp" alt="" coords="87,369,227,410"/>
+<area shape="rect" id="node7" href="$d8/dd9/mainwindow_8cpp.html" title="C++/customIrcClient\l/mainwindow.cpp" alt="" coords="252,369,392,410"/>
+<area shape="rect" id="node9" href="$dc/d17/custom_irc_server_2main_8cpp.html" title="C++/customIrcServer\l/main.cpp" alt="" coords="335,278,479,319"/>
+<area shape="rect" id="node10" href="$d8/d88/mainapp_8cpp.html" title="C++/customIrcServer\l/mainapp.cpp" alt="" coords="503,278,647,319"/>
 </map>

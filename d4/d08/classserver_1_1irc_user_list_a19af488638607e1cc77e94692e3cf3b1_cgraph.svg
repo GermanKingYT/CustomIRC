@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#ae4669a1a72c600a7a238bc39cbd853ca" target="_top" xlink:title="server::ircUser::setColor">
+<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#ae4669a1a72c600a7a238bc39cbd853ca" target="_top" xlink:title="server::ircUser::setColor">
 <polygon fill="white" stroke="black" points="152.5,-76.5 152.5,-95.5 273.5,-95.5 273.5,-76.5 152.5,-76.5"/>
 <text text-anchor="middle" x="213" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setColor</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d9/db1/namespaceserver.xhtml#a2a6ca6577f352c7d095faf91c8e8dd5a" target="_top" xlink:title="server::getColor">
+<g id="a_node3"><a xlink:href="../../d9/db1/namespaceserver.html#a2a6ca6577f352c7d095faf91c8e8dd5a" target="_top" xlink:title="server::getColor">
 <polygon fill="white" stroke="black" points="171,-38.5 171,-57.5 255,-57.5 255,-38.5 171,-38.5"/>
 <text text-anchor="middle" x="213" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::getColor</text>
 </a>
@@ -42,7 +42,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#ad855efa6ab1fe94c35c992ac5cfd164d" target="_top" xlink:title="server::ircUser::setId">
+<g id="a_node4"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#ad855efa6ab1fe94c35c992ac5cfd164d" target="_top" xlink:title="server::ircUser::setId">
 <polygon fill="white" stroke="black" points="160,-0.5 160,-19.5 266,-19.5 266,-0.5 160,-0.5"/>
 <text text-anchor="middle" x="213" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setId</text>
 </a>

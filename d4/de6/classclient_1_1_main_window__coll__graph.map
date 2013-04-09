@@ -1,6 +1,6 @@
 <map id="client::MainWindow" name="client::MainWindow">
-<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.xhtml" title="Class that has a connection to the server." alt="" coords="136,309,315,592"/>
-<area shape="rect" id="node5" href="$da/d64/class_k4_u_1_1cls_log.xhtml" title="Custom logging class." alt="" coords="298,6,403,245"/>
-<area shape="rect" id="node6" href="$d5/d08/classclient_1_1cls_settings.xhtml" title="Settings class containing all the variables needed for the client." alt="" coords="413,383,539,519"/>
-<area shape="rect" id="node7" href="$da/d72/classclient_1_1chat_box.xhtml" title="UI Segment containing the chatbox." alt="" coords="564,339,727,563"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html" title="Class that has a connection to the server." alt="" coords="136,309,315,651"/>
+<area shape="rect" id="node5" href="$da/d64/class_k4_u_1_1cls_log.html" title="Custom logging class." alt="" coords="298,6,403,245"/>
+<area shape="rect" id="node6" href="$d5/d08/classclient_1_1cls_settings.html" title="Settings class containing all the variables needed for the client." alt="" coords="413,412,539,548"/>
+<area shape="rect" id="node7" href="$da/d72/classclient_1_1chat_box.html" title="UI Segment containing the chatbox." alt="" coords="564,361,727,599"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="client::MainWindow::userChangeNick" name="client::MainWindow::userChangeNick">
+<area shape="rect" id="node2" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#ad79adbb7cd52aa5307ff59ddbc2d8b7d" title="Gets the DB&#45;ID of the user that changed nick." alt="" coords="189,5,360,46"/>
+<area shape="rect" id="node3" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#a69ac7b5a6aa9bfab4d28e9fe54baf3d5" title="Gets the new nick of the user." alt="" coords="189,70,360,111"/>
+<area shape="rect" id="node4" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#a4eab71d2abb978c22f7207a46a9bc70e" title="Gets the old nick of the user." alt="" coords="189,135,360,177"/>
+</map>

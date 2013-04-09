@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
+<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
 <polygon fill="white" stroke="black" points="164,-0 164,-30 286,-30 286,-0 164,-0"/>
 <text text-anchor="start" x="172" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="225" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::getData</text>

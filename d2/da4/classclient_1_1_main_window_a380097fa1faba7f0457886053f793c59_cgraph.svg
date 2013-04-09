@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a4c904f38f1ff994ebb9a9ec251604874" target="_top" xlink:title="Gets the DB&#45;ID of the user that changed status.">
+<g id="a_node2"><a xlink:href="../../d3/dcc/classshared_1_1events_1_1event_user_change_status.html#a4c904f38f1ff994ebb9a9ec251604874" target="_top" xlink:title="Gets the DB&#45;ID of the user that changed status.">
 <polygon fill="white" stroke="black" points="149,-49 149,-79 277,-79 277,-49 149,-49"/>
 <text text-anchor="start" x="157" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::eventUser</text>
 <text text-anchor="middle" x="213" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">ChangeStatus::getUserId</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a018d111b0b5b957754b20d777f7f1bef" target="_top" xlink:title="Gets the new status of the user.">
+<g id="a_node3"><a xlink:href="../../d3/dcc/classshared_1_1events_1_1event_user_change_status.html#a018d111b0b5b957754b20d777f7f1bef" target="_top" xlink:title="Gets the new status of the user.">
 <polygon fill="white" stroke="black" points="140.5,-0 140.5,-30 285.5,-30 285.5,-0 140.5,-0"/>
 <text text-anchor="start" x="148.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::eventUser</text>
 <text text-anchor="middle" x="213" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ChangeStatus::getNewStatus</text>

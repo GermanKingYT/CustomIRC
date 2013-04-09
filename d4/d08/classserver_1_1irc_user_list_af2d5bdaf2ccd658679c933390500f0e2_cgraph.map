@@ -1,5 +1,5 @@
 <map id="server::ircUserList::getUser" name="server::ircUserList::getUser">
-<area shape="rect" id="node2" href="$d4/d08/classserver_1_1irc_user_list.xhtml#a105ff952c0e653bdc765adc58d3e702b" title="Gets a user by his IRC&#45;ID." alt="" coords="201,5,327,46"/>
-<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="181,71,347,97"/>
-<area shape="rect" id="node4" href="$d4/d08/classserver_1_1irc_user_list.xhtml#a7f99e64e1cabde876fa6a827c6614a4e" title="Finds a user based on his nick and status." alt="" coords="201,122,327,163"/>
+<area shape="rect" id="node2" href="$d4/d08/classserver_1_1irc_user_list.html#a105ff952c0e653bdc765adc58d3e702b" title="Gets a user by his IRC&#45;ID." alt="" coords="201,5,327,46"/>
+<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="181,71,347,97"/>
+<area shape="rect" id="node4" href="$d4/d08/classserver_1_1irc_user_list.html#a7f99e64e1cabde876fa6a827c6614a4e" title="Finds a user based on his nick and status." alt="" coords="201,122,327,163"/>
 </map>

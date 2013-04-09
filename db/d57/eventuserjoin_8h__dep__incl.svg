@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/dd2/events_8h.xhtml" target="_top" xlink:title="C++/resources/events\l/events.h">
+<g id="a_node2"><a xlink:href="../../db/dd2/events_8h.html" target="_top" xlink:title="C++/resources/events\l/events.h">
 <polygon fill="white" stroke="black" points="182,-205 182,-235 294,-235 294,-205 182,-205"/>
 <text text-anchor="start" x="190" y="-223" font-family="Helvetica,sans-Serif" font-size="10.00">C++/resources/events</text>
 <text text-anchor="middle" x="238" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">/events.h</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d0/ddb/eventuserjoin_8cpp.xhtml" target="_top" xlink:title="C++/resources/events\l/eventuserjoin.cpp">
+<g id="a_node11"><a xlink:href="../../d0/ddb/eventuserjoin_8cpp.html" target="_top" xlink:title="C++/resources/events\l/eventuserjoin.cpp">
 <polygon fill="white" stroke="black" points="312,-205 312,-235 424,-235 424,-205 312,-205"/>
 <text text-anchor="start" x="320" y="-223" font-family="Helvetica,sans-Serif" font-size="10.00">C++/resources/events</text>
 <text text-anchor="middle" x="368" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">/eventuserjoin.cpp</text>
@@ -45,7 +45,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d5/dbc/clsserverconn_8h.xhtml" target="_top" xlink:title="C++/customIrcClient\l/clsserverconn.h">
+<g id="a_node3"><a xlink:href="../../d5/dbc/clsserverconn_8h.html" target="_top" xlink:title="C++/customIrcClient\l/clsserverconn.h">
 <polygon fill="white" stroke="black" points="123,-137 123,-167 229,-167 229,-137 123,-137"/>
 <text text-anchor="start" x="131" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="176" y="-144" font-family="Helvetica,sans-Serif" font-size="10.00">/clsserverconn.h</text>
@@ -59,7 +59,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../db/df6/mainapp_8h.xhtml" target="_top" xlink:title="C++/customIrcServer\l/mainapp.h">
+<g id="a_node8"><a xlink:href="../../db/df6/mainapp_8h.html" target="_top" xlink:title="C++/customIrcServer\l/mainapp.h">
 <polygon fill="white" stroke="black" points="247,-137 247,-167 355,-167 355,-137 247,-137"/>
 <text text-anchor="start" x="255" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcServer</text>
 <text text-anchor="middle" x="301" y="-144" font-family="Helvetica,sans-Serif" font-size="10.00">/mainapp.h</text>
@@ -73,7 +73,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../db/d1f/clsserverconn_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/clsserverconn.cpp">
+<g id="a_node4"><a xlink:href="../../db/d1f/clsserverconn_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/clsserverconn.cpp">
 <polygon fill="white" stroke="black" points="-1,-69 -1,-99 105,-99 105,-69 -1,-69"/>
 <text text-anchor="start" x="7" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="52" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/clsserverconn.cpp</text>
@@ -87,7 +87,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d9/d53/mainwindow_8h.xhtml" target="_top" xlink:title="C++/customIrcClient\l/mainwindow.h">
+<g id="a_node5"><a xlink:href="../../d9/d53/mainwindow_8h.html" target="_top" xlink:title="C++/customIrcClient\l/mainwindow.h">
 <polygon fill="white" stroke="black" points="123,-69 123,-99 229,-99 229,-69 123,-69"/>
 <text text-anchor="start" x="131" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="176" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/mainwindow.h</text>
@@ -101,7 +101,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../df/d94/custom_irc_client_2main_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/main.cpp">
+<g id="a_node6"><a xlink:href="../../df/d94/custom_irc_client_2main_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/main.cpp">
 <polygon fill="white" stroke="black" points="61,-1 61,-31 167,-31 167,-1 61,-1"/>
 <text text-anchor="start" x="69" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="114" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">/main.cpp</text>
@@ -115,7 +115,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d8/dd9/mainwindow_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/mainwindow.cpp">
+<g id="a_node7"><a xlink:href="../../d8/dd9/mainwindow_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/mainwindow.cpp">
 <polygon fill="white" stroke="black" points="185,-1 185,-31 291,-31 291,-1 185,-1"/>
 <text text-anchor="start" x="193" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="238" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">/mainwindow.cpp</text>
@@ -129,7 +129,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../dc/d17/custom_irc_server_2main_8cpp.xhtml" target="_top" xlink:title="C++/customIrcServer\l/main.cpp">
+<g id="a_node9"><a xlink:href="../../dc/d17/custom_irc_server_2main_8cpp.html" target="_top" xlink:title="C++/customIrcServer\l/main.cpp">
 <polygon fill="white" stroke="black" points="247,-69 247,-99 355,-99 355,-69 247,-69"/>
 <text text-anchor="start" x="255" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcServer</text>
 <text text-anchor="middle" x="301" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/main.cpp</text>
@@ -143,7 +143,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d8/d88/mainapp_8cpp.xhtml" target="_top" xlink:title="C++/customIrcServer\l/mainapp.cpp">
+<g id="a_node10"><a xlink:href="../../d8/d88/mainapp_8cpp.html" target="_top" xlink:title="C++/customIrcServer\l/mainapp.cpp">
 <polygon fill="white" stroke="black" points="373,-69 373,-99 481,-99 481,-69 373,-69"/>
 <text text-anchor="start" x="381" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcServer</text>
 <text text-anchor="middle" x="427" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/mainapp.cpp</text>

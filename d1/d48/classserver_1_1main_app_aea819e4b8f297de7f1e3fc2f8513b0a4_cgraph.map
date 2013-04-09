@@ -1,12 +1,12 @@
 <map id="server::mainApp::doUserQuery" name="server::mainApp::doUserQuery">
-<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.xhtml#af6bce76d6e000cf6c5ebfb4ce323f442" title="Used to convert a user for JSON transfer." alt="" coords="262,71,453,97"/>
-<area shape="rect" id="node3" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="254,121,461,148"/>
-<area shape="rect" id="node4" href="$df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="284,172,431,199"/>
-<area shape="rect" id="node5" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="509,85,693,126"/>
-<area shape="rect" id="node9" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="562,172,641,199"/>
-<area shape="rect" id="node11" href="$dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" title="Sends data to the socket." alt="" coords="530,223,673,249"/>
-<area shape="rect" id="node6" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="742,5,965,46"/>
-<area shape="rect" id="node7" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="758,71,949,97"/>
-<area shape="rect" id="node8" href="$d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="794,121,913,148"/>
-<area shape="rect" id="node10" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="783,172,924,199"/>
+<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.html#af6bce76d6e000cf6c5ebfb4ce323f442" title="Used to convert a user for JSON transfer." alt="" coords="262,71,453,97"/>
+<area shape="rect" id="node3" href="$d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="254,121,461,148"/>
+<area shape="rect" id="node4" href="$df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="284,172,431,199"/>
+<area shape="rect" id="node5" href="$d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="509,85,693,126"/>
+<area shape="rect" id="node9" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="562,172,641,199"/>
+<area shape="rect" id="node11" href="$dc/d4d/classserver_1_1ui_client.html#ad3f8f8690155b186b54e40dcfee0df23" title="Sends data to the socket." alt="" coords="530,223,673,249"/>
+<area shape="rect" id="node6" href="$d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="742,5,965,46"/>
+<area shape="rect" id="node7" href="$d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="758,71,949,97"/>
+<area shape="rect" id="node8" href="$d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="794,121,913,148"/>
+<area shape="rect" id="node10" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="783,172,924,199"/>
 </map>

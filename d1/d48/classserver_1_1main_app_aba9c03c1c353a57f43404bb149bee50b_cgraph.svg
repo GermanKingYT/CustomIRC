@@ -34,7 +34,7 @@
 <script type="text/javascript">
 var viewWidth = 734;
 var viewHeight = 191;
-var sectionId = 'dynsection-3';
+var sectionId = 'dynsection-4';
 </script>
 <script xlink:href="../../svgpan.js"/>
 <svg id="graph" class="graph">
@@ -48,7 +48,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#a48d11c9b50a2569c1065f19ca87d0715" target="_top" xlink:title="Converts the current data to a QVariant for sending with JSON.">
+<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#a48d11c9b50a2569c1065f19ca87d0715" target="_top" xlink:title="Converts the current data to a QVariant for sending with JSON.">
 <polygon fill="white" stroke="black" points="209,-124 209,-154 331,-154 331,-124 209,-124"/>
 <text text-anchor="start" x="217" y="-142" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="270" y="-131" font-family="Helvetica,sans-Serif" font-size="10.00">::toVariant</text>
@@ -62,7 +62,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
+<g id="a_node4"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
 <polygon fill="white" stroke="black" points="192.5,-82.5 192.5,-101.5 347.5,-101.5 347.5,-82.5 192.5,-82.5"/>
 <text text-anchor="middle" x="270" y="-89.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::addToData</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
+<g id="a_node5"><a xlink:href="../../df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
 <polygon fill="white" stroke="black" points="215,-39.5 215,-58.5 325,-58.5 325,-39.5 215,-39.5"/>
 <text text-anchor="middle" x="270" y="-46.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiServer::send</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#abd4a458aec7673de426a8995a349bf4b" target="_top" xlink:title="Gets the event type as a string.">
+<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#abd4a458aec7673de426a8995a349bf4b" target="_top" xlink:title="Gets the event type as a string.">
 <polygon fill="white" stroke="black" points="392,-126 392,-156 514,-156 514,-126 392,-126"/>
 <text text-anchor="start" x="400" y="-144" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="453" y="-133" font-family="Helvetica,sans-Serif" font-size="10.00">::getEventType</text>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
+<g id="a_node6"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
 <polygon fill="white" stroke="black" points="384,-77 384,-107 522,-107 522,-77 384,-77"/>
 <text text-anchor="start" x="392" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::toJson</text>
 <text text-anchor="middle" x="453" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -116,7 +116,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node10"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="423.5,-38.5 423.5,-57.5 482.5,-57.5 482.5,-38.5 423.5,-38.5"/>
 <text text-anchor="middle" x="453" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -129,7 +129,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
+<g id="a_node12"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
 <polygon fill="white" stroke="black" points="399.5,-0.5 399.5,-19.5 506.5,-19.5 506.5,-0.5 399.5,-0.5"/>
 <text text-anchor="middle" x="453" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::send</text>
 </a>
@@ -142,7 +142,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
+<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
 <polygon fill="white" stroke="black" points="558.5,-153 558.5,-183 725.5,-183 725.5,-153 558.5,-153"/>
 <text text-anchor="start" x="566.5" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 <text text-anchor="middle" x="642" y="-160" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -156,7 +156,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
+<g id="a_node8"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
 <polygon fill="white" stroke="black" points="570.5,-114.5 570.5,-133.5 713.5,-133.5 713.5,-114.5 570.5,-114.5"/>
 <text text-anchor="middle" x="642" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -169,7 +169,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
+<g id="a_node9"><a xlink:href="../../d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
 <polygon fill="white" stroke="black" points="597.5,-76.5 597.5,-95.5 686.5,-95.5 686.5,-76.5 597.5,-76.5"/>
 <text text-anchor="middle" x="642" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtJson::serialize</text>
 </a>
@@ -182,7 +182,7 @@ var sectionId = 'dynsection-3';
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node11"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="589,-38.5 589,-57.5 695,-57.5 695,-38.5 589,-38.5"/>
 <text text-anchor="middle" x="642" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>

@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d5/d17/classclient_1_1chat_notification.xhtml#a4629f1c83084f928a5efced7a79a1655" target="_top" xlink:title="client::chatNotification\l::getWidth">
+<g id="a_node2"><a xlink:href="../../d5/d17/classclient_1_1chat_notification.html#a4629f1c83084f928a5efced7a79a1655" target="_top" xlink:title="client::chatNotification\l::getWidth">
 <polygon fill="white" stroke="black" points="164.5,-49 164.5,-79 277.5,-79 277.5,-49 164.5,-49"/>
 <text text-anchor="start" x="172.5" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatNotification</text>
 <text text-anchor="middle" x="221" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">::getWidth</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d5/d17/classclient_1_1chat_notification.xhtml#ac3e7bb4220cd0accabf071539af0c19b" target="_top" xlink:title="client::chatNotification\l::getHeight">
+<g id="a_node3"><a xlink:href="../../d5/d17/classclient_1_1chat_notification.html#ac3e7bb4220cd0accabf071539af0c19b" target="_top" xlink:title="client::chatNotification\l::getHeight">
 <polygon fill="white" stroke="black" points="164.5,-0 164.5,-30 277.5,-30 277.5,-0 164.5,-0"/>
 <text text-anchor="start" x="172.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatNotification</text>
 <text text-anchor="middle" x="221" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::getHeight</text>

@@ -1,3 +1,3 @@
 <map id="server::uiServer::chatReceived" name="server::uiServer::chatReceived">
-<area shape="rect" id="node2" href="$df/dd2/classserver_1_1ui_server.xhtml#af8accf173f4aa7dc5f59c56016645726" title="Emitted when a chatmessage has been send from a client." alt="" coords="249,5,415,46"/>
+<area shape="rect" id="node2" href="$df/dd2/classserver_1_1ui_server.html#af8accf173f4aa7dc5f59c56016645726" title="Emitted when a chatmessage has been send from a client." alt="" coords="249,5,415,46"/>
 </map>

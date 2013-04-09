@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
+<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
 <polygon fill="white" stroke="black" points="160.5,-5.5 160.5,-24.5 303.5,-24.5 303.5,-5.5 160.5,-5.5"/>
 <text text-anchor="middle" x="232" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>

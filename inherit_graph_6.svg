@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="d2/da4/classclient_1_1_main_window.xhtml" target="_top" xlink:title="Main UI window.">
+<g id="a_node2"><a xlink:href="d2/da4/classclient_1_1_main_window.html" target="_top" xlink:title="Main UI window.">
 <polygon fill="white" stroke="black" points="116.5,-38.5 116.5,-57.5 217.5,-57.5 217.5,-38.5 116.5,-38.5"/>
 <text text-anchor="middle" x="167" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::MainWindow</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="d9/dc6/class_main_window.xhtml" target="_top" xlink:title="MainWindow">
+<g id="a_node3"><a xlink:href="d9/dc6/class_main_window.html" target="_top" xlink:title="MainWindow">
 <polygon fill="white" stroke="black" points="131,-0.5 131,-19.5 203,-19.5 203,-0.5 131,-0.5"/>
 <text text-anchor="middle" x="167" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow</text>
 </a>

@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node2"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="407.5,-126.5 407.5,-145.5 466.5,-145.5 466.5,-126.5 407.5,-126.5"/>
 <text text-anchor="middle" x="437" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#af2d5bdaf2ccd658679c933390500f0e2" target="_top" xlink:title="Finds a user based on IRC&#45;ID or nick.">
+<g id="a_node4"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#af2d5bdaf2ccd658679c933390500f0e2" target="_top" xlink:title="Finds a user based on IRC&#45;ID or nick.">
 <polygon fill="white" stroke="black" points="206.5,-543 206.5,-573 301.5,-573 301.5,-543 206.5,-543"/>
 <text text-anchor="start" x="214.5" y="-561" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList</text>
 <text text-anchor="middle" x="254" y="-550" font-family="Helvetica,sans-Serif" font-size="10.00">::getUser</text>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
+<g id="a_node6"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
 <polygon fill="white" stroke="black" points="375,-523.5 375,-542.5 499,-542.5 499,-523.5 375,-523.5"/>
 <text text-anchor="middle" x="437" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::getName</text>
 </a>
@@ -56,7 +56,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#a19af488638607e1cc77e94692e3cf3b1" target="_top" xlink:title="Adds a user to the list.">
+<g id="a_node8"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#a19af488638607e1cc77e94692e3cf3b1" target="_top" xlink:title="Adds a user to the list.">
 <polygon fill="white" stroke="black" points="196,-452.5 196,-471.5 312,-471.5 312,-452.5 196,-452.5"/>
 <text text-anchor="middle" x="254" y="-459.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList::add</text>
 </a>
@@ -69,7 +69,7 @@
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#afb3f6602401d493fb06fc48973123bf9" target="_top" xlink:title="server::ircUser::setStatus">
+<g id="a_node12"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#afb3f6602401d493fb06fc48973123bf9" target="_top" xlink:title="server::ircUser::setStatus">
 <polygon fill="white" stroke="black" points="190.5,-364.5 190.5,-383.5 317.5,-383.5 317.5,-364.5 190.5,-364.5"/>
 <text text-anchor="middle" x="254" y="-371.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setStatus</text>
 </a>
@@ -82,7 +82,7 @@
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
+<g id="a_node13"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
 <polygon fill="white" stroke="black" points="191,-326.5 191,-345.5 317,-345.5 317,-326.5 191,-326.5"/>
 <text text-anchor="middle" x="254" y="-333.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setOnline</text>
 </a>
@@ -95,7 +95,7 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a7d729b6e71c3f381a1db0cec57520c39" target="_top" xlink:title="getId">
+<g id="a_node14"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a7d729b6e71c3f381a1db0cec57520c39" target="_top" xlink:title="getId">
 <polygon fill="white" stroke="black" points="201,-288.5 201,-307.5 307,-307.5 307,-288.5 201,-288.5"/>
 <text text-anchor="middle" x="254" y="-295.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::getId</text>
 </a>
@@ -108,7 +108,7 @@
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#af6bce76d6e000cf6c5ebfb4ce323f442" target="_top" xlink:title="Used to convert a user for JSON transfer.">
+<g id="a_node15"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#af6bce76d6e000cf6c5ebfb4ce323f442" target="_top" xlink:title="Used to convert a user for JSON transfer.">
 <polygon fill="white" stroke="black" points="182.5,-250.5 182.5,-269.5 325.5,-269.5 325.5,-250.5 182.5,-250.5"/>
 <text text-anchor="middle" x="254" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::toVariantMap</text>
 </a>
@@ -121,7 +121,7 @@
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d1/d48/classserver_1_1main_app.xhtml#a3f2522c9bfcd7593aad9c906d24b6016" target="_top" xlink:title="Adds an event to the history, checking for the maximum number.">
+<g id="a_node16"><a xlink:href="../../d1/d48/classserver_1_1main_app.html#a3f2522c9bfcd7593aad9c906d24b6016" target="_top" xlink:title="Adds an event to the history, checking for the maximum number.">
 <polygon fill="white" stroke="black" points="183,-201 183,-231 325,-231 325,-201 183,-201"/>
 <text text-anchor="start" x="191" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00">server::mainApp::addToEvent</text>
 <text text-anchor="middle" x="254" y="-208" font-family="Helvetica,sans-Serif" font-size="10.00">History</text>
@@ -135,7 +135,7 @@
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
+<g id="a_node17"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
 <polygon fill="white" stroke="black" points="176.5,-162.5 176.5,-181.5 331.5,-181.5 331.5,-162.5 176.5,-162.5"/>
 <text text-anchor="middle" x="254" y="-169.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::addToData</text>
 </a>
@@ -148,7 +148,7 @@
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#a48d11c9b50a2569c1065f19ca87d0715" target="_top" xlink:title="Converts the current data to a QVariant for sending with JSON.">
+<g id="a_node18"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#a48d11c9b50a2569c1065f19ca87d0715" target="_top" xlink:title="Converts the current data to a QVariant for sending with JSON.">
 <polygon fill="white" stroke="black" points="193,-403 193,-433 315,-433 315,-403 193,-403"/>
 <text text-anchor="start" x="201" y="-421" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="254" y="-410" font-family="Helvetica,sans-Serif" font-size="10.00">::toVariant</text>
@@ -162,7 +162,7 @@
 </g>
 <!-- Node20 -->
 <g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="../../df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
+<g id="a_node20"><a xlink:href="../../df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
 <polygon fill="white" stroke="black" points="199,-83.5 199,-102.5 309,-102.5 309,-83.5 199,-83.5"/>
 <text text-anchor="middle" x="254" y="-90.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiServer::send</text>
 </a>
@@ -175,7 +175,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="573,-126.5 573,-145.5 679,-145.5 679,-126.5 573,-126.5"/>
 <text text-anchor="middle" x="626" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>
@@ -193,7 +193,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#a105ff952c0e653bdc765adc58d3e702b" target="_top" xlink:title="Gets a user by his IRC&#45;ID.">
+<g id="a_node5"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#a105ff952c0e653bdc765adc58d3e702b" target="_top" xlink:title="Gets a user by his IRC&#45;ID.">
 <polygon fill="white" stroke="black" points="389.5,-611 389.5,-641 484.5,-641 484.5,-611 389.5,-611"/>
 <text text-anchor="start" x="397.5" y="-629" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList</text>
 <text text-anchor="middle" x="437" y="-618" font-family="Helvetica,sans-Serif" font-size="10.00">::getUserByIrcId</text>
@@ -212,7 +212,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#a7f99e64e1cabde876fa6a827c6614a4e" target="_top" xlink:title="Finds a user based on his nick and status.">
+<g id="a_node7"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#a7f99e64e1cabde876fa6a827c6614a4e" target="_top" xlink:title="Finds a user based on his nick and status.">
 <polygon fill="white" stroke="black" points="389.5,-562 389.5,-592 484.5,-592 484.5,-562 389.5,-562"/>
 <text text-anchor="start" x="397.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList</text>
 <text text-anchor="middle" x="437" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">::getUserByNick</text>
@@ -226,7 +226,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#ae4669a1a72c600a7a238bc39cbd853ca" target="_top" xlink:title="server::ircUser::setColor">
+<g id="a_node9"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#ae4669a1a72c600a7a238bc39cbd853ca" target="_top" xlink:title="server::ircUser::setColor">
 <polygon fill="white" stroke="black" points="376.5,-447.5 376.5,-466.5 497.5,-466.5 497.5,-447.5 376.5,-447.5"/>
 <text text-anchor="middle" x="437" y="-454.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setColor</text>
 </a>
@@ -239,7 +239,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d9/db1/namespaceserver.xhtml#a2a6ca6577f352c7d095faf91c8e8dd5a" target="_top" xlink:title="server::getColor">
+<g id="a_node10"><a xlink:href="../../d9/db1/namespaceserver.html#a2a6ca6577f352c7d095faf91c8e8dd5a" target="_top" xlink:title="server::getColor">
 <polygon fill="white" stroke="black" points="395,-409.5 395,-428.5 479,-428.5 479,-409.5 395,-409.5"/>
 <text text-anchor="middle" x="437" y="-416.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::getColor</text>
 </a>
@@ -252,7 +252,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#ad855efa6ab1fe94c35c992ac5cfd164d" target="_top" xlink:title="server::ircUser::setId">
+<g id="a_node11"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#ad855efa6ab1fe94c35c992ac5cfd164d" target="_top" xlink:title="server::ircUser::setId">
 <polygon fill="white" stroke="black" points="384,-485.5 384,-504.5 490,-504.5 490,-485.5 384,-485.5"/>
 <text text-anchor="middle" x="437" y="-492.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setId</text>
 </a>
@@ -265,7 +265,7 @@
 </g>
 <!-- Node19 -->
 <g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#abd4a458aec7673de426a8995a349bf4b" target="_top" xlink:title="Gets the event type as a string.">
+<g id="a_node19"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#abd4a458aec7673de426a8995a349bf4b" target="_top" xlink:title="Gets the event type as a string.">
 <polygon fill="white" stroke="black" points="376,-360 376,-390 498,-390 498,-360 376,-360"/>
 <text text-anchor="start" x="384" y="-378" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="437" y="-367" font-family="Helvetica,sans-Serif" font-size="10.00">::getEventType</text>
@@ -279,7 +279,7 @@
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
+<g id="a_node21"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
 <polygon fill="white" stroke="black" points="368,-77 368,-107 506,-107 506,-77 368,-77"/>
 <text text-anchor="start" x="376" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::toJson</text>
 <text text-anchor="middle" x="437" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -298,7 +298,7 @@
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
-<g id="a_node25"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
+<g id="a_node25"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
 <polygon fill="white" stroke="black" points="383.5,-38.5 383.5,-57.5 490.5,-57.5 490.5,-38.5 383.5,-38.5"/>
 <text text-anchor="middle" x="437" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::send</text>
 </a>
@@ -311,7 +311,7 @@
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
+<g id="a_node22"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
 <polygon fill="white" stroke="black" points="542.5,-39 542.5,-69 709.5,-69 709.5,-39 542.5,-39"/>
 <text text-anchor="start" x="550.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 <text text-anchor="middle" x="626" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -325,7 +325,7 @@
 </g>
 <!-- Node23 -->
 <g id="node23" class="node"><title>Node23</title>
-<g id="a_node23"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
+<g id="a_node23"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
 <polygon fill="white" stroke="black" points="554.5,-0.5 554.5,-19.5 697.5,-19.5 697.5,-0.5 554.5,-0.5"/>
 <text text-anchor="middle" x="626" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -338,7 +338,7 @@
 </g>
 <!-- Node24 -->
 <g id="node24" class="node"><title>Node24</title>
-<g id="a_node24"><a xlink:href="../../d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
+<g id="a_node24"><a xlink:href="../../d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
 <polygon fill="white" stroke="black" points="581.5,-88.5 581.5,-107.5 670.5,-107.5 670.5,-88.5 581.5,-88.5"/>
 <text text-anchor="middle" x="626" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtJson::serialize</text>
 </a>

@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d0/dd1/custom_irc_client_2android_2main_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/android/main.cpp">
+<g id="a_node2"><a xlink:href="../../d0/dd1/custom_irc_client_2android_2main_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/android/main.cpp">
 <polygon fill="white" stroke="black" points="-1,-1 -1,-31 105,-31 105,-1 -1,-1"/>
 <text text-anchor="start" x="7" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="52" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">/android/main.cpp</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../dc/d1d/android_2mainwindow_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/android/mainwindow.cpp">
+<g id="a_node3"><a xlink:href="../../dc/d1d/android_2mainwindow_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/android/mainwindow.cpp">
 <polygon fill="white" stroke="black" points="123.5,-1 123.5,-31 248.5,-31 248.5,-1 123.5,-1"/>
 <text text-anchor="start" x="131.5" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="186" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">/android/mainwindow.cpp</text>

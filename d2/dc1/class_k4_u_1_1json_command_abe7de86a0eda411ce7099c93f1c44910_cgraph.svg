@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/d6d/namespace_qt_json.xhtml#ad92865ae39b2b148f6c788d7cf28c894" target="_top" xlink:title="QtJson::parse">
+<g id="a_node2"><a xlink:href="../../d2/d6d/namespace_qt_json.html#ad92865ae39b2b148f6c788d7cf28c894" target="_top" xlink:title="QtJson::parse">
 <polygon fill="white" stroke="black" points="258.5,-38.5 258.5,-57.5 335.5,-57.5 335.5,-38.5 258.5,-38.5"/>
 <text text-anchor="middle" x="297" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtJson::parse</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#af6610a609295d3aa428d46260a33e1de" target="_top" xlink:title="K4U::jsonCommand::setCommandInt">
+<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#af6610a609295d3aa428d46260a33e1de" target="_top" xlink:title="K4U::jsonCommand::setCommandInt">
 <polygon fill="white" stroke="black" points="208,-0.5 208,-19.5 386,-19.5 386,-0.5 208,-0.5"/>
 <text text-anchor="middle" x="297" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::setCommandInt</text>
 </a>

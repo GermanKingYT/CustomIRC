@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/dd7/custom_irc_client_2clssettings_8h.xhtml" target="_top" xlink:title="clssettings.h">
+<g id="a_node2"><a xlink:href="../../db/dd7/custom_irc_client_2clssettings_8h.html" target="_top" xlink:title="clssettings.h">
 <polygon fill="white" stroke="black" points="126,-168.5 126,-187.5 198,-187.5 198,-168.5 126,-168.5"/>
 <text text-anchor="middle" x="162" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">clssettings.h</text>
 </a>
@@ -70,7 +70,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.xhtml" target="_top" xlink:title="ircuser.h">
+<g id="a_node7"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.html" target="_top" xlink:title="ircuser.h">
 <polygon fill="white" stroke="black" points="302,-112.5 302,-131.5 356,-131.5 356,-112.5 302,-112.5"/>
 <text text-anchor="middle" x="329" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ircuser.h</text>
 </a>
@@ -148,7 +148,7 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node14"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="671.5,-56.5 671.5,-75.5 776.5,-75.5 776.5,-56.5 671.5,-56.5"/>
 <text text-anchor="middle" x="724" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>

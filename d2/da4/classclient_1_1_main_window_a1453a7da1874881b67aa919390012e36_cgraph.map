@@ -1,0 +1,9 @@
+<map id="client::MainWindow::serverDisconnected" name="client::MainWindow::serverDisconnected">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#a39679af3cff16dcf78ae97733c3c1781" title="client::MainWindow\l::showMessage" alt="" coords="386,5,521,46"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#a4714272984f1518ea739cc5c809d8579" title="client::MainWindow\l::doReconnect" alt="" coords="198,63,333,105"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#af4589d93eb4b606423cb4b5e4a583f4e" title="Actually connect." alt="" coords="381,70,525,111"/>
+<area shape="rect" id="node5" href="$d3/d65/classclient_1_1cls_server_conn.html#a5ec4520ae6b50789ef650436b6339d43" title="client::clsServerConn\l::connectTimeout" alt="" coords="573,41,717,82"/>
+<area shape="rect" id="node7" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="606,107,685,133"/>
+<area shape="rect" id="node6" href="$d3/d65/classclient_1_1cls_server_conn.html#af0d708fd1a5059ca1b2c8c0829bbb690" title="Triggered when it cannot connect." alt="" coords="766,41,911,82"/>
+<area shape="rect" id="node8" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="768,107,909,133"/>
+</map>

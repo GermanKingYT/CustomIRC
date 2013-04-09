@@ -32,7 +32,7 @@
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 786;
+var viewWidth = 792;
 var viewHeight = 476;
 var sectionId = 'dynsection-2';
 </script>
@@ -40,7 +40,7 @@ var sectionId = 'dynsection-2';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>client::clsServerConn::clsServerConn</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-472 783,-472 783,5 -4,5"/>
+<polygon fill="white" stroke="white" points="-4,5 -4,-472 789,-472 789,5 -4,5"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-345 0,-375 108,-375 108,-345 0,-345"/>
@@ -49,7 +49,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a0f7c8da07639a563b9d88780eb22748e" target="_top" xlink:title="client::clsServerConn\l::readData">
+<g id="a_node2"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" target="_top" xlink:title="client::clsServerConn\l::readData">
 <polygon fill="white" stroke="black" points="144,-159 144,-189 252,-189 252,-159 144,-159"/>
 <text text-anchor="start" x="152" y="-177" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="198" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">::readData</text>
@@ -61,65 +61,65 @@ var sectionId = 'dynsection-2';
 <path fill="none" stroke="midnightblue" d="M66.6205,-344.779C91.4374,-312.272 149.75,-235.891 179.247,-197.254"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="182.132,-199.243 185.418,-189.171 176.568,-194.995 182.132,-199.243"/>
 </g>
-<!-- Node18 -->
-<g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#af4d99891fc606ce032facfd9e27692ca" target="_top" xlink:title="Emitted when the client has a succesfull connection to the server.">
+<!-- Node20 -->
+<g id="node20" class="node"><title>Node20</title>
+<g id="a_node20"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#af4d99891fc606ce032facfd9e27692ca" target="_top" xlink:title="Emitted when the client has a succesfull connection to the server.">
 <polygon fill="white" stroke="black" points="298,-438 298,-468 406,-468 406,-438 298,-438"/>
 <text text-anchor="start" x="306" y="-456" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-445" font-family="Helvetica,sans-Serif" font-size="10.00">::connected</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node18 -->
-<g id="edge23" class="edge"><title>Node1&#45;&gt;Node18</title>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge25" class="edge"><title>Node1&#45;&gt;Node20</title>
 <path fill="none" stroke="midnightblue" d="M68.0346,-375.096C83.9961,-392.424 112.784,-420.109 144,-433 189.627,-451.843 245.563,-456.263 287.781,-456.292"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="287.958,-459.791 297.931,-456.215 287.905,-452.791 287.958,-459.791"/>
 </g>
-<!-- Node19 -->
-<g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#adaecfe74ef1fb16f35613587aa1dada8" target="_top" xlink:title="client::clsServerConn\l::srvConnected">
+<!-- Node21 -->
+<g id="node21" class="node"><title>Node21</title>
+<g id="a_node21"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#adaecfe74ef1fb16f35613587aa1dada8" target="_top" xlink:title="client::clsServerConn\l::srvConnected">
 <polygon fill="white" stroke="black" points="144,-394 144,-424 252,-424 252,-394 144,-394"/>
 <text text-anchor="start" x="152" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="198" y="-401" font-family="Helvetica,sans-Serif" font-size="10.00">::srvConnected</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node19 -->
-<g id="edge24" class="edge"><title>Node1&#45;&gt;Node19</title>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge26" class="edge"><title>Node1&#45;&gt;Node21</title>
 <path fill="none" stroke="midnightblue" d="M98.7634,-375.101C112.935,-379.992 128.813,-385.471 143.603,-390.574"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="142.542,-393.911 153.137,-393.864 144.825,-387.293 142.542,-393.911"/>
 </g>
-<!-- Node20 -->
-<g id="node20" class="node"><title>Node20</title>
-<g id="a_node20"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#ad5a08372105d83e34538e457374525f6" target="_top" xlink:title="Emitted when the client lost connection to the server.">
+<!-- Node22 -->
+<g id="node22" class="node"><title>Node22</title>
+<g id="a_node22"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#ad5a08372105d83e34538e457374525f6" target="_top" xlink:title="Emitted when the client lost connection to the server.">
 <polygon fill="white" stroke="black" points="298,-312 298,-342 406,-342 406,-312 298,-312"/>
 <text text-anchor="start" x="306" y="-330" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-319" font-family="Helvetica,sans-Serif" font-size="10.00">::disconnected</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node20 -->
-<g id="edge27" class="edge"><title>Node1&#45;&gt;Node20</title>
+<!-- Node1&#45;&gt;Node22 -->
+<g id="edge29" class="edge"><title>Node1&#45;&gt;Node22</title>
 <path fill="none" stroke="midnightblue" d="M103.086,-344.963C116.229,-341.423 130.557,-338.079 144,-336 191.847,-328.601 246.601,-326.494 287.773,-326.16"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="287.953,-329.66 297.936,-326.111 287.919,-322.66 287.953,-329.66"/>
 </g>
-<!-- Node21 -->
-<g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#acd2aa4131c06ed51738fb041c86ed640" target="_top" xlink:title="client::clsServerConn\l::srvDisconnected">
+<!-- Node23 -->
+<g id="node23" class="node"><title>Node23</title>
+<g id="a_node23"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#acd2aa4131c06ed51738fb041c86ed640" target="_top" xlink:title="client::clsServerConn\l::srvDisconnected">
 <polygon fill="white" stroke="black" points="144,-345 144,-375 252,-375 252,-345 144,-345"/>
 <text text-anchor="start" x="152" y="-363" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="198" y="-352" font-family="Helvetica,sans-Serif" font-size="10.00">::srvDisconnected</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node21 -->
-<g id="edge28" class="edge"><title>Node1&#45;&gt;Node21</title>
+<!-- Node1&#45;&gt;Node23 -->
+<g id="edge30" class="edge"><title>Node1&#45;&gt;Node23</title>
 <path fill="none" stroke="midnightblue" d="M108.28,-360C116.56,-360 125.184,-360 133.661,-360"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="133.894,-363.5 143.894,-360 133.894,-356.5 133.894,-363.5"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a8fc1a3ef72ba0480d521781f84983afe" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
+<g id="a_node3"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a8fc1a3ef72ba0480d521781f84983afe" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
 <polygon fill="white" stroke="black" points="288,-263 288,-293 416,-293 416,-263 288,-263"/>
 <text text-anchor="start" x="296" y="-281" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-270" font-family="Helvetica,sans-Serif" font-size="10.00">::checkForJsonCommand</text>
@@ -133,7 +133,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
+<g id="a_node4"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
 <polygon fill="white" stroke="black" points="452.5,-246.5 452.5,-265.5 619.5,-265.5 619.5,-246.5 452.5,-246.5"/>
 <text text-anchor="middle" x="536" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 </a>
@@ -146,7 +146,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#ad5d3a03440fdec33270247486fb5500c" target="_top" xlink:title="Event has been received by the client. Parse it.">
+<g id="a_node7"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#ad5d3a03440fdec33270247486fb5500c" target="_top" xlink:title="Event has been received by the client. Parse it.">
 <polygon fill="white" stroke="black" points="479,-148 479,-178 593,-178 593,-148 479,-148"/>
 <text text-anchor="start" x="487" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="536" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">::handleEventReceived</text>
@@ -158,58 +158,58 @@ var sectionId = 'dynsection-2';
 <path fill="none" stroke="midnightblue" d="M252.177,-175.39C263.971,-175.644 276.409,-175.87 288,-176 344.885,-176.639 359.195,-179.094 416,-176 433.174,-175.065 451.68,-173.376 468.863,-171.518"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="469.256,-174.996 478.806,-170.409 468.48,-168.039 469.256,-174.996"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
+<!-- Node15 -->
+<g id="node15" class="node"><title>Node15</title>
+<g id="a_node15"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
 <polygon fill="white" stroke="black" points="464.5,-87.5 464.5,-106.5 607.5,-106.5 607.5,-87.5 464.5,-87.5"/>
 <text text-anchor="middle" x="536" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node13 -->
-<g id="edge14" class="edge"><title>Node2&#45;&gt;Node13</title>
+<!-- Node2&#45;&gt;Node15 -->
+<g id="edge16" class="edge"><title>Node2&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M222.564,-158.893C239.958,-148.486 264.578,-135.27 288,-128 341.949,-111.256 405.195,-103.528 454.182,-99.9756"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="454.672,-103.451 464.411,-99.2791 454.196,-96.4667 454.672,-103.451"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a034a72332abdeeb8dbd9483954a235dd" target="_top" xlink:title="The server has given us all the users. Handle it.">
+<!-- Node16 -->
+<g id="node16" class="node"><title>Node16</title>
+<g id="a_node16"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a034a72332abdeeb8dbd9483954a235dd" target="_top" xlink:title="The server has given us all the users. Handle it.">
 <polygon fill="white" stroke="black" points="290,-0 290,-30 414,-30 414,-0 290,-0"/>
 <text text-anchor="start" x="298" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::handleCompletedQuery</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node14 -->
-<g id="edge15" class="edge"><title>Node2&#45;&gt;Node14</title>
+<!-- Node2&#45;&gt;Node16 -->
+<g id="edge17" class="edge"><title>Node2&#45;&gt;Node16</title>
 <path fill="none" stroke="midnightblue" d="M205.285,-158.967C217.414,-131.648 246.561,-73.5883 288,-40 290.04,-38.3467 292.202,-36.7918 294.451,-35.3305"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="296.545,-38.1643 303.474,-30.1491 293.059,-32.094 296.545,-38.1643"/>
 </g>
-<!-- Node16 -->
-<g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a2f4257ed2b9677919567a060fb31887b" target="_top" xlink:title="Another client has changed our own user status.">
+<!-- Node18 -->
+<g id="node18" class="node"><title>Node18</title>
+<g id="a_node18"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a2f4257ed2b9677919567a060fb31887b" target="_top" xlink:title="Another client has changed our own user status.">
 <polygon fill="white" stroke="black" points="290,-49 290,-79 414,-79 414,-49 290,-49"/>
 <text text-anchor="start" x="298" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">::handleOwnUserChange</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node16 -->
-<g id="edge18" class="edge"><title>Node2&#45;&gt;Node16</title>
+<!-- Node2&#45;&gt;Node18 -->
+<g id="edge20" class="edge"><title>Node2&#45;&gt;Node18</title>
 <path fill="none" stroke="midnightblue" d="M213.326,-158.697C230.057,-141.432 259.137,-113.255 288,-94 293.552,-90.2961 299.632,-86.797 305.756,-83.5861"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="307.335,-86.7101 314.703,-79.0976 304.196,-80.4533 307.335,-86.7101"/>
 </g>
-<!-- Node17 -->
-<g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a25abb840bb0764068d9a72dfb1e403b5" target="_top" xlink:title="Event request has been done by us, and data has been returned.">
+<!-- Node19 -->
+<g id="node19" class="node"><title>Node19</title>
+<g id="a_node19"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a25abb840bb0764068d9a72dfb1e403b5" target="_top" xlink:title="Event request has been done by us, and data has been returned.">
 <polygon fill="white" stroke="black" points="296.5,-137 296.5,-167 407.5,-167 407.5,-137 296.5,-137"/>
 <text text-anchor="start" x="304.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="352" y="-144" font-family="Helvetica,sans-Serif" font-size="10.00">::handleEventRequest</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node17 -->
-<g id="edge20" class="edge"><title>Node2&#45;&gt;Node17</title>
+<!-- Node2&#45;&gt;Node19 -->
+<g id="edge22" class="edge"><title>Node2&#45;&gt;Node19</title>
 <path fill="none" stroke="midnightblue" d="M252.162,-166.305C263.22,-164.705 274.989,-163.002 286.406,-161.349"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="286.927,-164.81 296.322,-159.914 285.924,-157.882 286.927,-164.81"/>
 </g>
@@ -220,7 +220,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node5"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="506.5,-361.5 506.5,-380.5 565.5,-380.5 565.5,-361.5 506.5,-361.5"/>
 <text text-anchor="middle" x="536" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -233,143 +233,171 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
-<polygon fill="white" stroke="black" points="664,-361.5 664,-380.5 770,-380.5 770,-361.5 664,-361.5"/>
-<text text-anchor="middle" x="717" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
+<g id="a_node6"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<polygon fill="white" stroke="black" points="667,-361.5 667,-380.5 773,-380.5 773,-361.5 667,-361.5"/>
+<text text-anchor="middle" x="720" y="-368.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge"><title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M565.759,-365.885C589.363,-364.343 623.639,-363.892 653.493,-364.531"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="653.756,-368.039 663.844,-364.802 653.94,-361.041 653.756,-368.039"/>
+<path fill="none" stroke="midnightblue" d="M565.838,-365.911C590.153,-364.329 625.808,-363.877 656.6,-364.555"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="656.743,-368.06 666.833,-364.829 656.93,-361.063 656.743,-368.06"/>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge6" class="edge"><title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M663.844,-377.198C635.742,-378.078 601.653,-377.906 575.894,-376.681"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="575.939,-373.178 565.759,-376.115 575.549,-380.167 575.939,-373.178"/>
+<path fill="none" stroke="midnightblue" d="M666.833,-377.171C637.86,-378.089 602.423,-377.915 575.896,-376.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="576.018,-373.152 565.838,-376.089 575.628,-380.141 576.018,-373.152"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#a33943d736db49d2a7781325357f34063" target="_top" xlink:title="Gets this events type.">
-<polygon fill="white" stroke="black" points="656,-99 656,-129 778,-129 778,-99 656,-99"/>
-<text text-anchor="start" x="664" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
-<text text-anchor="middle" x="717" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">::getType</text>
+<g id="a_node8"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#a33943d736db49d2a7781325357f34063" target="_top" xlink:title="Gets this events type.">
+<polygon fill="white" stroke="black" points="659,-148 659,-178 781,-178 781,-148 659,-148"/>
+<text text-anchor="start" x="667" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
+<text text-anchor="middle" x="720" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">::getType</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge9" class="edge"><title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M592.166,-147.899C610.884,-142.775 631.963,-137.004 651.353,-131.697"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="652.295,-135.068 661.016,-129.052 650.446,-128.316 652.295,-135.068"/>
+<path fill="none" stroke="midnightblue" d="M593.091,-163C610.716,-163 630.401,-163 648.872,-163"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="648.989,-166.5 658.989,-163 648.989,-159.5 648.989,-166.5"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#ada02a27f01478db29d10bde4c51110b4" target="_top" xlink:title="Emitted when a chat event has been received.">
-<polygon fill="white" stroke="black" points="663,-50 663,-80 771,-80 771,-50 663,-50"/>
-<text text-anchor="start" x="671" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
-<text text-anchor="middle" x="717" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">::chatReceived</text>
+<g id="a_node9"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#ada02a27f01478db29d10bde4c51110b4" target="_top" xlink:title="Emitted when a chat event has been received.">
+<polygon fill="white" stroke="black" points="666,-99 666,-129 774,-129 774,-99 666,-99"/>
+<text text-anchor="start" x="674" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">::chatReceived</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node9 -->
 <g id="edge10" class="edge"><title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M565.502,-147.875C581.733,-139.011 602.298,-127.355 620,-116 636.612,-105.343 638.776,-99.6373 656,-90 659.501,-88.0413 663.186,-86.1445 666.937,-84.3302"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="668.712,-87.3659 676.33,-80.002 665.783,-81.0084 668.712,-87.3659"/>
+<path fill="none" stroke="midnightblue" d="M593.091,-147.899C613.017,-142.534 635.576,-136.46 656.038,-130.951"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="657.147,-134.277 665.894,-128.298 655.328,-127.518 657.147,-134.277"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a9f3b4fe1b687bdb31ab584493b8dde91" target="_top" xlink:title="Triggered when a user enters the channel.">
-<polygon fill="white" stroke="black" points="663,-246 663,-276 771,-276 771,-246 663,-246"/>
-<text text-anchor="start" x="671" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
-<text text-anchor="middle" x="717" y="-253" font-family="Helvetica,sans-Serif" font-size="10.00">::userEnter</text>
+<g id="a_node10"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a9f3b4fe1b687bdb31ab584493b8dde91" target="_top" xlink:title="Triggered when a user enters the channel.">
+<polygon fill="white" stroke="black" points="666,-50 666,-80 774,-80 774,-50 666,-50"/>
+<text text-anchor="start" x="674" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">::userEnter</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node10 -->
 <g id="edge11" class="edge"><title>Node7&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M559.209,-178.071C582.671,-193.643 621.038,-218.13 656,-236 659.787,-237.936 663.759,-239.843 667.78,-241.689"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="666.627,-245.006 677.187,-245.868 669.469,-238.609 666.627,-245.006"/>
+<path fill="none" stroke="midnightblue" d="M565.502,-147.875C581.733,-139.011 602.298,-127.355 620,-116 636.612,-105.343 638.695,-99.4903 656,-90 659.656,-87.9948 663.507,-86.0658 667.43,-84.2301"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="668.939,-87.3892 676.652,-80.1248 666.093,-80.9943 668.939,-87.3892"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#a89ac2b4edd0a40b0fbfb5504904752c9" target="_top" xlink:title="Triggered when a user left the channel.">
-<polygon fill="white" stroke="black" points="663,-197 663,-227 771,-227 771,-197 663,-197"/>
-<text text-anchor="start" x="671" y="-215" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
-<text text-anchor="middle" x="717" y="-204" font-family="Helvetica,sans-Serif" font-size="10.00">::userLeave</text>
+<g id="a_node11"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a89ac2b4edd0a40b0fbfb5504904752c9" target="_top" xlink:title="Triggered when a user left the channel.">
+<polygon fill="white" stroke="black" points="666,-1 666,-31 774,-31 774,-1 666,-1"/>
+<text text-anchor="start" x="674" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">::userLeave</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node11 -->
 <g id="edge12" class="edge"><title>Node7&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M592.166,-178.101C611.412,-183.37 633.153,-189.321 652.987,-194.751"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="652.286,-198.187 662.855,-197.452 654.134,-191.436 652.286,-198.187"/>
+<path fill="none" stroke="midnightblue" d="M574.221,-147.98C589.867,-140.241 607.337,-129.551 620,-116 645.245,-88.9849 628.959,-66.2173 656,-41 657.678,-39.435 659.466,-37.9634 661.338,-36.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="663.442,-39.3892 669.995,-31.0637 659.681,-33.4858 663.442,-39.3892"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#aa7679dfddcf23ffa4ce4febbc005995a" target="_top" xlink:title="Emitted when a user has changed his status (nick|status)">
-<polygon fill="white" stroke="black" points="663,-148 663,-178 771,-178 771,-148 663,-148"/>
-<text text-anchor="start" x="671" y="-166" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
-<text text-anchor="middle" x="717" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">::userStatusChange</text>
+<g id="a_node12"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#aa7679dfddcf23ffa4ce4febbc005995a" target="_top" xlink:title="Emitted when a user has changed his status (nick|status)">
+<polygon fill="white" stroke="black" points="666,-295 666,-325 774,-325 774,-295 666,-295"/>
+<text text-anchor="start" x="674" y="-313" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00">::userStatusChange</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node12 -->
 <g id="edge13" class="edge"><title>Node7&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M593.146,-163C612.005,-163 633.17,-163 652.55,-163"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="652.802,-166.5 662.802,-163 652.802,-159.5 652.802,-166.5"/>
+<path fill="none" stroke="midnightblue" d="M556.11,-178.177C573.598,-192.485 599.755,-214.965 620,-237 638.042,-256.637 634.812,-268.808 656,-285 658.323,-286.775 660.788,-288.441 663.346,-290.002"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="661.877,-293.188 672.33,-294.914 665.235,-287.046 661.877,-293.188"/>
 </g>
-<!-- Node14&#45;&gt;Node13 -->
-<g id="edge16" class="edge"><title>Node14&#45;&gt;Node13</title>
+<!-- Node13 -->
+<g id="node13" class="node"><title>Node13</title>
+<g id="a_node13"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#af5b308ecbe7fda6ff5c7dd524e17817c" target="_top" xlink:title="Emitted when a user has changed his nick (nick|status)">
+<polygon fill="white" stroke="black" points="666,-246 666,-276 774,-276 774,-246 666,-246"/>
+<text text-anchor="start" x="674" y="-264" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-253" font-family="Helvetica,sans-Serif" font-size="10.00">::userChangeNick</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node13 -->
+<g id="edge14" class="edge"><title>Node7&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M559.148,-178.191C582.56,-193.862 620.887,-218.428 656,-236 660.015,-238.009 664.233,-239.975 668.504,-241.866"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="667.309,-245.161 677.88,-245.872 670.06,-238.724 667.309,-245.161"/>
+</g>
+<!-- Node14 -->
+<g id="node14" class="node"><title>Node14</title>
+<g id="a_node14"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#a7756cad0bea903cd816c1fb68cac65fe" target="_top" xlink:title="Triggered when the server wants us to know something.">
+<polygon fill="white" stroke="black" points="656.5,-197 656.5,-227 783.5,-227 783.5,-197 656.5,-197"/>
+<text text-anchor="start" x="664.5" y="-215" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
+<text text-anchor="middle" x="720" y="-204" font-family="Helvetica,sans-Serif" font-size="10.00">::serverMessageReceived</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node14 -->
+<g id="edge15" class="edge"><title>Node7&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M593.091,-178.101C612.123,-183.225 633.555,-188.996 653.269,-194.303"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="652.528,-197.728 663.094,-196.948 654.348,-190.969 652.528,-197.728"/>
+</g>
+<!-- Node16&#45;&gt;Node15 -->
+<g id="edge18" class="edge"><title>Node16&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M392.157,-30.0534C400.09,-33.239 408.345,-36.6526 416,-40 447.36,-53.7133 482.65,-70.8359 506.6,-82.7168"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="505.303,-85.9804 515.814,-87.3064 508.424,-79.7147 505.303,-85.9804"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#abad7931f40972d90b51e696b878b58c4" target="_top" xlink:title="Emitted when the server has sent us all the users.">
+<!-- Node17 -->
+<g id="node17" class="node"><title>Node17</title>
+<g id="a_node17"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#abad7931f40972d90b51e696b878b58c4" target="_top" xlink:title="Emitted when the server has sent us all the users.">
 <polygon fill="white" stroke="black" points="479,-0 479,-30 593,-30 593,-0 479,-0"/>
 <text text-anchor="start" x="487" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="536" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::userQueryCompleted</text>
 </a>
 </g>
 </g>
-<!-- Node14&#45;&gt;Node15 -->
-<g id="edge17" class="edge"><title>Node14&#45;&gt;Node15</title>
+<!-- Node16&#45;&gt;Node17 -->
+<g id="edge19" class="edge"><title>Node16&#45;&gt;Node17</title>
 <path fill="none" stroke="midnightblue" d="M414.11,-15C431.716,-15 451.001,-15 468.895,-15"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="468.958,-18.5001 478.958,-15 468.958,-11.5001 468.958,-18.5001"/>
 </g>
-<!-- Node16&#45;&gt;Node13 -->
-<g id="edge19" class="edge"><title>Node16&#45;&gt;Node13</title>
+<!-- Node18&#45;&gt;Node15 -->
+<g id="edge21" class="edge"><title>Node18&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M414.11,-75.0803C432.93,-78.4928 453.669,-82.2531 472.576,-85.6813"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="472.107,-89.1533 482.571,-87.4936 473.356,-82.2656 472.107,-89.1533"/>
 </g>
-<!-- Node17&#45;&gt;Node13 -->
-<g id="edge21" class="edge"><title>Node17&#45;&gt;Node13</title>
+<!-- Node19&#45;&gt;Node15 -->
+<g id="edge23" class="edge"><title>Node19&#45;&gt;Node15</title>
 <path fill="none" stroke="midnightblue" d="M402.732,-136.971C431.196,-128.369 466.495,-117.702 493.466,-109.552"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="494.803,-112.804 503.363,-106.561 492.778,-106.103 494.803,-112.804"/>
 </g>
-<!-- Node17&#45;&gt;Node7 -->
-<g id="edge22" class="edge"><title>Node17&#45;&gt;Node7</title>
+<!-- Node19&#45;&gt;Node7 -->
+<g id="edge24" class="edge"><title>Node19&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M407.606,-155.3C426.864,-156.464 448.726,-157.786 468.835,-159.001"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="468.664,-162.497 478.857,-159.607 469.086,-155.51 468.664,-162.497"/>
 </g>
-<!-- Node19&#45;&gt;Node5 -->
-<g id="edge25" class="edge"><title>Node19&#45;&gt;Node5</title>
+<!-- Node21&#45;&gt;Node5 -->
+<g id="edge27" class="edge"><title>Node21&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M252.24,-402.979C320.145,-395.299 435.966,-382.2 496.134,-375.396"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="496.804,-378.842 506.347,-374.24 496.017,-371.887 496.804,-378.842"/>
 </g>
-<!-- Node19&#45;&gt;Node18 -->
-<g id="edge26" class="edge"><title>Node19&#45;&gt;Node18</title>
+<!-- Node21&#45;&gt;Node20 -->
+<g id="edge28" class="edge"><title>Node21&#45;&gt;Node20</title>
 <path fill="none" stroke="midnightblue" d="M250.885,-424.019C263.289,-427.61 276.65,-431.478 289.444,-435.181"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="288.512,-438.555 299.091,-437.974 290.459,-431.831 288.512,-438.555"/>
 </g>
-<!-- Node21&#45;&gt;Node5 -->
-<g id="edge29" class="edge"><title>Node21&#45;&gt;Node5</title>
+<!-- Node23&#45;&gt;Node5 -->
+<g id="edge31" class="edge"><title>Node23&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M252.24,-361.743C320.145,-363.966 435.966,-367.758 496.134,-369.728"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="496.238,-373.233 506.347,-370.062 496.467,-366.237 496.238,-373.233"/>
 </g>
-<!-- Node21&#45;&gt;Node20 -->
-<g id="edge30" class="edge"><title>Node21&#45;&gt;Node20</title>
+<!-- Node23&#45;&gt;Node22 -->
+<g id="edge32" class="edge"><title>Node23&#45;&gt;Node22</title>
 <path fill="none" stroke="midnightblue" d="M252.162,-348.458C263.733,-345.946 276.082,-343.265 287.993,-340.679"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="288.838,-344.077 297.868,-338.535 287.353,-337.237 288.838,-344.077"/>
 </g>

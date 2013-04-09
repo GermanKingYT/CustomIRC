@@ -49,7 +49,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#a153e1d0693c3069839e04878844b431f" target="_top" xlink:title="client::chatEntry::init">
+<g id="a_node2"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#a153e1d0693c3069839e04878844b431f" target="_top" xlink:title="client::chatEntry::init">
 <polygon fill="white" stroke="black" points="130.5,-98.1387 130.5,-117.139 237.5,-117.139 237.5,-98.1387 130.5,-98.1387"/>
 <text text-anchor="middle" x="184" y="-105.139" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::init</text>
 </a>
@@ -62,7 +62,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
+<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
 <polygon fill="white" stroke="black" points="283,-193.139 283,-212.139 399,-212.139 399,-193.139 283,-193.139"/>
 <text text-anchor="middle" x="341" y="-200.139" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getNick</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a7d4549d1722c3dea93d83114c70b8aae" target="_top" xlink:title="client::ircUser::getColor">
+<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a7d4549d1722c3dea93d83114c70b8aae" target="_top" xlink:title="client::ircUser::getColor">
 <polygon fill="white" stroke="black" points="281.5,-155.139 281.5,-174.139 400.5,-174.139 400.5,-155.139 281.5,-155.139"/>
 <text text-anchor="middle" x="341" y="-162.139" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getColor</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#a23b44a93f980e59387a289c9282b5f78" target="_top" xlink:title="client::chatEntry::\lgetWidth">
+<g id="a_node5"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#a23b44a93f980e59387a289c9282b5f78" target="_top" xlink:title="client::chatEntry::\lgetWidth">
 <polygon fill="white" stroke="black" points="732,-95.6387 732,-125.639 826,-125.639 826,-95.6387 732,-95.6387"/>
 <text text-anchor="start" x="740" y="-113.639" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="779" y="-102.639" font-family="Helvetica,sans-Serif" font-size="10.00">getWidth</text>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#ac3d69f6791e2497c86fe99c068b832b6" target="_top" xlink:title="Used for setting the width of the nick label after initializing.">
+<g id="a_node6"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#ac3d69f6791e2497c86fe99c068b832b6" target="_top" xlink:title="Used for setting the width of the nick label after initializing.">
 <polygon fill="white" stroke="black" points="444,-38.6387 444,-68.6387 538,-68.6387 538,-38.6387 444,-38.6387"/>
 <text text-anchor="start" x="452" y="-56.6387" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="491" y="-45.6387" font-family="Helvetica,sans-Serif" font-size="10.00">setUserWidth</text>
@@ -116,7 +116,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../da/d72/classclient_1_1chat_box.xhtml#a0d33977310a176a78d228eaeb1a0c39d" target="_top" xlink:title="Sets all the user name labels to the same size.">
+<g id="a_node9"><a xlink:href="../../da/d72/classclient_1_1chat_box.html#a0d33977310a176a78d228eaeb1a0c39d" target="_top" xlink:title="Sets all the user name labels to the same size.">
 <polygon fill="white" stroke="black" points="274.5,-29.6387 274.5,-59.6387 407.5,-59.6387 407.5,-29.6387 274.5,-29.6387"/>
 <text text-anchor="start" x="282.5" y="-47.6387" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatBox::setAllUser</text>
 <text text-anchor="middle" x="341" y="-36.6387" font-family="Helvetica,sans-Serif" font-size="10.00">NameSize</text>
@@ -130,7 +130,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#ae663e1a715924f6743c7e9d235ad334b" target="_top" xlink:title="client::chatEntry::\lcalculateMessageWidth">
+<g id="a_node7"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#ae663e1a715924f6743c7e9d235ad334b" target="_top" xlink:title="client::chatEntry::\lcalculateMessageWidth">
 <polygon fill="white" stroke="black" points="574.5,-38.6387 574.5,-68.6387 695.5,-68.6387 695.5,-38.6387 574.5,-38.6387"/>
 <text text-anchor="start" x="582.5" y="-56.6387" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="635" y="-45.6387" font-family="Helvetica,sans-Serif" font-size="10.00">calculateMessageWidth</text>
@@ -154,7 +154,7 @@ var sectionId = 'dynsection-2';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#aacb386fcc022798feb9dd02b43d56861" target="_top" xlink:title="client::chatEntry::\lgetHeight">
+<g id="a_node8"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#aacb386fcc022798feb9dd02b43d56861" target="_top" xlink:title="client::chatEntry::\lgetHeight">
 <polygon fill="white" stroke="black" points="732,-38.6387 732,-68.6387 826,-68.6387 826,-38.6387 732,-38.6387"/>
 <text text-anchor="start" x="740" y="-56.6387" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="779" y="-45.6387" font-family="Helvetica,sans-Serif" font-size="10.00">getHeight</text>

@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../dd/d08/clsuserentry_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserentry.cpp">
+<g id="a_node2"><a xlink:href="../../dd/d08/clsuserentry_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserentry.cpp">
 <polygon fill="white" stroke="black" points="-0.5,-69 -0.5,-99 128.5,-99 128.5,-69 -0.5,-69"/>
 <text text-anchor="start" x="7.5" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="64" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/desktop/clsuserentry.cpp</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d60/clsuserlist_8h.xhtml" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserlist.h">
+<g id="a_node3"><a xlink:href="../../da/d60/clsuserlist_8h.html" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserlist.h">
 <polygon fill="white" stroke="black" points="147,-69 147,-99 257,-99 257,-69 147,-69"/>
 <text text-anchor="start" x="155" y="-87" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="202" y="-76" font-family="Helvetica,sans-Serif" font-size="10.00">/desktop/clsuserlist.h</text>
@@ -45,7 +45,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d6/d86/clsuserlist_8cpp.xhtml" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserlist.cpp">
+<g id="a_node4"><a xlink:href="../../d6/d86/clsuserlist_8cpp.html" target="_top" xlink:title="C++/customIrcClient\l/desktop/clsuserlist.cpp">
 <polygon fill="white" stroke="black" points="142,-1 142,-31 262,-31 262,-1 142,-1"/>
 <text text-anchor="start" x="150" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">C++/customIrcClient</text>
 <text text-anchor="middle" x="202" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">/desktop/clsuserlist.cpp</text>

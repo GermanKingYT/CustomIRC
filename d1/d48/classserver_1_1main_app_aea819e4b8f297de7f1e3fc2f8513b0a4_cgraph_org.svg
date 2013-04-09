@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#af6bce76d6e000cf6c5ebfb4ce323f442" target="_top" xlink:title="Used to convert a user for JSON transfer.">
+<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#af6bce76d6e000cf6c5ebfb4ce323f442" target="_top" xlink:title="Used to convert a user for JSON transfer.">
 <polygon fill="white" stroke="black" points="192.5,-114.5 192.5,-133.5 335.5,-133.5 335.5,-114.5 192.5,-114.5"/>
 <text text-anchor="middle" x="264" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::toVariantMap</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
+<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" target="_top" xlink:title="Adds data to the internal data map.">
 <polygon fill="white" stroke="black" points="186.5,-76.5 186.5,-95.5 341.5,-95.5 341.5,-76.5 186.5,-76.5"/>
 <text text-anchor="middle" x="264" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::addToData</text>
 </a>
@@ -42,7 +42,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
+<g id="a_node4"><a xlink:href="../../df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" target="_top" xlink:title="Sends a jsonCommand to all the clients.">
 <polygon fill="white" stroke="black" points="209,-38.5 209,-57.5 319,-57.5 319,-38.5 209,-38.5"/>
 <text text-anchor="middle" x="264" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiServer::send</text>
 </a>
@@ -55,7 +55,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
+<g id="a_node5"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" target="_top" xlink:title="Transforms this object to a nice JSON string.">
 <polygon fill="white" stroke="black" points="378,-93 378,-123 516,-123 516,-93 378,-93"/>
 <text text-anchor="start" x="386" y="-111" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::toJson</text>
 <text text-anchor="middle" x="447" y="-100" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -69,7 +69,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node9"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="417.5,-38.5 417.5,-57.5 476.5,-57.5 476.5,-38.5 417.5,-38.5"/>
 <text text-anchor="middle" x="447" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -82,7 +82,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
+<g id="a_node11"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#ad3f8f8690155b186b54e40dcfee0df23" target="_top" xlink:title="Sends data to the socket.">
 <polygon fill="white" stroke="black" points="393.5,-0.5 393.5,-19.5 500.5,-19.5 500.5,-0.5 393.5,-0.5"/>
 <text text-anchor="middle" x="447" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::send</text>
 </a>
@@ -95,7 +95,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
+<g id="a_node6"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
 <polygon fill="white" stroke="black" points="552.5,-153 552.5,-183 719.5,-183 719.5,-153 552.5,-153"/>
 <text text-anchor="start" x="560.5" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 <text text-anchor="middle" x="636" y="-160" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -109,7 +109,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
+<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
 <polygon fill="white" stroke="black" points="564.5,-114.5 564.5,-133.5 707.5,-133.5 707.5,-114.5 564.5,-114.5"/>
 <text text-anchor="middle" x="636" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -122,7 +122,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
+<g id="a_node8"><a xlink:href="../../d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
 <polygon fill="white" stroke="black" points="591.5,-76.5 591.5,-95.5 680.5,-95.5 680.5,-76.5 591.5,-76.5"/>
 <text text-anchor="middle" x="636" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtJson::serialize</text>
 </a>
@@ -135,7 +135,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node10"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="583,-38.5 583,-57.5 689,-57.5 689,-38.5 583,-38.5"/>
 <text text-anchor="middle" x="636" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>

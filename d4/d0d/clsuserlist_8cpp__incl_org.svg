@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../da/d60/clsuserlist_8h.xhtml" target="_top" xlink:title="clsuserlist.h">
+<g id="a_node2"><a xlink:href="../../da/d60/clsuserlist_8h.html" target="_top" xlink:title="clsuserlist.h">
 <polygon fill="white" stroke="black" points="154.202,-224.5 154.202,-243.5 223.202,-243.5 223.202,-224.5 154.202,-224.5"/>
 <text text-anchor="middle" x="188.702" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">clsuserlist.h</text>
 </a>
@@ -70,7 +70,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../dc/da0/clsuserentry_8h.xhtml" target="_top" xlink:title="clsuserentry.h">
+<g id="a_node7"><a xlink:href="../../dc/da0/clsuserentry_8h.html" target="_top" xlink:title="clsuserentry.h">
 <polygon fill="white" stroke="black" points="274.702,-168.5 274.702,-187.5 352.702,-187.5 352.702,-168.5 274.702,-168.5"/>
 <text text-anchor="middle" x="313.702" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">clsuserentry.h</text>
 </a>
@@ -83,7 +83,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.xhtml" target="_top" xlink:title="../ircuser.h">
+<g id="a_node9"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.html" target="_top" xlink:title="../ircuser.h">
 <polygon fill="white" stroke="black" points="349.202,-112.5 349.202,-131.5 412.202,-131.5 412.202,-112.5 349.202,-112.5"/>
 <text text-anchor="middle" x="380.702" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../ircuser.h</text>
 </a>
@@ -186,7 +186,7 @@
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node17"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="742.202,-56.5 742.202,-75.5 847.202,-75.5 847.202,-56.5 742.202,-56.5"/>
 <text text-anchor="middle" x="794.702" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>

@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication">
+<g id="a_node2"><a xlink:href="d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.html" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication">
 <polygon fill="white" stroke="black" points="102,-0 102,-30 228,-30 228,-0 102,-0"/>
 <text text-anchor="start" x="110" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">org.kde.necessitas.origo.</text>
 <text text-anchor="middle" x="165" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtApplication</text>

@@ -49,7 +49,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a8237b1a02c7877a7c853b6ef23995b9b" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
+<g id="a_node2"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a8237b1a02c7877a7c853b6ef23995b9b" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
 <polygon fill="white" stroke="black" points="160.5,-203 160.5,-233 287.5,-233 287.5,-203 160.5,-203"/>
 <text text-anchor="start" x="168.5" y="-221" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::checkFor</text>
 <text text-anchor="middle" x="224" y="-210" font-family="Helvetica,sans-Serif" font-size="10.00">JsonCommand</text>
@@ -63,7 +63,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
+<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
 <polygon fill="white" stroke="black" points="332.5,-249.5 332.5,-268.5 499.5,-268.5 499.5,-249.5 332.5,-249.5"/>
 <text text-anchor="middle" x="416" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 </a>
@@ -76,7 +76,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a970bb30d534e08d2537e2ef495ad7427" target="_top" xlink:title="Emitted when the client sends a chat.">
+<g id="a_node6"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a970bb30d534e08d2537e2ef495ad7427" target="_top" xlink:title="Emitted when the client sends a chat.">
 <polygon fill="white" stroke="black" points="152,-164.5 152,-183.5 296,-183.5 296,-164.5 152,-164.5"/>
 <text text-anchor="middle" x="224" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::chatReceived</text>
 </a>
@@ -89,7 +89,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
+<g id="a_node7"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
 <polygon fill="white" stroke="black" points="152.5,-126.5 152.5,-145.5 295.5,-145.5 295.5,-126.5 152.5,-126.5"/>
 <text text-anchor="middle" x="224" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a334fdbafee59c9007c38466550572d83" target="_top" xlink:title="Emitted when the client wants all the users.">
+<g id="a_node8"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a334fdbafee59c9007c38466550572d83" target="_top" xlink:title="Emitted when the client wants all the users.">
 <polygon fill="white" stroke="black" points="158.5,-88.5 158.5,-107.5 289.5,-107.5 289.5,-88.5 158.5,-88.5"/>
 <text text-anchor="middle" x="224" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::userQuery</text>
 </a>
@@ -115,7 +115,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#af31e3f327761e528ddabb232d1224620" target="_top" xlink:title="Emitted when the clients wants to change our own user.">
+<g id="a_node9"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#af31e3f327761e528ddabb232d1224620" target="_top" xlink:title="Emitted when the clients wants to change our own user.">
 <polygon fill="white" stroke="black" points="165,-39 165,-69 283,-69 283,-39 165,-39"/>
 <text text-anchor="start" x="173" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::change</text>
 <text text-anchor="middle" x="224" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">OwnUser</text>
@@ -129,7 +129,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a06de500dff0e31a8367b1988e2a0b414" target="_top" xlink:title="Emitted when the client wants all the events.">
+<g id="a_node10"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a06de500dff0e31a8367b1988e2a0b414" target="_top" xlink:title="Emitted when the client wants all the events.">
 <polygon fill="white" stroke="black" points="159.5,-0.5 159.5,-19.5 288.5,-19.5 288.5,-0.5 159.5,-0.5"/>
 <text text-anchor="middle" x="224" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::getEvents</text>
 </a>
@@ -147,7 +147,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node4"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="386.5,-208.5 386.5,-227.5 445.5,-227.5 445.5,-208.5 386.5,-208.5"/>
 <text text-anchor="middle" x="416" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -160,7 +160,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node5"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="536,-208.5 536,-227.5 642,-227.5 642,-208.5 536,-208.5"/>
 <text text-anchor="middle" x="589" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>

@@ -68,7 +68,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d4/d05/json_8h.xhtml" target="_top" xlink:title="json.h">
+<g id="a_node4"><a xlink:href="../../d4/d05/json_8h.html" target="_top" xlink:title="json.h">
 <polygon fill="white" stroke="black" points="163.5,-56.5 163.5,-75.5 206.5,-75.5 206.5,-56.5 163.5,-56.5"/>
 <text text-anchor="middle" x="185" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">json.h</text>
 </a>
@@ -81,7 +81,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="clslog.h">
+<g id="a_node7"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="clslog.h">
 <polygon fill="white" stroke="black" points="342,-56.5 342,-75.5 392,-75.5 392,-56.5 342,-56.5"/>
 <text text-anchor="middle" x="367" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">clslog.h</text>
 </a>

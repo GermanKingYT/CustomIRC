@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../de/dda/classclient_1_1cls_user_list.xhtml#aca5601b1e79a265ddc203dbdf8c5c868" target="_top" xlink:title="client::clsUserList\l::setupUi">
+<g id="a_node2"><a xlink:href="../../de/dda/classclient_1_1cls_user_list.html#aca5601b1e79a265ddc203dbdf8c5c868" target="_top" xlink:title="client::clsUserList\l::setupUi">
 <polygon fill="white" stroke="black" points="132.5,-0 132.5,-30 227.5,-30 227.5,-0 132.5,-0"/>
 <text text-anchor="start" x="140.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsUserList</text>
 <text text-anchor="middle" x="180" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::setupUi</text>

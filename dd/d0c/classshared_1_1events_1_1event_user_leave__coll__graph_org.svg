@@ -23,7 +23,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml" target="_top" xlink:title="The main event class.">
+<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html" target="_top" xlink:title="The main event class.">
 <polygon fill="white" stroke="black" points="3,-130.5 3,-297.5 125,-297.5 125,-130.5 3,-130.5"/>
 <text text-anchor="middle" x="64" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <polyline fill="none" stroke="black" points="3,-278.5 125,-278.5 "/>
@@ -50,7 +50,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml" target="_top" xlink:title="Custom logging class.">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html" target="_top" xlink:title="Custom logging class.">
 <polygon fill="white" stroke="black" points="24.5,-347 24.5,-525 103.5,-525 103.5,-347 24.5,-347"/>
 <text text-anchor="middle" x="64" y="-513" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog</text>
 <polyline fill="none" stroke="black" points="24.5,-506 103.5,-506 "/>

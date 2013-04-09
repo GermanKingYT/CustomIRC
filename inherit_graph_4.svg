@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="dd/d69/classclient_1_1cls_notify.xhtml" target="_top" xlink:title="Notification class.">
+<g id="a_node2"><a xlink:href="dd/d69/classclient_1_1cls_notify.html" target="_top" xlink:title="Notification class.">
 <polygon fill="white" stroke="black" points="102.5,-190.5 102.5,-209.5 185.5,-209.5 185.5,-190.5 102.5,-190.5"/>
 <text text-anchor="middle" x="144" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsNotify</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="d3/d65/classclient_1_1cls_server_conn.xhtml" target="_top" xlink:title="Class that has a connection to the server.">
+<g id="a_node3"><a xlink:href="d3/d65/classclient_1_1cls_server_conn.html" target="_top" xlink:title="Class that has a connection to the server.">
 <polygon fill="white" stroke="black" points="90,-152.5 90,-171.5 198,-171.5 198,-152.5 90,-152.5"/>
 <text text-anchor="middle" x="144" y="-159.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 </a>
@@ -42,7 +42,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="d6/d69/classclient_1_1irc_user.xhtml" target="_top" xlink:title="The ircUser class.">
+<g id="a_node4"><a xlink:href="d6/d69/classclient_1_1irc_user.html" target="_top" xlink:title="The ircUser class.">
 <polygon fill="white" stroke="black" points="105.5,-114.5 105.5,-133.5 182.5,-133.5 182.5,-114.5 105.5,-114.5"/>
 <text text-anchor="middle" x="144" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser</text>
 </a>
@@ -55,7 +55,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="d1/d10/classserver_1_1irc_client.xhtml" target="_top" xlink:title="The ircClient class.">
+<g id="a_node5"><a xlink:href="d1/d10/classserver_1_1irc_client.html" target="_top" xlink:title="The ircClient class.">
 <polygon fill="white" stroke="black" points="102.5,-76.5 102.5,-95.5 185.5,-95.5 185.5,-76.5 102.5,-76.5"/>
 <text text-anchor="middle" x="144" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircClient</text>
 </a>
@@ -68,7 +68,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="d1/d48/classserver_1_1main_app.xhtml" target="_top" xlink:title="The main application.">
+<g id="a_node6"><a xlink:href="d1/d48/classserver_1_1main_app.html" target="_top" xlink:title="The main application.">
 <polygon fill="white" stroke="black" points="101,-38.5 101,-57.5 187,-57.5 187,-38.5 101,-38.5"/>
 <text text-anchor="middle" x="144" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::mainApp</text>
 </a>
@@ -81,7 +81,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="dc/d4d/classserver_1_1ui_client.xhtml" target="_top" xlink:title="The uiClient class.">
+<g id="a_node7"><a xlink:href="dc/d4d/classserver_1_1ui_client.html" target="_top" xlink:title="The uiClient class.">
 <polygon fill="white" stroke="black" points="104,-0.5 104,-19.5 184,-19.5 184,-0.5 104,-0.5"/>
 <text text-anchor="middle" x="144" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient</text>
 </a>

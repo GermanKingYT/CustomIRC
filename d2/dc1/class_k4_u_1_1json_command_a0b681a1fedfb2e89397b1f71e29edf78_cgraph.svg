@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
+<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" target="_top" xlink:title="getCommandString">
 <polygon fill="white" stroke="black" points="174.5,-77 174.5,-107 341.5,-107 341.5,-77 174.5,-77"/>
 <text text-anchor="start" x="182.5" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 <text text-anchor="middle" x="258" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">String</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
+<g id="a_node3"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" target="_top" xlink:title="Gets all data items.">
 <polygon fill="white" stroke="black" points="186.5,-38.5 186.5,-57.5 329.5,-57.5 329.5,-38.5 186.5,-38.5"/>
 <text text-anchor="middle" x="258" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -44,7 +44,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
+<g id="a_node4"><a xlink:href="../../d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" target="_top" xlink:title="QtJson::serialize">
 <polygon fill="white" stroke="black" points="213.5,-0.5 213.5,-19.5 302.5,-19.5 302.5,-0.5 213.5,-0.5"/>
 <text text-anchor="middle" x="258" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtJson::serialize</text>
 </a>

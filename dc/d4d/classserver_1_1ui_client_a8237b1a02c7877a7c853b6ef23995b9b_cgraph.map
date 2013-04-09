@@ -1,5 +1,5 @@
 <map id="server::uiClient::checkForJsonCommand" name="server::uiClient::checkForJsonCommand">
-<area shape="rect" id="node2" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" title="getCommand" alt="" coords="225,5,447,32"/>
-<area shape="rect" id="node3" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="297,56,375,83"/>
-<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="496,56,637,83"/>
+<area shape="rect" id="node2" href="$d2/dc1/class_k4_u_1_1json_command.html#a2db6f8da6bc5a4c677201f044b69bb10" title="getCommand" alt="" coords="225,5,447,32"/>
+<area shape="rect" id="node3" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="297,56,375,83"/>
+<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="496,56,637,83"/>
 </map>

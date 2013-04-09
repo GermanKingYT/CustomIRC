@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#a105ff952c0e653bdc765adc58d3e702b" target="_top" xlink:title="Gets a user by his IRC&#45;ID.">
+<g id="a_node2"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#a105ff952c0e653bdc765adc58d3e702b" target="_top" xlink:title="Gets a user by his IRC&#45;ID.">
 <polygon fill="white" stroke="black" points="146.5,-88 146.5,-118 241.5,-118 241.5,-88 146.5,-88"/>
 <text text-anchor="start" x="154.5" y="-106" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList</text>
 <text text-anchor="middle" x="194" y="-95" font-family="Helvetica,sans-Serif" font-size="10.00">::getUserByIrcId</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
+<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
 <polygon fill="white" stroke="black" points="132,-49.5 132,-68.5 256,-68.5 256,-49.5 132,-49.5"/>
 <text text-anchor="middle" x="194" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::getName</text>
 </a>
@@ -44,7 +44,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.xhtml#a7f99e64e1cabde876fa6a827c6614a4e" target="_top" xlink:title="Finds a user based on his nick and status.">
+<g id="a_node4"><a xlink:href="../../d4/d08/classserver_1_1irc_user_list.html#a7f99e64e1cabde876fa6a827c6614a4e" target="_top" xlink:title="Finds a user based on his nick and status.">
 <polygon fill="white" stroke="black" points="146.5,-0 146.5,-30 241.5,-30 241.5,-0 146.5,-0"/>
 <text text-anchor="start" x="154.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUserList</text>
 <text text-anchor="middle" x="194" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::getUserByNick</text>

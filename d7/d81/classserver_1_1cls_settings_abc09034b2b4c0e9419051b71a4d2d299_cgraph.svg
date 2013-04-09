@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a8a8c4f9d36cf2572239b5b49b794f8c7" target="_top" xlink:title="server::ircUser::setEmail">
+<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a8a8c4f9d36cf2572239b5b49b794f8c7" target="_top" xlink:title="server::ircUser::setEmail">
 <polygon fill="white" stroke="black" points="135.5,-38.5 135.5,-57.5 258.5,-57.5 258.5,-38.5 135.5,-38.5"/>
 <text text-anchor="middle" x="197" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setEmail</text>
 </a>
@@ -30,7 +30,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
+<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
 <polygon fill="white" stroke="black" points="134,-0.5 134,-19.5 260,-19.5 260,-0.5 134,-0.5"/>
 <text text-anchor="middle" x="197" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setOnline</text>
 </a>

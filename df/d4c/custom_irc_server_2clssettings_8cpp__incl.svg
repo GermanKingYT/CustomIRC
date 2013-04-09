@@ -49,7 +49,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d6/d0d/custom_irc_server_2clssettings_8h.xhtml" target="_top" xlink:title="clssettings.h">
+<g id="a_node2"><a xlink:href="../../d6/d0d/custom_irc_server_2clssettings_8h.html" target="_top" xlink:title="clssettings.h">
 <polygon fill="white" stroke="black" points="197,-168.5 197,-187.5 269,-187.5 269,-168.5 197,-168.5"/>
 <text text-anchor="middle" x="233" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">clssettings.h</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d6/d32/custom_irc_server_2ircuser_8h.xhtml" target="_top" xlink:title="ircuser.h">
+<g id="a_node7"><a xlink:href="../../d6/d32/custom_irc_server_2ircuser_8h.html" target="_top" xlink:title="ircuser.h">
 <polygon fill="white" stroke="black" points="151,-112.5 151,-131.5 205,-131.5 205,-112.5 151,-112.5"/>
 <text text-anchor="middle" x="178" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ircuser.h</text>
 </a>
@@ -135,7 +135,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d8/d5c/functions_8h.xhtml" target="_top" xlink:title="functions.h">
+<g id="a_node9"><a xlink:href="../../d8/d5c/functions_8h.html" target="_top" xlink:title="functions.h">
 <polygon fill="white" stroke="black" points="146,-56.5 146,-75.5 210,-75.5 210,-56.5 146,-56.5"/>
 <text text-anchor="middle" x="178" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">functions.h</text>
 </a>
@@ -148,7 +148,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node13"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="228.5,-56.5 228.5,-75.5 333.5,-75.5 333.5,-56.5 228.5,-56.5"/>
 <text text-anchor="middle" x="281" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>

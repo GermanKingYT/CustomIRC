@@ -1,20 +1,20 @@
 <map id="server::mainApp::userChangeNick" name="server::mainApp::userChangeNick">
-<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="581,472,659,499"/>
-<area shape="rect" id="node4" href="$d4/d08/classserver_1_1irc_user_list.xhtml#af2d5bdaf2ccd658679c933390500f0e2" title="Finds a user based on IRC&#45;ID or nick." alt="" coords="313,70,439,111"/>
-<area shape="rect" id="node6" href="$d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="537,136,703,163"/>
-<area shape="rect" id="node8" href="$d2/d29/classserver_1_1irc_user.xhtml#a2002c82125ebd8502ec385e516bfa445" title="server::ircUser::setNick" alt="" coords="297,253,455,280"/>
-<area shape="rect" id="node9" href="$d2/d29/classserver_1_1irc_user.xhtml#a7d729b6e71c3f381a1db0cec57520c39" title="getId" alt="" coords="305,304,447,331"/>
-<area shape="rect" id="node10" href="$d1/d48/classserver_1_1main_app.xhtml#a3f2522c9bfcd7593aad9c906d24b6016" title="Adds an event to the history, checking for the maximum number." alt="" coords="281,355,471,397"/>
-<area shape="rect" id="node11" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="273,421,479,448"/>
-<area shape="rect" id="node12" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#a48d11c9b50a2569c1065f19ca87d0715" title="Converts the current data to a QVariant for sending with JSON." alt="" coords="295,187,457,229"/>
-<area shape="rect" id="node14" href="$df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="303,523,449,549"/>
-<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="801,472,943,499"/>
-<area shape="rect" id="node5" href="$d4/d08/classserver_1_1irc_user_list.xhtml#a105ff952c0e653bdc765adc58d3e702b" title="Gets a user by his IRC&#45;ID." alt="" coords="557,70,683,111"/>
-<area shape="rect" id="node7" href="$d4/d08/classserver_1_1irc_user_list.xhtml#a7f99e64e1cabde876fa6a827c6614a4e" title="Finds a user based on his nick and status." alt="" coords="557,5,683,46"/>
-<area shape="rect" id="node13" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#abd4a458aec7673de426a8995a349bf4b" title="Gets the event type as a string." alt="" coords="539,187,701,229"/>
-<area shape="rect" id="node15" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="528,574,712,615"/>
-<area shape="rect" id="node19" href="$dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" title="Sends data to the socket." alt="" coords="549,523,691,549"/>
-<area shape="rect" id="node16" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="761,574,983,615"/>
-<area shape="rect" id="node17" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="777,640,967,667"/>
-<area shape="rect" id="node18" href="$d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="813,523,931,549"/>
+<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="581,472,659,499"/>
+<area shape="rect" id="node4" href="$d4/d08/classserver_1_1irc_user_list.html#af2d5bdaf2ccd658679c933390500f0e2" title="Finds a user based on IRC&#45;ID or nick." alt="" coords="313,70,439,111"/>
+<area shape="rect" id="node6" href="$d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="537,136,703,163"/>
+<area shape="rect" id="node8" href="$d2/d29/classserver_1_1irc_user.html#a2002c82125ebd8502ec385e516bfa445" title="server::ircUser::setNick" alt="" coords="297,253,455,280"/>
+<area shape="rect" id="node9" href="$d2/d29/classserver_1_1irc_user.html#a7d729b6e71c3f381a1db0cec57520c39" title="getId" alt="" coords="305,304,447,331"/>
+<area shape="rect" id="node10" href="$d1/d48/classserver_1_1main_app.html#a3f2522c9bfcd7593aad9c906d24b6016" title="Adds an event to the history, checking for the maximum number." alt="" coords="281,355,471,397"/>
+<area shape="rect" id="node11" href="$d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="273,421,479,448"/>
+<area shape="rect" id="node12" href="$db/d8b/classshared_1_1events_1_1cls_event.html#a48d11c9b50a2569c1065f19ca87d0715" title="Converts the current data to a QVariant for sending with JSON." alt="" coords="295,187,457,229"/>
+<area shape="rect" id="node14" href="$df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="303,523,449,549"/>
+<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="801,472,943,499"/>
+<area shape="rect" id="node5" href="$d4/d08/classserver_1_1irc_user_list.html#a105ff952c0e653bdc765adc58d3e702b" title="Gets a user by his IRC&#45;ID." alt="" coords="557,70,683,111"/>
+<area shape="rect" id="node7" href="$d4/d08/classserver_1_1irc_user_list.html#a7f99e64e1cabde876fa6a827c6614a4e" title="Finds a user based on his nick and status." alt="" coords="557,5,683,46"/>
+<area shape="rect" id="node13" href="$db/d8b/classshared_1_1events_1_1cls_event.html#abd4a458aec7673de426a8995a349bf4b" title="Gets the event type as a string." alt="" coords="539,187,701,229"/>
+<area shape="rect" id="node15" href="$d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="528,574,712,615"/>
+<area shape="rect" id="node19" href="$dc/d4d/classserver_1_1ui_client.html#ad3f8f8690155b186b54e40dcfee0df23" title="Sends data to the socket." alt="" coords="549,523,691,549"/>
+<area shape="rect" id="node16" href="$d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="761,574,983,615"/>
+<area shape="rect" id="node17" href="$d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="777,640,967,667"/>
+<area shape="rect" id="node18" href="$d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="813,523,931,549"/>
 </map>

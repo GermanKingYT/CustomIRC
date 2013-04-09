@@ -1,4 +1,4 @@
 <map id="server::clsSettings::readUserInfo" name="server::clsSettings::readUserInfo">
-<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.xhtml#a8a8c4f9d36cf2572239b5b49b794f8c7" title="server::ircUser::setEmail" alt="" coords="186,5,350,32"/>
-<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.xhtml#a692aec882619dc575ac64ec8fabf02e9" title="server::ircUser::setOnline" alt="" coords="184,56,352,83"/>
+<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.html#a8a8c4f9d36cf2572239b5b49b794f8c7" title="server::ircUser::setEmail" alt="" coords="186,5,350,32"/>
+<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.html#a692aec882619dc575ac64ec8fabf02e9" title="server::ircUser::setOnline" alt="" coords="184,56,352,83"/>
 </map>

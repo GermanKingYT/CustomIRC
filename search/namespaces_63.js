@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['client',['client',['../d7/d1c/namespaceclient.xhtml',1,'']]]
+  ['client',['client',['../d7/d1c/namespaceclient.html',1,'']]]
 ];

@@ -1,8 +1,8 @@
 <map id="client::MainWindow::userEnter" name="client::MainWindow::userEnter">
-<area shape="rect" id="node2" href="$dd/d05/classshared_1_1events_1_1event_user_join.xhtml#afd49e93a57440f97dd02ccbec353cdb8" title="Gets a QVariantMap of the user that joined." alt="" coords="195,5,365,46"/>
-<area shape="rect" id="node4" href="$d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="203,71,357,97"/>
-<area shape="rect" id="node5" href="$d6/d69/classclient_1_1irc_user.xhtml#a6a361f6ed53e82efe4e442db7023ae49" title="client::ircUser::getStandard" alt="" coords="190,121,370,148"/>
-<area shape="rect" id="node6" href="$d6/d69/classclient_1_1irc_user.xhtml#a7cfd7dd6670a4f1b2af75914a1e1f4ae" title="client::ircUser::getId" alt="" coords="211,172,349,199"/>
-<area shape="rect" id="node7" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#a2b450c42e2a6603add85738c19ea7151" title="Gets the time on which the event was created." alt="" coords="199,223,361,265"/>
-<area shape="rect" id="node3" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac3acc2e80a92d28a980a50595517bf4a" title="Get data from the events data map." alt="" coords="419,5,581,46"/>
+<area shape="rect" id="node2" href="$dd/d05/classshared_1_1events_1_1event_user_join.html#afd49e93a57440f97dd02ccbec353cdb8" title="Gets a QVariantMap of the user that joined." alt="" coords="195,5,365,46"/>
+<area shape="rect" id="node4" href="$d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="203,71,357,97"/>
+<area shape="rect" id="node5" href="$d6/d69/classclient_1_1irc_user.html#a6a361f6ed53e82efe4e442db7023ae49" title="client::ircUser::getStandard" alt="" coords="190,121,370,148"/>
+<area shape="rect" id="node6" href="$d6/d69/classclient_1_1irc_user.html#a7cfd7dd6670a4f1b2af75914a1e1f4ae" title="client::ircUser::getId" alt="" coords="211,172,349,199"/>
+<area shape="rect" id="node7" href="$db/d8b/classshared_1_1events_1_1cls_event.html#a2b450c42e2a6603add85738c19ea7151" title="Gets the time on which the event was created." alt="" coords="199,223,361,265"/>
+<area shape="rect" id="node3" href="$db/d8b/classshared_1_1events_1_1cls_event.html#ac3acc2e80a92d28a980a50595517bf4a" title="Get data from the events data map." alt="" coords="419,5,581,46"/>
 </map>

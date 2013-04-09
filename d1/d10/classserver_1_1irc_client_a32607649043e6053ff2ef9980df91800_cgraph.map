@@ -1,4 +1,5 @@
 <map id="server::ircClient::disconnected" name="server::ircClient::disconnected">
-<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="174,12,253,39"/>
-<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="301,12,443,39"/>
+<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="195,5,274,32"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#acb710c977bd5411f99dc8fdaf92e91a4" title="Emitted when the connection was cut!" alt="" coords="173,57,296,98"/>
+<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="344,5,485,32"/>
 </map>

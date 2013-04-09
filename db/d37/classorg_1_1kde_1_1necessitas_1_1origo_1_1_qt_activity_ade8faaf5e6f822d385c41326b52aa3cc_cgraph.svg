@@ -50,7 +50,7 @@ var sectionId = 'dynsection-50';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#a9007552e161bf57f2a75125825d4444b" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegate">
+<g id="a_node2"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.html#a9007552e161bf57f2a75125825d4444b" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegate">
 <polygon fill="white" stroke="black" points="210.5,-5 210.5,-35 353.5,-35 353.5,-5 210.5,-5"/>
 <text text-anchor="start" x="218.5" y="-23" font-family="Helvetica,sans-Serif" font-size="10.00">org.kde.necessitas.origo.</text>
 <text text-anchor="middle" x="282" y="-12" font-family="Helvetica,sans-Serif" font-size="10.00">QtApplication.invokeDelegate</text>
@@ -64,7 +64,7 @@ var sectionId = 'dynsection-50';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#a329e95a39e56530f3745aa0d8e057761" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegateMethod">
+<g id="a_node3"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.html#a329e95a39e56530f3745aa0d8e057761" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegateMethod">
 <polygon fill="white" stroke="black" points="390,-5 390,-35 566,-35 566,-5 390,-5"/>
 <text text-anchor="start" x="398" y="-23" font-family="Helvetica,sans-Serif" font-size="10.00">org.kde.necessitas.origo.</text>
 <text text-anchor="middle" x="478" y="-12" font-family="Helvetica,sans-Serif" font-size="10.00">QtApplication.invokeDelegateMethod</text>

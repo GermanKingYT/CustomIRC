@@ -29,11 +29,11 @@
 <text text-anchor="start" x="91" y="-41" font-family="Helvetica,sans-Serif" font-size="10.00">+ getName()</text>
 <text text-anchor="start" x="91" y="-30" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOnline()</text>
 <text text-anchor="start" x="91" y="-19" font-family="Helvetica,sans-Serif" font-size="10.00">+ getStatus()</text>
-<text text-anchor="start" x="91" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">and 12 more...</text>
+<text text-anchor="start" x="91" y="-8" font-family="Helvetica,sans-Serif" font-size="10.00">and 13 more...</text>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d31/structserver_1_1irc_user_1_1user_color.xhtml" target="_top" xlink:title="The userColor struct As a replacement for the QColor type.">
+<g id="a_node2"><a xlink:href="../../db/d31/structserver_1_1irc_user_1_1user_color.html" target="_top" xlink:title="The userColor struct As a replacement for the QColor type.">
 <polygon fill="white" stroke="black" points="0,-300.5 0,-379.5 126,-379.5 126,-300.5 0,-300.5"/>
 <text text-anchor="middle" x="63" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::userColor</text>
 <polyline fill="none" stroke="black" points="0,-360.5 126,-360.5 "/>
@@ -53,7 +53,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml" target="_top" xlink:title="Custom logging class.">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html" target="_top" xlink:title="Custom logging class.">
 <polygon fill="white" stroke="black" points="144.5,-251 144.5,-429 223.5,-429 223.5,-251 144.5,-251"/>
 <text text-anchor="middle" x="184" y="-417" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog</text>
 <polyline fill="none" stroke="black" points="144.5,-410 223.5,-410 "/>

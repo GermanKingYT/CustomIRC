@@ -1,5 +1,5 @@
 <map id="client::chatEntry::setUserWidth" name="client::chatEntry::setUserWidth">
-<area shape="rect" id="node2" href="$d5/dfb/classclient_1_1chat_entry.xhtml#ae663e1a715924f6743c7e9d235ad334b" title="client::chatEntry::\lcalculateMessageWidth" alt="" coords="179,38,341,79"/>
-<area shape="rect" id="node3" href="$d5/dfb/classclient_1_1chat_entry.xhtml#a23b44a93f980e59387a289c9282b5f78" title="client::chatEntry::\lgetWidth" alt="" coords="389,5,515,46"/>
-<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.xhtml#aacb386fcc022798feb9dd02b43d56861" title="client::chatEntry::\lgetHeight" alt="" coords="389,70,515,111"/>
+<area shape="rect" id="node2" href="$d5/dfb/classclient_1_1chat_entry.html#ae663e1a715924f6743c7e9d235ad334b" title="client::chatEntry::\lcalculateMessageWidth" alt="" coords="179,38,341,79"/>
+<area shape="rect" id="node3" href="$d5/dfb/classclient_1_1chat_entry.html#a23b44a93f980e59387a289c9282b5f78" title="client::chatEntry::\lgetWidth" alt="" coords="389,5,515,46"/>
+<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.html#aacb386fcc022798feb9dd02b43d56861" title="client::chatEntry::\lgetHeight" alt="" coords="389,70,515,111"/>
 </map>

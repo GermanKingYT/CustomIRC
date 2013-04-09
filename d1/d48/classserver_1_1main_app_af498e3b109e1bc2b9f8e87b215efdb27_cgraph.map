@@ -1,11 +1,11 @@
 <map id="server::mainApp::ownUserChangeStatus" name="server::mainApp::ownUserChangeStatus">
-<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.xhtml#afb3f6602401d493fb06fc48973123bf9" title="server::ircUser::setStatus" alt="" coords="227,5,397,32"/>
-<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.xhtml#a692aec882619dc575ac64ec8fabf02e9" title="server::ircUser::setOnline" alt="" coords="228,56,396,83"/>
-<area shape="rect" id="node4" href="$d2/d29/classserver_1_1irc_user.xhtml#ac9c8f677bab0526311a94d16ad13fd61" title="server::ircUser::getStatus" alt="" coords="227,107,397,133"/>
-<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.xhtml#aef3233c03f42190f1c89b77c357e9f7f" title="Sets our own nickname." alt="" coords="253,158,371,199"/>
-<area shape="rect" id="node10" href="$d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="229,224,395,251"/>
-<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.xhtml#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="445,165,592,192"/>
-<area shape="rect" id="node7" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="642,140,721,167"/>
-<area shape="rect" id="node9" href="$d9/db1/namespaceserver.xhtml#a5975bac26af821c5aa25ca3b66ab35a9" title="server::qts" alt="" coords="640,191,723,217"/>
-<area shape="rect" id="node8" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="771,140,912,167"/>
+<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.html#afb3f6602401d493fb06fc48973123bf9" title="server::ircUser::setStatus" alt="" coords="227,5,397,32"/>
+<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.html#a692aec882619dc575ac64ec8fabf02e9" title="server::ircUser::setOnline" alt="" coords="228,56,396,83"/>
+<area shape="rect" id="node4" href="$d2/d29/classserver_1_1irc_user.html#ac9c8f677bab0526311a94d16ad13fd61" title="server::ircUser::getStatus" alt="" coords="227,107,397,133"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#aef3233c03f42190f1c89b77c357e9f7f" title="Sets our own nickname." alt="" coords="253,158,371,199"/>
+<area shape="rect" id="node10" href="$d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="229,224,395,251"/>
+<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.html#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="445,165,592,192"/>
+<area shape="rect" id="node7" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="642,140,721,167"/>
+<area shape="rect" id="node9" href="$d9/db1/namespaceserver.html#a5975bac26af821c5aa25ca3b66ab35a9" title="Shorthand to convert a QString to a std::string." alt="" coords="640,191,723,217"/>
+<area shape="rect" id="node8" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="771,140,912,167"/>
 </map>

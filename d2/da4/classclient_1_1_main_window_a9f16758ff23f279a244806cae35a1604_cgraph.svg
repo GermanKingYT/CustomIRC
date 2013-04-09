@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d9/d9f/classshared_1_1events_1_1event_user_leave.xhtml#afb9cb12d52415109349d1469f1577353" target="_top" xlink:title="Gets the DB&#45;ID of the user that left.">
+<g id="a_node2"><a xlink:href="../../d9/d9f/classshared_1_1events_1_1event_user_leave.html#afb9cb12d52415109349d1469f1577353" target="_top" xlink:title="Gets the DB&#45;ID of the user that left.">
 <polygon fill="white" stroke="black" points="138,-49 138,-79 266,-79 266,-49 138,-49"/>
 <text text-anchor="start" x="146" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::eventUser</text>
 <text text-anchor="middle" x="202" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">Leave::getUserId</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#a2b450c42e2a6603add85738c19ea7151" target="_top" xlink:title="Gets the time on which the event was created.">
+<g id="a_node4"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#a2b450c42e2a6603add85738c19ea7151" target="_top" xlink:title="Gets the time on which the event was created.">
 <polygon fill="white" stroke="black" points="141,-0 141,-30 263,-30 263,-0 141,-0"/>
 <text text-anchor="start" x="149" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="202" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::getTime</text>
@@ -45,7 +45,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
+<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
 <polygon fill="white" stroke="black" points="302,-49 302,-79 424,-79 424,-49 302,-49"/>
 <text text-anchor="start" x="310" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="363" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">::getData</text>

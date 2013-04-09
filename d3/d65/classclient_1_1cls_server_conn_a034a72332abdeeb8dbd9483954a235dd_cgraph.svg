@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
+<g id="a_node2"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
 <polygon fill="white" stroke="black" points="160.5,-49.5 160.5,-68.5 303.5,-68.5 303.5,-49.5 160.5,-49.5"/>
 <text text-anchor="middle" x="232" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -30,7 +30,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.xhtml#abad7931f40972d90b51e696b878b58c4" target="_top" xlink:title="Emitted when the server has sent us all the users.">
+<g id="a_node3"><a xlink:href="../../d3/d65/classclient_1_1cls_server_conn.html#abad7931f40972d90b51e696b878b58c4" target="_top" xlink:title="Emitted when the server has sent us all the users.">
 <polygon fill="white" stroke="black" points="175,-0 175,-30 289,-30 289,-0 175,-0"/>
 <text text-anchor="start" x="183" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::clsServerConn</text>
 <text text-anchor="middle" x="232" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::userQueryCompleted</text>

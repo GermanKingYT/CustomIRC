@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['irccodes',['ircCodes',['../d3/d3c/namespaceirc_codes.xhtml',1,'']]]
+  ['irccodes',['ircCodes',['../d3/d3c/namespaceirc_codes.html',1,'']]]
 ];

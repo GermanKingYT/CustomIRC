@@ -49,7 +49,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d4/d48/chatentry_8h.xhtml" target="_top" xlink:title="chatentry.h">
+<g id="a_node2"><a xlink:href="../../d4/d48/chatentry_8h.html" target="_top" xlink:title="chatentry.h">
 <polygon fill="white" stroke="black" points="401.5,-168.5 401.5,-187.5 466.5,-187.5 466.5,-168.5 401.5,-168.5"/>
 <text text-anchor="middle" x="434" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">chatentry.h</text>
 </a>
@@ -82,7 +82,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node22 -->
 <g id="node22" class="node"><title>Node22</title>
-<g id="a_node22"><a xlink:href="../../d3/d33/chatbox_8h.xhtml" target="_top" xlink:title="chatbox.h">
+<g id="a_node22"><a xlink:href="../../d3/d33/chatbox_8h.html" target="_top" xlink:title="chatbox.h">
 <polygon fill="white" stroke="black" points="508.5,-224.5 508.5,-243.5 567.5,-243.5 567.5,-224.5 508.5,-224.5"/>
 <text text-anchor="middle" x="538" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">chatbox.h</text>
 </a>
@@ -125,7 +125,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.xhtml" target="_top" xlink:title="ircuser.h">
+<g id="a_node6"><a xlink:href="../../d5/d98/custom_irc_client_2ircuser_8h.html" target="_top" xlink:title="ircuser.h">
 <polygon fill="white" stroke="black" points="338,-112.5 338,-131.5 392,-131.5 392,-112.5 338,-112.5"/>
 <text text-anchor="middle" x="365" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">ircuser.h</text>
 </a>
@@ -208,7 +208,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node14"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="531.5,-56.5 531.5,-75.5 636.5,-75.5 636.5,-56.5 531.5,-56.5"/>
 <text text-anchor="middle" x="584" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>
@@ -296,7 +296,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node25 -->
 <g id="node25" class="node"><title>Node25</title>
-<g id="a_node25"><a xlink:href="../../db/d97/clsevent_8h.xhtml" target="_top" xlink:title="../resources/clsevent.h">
+<g id="a_node25"><a xlink:href="../../db/d97/clsevent_8h.html" target="_top" xlink:title="../resources/clsevent.h">
 <polygon fill="white" stroke="black" points="692.5,-112.5 692.5,-131.5 807.5,-131.5 807.5,-112.5 692.5,-112.5"/>
 <text text-anchor="middle" x="750" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clsevent.h</text>
 </a>
@@ -319,7 +319,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node27 -->
 <g id="node27" class="node"><title>Node27</title>
-<g id="a_node27"><a xlink:href="../../d1/d3d/chatnotification_8h.xhtml" target="_top" xlink:title="chatnotification.h">
+<g id="a_node27"><a xlink:href="../../d1/d3d/chatnotification_8h.html" target="_top" xlink:title="chatnotification.h">
 <polygon fill="white" stroke="black" points="594,-168.5 594,-187.5 684,-187.5 684,-168.5 594,-168.5"/>
 <text text-anchor="middle" x="639" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">chatnotification.h</text>
 </a>

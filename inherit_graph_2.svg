@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="d5/dfb/classclient_1_1chat_entry.xhtml" target="_top" xlink:title="Class that holds a chatmessage for UI.">
+<g id="a_node2"><a xlink:href="d5/dfb/classclient_1_1chat_entry.html" target="_top" xlink:title="Class that holds a chatmessage for UI.">
 <polygon fill="white" stroke="black" points="88,-0.5 88,-19.5 176,-19.5 176,-0.5 88,-0.5"/>
 <text text-anchor="middle" x="132" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry</text>
 </a>

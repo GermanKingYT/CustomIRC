@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#add7e9e8581a8d558c15c5f194dea4e5a" target="_top" xlink:title="K4U::clsLog::prefix">
+<g id="a_node2"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#add7e9e8581a8d558c15c5f194dea4e5a" target="_top" xlink:title="K4U::clsLog::prefix">
 <polygon fill="white" stroke="black" points="150.5,-0.5 150.5,-19.5 249.5,-19.5 249.5,-0.5 150.5,-0.5"/>
 <text text-anchor="middle" x="200" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::prefix</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#ad71c460835263e52b7c3d24063fa4ea0" target="_top" xlink:title="K4U::clsLog::getTag">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#ad71c460835263e52b7c3d24063fa4ea0" target="_top" xlink:title="K4U::clsLog::getTag">
 <polygon fill="white" stroke="black" points="286,-0.5 286,-19.5 390,-19.5 390,-0.5 286,-0.5"/>
 <text text-anchor="middle" x="338" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::getTag</text>
 </a>

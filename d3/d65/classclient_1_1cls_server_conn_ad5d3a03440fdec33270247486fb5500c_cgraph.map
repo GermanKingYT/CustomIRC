@@ -1,7 +1,9 @@
 <map id="client::clsServerConn::handleEventReceived" name="client::clsServerConn::handleEventReceived">
-<area shape="rect" id="node2" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#a33943d736db49d2a7781325357f34063" title="Gets this events type." alt="" coords="205,5,368,46"/>
-<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#ada02a27f01478db29d10bde4c51110b4" title="Emitted when a chat event has been received." alt="" coords="215,70,359,111"/>
-<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a9f3b4fe1b687bdb31ab584493b8dde91" title="Triggered when a user enters the channel." alt="" coords="215,135,359,177"/>
-<area shape="rect" id="node5" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a89ac2b4edd0a40b0fbfb5504904752c9" title="Triggered when a user left the channel." alt="" coords="215,201,359,242"/>
-<area shape="rect" id="node6" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#aa7679dfddcf23ffa4ce4febbc005995a" title="Emitted when a user has changed his status (nick|status)" alt="" coords="215,266,359,307"/>
+<area shape="rect" id="node2" href="$db/d8b/classshared_1_1events_1_1cls_event.html#a33943d736db49d2a7781325357f34063" title="Gets this events type." alt="" coords="209,5,372,46"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#ada02a27f01478db29d10bde4c51110b4" title="Emitted when a chat event has been received." alt="" coords="219,70,363,111"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#a9f3b4fe1b687bdb31ab584493b8dde91" title="Triggered when a user enters the channel." alt="" coords="219,135,363,177"/>
+<area shape="rect" id="node5" href="$d3/d65/classclient_1_1cls_server_conn.html#a89ac2b4edd0a40b0fbfb5504904752c9" title="Triggered when a user left the channel." alt="" coords="219,201,363,242"/>
+<area shape="rect" id="node6" href="$d3/d65/classclient_1_1cls_server_conn.html#aa7679dfddcf23ffa4ce4febbc005995a" title="Emitted when a user has changed his status (nick|status)" alt="" coords="219,266,363,307"/>
+<area shape="rect" id="node7" href="$d3/d65/classclient_1_1cls_server_conn.html#af5b308ecbe7fda6ff5c7dd524e17817c" title="Emitted when a user has changed his nick (nick|status)" alt="" coords="219,331,363,373"/>
+<area shape="rect" id="node8" href="$d3/d65/classclient_1_1cls_server_conn.html#a7756cad0bea903cd816c1fb68cac65fe" title="Triggered when the server wants us to know something." alt="" coords="206,397,375,438"/>
 </map>

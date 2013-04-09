@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d9/dc6/class_main_window.xhtml#a9597b97cef9da0760a06e8e04ca3d138" target="_top" xlink:title="MainWindow::setOrientation">
+<g id="a_node2"><a xlink:href="../../d9/dc6/class_main_window.html#a9597b97cef9da0760a06e8e04ca3d138" target="_top" xlink:title="MainWindow::setOrientation">
 <polygon fill="white" stroke="black" points="76.5,-38.5 76.5,-57.5 215.5,-57.5 215.5,-38.5 76.5,-38.5"/>
 <text text-anchor="middle" x="146" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setOrientation</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d9/dc6/class_main_window.xhtml#ae66038a9d909fd409d781bf7c3f3ff2c" target="_top" xlink:title="MainWindow::showExpanded">
+<g id="a_node3"><a xlink:href="../../d9/dc6/class_main_window.html#ae66038a9d909fd409d781bf7c3f3ff2c" target="_top" xlink:title="MainWindow::showExpanded">
 <polygon fill="white" stroke="black" points="74,-0.5 74,-19.5 218,-19.5 218,-0.5 74,-0.5"/>
 <text text-anchor="middle" x="146" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showExpanded</text>
 </a>

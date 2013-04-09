@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a7fe5f4438970743566e67e12335d472f" target="_top" xlink:title="org.kde.necessitas.origo.\lQtActivity.ministroNotFound">
+<g id="a_node2"><a xlink:href="../../db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.html#a7fe5f4438970743566e67e12335d472f" target="_top" xlink:title="org.kde.necessitas.origo.\lQtActivity.ministroNotFound">
 <polygon fill="white" stroke="black" points="210,-0 210,-30 348,-30 348,-0 210,-0"/>
 <text text-anchor="start" x="218" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">org.kde.necessitas.origo.</text>
 <text text-anchor="middle" x="279" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtActivity.ministroNotFound</text>

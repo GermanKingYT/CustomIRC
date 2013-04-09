@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../dd/d05/classshared_1_1events_1_1event_user_join.xhtml#afd49e93a57440f97dd02ccbec353cdb8" target="_top" xlink:title="Gets a QVariantMap of the user that joined.">
+<g id="a_node2"><a xlink:href="../../dd/d05/classshared_1_1events_1_1event_user_join.html#afd49e93a57440f97dd02ccbec353cdb8" target="_top" xlink:title="Gets a QVariantMap of the user that joined.">
 <polygon fill="white" stroke="black" points="142,-164 142,-194 270,-194 270,-164 142,-164"/>
 <text text-anchor="start" x="150" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::eventUser</text>
 <text text-anchor="middle" x="206" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">Join::getUser</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
+<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
 <polygon fill="white" stroke="black" points="148,-125.5 148,-144.5 264,-144.5 264,-125.5 148,-125.5"/>
 <text text-anchor="middle" x="206" y="-132.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getNick</text>
 </a>
@@ -44,7 +44,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a6a361f6ed53e82efe4e442db7023ae49" target="_top" xlink:title="client::ircUser::getStandard">
+<g id="a_node5"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a6a361f6ed53e82efe4e442db7023ae49" target="_top" xlink:title="client::ircUser::getStandard">
 <polygon fill="white" stroke="black" points="138.5,-87.5 138.5,-106.5 273.5,-106.5 273.5,-87.5 138.5,-87.5"/>
 <text text-anchor="middle" x="206" y="-94.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getStandard</text>
 </a>
@@ -57,7 +57,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a7cfd7dd6670a4f1b2af75914a1e1f4ae" target="_top" xlink:title="client::ircUser::getId">
+<g id="a_node6"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a7cfd7dd6670a4f1b2af75914a1e1f4ae" target="_top" xlink:title="client::ircUser::getId">
 <polygon fill="white" stroke="black" points="154,-49.5 154,-68.5 258,-68.5 258,-49.5 154,-49.5"/>
 <text text-anchor="middle" x="206" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getId</text>
 </a>
@@ -70,7 +70,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#a2b450c42e2a6603add85738c19ea7151" target="_top" xlink:title="Gets the time on which the event was created.">
+<g id="a_node7"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#a2b450c42e2a6603add85738c19ea7151" target="_top" xlink:title="Gets the time on which the event was created.">
 <polygon fill="white" stroke="black" points="145,-0 145,-30 267,-30 267,-0 145,-0"/>
 <text text-anchor="start" x="153" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="206" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::getTime</text>
@@ -84,7 +84,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
+<g id="a_node3"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html#ac3acc2e80a92d28a980a50595517bf4a" target="_top" xlink:title="Get data from the events data map.">
 <polygon fill="white" stroke="black" points="310,-164 310,-194 432,-194 432,-164 310,-164"/>
 <text text-anchor="start" x="318" y="-182" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <text text-anchor="middle" x="371" y="-171" font-family="Helvetica,sans-Serif" font-size="10.00">::getData</text>

@@ -34,7 +34,7 @@
 <script type="text/javascript">
 var viewWidth = 560;
 var viewHeight = 87;
-var sectionId = 'dynsection-4';
+var sectionId = 'dynsection-5';
 </script>
 <script xlink:href="../../svgpan.js"/>
 <svg id="graph" class="graph">
@@ -49,7 +49,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#ac3d69f6791e2497c86fe99c068b832b6" target="_top" xlink:title="Used for setting the width of the nick label after initializing.">
+<g id="a_node2"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#ac3d69f6791e2497c86fe99c068b832b6" target="_top" xlink:title="Used for setting the width of the nick label after initializing.">
 <polygon fill="white" stroke="black" points="170,-24 170,-54 264,-54 264,-24 170,-24"/>
 <text text-anchor="start" x="178" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="217" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">setUserWidth</text>
@@ -63,7 +63,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#ae663e1a715924f6743c7e9d235ad334b" target="_top" xlink:title="client::chatEntry::\lcalculateMessageWidth">
+<g id="a_node3"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#ae663e1a715924f6743c7e9d235ad334b" target="_top" xlink:title="client::chatEntry::\lcalculateMessageWidth">
 <polygon fill="white" stroke="black" points="300.5,-24 300.5,-54 421.5,-54 421.5,-24 300.5,-24"/>
 <text text-anchor="start" x="308.5" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="361" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">calculateMessageWidth</text>
@@ -77,7 +77,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#a23b44a93f980e59387a289c9282b5f78" target="_top" xlink:title="client::chatEntry::\lgetWidth">
+<g id="a_node4"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#a23b44a93f980e59387a289c9282b5f78" target="_top" xlink:title="client::chatEntry::\lgetWidth">
 <polygon fill="white" stroke="black" points="458,-49 458,-79 552,-79 552,-49 458,-49"/>
 <text text-anchor="start" x="466" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="505" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">getWidth</text>
@@ -91,7 +91,7 @@ var sectionId = 'dynsection-4';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.xhtml#aacb386fcc022798feb9dd02b43d56861" target="_top" xlink:title="client::chatEntry::\lgetHeight">
+<g id="a_node5"><a xlink:href="../../d5/dfb/classclient_1_1chat_entry.html#aacb386fcc022798feb9dd02b43d56861" target="_top" xlink:title="client::chatEntry::\lgetHeight">
 <polygon fill="white" stroke="black" points="458,-0 458,-30 552,-30 552,-0 458,-0"/>
 <text text-anchor="start" x="466" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatEntry::</text>
 <text text-anchor="middle" x="505" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">getHeight</text>

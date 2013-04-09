@@ -1,19 +1,25 @@
 <map id="server::ircClient::init" name="server::ircClient::init">
-<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="790,764,869,791"/>
-<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.xhtml#a384327d5a800bd0d970cffaf1a6a55c1" title="server::ircClient::\lreadData" alt="" coords="190,647,309,689"/>
-<area shape="rect" id="node17" href="$d1/d10/classserver_1_1irc_client.xhtml#ae88cbd04e92e76e7658657c0f14f107a" title="server::ircClient::\lconnected" alt="" coords="358,757,477,798"/>
-<area shape="rect" id="node18" href="$d1/d10/classserver_1_1irc_client.xhtml#a32607649043e6053ff2ef9980df91800" title="server::ircClient::\ldisconnected" alt="" coords="190,811,309,853"/>
-<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="963,764,1104,791"/>
-<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.xhtml#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="537,655,684,681"/>
-<area shape="rect" id="node6" href="$d9/db1/namespaceserver.xhtml#a5975bac26af821c5aa25ca3b66ab35a9" title="server::qts" alt="" coords="788,604,871,631"/>
-<area shape="rect" id="node7" href="$d1/d10/classserver_1_1irc_client.xhtml#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="358,341,477,382"/>
-<area shape="rect" id="node8" href="$d9/db1/namespaceserver.xhtml#ab14f85d7268f4938433c3bd76aefd61e" title="server::inCommand" alt="" coords="544,136,677,163"/>
-<area shape="rect" id="node9" href="$d1/d10/classserver_1_1irc_client.xhtml#a1cd3512aac27b016945c5b66d0c777d1" title="Emitted when a user comes online with a JOIN message." alt="" coords="551,187,670,229"/>
-<area shape="rect" id="node10" href="$d9/db1/namespaceserver.xhtml#abefc8e9cd145a8a00676c9bf43b877ef" title="server::getNickAndStatus" alt="" coords="745,199,914,225"/>
-<area shape="rect" id="node11" href="$d1/d10/classserver_1_1irc_client.xhtml#aa59470840fe4135454af200bf5259874" title="Emitted when a chatmessage has been received." alt="" coords="551,253,670,294"/>
-<area shape="rect" id="node12" href="$d9/db1/namespaceserver.xhtml#a4ab136076f9a5f1ae8a6d78020f07c07" title="server::getNickAndStatus\lFromId" alt="" coords="526,70,695,111"/>
-<area shape="rect" id="node13" href="$d1/d10/classserver_1_1irc_client.xhtml#afa10a5c7c8ee0a4cfdae135d6737a0a2" title="Emitted when a user changes his status (nick|Status)" alt="" coords="546,370,675,411"/>
-<area shape="rect" id="node14" href="$d9/db1/namespaceserver.xhtml#a19c09df3c1cb9feb973f1383aa20d0af" title="server::getId" alt="" coords="565,436,657,463"/>
-<area shape="rect" id="node15" href="$d1/d10/classserver_1_1irc_client.xhtml#a566c94db09896197fdb8e982756b8c1e" title="Emitted when a user changes his nickname (nick|Status)" alt="" coords="551,487,670,529"/>
-<area shape="rect" id="node16" href="$d1/d10/classserver_1_1irc_client.xhtml#a1ba37565db4acdfae3163d8d7217d9f2" title="Emitted when a user leaves the room with a PART message." alt="" coords="551,5,670,46"/>
+<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="811,865,890,892"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="190,698,309,739"/>
+<area shape="rect" id="node18" href="$d1/d10/classserver_1_1irc_client.html#a31910635c17bd56be644084746653ba8" title="server::ircClient::\lsltConnected" alt="" coords="190,858,309,899"/>
+<area shape="rect" id="node20" href="$d1/d10/classserver_1_1irc_client.html#a32607649043e6053ff2ef9980df91800" title="server::ircClient::\ldisconnected" alt="" coords="190,975,309,1017"/>
+<area shape="rect" id="node22" href="$d1/d10/classserver_1_1irc_client.html#a6ea26ab5da3d338c84927312832f5b69" title="Runs every CHECK_PING_INTERVAL to check if the last ping was there." alt="" coords="190,1041,309,1082"/>
+<area shape="rect" id="node23" href="$d1/d10/classserver_1_1irc_client.html#a9f9877406894f9b49bce12d8ad094bd7" title="server::ircClient::\lconnectTimeout" alt="" coords="190,1106,309,1147"/>
+<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="984,865,1125,892"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="559,705,705,732"/>
+<area shape="rect" id="node6" href="$d9/db1/namespaceserver.html#a5975bac26af821c5aa25ca3b66ab35a9" title="Shorthand to convert a QString to a std::string." alt="" coords="809,655,892,681"/>
+<area shape="rect" id="node7" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="369,355,487,397"/>
+<area shape="rect" id="node8" href="$d9/db1/namespaceserver.html#ab14f85d7268f4938433c3bd76aefd61e" title="Just an instring command. Checks if search is in command." alt="" coords="565,604,699,631"/>
+<area shape="rect" id="node9" href="$d1/d10/classserver_1_1irc_client.html#a1cd3512aac27b016945c5b66d0c777d1" title="Emitted when a user comes online with a JOIN message." alt="" coords="573,5,691,46"/>
+<area shape="rect" id="node10" href="$d9/db1/namespaceserver.html#abefc8e9cd145a8a00676c9bf43b877ef" title="Converts a nickname to a nickAndStatus (nick|status)" alt="" coords="766,107,935,133"/>
+<area shape="rect" id="node11" href="$d1/d10/classserver_1_1irc_client.html#aa59470840fe4135454af200bf5259874" title="Emitted when a chatmessage has been received." alt="" coords="573,187,691,229"/>
+<area shape="rect" id="node12" href="$d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" title="server::ircUser::getName" alt="" coords="549,253,715,280"/>
+<area shape="rect" id="node13" href="$d9/db1/namespaceserver.html#a4ab136076f9a5f1ae8a6d78020f07c07" title="Converts an IRC&#45;ID to a nickAndStatus (nick|status)" alt="" coords="547,70,717,111"/>
+<area shape="rect" id="node14" href="$d1/d10/classserver_1_1irc_client.html#afa10a5c7c8ee0a4cfdae135d6737a0a2" title="Emitted when a user changes his status (nick|Status)" alt="" coords="567,355,697,397"/>
+<area shape="rect" id="node15" href="$d9/db1/namespaceserver.html#ad244a00644a29a6c927a6ee9dd351351" title="Converts a full IRC&#45;ID to something without the nickname." alt="" coords="586,421,678,448"/>
+<area shape="rect" id="node16" href="$d1/d10/classserver_1_1irc_client.html#a566c94db09896197fdb8e982756b8c1e" title="Emitted when a user changes his nickname (nick|Status)" alt="" coords="573,473,691,514"/>
+<area shape="rect" id="node17" href="$d1/d10/classserver_1_1irc_client.html#a1ba37565db4acdfae3163d8d7217d9f2" title="Emitted when a user leaves the room with a PART message." alt="" coords="573,538,691,579"/>
+<area shape="rect" id="node19" href="$d1/d10/classserver_1_1irc_client.html#a47c67bb9fd8640adf17a6ae01f8b7154" title="Emitted when the connection has been established." alt="" coords="369,858,487,899"/>
+<area shape="rect" id="node21" href="$d1/d10/classserver_1_1irc_client.html#acb710c977bd5411f99dc8fdaf92e91a4" title="Emitted when the connection was cut!" alt="" coords="367,1038,489,1079"/>
+<area shape="rect" id="node24" href="$d1/d10/classserver_1_1irc_client.html#a6e73d106182456e97f48db009a29642d" title="Emitted when a connection cannot be made after MAX_CONNECT_TIMEOUT_IN_MS." alt="" coords="358,1106,498,1147"/>
 </map>

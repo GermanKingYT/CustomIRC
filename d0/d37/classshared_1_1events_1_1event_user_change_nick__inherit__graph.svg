@@ -25,7 +25,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.xhtml" target="_top" xlink:title="The main event class.">
+<g id="a_node2"><a xlink:href="../../db/d8b/classshared_1_1events_1_1cls_event.html" target="_top" xlink:title="The main event class.">
 <polygon fill="white" stroke="black" points="3,-151 3,-329 125,-329 125,-151 3,-151"/>
 <text text-anchor="middle" x="64" y="-317" font-family="Helvetica,sans-Serif" font-size="10.00">shared::events::clsEvent</text>
 <polyline fill="none" stroke="black" points="3,-310 125,-310 "/>

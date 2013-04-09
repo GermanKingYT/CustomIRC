@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#a329e95a39e56530f3745aa0d8e057761" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegateMethod">
+<g id="a_node2"><a xlink:href="../../d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.html#a329e95a39e56530f3745aa0d8e057761" target="_top" xlink:title="org.kde.necessitas.origo.\lQtApplication.invokeDelegateMethod">
 <polygon fill="white" stroke="black" points="162,-0 162,-30 338,-30 338,-0 162,-0"/>
 <text text-anchor="start" x="170" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">org.kde.necessitas.origo.</text>
 <text text-anchor="middle" x="250" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtApplication.invokeDelegateMethod</text>

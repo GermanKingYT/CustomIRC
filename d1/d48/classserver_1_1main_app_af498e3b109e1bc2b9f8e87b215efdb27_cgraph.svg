@@ -34,7 +34,7 @@
 <script type="text/javascript">
 var viewWidth = 688;
 var viewHeight = 192;
-var sectionId = 'dynsection-5';
+var sectionId = 'dynsection-9';
 </script>
 <script xlink:href="../../svgpan.js"/>
 <svg id="graph" class="graph">
@@ -49,7 +49,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#afb3f6602401d493fb06fc48973123bf9" target="_top" xlink:title="server::ircUser::setStatus">
+<g id="a_node2"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#afb3f6602401d493fb06fc48973123bf9" target="_top" xlink:title="server::ircUser::setStatus">
 <polygon fill="white" stroke="black" points="166.5,-164.5 166.5,-183.5 293.5,-183.5 293.5,-164.5 166.5,-164.5"/>
 <text text-anchor="middle" x="230" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setStatus</text>
 </a>
@@ -62,7 +62,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
+<g id="a_node3"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a692aec882619dc575ac64ec8fabf02e9" target="_top" xlink:title="server::ircUser::setOnline">
 <polygon fill="white" stroke="black" points="167,-126.5 167,-145.5 293,-145.5 293,-126.5 167,-126.5"/>
 <text text-anchor="middle" x="230" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::setOnline</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#ac9c8f677bab0526311a94d16ad13fd61" target="_top" xlink:title="server::ircUser::getStatus">
+<g id="a_node4"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#ac9c8f677bab0526311a94d16ad13fd61" target="_top" xlink:title="server::ircUser::getStatus">
 <polygon fill="white" stroke="black" points="166.5,-88.5 166.5,-107.5 293.5,-107.5 293.5,-88.5 166.5,-88.5"/>
 <text text-anchor="middle" x="230" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::getStatus</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d1/d10/classserver_1_1irc_client.xhtml#aef3233c03f42190f1c89b77c357e9f7f" target="_top" xlink:title="Sets our own nickname.">
+<g id="a_node5"><a xlink:href="../../d1/d10/classserver_1_1irc_client.html#aef3233c03f42190f1c89b77c357e9f7f" target="_top" xlink:title="Sets our own nickname.">
 <polygon fill="white" stroke="black" points="185.5,-39 185.5,-69 274.5,-69 274.5,-39 185.5,-39"/>
 <text text-anchor="start" x="193.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircClient::</text>
 <text text-anchor="middle" x="230" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">setOwnNick</text>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d2/d29/classserver_1_1irc_user.xhtml#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
+<g id="a_node10"><a xlink:href="../../d2/d29/classserver_1_1irc_user.html#a9b5683eaeb89557d6e1b1e57708aeb35" target="_top" xlink:title="server::ircUser::getName">
 <polygon fill="white" stroke="black" points="168,-0.5 168,-19.5 292,-19.5 292,-0.5 168,-0.5"/>
 <text text-anchor="middle" x="230" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircUser::getName</text>
 </a>
@@ -115,7 +115,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d1/d10/classserver_1_1irc_client.xhtml#a2c1954be24f18aef7d8ec6a7a3e7f29c" target="_top" xlink:title="Sends a message to the IRC server.">
+<g id="a_node6"><a xlink:href="../../d1/d10/classserver_1_1irc_client.html#a2c1954be24f18aef7d8ec6a7a3e7f29c" target="_top" xlink:title="Sends a message to the IRC server.">
 <polygon fill="white" stroke="black" points="330,-44.5 330,-63.5 440,-63.5 440,-44.5 330,-44.5"/>
 <text text-anchor="middle" x="385" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::ircClient::send</text>
 </a>
@@ -128,7 +128,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node7"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="477.5,-63.5 477.5,-82.5 536.5,-82.5 536.5,-63.5 477.5,-63.5"/>
 <text text-anchor="middle" x="507" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -141,7 +141,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d9/db1/namespaceserver.xhtml#a5975bac26af821c5aa25ca3b66ab35a9" target="_top" xlink:title="server::qts">
+<g id="a_node9"><a xlink:href="../../d9/db1/namespaceserver.html#a5975bac26af821c5aa25ca3b66ab35a9" target="_top" xlink:title="Shorthand to convert a QString to a std::string.">
 <polygon fill="white" stroke="black" points="476,-25.5 476,-44.5 538,-44.5 538,-25.5 476,-25.5"/>
 <text text-anchor="middle" x="507" y="-32.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::qts</text>
 </a>
@@ -154,7 +154,7 @@ var sectionId = 'dynsection-5';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node8"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="574,-63.5 574,-82.5 680,-82.5 680,-63.5 574,-63.5"/>
 <text text-anchor="middle" x="627" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>

@@ -1,5 +1,5 @@
 <map id="server::clsSettings" name="server::clsSettings">
-<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.xhtml" title="The ircUser class." alt="" coords="116,310,223,578"/>
-<area shape="rect" id="node3" href="$db/d31/structserver_1_1irc_user_1_1user_color.xhtml" title="The userColor struct As a replacement for the QColor type." alt="" coords="5,72,173,179"/>
-<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.xhtml" title="Custom logging class." alt="" coords="198,6,303,245"/>
+<area shape="rect" id="node2" href="$d2/d29/classserver_1_1irc_user.html" title="The ircUser class." alt="" coords="116,310,223,578"/>
+<area shape="rect" id="node3" href="$db/d31/structserver_1_1irc_user_1_1user_color.html" title="The userColor struct As a replacement for the QColor type." alt="" coords="5,72,173,179"/>
+<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.html" title="Custom logging class." alt="" coords="198,6,303,245"/>
 </map>

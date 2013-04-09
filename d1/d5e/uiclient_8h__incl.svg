@@ -79,7 +79,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d7/d62/clslog_8h.xhtml" target="_top" xlink:title="../resources/clslog.h">
+<g id="a_node5"><a xlink:href="../../d7/d62/clslog_8h.html" target="_top" xlink:title="../resources/clslog.h">
 <polygon fill="white" stroke="black" points="251.5,-56.5 251.5,-75.5 356.5,-75.5 356.5,-56.5 251.5,-56.5"/>
 <text text-anchor="middle" x="304" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/clslog.h</text>
 </a>
@@ -92,7 +92,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../dc/d96/jsoncommand_8h.xhtml" target="_top" xlink:title="../resources/jsoncommand.h">
+<g id="a_node11"><a xlink:href="../../dc/d96/jsoncommand_8h.html" target="_top" xlink:title="../resources/jsoncommand.h">
 <polygon fill="white" stroke="black" points="332,-112.5 332,-131.5 472,-131.5 472,-112.5 332,-112.5"/>
 <text text-anchor="middle" x="402" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">../resources/jsoncommand.h</text>
 </a>
@@ -175,7 +175,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../d4/d05/json_8h.xhtml" target="_top" xlink:title="json.h">
+<g id="a_node14"><a xlink:href="../../d4/d05/json_8h.html" target="_top" xlink:title="json.h">
 <polygon fill="white" stroke="black" points="538.5,-56.5 538.5,-75.5 581.5,-75.5 581.5,-56.5 538.5,-56.5"/>
 <text text-anchor="middle" x="560" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">json.h</text>
 </a>

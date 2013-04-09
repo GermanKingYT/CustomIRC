@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
+<g id="a_node2"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" target="_top" xlink:title="client::ircUser::getNick">
 <polygon fill="white" stroke="black" points="143,-114.5 143,-133.5 259,-133.5 259,-114.5 143,-114.5"/>
 <text text-anchor="middle" x="201" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getNick</text>
 </a>
@@ -30,7 +30,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#ad800b80a1dc3b1fd2bacffaee6ceb7e7" target="_top" xlink:title="client::ircUser::getStatus">
+<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#ad800b80a1dc3b1fd2bacffaee6ceb7e7" target="_top" xlink:title="client::ircUser::getStatus">
 <polygon fill="white" stroke="black" points="138.5,-76.5 138.5,-95.5 263.5,-95.5 263.5,-76.5 138.5,-76.5"/>
 <text text-anchor="middle" x="201" y="-83.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getStatus</text>
 </a>
@@ -43,7 +43,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a7d4549d1722c3dea93d83114c70b8aae" target="_top" xlink:title="client::ircUser::getColor">
+<g id="a_node4"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a7d4549d1722c3dea93d83114c70b8aae" target="_top" xlink:title="client::ircUser::getColor">
 <polygon fill="white" stroke="black" points="141.5,-38.5 141.5,-57.5 260.5,-57.5 260.5,-38.5 141.5,-38.5"/>
 <text text-anchor="middle" x="201" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getColor</text>
 </a>
@@ -56,7 +56,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a521a4df549ad0e80df8ef739d168a917" target="_top" xlink:title="client::ircUser::getIcon">
+<g id="a_node5"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a521a4df549ad0e80df8ef739d168a917" target="_top" xlink:title="client::ircUser::getIcon">
 <polygon fill="white" stroke="black" points="144,-0.5 144,-19.5 258,-19.5 258,-0.5 144,-0.5"/>
 <text text-anchor="middle" x="201" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::getIcon</text>
 </a>

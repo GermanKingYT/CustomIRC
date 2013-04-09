@@ -40,7 +40,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml" target="_top" xlink:title="Custom logging class.">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html" target="_top" xlink:title="Custom logging class.">
 <polygon fill="white" stroke="black" points="70.5,-173 70.5,-351 149.5,-351 149.5,-173 70.5,-173"/>
 <text text-anchor="middle" x="110" y="-339" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog</text>
 <polyline fill="none" stroke="black" points="70.5,-332 149.5,-332 "/>

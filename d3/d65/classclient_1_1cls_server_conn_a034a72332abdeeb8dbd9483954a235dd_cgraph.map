@@ -1,4 +1,4 @@
 <map id="client::clsServerConn::handleCompletedQuery" name="client::clsServerConn::handleCompletedQuery">
-<area shape="rect" id="node2" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="219,5,410,32"/>
-<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#abad7931f40972d90b51e696b878b58c4" title="Emitted when the server has sent us all the users." alt="" coords="239,57,391,98"/>
+<area shape="rect" id="node2" href="$d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="219,5,410,32"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#abad7931f40972d90b51e696b878b58c4" title="Emitted when the server has sent us all the users." alt="" coords="239,57,391,98"/>
 </map>

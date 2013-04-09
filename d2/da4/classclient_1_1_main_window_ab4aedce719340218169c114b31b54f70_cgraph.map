@@ -1,34 +1,46 @@
 <map id="client::MainWindow::MainWindow" name="client::MainWindow::MainWindow">
-<area shape="rect" id="node2" href="$d5/d08/classclient_1_1cls_settings.xhtml#aea971041842324e96b90ef6b8b703d54" title="Gets the hostname of where the server is running." alt="" coords="210,5,337,46"/>
-<area shape="rect" id="node3" href="$d5/d08/classclient_1_1cls_settings.xhtml#a9cccda32a83a487cd88ce00de7c45ec1" title="Gets the port on which the server is listening." alt="" coords="210,70,337,111"/>
-<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.xhtml#a0c9982277db418807d2611e80cb65983" title="client::MainWindow\l::moveScrollBarToBottom" alt="" coords="189,135,357,177"/>
-<area shape="rect" id="node5" href="$d2/da4/classclient_1_1_main_window.xhtml#a51e1634c12eb7373b01dce36a03afc9a" title="Triggered when a chat has been received." alt="" coords="206,201,341,242"/>
-<area shape="rect" id="node10" href="$d2/da4/classclient_1_1_main_window.xhtml#aa32adfb179341040f2decbd0da19f1d9" title="client::MainWindow\l::sendChat" alt="" coords="206,593,341,634"/>
-<area shape="rect" id="node19" href="$d2/da4/classclient_1_1_main_window.xhtml#a75d241698eb127c089ed4703fbeb4999" title="client::MainWindow\l::commandGiven" alt="" coords="206,527,341,569"/>
-<area shape="rect" id="node20" href="$d2/da4/classclient_1_1_main_window.xhtml#aae9222490d9f0d71ffa6585c35416bfb" title="client::MainWindow\l::serverConnected" alt="" coords="206,462,341,503"/>
-<area shape="rect" id="node21" href="$d2/da4/classclient_1_1_main_window.xhtml#a1453a7da1874881b67aa919390012e36" title="client::MainWindow\l::serverDisconnected" alt="" coords="202,658,345,699"/>
-<area shape="rect" id="node22" href="$d2/da4/classclient_1_1_main_window.xhtml#a13044cd00c53dbbbc6b945c0dfd9b4b4" title="Triggered when the user query came back." alt="" coords="197,397,349,438"/>
-<area shape="rect" id="node24" href="$d2/da4/classclient_1_1_main_window.xhtml#a380097fa1faba7f0457886053f793c59" title="Triggered when a user changes his status (nick|status)" alt="" coords="205,723,342,765"/>
-<area shape="rect" id="node27" href="$d2/da4/classclient_1_1_main_window.xhtml#a9f16758ff23f279a244806cae35a1604" title="Triggered when a user leaves the room." alt="" coords="206,266,341,307"/>
-<area shape="rect" id="node29" href="$d2/da4/classclient_1_1_main_window.xhtml#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="206,331,341,373"/>
-<area shape="rect" id="node33" href="$d2/da4/classclient_1_1_main_window.xhtml#ae24be834dcc2638d54a3720a35242a95" title="Triggered when a user changes his nick (nick|status)" alt="" coords="206,789,341,830"/>
-<area shape="rect" id="node6" href="$d1/d68/classshared_1_1events_1_1event_chat.xhtml#affa9c414f40d61277b690efd4013f550" title="Gets the DB&#45;ID of the user that sent the message." alt="" coords="424,47,595,89"/>
-<area shape="rect" id="node8" href="$d1/d68/classshared_1_1events_1_1event_chat.xhtml#a10a61f130fb402e63922cd0b34468c8e" title="Gets the chat message." alt="" coords="424,113,595,154"/>
-<area shape="rect" id="node9" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#a2b450c42e2a6603add85738c19ea7151" title="Gets the time on which the event was created." alt="" coords="428,243,591,285"/>
-<area shape="rect" id="node7" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac3acc2e80a92d28a980a50595517bf4a" title="Get data from the events data map." alt="" coords="672,146,835,187"/>
-<area shape="rect" id="node11" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="406,597,613,624"/>
-<area shape="rect" id="node12" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a997f9cd3d63321807f60472308acc459" title="Send a JSON command to the server." alt="" coords="437,527,581,569"/>
-<area shape="rect" id="node13" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="714,564,793,591"/>
-<area shape="rect" id="node15" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="661,469,845,510"/>
-<area shape="rect" id="node14" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="935,564,1076,591"/>
-<area shape="rect" id="node16" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="894,498,1117,539"/>
-<area shape="rect" id="node17" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="910,396,1101,423"/>
-<area shape="rect" id="node18" href="$d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="946,447,1065,473"/>
-<area shape="rect" id="node23" href="$d6/d69/classclient_1_1irc_user.xhtml#a7cfd7dd6670a4f1b2af75914a1e1f4ae" title="client::ircUser::getId" alt="" coords="440,476,579,503"/>
-<area shape="rect" id="node25" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a4c904f38f1ff994ebb9a9ec251604874" title="Gets the DB&#45;ID of the user that changed status." alt="" coords="424,690,595,731"/>
-<area shape="rect" id="node26" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a018d111b0b5b957754b20d777f7f1bef" title="Gets the new status of the user." alt="" coords="413,755,606,797"/>
-<area shape="rect" id="node28" href="$d9/d9f/classshared_1_1events_1_1event_user_leave.xhtml#afb9cb12d52415109349d1469f1577353" title="Gets the DB&#45;ID of the user that left." alt="" coords="424,178,595,219"/>
-<area shape="rect" id="node30" href="$dd/d05/classshared_1_1events_1_1event_user_join.xhtml#afd49e93a57440f97dd02ccbec353cdb8" title="Gets a QVariantMap of the user that joined." alt="" coords="424,309,595,350"/>
-<area shape="rect" id="node31" href="$d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="432,375,587,401"/>
-<area shape="rect" id="node32" href="$d6/d69/classclient_1_1irc_user.xhtml#a6a361f6ed53e82efe4e442db7023ae49" title="client::ircUser::getStandard" alt="" coords="419,425,599,452"/>
+<area shape="rect" id="node2" href="$d5/d08/classclient_1_1cls_settings.html#aea971041842324e96b90ef6b8b703d54" title="Gets the hostname of where the server is running." alt="" coords="211,5,338,46"/>
+<area shape="rect" id="node3" href="$d5/d08/classclient_1_1cls_settings.html#a9cccda32a83a487cd88ce00de7c45ec1" title="Gets the port on which the server is listening." alt="" coords="211,70,338,111"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#a0c9982277db418807d2611e80cb65983" title="client::MainWindow\l::moveScrollBarToBottom" alt="" coords="191,135,359,177"/>
+<area shape="rect" id="node5" href="$d2/da4/classclient_1_1_main_window.html#a51e1634c12eb7373b01dce36a03afc9a" title="Triggered when a chat has been received." alt="" coords="207,331,342,373"/>
+<area shape="rect" id="node10" href="$d2/da4/classclient_1_1_main_window.html#aa32adfb179341040f2decbd0da19f1d9" title="client::MainWindow\l::sendChat" alt="" coords="207,587,342,629"/>
+<area shape="rect" id="node19" href="$d2/da4/classclient_1_1_main_window.html#a75d241698eb127c089ed4703fbeb4999" title="client::MainWindow\l::commandGiven" alt="" coords="207,653,342,694"/>
+<area shape="rect" id="node20" href="$d2/da4/classclient_1_1_main_window.html#aae9222490d9f0d71ffa6585c35416bfb" title="client::MainWindow\l::serverConnected" alt="" coords="207,718,342,759"/>
+<area shape="rect" id="node22" href="$d2/da4/classclient_1_1_main_window.html#a1453a7da1874881b67aa919390012e36" title="client::MainWindow\l::serverDisconnected" alt="" coords="203,901,346,942"/>
+<area shape="rect" id="node27" href="$d2/da4/classclient_1_1_main_window.html#a13044cd00c53dbbbc6b945c0dfd9b4b4" title="Triggered when the user query came back." alt="" coords="199,522,351,563"/>
+<area shape="rect" id="node29" href="$d2/da4/classclient_1_1_main_window.html#a380097fa1faba7f0457886053f793c59" title="Triggered when a user changes his status (nick|status)" alt="" coords="206,1003,343,1045"/>
+<area shape="rect" id="node32" href="$d2/da4/classclient_1_1_main_window.html#a9f16758ff23f279a244806cae35a1604" title="Triggered when a user leaves the room." alt="" coords="207,266,342,307"/>
+<area shape="rect" id="node34" href="$d2/da4/classclient_1_1_main_window.html#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="207,453,342,494"/>
+<area shape="rect" id="node38" href="$d2/da4/classclient_1_1_main_window.html#ae966f5228762e7b6f4803127d087175d" title="Triggered when a user changes his nick (nick|status)" alt="" coords="207,1166,342,1207"/>
+<area shape="rect" id="node42" href="$d2/da4/classclient_1_1_main_window.html#ae738b40e6b83639304d84f3d9f117c75" title="Triggered when the server sends us a message that should be displayed in the UI." alt="" coords="190,201,359,242"/>
+<area shape="rect" id="node45" href="$d2/da4/classclient_1_1_main_window.html#a6df87d6d4bb287478d307d7e45097187" title="Triggered when we cannot connect to the server!" alt="" coords="207,835,343,877"/>
+<area shape="rect" id="node21" href="$d2/da4/classclient_1_1_main_window.html#a39679af3cff16dcf78ae97733c3c1781" title="client::MainWindow\l::showMessage" alt="" coords="689,821,823,862"/>
+<area shape="rect" id="node6" href="$d1/d68/classshared_1_1events_1_1event_chat.html#affa9c414f40d61277b690efd4013f550" title="Gets the DB&#45;ID of the user that sent the message." alt="" coords="427,266,597,307"/>
+<area shape="rect" id="node8" href="$d1/d68/classshared_1_1events_1_1event_chat.html#a10a61f130fb402e63922cd0b34468c8e" title="Gets the chat message." alt="" coords="427,331,597,373"/>
+<area shape="rect" id="node9" href="$db/d8b/classshared_1_1events_1_1cls_event.html#a2b450c42e2a6603add85738c19ea7151" title="Gets the time on which the event was created." alt="" coords="431,201,593,242"/>
+<area shape="rect" id="node7" href="$db/d8b/classshared_1_1events_1_1cls_event.html#ac3acc2e80a92d28a980a50595517bf4a" title="Get data from the events data map." alt="" coords="675,201,837,242"/>
+<area shape="rect" id="node11" href="$d2/dc1/class_k4_u_1_1json_command.html#aa0629328322fb09be4494a0826bb19b5" title="Adds data to the internal data map." alt="" coords="409,683,615,709"/>
+<area shape="rect" id="node12" href="$d3/d65/classclient_1_1cls_server_conn.html#a997f9cd3d63321807f60472308acc459" title="Send a JSON command to the server." alt="" coords="440,617,584,658"/>
+<area shape="rect" id="node13" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="969,784,1047,811"/>
+<area shape="rect" id="node15" href="$d2/dc1/class_k4_u_1_1json_command.html#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="664,617,848,658"/>
+<area shape="rect" id="node14" href="$da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="1171,784,1312,811"/>
+<area shape="rect" id="node16" href="$d2/dc1/class_k4_u_1_1json_command.html#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="897,617,1119,658"/>
+<area shape="rect" id="node17" href="$d2/dc1/class_k4_u_1_1json_command.html#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="913,683,1103,709"/>
+<area shape="rect" id="node18" href="$d2/d6d/namespace_qt_json.html#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="949,565,1067,592"/>
+<area shape="rect" id="node23" href="$d2/da4/classclient_1_1_main_window.html#a4714272984f1518ea739cc5c809d8579" title="client::MainWindow\l::doReconnect" alt="" coords="445,886,579,927"/>
+<area shape="rect" id="node24" href="$d3/d65/classclient_1_1cls_server_conn.html#af4589d93eb4b606423cb4b5e4a583f4e" title="Actually connect." alt="" coords="684,886,828,927"/>
+<area shape="rect" id="node25" href="$d3/d65/classclient_1_1cls_server_conn.html#a5ec4520ae6b50789ef650436b6339d43" title="client::clsServerConn\l::connectTimeout" alt="" coords="936,886,1080,927"/>
+<area shape="rect" id="node26" href="$d3/d65/classclient_1_1cls_server_conn.html#af0d708fd1a5059ca1b2c8c0829bbb690" title="Triggered when it cannot connect." alt="" coords="1169,886,1314,927"/>
+<area shape="rect" id="node28" href="$d6/d69/classclient_1_1irc_user.html#a7cfd7dd6670a4f1b2af75914a1e1f4ae" title="client::ircUser::getId" alt="" coords="443,565,581,592"/>
+<area shape="rect" id="node30" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.html#a4c904f38f1ff994ebb9a9ec251604874" title="Gets the DB&#45;ID of the user that changed status." alt="" coords="427,1003,597,1045"/>
+<area shape="rect" id="node31" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.html#a018d111b0b5b957754b20d777f7f1bef" title="Gets the new status of the user." alt="" coords="415,1069,609,1110"/>
+<area shape="rect" id="node33" href="$d9/d9f/classshared_1_1events_1_1event_user_leave.html#afb9cb12d52415109349d1469f1577353" title="Gets the DB&#45;ID of the user that left." alt="" coords="427,135,597,177"/>
+<area shape="rect" id="node35" href="$dd/d05/classshared_1_1events_1_1event_user_join.html#afd49e93a57440f97dd02ccbec353cdb8" title="Gets a QVariantMap of the user that joined." alt="" coords="427,449,597,490"/>
+<area shape="rect" id="node36" href="$d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="435,515,589,541"/>
+<area shape="rect" id="node37" href="$d6/d69/classclient_1_1irc_user.html#a6a361f6ed53e82efe4e442db7023ae49" title="client::ircUser::getStandard" alt="" coords="422,397,602,424"/>
+<area shape="rect" id="node39" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#ad79adbb7cd52aa5307ff59ddbc2d8b7d" title="Gets the DB&#45;ID of the user that changed nick." alt="" coords="427,1265,597,1306"/>
+<area shape="rect" id="node40" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#a69ac7b5a6aa9bfab4d28e9fe54baf3d5" title="Gets the new nick of the user." alt="" coords="427,1134,597,1175"/>
+<area shape="rect" id="node41" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#a4eab71d2abb978c22f7207a46a9bc70e" title="Gets the old nick of the user." alt="" coords="427,1199,597,1241"/>
+<area shape="rect" id="node43" href="$d6/dfe/classshared_1_1events_1_1event_server_message.html#a578aacc79570f1c7302c6c69be564ac1" title="Gets the level of the message." alt="" coords="422,70,602,111"/>
+<area shape="rect" id="node44" href="$d6/dfe/classshared_1_1events_1_1event_server_message.html#a8d893e8dbb1289d2552a3a48d1323edd" title="Gets the message." alt="" coords="422,5,602,46"/>
 </map>

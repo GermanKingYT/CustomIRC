@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#acce6f46545b0de7dcc21b69dda54b246" target="_top" xlink:title="Sets a custom prefix, used for when more than one object uses the same log tag.">
+<g id="a_node2"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#acce6f46545b0de7dcc21b69dda54b246" target="_top" xlink:title="Sets a custom prefix, used for when more than one object uses the same log tag.">
 <polygon fill="white" stroke="black" points="158,-404.5 158,-423.5 272,-423.5 272,-404.5 158,-404.5"/>
 <text text-anchor="middle" x="215" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::setPrefix</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
+<g id="a_node5"><a xlink:href="../../d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" target="_top" xlink:title="K4U::endl">
 <polygon fill="white" stroke="black" points="544.5,-290.5 544.5,-309.5 603.5,-309.5 603.5,-290.5 544.5,-290.5"/>
 <text text-anchor="middle" x="574" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::endl</text>
 </a>
@@ -42,7 +42,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a3d11b3850540e70abe814f3a3831a5f5" target="_top" xlink:title="Emitted when the user client disconnects.">
+<g id="a_node7"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a3d11b3850540e70abe814f3a3831a5f5" target="_top" xlink:title="Emitted when the user client disconnects.">
 <polygon fill="white" stroke="black" points="310,-328.5 310,-347.5 454,-347.5 454,-328.5 310,-328.5"/>
 <text text-anchor="middle" x="382" y="-335.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::disconnected</text>
 </a>
@@ -55,7 +55,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#aa66a0dc28bb1d07f22467b127ff90cc6" target="_top" xlink:title="server::uiClient::remove\lConnection">
+<g id="a_node8"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#aa66a0dc28bb1d07f22467b127ff90cc6" target="_top" xlink:title="server::uiClient::remove\lConnection">
 <polygon fill="white" stroke="black" points="156.5,-279 156.5,-309 273.5,-309 273.5,-279 156.5,-279"/>
 <text text-anchor="start" x="164.5" y="-297" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::remove</text>
 <text text-anchor="middle" x="215" y="-286" font-family="Helvetica,sans-Serif" font-size="10.00">Connection</text>
@@ -69,7 +69,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#afdda23f96c586fdcb47f1abad7be99f5" target="_top" xlink:title="server::uiClient::receive\lMessage">
+<g id="a_node9"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#afdda23f96c586fdcb47f1abad7be99f5" target="_top" xlink:title="server::uiClient::receive\lMessage">
 <polygon fill="white" stroke="black" points="157,-140 157,-170 273,-170 273,-140 157,-140"/>
 <text text-anchor="start" x="165" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::receive</text>
 <text text-anchor="middle" x="215" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">Message</text>
@@ -83,7 +83,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#add7e9e8581a8d558c15c5f194dea4e5a" target="_top" xlink:title="K4U::clsLog::prefix">
+<g id="a_node3"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#add7e9e8581a8d558c15c5f194dea4e5a" target="_top" xlink:title="K4U::clsLog::prefix">
 <polygon fill="white" stroke="black" points="332.5,-404.5 332.5,-423.5 431.5,-423.5 431.5,-404.5 332.5,-404.5"/>
 <text text-anchor="middle" x="382" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::prefix</text>
 </a>
@@ -96,7 +96,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#ad71c460835263e52b7c3d24063fa4ea0" target="_top" xlink:title="K4U::clsLog::getTag">
+<g id="a_node4"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#ad71c460835263e52b7c3d24063fa4ea0" target="_top" xlink:title="K4U::clsLog::getTag">
 <polygon fill="white" stroke="black" points="522,-404.5 522,-423.5 626,-423.5 626,-404.5 522,-404.5"/>
 <text text-anchor="middle" x="574" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::getTag</text>
 </a>
@@ -109,7 +109,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
+<g id="a_node6"><a xlink:href="../../da/d64/class_k4_u_1_1cls_log.html#a81f179b2ccb3e2abeb9b47f5b83de935" target="_top" xlink:title="K4U::clsLog::doEndl">
 <polygon fill="white" stroke="black" points="694,-290.5 694,-309.5 800,-309.5 800,-290.5 694,-290.5"/>
 <text text-anchor="middle" x="747" y="-297.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::clsLog::doEndl</text>
 </a>
@@ -137,7 +137,7 @@
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a8237b1a02c7877a7c853b6ef23995b9b" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
+<g id="a_node10"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a8237b1a02c7877a7c853b6ef23995b9b" target="_top" xlink:title="Adds data to buffer and checks for json commands.">
 <polygon fill="white" stroke="black" points="318.5,-241 318.5,-271 445.5,-271 445.5,-241 318.5,-241"/>
 <text text-anchor="start" x="326.5" y="-259" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::checkFor</text>
 <text text-anchor="middle" x="382" y="-248" font-family="Helvetica,sans-Serif" font-size="10.00">JsonCommand</text>
@@ -151,7 +151,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
+<g id="a_node11"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#a2db6f8da6bc5a4c677201f044b69bb10" target="_top" xlink:title="getCommand">
 <polygon fill="white" stroke="black" points="490.5,-224.5 490.5,-243.5 657.5,-243.5 657.5,-224.5 490.5,-224.5"/>
 <text text-anchor="middle" x="574" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getCommand</text>
 </a>
@@ -164,7 +164,7 @@
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a970bb30d534e08d2537e2ef495ad7427" target="_top" xlink:title="Emitted when the client sends a chat.">
+<g id="a_node12"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a970bb30d534e08d2537e2ef495ad7427" target="_top" xlink:title="Emitted when the client sends a chat.">
 <polygon fill="white" stroke="black" points="310,-164.5 310,-183.5 454,-183.5 454,-164.5 310,-164.5"/>
 <text text-anchor="middle" x="382" y="-171.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::chatReceived</text>
 </a>
@@ -177,7 +177,7 @@
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
+<g id="a_node13"><a xlink:href="../../d2/dc1/class_k4_u_1_1json_command.html#ae829f45e11a50fa00024a5d9951cd748" target="_top" xlink:title="Gets an item from the internal data map.">
 <polygon fill="white" stroke="black" points="310.5,-126.5 310.5,-145.5 453.5,-145.5 453.5,-126.5 310.5,-126.5"/>
 <text text-anchor="middle" x="382" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">K4U::jsonCommand::getData</text>
 </a>
@@ -190,7 +190,7 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a334fdbafee59c9007c38466550572d83" target="_top" xlink:title="Emitted when the client wants all the users.">
+<g id="a_node14"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a334fdbafee59c9007c38466550572d83" target="_top" xlink:title="Emitted when the client wants all the users.">
 <polygon fill="white" stroke="black" points="316.5,-88.5 316.5,-107.5 447.5,-107.5 447.5,-88.5 316.5,-88.5"/>
 <text text-anchor="middle" x="382" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::userQuery</text>
 </a>
@@ -203,7 +203,7 @@
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#af31e3f327761e528ddabb232d1224620" target="_top" xlink:title="Emitted when the clients wants to change our own user.">
+<g id="a_node15"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#af31e3f327761e528ddabb232d1224620" target="_top" xlink:title="Emitted when the clients wants to change our own user.">
 <polygon fill="white" stroke="black" points="323,-39 323,-69 441,-69 441,-39 323,-39"/>
 <text text-anchor="start" x="331" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::change</text>
 <text text-anchor="middle" x="382" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">OwnUser</text>
@@ -217,7 +217,7 @@
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.xhtml#a06de500dff0e31a8367b1988e2a0b414" target="_top" xlink:title="Emitted when the client wants all the events.">
+<g id="a_node16"><a xlink:href="../../dc/d4d/classserver_1_1ui_client.html#a06de500dff0e31a8367b1988e2a0b414" target="_top" xlink:title="Emitted when the client wants all the events.">
 <polygon fill="white" stroke="black" points="317.5,-0.5 317.5,-19.5 446.5,-19.5 446.5,-0.5 317.5,-0.5"/>
 <text text-anchor="middle" x="382" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">server::uiClient::getEvents</text>
 </a>

@@ -1,6 +1,6 @@
 <map id="client::clsUserEntry::refresh" name="client::clsUserEntry::refresh">
-<area shape="rect" id="node2" href="$d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="196,5,351,32"/>
-<area shape="rect" id="node3" href="$d6/d69/classclient_1_1irc_user.xhtml#ad800b80a1dc3b1fd2bacffaee6ceb7e7" title="client::ircUser::getStatus" alt="" coords="190,56,357,83"/>
-<area shape="rect" id="node4" href="$d6/d69/classclient_1_1irc_user.xhtml#a7d4549d1722c3dea93d83114c70b8aae" title="client::ircUser::getColor" alt="" coords="194,107,353,133"/>
-<area shape="rect" id="node5" href="$d6/d69/classclient_1_1irc_user.xhtml#a521a4df549ad0e80df8ef739d168a917" title="client::ircUser::getIcon" alt="" coords="197,157,349,184"/>
+<area shape="rect" id="node2" href="$d6/d69/classclient_1_1irc_user.html#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="196,5,351,32"/>
+<area shape="rect" id="node3" href="$d6/d69/classclient_1_1irc_user.html#ad800b80a1dc3b1fd2bacffaee6ceb7e7" title="client::ircUser::getStatus" alt="" coords="190,56,357,83"/>
+<area shape="rect" id="node4" href="$d6/d69/classclient_1_1irc_user.html#a7d4549d1722c3dea93d83114c70b8aae" title="client::ircUser::getColor" alt="" coords="194,107,353,133"/>
+<area shape="rect" id="node5" href="$d6/d69/classclient_1_1irc_user.html#a521a4df549ad0e80df8ef739d168a917" title="client::ircUser::getIcon" alt="" coords="197,157,349,184"/>
 </map>

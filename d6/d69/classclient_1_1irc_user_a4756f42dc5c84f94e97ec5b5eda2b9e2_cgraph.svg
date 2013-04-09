@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a10dddba7236ce4577fd11eb906005d55" target="_top" xlink:title="client::ircUser::slot\l_netwManagerFinished">
+<g id="a_node2"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a10dddba7236ce4577fd11eb906005d55" target="_top" xlink:title="client::ircUser::slot\l_netwManagerFinished">
 <polygon fill="white" stroke="black" points="150,-0 150,-30 266,-30 266,-0 150,-0"/>
 <text text-anchor="start" x="158" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::slot</text>
 <text text-anchor="middle" x="208" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_netwManagerFinished</text>
@@ -30,7 +30,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.xhtml#a80f421ad537905c9bb6b3ecca9356984" target="_top" xlink:title="client::ircUser::iconChanged">
+<g id="a_node3"><a xlink:href="../../d6/d69/classclient_1_1irc_user.html#a80f421ad537905c9bb6b3ecca9356984" target="_top" xlink:title="client::ircUser::iconChanged">
 <polygon fill="white" stroke="black" points="302.5,-5.5 302.5,-24.5 441.5,-24.5 441.5,-5.5 302.5,-5.5"/>
 <text text-anchor="middle" x="372" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">client::ircUser::iconChanged</text>
 </a>

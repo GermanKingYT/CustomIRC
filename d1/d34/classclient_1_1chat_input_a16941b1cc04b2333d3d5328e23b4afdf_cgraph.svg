@@ -17,7 +17,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="../../d1/d34/classclient_1_1chat_input.xhtml#a955c343e83632ba1cc0a0b089c06803e" target="_top" xlink:title="Emitted when the users presses enter and the chatbox contains a command.">
+<g id="a_node2"><a xlink:href="../../d1/d34/classclient_1_1chat_input.html#a955c343e83632ba1cc0a0b089c06803e" target="_top" xlink:title="Emitted when the users presses enter and the chatbox contains a command.">
 <polygon fill="white" stroke="black" points="138,-49 138,-79 230,-79 230,-49 138,-49"/>
 <text text-anchor="start" x="146" y="-67" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatInput::</text>
 <text text-anchor="middle" x="184" y="-56" font-family="Helvetica,sans-Serif" font-size="10.00">commandGiven</text>
@@ -31,7 +31,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d1/d34/classclient_1_1chat_input.xhtml#abfb6a31b8691c93a03c3bda792e14f34" target="_top" xlink:title="Emitted when the user presses enter and the chatbox does not contain a command.">
+<g id="a_node3"><a xlink:href="../../d1/d34/classclient_1_1chat_input.html#abfb6a31b8691c93a03c3bda792e14f34" target="_top" xlink:title="Emitted when the user presses enter and the chatbox does not contain a command.">
 <polygon fill="white" stroke="black" points="138,-0 138,-30 230,-30 230,-0 138,-0"/>
 <text text-anchor="start" x="146" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">client::chatInput::</text>
 <text text-anchor="middle" x="184" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">sendChat</text>
