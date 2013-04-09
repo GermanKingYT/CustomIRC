@@ -1,0 +1,9 @@
+<map id="client::chatEntry::init" name="client::chatEntry::init">
+<area shape="rect" id="node2" href="$d6/d69/classclient_1_1irc_user.xhtml#aba9ee79c126657f6d31b349f9aa45491" title="client::ircUser::getNick" alt="" coords="209,5,364,32"/>
+<area shape="rect" id="node3" href="$d6/d69/classclient_1_1irc_user.xhtml#a7d4549d1722c3dea93d83114c70b8aae" title="client::ircUser::getColor" alt="" coords="207,56,366,83"/>
+<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.xhtml#a23b44a93f980e59387a289c9282b5f78" title="client::chatEntry::\lgetWidth" alt="" coords="808,121,933,162"/>
+<area shape="rect" id="node5" href="$d5/dfb/classclient_1_1chat_entry.xhtml#ac3d69f6791e2497c86fe99c068b832b6" title="Used for setting the width of the nick label after initializing." alt="" coords="424,197,549,238"/>
+<area shape="rect" id="node8" href="$da/d72/classclient_1_1chat_box.xhtml#a0d33977310a176a78d228eaeb1a0c39d" title="Sets all the user name labels to the same size." alt="" coords="198,209,375,250"/>
+<area shape="rect" id="node6" href="$d5/dfb/classclient_1_1chat_entry.xhtml#ae663e1a715924f6743c7e9d235ad334b" title="client::chatEntry::\lcalculateMessageWidth" alt="" coords="598,197,759,238"/>
+<area shape="rect" id="node7" href="$d5/dfb/classclient_1_1chat_entry.xhtml#aacb386fcc022798feb9dd02b43d56861" title="client::chatEntry::\lgetHeight" alt="" coords="808,197,933,238"/>
+</map>

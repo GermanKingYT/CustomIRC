@@ -1,0 +1,22 @@
+<map id="client::clsServerConn::clsServerConn" name="client::clsServerConn::clsServerConn">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="197,377,341,418"/>
+<area shape="rect" id="node18" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#af4d99891fc606ce032facfd9e27692ca" title="Emitted when the client has a succesfull connection to the server." alt="" coords="403,5,547,46"/>
+<area shape="rect" id="node19" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#adaecfe74ef1fb16f35613587aa1dada8" title="client::clsServerConn\l::srvConnected" alt="" coords="197,63,341,105"/>
+<area shape="rect" id="node20" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#ad5a08372105d83e34538e457374525f6" title="Emitted when the client lost connection to the server." alt="" coords="403,173,547,214"/>
+<area shape="rect" id="node21" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#acd2aa4131c06ed51738fb041c86ed640" title="client::clsServerConn\l::srvDisconnected" alt="" coords="197,129,341,170"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a8fc1a3ef72ba0480d521781f84983afe" title="Adds data to buffer and checks for json commands." alt="" coords="389,238,560,279"/>
+<area shape="rect" id="node4" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" title="getCommand" alt="" coords="609,275,831,301"/>
+<area shape="rect" id="node7" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#ad5d3a03440fdec33270247486fb5500c" title="Event has been received by the client. Parse it." alt="" coords="644,391,796,433"/>
+<area shape="rect" id="node13" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="625,487,815,513"/>
+<area shape="rect" id="node14" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a034a72332abdeeb8dbd9483954a235dd" title="The server has given us all the users. Handle it." alt="" coords="392,589,557,630"/>
+<area shape="rect" id="node16" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a2f4257ed2b9677919567a060fb31887b" title="Another client has changed our own user status." alt="" coords="392,523,557,565"/>
+<area shape="rect" id="node17" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a25abb840bb0764068d9a72dfb1e403b5" title="Event request has been done by us, and data has been returned." alt="" coords="401,406,549,447"/>
+<area shape="rect" id="node5" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="681,121,759,148"/>
+<area shape="rect" id="node6" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="891,121,1032,148"/>
+<area shape="rect" id="node8" href="$db/d8b/classshared_1_1events_1_1cls_event.xhtml#a33943d736db49d2a7781325357f34063" title="Gets this events type." alt="" coords="880,457,1043,498"/>
+<area shape="rect" id="node9" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#ada02a27f01478db29d10bde4c51110b4" title="Emitted when a chat event has been received." alt="" coords="889,522,1033,563"/>
+<area shape="rect" id="node10" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a9f3b4fe1b687bdb31ab584493b8dde91" title="Triggered when a user enters the channel." alt="" coords="889,261,1033,302"/>
+<area shape="rect" id="node11" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#a89ac2b4edd0a40b0fbfb5504904752c9" title="Triggered when a user left the channel." alt="" coords="889,326,1033,367"/>
+<area shape="rect" id="node12" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#aa7679dfddcf23ffa4ce4febbc005995a" title="Emitted when a user has changed his status (nick|status)" alt="" coords="889,391,1033,433"/>
+<area shape="rect" id="node15" href="$d3/d65/classclient_1_1cls_server_conn.xhtml#abad7931f40972d90b51e696b878b58c4" title="Emitted when the server has sent us all the users." alt="" coords="644,589,796,630"/>
+</map>

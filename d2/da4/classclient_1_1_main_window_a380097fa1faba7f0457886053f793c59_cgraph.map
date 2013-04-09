@@ -1,0 +1,4 @@
+<map id="client::MainWindow::userStatusChange" name="client::MainWindow::userStatusChange">
+<area shape="rect" id="node2" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a4c904f38f1ff994ebb9a9ec251604874" title="Gets the DB&#45;ID of the user that changed status." alt="" coords="204,5,375,46"/>
+<area shape="rect" id="node3" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml#a018d111b0b5b957754b20d777f7f1bef" title="Gets the new status of the user." alt="" coords="193,70,386,111"/>
+</map>

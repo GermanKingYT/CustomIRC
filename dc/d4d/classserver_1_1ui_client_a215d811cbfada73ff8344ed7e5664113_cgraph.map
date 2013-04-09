@@ -1,0 +1,17 @@
+<map id="server::uiClient::uiClient" name="server::uiClient::uiClient">
+<area shape="rect" id="node2" href="$da/d64/class_k4_u_1_1cls_log.xhtml#acce6f46545b0de7dcc21b69dda54b246" title="Sets a custom prefix, used for when more than one object uses the same log tag." alt="" coords="216,5,368,32"/>
+<area shape="rect" id="node5" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="731,157,810,184"/>
+<area shape="rect" id="node7" href="$dc/d4d/classserver_1_1ui_client.xhtml#a3d11b3850540e70abe814f3a3831a5f5" title="Emitted when the user client disconnects." alt="" coords="419,107,611,133"/>
+<area shape="rect" id="node8" href="$dc/d4d/classserver_1_1ui_client.xhtml#aa66a0dc28bb1d07f22467b127ff90cc6" title="server::uiClient::remove\lConnection" alt="" coords="214,158,370,199"/>
+<area shape="rect" id="node9" href="$dc/d4d/classserver_1_1ui_client.xhtml#afdda23f96c586fdcb47f1abad7be99f5" title="server::uiClient::receive\lMessage" alt="" coords="215,343,369,385"/>
+<area shape="rect" id="node3" href="$da/d64/class_k4_u_1_1cls_log.xhtml#add7e9e8581a8d558c15c5f194dea4e5a" title="K4U::clsLog::prefix" alt="" coords="449,5,581,32"/>
+<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.xhtml#ad71c460835263e52b7c3d24063fa4ea0" title="K4U::clsLog::getTag" alt="" coords="701,5,840,32"/>
+<area shape="rect" id="node6" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="931,157,1072,184"/>
+<area shape="rect" id="node10" href="$dc/d4d/classserver_1_1ui_client.xhtml#a8237b1a02c7877a7c853b6ef23995b9b" title="Adds data to buffer and checks for json commands." alt="" coords="430,209,599,250"/>
+<area shape="rect" id="node11" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" title="getCommand" alt="" coords="659,245,882,272"/>
+<area shape="rect" id="node12" href="$dc/d4d/classserver_1_1ui_client.xhtml#a970bb30d534e08d2537e2ef495ad7427" title="Emitted when the client sends a chat." alt="" coords="419,325,611,352"/>
+<area shape="rect" id="node13" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="419,376,610,403"/>
+<area shape="rect" id="node14" href="$dc/d4d/classserver_1_1ui_client.xhtml#a334fdbafee59c9007c38466550572d83" title="Emitted when the client wants all the users." alt="" coords="427,427,602,453"/>
+<area shape="rect" id="node15" href="$dc/d4d/classserver_1_1ui_client.xhtml#af31e3f327761e528ddabb232d1224620" title="Emitted when the clients wants to change our own user." alt="" coords="436,478,593,519"/>
+<area shape="rect" id="node16" href="$dc/d4d/classserver_1_1ui_client.xhtml#a06de500dff0e31a8367b1988e2a0b414" title="Emitted when the client wants all the events." alt="" coords="429,544,601,571"/>
+</map>

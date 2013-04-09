@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d5/d08/classclient_1_1cls_settings.html" title="Settings class containing all the variables needed for the client." alt="" coords="6,5,133,32"/>
+<area shape="rect" id="node2" href="$dd/d69/classclient_1_1cls_notify.xhtml" title="Notification class." alt="" coords="142,5,253,32"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.xhtml" title="Class that has a connection to the server." alt="" coords="125,56,269,83"/>
+<area shape="rect" id="node4" href="$d6/d69/classclient_1_1irc_user.xhtml" title="The ircUser class." alt="" coords="146,107,249,133"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.xhtml" title="The ircClient class." alt="" coords="142,157,253,184"/>
+<area shape="rect" id="node6" href="$d1/d48/classserver_1_1main_app.xhtml" title="The main application." alt="" coords="140,208,255,235"/>
+<area shape="rect" id="node7" href="$dc/d4d/classserver_1_1ui_client.xhtml" title="The uiClient class." alt="" coords="144,259,251,285"/>
 </map>

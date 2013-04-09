@@ -1,0 +1,7 @@
+<map id="server::ircClient::sendChat" name="server::ircClient::sendChat">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.xhtml#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="173,5,320,32"/>
+<area shape="rect" id="node5" href="$d9/db1/namespaceserver.xhtml#a5975bac26af821c5aa25ca3b66ab35a9" title="server::qts" alt="" coords="368,56,451,83"/>
+<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.xhtml#aa59470840fe4135454af200bf5259874" title="Emitted when a chatmessage has been received." alt="" coords="187,107,306,149"/>
+<area shape="rect" id="node3" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="370,5,449,32"/>
+<area shape="rect" id="node4" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="499,5,640,32"/>
+</map>

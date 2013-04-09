@@ -1,0 +1,7 @@
+<map id="shared::events::clsEvent" name="shared::events::clsEvent">
+<area shape="rect" id="node2" href="$d1/d68/classshared_1_1events_1_1event_chat.xhtml" title="Class containing a chatEvent." alt="" coords="5,309,176,430"/>
+<area shape="rect" id="node3" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.xhtml" title="Class containing a user who changes his nick&#45;event (nick|status)" alt="" coords="200,294,371,445"/>
+<area shape="rect" id="node4" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.xhtml" title="Class containing a user who changes his status&#45;event (nick|status)" alt="" coords="395,294,576,445"/>
+<area shape="rect" id="node5" href="$dd/d05/classshared_1_1events_1_1event_user_join.xhtml" title="Class containing a user JOIN event." alt="" coords="600,309,795,430"/>
+<area shape="rect" id="node6" href="$d9/d9f/classshared_1_1events_1_1event_user_leave.xhtml" title="Class containing a user PART event." alt="" coords="819,309,989,430"/>
+</map>

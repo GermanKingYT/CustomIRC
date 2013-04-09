@@ -1,13 +1,19 @@
 <map id="C++/customIrcServer/mainapp.h" name="C++/customIrcServer/mainapp.h">
-<area shape="rect" id="node4" href="$d4/df9/ircclient_8h.html" title="ircclient.h" alt="" coords="425,171,503,197"/>
-<area shape="rect" id="node11" href="$d8/d5c/functions_8h.html" title="functions.h" alt="" coords="67,320,152,347"/>
-<area shape="rect" id="node18" href="$d6/d32/custom_irc_server_2ircuser_8h.html" title="ircuser.h" alt="" coords="581,245,653,272"/>
-<area shape="rect" id="node20" href="$d7/d1c/uiserver_8h.html" title="uiserver.h" alt="" coords="1280,96,1356,123"/>
-<area shape="rect" id="node24" href="$d1/de1/uiclient_8h.html" title="uiclient.h" alt="" coords="1521,171,1595,197"/>
-<area shape="rect" id="node30" href="$d6/d0d/custom_irc_server_2clssettings_8h.html" title="clssettings.h" alt="" coords="744,171,840,197"/>
-<area shape="rect" id="node33" href="$db/d97/clsevent_8h.html" title="../resources/clsevent.h" alt="" coords="1822,245,1975,272"/>
-<area shape="rect" id="node10" href="$df/df2/irc_codes_8h.html" title="ircCodes.h" alt="" coords="422,245,505,272"/>
-<area shape="rect" id="node14" href="$d7/d62/clslog_8h.html" title="../resources/clslog.h" alt="" coords="1013,320,1152,347"/>
-<area shape="rect" id="node27" href="$dc/d96/jsoncommand_8h.html" title="../resources/jsoncommand.h" alt="" coords="1235,245,1421,272"/>
-<area shape="rect" id="node28" href="$d4/d05/json_8h.html" title="json.h" alt="" coords="1299,320,1356,347"/>
+<area shape="rect" id="node4" href="$d4/df9/ircclient_8h.xhtml" title="ircclient.h" alt="" coords="425,187,503,213"/>
+<area shape="rect" id="node11" href="$d8/d5c/functions_8h.xhtml" title="functions.h" alt="" coords="67,336,152,363"/>
+<area shape="rect" id="node18" href="$d6/d32/custom_irc_server_2ircuser_8h.xhtml" title="ircuser.h" alt="" coords="581,261,653,288"/>
+<area shape="rect" id="node20" href="$d7/d1c/uiserver_8h.xhtml" title="uiserver.h" alt="" coords="1271,104,1347,131"/>
+<area shape="rect" id="node24" href="$d1/de1/uiclient_8h.xhtml" title="uiclient.h" alt="" coords="1512,187,1585,213"/>
+<area shape="rect" id="node30" href="$d6/d0d/custom_irc_server_2clssettings_8h.xhtml" title="clssettings.h" alt="" coords="776,187,872,213"/>
+<area shape="rect" id="node33" href="$db/d97/clsevent_8h.xhtml" title="../resources/clsevent.h" alt="" coords="1822,261,1975,288"/>
+<area shape="rect" id="node34" href="$db/dd2/events_8h.xhtml" title="../resources/events\l/events.h" alt="" coords="1921,97,2052,138"/>
+<area shape="rect" id="node10" href="$df/df2/irc_codes_8h.xhtml" title="ircCodes.h" alt="" coords="422,261,505,288"/>
+<area shape="rect" id="node14" href="$d7/d62/clslog_8h.xhtml" title="../resources/clslog.h" alt="" coords="1127,336,1267,363"/>
+<area shape="rect" id="node27" href="$dc/d96/jsoncommand_8h.xhtml" title="../resources/jsoncommand.h" alt="" coords="1235,261,1421,288"/>
+<area shape="rect" id="node28" href="$d4/d05/json_8h.xhtml" title="json.h" alt="" coords="1299,336,1356,363"/>
+<area shape="rect" id="node35" href="$db/d70/eventchat_8h.xhtml" title="eventchat.h" alt="" coords="2356,187,2444,213"/>
+<area shape="rect" id="node36" href="$d5/d02/eventuserjoin_8h.xhtml" title="eventuserjoin.h" alt="" coords="1713,187,1820,213"/>
+<area shape="rect" id="node37" href="$d7/d56/eventuserleave_8h.xhtml" title="eventuserleave.h" alt="" coords="1845,187,1961,213"/>
+<area shape="rect" id="node38" href="$db/db0/eventuserchangestatus_8h.xhtml" title="eventuserchangestatus.h" alt="" coords="1986,187,2152,213"/>
+<area shape="rect" id="node39" href="$d8/d44/eventuserchangenick_8h.xhtml" title="eventuserchangenick.h" alt="" coords="2177,187,2331,213"/>
 </map>

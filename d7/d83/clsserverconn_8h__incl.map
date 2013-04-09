@@ -1,7 +1,13 @@
 <map id="C++/customIrcClient/clsserverconn.h" name="C++/customIrcClient/clsserverconn.h">
-<area shape="rect" id="node6" href="$d7/d62/clslog_8h.html" title="../resources/clslog.h" alt="" coords="513,171,652,197"/>
-<area shape="rect" id="node13" href="$d5/d98/custom_irc_client_2ircuser_8h.html" title="ircuser.h" alt="" coords="616,96,688,123"/>
-<area shape="rect" id="node20" href="$dc/d96/jsoncommand_8h.html" title="../resources/jsoncommand.h" alt="" coords="355,96,541,123"/>
-<area shape="rect" id="node22" href="$d4/d05/json_8h.html" title="json.h" alt="" coords="59,171,116,197"/>
-<area shape="rect" id="node24" href="$db/d97/clsevent_8h.html" title="../resources/clsevent.h" alt="" coords="126,96,279,123"/>
+<area shape="rect" id="node6" href="$d7/d62/clslog_8h.xhtml" title="../resources/clslog.h" alt="" coords="807,336,947,363"/>
+<area shape="rect" id="node13" href="$d5/d98/custom_irc_client_2ircuser_8h.xhtml" title="ircuser.h" alt="" coords="331,261,403,288"/>
+<area shape="rect" id="node20" href="$dc/d96/jsoncommand_8h.xhtml" title="../resources/jsoncommand.h" alt="" coords="781,187,968,213"/>
+<area shape="rect" id="node22" href="$d4/d05/json_8h.xhtml" title="json.h" alt="" coords="977,261,1033,288"/>
+<area shape="rect" id="node24" href="$db/d97/clsevent_8h.xhtml" title="../resources/clsevent.h" alt="" coords="1075,261,1228,288"/>
+<area shape="rect" id="node25" href="$db/dd2/events_8h.xhtml" title="../resources/events\l/events.h" alt="" coords="1343,97,1475,138"/>
+<area shape="rect" id="node26" href="$db/d70/eventchat_8h.xhtml" title="eventchat.h" alt="" coords="1604,187,1692,213"/>
+<area shape="rect" id="node27" href="$d5/d02/eventuserjoin_8h.xhtml" title="eventuserjoin.h" alt="" coords="1717,187,1824,213"/>
+<area shape="rect" id="node28" href="$d7/d56/eventuserleave_8h.xhtml" title="eventuserleave.h" alt="" coords="1093,187,1209,213"/>
+<area shape="rect" id="node29" href="$db/db0/eventuserchangestatus_8h.xhtml" title="eventuserchangestatus.h" alt="" coords="1234,187,1400,213"/>
+<area shape="rect" id="node30" href="$d8/d44/eventuserchangenick_8h.xhtml" title="eventuserchangenick.h" alt="" coords="1425,187,1579,213"/>
 </map>

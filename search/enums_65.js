@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventtypes',['eventTypes',['../de/d48/namespaceshared.html#aa37d351180794b86e30f25e6601f8a80',1,'shared']]]
+  ['eventtypes',['eventTypes',['../d0/df8/namespaceshared_1_1events.xhtml#a758b1a88b2eb1c9ef9388755f8869ad7',1,'shared::events']]]
 ];

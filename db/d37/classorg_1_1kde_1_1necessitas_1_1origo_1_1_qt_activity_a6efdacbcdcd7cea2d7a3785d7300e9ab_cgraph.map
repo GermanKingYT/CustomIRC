@@ -1,0 +1,5 @@
+<map id="org.kde.necessitas.origo.QtActivity.loadApplication" name="org.kde.necessitas.origo.QtActivity.loadApplication">
+<area shape="rect" id="node2" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a03bce0e522e5d949a99f65ccf30916bf" title="org.kde.necessitas.origo.\lQtActivity.downloadUpgradeMinistro" alt="" coords="225,5,455,46"/>
+<area shape="rect" id="node4" href="$d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#afea43576f6f8633639f721ce8bff907e" title="org.kde.necessitas.origo.\lQtApplication.setQtActivityDelegate" alt="" coords="225,70,455,111"/>
+<area shape="rect" id="node3" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a7fe5f4438970743566e67e12335d472f" title="org.kde.necessitas.origo.\lQtActivity.ministroNotFound" alt="" coords="504,5,688,46"/>
+</map>

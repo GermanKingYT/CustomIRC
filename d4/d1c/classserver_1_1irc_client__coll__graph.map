@@ -1,2 +1,6 @@
 <map id="server::ircClient" name="server::ircClient">
+<area shape="rect" id="node3" href="$d2/d29/classserver_1_1irc_user.xhtml" title="The ircUser class." alt="" coords="100,310,207,578"/>
+<area shape="rect" id="node4" href="$db/d31/structserver_1_1irc_user_1_1user_color.xhtml" title="The userColor struct As a replacement for the QColor type." alt="" coords="9,72,177,179"/>
+<area shape="rect" id="node5" href="$da/d64/class_k4_u_1_1cls_log.xhtml" title="Custom logging class." alt="" coords="202,6,307,245"/>
+<area shape="rect" id="node6" href="$da/d6a/structserver_1_1nick_and_status.xhtml" title="The nickAndStatus struct." alt="" coords="304,398,452,490"/>
 </map>

@@ -1,0 +1,8 @@
+<map id="org.kde.necessitas.origo.QtActivity.onActivityResult" name="org.kde.necessitas.origo.QtActivity.onActivityResult">
+<area shape="rect" id="node2" href="$d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#a329e95a39e56530f3745aa0d8e057761" title="org.kde.necessitas.origo.\lQtApplication.invokeDelegateMethod" alt="" coords="229,5,464,46"/>
+<area shape="rect" id="node3" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#af3924b311d2966d6c7e48122899d3c35" title="org.kde.necessitas.origo.\lQtActivity.startApp" alt="" coords="263,70,431,111"/>
+<area shape="rect" id="node4" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a6efdacbcdcd7cea2d7a3785d7300e9ab" title="org.kde.necessitas.origo.\lQtActivity.loadApplication" alt="" coords="512,70,683,111"/>
+<area shape="rect" id="node5" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a03bce0e522e5d949a99f65ccf30916bf" title="org.kde.necessitas.origo.\lQtActivity.downloadUpgradeMinistro" alt="" coords="731,6,962,47"/>
+<area shape="rect" id="node6" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a7fe5f4438970743566e67e12335d472f" title="org.kde.necessitas.origo.\lQtActivity.ministroNotFound" alt="" coords="1011,69,1195,110"/>
+<area shape="rect" id="node7" href="$d0/da0/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application.xhtml#afea43576f6f8633639f721ce8bff907e" title="org.kde.necessitas.origo.\lQtApplication.setQtActivityDelegate" alt="" coords="732,71,961,113"/>
+</map>

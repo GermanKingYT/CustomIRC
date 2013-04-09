@@ -1,0 +1,21 @@
+<map id="server::uiServer::uiServer" name="server::uiServer::uiServer">
+<area shape="rect" id="node2" href="$df/dd2/classserver_1_1ui_server.xhtml#af8300a694de27369a5f5d1a95ed1cc37" title="Triggered when a client connects." alt="" coords="219,107,376,149"/>
+<area shape="rect" id="node3" href="$df/dd2/classserver_1_1ui_server.xhtml#a7d6448c91d341e29919ebc10047ef4a4" title="Triggered when a client disconnects." alt="" coords="425,5,629,32"/>
+<area shape="rect" id="node4" href="$df/dd2/classserver_1_1ui_server.xhtml#ad6b939c26280e2c3c4a6306e0599a10a" title="Triggered when a client sends a chatmessage." alt="" coords="429,56,624,83"/>
+<area shape="rect" id="node6" href="$df/dd2/classserver_1_1ui_server.xhtml#af5f79bcf932095d2b0976581409e0376" title="Triggered when a client wants all the users." alt="" coords="447,107,606,149"/>
+<area shape="rect" id="node8" href="$df/dd2/classserver_1_1ui_server.xhtml#a1d221672f6efb29189e6ce398f7b07e3" title="Triggered when a client wants to change something about our own user." alt="" coords="447,198,607,239"/>
+<area shape="rect" id="node19" href="$df/dd2/classserver_1_1ui_server.xhtml#acab729e9722d3a3c432c65248757c2f1" title="Triggered when a client wants all the events." alt="" coords="445,289,608,330"/>
+<area shape="rect" id="node5" href="$df/dd2/classserver_1_1ui_server.xhtml#af8accf173f4aa7dc5f59c56016645726" title="Emitted when a chatmessage has been send from a client." alt="" coords="690,29,857,70"/>
+<area shape="rect" id="node7" href="$df/dd2/classserver_1_1ui_server.xhtml#a8ac8c9444c217209d1e30983d60cad97" title="Emitted when a client wants all the users." alt="" coords="690,94,857,135"/>
+<area shape="rect" id="node9" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="678,160,869,187"/>
+<area shape="rect" id="node10" href="$df/dd2/classserver_1_1ui_server.xhtml#afcd9f0421bb52f2b83be4fa924958211" title="Emitted when a client wants to change our own status." alt="" coords="682,211,865,253"/>
+<area shape="rect" id="node11" href="$df/dd2/classserver_1_1ui_server.xhtml#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="700,277,847,304"/>
+<area shape="rect" id="node12" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a0b681a1fedfb2e89397b1f71e29edf78" title="Transforms this object to a nice JSON string." alt="" coords="917,190,1101,231"/>
+<area shape="rect" id="node16" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="970,277,1049,304"/>
+<area shape="rect" id="node18" href="$dc/d4d/classserver_1_1ui_client.xhtml#ad3f8f8690155b186b54e40dcfee0df23" title="Sends data to the socket." alt="" coords="938,328,1081,355"/>
+<area shape="rect" id="node13" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ac6bc0d606265f47db9bae5a6a40cb244" title="getCommandString" alt="" coords="1150,110,1373,151"/>
+<area shape="rect" id="node14" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ab408a8b051e005a7156e19ea8a1f7f3a" title="Gets all data items." alt="" coords="1166,176,1357,203"/>
+<area shape="rect" id="node15" href="$d2/d6d/namespace_qt_json.xhtml#ace7d6102379674932334bea04fb15c12" title="QtJson::serialize" alt="" coords="1202,227,1321,253"/>
+<area shape="rect" id="node17" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="1191,277,1332,304"/>
+<area shape="rect" id="node20" href="$df/dd2/classserver_1_1ui_server.xhtml#a1097da2f20a545c302e9f4cab29a4a87" title="Emitted when a client wants all the events." alt="" coords="689,329,858,370"/>
+</map>

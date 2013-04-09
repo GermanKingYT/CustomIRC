@@ -1,0 +1,11 @@
+<map id="server::uiClient::receiveMessage" name="server::uiClient::receiveMessage">
+<area shape="rect" id="node2" href="$dc/d4d/classserver_1_1ui_client.xhtml#a8237b1a02c7877a7c853b6ef23995b9b" title="Adds data to buffer and checks for json commands." alt="" coords="219,55,389,96"/>
+<area shape="rect" id="node3" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#a2db6f8da6bc5a4c677201f044b69bb10" title="getCommand" alt="" coords="449,7,671,34"/>
+<area shape="rect" id="node6" href="$dc/d4d/classserver_1_1ui_client.xhtml#a970bb30d534e08d2537e2ef495ad7427" title="Emitted when the client sends a chat." alt="" coords="208,121,400,147"/>
+<area shape="rect" id="node7" href="$d2/dc1/class_k4_u_1_1json_command.xhtml#ae829f45e11a50fa00024a5d9951cd748" title="Gets an item from the internal data map." alt="" coords="209,171,399,198"/>
+<area shape="rect" id="node8" href="$dc/d4d/classserver_1_1ui_client.xhtml#a334fdbafee59c9007c38466550572d83" title="Emitted when the client wants all the users." alt="" coords="217,222,391,249"/>
+<area shape="rect" id="node9" href="$dc/d4d/classserver_1_1ui_client.xhtml#af31e3f327761e528ddabb232d1224620" title="Emitted when the clients wants to change our own user." alt="" coords="225,273,383,315"/>
+<area shape="rect" id="node10" href="$dc/d4d/classserver_1_1ui_client.xhtml#a06de500dff0e31a8367b1988e2a0b414" title="Emitted when the client wants all the events." alt="" coords="218,339,390,366"/>
+<area shape="rect" id="node4" href="$d6/d75/namespace_k4_u.xhtml#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="521,62,599,89"/>
+<area shape="rect" id="node5" href="$da/d64/class_k4_u_1_1cls_log.xhtml#a81f179b2ccb3e2abeb9b47f5b83de935" title="K4U::clsLog::doEndl" alt="" coords="720,62,861,89"/>
+</map>

@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['loaderready',['loaderReady',['../d1/dc0/interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback.html#ac67b08ed6184a57c5c732f2f8911a3bf',1,'org::kde::necessitas::ministro::IMinistroCallback']]],
-  ['logtags',['logTags',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5',1,'K4U']]],
-  ['logtags_5firc',['LOGTAGS_IRC',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5',1,'K4U']]],
-  ['logtags_5fmain',['LOGTAGS_MAIN',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372',1,'K4U']]],
-  ['logtags_5fserver',['LOGTAGS_SERVER',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac',1,'K4U']]],
-  ['logtags_5fui',['LOGTAGS_UI',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4',1,'K4U']]],
-  ['logtags_5funknown',['LOGTAGS_UNKNOWN',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5ae09ad9a4554d7e5d1d3f4ad9cb8f6c80',1,'K4U']]],
-  ['logtags_5fuser',['LOGTAGS_USER',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d',1,'K4U']]],
-  ['logtags_5fweb',['LOGTAGS_WEB',['../d6/d75/namespace_k4_u.html#afd00b8cce0ab5037b155e37caed9a3a5aef657c8d7492572bd1596fceecc4340a',1,'K4U']]]
+  ['lastid',['lastId',['../d4/d08/classserver_1_1irc_user_list.xhtml#a1ed9d9889dcc65de41ed6988fc89bb13',1,'server::ircUserList']]],
+  ['lib_5fpath_5fkey',['LIB_PATH_KEY',['../db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a3dfa8cb4dd668453d2b4a2a48fb580e5',1,'org::kde::necessitas::origo::QtActivity']]],
+  ['listeningport',['listeningPort',['../d7/d81/classserver_1_1cls_settings.xhtml#a54004af066c09dc076417852f280cfa5',1,'server::clsSettings']]],
+  ['loadapplication',['loadApplication',['../db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#a6efdacbcdcd7cea2d7a3785d7300e9ab',1,'org::kde::necessitas::origo::QtActivity']]],
+  ['loader_5fclass_5fname_5fkey',['LOADER_CLASS_NAME_KEY',['../db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.xhtml#ac7e045c85bcac829258169df8ae96ecb',1,'org::kde::necessitas::origo::QtActivity']]],
+  ['loaderready',['loaderReady',['../d1/dc0/interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback.xhtml#ac67b08ed6184a57c5c732f2f8911a3bf',1,'org::kde::necessitas::ministro::IMinistroCallback']]],
+  ['log',['log',['../d3/d65/classclient_1_1cls_server_conn.xhtml#afcf2aa947f9e71eabcab017c77730d8f',1,'client::clsServerConn::log()'],['../d6/d69/classclient_1_1irc_user.xhtml#a538637b8b76561d02dc0a0ee98f91264',1,'client::ircUser::log()'],['../d2/da4/classclient_1_1_main_window.xhtml#ad83b542f504d4d017661c0aa7ce630b7',1,'client::MainWindow::log()'],['../d1/d10/classserver_1_1irc_client.xhtml#ae6f6e1a1512ba04edd299f21876a84d9',1,'server::ircClient::log()'],['../d2/d29/classserver_1_1irc_user.xhtml#a253b46e0b18048beeb0828b1a4909ef5',1,'server::ircUser::log()'],['../d1/d48/classserver_1_1main_app.xhtml#a909a71dae4778f8fcd7f998eba857ff4',1,'server::mainApp::log()'],['../dc/d4d/classserver_1_1ui_client.xhtml#a446457889b90bd163b4d50fed2792cf0',1,'server::uiClient::log()'],['../df/dd2/classserver_1_1ui_server.xhtml#a0c287bc3691a6aabe181158cf1176632',1,'server::uiServer::log()'],['../db/d8b/classshared_1_1events_1_1cls_event.xhtml#ac7f241779485316bf8a6016ee35d21db',1,'shared::events::clsEvent::log()']]],
+  ['logtags',['logTags',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5',1,'K4U']]],
+  ['logtags_5fevent',['LOGTAGS_EVENT',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252',1,'K4U']]],
+  ['logtags_5firc',['LOGTAGS_IRC',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5',1,'K4U']]],
+  ['logtags_5fmain',['LOGTAGS_MAIN',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372',1,'K4U']]],
+  ['logtags_5fserver',['LOGTAGS_SERVER',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac',1,'K4U']]],
+  ['logtags_5fui',['LOGTAGS_UI',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4',1,'K4U']]],
+  ['logtags_5funknown',['LOGTAGS_UNKNOWN',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5ae09ad9a4554d7e5d1d3f4ad9cb8f6c80',1,'K4U']]],
+  ['logtags_5fuser',['LOGTAGS_USER',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d',1,'K4U']]],
+  ['logtags_5fweb',['LOGTAGS_WEB',['../d6/d75/namespace_k4_u.xhtml#afd00b8cce0ab5037b155e37caed9a3a5aef657c8d7492572bd1596fceecc4340a',1,'K4U']]],
+  ['lostconnection',['lostConnection',['../df/dd2/classserver_1_1ui_server.xhtml#a7d6448c91d341e29919ebc10047ef4a4',1,'server::uiServer']]]
 ];
