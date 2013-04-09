@@ -42,7 +42,7 @@ private:
 	 * Every time a } or ] is detected, depth is decreased.
 	 * When depth is 0, there should be a complete json command!
 	 */
-	bool checkForJsonCommand(QByteArray toAdd, jsonCommand *comm);
+	bool checkForJsonCommand(QByteArray toAdd, jsonCommand &comm);
 signals:
 
 	/*!

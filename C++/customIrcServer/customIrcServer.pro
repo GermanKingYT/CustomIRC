@@ -43,4 +43,6 @@ HEADERS += \
     clssettings.h \
     ../resources/clsevent.h
 
+OTHER_FILES +=
+
 

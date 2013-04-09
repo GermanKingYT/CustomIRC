@@ -46,41 +46,41 @@ namespace client{
         emit this->disconnected();
     }
 
-    void clsServerConn::handleCompletedQuery(jsonCommand *comm){
+	void clsServerConn::handleCompletedQuery(jsonCommand &comm){
         QVector<ircUser*> users;
-        foreach(QVariant user, comm->getData("users").toList()){
+		foreach(QVariant user, comm.getData("users").toList()){
             users.append(new ircUser(user));
         }
         emit this->userQueryCompleted(users);
     }
 
-    void clsServerConn::handleUserInfo(jsonCommand *command){
-        if(command->getData("change") == "STATUS"){
-            emit this->userStatusChange(command->getData("user").toInt(),
-                    command->getData("new").toString());
-        }else if(command->getData("change") == "LEAVE"){
+	void clsServerConn::handleUserInfo(jsonCommand &command){
+		if(command.getData("change") == "STATUS"){
+			emit this->userStatusChange(command.getData("user").toInt(),
+					command.getData("new").toString());
+		}else if(command.getData("change") == "LEAVE"){
             //emit this->userLeave(command->getData("user").toInt());
-        }else if(command->getData("change") == "ENTER"){
+		}else if(command.getData("change") == "ENTER"){
             //		emit this->userEnter(new ircUser(command->getData("user")));
-        }else if(command->getData("change") == "NICK"){
-            emit this->userChangeNick(command->getData("user").toInt(),
-                    command->getData("new").toString());
+		}else if(command.getData("change") == "NICK"){
+			emit this->userChangeNick(command.getData("user").toInt(),
+					command.getData("new").toString());
         }
     }
 
-    void clsServerConn::handleOwnUserChange(jsonCommand *comm){
+	void clsServerConn::handleOwnUserChange(jsonCommand &comm){
         //This function might have the same body as handleUserInfo.
         //But for now this is the only thing changeable.
         //Maybe later there will be more stuff added here
-        if(comm->getData("change") == "STATUS"){
+		if(comm.getData("change") == "STATUS"){
             //Own user is always ID 1..
-            emit this->userStatusChange(1, comm->getData("new").toString());
+			emit this->userStatusChange(1, comm.getData("new").toString());
         }
     }
 
-    void clsServerConn::handleEventRequest(jsonCommand *comm){
+	void clsServerConn::handleEventRequest(jsonCommand &comm){
         //Let them flow, all the chats!
-        QList<QVariant> events = comm->getData("events").toList();
+		QList<QVariant> events = comm.getData("events").toList();
         foreach(QVariant myEvent, events){
             this->handleEventReceived(myEvent.toMap());
         }
@@ -103,10 +103,9 @@ namespace client{
     }
 
 
-	bool clsServerConn::checkForJsonCommand(QByteArray toAdd, jsonCommand *comm){
-		int depth = 0;
+	bool clsServerConn::checkForJsonCommand(QByteArray toAdd, jsonCommand &comm){
 		bool ret = false;
-		foreach(int b, toAdd){
+		foreach(char b, toAdd){
 			if(b == '{' || b == '['){
 				depth++;
 			}else if(b == '}' || b == ']'){
@@ -116,7 +115,7 @@ namespace client{
 
 			if(depth == 0){
 				//Clear the buffer.
-				if(comm->getCommand() == JSONCOMMAND_NONE){
+				if(comm.getCommand() == JSONCOMMAND_NONE){
 					ret = true;
 					comm = new jsonCommand(*this->buffer);
 					this->log << "Data received: \t" << this->buffer << endl;
@@ -128,11 +127,11 @@ namespace client{
 	}
 
     void clsServerConn::readData(){
-		jsonCommand *comm = new jsonCommand(JSONCOMMAND_NONE);
+		jsonCommand comm(JSONCOMMAND_NONE);
 		if(this->checkForJsonCommand(this->sock->readAll(), comm)){
-			switch (comm->getCommand()) {
+			switch (comm.getCommand()) {
 				case JSONCOMMAND_EVENT:
-					this->handleEventReceived(comm->getData("event").toMap());
+					this->handleEventReceived(comm.getData("event").toMap());
 					break;
 				case JSONCOMMAND_USERQUERY:
 					this->handleCompletedQuery(comm);

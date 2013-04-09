@@ -5,6 +5,7 @@ namespace server {
 uiClient::uiClient(QTcpSocket *parent)
     :sock(parent)
     ,log(LOGTAGS_UI)
+	,depth(0)
 {
 
     QHostAddress myRemote = this->sock->peerAddress();
@@ -28,10 +29,9 @@ void uiClient::removeConnection(){
 }
 
 
-bool uiClient::checkForJsonCommand(QByteArray toAdd, jsonCommand *comm){
-    int depth = 0;
+bool uiClient::checkForJsonCommand(QByteArray toAdd, jsonCommand &comm){
     bool ret = false;
-    foreach(int b, toAdd){
+	foreach(char b, toAdd){
         if(b == '{' || b == '['){
             depth++;
         }else if(b == '}' || b == ']'){
@@ -41,7 +41,7 @@ bool uiClient::checkForJsonCommand(QByteArray toAdd, jsonCommand *comm){
 
         if(depth == 0){
             //Clear the buffer.
-			if(comm->getCommand() == JSONCOMMAND_NONE){
+			if(comm.getCommand() == JSONCOMMAND_NONE){
 				ret = true;
 				comm = new jsonCommand(*this->buffer);
 				this->log << "Data received: \t" << this->buffer << endl;
@@ -53,17 +53,17 @@ bool uiClient::checkForJsonCommand(QByteArray toAdd, jsonCommand *comm){
 }
 
 void uiClient::receiveMessage(){
-    jsonCommand *comm = new jsonCommand(JSONCOMMAND_NONE);
-    if(this->checkForJsonCommand(this->sock->readAll(), comm)){
-        switch (comm->getCommand()) {
+	jsonCommand comm (JSONCOMMAND_NONE);
+	if(this->checkForJsonCommand(this->sock->readAll(), comm)){
+		switch (comm.getCommand()) {
             case JSONCOMMAND_OWNCHAT:
-                emit this->chatReceived(comm->getData("chat").toString());
+				emit this->chatReceived(comm.getData("chat").toString());
                 break;
             case JSONCOMMAND_USERQUERY:
                 emit this->userQuery(this);
                 break;
             case JSONCOMMAND_CHANGEOWNUSER:
-                emit this->changeOwnUser(*comm);
+				emit this->changeOwnUser(comm);
                 break;
             case JSONCOMMAND_GETEVENTS:
                 emit this->getEvents(this);

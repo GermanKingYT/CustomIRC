@@ -117,6 +117,13 @@ clsLog& operator <<(clsLog &log, jsonCommand &command){
 clsLog& operator <<(clsLog &log, const jsonCommand &command){
     log << "JSON command: " << command.getCommandString();
     log << " Data: " << endl << command.getData() << endl;
-    return log;
+	return log;
 }
+
+jsonCommand jsonCommand::operator =(jsonCommand *other){
+	this->command = other->command;
+	this->data = other->data;
+	return *this;
+}
+
 }

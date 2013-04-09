@@ -98,6 +98,8 @@ public:
     friend clsLog& operator<<(clsLog& log, jsonCommand &command);
     friend clsLog& operator<<(clsLog& log, const jsonCommand &command);
 
+	jsonCommand operator= (jsonCommand* other);
+
 	/*!
 	 * \brief Transforms this object to a nice JSON string
 	 * \return The JSON string

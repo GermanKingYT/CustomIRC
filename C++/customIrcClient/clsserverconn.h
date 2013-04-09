@@ -57,30 +57,30 @@ namespace client{
 			 * Every time a } or ] is detected, depth is decreased.
 			 * When depth is 0, there should be a complete json command!
 			 */
-			bool checkForJsonCommand(QByteArray toAdd, jsonCommand *comm);
+			bool checkForJsonCommand(QByteArray toAdd, jsonCommand &comm);
 			/*!
 			 * \brief The server has given us all the users. Handle it
 			 * \param comm The jsonCommand containing all the data
 			 */
-			void handleCompletedQuery(jsonCommand *comm);
+			void handleCompletedQuery(jsonCommand &comm);
 			/*!
 			 * \brief handleUser
 			 * \param command
 			 * \deprecated
 			 */
-			void handleUserInfo(jsonCommand *command);
+			void handleUserInfo(jsonCommand &command);
 
 			/*!
 			 * \brief Another client has changed our own user status
 			 * \param comm The jsonCommand containing all the data
 			 */
-			void handleOwnUserChange(jsonCommand *comm);
+			void handleOwnUserChange(jsonCommand &comm);
 
 			/*!
 			 * \brief Event request has been done by us, and data has been returned
 			 * \param comm The jsonCommand containing all the events
 			 */
-			void handleEventRequest(jsonCommand *comm);
+			void handleEventRequest(jsonCommand &comm);
 
 			/*!
 			 * \brief Event has been received by the client. Parse it
