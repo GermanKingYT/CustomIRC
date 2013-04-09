@@ -7,13 +7,15 @@
 #include "json.h"
 #include "clslog.h"
 
-
+/*!
+ * \brief Contains functions used for more projects
+ * \author Koen Beckers (K-4U)
+ */
 namespace K4U{
-//TODO: Command implement
 enum jsonCommands{
-    JSONCOMMAND_NONE = 0x00,
-    JSONCOMMAND_PING = 0x01,
-    JSONCOMMAND_EVENT,
+	JSONCOMMAND_NONE = 0x00,
+	JSONCOMMAND_PING = 0x01,
+	JSONCOMMAND_EVENT,
     JSONCOMMAND_USERINFOREQ,
     JSONCOMMAND_USERQUERY,
     JSONCOMMAND_OWNCHAT,

@@ -18,8 +18,6 @@ namespace client{
                 this,SLOT(moveScrollBarToBottom(int,int)));
 
 
-        /*connect(this->server,SIGNAL(chatReceived(int,QString, QTime))
-          ,this,SLOT(chatReceived(int,QString, QTime)));*/
         connect(this->server, SIGNAL(chatReceived(eventChat*)),
                 this, SLOT(chatReceived(eventChat*)));
         connect(this->ui->mChatInput,SIGNAL(sendChat(QString))
@@ -34,14 +32,21 @@ namespace client{
         connect(this->server, SIGNAL(userQueryCompleted(QVector<ircUser*>)),
                 this, SLOT(userQueryCompleted(QVector<ircUser*>)));
 
-        connect(this->server, SIGNAL(userStatusChange(int,QString)),
-                this, SLOT(userStatusChange(int,QString)));
-        //connect(this->server, SIGNAL(userLeave(eventUserLeave*)),
-        //        this, SLOT(userLeave(eventUserLeave*)));
+		connect(this->server, SIGNAL(userStatusChange(eventUserChangeStatus*)),
+				this, SLOT(userStatusChange(eventUserChangeStatus*)));
+		connect(this->server, SIGNAL(userLeave(eventUserLeave*)),
+				this, SLOT(userLeave(eventUserLeave*)));
         connect(this->server, SIGNAL(userEnter(eventUserJoin*)),
                 this, SLOT(userEnter(eventUserJoin*)));
-        connect(this->server, SIGNAL(userChangeNick(int,QString)),
-                this, SLOT(userChangeNick(int,QString)));
+		connect(this->server, SIGNAL(userChangeNick(eventUserChangeNick*)),
+				this, SLOT(userChangeNick(eventUserChangeNick*)));
+
+		connect(this->server, SIGNAL(serverMessageReceived(eventServerMessage*)),
+				this, SLOT(serverMessageReceived(eventServerMessage*)));
+
+		connect(this->server, SIGNAL(sgnConnectTimeout()), this, SLOT(connectedTimeout()));
+
+		this->showMessage("Connecting to server",SERVERMESSAGE_LEVEL_INFO);
         this->server->doConnect();
     }
 
@@ -56,10 +61,6 @@ namespace client{
         this->ui->chatbox->addChat(this->users[chatEvent->getUser()],
                 chatEvent->getMessage(), chatEvent->getTime());
     }
-
-    /*void MainWindow::chatReceived(int userId, QString message, QTime timeOfMessage){
-      this->ui->chatbox->addChat(this->users[userId],message,timeOfMessage);
-      }*/
 
     void MainWindow::sendChat(QString message){
         jsonCommand toSend(JSONCOMMAND_OWNCHAT);
@@ -88,7 +89,8 @@ namespace client{
     }
 
     void MainWindow::serverConnected(){
-        this->ui->chatbox->addMessage("Connected!");
+		//this->ui->chatbox->addMessage("Connected!");
+		this->showMessage("Connected to server",SERVERMESSAGE_LEVEL_INFO);
         //Do user query
         jsonCommand toSend(JSONCOMMAND_USERQUERY);
         this->server->sendCommand(toSend);
@@ -96,11 +98,23 @@ namespace client{
 
 
     void MainWindow::serverDisconnected(){
-        this->ui->chatbox->addMessage("Disconnect from server!");
+		QString msg("Disconnected from server. Reconnecting in %1 seconds");
+		msg = msg.arg(qint32(RECONNECT_IN_S));
+		this->showMessage(msg,SERVERMESSAGE_LEVEL_ERROR);
+		//Now, let's reconnect in RECONNECT_IN_S
+		QTimer::singleShot(RECONNECT_IN_S*1000, this,
+										SLOT(doReconnect()));
     }
 
     void MainWindow::userQueryCompleted(QVector<ircUser *> users){
-        this->users.clear();
+
+#ifdef DESKTOP
+		//this->ui->userList->clear();
+		if(this->users.count() > 0){
+			this->ui->userList = new clsUserList(this);
+		}
+#endif
+		this->users.clear();
         foreach(ircUser* user, users){
 #ifdef DESKTOP
             this->ui->userList->addUser(user);
@@ -112,23 +126,24 @@ namespace client{
         this->server->sendCommand(messageQuery);
     }
 
-    void MainWindow::userStatusChange(int id, QString newStatus){
-        this->users[id]->setStatus(newStatus);
+	void MainWindow::userStatusChange(eventUserChangeStatus *statusEvent){
+		int userId = statusEvent->getUserId();
+		this->users[userId]->setStatus(statusEvent->getNewStatus());
 #ifdef DESKTOP
-        this->ui->userList->refreshUser(this->users[id]);
+		this->ui->userList->refreshUser(this->users[userId]);
 #endif
-        this->ui->chatbox->addMessage(QString(this->users[id]->getNick()) + " is nu " +
-                this->users[id]->getStatus());
+		this->ui->chatbox->addMessage(QString(this->users[userId]->getNick()) + " is nu " +
+				this->users[userId]->getStatus());
     }
 
-    void MainWindow::userChangeNick(int id, QString newNick){
-        QString oldNick = this->users[id]->getNick();
-        this->users[id]->setNick(newNick);
+	void MainWindow::userChangeNick(eventUserChangeNick *nickEvent){
+		int userId = nickEvent->getUserId();
+		this->users[userId]->setNick(nickEvent->getNewNick());
 #ifdef DESKTOP
-        this->ui->userList->refreshUser(this->users[id]);
+		this->ui->userList->refreshUser(this->users[userId]);
 #endif
-        this->ui->chatbox->addMessage(oldNick + " is nu bekend als " +
-                this->users[id]->getNick());
+		this->ui->chatbox->addMessage(nickEvent->getOldNick() + " is nu bekend als " +
+				this->users[userId]->getNick());
     }
 
     void MainWindow::userLeave(eventUserLeave *leaveEvent){
@@ -148,7 +163,8 @@ namespace client{
                 username = this->users[userId]->getNick();
                 this->users.remove(userId);
             }
-            this->ui->chatbox->addMessage(username + " is weggegaan");
+			this->ui->chatbox->addMessage(username + " is weggegaan",
+										  leaveEvent->getTime());
         }
     }
 
@@ -172,8 +188,54 @@ namespace client{
 #endif
             this->users.insert(newUser->getId(),newUser);
         }
-        this->ui->chatbox->addMessage(username + " is binnengekomen");
-    }
+		this->ui->chatbox->addMessage(username + " is binnengekomen",
+									  uEvent->getTime());
+	}
+
+	void MainWindow::serverMessageReceived(eventServerMessage *myMessage){
+		//No more, no less
+		QColor colorOfMessage;
+		switch(myMessage->getLevel()){
+			case SERVERMESSAGE_LEVEL_ERROR:
+				colorOfMessage.setRgb(160,0,0);
+				break;
+			case SERVERMESSAGE_LEVEL_INFO:
+				colorOfMessage.setRgb(0,160,0);
+				break;
+		}
+
+		QString message(myMessage->getMessage());
+		this->ui->chatbox->addMessage(message, myMessage->getTime(),
+									  colorOfMessage);
+	}
+
+	void MainWindow::showMessage(QString msg, level lvl){
+		QColor colorOfMessage;
+		switch(lvl){
+			case SERVERMESSAGE_LEVEL_ERROR:
+				colorOfMessage.setRgb(160,0,0);
+				break;
+			case SERVERMESSAGE_LEVEL_INFO:
+				colorOfMessage.setRgb(0,160,0);
+				break;
+		}
+		this->ui->chatbox->addMessage(msg, QTime::currentTime(),
+									  colorOfMessage);
+	}
+
+	void MainWindow::connectedTimeout(){
+		QString msg("Unable to connect to server. Reconnecting in %1 seconds");
+		msg = msg.arg(qint32(RECONNECT_IN_S));
+		this->showMessage(msg,SERVERMESSAGE_LEVEL_ERROR);
+		//Now, let's reconnect in RECONNECT_IN_S
+		QTimer::singleShot(RECONNECT_IN_S*1000, this,
+										SLOT(doReconnect()));
+	}
+
+	void MainWindow::doReconnect(){
+		this->showMessage("Reconnecting",SERVERMESSAGE_LEVEL_INFO);
+		this->server->doConnect();
+	}
 
 
 #ifdef ANDROID

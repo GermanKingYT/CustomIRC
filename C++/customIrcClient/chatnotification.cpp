@@ -5,8 +5,6 @@
 
 
 namespace client{
-
-
     chatNotification::chatNotification(QString message, QWidget *parent)
         :QWidget(parent)
          ,ui(new Ui::chatNotification)
@@ -20,8 +18,28 @@ namespace client{
 
         this->ui->lblNotification->setText(this->message);
 
-        this->calculateMessageWidth();
-    }
+		this->calculateMessageWidth();
+	}
+
+	chatNotification::chatNotification(QString message, QTime timeOfMessage, QColor myColor, QWidget *parent)
+		:QWidget(parent)
+		,ui(new Ui::chatNotification)
+		,message(message)
+		,timeOfMessage(timeOfMessage)
+	{
+		ui->setupUi(this);
+		this->setMinimumWidth(parent->width());
+
+		this->ui->lblTime->setText(this->timeOfMessage.toString());
+
+		QPalette palette = ui->lblNotification->palette();
+		palette.setColor(ui->lblNotification->foregroundRole(), myColor);
+		ui->lblNotification->setPalette(palette);
+
+		this->ui->lblNotification->setText(this->message);
+
+		this->calculateMessageWidth();
+	}
 
     chatNotification::~chatNotification()
     {
@@ -52,6 +70,7 @@ namespace client{
 
 
     void chatNotification::resizeEvent(QResizeEvent *event){
+		Q_UNUSED(event);
         this->calculateMessageWidth();
     }
 

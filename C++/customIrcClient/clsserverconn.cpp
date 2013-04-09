@@ -6,9 +6,12 @@ namespace client{
     clsServerConn::clsServerConn(const QString hostName, const int port,
             QObject *parent)
         :QObject(parent)
-         ,hostName(hostName)
-         ,port(port)
-         ,log(LOGTAGS_UI)
+		,hostName(hostName)
+		,port(port)
+		,depth(0)
+		,log(LOGTAGS_UI)
+		,isConnected(false)
+		,isConnecting(false)
     {
         this->buffer = new QString();
 
@@ -23,7 +26,12 @@ namespace client{
     }
 
     void clsServerConn::doConnect(){
-        this->sock->connectToHost(this->hostName,this->port);
+		this->connectTimer->singleShot(MAX_CONNECT_TIMEOUT_IN_MS, this, SLOT(connectTimeout()));
+		this->isConnecting = true;
+		this->isConnected = false;
+		this->sock->connectToHost(this->hostName,this->port);
+
+
         this->log << "Connecting" << endl;
     }
 
@@ -37,12 +45,16 @@ namespace client{
 
     void clsServerConn::srvConnected(){
         this->log << "Connected!" << endl;
+		this->isConnecting = false;
+		this->isConnected = true;
         emit this->connected();
     }
 
 
     void clsServerConn::srvDisconnected(){
         this->log << "Disconnected" << endl;
+		this->isConnecting = false;
+		this->isConnected = false;
         emit this->disconnected();
     }
 
@@ -54,27 +66,14 @@ namespace client{
         emit this->userQueryCompleted(users);
     }
 
-	void clsServerConn::handleUserInfo(jsonCommand &command){
-		if(command.getData("change") == "STATUS"){
-			emit this->userStatusChange(command.getData("user").toInt(),
-					command.getData("new").toString());
-		}else if(command.getData("change") == "LEAVE"){
-            //emit this->userLeave(command->getData("user").toInt());
-		}else if(command.getData("change") == "ENTER"){
-            //		emit this->userEnter(new ircUser(command->getData("user")));
-		}else if(command.getData("change") == "NICK"){
-			emit this->userChangeNick(command.getData("user").toInt(),
-					command.getData("new").toString());
-        }
-    }
-
 	void clsServerConn::handleOwnUserChange(jsonCommand &comm){
         //This function might have the same body as handleUserInfo.
         //But for now this is the only thing changeable.
         //Maybe later there will be more stuff added here
 		if(comm.getData("change") == "STATUS"){
             //Own user is always ID 1..
-			emit this->userStatusChange(1, comm.getData("new").toString());
+			//FIXME: Own user no longer receives updates. Probaby move this to an event
+			//emit this->userStatusChange(1, comm.getData("new").toString());
         }
     }
 
@@ -94,8 +93,19 @@ namespace client{
                 break;
             case EVENTTYPE_USER_JOIN:
                 emit this->userEnter(new eventUserJoin(data));
+				break;
             case EVENTTYPE_USER_LEFT:
                 emit this->userLeave(new eventUserLeave(data));
+				break;
+			case EVENTTYPE_USER_STATUS:
+				emit this->userStatusChange(new eventUserChangeStatus(data));
+				break;
+			case EVENTTYPE_USER_NICK:
+				emit this->userChangeNick(new eventUserChangeNick(data));
+				break;
+			case EVENTTYPE_SERVERMSG:
+				emit this->serverMessageReceived(new eventServerMessage(data));
+				break;
             default:
                 break; //ERROR!
         }
@@ -145,6 +155,14 @@ namespace client{
 					break;
 			}
 		}
-    }
+	}
+
+	void clsServerConn::connectTimeout(){
+		if(this->isConnecting && this->isConnected == false){
+			this->sock->abort();
+			emit this->sgnConnectTimeout();
+		}
+
+	}
 
 }

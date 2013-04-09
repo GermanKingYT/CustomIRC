@@ -33,8 +33,12 @@ namespace client{
         clsUserEntry *ourUser = this->users[user];
         delete this->users[user];
         //this->verticalLayout->removeWidget(ourUser);
-        //this->users.remove(user);
-    }
+		//this->users.remove(user);
+	}
+
+	void clsUserList::clear(){
+		this->setupUi();
+	}
 
     void clsUserList::setupUi(){
         if (this->objectName().isEmpty())

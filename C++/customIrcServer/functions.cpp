@@ -38,22 +38,10 @@ const QString getId(const QString full){
     return full.mid(full.indexOf("!")+1);
 }
 
-
-
 bool inCommand(const QString *command, const char* search){
     return (command->indexOf(search) >= 0);
 }
 
-char getS(const char* msg, ...){
-    char endString[255];
-    va_list ap;
-    va_start(ap,msg);
-
-    vsprintf(endString, msg, ap);
-    va_end(ap);
-
-    return *endString;
-}
 
 nickAndStatus getNickAndStatusFromId(const QString id){
     QString nick(id.left(id.indexOf("!")));

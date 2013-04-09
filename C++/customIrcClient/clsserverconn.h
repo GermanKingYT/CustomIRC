@@ -6,13 +6,18 @@
 #include <QTextStream>
 #include <QTime>
 #include "../resources/clslog.h"
-#include <QBuffer>
+#include <QTimer>
 #include "ircuser.h"
 #include "../resources/jsoncommand.h"
 #include "../resources/json.h"
 #include "../resources/clsevent.h"
+#include "../resources/events/events.h"
+
+
+#define MAX_CONNECT_TIMEOUT_IN_MS 5000
 
 using namespace shared;
+using namespace shared::events;
 namespace client{
 
 	/*!
@@ -63,12 +68,6 @@ namespace client{
 			 * \param comm The jsonCommand containing all the data
 			 */
 			void handleCompletedQuery(jsonCommand &comm);
-			/*!
-			 * \brief handleUser
-			 * \param command
-			 * \deprecated
-			 */
-			void handleUserInfo(jsonCommand &command);
 
 			/*!
 			 * \brief Another client has changed our own user status
@@ -111,19 +110,17 @@ signals:
 
 			/*!
 			 * \brief Emitted when a user has changed his status (nick|status)
-			 * \param userId The DB-ID of the user
-			 * \param newStatus The new status of the user
+			 * \param changeEvent An eventUserChangeStatus containing more data
 			 * \note Not to be confused with userChangeNick!
 			 */
-            void userStatusChange(int userId, QString newStatus);
+			void userStatusChange(eventUserChangeStatus *changeEvent);
 
 			/*!
 			 * \brief Emitted when a user has changed his nick (nick|status)
-			 * \param userId The DB-ID of the user
-			 * \param newNick The new nick of the user
+			 * \param changeEvent And eventUserChangeNick containing more data
 			 * \note Not to be confused with userStatusChange
 			 */
-            void userChangeNick(int userId, QString newNick);
+			void userChangeNick(eventUserChangeNick *changeEvent);
 
 			/*!
 			 * \brief Triggered when a user left the channel
@@ -137,10 +134,21 @@ signals:
 			 */
             void userEnter(eventUserJoin *newUser);
 
+			/*!
+			 * \brief Triggered when the server wants us to know something
+			 * \param theMessage The message it sends
+			 */
+			void serverMessageReceived(eventServerMessage *theMessage);
+
+			/*!
+			 * \brief Triggered when it cannot connect.
+			 */
+			void sgnConnectTimeout();
 		public slots:
 			void srvDisconnected();
             void srvConnected();
             void readData();
+			void connectTimeout();
 
         private:
             QString hostName;
@@ -151,6 +159,10 @@ signals:
             int depth;
 
             clsLog log;
+
+			QTimer *connectTimer;
+			bool isConnected;
+			bool isConnecting;
 
 
     };

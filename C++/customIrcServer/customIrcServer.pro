@@ -27,7 +27,13 @@ SOURCES += main.cpp \
     ../resources/json.cpp \
     ../resources/clslog.cpp \
     clssettings.cpp \
-    ../resources/clsevent.cpp
+    ../resources/clsevent.cpp \
+    ../resources/events/eventchat.cpp \
+    ../resources/events/eventuserjoin.cpp \
+    ../resources/events/eventuserleave.cpp \
+    ../resources/events/eventuserchangestatus.cpp \
+    ../resources/events/eventuserchangenick.cpp \
+    ../resources/events/eventservermessage.cpp
 
 HEADERS += \
     ircclient.h \
@@ -41,7 +47,14 @@ HEADERS += \
     ../resources/json.h \
     ../resources/clslog.h \
     clssettings.h \
-    ../resources/clsevent.h
+    ../resources/clsevent.h \
+    ../resources/events/eventchat.h \
+    ../resources/events/events.h \
+    ../resources/events/eventuserjoin.h \
+    ../resources/events/eventuserleave.h \
+    ../resources/events/eventuserchangestatus.h \
+    ../resources/events/eventuserchangenick.h \
+    ../resources/events/eventservermessage.h
 
 OTHER_FILES +=
 

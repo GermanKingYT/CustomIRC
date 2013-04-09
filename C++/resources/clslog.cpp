@@ -143,6 +143,9 @@ std::string clsLog::getTag(){
         case LOGTAGS_WEB:
             ret = "WEB";
             break;
+		case LOGTAGS_EVENT:
+			ret = "EVNT";
+			break;
         default:
             ret = "UNK";
             break;

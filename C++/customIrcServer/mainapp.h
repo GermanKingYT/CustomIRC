@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QVector>
+#include <QTimer>
 #include "ircclient.h"
 #include "functions.h"
 #include "ircuser.h"
@@ -10,9 +11,12 @@
 #include "uiclient.h"
 #include "clssettings.h"
 #include "../resources/clsevent.h"
+#include "../resources/events/events.h"
 
 #define MAX_EVENTS	5000 /*!< The maximum number of events stored before deleting the earliest */
+#define RECONNECT_IN_S	10 /*!< Ammount of seconds it should take before starting to reconnect to the IRC */
 using namespace shared;
+using namespace shared::events;
 namespace server {
 /*!
  * \brief The main application
@@ -25,7 +29,11 @@ public:
     explicit mainApp(QString parentPath, QObject *parent = 0);
     void run();
 
-
+	/*!
+	 * \brief For logging to the clients
+	 * \param message The message to log
+	 */
+	void serverMessage(const QString &message, const level lvl);
 private:
 	/*!
 	 * \brief Adds an event to the history, checking for the maximum number
@@ -71,8 +79,8 @@ public slots:
 	 * \param id His IRC-ID. The only thing probably that remained the same.
 	 * \warning Not to be confused with userChangeStatus!
 	 */
-    void userChangeNick(const nickAndStatus oldNickName,
-                        const nickAndStatus newNickName,
+    void userChangeNick(const nickAndStatus oldNick,
+                        const nickAndStatus newNick,
                         const QString id);
 
 	/*!
@@ -109,6 +117,24 @@ public slots:
 	 */
     void ownUserChangeStatus(QString newStatus);
 
+	/*!
+	 * \brief Triggered when the IRC client cannot connect
+	 */
+	void ircConnectTimeOut();
+
+	/*!
+	 * \brief Triggered when the IRC client has connected
+	 */
+	void ircConnected();
+	/*!
+	 * \brief Triggered when the IRC client has disconnected
+	 */
+	void ircDisconnected(QString reason);
+
+	/*!
+	 * \brief Emitted when the reconnect timer reaches 0
+	 */
+	void doIrcReconnect();
 private:
     const static logTags TAG = LOGTAGS_MAIN;
     ircClient *irc;
@@ -120,6 +146,8 @@ private:
     QVector<clsEvent *> events;
 
     clsSettings *settings;
+
+	QTimer reconnectTimer;
 
 };
 }

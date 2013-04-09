@@ -34,7 +34,13 @@ SOURCES += main.cpp\
     desktop/clsuserentry.cpp \
     desktop/clsnotify.cpp \
     ../resources/clsevent.cpp \
-    clssettings.cpp
+    clssettings.cpp \
+    ../resources/events/eventuserleave.cpp \
+    ../resources/events/eventuserjoin.cpp \
+    ../resources/events/eventuserchangestatus.cpp \
+    ../resources/events/eventchat.cpp \
+    ../resources/events/eventuserchangenick.cpp \
+    ../resources/events/eventservermessage.cpp
 
 HEADERS  += mainwindow.h \
     clsserverconn.h \
@@ -50,7 +56,14 @@ HEADERS  += mainwindow.h \
     desktop/clsuserentry.h \
     desktop/clsnotify.h \
     ../resources/clsevent.h \
-    clssettings.h
+    clssettings.h \
+    ../resources/events/eventuserleave.h \
+    ../resources/events/eventuserjoin.h \
+    ../resources/events/eventuserchangestatus.h \
+    ../resources/events/events.h \
+    ../resources/events/eventchat.h \
+    ../resources/events/eventuserchangenick.h \
+    ../resources/events/eventservermessage.h
 
 FORMS    += desktop/mainwindow.ui \
     desktop/chatentry.ui \

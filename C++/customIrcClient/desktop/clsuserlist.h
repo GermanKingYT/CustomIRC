@@ -41,6 +41,11 @@ namespace client{
 			 * \param user The user to be removed
 			 */
             void removeUser(ircUser *user);
+
+			/*!
+			 * \brief Clears the list
+			 */
+			void clear();
         private:
             void setupUi();
             QVBoxLayout *verticalLayout;

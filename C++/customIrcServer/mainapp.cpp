@@ -37,22 +37,30 @@ void mainApp::run(){
                                                QString))
             ,this, SLOT(userChangeStatus(nickAndStatus,nickAndStatus,QString)));
 
+	connect(this->irc, SIGNAL(IRCConnectTimeOut()), this, SLOT(ircConnectTimeOut()));
+	connect(this->irc, SIGNAL(IRCConnected()), this, SLOT(ircConnected()));
+	connect(this->irc, SIGNAL(IRCDisconnected(QString)), this,
+			SLOT(ircDisconnected(QString)));
+
     connect(this->ui,SIGNAL(sgnChatReceived(QString)),this,SLOT(uiSendChat(QString)));
     connect(this->ui,SIGNAL(sgnUserQuery(uiClient*)), this,SLOT(doUserQuery(uiClient*)));
     connect(this->ui, SIGNAL(sgnSendEvents(uiClient*)), this, SLOT(doSendEvents(uiClient*)));
     connect(this->ui,SIGNAL(sgnChangeOwnUserStatus(QString)),
             this, SLOT(ownUserChangeStatus(QString)));
 
+
     //Init db of 'standard' irc users:
     ownUser = this->settings->getOwnUser();
     ownUser->setOnline(true);
     ownUser->setStatus("");
+	this->irc->setOwnUser(ownUser);
     this->users->add(ownUser);
     foreach(ircUser* user, this->settings->getUsers()){
         this->users->add(user);
     }
 
-    this->irc->connect();
+	this->serverMessage("Connecting to irc.", SERVERMESSAGE_LEVEL_INFO);
+	this->irc->doConnect();
 	this->ui->startListen();
 }
 
@@ -124,30 +132,30 @@ void mainApp::userOffline(const nickAndStatus nick, const QString id, const QStr
 
 		uUser.addToData("event",leaveEvent->toVariant());
 		this->ui->send(uUser);
-        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
-        uUser.addToData("user",user->getId());
-        uUser.addToData("change","LEAVE");
-        this->ui->send(uUser);*/
     }
 }
 
-void mainApp::userChangeNick(const nickAndStatus oldNickName,
-                             const nickAndStatus newNickName, const QString id){
-    Q_UNUSED(id);
-    this->log << oldNickName.nick << " changed nick to " << newNickName.nick << endl;
+void mainApp::userChangeNick(const nickAndStatus oldNick,
+							 const nickAndStatus newNick, const QString id){
+	this->log << oldNick.nick << " changed nick to " << newNick.nick << endl;
 
-    ircUser *user = this->users->getUser(oldNickName, id);
+	ircUser *user = this->users->getUser(oldNick, id);
     if(user->getName() == "NaN"){
         //Say WHAT!?
-        this->log << oldNickName.nick << " bestaat niet!?" << endl;
+		this->log << oldNick.nick << " bestaat niet!?" << endl;
     }else{
-        user->setNick(newNickName.nick);
+		user->setNick(newNick.nick);
 
-        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
-        uUser.addToData("user",user->getId());
-        uUser.addToData("change","NICK");
-        uUser.addToData("new",newNickName.nick);
-        this->ui->send(uUser);*/
+		//Create event
+		eventUserChangeNick *changeEvent = new eventUserChangeNick(
+					user->getId(),
+					newNick.nick,
+					oldNick.nick);
+		this->addToEventHistory(changeEvent);
+		jsonCommand uUser(JSONCOMMAND_EVENT);
+
+		uUser.addToData("event",changeEvent->toVariant());
+		this->ui->send(uUser);
     }
 }
 
@@ -161,17 +169,16 @@ void mainApp::userChangeStatus(const nickAndStatus oldNick,
         this->log << oldNick.nick << " bestaat niet!?" << endl;
     }else{
         user->setStatus(newNick.status);
-        /*jsonCommand uUser(JSONCOMMAND_USERINFO);
-        uUser.addToData("user",user->getId());
-        if(user->getStatus().toLower() == "offline"){
-            uUser.addToData("change","OFFLINE");
-            user->setOnline(false);
-        }else{
-            uUser.addToData("change","STATUS");
-            uUser.addToData("new",user->getStatus());
-            user->setOnline(true);
-        }
-        this->ui->send(uUser);*/
+		//Create event
+		eventUserChangeStatus *changeEvent = new eventUserChangeStatus(
+					user->getId(),
+					newNick.status,
+					oldNick.status);
+		this->addToEventHistory(changeEvent);
+		jsonCommand uUser(JSONCOMMAND_EVENT);
+
+		uUser.addToData("event",changeEvent->toVariant());
+		this->ui->send(uUser);
     }
 
 }
@@ -216,7 +223,47 @@ void mainApp::ownUserChangeStatus(QString newStatus){
     }else{
         this->irc->setOwnNick(this->ownUser->getName() + "|" +
                               this->ownUser->getStatus());
-    }
+	}
+}
+
+void mainApp::serverMessage(const QString &message, const level lvl){
+	eventServerMessage *myMessage = new
+			eventServerMessage(message, lvl);
+
+	jsonCommand eventMsg(JSONCOMMAND_EVENT);
+
+	eventMsg.addToData("event",myMessage->toVariant());
+	this->ui->send(eventMsg);
+	this->addToEventHistory(myMessage);
+}
+
+void mainApp::ircConnectTimeOut(){
+	this->serverMessage(
+				QString("Connection to IRC failed. Reconnecting in %1 seconds").
+						arg(qint32(RECONNECT_IN_S)), SERVERMESSAGE_LEVEL_ERROR);
+
+	//Now, let's reconnect in RECONNECT_IN_S
+	this->reconnectTimer.singleShot(RECONNECT_IN_S*1000, this,
+									SLOT(doIrcReconnect()));
+}
+
+void mainApp::ircConnected(){
+	this->serverMessage("Connected to IRC!", SERVERMESSAGE_LEVEL_INFO);
+}
+
+void mainApp::ircDisconnected(QString reason){
+	QString msg("Disconnected from IRC: %1. Reconnecting in %2 seconds");
+	msg = msg.arg(reason, qint32(RECONNECT_IN_S));
+
+	this->serverMessage(msg, SERVERMESSAGE_LEVEL_ERROR);
+	//Reconnect in RECONNECT_IN_S
+	this->reconnectTimer.singleShot(RECONNECT_IN_S*1000, this,
+									SLOT(doIrcReconnect()));
+}
+
+void mainApp::doIrcReconnect(){
+	this->serverMessage("Reconnecting", SERVERMESSAGE_LEVEL_INFO);
+	this->irc->doConnect();
 }
 
 }

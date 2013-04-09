@@ -14,7 +14,8 @@ enum logTags{
     LOGTAGS_USER,
     LOGTAGS_SERVER,
     LOGTAGS_UI,
-    LOGTAGS_WEB
+	LOGTAGS_WEB,
+	LOGTAGS_EVENT
 };
 
 /*!

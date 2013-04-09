@@ -17,3 +17,6 @@ To run the client:
 Create a settings.xml file in your build directory.
 You can find a template of it in the CustomIrcClient directory.
 
+Documentation:
+--------------
+Now available [here](http://k-4u.github.io/CustomIRC/index.html)

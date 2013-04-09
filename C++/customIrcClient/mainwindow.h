@@ -6,6 +6,7 @@
 #include <QString>
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QTimer>
 #include "../resources/clslog.h"
 #include "../resources/clsevent.h"
 #include "chatbox.h"
@@ -17,6 +18,7 @@
 #endif
 
 
+#define RECONNECT_IN_S 5
 namespace Ui {
     class MainWindow;
 }
@@ -48,7 +50,8 @@ namespace client{
 #endif
 
 
-		private slots:
+			void showMessage(QString msg, level lvl);
+	private slots:
             void sendChat(QString message);
             void commandGiven(QString command, QList<QString> args);
             void moveScrollBarToBottom(int min, int max);
@@ -69,18 +72,16 @@ namespace client{
             void userQueryCompleted(QVector<ircUser*> users);
 			/*!
 			 * \brief Triggered when a user changes his status (nick|status)
-			 * \param id The DB-ID of this user
-			 * \param newStatus The new status of the user
+			 * \param statusEvent An eventUserChangeStatus object containing more data
 			 * \note Not to be confused with userChangeNick!
 			 */
-            void userStatusChange(int id, QString newStatus);
+			void userStatusChange(eventUserChangeStatus *statusEvent);
 			/*!
 			 * \brief Triggered when a user changes his nick (nick|status)
-			 * \param id The DB-ID of this user
-			 * \param newNick The new nickname of this user
+			 * \param nickEvent An eventUserChangeNick object containing more data
 			 * \note Not to be confused with userStatusChange
 			 */
-            void userChangeNick(int id, QString newNick);
+			void userChangeNick(eventUserChangeNick* nickEvent);
 
 			/*!
 			 * \brief Triggered when a user leaves the room
@@ -94,6 +95,19 @@ namespace client{
 			 */
             void userEnter(eventUserJoin *newUser);
 
+
+			/*!
+			 * \brief Triggered when the server sends us a message that should be displayed in the UI
+			 * \param myMessage An eventServerMessage object containing more data
+			 */
+			void serverMessageReceived(eventServerMessage *myMessage);
+
+			/*!
+			 * \brief Triggered when we cannot connect to the server!
+			 */
+			void connectedTimeout();
+
+			void doReconnect();
         private:
             Ui::MainWindow *ui;
 
@@ -105,6 +119,7 @@ namespace client{
             QMap<int, ircUser *> users;
 
             clsSettings *settings;
+			QTimer *reconnectTimer;
     };
 }
 #endif // MAINWINDOW_H

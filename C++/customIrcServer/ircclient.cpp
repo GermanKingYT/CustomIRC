@@ -11,6 +11,9 @@ ircClient::ircClient(const QString &hostname, const QString &channel
     ,port(port)
     ,channel(QString(channel))
     ,log(clsLog(LOGTAGS_IRC))
+	,connected(false)
+	,connecting(false)
+	,suppressDisconnectSignal(false)
 {
     this->ownNickAndStatus.nick = nick;
     this->init();
@@ -23,34 +26,67 @@ void ircClient::init(){
     buffer = new QBuffer(this);
     buffer->open(QIODevice::ReadWrite);
 
+	this->timeOutChecker = new QTimer(this);
+	this->connectTimer = new QTimer(this);
+
     this->sock = new QTcpSocket(this);
     this->sock->connect(this->sock, SIGNAL(readyRead()), this,
                         SLOT(readData()));
     this->sock->connect(this->sock, SIGNAL(connected()), this,
-                        SLOT(connected()));
+						SLOT(sltConnected()));
     this->sock->connect(this->sock, SIGNAL(disconnected()), this,
                         SLOT(disconnected()));
+
+	this->timeOutChecker->connect(this->timeOutChecker, SIGNAL(timeout()),
+								  this, SLOT(checkForPing()));
+	this->connectTimer->connect(this->connectTimer, SIGNAL(timeout()),
+								this, SLOT(connectTimeout()));
 }
 
 void ircClient::disconnected(){
-    this->log << "Disconnected" << endl;
+	this->log << "Disconnected" << endl;
+	if(suppressDisconnectSignal == false){
+		emit this->IRCDisconnected("Socket disconnect");
+	}
+	suppressDisconnectSignal = false;
 }
+
 
 ircClient::~ircClient(){
     buffer->close();
     this->sock->close();
 }
 
-void ircClient::connect(){
-    //doLog(this->TAG, "Connecting");
+void ircClient::doConnect(){
     this->log << "Connecting" << endl;
-    this->sock->connectToHost(this->hostname,this->port);
+	//Set timeout
+
+	this->connected = false;
+	this->connecting = true;
+	//this->connectTimer->setInterval(MAX_CONNECT_TIMEOUT_IN_MS);
+	//this->connectTimer->setSingleShot(true);
+	//this->connectTimer->start();
+	this->connectTimer->singleShot(MAX_CONNECT_TIMEOUT_IN_MS, this, SLOT(connectTimeout()));
+
+
+	this->sock->connectToHost(this->hostname,this->port);
 }
 
-void ircClient::connected(){
+void ircClient::setOwnUser(ircUser *ownUser){
+	this->ownUser = ownUser;
+}
+
+void ircClient::sltConnected(){
+	this->connected = true;
+	this->connecting = false;
+	this->connectTimer->stop();
+	this->timeOutChecker->start(PING_CHECK_INTERVAL*1000);
     //doLog(this->TAG, "Connected!");
     this->send(QString("USER %1 0 * :%1").arg(this->ownNickAndStatus.nick));
     this->send(QString("NICK %1").arg(this->ownNickAndStatus.nick));
+
+	emit this->IRCConnected();
+
 }
 
 
@@ -79,6 +115,9 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
                 }
             }
             break;
+		case ircCodes::RPL_ENDOFNAMES:
+
+			break;
          default:
             break;
         }
@@ -93,7 +132,7 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
             emit this->chatReceived(channel, getNickAndStatus(sender), args.join(" ").mid(1));
         }else if(command[0] == "NICK"){
             //Somebody changed nick!
-            if(getNickAndStatus(sender).nick == "KoeBot"){
+			if(getNickAndStatus(sender).nick == this->ownUser.getName()){
 
             }else{
                 if(getNickAndStatusFromId(sender).nick ==
@@ -110,7 +149,7 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
             }
         }else if(command[0] == "JOIN"){
             //Somebody joined, goody! :D
-            if(getNickAndStatusFromId(sender).nick == "KoeBot"){
+			if(getNickAndStatusFromId(sender).nick == this->ownUser.getName()){
                 //We have succesfully joined the channel
                 //Yay, we can save our own ID.
                 //Also, get a list of all the people in there
@@ -120,7 +159,8 @@ void ircClient::handleCommand(const QString &sender, const QStringList &command)
                                       command[1].mid(1));
             }
         }else if(command[0] == "PART"){
-            if(getNickAndStatusFromId(sender).nick == "KoeBot"){
+			if(getNickAndStatusFromId(sender).nick == this->ownUser.getName()){
+				//Wait, what?
             }else{
                 emit this->userOffline(getNickAndStatusFromId(sender), sender,
                                        command[1]);
@@ -172,6 +212,9 @@ void ircClient::send(const QString data){
     this->sock->flush();
 }
 
+/*!
+ * \todo Error handling
+ */
 void ircClient::readData(){
     qint64 bytes = this->buffer->write(this->sock->readAll());
     this->buffer->seek(this->buffer->pos() - bytes);
@@ -185,6 +228,9 @@ void ircClient::readData(){
             //Send a pong:
             QString toSend = "PONG" + line.mid(4);
             this->send(qts(toSend).c_str());
+			//Previous one, put it somewhere
+			timeBetweenPings = this->lastPing.elapsed();
+			this->lastPing.start();
         }else if(line.left(5) == QString("ERROR")){
             //Handle.. once :P
         }else{
@@ -196,7 +242,29 @@ void ircClient::readData(){
             this->handleCommand(sender,commandList);
 
         }
-    }
+	}
+}
+
+void ircClient::connectTimeout(){
+	if(this->connected == false && this->connecting == true){
+		this->connecting = false;
+		this->sock->abort();
+		emit this->IRCConnectTimeOut(); //User can decide wether to reconnect immediately
+	}
+}
+
+void ircClient::checkForPing(){
+	if((timeBetweenPings - this->lastPing.elapsed()) < (PING_THRESHOLD*-1000) &&
+			(timeBetweenPings > 0)){
+		suppressDisconnectSignal = true;
+		this->sock->abort();
+		this->sock->disconnectFromHost();
+		emit this->IRCDisconnected("Ping timeout");
+		this->timeOutChecker->stop();
+		timeBetweenPings = 0;
+
+
+	}
 }
 
 

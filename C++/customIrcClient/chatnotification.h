@@ -25,6 +25,16 @@ namespace client{
 			 * \param parent The parent widget
 			 */
             explicit chatNotification(QString message, QWidget *parent = 0);
+
+			/*!
+			 * \brief Constructor taking a message and a time
+			 * \param message The message to be shown
+			 * \param timeOfMessage The time on which the message has occured
+			 * \param myColor The color of the message
+			 * \param parent The parent widget
+			 */
+			explicit chatNotification(QString message, QTime timeOfMessage,
+							 QColor myColor, QWidget *parent = 0);
             ~chatNotification();
 
             void resizeEvent(QResizeEvent *event);

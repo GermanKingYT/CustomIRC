@@ -54,17 +54,36 @@ namespace client {
 		 * \brief Adds a notification to the chatbox
 		 * \param message The notification to add
 		 */
-        void addMessage(QString &message);
+		void addMessage(QString &message);
 		/*!
 		 * \brief Adds a notification to the chatbox
 		 * \param message The notification to add
 		 */
-        void addMessage(const QString &message);
+		void addMessage(const QString &message);
+
 		/*!
-		 * \brief Adds a notification to the chatbox
+		 * \brief Adds a notification to the chatbo with timex
 		 * \param message The notification to add
+		 * \param timeOfMessage The time on which the notification has occured
 		 */
-        void addMessage(const char* msg);
+		void addMessage(const QString &message, QTime timeOfMessage);
+
+		/*!
+		 * \brief Adds a notification to the chatbox with time
+		 * \param message The notification to be shown
+		 * \param timeOfMessage The time on which the notification has occured
+		 */
+		void addMessage(QString &message, QTime timeOfMessage);
+
+
+		/*!
+		 * \brief Adds a notification to the chatbox with time and color
+		 * \param message The notification to be shown
+		 * \param timeOfMessage The time on which the notification has occured
+		 * \param myColor The color of the message
+		 */
+		void addMessage(QString &message, QTime timeOfMessage, QColor &myColor);
+
 
 		/*!
 		 * \brief Sets all the user name labels to the same size

@@ -278,7 +278,20 @@ ircUser *ircUserList::getUserByIrcId(QString ircId){
 }
 
 QVector<ircUser *> ircUserList::getAll() const{
-    return this->users;
+	return this->users;
+}
+
+ircUser *ircUser::operator =(const ircUser *user){
+	this->id = user->id;
+	this->email = user->email;
+	this->ircId = user->ircId;
+	this->name = user->name;
+	this->online = user->online;
+	this->standard = user->standard;
+	this->status = user->status;
+	this->uColor = user->uColor;
+
+	return this;
 }
 
 

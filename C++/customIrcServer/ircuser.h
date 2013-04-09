@@ -91,6 +91,7 @@ public:
 
     friend clsLog& operator<<(clsLog& log, const ircUser* user);
 
+	ircUser* operator=(const ircUser* user);
 private:
     QString name;
     QString ircId;

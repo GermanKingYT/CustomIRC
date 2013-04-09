@@ -2,6 +2,7 @@
 #define IRCCLIENT_H
 
 #include <QVector>
+#include <QTimer>
 #include <QBuffer>
 #include <QString>
 #include <QTcpSocket>
@@ -12,7 +13,10 @@
 #include "../resources/clslog.h"
 #include "ircuser.h"
 
-#define PORT 6667
+#define PORT 6667 /*!< Standard IRC Port*/
+#define MAX_CONNECT_TIMEOUT_IN_MS	5000 /*!< Max timeout for connecting, in MS */
+#define PING_THRESHOLD	50 /*!< How long ago a ping may have been send */
+#define PING_CHECK_INTERVAL	5
 namespace server {
 /*!
  * \brief The ircClient class
@@ -38,7 +42,13 @@ public:
 	/*!
 	 * \brief connects to the IRC server. Sets the whole thing in motion
 	 */
-    void connect();
+	void doConnect();
+
+	/*!
+	 * \brief Sets our own user.
+	 * \param ownUser The user to set as ourselfes
+	 */
+	void setOwnUser(ircUser *ownUser);
 
 	/*!
 	 * \brief Sends a chat message to a certain channel.
@@ -127,6 +137,21 @@ signals:
                           const nickAndStatus newNick,
                           const QString id);
 
+	/*!
+	 * \brief Emitted when a connection cannot be made after MAX_CONNECT_TIMEOUT_IN_MS
+	 */
+	void IRCConnectTimeOut();
+
+	/*!
+	 * \brief Emitted when the connection has been established
+	 */
+	void IRCConnected();
+
+	/*!
+	 * \brief Emitted when the connection was cut!
+	 */
+	void IRCDisconnected(QString reason);
+
 private:
 	/*!
 	 * \brief Initializes the IRC Client. Does not yet connect!
@@ -154,9 +179,17 @@ private:
 
 public slots:
     void disconnected();
-    void connected();
+	void sltConnected();
+	/*!
+	 * \brief Reads data from the IRC Socket
+	 */
     void readData();
+	void connectTimeout();
 
+	/*!
+	 * \brief Runs every CHECK_PING_INTERVAL to check if the last ping was there
+	 */
+	void checkForPing();
 private:
 	/*!
 	 * \brief The hostname to which the IRC client has connected
@@ -192,6 +225,14 @@ private:
 
     nickAndStatus ownNickAndStatus;
     ircUser ownUser;
+	bool connected;
+	bool connecting;
+
+	QTimer *connectTimer;
+	QTimer *timeOutChecker;
+	QTime lastPing;
+	int timeBetweenPings;
+	bool suppressDisconnectSignal;
 };
 }
 #endif // IRCCLIENT_H
