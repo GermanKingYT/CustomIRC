@@ -27,4 +27,4 @@ Documentation:
 --------------
 Now available [here](http://k-4u.github.io/CustomIRC/index.html) in HTML
 
-or [here](http://k-4u.github.ui/CustomIRC/latex/refman.pdf) in PDF
+or [here](http://k-4u.github.io/CustomIRC/latex/refman.pdf) in PDF
