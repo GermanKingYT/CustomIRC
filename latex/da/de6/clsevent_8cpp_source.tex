@@ -1,0 +1,99 @@
+\hypertarget{clsevent_8cpp}{\section{clsevent.\-cpp}
+\label{da/de6/clsevent_8cpp}\index{C++/resources/clsevent.\-cpp@{C++/resources/clsevent.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clsevent_8h}{clsevent.h}"}
+00002 
+\hypertarget{clsevent_8cpp_source_l00003}{}\hyperlink{namespaceshared}{00003} \textcolor{keyword}{namespace }shared\{
+\hypertarget{clsevent_8cpp_source_l00004}{}\hyperlink{namespaceshared_1_1events}{00004}     \textcolor{keyword}{namespace }events\{
+\hypertarget{clsevent_8cpp_source_l00005}{}\hyperlink{classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}{00005}         \hyperlink{classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}{clsEvent::clsEvent}()
+00006             :log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252}{LOGTAGS\_EVENT})
+00007         \{
+00008             this->\hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{timeOfEvent} = QDateTime::currentDateTime();
+00009         \}
+00010 
+\hypertarget{clsevent_8cpp_source_l00011}{}\hyperlink{classshared_1_1events_1_1cls_event_a192623e78217baaf5b286790d809521b}{00011}         \hyperlink{classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}{clsEvent::clsEvent}(QVariantMap data)
+00012             :log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252}{LOGTAGS\_EVENT})
+00013         \{
+00014             this->data = data[\textcolor{stringliteral}{"data"}].toMap();\textcolor{comment}{//Makes sense?}
+00015             this->\hyperlink{classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}{setEventType}(data[\textcolor{stringliteral}{"type"}].toString());
+00016             this->\hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{timeOfEvent} = data[\textcolor{stringliteral}{"dateTime"}].toDateTime();
+00017         \}
+00018 
+\hypertarget{clsevent_8cpp_source_l00019}{}\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{00019}         \textcolor{keywordtype}{void} \hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{clsEvent::addToData}(\textcolor{keyword}{const} QString &key, \textcolor{keyword}{const} QVariant data)\{
+00020             this->data.insert(key, data);
+00021         \}
+00022 
+\hypertarget{clsevent_8cpp_source_l00023}{}\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{00023}         QVariant \hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{clsEvent::toVariant}()\textcolor{keyword}{ const}\{
+00024             QVariantMap ret;
+00025             ret[\textcolor{stringliteral}{"type"}] = this->\hyperlink{classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}{getEventType}();
+00026             ret[\textcolor{stringliteral}{"dateTime"}] = this->\hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{timeOfEvent};
+00027             ret[\textcolor{stringliteral}{"data"}] = QVariant(this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data});
+00028 
+00029             \textcolor{keywordflow}{return} QVariant(ret);
+00030         \}
+00031 
+\hypertarget{clsevent_8cpp_source_l00032}{}\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{00032}         QVariant \hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{clsEvent::getData}(QString key)\textcolor{keyword}{ const}\{
+00033             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[key];
+00034         \}
+00035 
+\hypertarget{clsevent_8cpp_source_l00036}{}\hyperlink{classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}{00036}         \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{eventTypes} \hyperlink{classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}{clsEvent::getType}()\textcolor{keyword}{ const}\{
+00037             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType};
+00038         \}
+00039 
+00040 
+\hypertarget{clsevent_8cpp_source_l00041}{}\hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{00041}         QTime \hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{clsEvent::getTime}()\textcolor{keyword}{ const}\{
+00042             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{timeOfEvent}.time();
+00043         \}
+00044 
+\hypertarget{clsevent_8cpp_source_l00045}{}\hyperlink{classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}{00045}         \textcolor{keywordtype}{void} \hyperlink{classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}{clsEvent::setEventType}(\textcolor{keyword}{const} QString eventString)\{
+00046             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{eventTypes} ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aa9e485704f21f82413549a0228364596}{EVENTTYPE\_NONE};
+00047             \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"CHAT"})\{
+00048                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{EVENTTYPE\_CHAT};
+00049             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"USER\_JOIN"})\{
+00050                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{EVENTTYPE\_USER\_JOIN};
+00051             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"USER\_LEFT"})\{
+00052                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{EVENTTYPE\_USER\_LEFT};
+00053             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"USER\_STATUS"})\{
+00054                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{EVENTTYPE\_USER\_STATUS};
+00055             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"USER\_NICK"})\{
+00056                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{EVENTTYPE\_USER\_NICK};
+00057             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(eventString == \textcolor{stringliteral}{"SERVERMSG"})\{
+00058                 ret = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{EVENTTYPE\_SERVERMSG};
+00059             \}
+00060             this->\hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = ret;
+00061         \}
+00062 
+\hypertarget{clsevent_8cpp_source_l00063}{}\hyperlink{classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}{00063}         QString \hyperlink{classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}{clsEvent::getEventType}()\textcolor{keyword}{ const}\{
+00064             QString ret = \textcolor{stringliteral}{""};
+00065             \textcolor{keywordflow}{switch}(this->\hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType})\{
+00066                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{EVENTTYPE\_CHAT}:
+00067                     ret = \textcolor{stringliteral}{"CHAT"};
+00068                     \textcolor{keywordflow}{break};
+00069                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{EVENTTYPE\_USER\_JOIN}:
+00070                     ret = \textcolor{stringliteral}{"USER\_JOIN"};
+00071                     \textcolor{keywordflow}{break};
+00072                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{EVENTTYPE\_USER\_LEFT}:
+00073                     ret = \textcolor{stringliteral}{"USER\_LEFT"};
+00074                     \textcolor{keywordflow}{break};
+00075                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{EVENTTYPE\_USER\_STATUS}:
+00076                     ret = \textcolor{stringliteral}{"USER\_STATUS"};
+00077                     \textcolor{keywordflow}{break};
+00078                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{EVENTTYPE\_USER\_NICK}:
+00079                     ret = \textcolor{stringliteral}{"USER\_NICK"};
+00080                     \textcolor{keywordflow}{break};
+00081                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{EVENTTYPE\_SERVERMSG}:
+00082                     ret = \textcolor{stringliteral}{"SERVERMSG"};
+00083                     \textcolor{keywordflow}{break};
+00084                 \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aa9e485704f21f82413549a0228364596}{EVENTTYPE\_NONE}:
+00085                     ret = \textcolor{stringliteral}{"NaN"};
+00086                     \textcolor{keywordflow}{break};
+00087             \}
+00088             \textcolor{keywordflow}{return} ret;
+00089         \}
+00090 
+00091 
+00092     \}
+00093 \}
+\end{DoxyCode}

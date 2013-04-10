@@ -1,0 +1,7 @@
+<map id="client::chatEntry::calculateMessageWidth" name="client::chatEntry::calculateMessageWidth">
+<area shape="rect" id="node2" href="$d5/dfb/classclient_1_1chat_entry.html#a153e1d0693c3069839e04878844b431f" title="client::chatEntry::init" alt="" coords="617,39,759,66"/>
+<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.html#ac3d69f6791e2497c86fe99c068b832b6" title="Used for setting the width of the nick label after initializing." alt="" coords="216,32,341,73"/>
+<area shape="rect" id="node6" href="$d5/dfb/classclient_1_1chat_entry.html#a853a6468432e8f44e66d335b9dc7ece9" title="client::chatEntry::\lresizeEvent" alt="" coords="216,97,341,138"/>
+<area shape="rect" id="node3" href="$d5/dfb/classclient_1_1chat_entry.html#a242327cb4a358fdbc182147d2fadf00c" title="Constructor not taking a time." alt="" coords="808,32,933,73"/>
+<area shape="rect" id="node5" href="$da/d72/classclient_1_1chat_box.html#a0d33977310a176a78d228eaeb1a0c39d" title="Sets all the user name labels to the same size." alt="" coords="390,32,567,73"/>
+</map>

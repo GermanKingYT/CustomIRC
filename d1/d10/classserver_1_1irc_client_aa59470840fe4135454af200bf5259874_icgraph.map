@@ -1,0 +1,10 @@
+<map id="server::ircClient::chatReceived" name="server::ircClient::chatReceived">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="174,5,293,46"/>
+<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.html#a6b62de4b4dc3c1f7f0fe7c6f91c1cf05" title="Sends a chat message to a certain channel." alt="" coords="174,70,293,111"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="378,5,497,46"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="584,12,720,39"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="771,5,890,46"/>
+<area shape="rect" id="node7" href="$d1/d48/classserver_1_1main_app.html#a022d0310199da514b250fec2541ada4a" title="Triggered when a UI client wants to send a chat message." alt="" coords="342,77,533,104"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="581,77,723,104"/>
+<area shape="rect" id="node9" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="805,77,856,104"/>
+</map>

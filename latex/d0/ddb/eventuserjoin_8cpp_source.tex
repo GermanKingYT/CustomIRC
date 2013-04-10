@@ -1,0 +1,29 @@
+\hypertarget{eventuserjoin_8cpp}{\section{eventuserjoin.\-cpp}
+\label{d0/ddb/eventuserjoin_8cpp}\index{C++/resources/events/eventuserjoin.\-cpp@{C++/resources/events/eventuserjoin.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventuserjoin_8h}{eventuserjoin.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared\{
+00004     \textcolor{keyword}{namespace }events\{
+\hypertarget{eventuserjoin_8cpp_source_l00005}{}\hyperlink{classshared_1_1events_1_1event_user_join_ab486ae25fa5933ec647e5d19574d3f66}{00005}         \hyperlink{classshared_1_1events_1_1event_user_join_ab486ae25fa5933ec647e5d19574d3f66}{eventUserJoin::eventUserJoin}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} userId, QVariantMap user)\{
+00006             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{EVENTTYPE\_USER\_JOIN};
+00007             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"userId"}, userId);
+00008             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"user"},QVariant(user));
+00009         \}
+00010 
+\hypertarget{eventuserjoin_8cpp_source_l00011}{}\hyperlink{classshared_1_1events_1_1event_user_join_a96881447be0a8c8383a758048b72953d}{00011}         \hyperlink{classshared_1_1events_1_1event_user_join_ab486ae25fa5933ec647e5d19574d3f66}{eventUserJoin::eventUserJoin}(QVariantMap data)
+00012             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00013         \{ \}
+00014 
+\hypertarget{eventuserjoin_8cpp_source_l00015}{}\hyperlink{classshared_1_1events_1_1event_user_join_ab1386fad8a4b2bb51e62589565090d5a}{00015}         \textcolor{keywordtype}{int} \hyperlink{classshared_1_1events_1_1event_user_join_ab1386fad8a4b2bb51e62589565090d5a}{eventUserJoin::getUserId}()\textcolor{keyword}{ const}\{
+00016             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"userId"}).toInt();
+00017         \}
+00018 
+\hypertarget{eventuserjoin_8cpp_source_l00019}{}\hyperlink{classshared_1_1events_1_1event_user_join_afd49e93a57440f97dd02ccbec353cdb8}{00019}         QVariantMap \hyperlink{classshared_1_1events_1_1event_user_join_afd49e93a57440f97dd02ccbec353cdb8}{eventUserJoin::getUser}()\textcolor{keyword}{ const}\{
+00020             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"user"}).toMap();
+00021         \}
+00022     \}
+00023 \}
+\end{DoxyCode}

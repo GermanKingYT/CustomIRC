@@ -1,0 +1,59 @@
+\hypertarget{functions_8cpp}{\section{functions.\-cpp}
+\label{d3/d36/functions_8cpp}\index{C++/custom\-Irc\-Server/functions.\-cpp@{C++/custom\-Irc\-Server/functions.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 
+00002 \textcolor{preprocessor}{#include <iostream>}
+00003 \textcolor{preprocessor}{#include <stdlib.h>}
+00004 \textcolor{preprocessor}{#include <string.h>}
+00005 \textcolor{preprocessor}{#include <stdio.h>}
+00006 \textcolor{preprocessor}{#include <stdarg.h>}
+00007 \textcolor{preprocessor}{#include <QDebug>}
+00008 
+00009 \textcolor{preprocessor}{#include "\hyperlink{functions_8h}{functions.h}"}
+00010 
+00011 \textcolor{keyword}{using namespace }std;
+00012 \textcolor{keyword}{namespace }server\{
+00013 
+\hypertarget{functions_8cpp_source_l00014}{}\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{00014} \textcolor{keyword}{const} \textcolor{keywordtype}{string} \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(\textcolor{keyword}{const} QString str)\{
+00015     \textcolor{keywordflow}{return} str.toStdString();
+00016 \}
+00017 
+\hypertarget{functions_8cpp_source_l00018}{}\hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{00018} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(\textcolor{keyword}{const} QString dNick)\{
+00019     \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} ret;
+00020     QString nick = dNick;
+00021 
+00022     \textcolor{keywordflow}{if}(dNick.indexOf(\textcolor{stringliteral}{"!"}) >= 0)\{
+00023         nick = dNick.left(nick.indexOf(\textcolor{stringliteral}{"!"}));
+00024     \}
+00025     \textcolor{keywordflow}{if}(nick.indexOf(\textcolor{stringliteral}{"|"}) >= 0)\{
+00026         ret.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} = nick.left(nick.indexOf(\textcolor{stringliteral}{"|"}));
+00027         ret.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status} =  nick.mid(nick.indexOf(\textcolor{stringliteral}{"|"})+1);
+00028     \}\textcolor{keywordflow}{else}\{
+00029         ret.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} = nick;
+00030     \}
+00031     \textcolor{keywordflow}{if}(ret.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick}.left(1) == \textcolor{stringliteral}{":"})\{
+00032         ret.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} = ret.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick}.mid(1);
+00033     \}
+00034     \textcolor{keywordflow}{return} ret;
+00035 \}
+00036 
+\hypertarget{functions_8cpp_source_l00037}{}\hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{00037} \textcolor{keyword}{const} QString \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{getId}(\textcolor{keyword}{const} QString full)\{
+00038     \textcolor{keywordflow}{return} full.mid(full.indexOf(\textcolor{stringliteral}{"!"})+1);
+00039 \}
+00040 
+\hypertarget{functions_8cpp_source_l00041}{}\hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{00041} \textcolor{keywordtype}{bool} \hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{inCommand}(\textcolor{keyword}{const} QString *command, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* search)\{
+00042     \textcolor{keywordflow}{return} (command->indexOf(search) >= 0);
+00043 \}
+00044 
+00045 
+\hypertarget{functions_8cpp_source_l00046}{}\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{00046} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(\textcolor{keyword}{const} QString \textcolor{keywordtype}{id})\{
+00047     QString nick(\textcolor{keywordtype}{id}.left(\textcolor{keywordtype}{id}.indexOf(\textcolor{stringliteral}{"!"})));
+00048     \textcolor{keywordflow}{return} \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(nick);
+00049 \}
+00050 
+00051 
+00052 
+00053 \}
+\end{DoxyCode}

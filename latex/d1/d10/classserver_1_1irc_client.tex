@@ -1,0 +1,1189 @@
+\hypertarget{classserver_1_1irc_client}{\section{server\-:\-:irc\-Client Class Reference}
+\label{d1/d10/classserver_1_1irc_client}\index{server\-::irc\-Client@{server\-::irc\-Client}}
+}
+
+
+The \hyperlink{classserver_1_1irc_client}{irc\-Client} class.  
+
+
+
+
+{\ttfamily \#include $<$ircclient.\-h$>$}
+
+
+
+Inheritance diagram for server\-:\-:irc\-Client\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{d4/dfd/classserver_1_1irc_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for server\-:\-:irc\-Client\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d4/d1c/classserver_1_1irc_client__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{disconnected} ()
+\item 
+void \hyperlink{classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}{slt\-Connected} ()
+\item 
+void \hyperlink{classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}{read\-Data} ()
+\begin{DoxyCompactList}\small\item\em Reads data from the I\-R\-C Socket. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{connect\-Timeout} ()
+\item 
+void \hyperlink{classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}{check\-For\-Ping} ()
+\begin{DoxyCompactList}\small\item\em Runs every C\-H\-E\-C\-K\-\_\-\-P\-I\-N\-G\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L to check if the last ping was there. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1irc_client_a5791e184ead2287b9c6e609e0edc45bb}{startup\-Complete} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the client is logged in. M\-O\-T\-D has been received. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{chat\-Received} (const Q\-String \hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} user, const Q\-String message)
+\begin{DoxyCompactList}\small\item\em Emitted when a chatmessage has been received. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1}{user\-Online} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick\-Name, const Q\-String id, const Q\-String \hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel})
+\begin{DoxyCompactList}\small\item\em Emitted when a user comes online with a J\-O\-I\-N message. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a1ba37565db4acdfae3163d8d7217d9f2}{user\-Offline} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick\-Name, const Q\-String id, const Q\-String \hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel})
+\begin{DoxyCompactList}\small\item\em Emitted when a user leaves the room with a P\-A\-R\-T message. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a566c94db09896197fdb8e982756b8c1e}{user\-Change\-Nick} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} old\-Nick\-Name, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} new\-Nick\-Name, const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Emitted when a user changes his nickname (nick$|$\-Status) \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_afa10a5c7c8ee0a4cfdae135d6737a0a2}{user\-Change\-Status} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} old\-Nick, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} new\-Nick, const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Emitted when a user changes his status (nick$|$\-Status) \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a6e73d106182456e97f48db009a29642d}{I\-R\-C\-Connect\-Time\-Out} ()
+\begin{DoxyCompactList}\small\item\em Emitted when a connection cannot be made after M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a47c67bb9fd8640adf17a6ae01f8b7154}{I\-R\-C\-Connected} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the connection has been established. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4}{I\-R\-C\-Disconnected} (Q\-String reason)
+\begin{DoxyCompactList}\small\item\em Emitted when the connection was cut! \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1irc_client_a0f263c3a5ae9d82109842518b4866ab5}{irc\-Client} (const Q\-String \&\hyperlink{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{hostname}, const Q\-String \&\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}, const Q\-String \&nick, const int \hyperlink{classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}{port}=\hyperlink{ircclient_8h_a614217d263be1fb1a5f76e2ff7be19a2}{P\-O\-R\-T})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classserver_1_1irc_client}{irc\-Client} constructor \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_client_a4c82075fd5acb2f8fadfded3d9d3f21e}{$\sim$irc\-Client} ()
+\item 
+void \hyperlink{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{do\-Connect} ()
+\begin{DoxyCompactList}\small\item\em connects to the I\-R\-C server. Sets the whole thing in motion \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}{set\-Own\-User} (\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$\hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{own\-User})
+\begin{DoxyCompactList}\small\item\em Sets our own user. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{send\-Chat} (const char $\ast$msg, const char $\ast$\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel})
+\begin{DoxyCompactList}\small\item\em Sends a chat message to a certain channel. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_aff095b9ea0faa07199be9edc474cffe6}{send\-Chat} (const char $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Sends a chat message to the current channel. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a8c7ad810babb1f87de243688e1779352}{send\-Chat} (const Q\-String \&msg)
+\begin{DoxyCompactList}\small\item\em Sends a chat message to the current channel. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a1909d019dab9c0225b42c47928803835}{set\-User} (\hyperlink{classserver_1_1irc_user}{irc\-User} \&user)
+\begin{DoxyCompactList}\small\item\em Sets our own user. \end{DoxyCompactList}\item 
+\hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} \hyperlink{classserver_1_1irc_client_a210b13eb1f714bb48d84f256c8e2e8b4}{get\-Own\-Nick} () const 
+\begin{DoxyCompactList}\small\item\em get\-Own\-Nick \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{set\-Own\-Nick} (const Q\-String \&new\-Nick)
+\begin{DoxyCompactList}\small\item\em Sets our own nickname. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}{init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the I\-R\-C Client. Does not yet connect! \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send} (const Q\-String data)
+\begin{DoxyCompactList}\small\item\em Sends a message to the I\-R\-C server. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}{handle\-Command} (const Q\-String \&sender, const Q\-String\-List \&command)
+\begin{DoxyCompactList}\small\item\em Handles a command sent from the irc server. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_client_a478f7914fdcea7103fe8166d55e76df1}{send\-Pong} (const Q\-String packet)
+\begin{DoxyCompactList}\small\item\em Replies to the server ping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{hostname}
+\begin{DoxyCompactList}\small\item\em The hostname to which the I\-R\-C client has connected. \end{DoxyCompactList}\item 
+int \hyperlink{classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}{port}
+\begin{DoxyCompactList}\small\item\em The port on which the I\-R\-C client has connected. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}
+\begin{DoxyCompactList}\small\item\em The channel the I\-R\-C client joined. \end{DoxyCompactList}\item 
+bool \hyperlink{classserver_1_1irc_client_aa5a321d1684c24415e65752c0359de2d}{motd\-Received}
+\begin{DoxyCompactList}\small\item\em If the server has sent us the Message Of The Day. \end{DoxyCompactList}\item 
+Q\-Tcp\-Socket $\ast$ \hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}
+\begin{DoxyCompactList}\small\item\em The socket communicating with the I\-R\-C server. \end{DoxyCompactList}\item 
+Q\-Buffer $\ast$ \hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}
+\begin{DoxyCompactList}\small\item\em Buffer for receiving messages. \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log}
+\begin{DoxyCompactList}\small\item\em Log class for easy debugging. \end{DoxyCompactList}\item 
+\hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} \hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{own\-Nick\-And\-Status}
+\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} \hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{own\-User}
+\item 
+bool \hyperlink{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{connected}
+\item 
+bool \hyperlink{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{connecting}
+\item 
+Q\-Timer $\ast$ \hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connect\-Timer}
+\item 
+Q\-Timer $\ast$ \hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{time\-Out\-Checker}
+\item 
+Q\-Time \hyperlink{classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}{last\-Ping}
+\item 
+int \hyperlink{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{time\-Between\-Pings}
+\item 
+bool \hyperlink{classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}{suppress\-Disconnect\-Signal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classserver_1_1irc_client}{irc\-Client} class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) My beautiful I\-R\-C Client. 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00027}{27} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classserver_1_1irc_client_a0f263c3a5ae9d82109842518b4866ab5}{\index{server\-::irc\-Client@{server\-::irc\-Client}!irc\-Client@{irc\-Client}}
+\index{irc\-Client@{irc\-Client}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{irc\-Client}]{\setlength{\rightskip}{0pt plus 5cm}server\-::irc\-Client\-::irc\-Client (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{hostname, }
+\item[{const Q\-String \&}]{channel, }
+\item[{const Q\-String \&}]{nick, }
+\item[{const int}]{port = {\ttfamily {\bf P\-O\-R\-T}}}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a0f263c3a5ae9d82109842518b4866ab5}
+
+
+\hyperlink{classserver_1_1irc_client}{irc\-Client} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hostname} & The I\-R\-C host to connect to \\
+\hline
+{\em port} & The I\-R\-C port to connect to (if not standard) \\
+\hline
+{\em channel} & The channel to join \\
+\hline
+{\em nick} & The nick to use \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00008}{8} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a0f263c3a5ae9d82109842518b4866ab5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a4c82075fd5acb2f8fadfded3d9d3f21e}{\index{server\-::irc\-Client@{server\-::irc\-Client}!$\sim$irc\-Client@{$\sim$irc\-Client}}
+\index{$\sim$irc\-Client@{$\sim$irc\-Client}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{$\sim$irc\-Client}]{\setlength{\rightskip}{0pt plus 5cm}server\-::irc\-Client\-::$\sim$irc\-Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a4c82075fd5acb2f8fadfded3d9d3f21e}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00055}{55} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{\index{server\-::irc\-Client@{server\-::irc\-Client}!chat\-Received@{chat\-Received}}
+\index{chat\-Received@{chat\-Received}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::chat\-Received (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{channel, }
+\item[{const {\bf nick\-And\-Status}}]{user, }
+\item[{const Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}
+
+
+Emitted when a chatmessage has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel in which the message has been received \\
+\hline
+{\em user} & The nick and status of the user sending the message \\
+\hline
+{\em message} & The message itself \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_aa59470840fe4135454af200bf5259874_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}{\index{server\-::irc\-Client@{server\-::irc\-Client}!check\-For\-Ping@{check\-For\-Ping}}
+\index{check\-For\-Ping@{check\-For\-Ping}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{check\-For\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::check\-For\-Ping (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d10/classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}
+
+
+Runs every C\-H\-E\-C\-K\-\_\-\-P\-I\-N\-G\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L to check if the last ping was there. 
+
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00256}{256} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{d1/d10/classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{\index{server\-::irc\-Client@{server\-::irc\-Client}!connect\-Timeout@{connect\-Timeout}}
+\index{connect\-Timeout@{connect\-Timeout}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{connect\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::connect\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d10/classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00248}{248} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d1/d10/classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{\index{server\-::irc\-Client@{server\-::irc\-Client}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d10/classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00046}{46} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{\index{server\-::irc\-Client@{server\-::irc\-Client}!do\-Connect@{do\-Connect}}
+\index{do\-Connect@{do\-Connect}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{do\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::do\-Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}
+
+
+connects to the I\-R\-C server. Sets the whole thing in motion 
+
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00060}{60} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a210b13eb1f714bb48d84f256c8e2e8b4}{\index{server\-::irc\-Client@{server\-::irc\-Client}!get\-Own\-Nick@{get\-Own\-Nick}}
+\index{get\-Own\-Nick@{get\-Own\-Nick}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{get\-Own\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}{\bf nick\-And\-Status} server\-::irc\-Client\-::get\-Own\-Nick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d10/classserver_1_1irc_client_a210b13eb1f714bb48d84f256c8e2e8b4}
+
+
+get\-Own\-Nick 
+
+\begin{DoxyReturn}{Returns}
+Our own nickname. At that moment known to us. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00197}{197} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+\hypertarget{classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}{\index{server\-::irc\-Client@{server\-::irc\-Client}!handle\-Command@{handle\-Command}}
+\index{handle\-Command@{handle\-Command}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{handle\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::handle\-Command (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{sender, }
+\item[{const Q\-String\-List \&}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}
+
+
+Handles a command sent from the irc server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The I\-R\-C-\/\-I\-D that send the command \\
+\hline
+{\em command} & A string list containing the command \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00094}{94} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}{\index{server\-::irc\-Client@{server\-::irc\-Client}!init@{init}}
+\index{init@{init}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}
+
+
+Initializes the I\-R\-C Client. Does not yet connect! 
+
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00022}{22} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d1/d10/classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a47c67bb9fd8640adf17a6ae01f8b7154}{\index{server\-::irc\-Client@{server\-::irc\-Client}!I\-R\-C\-Connected@{I\-R\-C\-Connected}}
+\index{I\-R\-C\-Connected@{I\-R\-C\-Connected}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{I\-R\-C\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::\-I\-R\-C\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a47c67bb9fd8640adf17a6ae01f8b7154}
+
+
+Emitted when the connection has been established. 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a47c67bb9fd8640adf17a6ae01f8b7154_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a6e73d106182456e97f48db009a29642d}{\index{server\-::irc\-Client@{server\-::irc\-Client}!I\-R\-C\-Connect\-Time\-Out@{I\-R\-C\-Connect\-Time\-Out}}
+\index{I\-R\-C\-Connect\-Time\-Out@{I\-R\-C\-Connect\-Time\-Out}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{I\-R\-C\-Connect\-Time\-Out}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::\-I\-R\-C\-Connect\-Time\-Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a6e73d106182456e97f48db009a29642d}
+
+
+Emitted when a connection cannot be made after M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S. 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a6e73d106182456e97f48db009a29642d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4}{\index{server\-::irc\-Client@{server\-::irc\-Client}!I\-R\-C\-Disconnected@{I\-R\-C\-Disconnected}}
+\index{I\-R\-C\-Disconnected@{I\-R\-C\-Disconnected}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{I\-R\-C\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::\-I\-R\-C\-Disconnected (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{reason}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4}
+
+
+Emitted when the connection was cut! 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}{\index{server\-::irc\-Client@{server\-::irc\-Client}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::read\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d10/classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}
+
+
+Reads data from the I\-R\-C Socket. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Error handling \end{DoxyRefDesc}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00218}{218} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{\index{server\-::irc\-Client@{server\-::irc\-Client}!send@{send}}
+\index{send@{send}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::send (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}
+
+
+Sends a message to the I\-R\-C server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00207}{207} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{\index{server\-::irc\-Client@{server\-::irc\-Client}!send\-Chat@{send\-Chat}}
+\index{send\-Chat@{send\-Chat}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::send\-Chat (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{const char $\ast$}]{channel}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}
+
+
+Sends a chat message to a certain channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send \\
+\hline
+{\em channel} & The channel to send it to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00174}{174} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_aff095b9ea0faa07199be9edc474cffe6}{\index{server\-::irc\-Client@{server\-::irc\-Client}!send\-Chat@{send\-Chat}}
+\index{send\-Chat@{send\-Chat}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::send\-Chat (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_aff095b9ea0faa07199be9edc474cffe6}
+
+
+Sends a chat message to the current channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00181}{181} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_aff095b9ea0faa07199be9edc474cffe6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a8c7ad810babb1f87de243688e1779352}{\index{server\-::irc\-Client@{server\-::irc\-Client}!send\-Chat@{send\-Chat}}
+\index{send\-Chat@{send\-Chat}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::send\-Chat (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{msg}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a8c7ad810babb1f87de243688e1779352}
+
+
+Sends a chat message to the current channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00187}{187} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a8c7ad810babb1f87de243688e1779352_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a478f7914fdcea7103fe8166d55e76df1}{\index{server\-::irc\-Client@{server\-::irc\-Client}!send\-Pong@{send\-Pong}}
+\index{send\-Pong@{send\-Pong}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{send\-Pong}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::send\-Pong (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a478f7914fdcea7103fe8166d55e76df1}
+
+
+Replies to the server ping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{\index{server\-::irc\-Client@{server\-::irc\-Client}!set\-Own\-Nick@{set\-Own\-Nick}}
+\index{set\-Own\-Nick@{set\-Own\-Nick}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{set\-Own\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::set\-Own\-Nick (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{new\-Nick}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}
+
+
+Sets our own nickname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Nick} & The nickname to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00201}{201} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}{\index{server\-::irc\-Client@{server\-::irc\-Client}!set\-Own\-User@{set\-Own\-User}}
+\index{set\-Own\-User@{set\-Own\-User}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{set\-Own\-User}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::set\-Own\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{own\-User}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}
+
+
+Sets our own user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em own\-User} & The user to set as ourselfes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00075}{75} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a1909d019dab9c0225b42c47928803835}{\index{server\-::irc\-Client@{server\-::irc\-Client}!set\-User@{set\-User}}
+\index{set\-User@{set\-User}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{set\-User}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::set\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} \&}]{user}
+\end{DoxyParamCaption}
+)}}\label{d1/d10/classserver_1_1irc_client_a1909d019dab9c0225b42c47928803835}
+
+
+Sets our own user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Our new user. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00193}{193} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+\hypertarget{classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}{\index{server\-::irc\-Client@{server\-::irc\-Client}!slt\-Connected@{slt\-Connected}}
+\index{slt\-Connected@{slt\-Connected}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{slt\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::slt\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d10/classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}
+
+
+Definition at line \hyperlink{ircclient_8cpp_source_l00079}{79} of file \hyperlink{ircclient_8cpp_source}{ircclient.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a31910635c17bd56be644084746653ba8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a31910635c17bd56be644084746653ba8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a5791e184ead2287b9c6e609e0edc45bb}{\index{server\-::irc\-Client@{server\-::irc\-Client}!startup\-Complete@{startup\-Complete}}
+\index{startup\-Complete@{startup\-Complete}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{startup\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::startup\-Complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a5791e184ead2287b9c6e609e0edc45bb}
+
+
+Emitted when the client is logged in. M\-O\-T\-D has been received. 
+
+\hypertarget{classserver_1_1irc_client_a566c94db09896197fdb8e982756b8c1e}{\index{server\-::irc\-Client@{server\-::irc\-Client}!user\-Change\-Nick@{user\-Change\-Nick}}
+\index{user\-Change\-Nick@{user\-Change\-Nick}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{user\-Change\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::user\-Change\-Nick (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{old\-Nick\-Name, }
+\item[{const {\bf nick\-And\-Status}}]{new\-Nick\-Name, }
+\item[{const Q\-String}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a566c94db09896197fdb8e982756b8c1e}
+
+
+Emitted when a user changes his nickname (nick$|$\-Status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\-Nick\-Name} & The old nick and status this user had \\
+\hline
+{\em new\-Nick\-Name} & The new nick and status this user now has \\
+\hline
+{\em id} & His I\-R\-C-\/\-I\-D. The only thing probably that remained the same. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Not to be confused with user\-Change\-Status! 
+\end{DoxyWarning}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a566c94db09896197fdb8e982756b8c1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_afa10a5c7c8ee0a4cfdae135d6737a0a2}{\index{server\-::irc\-Client@{server\-::irc\-Client}!user\-Change\-Status@{user\-Change\-Status}}
+\index{user\-Change\-Status@{user\-Change\-Status}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{user\-Change\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::user\-Change\-Status (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{old\-Nick, }
+\item[{const {\bf nick\-And\-Status}}]{new\-Nick, }
+\item[{const Q\-String}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_afa10a5c7c8ee0a4cfdae135d6737a0a2}
+
+
+Emitted when a user changes his status (nick$|$\-Status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\-Nick} & The old nick and status this user had. \\
+\hline
+{\em new\-Nick} & The new nick and status this user now has \\
+\hline
+{\em id} & His I\-R\-C-\/\-I\-D. The only thing probably that remained the same. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Not to be confused with user\-Change\-Nick! 
+\end{DoxyWarning}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_afa10a5c7c8ee0a4cfdae135d6737a0a2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a1ba37565db4acdfae3163d8d7217d9f2}{\index{server\-::irc\-Client@{server\-::irc\-Client}!user\-Offline@{user\-Offline}}
+\index{user\-Offline@{user\-Offline}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{user\-Offline}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::user\-Offline (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{nick\-Name, }
+\item[{const Q\-String}]{id, }
+\item[{const Q\-String}]{channel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a1ba37565db4acdfae3163d8d7217d9f2}
+
+
+Emitted when a user leaves the room with a P\-A\-R\-T message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick\-Name} & The nick and status the user had when he left \\
+\hline
+{\em id} & The I\-R\-C-\/\-I\-D of this user \\
+\hline
+{\em channel} & The channel which he left \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a1ba37565db4acdfae3163d8d7217d9f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1}{\index{server\-::irc\-Client@{server\-::irc\-Client}!user\-Online@{user\-Online}}
+\index{user\-Online@{user\-Online}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{user\-Online}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-Client\-::user\-Online (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{nick\-Name, }
+\item[{const Q\-String}]{id, }
+\item[{const Q\-String}]{channel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d10/classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1}
+
+
+Emitted when a user comes online with a J\-O\-I\-N message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick\-Name} & The nick and status the user has. \\
+\hline
+{\em id} & The I\-R\-C-\/\-I\-D of this user \\
+\hline
+{\em channel} & The channel in which he has joined \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d10/classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{\index{server\-::irc\-Client@{server\-::irc\-Client}!buffer@{buffer}}
+\index{buffer@{buffer}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Buffer$\ast$ server\-::irc\-Client\-::buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}
+
+
+Buffer for receiving messages. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00219}{219} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{\index{server\-::irc\-Client@{server\-::irc\-Client}!channel@{channel}}
+\index{channel@{channel}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{channel}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::irc\-Client\-::channel\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}
+
+
+The channel the I\-R\-C client joined. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00205}{205} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{\index{server\-::irc\-Client@{server\-::irc\-Client}!connected@{connected}}
+\index{connected@{connected}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{connected}]{\setlength{\rightskip}{0pt plus 5cm}bool server\-::irc\-Client\-::connected\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00228}{228} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{\index{server\-::irc\-Client@{server\-::irc\-Client}!connecting@{connecting}}
+\index{connecting@{connecting}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{connecting}]{\setlength{\rightskip}{0pt plus 5cm}bool server\-::irc\-Client\-::connecting\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00229}{229} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{\index{server\-::irc\-Client@{server\-::irc\-Client}!connect\-Timer@{connect\-Timer}}
+\index{connect\-Timer@{connect\-Timer}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{connect\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer$\ast$ server\-::irc\-Client\-::connect\-Timer\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00231}{231} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{\index{server\-::irc\-Client@{server\-::irc\-Client}!hostname@{hostname}}
+\index{hostname@{hostname}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{hostname}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::irc\-Client\-::hostname\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}
+
+
+The hostname to which the I\-R\-C client has connected. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00197}{197} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}{\index{server\-::irc\-Client@{server\-::irc\-Client}!last\-Ping@{last\-Ping}}
+\index{last\-Ping@{last\-Ping}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{last\-Ping}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Time server\-::irc\-Client\-::last\-Ping\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00233}{233} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{\index{server\-::irc\-Client@{server\-::irc\-Client}!log@{log}}
+\index{log@{log}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} server\-::irc\-Client\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}
+
+
+Log class for easy debugging. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00224}{224} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_aa5a321d1684c24415e65752c0359de2d}{\index{server\-::irc\-Client@{server\-::irc\-Client}!motd\-Received@{motd\-Received}}
+\index{motd\-Received@{motd\-Received}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{motd\-Received}]{\setlength{\rightskip}{0pt plus 5cm}bool server\-::irc\-Client\-::motd\-Received\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_aa5a321d1684c24415e65752c0359de2d}
+
+
+If the server has sent us the Message Of The Day. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00209}{209} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{\index{server\-::irc\-Client@{server\-::irc\-Client}!own\-Nick\-And\-Status@{own\-Nick\-And\-Status}}
+\index{own\-Nick\-And\-Status@{own\-Nick\-And\-Status}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{own\-Nick\-And\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf nick\-And\-Status} server\-::irc\-Client\-::own\-Nick\-And\-Status\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00226}{226} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{\index{server\-::irc\-Client@{server\-::irc\-Client}!own\-User@{own\-User}}
+\index{own\-User@{own\-User}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{own\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User} server\-::irc\-Client\-::own\-User\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_afaf929882986b927133e126a495e3939}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00227}{227} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}{\index{server\-::irc\-Client@{server\-::irc\-Client}!port@{port}}
+\index{port@{port}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::irc\-Client\-::port\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}
+
+
+The port on which the I\-R\-C client has connected. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00201}{201} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{\index{server\-::irc\-Client@{server\-::irc\-Client}!sock@{sock}}
+\index{sock@{sock}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Tcp\-Socket$\ast$ server\-::irc\-Client\-::sock\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}
+
+
+The socket communicating with the I\-R\-C server. 
+
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00214}{214} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}{\index{server\-::irc\-Client@{server\-::irc\-Client}!suppress\-Disconnect\-Signal@{suppress\-Disconnect\-Signal}}
+\index{suppress\-Disconnect\-Signal@{suppress\-Disconnect\-Signal}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{suppress\-Disconnect\-Signal}]{\setlength{\rightskip}{0pt plus 5cm}bool server\-::irc\-Client\-::suppress\-Disconnect\-Signal\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00235}{235} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{\index{server\-::irc\-Client@{server\-::irc\-Client}!time\-Between\-Pings@{time\-Between\-Pings}}
+\index{time\-Between\-Pings@{time\-Between\-Pings}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{time\-Between\-Pings}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::irc\-Client\-::time\-Between\-Pings\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00234}{234} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{\index{server\-::irc\-Client@{server\-::irc\-Client}!time\-Out\-Checker@{time\-Out\-Checker}}
+\index{time\-Out\-Checker@{time\-Out\-Checker}!server::ircClient@{server\-::irc\-Client}}
+\subsubsection[{time\-Out\-Checker}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer$\ast$ server\-::irc\-Client\-::time\-Out\-Checker\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d10/classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00232}{232} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Server/\hyperlink{ircclient_8h}{ircclient.\-h}\item 
+C++/custom\-Irc\-Server/\hyperlink{ircclient_8cpp}{ircclient.\-cpp}\end{DoxyCompactItemize}

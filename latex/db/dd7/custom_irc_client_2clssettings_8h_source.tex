@@ -1,0 +1,34 @@
+\hypertarget{custom_irc_client_2clssettings_8h}{\section{clssettings.\-h}
+\label{db/dd7/custom_irc_client_2clssettings_8h}\index{C++/custom\-Irc\-Client/clssettings.\-h@{C++/custom\-Irc\-Client/clssettings.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSSETTINGS\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSSETTINGS\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QString>}
+00005 \textcolor{preprocessor}{#include <QFile>}
+00006 \textcolor{preprocessor}{#include <QXmlStreamReader>}
+00007 \textcolor{preprocessor}{#include <QVector>}
+00008 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2ircuser_8h}{ircuser.h}"}
+00009 
+00010 \textcolor{keyword}{namespace }client\{
+\hypertarget{custom_irc_client_2clssettings_8h_source_l00016}{}\hyperlink{classclient_1_1cls_settings}{00016}     \textcolor{keyword}{class }\hyperlink{classclient_1_1cls_settings}{clsSettings}
+00017     \{
+00018         \textcolor{keyword}{public}:
+00023             \hyperlink{classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}{clsSettings}(\textcolor{keyword}{const} QString &filePath);
+00024 
+00029             QString \hyperlink{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{getServer}() \textcolor{keyword}{const};
+00030 
+00035             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{getPort}() \textcolor{keyword}{const};
+00036         \textcolor{keyword}{private}: \textcolor{comment}{//Functions}
+00037             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{readServer}(QXmlStreamReader &reader);
+00038 
+00039 
+00040         \textcolor{keyword}{private}: \textcolor{comment}{//Values}
+\hypertarget{custom_irc_client_2clssettings_8h_source_l00041}{}\hyperlink{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{00041}             QString \hyperlink{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{server};
+\hypertarget{custom_irc_client_2clssettings_8h_source_l00042}{}\hyperlink{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{00042}             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{port};
+00043     \};
+00044 \}
+00045 \textcolor{preprocessor}{#endif // CLSSETTINGS\_H}
+\end{DoxyCode}

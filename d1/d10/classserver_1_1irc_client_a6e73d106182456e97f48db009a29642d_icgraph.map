@@ -1,0 +1,11 @@
+<map id="server::ircClient::IRCConnectTimeOut" name="server::ircClient::IRCConnectTimeOut">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.html#a9f9877406894f9b49bce12d8ad094bd7" title="server::ircClient::\lconnectTimeout" alt="" coords="195,34,314,75"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="363,12,499,39"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a43b0e50c5bf5ba76b5a09917e779c1ea" title="connects to the IRC server. Sets the whole thing in motion" alt="" coords="371,63,490,105"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="594,5,713,46"/>
+<area shape="rect" id="node6" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="1072,129,1213,156"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#aa9d4c2e1dc5216901c4f8743838d4561" title="Emitted when the reconnect timer reaches 0." alt="" coords="547,129,760,156"/>
+<area shape="rect" id="node7" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1261,129,1312,156"/>
+<area shape="rect" id="node9" href="$d1/d48/classserver_1_1main_app.html#a931aedd34bb38252acfc8880f9716fab" title="Triggered when the IRC client cannot connect." alt="" coords="823,122,1009,163"/>
+<area shape="rect" id="node10" href="$d1/d48/classserver_1_1main_app.html#af6e8c9d1f06514b33e5f88f9e66884be" title="Triggered when the IRC client has disconnected." alt="" coords="808,188,1024,215"/>
+</map>

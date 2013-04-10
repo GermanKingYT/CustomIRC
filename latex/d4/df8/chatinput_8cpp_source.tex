@@ -1,0 +1,53 @@
+\hypertarget{chatinput_8cpp}{\section{chatinput.\-cpp}
+\label{d4/df8/chatinput_8cpp}\index{C++/custom\-Irc\-Client/chatinput.\-cpp@{C++/custom\-Irc\-Client/chatinput.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{chatinput_8h}{chatinput.h}"}
+00002 \textcolor{preprocessor}{#include <QKeyEvent>}
+00003 
+00004 
+00005 \textcolor{keyword}{namespace }client\{
+00006 
+\hypertarget{chatinput_8cpp_source_l00007}{}\hyperlink{classclient_1_1chat_input_aedaf9d2d9c72302f3b3e679ce7758806}{00007}     \hyperlink{classclient_1_1chat_input_aedaf9d2d9c72302f3b3e679ce7758806}{chatInput::chatInput}(QWidget *parent) :
+00008         QPlainTextEdit(parent)
+00009     \{
+00010     \}
+00011 
+00012 
+\hypertarget{chatinput_8cpp_source_l00013}{}\hyperlink{classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e}{00013}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e}{chatInput::keyPressEvent}(QKeyEvent *e)\{
+00014         QTextCursor c = textCursor();
+00015         \textcolor{keywordflow}{switch} (e->key()) \{
+00016             \textcolor{keywordflow}{case} Qt::Key\_Escape:
+00017                 \textcolor{comment}{// whatever}
+00018                 \textcolor{keywordflow}{break};
+00019 
+00020             \textcolor{keywordflow}{case} Qt::Key\_Enter:
+00021             \textcolor{keywordflow}{case} Qt::Key\_Return:
+00022                 this->\hyperlink{classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}{checkForCommand}(this->toPlainText());
+00023                 \textcolor{keywordflow}{break};
+00024             \textcolor{keywordflow}{default}:
+00025                 QPlainTextEdit::keyPressEvent(e);
+00026                 \textcolor{keywordflow}{break};
+00027         \}
+00028 
+00029     \}
+00030 
+\hypertarget{chatinput_8cpp_source_l00031}{}\hyperlink{classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}{00031}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}{chatInput::checkForCommand}(QString text)\{
+00032         \textcolor{keywordflow}{if}(text.at(0) == \textcolor{charliteral}{'/'})\{
+00033             \textcolor{comment}{//Yay, a command!}
+00034             \textcolor{comment}{//Split it}
+00035             QList<QString> splits = text.split(\textcolor{charliteral}{' '});
+00036             splits[0] = splits[0].mid(1);\textcolor{comment}{//To remove the /}
+00037             QString command = splits[0];
+00038             command = command.toLower();
+00039             splits.pop\_front(); \textcolor{comment}{//Remove command}
+00040             emit this->\hyperlink{classclient_1_1chat_input_a955c343e83632ba1cc0a0b089c06803e}{commandGiven}(command,splits);
+00041         \}\textcolor{keywordflow}{else}\{
+00042             emit this->\hyperlink{classclient_1_1chat_input_abfb6a31b8691c93a03c3bda792e14f34}{sendChat}(text);
+00043         \}
+00044         this->setPlainText(\textcolor{stringliteral}{""});
+00045     \}
+00046 
+00047 \}
+\end{DoxyCode}

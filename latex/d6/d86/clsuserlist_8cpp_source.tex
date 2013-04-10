@@ -1,0 +1,67 @@
+\hypertarget{clsuserlist_8cpp}{\section{clsuserlist.\-cpp}
+\label{d6/d86/clsuserlist_8cpp}\index{C++/custom\-Irc\-Client/desktop/clsuserlist.\-cpp@{C++/custom\-Irc\-Client/desktop/clsuserlist.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clsuserlist_8h}{clsuserlist.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }client\{
+00004 
+\hypertarget{clsuserlist_8cpp_source_l00005}{}\hyperlink{classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}{00005}     \hyperlink{classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}{clsUserList::clsUserList}(QWidget *parent)
+00006         :QWidget(parent)
+00007     \{
+00008         this->\hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{setupUi}();
+00009     \}
+00010 
+\hypertarget{clsuserlist_8cpp_source_l00011}{}\hyperlink{classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}{00011}     \hyperlink{classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}{clsUserList::~clsUserList}()
+00012     \{
+00013     \}
+00014 
+\hypertarget{clsuserlist_8cpp_source_l00015}{}\hyperlink{classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}{00015}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}{clsUserList::addUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user)\{
+00016         \textcolor{comment}{//TODO: Alphabetical order}
+00017         this->\hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->removeItem(this->\hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{verticalSpacer});
+00018 
+00019         \hyperlink{classclient_1_1cls_user_entry}{clsUserEntry} *nE = \textcolor{keyword}{new} \hyperlink{classclient_1_1cls_user_entry}{clsUserEntry}(user);
+00020 
+00021         this->\hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->addWidget(nE);
+00022         this->\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}.insert(user,nE);
+00023 
+00024         this->\hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->addItem(this->\hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{verticalSpacer});
+00025         this->setMinimumHeight(this->\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}.count() * nE->minimumHeight());
+00026     \}
+00027 
+\hypertarget{clsuserlist_8cpp_source_l00028}{}\hyperlink{classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}{00028}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}{clsUserList::refreshUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user)\{
+00029         this->\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}[user]->refresh();
+00030     \}
+00031 
+\hypertarget{clsuserlist_8cpp_source_l00032}{}\hyperlink{classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}{00032}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}{clsUserList::removeUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user)\{
+00033         \hyperlink{classclient_1_1cls_user_entry}{clsUserEntry} *ourUser = this->\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}[user];
+00034         \textcolor{keyword}{delete} this->\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}[user];
+00035         \textcolor{comment}{//this->verticalLayout->removeWidget(ourUser);}
+00036         \textcolor{comment}{//this->users.remove(user);}
+00037     \}
+00038 
+\hypertarget{clsuserlist_8cpp_source_l00039}{}\hyperlink{classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}{00039}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}{clsUserList::clear}()\{
+00040         this->\hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{setupUi}();
+00041     \}
+00042 
+\hypertarget{clsuserlist_8cpp_source_l00043}{}\hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{00043}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{clsUserList::setupUi}()\{
+00044         \textcolor{keywordflow}{if} (this->objectName().isEmpty())
+00045             this->setObjectName(QString(\textcolor{stringliteral}{"clsUserList"}));
+00046         this->resize(400, 300);
+00047         QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+00048         sizePolicy.setHorizontalStretch(0);
+00049         sizePolicy.setVerticalStretch(0);
+00050         sizePolicy.setHeightForWidth(this->sizePolicy().hasHeightForWidth());
+00051         this->setSizePolicy(sizePolicy);
+00052         \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout} = \textcolor{keyword}{new} QVBoxLayout(\textcolor{keyword}{this});
+00053         \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->setSpacing(0);
+00054         \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->setObjectName(QString(\textcolor{stringliteral}{"verticalLayout"}));
+00055         \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->setContentsMargins(0, 0, 0, 0);
+00056         \hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{verticalSpacer} = \textcolor{keyword}{new} QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding
+      );
+00057 
+00058         \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout}->addItem(\hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{verticalSpacer});
+00059     \}
+00060 \}
+\end{DoxyCode}

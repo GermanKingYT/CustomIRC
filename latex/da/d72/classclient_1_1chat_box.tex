@@ -1,0 +1,412 @@
+\hypertarget{classclient_1_1chat_box}{\section{client\-:\-:chat\-Box Class Reference}
+\label{da/d72/classclient_1_1chat_box}\index{client\-::chat\-Box@{client\-::chat\-Box}}
+}
+
+
+U\-I Segment containing the chatbox.  
+
+
+
+
+{\ttfamily \#include $<$chatbox.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:chat\-Box\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{df/d2e/classclient_1_1chat_box__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:chat\-Box\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d0/d09/classclient_1_1chat_box__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structclient_1_1chat_box_1_1content}{content}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1chat_box_a3687539a89f5c5ef806c578f90651440}{chat\-Box} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classclient_1_1chat_box_a69c2a7a7b23a8a6a349dd780537a7df7}{$\sim$chat\-Box} ()
+\item 
+void \hyperlink{classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}{add\-Chat} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user, Q\-String message)
+\begin{DoxyCompactList}\small\item\em Adds a chat message to the box, Identified only by a user and a message. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_a0d303b9119fb4f1c9d7b406aab6adcaa}{add\-Chat} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user, Q\-String message, Q\-Time time\-Of\-Message)
+\begin{DoxyCompactList}\small\item\em Adds a chat message to the box, Identified by a user, a message and a time. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{add\-Message} (Q\-String \&message)
+\begin{DoxyCompactList}\small\item\em Adds a notification to the chatbox. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_aee3ca71af1723d364aa9edcd9bb44453}{add\-Message} (const Q\-String \&message)
+\begin{DoxyCompactList}\small\item\em Adds a notification to the chatbox. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_aff3dde2175073f584e04ffb6a65027a3}{add\-Message} (const Q\-String \&message, Q\-Time time\-Of\-Message)
+\begin{DoxyCompactList}\small\item\em Adds a notification to the chatbo with timex. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_ae62f2e454789f56a4f498336158d9c52}{add\-Message} (Q\-String \&message, Q\-Time time\-Of\-Message)
+\begin{DoxyCompactList}\small\item\em Adds a notification to the chatbox with time. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_af59419ce231d4a16d3cb89974069a5e6}{add\-Message} (Q\-String \&message, Q\-Time time\-Of\-Message, Q\-Color \&my\-Color)
+\begin{DoxyCompactList}\small\item\em Adds a notification to the chatbox with time and color. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}{set\-All\-User\-Name\-Size} (int new\-Size)
+\begin{DoxyCompactList}\small\item\em Sets all the user name labels to the same size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ad}{widget\-Types} \{ \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y} = 0x00, 
+\hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada343c8885d52712f16acc9db401d79ebe}{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::chat\-Box $\ast$ \hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui}
+\item 
+Q\-Vector$<$ \hyperlink{structclient_1_1chat_box_1_1content}{content} $\ast$ $>$ \hyperlink{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{entries}
+\item 
+int \hyperlink{classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}{width\-Of\-Nick}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-I Segment containing the chatbox. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{chatbox_8h_source_l00023}{23} of file \hyperlink{chatbox_8h_source}{chatbox.\-h}.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ad}{\index{client\-::chat\-Box@{client\-::chat\-Box}!widget\-Types@{widget\-Types}}
+\index{widget\-Types@{widget\-Types}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{widget\-Types}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf client\-::chat\-Box\-::widget\-Types}\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d72/classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ad}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y@{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y}!client\-::chat\-Box@{client\-::chat\-Box}}\index{client\-::chat\-Box@{client\-::chat\-Box}!W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y@{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y}}\item[{\em 
+\hypertarget{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-C\-H\-A\-T\-E\-N\-T\-R\-Y}\label{da/d72/classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}
+}]\index{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N@{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N}!client\-::chat\-Box@{client\-::chat\-Box}}\index{client\-::chat\-Box@{client\-::chat\-Box}!W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N@{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada343c8885d52712f16acc9db401d79ebe}{W\-I\-D\-G\-E\-T\-T\-Y\-P\-E\-S\-\_\-\-N\-O\-T\-I\-F\-I\-C\-A\-T\-I\-O\-N}\label{da/d72/classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada343c8885d52712f16acc9db401d79ebe}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line \hyperlink{chatbox_8h_source_l00026}{26} of file \hyperlink{chatbox_8h_source}{chatbox.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1chat_box_a3687539a89f5c5ef806c578f90651440}{\index{client\-::chat\-Box@{client\-::chat\-Box}!chat\-Box@{chat\-Box}}
+\index{chat\-Box@{chat\-Box}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{chat\-Box}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Box\-::chat\-Box (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{da/d72/classclient_1_1chat_box_a3687539a89f5c5ef806c578f90651440}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00007}{7} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+\hypertarget{classclient_1_1chat_box_a69c2a7a7b23a8a6a349dd780537a7df7}{\index{client\-::chat\-Box@{client\-::chat\-Box}!$\sim$chat\-Box@{$\sim$chat\-Box}}
+\index{$\sim$chat\-Box@{$\sim$chat\-Box}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{$\sim$chat\-Box}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Box\-::$\sim$chat\-Box (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_a69c2a7a7b23a8a6a349dd780537a7df7}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00017}{17} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Chat@{add\-Chat}}
+\index{add\-Chat@{add\-Chat}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Chat (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user, }
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}
+
+
+Adds a chat message to the box, Identified only by a user and a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user that sent the chatmessage \\
+\hline
+{\em message} & The chat message itself \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00022}{22} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+\hypertarget{classclient_1_1chat_box_a0d303b9119fb4f1c9d7b406aab6adcaa}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Chat@{add\-Chat}}
+\index{add\-Chat@{add\-Chat}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Chat (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user, }
+\item[{Q\-String}]{message, }
+\item[{Q\-Time}]{time\-Of\-Message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_a0d303b9119fb4f1c9d7b406aab6adcaa}
+
+
+Adds a chat message to the box, Identified by a user, a message and a time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user that sent the chatmessage \\
+\hline
+{\em message} & The chat message itself \\
+\hline
+{\em time\-Of\-Message} & The time on which the message was sent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00031}{31} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+\hypertarget{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Message@{add\-Message}}
+\index{add\-Message@{add\-Message}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}
+
+
+Adds a notification to the chatbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The notification to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00040}{40} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_box_aee3ca71af1723d364aa9edcd9bb44453}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Message@{add\-Message}}
+\index{add\-Message@{add\-Message}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_aee3ca71af1723d364aa9edcd9bb44453}
+
+
+Adds a notification to the chatbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The notification to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00044}{44} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_aee3ca71af1723d364aa9edcd9bb44453_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_box_aff3dde2175073f584e04ffb6a65027a3}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Message@{add\-Message}}
+\index{add\-Message@{add\-Message}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{message, }
+\item[{Q\-Time}]{time\-Of\-Message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_aff3dde2175073f584e04ffb6a65027a3}
+
+
+Adds a notification to the chatbo with timex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The notification to add \\
+\hline
+{\em time\-Of\-Message} & The time on which the notification has occured \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00049}{49} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_aff3dde2175073f584e04ffb6a65027a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_box_ae62f2e454789f56a4f498336158d9c52}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Message@{add\-Message}}
+\index{add\-Message@{add\-Message}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{message, }
+\item[{Q\-Time}]{time\-Of\-Message}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_ae62f2e454789f56a4f498336158d9c52}
+
+
+Adds a notification to the chatbox with time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The notification to be shown \\
+\hline
+{\em time\-Of\-Message} & The time on which the notification has occured \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00054}{54} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_ae62f2e454789f56a4f498336158d9c52_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_box_af59419ce231d4a16d3cb89974069a5e6}{\index{client\-::chat\-Box@{client\-::chat\-Box}!add\-Message@{add\-Message}}
+\index{add\-Message@{add\-Message}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{add\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::add\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String \&}]{message, }
+\item[{Q\-Time}]{time\-Of\-Message, }
+\item[{Q\-Color \&}]{my\-Color}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_af59419ce231d4a16d3cb89974069a5e6}
+
+
+Adds a notification to the chatbox with time and color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The notification to be shown \\
+\hline
+{\em time\-Of\-Message} & The time on which the notification has occured \\
+\hline
+{\em my\-Color} & The color of the message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00059}{59} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+\hypertarget{classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}{\index{client\-::chat\-Box@{client\-::chat\-Box}!set\-All\-User\-Name\-Size@{set\-All\-User\-Name\-Size}}
+\index{set\-All\-User\-Name\-Size@{set\-All\-User\-Name\-Size}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{set\-All\-User\-Name\-Size}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Box\-::set\-All\-User\-Name\-Size (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Size}
+\end{DoxyParamCaption}
+)}}\label{da/d72/classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}
+
+
+Sets all the user name labels to the same size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Size} & The new size This is called from a \hyperlink{classclient_1_1chat_entry}{chat\-Entry}, when it's new calculated width would be too large \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatbox_8cpp_source_l00069}{69} of file \hyperlink{chatbox_8cpp_source}{chatbox.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d72/classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{\index{client\-::chat\-Box@{client\-::chat\-Box}!entries@{entries}}
+\index{entries@{entries}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{entries}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<${\bf content}$\ast$$>$ client\-::chat\-Box\-::entries\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d72/classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}
+
+
+Definition at line \hyperlink{chatbox_8h_source_l00097}{97} of file \hyperlink{chatbox_8h_source}{chatbox.\-h}.
+
+\hypertarget{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{\index{client\-::chat\-Box@{client\-::chat\-Box}!ui@{ui}}
+\index{ui@{ui}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::chat\-Box$\ast$ client\-::chat\-Box\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d72/classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}
+
+
+Definition at line \hyperlink{chatbox_8h_source_l00096}{96} of file \hyperlink{chatbox_8h_source}{chatbox.\-h}.
+
+\hypertarget{classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}{\index{client\-::chat\-Box@{client\-::chat\-Box}!width\-Of\-Nick@{width\-Of\-Nick}}
+\index{width\-Of\-Nick@{width\-Of\-Nick}!client::chatBox@{client\-::chat\-Box}}
+\subsubsection[{width\-Of\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::chat\-Box\-::width\-Of\-Nick\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d72/classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}
+
+
+Definition at line \hyperlink{chatbox_8h_source_l00098}{98} of file \hyperlink{chatbox_8h_source}{chatbox.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{chatbox_8h}{chatbox.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{chatbox_8cpp}{chatbox.\-cpp}\end{DoxyCompactItemize}

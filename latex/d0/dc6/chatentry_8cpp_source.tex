@@ -1,0 +1,99 @@
+\hypertarget{chatentry_8cpp}{\section{chatentry.\-cpp}
+\label{d0/dc6/chatentry_8cpp}\index{C++/custom\-Irc\-Client/chatentry.\-cpp@{C++/custom\-Irc\-Client/chatentry.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{chatentry_8h}{chatentry.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_chatentry.h"}
+00003 \textcolor{preprocessor}{#include <math.h>}
+00004 \textcolor{preprocessor}{#include "\hyperlink{chatbox_8h}{chatbox.h}"}
+00005 
+00006 
+00007 \textcolor{keyword}{namespace }client\{
+00008 
+\hypertarget{chatentry_8cpp_source_l00009}{}\hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{00009}     \hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{chatEntry::chatEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString message, \textcolor{keywordtype}{int} width, QWidget *
+      parent) :
+00010         QFrame(parent),
+00011         ui(new Ui::\hyperlink{classclient_1_1chat_entry}{chatEntry}),
+00012         name(user),
+00013         message(message),
+00014         timeOfMessage(QTime::currentTime())
+00015     \{
+00016         this->\hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{init}(parent, width);
+00017     \}
+00018 
+\hypertarget{chatentry_8cpp_source_l00019}{}\hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{00019}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{chatEntry::init}(QWidget *parent, \textcolor{keywordtype}{int} width)\{
+00020         \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->setupUi(\textcolor{keyword}{this});
+00021         this->setMinimumWidth(parent->width());
+00022         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblTime->setText(this->\hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{timeOfMessage}.toString());
+00023         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->setText(this->\hyperlink{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{name}->\hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{getNick}() + \textcolor{stringliteral}{":"});
+00024         QPalette palette = \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->palette();
+00025         palette.setColor(\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->foregroundRole(), this->\hyperlink{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{name}->
+      \hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{getColor}());
+00026         \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->setPalette(palette);
+00027 
+00028         this->\hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message}.replace(QRegExp(\textcolor{stringliteral}{"((?:https?|ftp)://\(\backslash\)\(\backslash\)S+)"}), \textcolor{stringliteral}{"<a href=\(\backslash\)"\(\backslash\)\(\backslash\)1\(\backslash\)">\(\backslash\)\(\backslash\)1</a>"});
+00029 
+00030         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblChat->setText(this->\hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message});
+00031 
+00032         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->setMinimumWidth(width);
+00033         \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{getWidth}(this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick) > this->ui->lblNick->width())\{
+00034             \hyperlink{classclient_1_1chat_box}{chatBox} *pr = qobject\_cast<\hyperlink{classclient_1_1chat_box}{chatBox}*>(parent);
+00035             this->\hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{setUserWidth}(this->\hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{getWidth}(this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick)+8);
+00036             pr->\hyperlink{classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}{setAllUserNameSize}(this->\hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{getWidth}(this->
+      \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick)+8);
+00037         \}
+00038         this->\hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{calculateMessageWidth}();
+00039     \}
+00040 
+\hypertarget{chatentry_8cpp_source_l00041}{}\hyperlink{classclient_1_1chat_entry_a0e3b3fa3e530a8ddfe86c2c714620dc3}{00041}     \hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{chatEntry::chatEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString message, \textcolor{keywordtype}{int} width, QTime 
+      timeOfMessage, QWidget *parent)
+00042         :QFrame(parent)
+00043          ,ui(new Ui::\hyperlink{classclient_1_1chat_entry}{chatEntry})
+00044          ,name(user)
+00045          ,message(message)
+00046          ,timeOfMessage(timeOfMessage)
+00047     \{
+00048         this->\hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{init}(parent,width);
+00049     \}
+00050 
+\hypertarget{chatentry_8cpp_source_l00051}{}\hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{00051}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{chatEntry::calculateMessageWidth}()\{
+00052         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblChat->setGeometry(this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->width() +
+00053                 this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblTime->width() + 8,0,
+00054                 this->width() -
+00055                 (this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->width() + 16 +
+00056                  this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblTime->width() + 16),
+00057                 16);
+00058 
+00059         \textcolor{keywordtype}{int} lines = ceil((\textcolor{keywordtype}{double})this->\hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{getWidth}(this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblChat) /
+00060                 (\textcolor{keywordtype}{double})this->ui->lblChat->width());
+00061 
+00062         this->setMinimumHeight(lines * this->\hyperlink{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{getHeight}(this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblChat));
+00063         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblChat->setMinimumHeight(this->minimumHeight() + 2);
+00064     \}
+00065 
+\hypertarget{chatentry_8cpp_source_l00066}{}\hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{00066}     \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{chatEntry::getWidth}(QLabel *l)\textcolor{keyword}{ const}\{
+00067         \textcolor{keywordflow}{return} l->fontMetrics().width(l->text());
+00068     \}
+00069 
+\hypertarget{chatentry_8cpp_source_l00070}{}\hyperlink{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{00070}     \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{chatEntry::getHeight}(QLabel *l)\textcolor{keyword}{ const}\{
+00071         \textcolor{keywordflow}{return} l->fontMetrics().height();
+00072     \}
+00073 
+\hypertarget{chatentry_8cpp_source_l00074}{}\hyperlink{classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}{00074}     \hyperlink{classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}{chatEntry::~chatEntry}()\{
+00075         \textcolor{keyword}{delete} \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui};
+00076     \}
+00077 
+\hypertarget{chatentry_8cpp_source_l00078}{}\hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{00078}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{chatEntry::setUserWidth}(\textcolor{keywordtype}{int} newWidth)\{
+00079         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->setMinimumWidth(newWidth);
+00080         this->\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}->lblNick->setMaximumWidth(newWidth+2);
+00081 
+00082         this->\hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{calculateMessageWidth}();
+00083     \}
+00084 
+\hypertarget{chatentry_8cpp_source_l00085}{}\hyperlink{classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}{00085}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}{chatEntry::resizeEvent}(QResizeEvent *event)\{
+00086         Q\_UNUSED(event);
+00087         this->\hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{calculateMessageWidth}();
+00088     \}
+00089 \}
+\end{DoxyCode}

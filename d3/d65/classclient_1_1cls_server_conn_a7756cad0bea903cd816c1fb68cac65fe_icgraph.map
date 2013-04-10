@@ -1,0 +1,6 @@
+<map id="client::clsServerConn::serverMessageReceived" name="client::clsServerConn::serverMessageReceived">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.html#ad5d3a03440fdec33270247486fb5500c" title="Event has been received by the client. Parse it." alt="" coords="224,34,376,75"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#a25abb840bb0764068d9a72dfb1e403b5" title="Event request has been done by us, and data has been returned." alt="" coords="425,5,573,46"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="621,34,765,75"/>
+<area shape="rect" id="node5" href="$d3/d65/classclient_1_1cls_server_conn.html#ad9d8caf021df2cd15ce27bcf207d86d0" title="Constructor taking a hostname and port." alt="" coords="813,34,957,75"/>
+</map>

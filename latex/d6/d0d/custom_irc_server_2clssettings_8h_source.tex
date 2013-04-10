@@ -1,0 +1,58 @@
+\hypertarget{custom_irc_server_2clssettings_8h}{\section{clssettings.\-h}
+\label{d6/d0d/custom_irc_server_2clssettings_8h}\index{C++/custom\-Irc\-Server/clssettings.\-h@{C++/custom\-Irc\-Server/clssettings.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSSETTINGS\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSSETTINGS\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QString>}
+00005 \textcolor{preprocessor}{#include <QFile>}
+00006 \textcolor{preprocessor}{#include <QXmlStreamReader>}
+00007 \textcolor{preprocessor}{#include <QVector>}
+00008 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_server_2ircuser_8h}{ircuser.h}"}
+00009 
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00010}{}\hyperlink{custom_irc_server_2clssettings_8h_ae0f057cabde3e6a18a0a16aad8bfc2cc}{00010} \textcolor{preprocessor}{#define DEFAULT\_LISTEN\_PORT 1337}
+00011 \textcolor{preprocessor}{}
+00012 \textcolor{keyword}{namespace }server \{
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00019}{}\hyperlink{classserver_1_1cls_settings}{00019} \textcolor{keyword}{class }\hyperlink{classserver_1_1cls_settings}{clsSettings}
+00020 \{
+00021 \textcolor{keyword}{public}:
+00026     \hyperlink{classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}{clsSettings}(\textcolor{keyword}{const} QString &filePath);
+00027 
+00032     \textcolor{keywordtype}{int} \hyperlink{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{getListeningPort}() \textcolor{keyword}{const};
+00033 
+00038     QString \hyperlink{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{getServer}() \textcolor{keyword}{const};
+00039 
+00044     QString \hyperlink{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{getChannel}() \textcolor{keyword}{const};
+00045 
+00050     QString \hyperlink{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{getUserName}() \textcolor{keyword}{const};
+00051 
+00056     \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{getOwnUser}() \textcolor{keyword}{const};
+00057 
+00062     QVector<ircUser *> \hyperlink{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{getUsers}() \textcolor{keyword}{const};
+00063 \textcolor{keyword}{private}: \textcolor{comment}{//Functions}
+00069 \textcolor{comment}{}    \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{readUiSettings}(QXmlStreamReader &reader);
+00070 
+00076     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{readServer}(QXmlStreamReader &reader);
+00077 
+00083     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{readUsers}(QXmlStreamReader &reader);
+00084 
+00090     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{readUserInfo}(QXmlStreamReader &reader);
+00091 
+00092 
+00093 \textcolor{keyword}{private}: \textcolor{comment}{//Values}
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00098}{}\hyperlink{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{00098} \textcolor{comment}{}    QString \hyperlink{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{server};
+00099 
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00104}{}\hyperlink{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{00104}     QString \hyperlink{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{channel};
+00105 
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00110}{}\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{00110}     \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser};
+00111 
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00116}{}\hyperlink{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{00116}     \textcolor{keywordtype}{int} \hyperlink{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{listeningPort};
+00117 
+\hypertarget{custom_irc_server_2clssettings_8h_source_l00122}{}\hyperlink{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{00122}     QVector<ircUser*> \hyperlink{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{users};
+00123 
+00124 \};
+00125 \}
+00126 \textcolor{preprocessor}{#endif // CLSSETTINGS\_H}
+\end{DoxyCode}

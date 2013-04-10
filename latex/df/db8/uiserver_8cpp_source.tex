@@ -1,0 +1,87 @@
+\hypertarget{uiserver_8cpp}{\section{uiserver.\-cpp}
+\label{df/db8/uiserver_8cpp}\index{C++/custom\-Irc\-Server/uiserver.\-cpp@{C++/custom\-Irc\-Server/uiserver.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{uiserver_8h}{uiserver.h}"}
+00002 \textcolor{preprocessor}{#include <QBuffer>}
+00003 \textcolor{preprocessor}{#include <QTcpSocket>}
+00004 \textcolor{preprocessor}{#include <iostream>}
+00005 \textcolor{preprocessor}{#include <QDebug>}
+00006 
+00007 \textcolor{keyword}{namespace }server \{
+\hypertarget{uiserver_8cpp_source_l00008}{}\hyperlink{classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}{00008} \hyperlink{classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}{uiServer::uiServer}(\textcolor{keywordtype}{int} port, QObject* parent)
+00009     :QTcpServer(parent)
+00010     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac}{LOGTAGS\_SERVER})
+00011     ,port(port)
+00012 \{
+00013     connect(\textcolor{keyword}{this}, SIGNAL(newConnection()), \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{acceptConnection}()));
+00014 \}
+00015 
+\hypertarget{uiserver_8cpp_source_l00016}{}\hyperlink{classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}{00016} \hyperlink{classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}{uiServer::~uiServer}()\{ \}
+00017 
+\hypertarget{uiserver_8cpp_source_l00018}{}\hyperlink{classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}{00018} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}{uiServer::startListen}()\{
+00019     this->\hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{log} << \textcolor{stringliteral}{"Started listening on port "} << this->\hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00020     this->listen(QHostAddress::Any,this->\hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port});
+00021 \}
+00022 
+00023 
+\hypertarget{uiserver_8cpp_source_l00024}{}\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{00024} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{uiServer::send}(\textcolor{keyword}{const} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend)\{
+00025     \textcolor{comment}{//this->log << "Sending json object: " << docToSend->toJson() << endl;}
+00026     this->\hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{log} << \textcolor{stringliteral}{"Sending JSON: "} << toSend.\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{toJsonString}() << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00027 
+00028     \textcolor{keywordflow}{foreach}(\hyperlink{classserver_1_1ui_client}{uiClient} *cl, this->\hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{connections})\{
+00029         cl->\hyperlink{classserver_1_1ui_client_ad3f8f8690155b186b54e40dcfee0df23}{send}(toSend.\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{toJsonString}() + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00030     \}
+00031 \}
+00032 
+\hypertarget{uiserver_8cpp_source_l00033}{}\hyperlink{classserver_1_1ui_server_a643cfadd56a92b52edbcee2201fd8924}{00033} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{uiServer::send}(\hyperlink{classserver_1_1ui_client}{uiClient} *client, \textcolor{keyword}{const} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend)\{
+00034     \textcolor{comment}{//this->log << "Sending json object: " << docToSend->toJson() << endl;}
+00035     this->\hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{log} << \textcolor{stringliteral}{"Sending JSON: "} << toSend.\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{toJsonString}() << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00036 
+00037     client->\hyperlink{classserver_1_1ui_client_ad3f8f8690155b186b54e40dcfee0df23}{send}(toSend.\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{toJsonString}() + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00038 \}
+00039 
+\hypertarget{uiserver_8cpp_source_l00040}{}\hyperlink{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{00040} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{uiServer::acceptConnection}()\{
+00041     \hyperlink{classserver_1_1ui_client}{uiClient} *connection = \textcolor{keyword}{new} \hyperlink{classserver_1_1ui_client}{uiClient}(this->nextPendingConnection());
+00042     connect(connection, SIGNAL(disconnected(\hyperlink{classserver_1_1ui_client}{uiClient}*)),
+00043             \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{lostConnection}(\hyperlink{classserver_1_1ui_client}{uiClient}*)));
+00044     connect(connection, SIGNAL(\hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{chatReceived}(QString)),\textcolor{keyword}{this},SLOT(
+      \hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{chatReceived}(QString)));
+00045     connect(connection, SIGNAL(userQuery(\hyperlink{classserver_1_1ui_client}{uiClient}*)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{doUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient}*)));
+00046     connect(connection, SIGNAL(\hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{changeOwnUser}(\hyperlink{class_k4_u_1_1json_command}{jsonCommand}&)),
+00047             \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{changeOwnUser}(\hyperlink{class_k4_u_1_1json_command}{jsonCommand}&)));
+00048     connect(connection, SIGNAL(getEvents(\hyperlink{classserver_1_1ui_client}{uiClient}*)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{doSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient}*)));
+00049     \hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{connections}.append(connection);
+00050 \}
+00051 
+\hypertarget{uiserver_8cpp_source_l00052}{}\hyperlink{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{00052} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{uiServer::lostConnection}(\hyperlink{classserver_1_1ui_client}{uiClient} *client)\{
+00053     this->\hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{connections}.removeAll(client);
+00054 \}
+00055 
+\hypertarget{uiserver_8cpp_source_l00056}{}\hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{00056} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{uiServer::chatReceived}(QString message)\{
+00057     emit this->\hyperlink{classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726}{sgnChatReceived}(message);
+00058 \}
+00059 
+\hypertarget{uiserver_8cpp_source_l00060}{}\hyperlink{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{00060} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{uiServer::doUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient} *client)\{
+00061     emit this->\hyperlink{classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97}{sgnUserQuery}(client);
+00062 \}
+00063 
+\hypertarget{uiserver_8cpp_source_l00064}{}\hyperlink{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{00064} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{uiServer::doSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient} *client)\{
+00065     emit this->\hyperlink{classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87}{sgnSendEvents}(client);
+00066 \}
+00067 
+\hypertarget{uiserver_8cpp_source_l00068}{}\hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{00068} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{uiServer::changeOwnUser}(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00069     \textcolor{keywordflow}{if}(comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"change"}) == \textcolor{stringliteral}{"STATUS"})\{
+00070         emit this->\hyperlink{classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211}{sgnChangeOwnUserStatus}(comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"new"}).toString());
+00071     \}
+00072     \textcolor{comment}{//Immediately forward this to other clients:}
+00073     this->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(comm);
+00074 \}
+00075 
+00076 \}
+\end{DoxyCode}

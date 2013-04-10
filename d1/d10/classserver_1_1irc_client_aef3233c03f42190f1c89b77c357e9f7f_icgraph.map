@@ -1,0 +1,5 @@
+<map id="server::ircClient::setOwnNick" name="server::ircClient::setOwnNick">
+<area shape="rect" id="node2" href="$d1/d48/classserver_1_1main_app.html#af498e3b109e1bc2b9f8e87b215efdb27" title="Triggered when a UI client wants to change the status." alt="" coords="173,5,347,46"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="395,12,536,39"/>
+<area shape="rect" id="node4" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="584,12,635,39"/>
+</map>

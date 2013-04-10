@@ -1,0 +1,249 @@
+\hypertarget{classclient_1_1cls_user_list}{\section{client\-:\-:cls\-User\-List Class Reference}
+\label{de/dda/classclient_1_1cls_user_list}\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}}
+}
+
+
+U\-I Segment for user list.  
+
+
+
+
+{\ttfamily \#include $<$clsuserlist.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:cls\-User\-List\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{da/d4f/classclient_1_1cls_user_list__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:cls\-User\-List\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{db/dfe/classclient_1_1cls_user_list__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}{cls\-User\-List} (Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}{$\sim$cls\-User\-List} ()
+\item 
+void \hyperlink{classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}{add\-User} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Adds a user to the list. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}{refresh\-User} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Refreshes a user entry. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}{remove\-User} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Removes a user entry. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{setup\-Ui} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-V\-Box\-Layout $\ast$ \hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{vertical\-Layout}
+\item 
+Q\-Spacer\-Item $\ast$ \hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{vertical\-Spacer}
+\item 
+Q\-Map$<$ \hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$, \hyperlink{classclient_1_1cls_user_entry}{cls\-User\-Entry} $\ast$ $>$ \hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-I Segment for user list. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{clsuserlist_8h_source_l00021}{21} of file \hyperlink{clsuserlist_8h_source}{clsuserlist.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!cls\-User\-List@{cls\-User\-List}}
+\index{cls\-User\-List@{cls\-User\-List}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{cls\-User\-List}]{\setlength{\rightskip}{0pt plus 5cm}client\-::cls\-User\-List\-::cls\-User\-List (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{de/dda/classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00005}{5} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{de/dda/classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!$\sim$cls\-User\-List@{$\sim$cls\-User\-List}}
+\index{$\sim$cls\-User\-List@{$\sim$cls\-User\-List}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{$\sim$cls\-User\-List}]{\setlength{\rightskip}{0pt plus 5cm}client\-::cls\-User\-List\-::$\sim$cls\-User\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/dda/classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00011}{11} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!add\-User@{add\-User}}
+\index{add\-User@{add\-User}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{add\-User}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-User\-List\-::add\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}}\label{de/dda/classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}
+
+
+Adds a user to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to be added \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00015}{15} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+\hypertarget{classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!clear@{clear}}
+\index{clear@{clear}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-User\-List\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{de/dda/classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}
+
+
+Clears the list. 
+
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00039}{39} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{de/dda/classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!refresh\-User@{refresh\-User}}
+\index{refresh\-User@{refresh\-User}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{refresh\-User}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-User\-List\-::refresh\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}}\label{de/dda/classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}
+
+
+Refreshes a user entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to be refreshed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00028}{28} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+\hypertarget{classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!remove\-User@{remove\-User}}
+\index{remove\-User@{remove\-User}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{remove\-User}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-User\-List\-::remove\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)}}\label{de/dda/classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}
+
+
+Removes a user entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00032}{32} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+\hypertarget{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!setup\-Ui@{setup\-Ui}}
+\index{setup\-Ui@{setup\-Ui}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{setup\-Ui}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-User\-List\-::setup\-Ui (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{de/dda/classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}
+
+
+Definition at line \hyperlink{clsuserlist_8cpp_source_l00043}{43} of file \hyperlink{clsuserlist_8cpp_source}{clsuserlist.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{de/dda/classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!users@{users}}
+\index{users@{users}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{users}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Map$<${\bf irc\-User}$\ast$,{\bf cls\-User\-Entry}$\ast$$>$ client\-::cls\-User\-List\-::users\hspace{0.3cm}{\ttfamily [private]}}}\label{de/dda/classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}
+
+
+Definition at line \hyperlink{clsuserlist_8h_source_l00054}{54} of file \hyperlink{clsuserlist_8h_source}{clsuserlist.\-h}.
+
+\hypertarget{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!vertical\-Layout@{vertical\-Layout}}
+\index{vertical\-Layout@{vertical\-Layout}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{vertical\-Layout}]{\setlength{\rightskip}{0pt plus 5cm}Q\-V\-Box\-Layout$\ast$ client\-::cls\-User\-List\-::vertical\-Layout\hspace{0.3cm}{\ttfamily [private]}}}\label{de/dda/classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}
+
+
+Definition at line \hyperlink{clsuserlist_8h_source_l00051}{51} of file \hyperlink{clsuserlist_8h_source}{clsuserlist.\-h}.
+
+\hypertarget{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{\index{client\-::cls\-User\-List@{client\-::cls\-User\-List}!vertical\-Spacer@{vertical\-Spacer}}
+\index{vertical\-Spacer@{vertical\-Spacer}!client::clsUserList@{client\-::cls\-User\-List}}
+\subsubsection[{vertical\-Spacer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Spacer\-Item$\ast$ client\-::cls\-User\-List\-::vertical\-Spacer\hspace{0.3cm}{\ttfamily [private]}}}\label{de/dda/classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}
+
+
+Definition at line \hyperlink{clsuserlist_8h_source_l00052}{52} of file \hyperlink{clsuserlist_8h_source}{clsuserlist.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/desktop/\hyperlink{clsuserlist_8h}{clsuserlist.\-h}\item 
+C++/custom\-Irc\-Client/desktop/\hyperlink{clsuserlist_8cpp}{clsuserlist.\-cpp}\end{DoxyCompactItemize}

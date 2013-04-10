@@ -1,0 +1,93 @@
+\hypertarget{mainwindow_8h}{\section{mainwindow.\-h}
+\label{d9/d53/mainwindow_8h}\index{C++/custom\-Irc\-Client/mainwindow.\-h@{C++/custom\-Irc\-Client/mainwindow.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef MAINWINDOW\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MAINWINDOW\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QMainWindow>}
+00005 \textcolor{preprocessor}{#include <QList>}
+00006 \textcolor{preprocessor}{#include <QString>}
+00007 \textcolor{preprocessor}{#include <QScrollArea>}
+00008 \textcolor{preprocessor}{#include <QScrollBar>}
+00009 \textcolor{preprocessor}{#include <QTimer>}
+00010 \textcolor{preprocessor}{#include "../resources/clslog.h"}
+00011 \textcolor{preprocessor}{#include "../resources/clsevent.h"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{chatbox_8h}{chatbox.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{clsserverconn_8h}{clsserverconn.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2clssettings_8h}{clssettings.h}"}
+00015 
+00016 \textcolor{preprocessor}{#ifdef DESKTOP}
+00017 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include "\hyperlink{clsnotify_8h}{desktop/clsnotify.h}"}
+00018 \textcolor{preprocessor}{#endif}
+00019 \textcolor{preprocessor}{}
+00020 
+\hypertarget{mainwindow_8h_source_l00021}{}\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{00021} \textcolor{preprocessor}{#define RECONNECT\_IN\_S 5}
+00022 \textcolor{preprocessor}{}\textcolor{keyword}{namespace }Ui \{
+00023     \textcolor{keyword}{class }\hyperlink{class_main_window}{MainWindow};
+00024 \}
+00025 \textcolor{keyword}{namespace }client\{
+00026 
+\hypertarget{mainwindow_8h_source_l00033}{}\hyperlink{classclient_1_1_main_window}{00033}     \textcolor{keyword}{class }\hyperlink{classclient_1_1_main_window}{MainWindow} : \textcolor{keyword}{public} QMainWindow
+00034     \{
+00035         Q\_OBJECT
+00036 
+00037         \textcolor{keyword}{public}:
+00038             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}{MainWindow}(QApplication *a, QWidget *parent = 0);
+00039             \hyperlink{classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{~MainWindow}();
+00040 
+00041 \textcolor{preprocessor}{#ifdef ANDROID}
+00042 \textcolor{preprocessor}{}            \textcolor{keyword}{enum} ScreenOrientation \{
+00043                 ScreenOrientationLockPortrait,
+00044                 ScreenOrientationLockLandscape,
+00045                 ScreenOrientationAuto
+00046             \};
+00047             \textcolor{comment}{// Note that this will only have an effect on Fremantle.}
+00048             \textcolor{keywordtype}{void} setOrientation(ScreenOrientation orientation);
+00049             \textcolor{keywordtype}{void} showExpanded();
+00050 \textcolor{preprocessor}{#endif}
+00051 \textcolor{preprocessor}{}
+00052 
+00053             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(QString msg, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl);
+00054     \textcolor{keyword}{private} slots:
+00055             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{sendChat}(QString message);
+00056             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{commandGiven}(QString command, QList<QString> args);
+00057             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{moveScrollBarToBottom}(\textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max);
+00058 
+00059 
+00060             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{serverConnected}();
+00061             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{serverDisconnected}();
+00062 
+00067             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{chatReceived}(\hyperlink{classshared_1_1events_1_1event_chat}{eventChat} *chatEvent);
+00072             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{userQueryCompleted}(QVector<ircUser*> \hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users});
+00078             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{userStatusChange}(\hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus} *statusEvent);
+00084             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{userChangeNick}(\hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick}* nickEvent);
+00085 
+00090             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{userLeave}(\hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave} *leaveEvent);
+00091 
+00096             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{userEnter}(\hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin} *newUser);
+00097 
+00098 
+00103             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{serverMessageReceived}(\hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage} *myMessage
+      );
+00104 
+00108             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{connectedTimeout}();
+00109 
+00110             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{doReconnect}();
+00111         \textcolor{keyword}{private}:
+\hypertarget{mainwindow_8h_source_l00112}{}\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{00112}             Ui::MainWindow *\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui};
+00113 
+\hypertarget{mainwindow_8h_source_l00114}{}\hyperlink{classclient_1_1_main_window_ad83b542f504d4d017661c0aa7ce630b7}{00114}             \hyperlink{class_k4_u_1_1cls_log}{clsLog} \hyperlink{classclient_1_1_main_window_ad83b542f504d4d017661c0aa7ce630b7}{log};
+\hypertarget{mainwindow_8h_source_l00115}{}\hyperlink{classclient_1_1_main_window_aa1e651adf78ed0a72d8c028a8263e17d}{00115}             \hyperlink{classclient_1_1chat_box}{chatBox} *\hyperlink{classclient_1_1_main_window_aa1e651adf78ed0a72d8c028a8263e17d}{cb};
+00116 
+\hypertarget{mainwindow_8h_source_l00117}{}\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{00117}             \hyperlink{classclient_1_1cls_server_conn}{clsServerConn} *\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server};
+00118 
+\hypertarget{mainwindow_8h_source_l00119}{}\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{00119}             QMap<int, ircUser *> \hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users};
+00120 
+\hypertarget{mainwindow_8h_source_l00121}{}\hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{00121}             \hyperlink{classclient_1_1cls_settings}{clsSettings} *\hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{settings};
+\hypertarget{mainwindow_8h_source_l00122}{}\hyperlink{classclient_1_1_main_window_a5ee3a3827379da6df9f7e0348fa9d91d}{00122}             QTimer *\hyperlink{classclient_1_1_main_window_a5ee3a3827379da6df9f7e0348fa9d91d}{reconnectTimer};
+00123     \};
+00124 \}
+00125 \textcolor{preprocessor}{#endif // MAINWINDOW\_H}
+\end{DoxyCode}

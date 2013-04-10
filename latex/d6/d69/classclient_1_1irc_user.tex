@@ -1,0 +1,533 @@
+\hypertarget{classclient_1_1irc_user}{\section{client\-:\-:irc\-User Class Reference}
+\label{d6/d69/classclient_1_1irc_user}\index{client\-::irc\-User@{client\-::irc\-User}}
+}
+
+
+The \hyperlink{classclient_1_1irc_user}{irc\-User} class.  
+
+
+
+
+{\ttfamily \#include $<$ircuser.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:irc\-User\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{d9/d35/classclient_1_1irc_user__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:irc\-User\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{df/d07/classclient_1_1irc_user__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1irc_user_a80f421ad537905c9bb6b3ecca9356984}{icon\-Changed} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}{irc\-User} (Q\-Variant json\-Data)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classclient_1_1irc_user}{irc\-User} constructor taking a Q\-Variant for the json\-Data \end{DoxyCompactList}\item 
+\hyperlink{classclient_1_1irc_user_a4dd04ceda1776113771b4ddd66d6aeda}{irc\-User} (qint32 \hyperlink{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{id}, Q\-String \hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick}, Q\-String \hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status}, Q\-Color \hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{u\-Color}, bool \hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{standard})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classclient_1_1irc_user}{irc\-User} constructor taking all the users data \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1irc_user_a1a92b2fc3fe322e1a8d73ac2207edff2}{copy\-From} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user\-To\-Copy)
+\item 
+\hyperlink{classclient_1_1irc_user_aff2073482ef95c7719f13390414dd197}{$\sim$irc\-User} ()
+\item 
+const Q\-String \hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{get\-Nick} () const 
+\item 
+qint32 \hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{get\-Id} () const 
+\item 
+const Q\-String \hyperlink{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{get\-Status} () const 
+\item 
+const Q\-Color \hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{get\-Color} () const 
+\item 
+const Q\-String \hyperlink{classclient_1_1irc_user_a16c0b6c75666b44e59c4708f82c40efa}{get\-Email} () const 
+\item 
+const Q\-Pixmap \hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{get\-Icon} () const 
+\item 
+bool \hyperlink{classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}{get\-Standard} () const 
+\item 
+bool \hyperlink{classclient_1_1irc_user_af60811d51ad2e145727c0d6689f3bb8b}{get\-Online} () const 
+\item 
+void \hyperlink{classclient_1_1irc_user_afea3839060b77227e83a0f84067a680d}{set\-Nick} (const Q\-String \&new\-Nick)
+\item 
+void \hyperlink{classclient_1_1irc_user_a0e73c2523b27cd4aeef5b85af753ed26}{set\-Status} (const Q\-String \&new\-Status)
+\item 
+void \hyperlink{classclient_1_1irc_user_a244bb548bf70054af24e540bfe10ef48}{set\-Color} (const Q\-Color \&new\-Color)
+\item 
+void \hyperlink{classclient_1_1irc_user_a07931060901d4ce55fd76c1533e1376f}{set\-Email} (const Q\-String \&\hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{email})
+\item 
+void \hyperlink{classclient_1_1irc_user_a3ba95d7e1584d9004b449494a62302a3}{set\-Online} (const bool is\-Online)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}{slot\-\_\-netw\-Manager\-Finished} (Q\-Network\-Reply $\ast$reply)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qint32 \hyperlink{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{id}
+\item 
+Q\-String \hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick}
+\item 
+Q\-String \hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status}
+\item 
+Q\-Color \hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{u\-Color}
+\item 
+bool \hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{standard}
+\item 
+Q\-String \hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{email}
+\item 
+Q\-Pixmap \hyperlink{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{icon}
+\item 
+bool \hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classclient_1_1irc_user_a538637b8b76561d02dc0a0ee98f91264}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classclient_1_1irc_user}{irc\-User} class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) Contains an I\-R\-C User There are more than one way to create a user. Please look at the options carefully! 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00023}{23} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}{\index{client\-::irc\-User@{client\-::irc\-User}!irc\-User@{irc\-User}}
+\index{irc\-User@{irc\-User}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{irc\-User}]{\setlength{\rightskip}{0pt plus 5cm}client\-::irc\-User\-::irc\-User (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant}]{json\-Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d6/d69/classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}
+
+
+\hyperlink{classclient_1_1irc_user}{irc\-User} constructor taking a Q\-Variant for the json\-Data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json\-Data} & The Q\-Variant containing the J\-S\-O\-N data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00010}{10} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_a4dd04ceda1776113771b4ddd66d6aeda}{\index{client\-::irc\-User@{client\-::irc\-User}!irc\-User@{irc\-User}}
+\index{irc\-User@{irc\-User}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{irc\-User}]{\setlength{\rightskip}{0pt plus 5cm}client\-::irc\-User\-::irc\-User (
+\begin{DoxyParamCaption}
+\item[{qint32}]{id, }
+\item[{Q\-String}]{nick, }
+\item[{Q\-String}]{status, }
+\item[{Q\-Color}]{u\-Color, }
+\item[{bool}]{standard}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d6/d69/classclient_1_1irc_user_a4dd04ceda1776113771b4ddd66d6aeda}
+
+
+\hyperlink{classclient_1_1irc_user}{irc\-User} constructor taking all the users data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The D\-B-\/\-I\-D of this user \\
+\hline
+{\em nick} & The nickname of this user \\
+\hline
+{\em status} & The status of this user \\
+\hline
+{\em u\-Color} & The user color \\
+\hline
+{\em standard} & Determines if he should be removed or left in the list when he leaves \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00037}{37} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_aff2073482ef95c7719f13390414dd197}{\index{client\-::irc\-User@{client\-::irc\-User}!$\sim$irc\-User@{$\sim$irc\-User}}
+\index{$\sim$irc\-User@{$\sim$irc\-User}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{$\sim$irc\-User}]{\setlength{\rightskip}{0pt plus 5cm}client\-::irc\-User\-::$\sim$irc\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_aff2073482ef95c7719f13390414dd197}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00006}{6} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1irc_user_a1a92b2fc3fe322e1a8d73ac2207edff2}{\index{client\-::irc\-User@{client\-::irc\-User}!copy\-From@{copy\-From}}
+\index{copy\-From@{copy\-From}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{copy\-From}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::copy\-From (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user\-To\-Copy}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_a1a92b2fc3fe322e1a8d73ac2207edff2}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00046}{46} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Color client\-::irc\-User\-::get\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00066}{66} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_a16c0b6c75666b44e59c4708f82c40efa}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Email@{get\-Email}}
+\index{get\-Email@{get\-Email}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Email}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String client\-::irc\-User\-::get\-Email (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_a16c0b6c75666b44e59c4708f82c40efa}
+\hypertarget{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Icon@{get\-Icon}}
+\index{get\-Icon@{get\-Icon}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-Pixmap client\-::irc\-User\-::get\-Icon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00070}{70} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}qint32 client\-::irc\-User\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00058}{58} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Nick@{get\-Nick}}
+\index{get\-Nick@{get\-Nick}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String client\-::irc\-User\-::get\-Nick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00053}{53} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_af60811d51ad2e145727c0d6689f3bb8b}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Online@{get\-Online}}
+\index{get\-Online@{get\-Online}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Online}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::irc\-User\-::get\-Online (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_af60811d51ad2e145727c0d6689f3bb8b}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00078}{78} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Standard@{get\-Standard}}
+\index{get\-Standard@{get\-Standard}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Standard}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::irc\-User\-::get\-Standard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00074}{74} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{\index{client\-::irc\-User@{client\-::irc\-User}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String client\-::irc\-User\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/d69/classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00062}{62} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d6/d69/classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_a80f421ad537905c9bb6b3ecca9356984}{\index{client\-::irc\-User@{client\-::irc\-User}!icon\-Changed@{icon\-Changed}}
+\index{icon\-Changed@{icon\-Changed}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{icon\-Changed}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::icon\-Changed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [signal]}}}\label{d6/d69/classclient_1_1irc_user_a80f421ad537905c9bb6b3ecca9356984}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a80f421ad537905c9bb6b3ecca9356984_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1irc_user_a244bb548bf70054af24e540bfe10ef48}{\index{client\-::irc\-User@{client\-::irc\-User}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{const Q\-Color \&}]{new\-Color}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_a244bb548bf70054af24e540bfe10ef48}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00094}{94} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a07931060901d4ce55fd76c1533e1376f}{\index{client\-::irc\-User@{client\-::irc\-User}!set\-Email@{set\-Email}}
+\index{set\-Email@{set\-Email}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{set\-Email}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::set\-Email (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{email}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_a07931060901d4ce55fd76c1533e1376f}
+\hypertarget{classclient_1_1irc_user_afea3839060b77227e83a0f84067a680d}{\index{client\-::irc\-User@{client\-::irc\-User}!set\-Nick@{set\-Nick}}
+\index{set\-Nick@{set\-Nick}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{set\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::set\-Nick (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{new\-Nick}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_afea3839060b77227e83a0f84067a680d}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00082}{82} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a3ba95d7e1584d9004b449494a62302a3}{\index{client\-::irc\-User@{client\-::irc\-User}!set\-Online@{set\-Online}}
+\index{set\-Online@{set\-Online}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{set\-Online}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::set\-Online (
+\begin{DoxyParamCaption}
+\item[{const bool}]{is\-Online}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_a3ba95d7e1584d9004b449494a62302a3}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00112}{112} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a0e73c2523b27cd4aeef5b85af753ed26}{\index{client\-::irc\-User@{client\-::irc\-User}!set\-Status@{set\-Status}}
+\index{set\-Status@{set\-Status}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{set\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::set\-Status (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{new\-Status}
+\end{DoxyParamCaption}
+)}}\label{d6/d69/classclient_1_1irc_user_a0e73c2523b27cd4aeef5b85af753ed26}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00086}{86} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}{\index{client\-::irc\-User@{client\-::irc\-User}!slot\-\_\-netw\-Manager\-Finished@{slot\-\_\-netw\-Manager\-Finished}}
+\index{slot\-\_\-netw\-Manager\-Finished@{slot\-\_\-netw\-Manager\-Finished}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{slot\-\_\-netw\-Manager\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::irc\-User\-::slot\-\_\-netw\-Manager\-Finished (
+\begin{DoxyParamCaption}
+\item[{Q\-Network\-Reply $\ast$}]{reply}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d6/d69/classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8cpp_source_l00099}{99} of file \hyperlink{custom_irc_client_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d69/classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d6/d69/classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{\index{client\-::irc\-User@{client\-::irc\-User}!email@{email}}
+\index{email@{email}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{email}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::irc\-User\-::email\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00077}{77} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{\index{client\-::irc\-User@{client\-::irc\-User}!icon@{icon}}
+\index{icon@{icon}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Pixmap client\-::irc\-User\-::icon\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00078}{78} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{\index{client\-::irc\-User@{client\-::irc\-User}!id@{id}}
+\index{id@{id}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}qint32 client\-::irc\-User\-::id\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00072}{72} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a538637b8b76561d02dc0a0ee98f91264}{\index{client\-::irc\-User@{client\-::irc\-User}!log@{log}}
+\index{log@{log}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} client\-::irc\-User\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a538637b8b76561d02dc0a0ee98f91264}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00081}{81} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{\index{client\-::irc\-User@{client\-::irc\-User}!nick@{nick}}
+\index{nick@{nick}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{nick}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::irc\-User\-::nick\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00073}{73} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{\index{client\-::irc\-User@{client\-::irc\-User}!online@{online}}
+\index{online@{online}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{online}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::irc\-User\-::online\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00079}{79} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{\index{client\-::irc\-User@{client\-::irc\-User}!standard@{standard}}
+\index{standard@{standard}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{standard}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::irc\-User\-::standard\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00076}{76} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{\index{client\-::irc\-User@{client\-::irc\-User}!status@{status}}
+\index{status@{status}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::irc\-User\-::status\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00074}{74} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{\index{client\-::irc\-User@{client\-::irc\-User}!u\-Color@{u\-Color}}
+\index{u\-Color@{u\-Color}!client::ircUser@{client\-::irc\-User}}
+\subsubsection[{u\-Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Color client\-::irc\-User\-::u\-Color\hspace{0.3cm}{\ttfamily [private]}}}\label{d6/d69/classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}
+
+
+Definition at line \hyperlink{custom_irc_client_2ircuser_8h_source_l00075}{75} of file \hyperlink{custom_irc_client_2ircuser_8h_source}{ircuser.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{custom_irc_client_2ircuser_8h}{ircuser.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{custom_irc_client_2ircuser_8cpp}{ircuser.\-cpp}\end{DoxyCompactItemize}

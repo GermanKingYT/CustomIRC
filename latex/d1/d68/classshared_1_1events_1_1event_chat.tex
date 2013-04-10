@@ -1,0 +1,202 @@
+\hypertarget{classshared_1_1events_1_1event_chat}{\section{shared\-:\-:events\-:\-:event\-Chat Class Reference}
+\label{d1/d68/classshared_1_1events_1_1event_chat}\index{shared\-::events\-::event\-Chat@{shared\-::events\-::event\-Chat}}
+}
+
+
+Class containing a chat\-Event.  
+
+
+
+
+{\ttfamily \#include $<$eventchat.\-h$>$}
+
+
+
+Inheritance diagram for shared\-:\-:events\-:\-:event\-Chat\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d9/de3/classshared_1_1events_1_1event_chat__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shared\-:\-:events\-:\-:event\-Chat\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d9a/classshared_1_1events_1_1event_chat__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}{event\-Chat} (int user\-Id, Q\-String message)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshared_1_1events_1_1event_chat}{event\-Chat} constructor taking a user\-Id and a message \end{DoxyCompactList}\item 
+\hyperlink{classshared_1_1events_1_1event_chat_a5289bfeafe5493f849097dbeda251170}{event\-Chat} (Q\-Variant\-Map \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data})
+\begin{DoxyCompactList}\small\item\em Initializer function that accepts data immediately. \end{DoxyCompactList}\item 
+int \hyperlink{classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}{get\-User} () const 
+\begin{DoxyCompactList}\small\item\em Gets the D\-B-\/\-I\-D of the user that sent the message. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}{get\-Message} () const 
+\begin{DoxyCompactList}\small\item\em Gets the chat message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class containing a chat\-Event. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{eventchat_8h_source_l00011}{11} of file \hyperlink{eventchat_8h_source}{eventchat.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}{\index{shared\-::events\-::event\-Chat@{shared\-::events\-::event\-Chat}!event\-Chat@{event\-Chat}}
+\index{event\-Chat@{event\-Chat}!shared::events::eventChat@{shared\-::events\-::event\-Chat}}
+\subsubsection[{event\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::event\-Chat\-::event\-Chat (
+\begin{DoxyParamCaption}
+\item[{int}]{user\-Id, }
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)}}\label{d1/d68/classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}
+
+
+\hyperlink{classshared_1_1events_1_1event_chat}{event\-Chat} constructor taking a user\-Id and a message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\-Id} & The D\-B-\/\-I\-D of the user that sent the message \\
+\hline
+{\em message} & The message that was sent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{eventchat_8cpp_source_l00006}{6} of file \hyperlink{eventchat_8cpp_source}{eventchat.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d68/classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1event_chat_a5289bfeafe5493f849097dbeda251170}{\index{shared\-::events\-::event\-Chat@{shared\-::events\-::event\-Chat}!event\-Chat@{event\-Chat}}
+\index{event\-Chat@{event\-Chat}!shared::events::eventChat@{shared\-::events\-::event\-Chat}}
+\subsubsection[{event\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::event\-Chat\-::event\-Chat (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map}]{data}
+\end{DoxyParamCaption}
+)}}\label{d1/d68/classshared_1_1events_1_1event_chat_a5289bfeafe5493f849097dbeda251170}
+
+
+Initializer function that accepts data immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A Q\-Variant\-Map containing the event data, parsed from J\-S\-O\-N Mostly used on the receiving end. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{eventchat_8cpp_source_l00012}{12} of file \hyperlink{eventchat_8cpp_source}{eventchat.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}{\index{shared\-::events\-::event\-Chat@{shared\-::events\-::event\-Chat}!get\-Message@{get\-Message}}
+\index{get\-Message@{get\-Message}!shared::events::eventChat@{shared\-::events\-::event\-Chat}}
+\subsubsection[{get\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String shared\-::events\-::event\-Chat\-::get\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d68/classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}
+
+
+Gets the chat message. 
+
+\begin{DoxyReturn}{Returns}
+The chat message 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{eventchat_8cpp_source_l00020}{20} of file \hyperlink{eventchat_8cpp_source}{eventchat.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d68/classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d68/classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}{\index{shared\-::events\-::event\-Chat@{shared\-::events\-::event\-Chat}!get\-User@{get\-User}}
+\index{get\-User@{get\-User}!shared::events::eventChat@{shared\-::events\-::event\-Chat}}
+\subsubsection[{get\-User}]{\setlength{\rightskip}{0pt plus 5cm}int shared\-::events\-::event\-Chat\-::get\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d1/d68/classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}
+
+
+Gets the D\-B-\/\-I\-D of the user that sent the message. 
+
+\begin{DoxyReturn}{Returns}
+The D\-B-\/\-I\-D of the user that sent the message 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{eventchat_8cpp_source_l00016}{16} of file \hyperlink{eventchat_8cpp_source}{eventchat.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d68/classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d68/classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/resources/events/\hyperlink{eventchat_8h}{eventchat.\-h}\item 
+C++/resources/events/\hyperlink{eventchat_8cpp}{eventchat.\-cpp}\end{DoxyCompactItemize}

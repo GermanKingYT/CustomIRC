@@ -1,0 +1,103 @@
+\hypertarget{_i_ministro_callback_8java}{\section{I\-Ministro\-Callback.\-java}
+\label{d5/dd2/_i_ministro_callback_8java}\index{C++/custom\-Irc\-Client/android/gen/org/kde/necessitas/ministro/\-I\-Ministro\-Callback.\-java@{C++/custom\-Irc\-Client/android/gen/org/kde/necessitas/ministro/\-I\-Ministro\-Callback.\-java}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * This file is auto-generated.  DO NOT MODIFY.}
+00003 \textcolor{comment}{ * Original file:
+       E:\(\backslash\)\(\backslash\)repositories\(\backslash\)\(\backslash\)git\(\backslash\)\(\backslash\)CustomIRC\(\backslash\)\(\backslash\)C++\(\backslash\)\(\backslash\)customIrcClient\(\backslash\)\(\backslash\)android\(\backslash\)\(\backslash\)src\(\backslash\)\(\backslash\)org\(\backslash\)\(\backslash\)kde\(\backslash\)\(\backslash\)necessitas\(\backslash\)\(\backslash\)ministro\(\backslash\)\(\backslash\)IMinistroCallback.aidl}
+00004 \textcolor{comment}{ */}
+00005 \textcolor{keyword}{package }org.kde.necessitas.ministro;
+\hypertarget{_i_ministro_callback_8java_source_l00006}{}\hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{00006} \textcolor{keyword}{public} \textcolor{keyword}{interface }\hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{IMinistroCallback} \textcolor{keyword}{extends} android.os.IInterface
+00007 \{
+00009 \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{abstract} \textcolor{keyword}{class }Stub \textcolor{keyword}{extends} android.os.Binder implements org.kde.necessitas.ministro.
+      \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{IMinistroCallback}
+00010 \{
+00011 \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} java.lang.String DESCRIPTOR = \textcolor{stringliteral}{"org.kde.necessitas.ministro.IMinistroCallback"};
+00013 \textcolor{keyword}{public} Stub()
+00014 \{
+00015 this.attachInterface(\textcolor{keyword}{this}, DESCRIPTOR);
+00016 \}
+00021 \textcolor{keyword}{public} \textcolor{keyword}{static} org.kde.necessitas.ministro.IMinistroCallback asInterface(android.os.IBinder obj)
+00022 \{
+00023 \textcolor{keywordflow}{if} ((obj==null)) \{
+00024 \textcolor{keywordflow}{return} null;
+00025 \}
+00026 android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
+00027 \textcolor{keywordflow}{if} (((iin!=null)&&(iin instanceof org.kde.necessitas.ministro.IMinistroCallback))) \{
+00028 \textcolor{keywordflow}{return} ((org.kde.necessitas.ministro.IMinistroCallback)iin);
+00029 \}
+00030 \textcolor{keywordflow}{return} \textcolor{keyword}{new} org.kde.necessitas.ministro.IMinistroCallback.Stub.Proxy(obj);
+00031 \}
+00032 @Override \textcolor{keyword}{public} android.os.IBinder asBinder()
+00033 \{
+00034 \textcolor{keywordflow}{return} \textcolor{keyword}{this};
+00035 \}
+00036 @Override \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} onTransact(\textcolor{keywordtype}{int} code, android.os.Parcel data, android.os.Parcel reply, \textcolor{keywordtype}{int} flags) \textcolor{keywordflow}{
+      throws} android.os.RemoteException
+00037 \{
+00038 \textcolor{keywordflow}{switch} (code)
+00039 \{
+00040 \textcolor{keywordflow}{case} INTERFACE\_TRANSACTION:
+00041 \{
+00042 reply.writeString(DESCRIPTOR);
+00043 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00044 \}
+00045 \textcolor{keywordflow}{case} TRANSACTION\_loaderReady:
+00046 \{
+00047 data.enforceInterface(DESCRIPTOR);
+00048 android.os.Bundle \_arg0;
+00049 \textcolor{keywordflow}{if} ((0!=data.readInt())) \{
+00050 \_arg0 = android.os.Bundle.CREATOR.createFromParcel(data);
+00051 \}
+00052 \textcolor{keywordflow}{else} \{
+00053 \_arg0 = null;
+00054 \}
+00055 this.\hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback_ac67b08ed6184a57c5c732f2f8911a3bf}{loaderReady}(\_arg0);
+00056 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00057 \}
+00058 \}
+00059 \textcolor{keywordflow}{return} super.onTransact(code, data, reply, flags);
+00060 \}
+00061 \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{class }Proxy \textcolor{keyword}{implements} org.kde.necessitas.ministro.
+      \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{IMinistroCallback}
+00062 \{
+00063 \textcolor{keyword}{private} android.os.IBinder mRemote;
+00064 Proxy(android.os.IBinder remote)
+00065 \{
+00066 mRemote = remote;
+00067 \}
+00068 @Override \textcolor{keyword}{public} android.os.IBinder asBinder()
+00069 \{
+00070 \textcolor{keywordflow}{return} mRemote;
+00071 \}
+00072 \textcolor{keyword}{public} java.lang.String getInterfaceDescriptor()
+00073 \{
+00074 \textcolor{keywordflow}{return} DESCRIPTOR;
+00075 \}
+00097 @Override \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback_ac67b08ed6184a57c5c732f2f8911a3bf}{loaderReady}(android.os.Bundle loaderParams) \textcolor{keywordflow}{throws} android.os.
+      RemoteException
+00098 \{
+00099 android.os.Parcel \_data = android.os.Parcel.obtain();
+00100 \textcolor{keywordflow}{try} \{
+00101 \_data.writeInterfaceToken(DESCRIPTOR);
+00102 \textcolor{keywordflow}{if} ((loaderParams!=null)) \{
+00103 \_data.writeInt(1);
+00104 loaderParams.writeToParcel(\_data, 0);
+00105 \}
+00106 \textcolor{keywordflow}{else} \{
+00107 \_data.writeInt(0);
+00108 \}
+00109 mRemote.transact(Stub.TRANSACTION\_loaderReady, \_data, null, android.os.IBinder.FLAG\_ONEWAY);
+00110 \}
+00111 \textcolor{keywordflow}{finally} \{
+00112 \_data.recycle();
+00113 \}
+00114 \}
+00115 \}
+00116 \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} TRANSACTION\_loaderReady = (android.os.IBinder.FIRST\_CALL\_TRANSACTION + 0);
+00117 \}
+00139 \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback_ac67b08ed6184a57c5c732f2f8911a3bf}{loaderReady}(android.os.Bundle loaderParams) \textcolor{keywordflow}{throws} android.os.RemoteException;
+00140 \}
+\end{DoxyCode}

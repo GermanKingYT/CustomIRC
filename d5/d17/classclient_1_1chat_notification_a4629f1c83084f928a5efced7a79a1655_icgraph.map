@@ -1,0 +1,5 @@
+<map id="client::chatNotification::getWidth" name="client::chatNotification::getWidth">
+<area shape="rect" id="node2" href="$d5/d17/classclient_1_1chat_notification.html#a88bb5e2ae6d834567b46f1f0ea846e06" title="Calculates the message width to detirmine it should be wrapped." alt="" coords="206,38,375,79"/>
+<area shape="rect" id="node3" href="$d5/d17/classclient_1_1chat_notification.html#ae2fcac96b85efe37fd12c38282120e18" title="Constructor taking a message." alt="" coords="425,5,575,46"/>
+<area shape="rect" id="node4" href="$d5/d17/classclient_1_1chat_notification.html#ae6afe176382747d63b6e49b94741e82c" title="client::chatNotification\l::resizeEvent" alt="" coords="425,70,575,111"/>
+</map>

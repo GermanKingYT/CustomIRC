@@ -1,0 +1,32 @@
+\hypertarget{eventchat_8cpp}{\section{eventchat.\-cpp}
+\label{db/df5/eventchat_8cpp}\index{C++/resources/events/eventchat.\-cpp@{C++/resources/events/eventchat.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventchat_8h}{eventchat.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared\{
+00004     \textcolor{keyword}{namespace }events\{
+00005 
+\hypertarget{eventchat_8cpp_source_l00006}{}\hyperlink{classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}{00006}         \hyperlink{classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}{eventChat::eventChat}(\textcolor{keywordtype}{int} userId, QString message)\{
+00007             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{EVENTTYPE\_CHAT};
+00008             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"userId"},userId);
+00009             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"message"}, message);
+00010         \}
+00011 
+\hypertarget{eventchat_8cpp_source_l00012}{}\hyperlink{classshared_1_1events_1_1event_chat_a5289bfeafe5493f849097dbeda251170}{00012}         \hyperlink{classshared_1_1events_1_1event_chat_ae8e23aacd573c9d738fa092706012e98}{eventChat::eventChat}(QVariantMap data)
+00013             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00014         \{ \}
+00015 
+\hypertarget{eventchat_8cpp_source_l00016}{}\hyperlink{classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}{00016}         \textcolor{keywordtype}{int} \hyperlink{classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}{eventChat::getUser}()\textcolor{keyword}{ const}\{
+00017             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"userId"}).toInt();
+00018         \}
+00019 
+\hypertarget{eventchat_8cpp_source_l00020}{}\hyperlink{classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}{00020}         QString \hyperlink{classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}{eventChat::getMessage}()\textcolor{keyword}{ const}\{
+00021             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"message"}).toString();
+00022         \}
+00023 
+00024 
+00025     \}
+00026 \}
+\end{DoxyCode}

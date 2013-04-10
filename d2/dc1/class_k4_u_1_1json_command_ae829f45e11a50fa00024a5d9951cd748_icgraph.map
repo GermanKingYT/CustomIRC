@@ -1,0 +1,13 @@
+<map id="K4U::jsonCommand::getData" name="K4U::jsonCommand::getData">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.html#a034a72332abdeeb8dbd9483954a235dd" title="The server has given us all the users. Handle it." alt="" coords="245,5,411,46"/>
+<area shape="rect" id="node5" href="$d3/d65/classclient_1_1cls_server_conn.html#a2f4257ed2b9677919567a060fb31887b" title="Another client has changed our own user status." alt="" coords="245,70,411,111"/>
+<area shape="rect" id="node6" href="$d3/d65/classclient_1_1cls_server_conn.html#a25abb840bb0764068d9a72dfb1e403b5" title="Event request has been done by us, and data has been returned." alt="" coords="254,135,402,177"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="467,103,611,145"/>
+<area shape="rect" id="node7" href="$dc/d4d/classserver_1_1ui_client.html#afdda23f96c586fdcb47f1abad7be99f5" title="server::uiClient::receive\lMessage" alt="" coords="251,253,405,294"/>
+<area shape="rect" id="node9" href="$df/dd2/classserver_1_1ui_server.html#a1d221672f6efb29189e6ce398f7b07e3" title="Triggered when a client wants to change something about our own user." alt="" coords="248,318,408,359"/>
+<area shape="rect" id="node12" href="$d6/d75/namespace_k4_u.html#ac6dc12e99e9f8aac74f9b654ddbb199a" title="K4U::operator\&lt;\&lt;" alt="" coords="269,384,387,411"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#ad9d8caf021df2cd15ce27bcf207d86d0" title="Constructor taking a hostname and port." alt="" coords="677,103,821,145"/>
+<area shape="rect" id="node8" href="$dc/d4d/classserver_1_1ui_client.html#a215d811cbfada73ff8344ed7e5664113" title="uiClient constructor" alt="" coords="459,260,618,287"/>
+<area shape="rect" id="node10" href="$df/dd2/classserver_1_1ui_server.html#af8300a694de27369a5f5d1a95ed1cc37" title="Triggered when a client connects." alt="" coords="460,318,617,359"/>
+<area shape="rect" id="node11" href="$df/dd2/classserver_1_1ui_server.html#a55e34b95359692ea9002408075e18b1a" title="uiServer constructor" alt="" coords="667,325,831,352"/>
+</map>

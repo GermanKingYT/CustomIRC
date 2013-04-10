@@ -1,0 +1,5 @@
+<map id="client::ircUser::getId" name="client::ircUser::getId">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#a13044cd00c53dbbbc6b945c0dfd9b4b4" title="Triggered when the user query came back." alt="" coords="192,5,344,46"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="201,70,335,111"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="393,38,527,79"/>
+</map>

@@ -1,0 +1,306 @@
+\hypertarget{mainwindow_8cpp}{\section{mainwindow.\-cpp}
+\label{d8/dd9/mainwindow_8cpp}\index{C++/custom\-Irc\-Client/mainwindow.\-cpp@{C++/custom\-Irc\-Client/mainwindow.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{mainwindow_8h}{mainwindow.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_mainwindow.h"}
+00003 \textcolor{keyword}{namespace }client\{
+00004 
+\hypertarget{mainwindow_8cpp_source_l00005}{}\hyperlink{classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}{00005}     \hyperlink{classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}{MainWindow::MainWindow}(QApplication *a, QWidget *parent) :
+00006         QMainWindow(parent),
+00007         ui(new Ui::\hyperlink{classclient_1_1_main_window}{MainWindow}),
+00008         log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{LOGTAGS\_UI}),
+00009         server()
+00010     \{
+00011         this->\hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{settings} = \textcolor{keyword}{new} \hyperlink{classclient_1_1cls_settings}{clsSettings}(a->applicationDirPath());
+00012         this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server} = \textcolor{keyword}{new} \hyperlink{classclient_1_1cls_server_conn}{clsServerConn}(\hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{settings}->
+      \hyperlink{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{getServer}(),\hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{settings}->\hyperlink{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{getPort}());
+00013         \textcolor{comment}{//this->server = new clsServerConn("localhost",1337);}
+00014 
+00015         \hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->setupUi(\textcolor{keyword}{this});
+00016 
+00017         connect(this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->scrollArea->verticalScrollBar(),SIGNAL(rangeChanged(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})),
+00018                 \textcolor{keyword}{this},SLOT(\hyperlink{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{moveScrollBarToBottom}(\textcolor{keywordtype}{int},\textcolor{keywordtype}{int})));
+00019 
+00020 
+00021         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{chatReceived}(\hyperlink{classshared_1_1events_1_1event_chat}{eventChat}*)),
+00022                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{chatReceived}(\hyperlink{classshared_1_1events_1_1event_chat}{eventChat}*)));
+00023         connect(this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->mChatInput,SIGNAL(\hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{sendChat}(QString))
+00024                 ,\textcolor{keyword}{this},SLOT(\hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{sendChat}(QString)));
+00025         connect(this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->mChatInput, SIGNAL(\hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{commandGiven}(QString,QList<QString>)),
+00026                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{commandGiven}(QString,QList<QString>)));
+00027 
+00028 
+00029         connect(this->server, SIGNAL(connected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{serverConnected}()));
+00030         connect(this->server, SIGNAL(disconnected()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{serverDisconnected}()));
+00031 
+00032         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{userQueryCompleted}(QVector<ircUser*>)),
+00033                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{userQueryCompleted}(QVector<ircUser*>)));
+00034 
+00035         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{userStatusChange}(
+      \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus}*)),
+00036                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{userStatusChange}(
+      \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus}*)));
+00037         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{userLeave}(\hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave}*)),
+00038                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{userLeave}(\hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave}*)));
+00039         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{userEnter}(\hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin}*)),
+00040                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{userEnter}(\hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin}*)));
+00041         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{userChangeNick}(
+      \hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick}*)),
+00042                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{userChangeNick}(\hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick}*)));
+00043 
+00044         connect(this->server, SIGNAL(\hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{serverMessageReceived}(
+      \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage}*)),
+00045                 \textcolor{keyword}{this}, SLOT(\hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{serverMessageReceived}(
+      \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage}*)));
+00046 
+00047         connect(this->server, SIGNAL(sgnConnectTimeout()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{connectedTimeout}()));
+00048 
+00049         this->\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(\textcolor{stringliteral}{"Connecting to server"},
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00050         this->server->doConnect();
+00051     \}
+00052 
+00053 
+\hypertarget{mainwindow_8cpp_source_l00054}{}\hyperlink{classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{00054}     \hyperlink{classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::~MainWindow}()
+00055     \{
+00056         \textcolor{keyword}{delete} this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server};
+00057         \textcolor{keyword}{delete} \hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui};
+00058     \}
+00059 
+\hypertarget{mainwindow_8cpp_source_l00060}{}\hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{00060}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{MainWindow::chatReceived}(\hyperlink{classshared_1_1events_1_1event_chat}{eventChat} *chatEvent)\{
+00061         this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addChat(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[chatEvent->\hyperlink{classshared_1_1events_1_1event_chat_affa9c414f40d61277b690efd4013f550}{getUser}()],
+00062                 chatEvent->\hyperlink{classshared_1_1events_1_1event_chat_a10a61f130fb402e63922cd0b34468c8e}{getMessage}(), chatEvent->\hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{getTime}());
+00063     \}
+00064 
+\hypertarget{mainwindow_8cpp_source_l00065}{}\hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{00065}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{MainWindow::sendChat}(QString message)\{
+00066         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} toSend(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eaafa4f30da47ec31cfac97c6dcd3f6791}{JSONCOMMAND\_OWNCHAT});
+00067         toSend.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"chat"},message);
+00068 
+00069         this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}->\hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{sendCommand}(toSend);
+00070     \}
+00071 
+\hypertarget{mainwindow_8cpp_source_l00072}{}\hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{00072}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{MainWindow::commandGiven}(QString command, QList<QString> args)\{
+00073         \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"status"})\{
+00074             \hyperlink{class_k4_u_1_1json_command}{jsonCommand} toSend(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea38ec768fb3babd5e8c66361a081aacae}{JSONCOMMAND\_CHANGEOWNUSER});
+00075             toSend.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"change"},\textcolor{stringliteral}{"STATUS"});
+00076             \textcolor{keywordflow}{if}(args.length() == 0)\{
+00077                 \textcolor{comment}{//Set status online}
+00078                 toSend.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"new"},\textcolor{stringliteral}{""});
+00079             \}\textcolor{keywordflow}{else}\{
+00080                 toSend.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"new"},args[0]);
+00081             \}
+00082             this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}->\hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{sendCommand}(toSend);
+00083         \}
+00084     \}
+00085 
+\hypertarget{mainwindow_8cpp_source_l00086}{}\hyperlink{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{00086}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{MainWindow::moveScrollBarToBottom}(\textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} max)\{
+00087         Q\_UNUSED(min);
+00088         this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->scrollArea->verticalScrollBar()->setValue(max);
+00089     \}
+00090 
+\hypertarget{mainwindow_8cpp_source_l00091}{}\hyperlink{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{00091}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{MainWindow::serverConnected}()\{
+00092         \textcolor{comment}{//this->ui->chatbox->addMessage("Connected!");}
+00093         this->\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(\textcolor{stringliteral}{"Connected to server"},
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00094         \textcolor{comment}{//Do user query}
+00095         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} toSend(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY});
+00096         this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}->\hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{sendCommand}(toSend);
+00097     \}
+00098 
+00099 
+\hypertarget{mainwindow_8cpp_source_l00100}{}\hyperlink{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{00100}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{MainWindow::serverDisconnected}()\{
+00101         QString msg(\textcolor{stringliteral}{"Disconnected from server. Reconnecting in %1 seconds"});
+00102         msg = msg.arg(qint32(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}));
+00103         this->\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(msg,\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR});
+00104         \textcolor{comment}{//Now, let's reconnect in RECONNECT\_IN\_S}
+00105         QTimer::singleShot(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}*1000, \textcolor{keyword}{this},
+00106                                         SLOT(\hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{doReconnect}()));
+00107     \}
+00108 
+\hypertarget{mainwindow_8cpp_source_l00109}{}\hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{00109}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{MainWindow::userQueryCompleted}(QVector<ircUser *> users)\{
+00110 
+00111 \textcolor{preprocessor}{#ifdef DESKTOP}
+00112 \textcolor{preprocessor}{}        \textcolor{comment}{//this->ui->userList->clear();}
+00113         \textcolor{keywordflow}{if}(this->users.count() > 0)\{
+00114             this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList = \textcolor{keyword}{new} \hyperlink{classclient_1_1cls_user_list}{clsUserList}(\textcolor{keyword}{this});
+00115         \}
+00116 \textcolor{preprocessor}{#endif}
+00117 \textcolor{preprocessor}{}        this->users.clear();
+00118         \textcolor{keywordflow}{foreach}(\hyperlink{classclient_1_1irc_user}{ircUser}* user, users)\{
+00119 \textcolor{preprocessor}{#ifdef DESKTOP}
+00120 \textcolor{preprocessor}{}            this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->addUser(user);
+00121 \textcolor{preprocessor}{#endif}
+00122 \textcolor{preprocessor}{}            this->users.insert(user->\hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{getId}(),user);
+00123         \}
+00124         \textcolor{comment}{//Ask for events that happened in the last time..}
+00125         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} messageQuery(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS});
+00126         this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}->\hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{sendCommand}(messageQuery);
+00127     \}
+00128 
+\hypertarget{mainwindow_8cpp_source_l00129}{}\hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{00129}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{MainWindow::userStatusChange}(
+      \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus} *statusEvent)\{
+00130         \textcolor{keywordtype}{int} userId = statusEvent->\hyperlink{classshared_1_1events_1_1event_user_change_status_a4c904f38f1ff994ebb9a9ec251604874}{getUserId}();
+00131         this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->setStatus(statusEvent->\hyperlink{classshared_1_1events_1_1event_user_change_status_a018d111b0b5b957754b20d777f7f1bef}{getNewStatus}());
+00132 \textcolor{preprocessor}{#ifdef DESKTOP}
+00133 \textcolor{preprocessor}{}        this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->refreshUser(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]);
+00134 \textcolor{preprocessor}{#endif}
+00135 \textcolor{preprocessor}{}        this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(QString(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getNick()) + \textcolor{stringliteral}{" is nu "} +
+00136                 this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getStatus());
+00137     \}
+00138 
+\hypertarget{mainwindow_8cpp_source_l00139}{}\hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{00139}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{MainWindow::userChangeNick}(
+      \hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick} *nickEvent)\{
+00140         \textcolor{keywordtype}{int} userId = nickEvent->\hyperlink{classshared_1_1events_1_1event_user_change_nick_ad79adbb7cd52aa5307ff59ddbc2d8b7d}{getUserId}();
+00141         this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->setNick(nickEvent->\hyperlink{classshared_1_1events_1_1event_user_change_nick_a69ac7b5a6aa9bfab4d28e9fe54baf3d5}{getNewNick}());
+00142 \textcolor{preprocessor}{#ifdef DESKTOP}
+00143 \textcolor{preprocessor}{}        this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->refreshUser(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]);
+00144 \textcolor{preprocessor}{#endif}
+00145 \textcolor{preprocessor}{}        this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(nickEvent->\hyperlink{classshared_1_1events_1_1event_user_change_nick_a4eab71d2abb978c22f7207a46a9bc70e}{getOldNick}() + \textcolor{stringliteral}{" is nu bekend als "} +
+00146                 this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getNick());
+00147     \}
+00148 
+\hypertarget{mainwindow_8cpp_source_l00149}{}\hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{00149}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{MainWindow::userLeave}(\hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave} *leaveEvent)\{
+00150         \textcolor{keywordtype}{int} userId = leaveEvent->\hyperlink{classshared_1_1events_1_1event_user_leave_afb9cb12d52415109349d1469f1577353}{getUserId}();
+00151         QString username = \textcolor{stringliteral}{""};
+00152         \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}.contains(userId))\{
+00153             \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getStandard())\{
+00154                 this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->setOnline(\textcolor{keyword}{false});
+00155                 username = this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getNick();
+00156 \textcolor{preprocessor}{#ifdef DESKTOP}
+00157 \textcolor{preprocessor}{}                this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->refreshUser(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]);
+00158 \textcolor{preprocessor}{#endif}
+00159 \textcolor{preprocessor}{}            \}\textcolor{keywordflow}{else}\{
+00160 \textcolor{preprocessor}{#ifdef DESKTOP}
+00161 \textcolor{preprocessor}{}                this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->removeUser(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]);
+00162 \textcolor{preprocessor}{#endif}
+00163 \textcolor{preprocessor}{}                username = this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[userId]->getNick();
+00164                 this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}.remove(userId);
+00165             \}
+00166             this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(username + \textcolor{stringliteral}{" is weggegaan"},
+00167                                           leaveEvent->\hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{getTime}());
+00168         \}
+00169     \}
+00170 
+00171 
+\hypertarget{mainwindow_8cpp_source_l00172}{}\hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{00172}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{MainWindow::userEnter}(\hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin} *uEvent)\{
+00173         \hyperlink{classclient_1_1irc_user}{ircUser} *newUser = \textcolor{keyword}{new} \hyperlink{classclient_1_1irc_user}{ircUser}(uEvent->\hyperlink{classshared_1_1events_1_1event_user_join_afd49e93a57440f97dd02ccbec353cdb8}{getUser}());
+00174         QString username = newUser->\hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{getNick}();
+00175 
+00176         \textcolor{keywordflow}{if}(newUser->\hyperlink{classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}{getStandard}() || this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}.keys().contains(newUser->
+      \hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{getId}()))\{
+00177             \textcolor{comment}{//If it was already in there}
+00178             \textcolor{comment}{//It can only occur when bot has just started and the userquery also returns}
+00179             \textcolor{comment}{//a user that isn't standard}
+00180             this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[newUser->\hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{getId}()]->copyFrom(newUser);
+00181 \textcolor{preprocessor}{#ifdef DESKTOP}
+00182 \textcolor{preprocessor}{}            this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->refreshUser(this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}[newUser->\hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{getId}()]);
+00183 \textcolor{preprocessor}{#endif}
+00184 \textcolor{preprocessor}{}        \}\textcolor{keywordflow}{else}\{
+00185             \textcolor{comment}{//Just add it}
+00186 \textcolor{preprocessor}{#ifdef DESKTOP}
+00187 \textcolor{preprocessor}{}            this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->userList->addUser(newUser);
+00188 \textcolor{preprocessor}{#endif}
+00189 \textcolor{preprocessor}{}            this->\hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}.insert(newUser->\hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{getId}(),newUser);
+00190         \}
+00191         this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(username + \textcolor{stringliteral}{" is binnengekomen"},
+00192                                       uEvent->\hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{getTime}());
+00193     \}
+00194 
+\hypertarget{mainwindow_8cpp_source_l00195}{}\hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{00195}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{MainWindow::serverMessageReceived}(
+      \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage} *myMessage)\{
+00196         \textcolor{comment}{//No more, no less}
+00197         QColor colorOfMessage;
+00198         \textcolor{keywordflow}{switch}(myMessage->\hyperlink{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{getLevel}())\{
+00199             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR}:
+00200                 colorOfMessage.setRgb(160,0,0);
+00201                 \textcolor{keywordflow}{break};
+00202             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO}:
+00203                 colorOfMessage.setRgb(0,160,0);
+00204                 \textcolor{keywordflow}{break};
+00205         \}
+00206 
+00207         QString message(myMessage->\hyperlink{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{getMessage}());
+00208         this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(message, myMessage->\hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{getTime}(),
+00209                                       colorOfMessage);
+00210     \}
+00211 
+\hypertarget{mainwindow_8cpp_source_l00212}{}\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{00212}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{MainWindow::showMessage}(QString msg, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)\{
+00213         QColor colorOfMessage;
+00214         \textcolor{keywordflow}{switch}(lvl)\{
+00215             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR}:
+00216                 colorOfMessage.setRgb(160,0,0);
+00217                 \textcolor{keywordflow}{break};
+00218             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO}:
+00219                 colorOfMessage.setRgb(0,160,0);
+00220                 \textcolor{keywordflow}{break};
+00221         \}
+00222         this->\hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}->chatbox->addMessage(msg, QTime::currentTime(),
+00223                                       colorOfMessage);
+00224     \}
+00225 
+\hypertarget{mainwindow_8cpp_source_l00226}{}\hyperlink{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{00226}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{MainWindow::connectedTimeout}()\{
+00227         QString msg(\textcolor{stringliteral}{"Unable to connect to server. Reconnecting in %1 seconds"});
+00228         msg = msg.arg(qint32(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}));
+00229         this->\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(msg,\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR});
+00230         \textcolor{comment}{//Now, let's reconnect in RECONNECT\_IN\_S}
+00231         QTimer::singleShot(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}*1000, \textcolor{keyword}{this},
+00232                                         SLOT(\hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{doReconnect}()));
+00233     \}
+00234 
+\hypertarget{mainwindow_8cpp_source_l00235}{}\hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{00235}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{MainWindow::doReconnect}()\{
+00236         this->\hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{showMessage}(\textcolor{stringliteral}{"Reconnecting"},\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00237         this->\hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}->\hyperlink{classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}{doConnect}();
+00238     \}
+00239 
+00240 
+00241 \textcolor{preprocessor}{#ifdef ANDROID}
+00242 \textcolor{preprocessor}{}
+00243     \textcolor{keywordtype}{void} \hyperlink{class_main_window_a9597b97cef9da0760a06e8e04ca3d138}{MainWindow::setOrientation}(ScreenOrientation orientation)
+00244     \{
+00245         Qt::WidgetAttribute attribute;
+00246         \textcolor{keywordflow}{switch} (orientation) \{
+00247 \textcolor{preprocessor}{#if QT\_VERSION < 0x040702}
+00248 \textcolor{preprocessor}{}            \textcolor{comment}{// Qt < 4.7.2 does not yet have the Qt::WA\_*Orientation attributes}
+00249             \textcolor{keywordflow}{case} ScreenOrientationLockPortrait:
+00250                 attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(128);
+00251                 \textcolor{keywordflow}{break};
+00252             \textcolor{keywordflow}{case} ScreenOrientationLockLandscape:
+00253                 attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(129);
+00254                 \textcolor{keywordflow}{break};
+00255             \textcolor{keywordflow}{default}:
+00256             \textcolor{keywordflow}{case} ScreenOrientationAuto:
+00257                 attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(130);
+00258                 \textcolor{keywordflow}{break};
+00259 \textcolor{preprocessor}{#else // QT\_VERSION < 0x040702}
+00260 \textcolor{preprocessor}{}            \textcolor{keywordflow}{case} ScreenOrientationLockPortrait:
+00261                 attribute = Qt::WA\_LockPortraitOrientation;
+00262                 \textcolor{keywordflow}{break};
+00263             \textcolor{keywordflow}{case} ScreenOrientationLockLandscape:
+00264                 attribute = Qt::WA\_LockLandscapeOrientation;
+00265                 \textcolor{keywordflow}{break};
+00266             \textcolor{keywordflow}{default}:
+00267             \textcolor{keywordflow}{case} ScreenOrientationAuto:
+00268                 attribute = Qt::WA\_AutoOrientation;
+00269                 \textcolor{keywordflow}{break};
+00270 \textcolor{preprocessor}{#endif // QT\_VERSION < 0x040702}
+00271 \textcolor{preprocessor}{}        \};
+00272         setAttribute(attribute, \textcolor{keyword}{true});
+00273     \}
+00274 
+00275     \textcolor{keywordtype}{void} \hyperlink{class_main_window_ae66038a9d909fd409d781bf7c3f3ff2c}{MainWindow::showExpanded}()
+00276     \{
+00277 \textcolor{preprocessor}{#if defined(Q\_WS\_SIMULATOR)}
+00278 \textcolor{preprocessor}{}        showFullScreen();
+00279 \textcolor{preprocessor}{#elif defined(Q\_WS\_MAEMO\_5)}
+00280 \textcolor{preprocessor}{}        showMaximized();
+00281 \textcolor{preprocessor}{#else}
+00282 \textcolor{preprocessor}{}        show();
+00283 \textcolor{preprocessor}{#endif}
+00284 \textcolor{preprocessor}{}    \}
+00285 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* ANDROID */}\textcolor{preprocessor}{}
+00286 \textcolor{preprocessor}{}\}
+\end{DoxyCode}

@@ -1,0 +1,88 @@
+\hypertarget{chatbox_8cpp}{\section{chatbox.\-cpp}
+\label{de/da9/chatbox_8cpp}\index{C++/custom\-Irc\-Client/chatbox.\-cpp@{C++/custom\-Irc\-Client/chatbox.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{chatbox_8h}{chatbox.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_chatbox.h"}
+00003 \textcolor{preprocessor}{#include <QScrollArea>}
+00004 
+\hypertarget{chatbox_8cpp_source_l00005}{}\hyperlink{namespaceclient}{00005} \textcolor{keyword}{namespace }client\{
+00006 
+\hypertarget{chatbox_8cpp_source_l00007}{}\hyperlink{classclient_1_1chat_box_a3687539a89f5c5ef806c578f90651440}{00007}     \hyperlink{classclient_1_1chat_box_a3687539a89f5c5ef806c578f90651440}{chatBox::chatBox}(QWidget *parent) :
+00008         QWidget(parent),
+00009         ui(new Ui::\hyperlink{classclient_1_1chat_box}{chatBox}),
+00010         widthOfNick(0)
+00011     \{
+00012         \hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui}->setupUi(\textcolor{keyword}{this});
+00013     \}
+00014 
+00015 
+00016 
+\hypertarget{chatbox_8cpp_source_l00017}{}\hyperlink{classclient_1_1chat_box_a69c2a7a7b23a8a6a349dd780537a7df7}{00017}     \hyperlink{classclient_1_1chat_box_a69c2a7a7b23a8a6a349dd780537a7df7}{chatBox::~chatBox}()
+00018     \{
+00019         \textcolor{keyword}{delete} \hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui};
+00020     \}
+00021 
+\hypertarget{chatbox_8cpp_source_l00022}{}\hyperlink{classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}{00022}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}{chatBox::addChat}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString message)\{
+00023         \hyperlink{structclient_1_1chat_box_1_1content}{content} *myContent = \textcolor{keyword}{new} \hyperlink{structclient_1_1chat_box_1_1content}{content};
+00024         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget} = \textcolor{keyword}{new} \hyperlink{classclient_1_1chat_entry}{chatEntry}(user,message,this->
+      \hyperlink{classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}{widthOfNick},\textcolor{keyword}{this});
+00025         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a2de7a80ee6075db0545e0412846cef82}{type} = \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}{WIDGETTYPES\_CHATENTRY};
+00026 
+00027         this->\hyperlink{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{entries}.append(myContent);
+00028         this->\hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui}->verticalLayout->addWidget(myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget});
+00029     \}
+00030 
+\hypertarget{chatbox_8cpp_source_l00031}{}\hyperlink{classclient_1_1chat_box_a0d303b9119fb4f1c9d7b406aab6adcaa}{00031}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_a1621c572958c7c6f34018eaee42533aa}{chatBox::addChat}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString message, QTime timeOfMessage)\{
+00032         \hyperlink{structclient_1_1chat_box_1_1content}{content} *myContent = \textcolor{keyword}{new} \hyperlink{structclient_1_1chat_box_1_1content}{content};
+00033         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget} = \textcolor{keyword}{new} \hyperlink{classclient_1_1chat_entry}{chatEntry}(user,message, this->
+      \hyperlink{classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}{widthOfNick}, timeOfMessage, \textcolor{keyword}{this});
+00034         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a2de7a80ee6075db0545e0412846cef82}{type} = \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}{WIDGETTYPES\_CHATENTRY};
+00035 
+00036         this->\hyperlink{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{entries}.append(myContent);
+00037         this->\hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui}->verticalLayout->addWidget(myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget});
+00038     \}
+00039 
+\hypertarget{chatbox_8cpp_source_l00040}{}\hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{00040}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{chatBox::addMessage}(QString &message)\{
+00041         this->\hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{addMessage}(message,QTime::currentTime());
+00042     \}
+00043 
+\hypertarget{chatbox_8cpp_source_l00044}{}\hyperlink{classclient_1_1chat_box_aee3ca71af1723d364aa9edcd9bb44453}{00044}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{chatBox::addMessage}(\textcolor{keyword}{const} QString &message)\{
+00045         QString newMsg(message);
+00046         this->\hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{addMessage}(newMsg);
+00047     \}
+00048 
+\hypertarget{chatbox_8cpp_source_l00049}{}\hyperlink{classclient_1_1chat_box_aff3dde2175073f584e04ffb6a65027a3}{00049}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{chatBox::addMessage}(\textcolor{keyword}{const} QString &message, QTime timeOfMessage)\{
+00050         QString newMsg(message);
+00051         this->\hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{addMessage}(newMsg, timeOfMessage);
+00052     \}
+00053 
+\hypertarget{chatbox_8cpp_source_l00054}{}\hyperlink{classclient_1_1chat_box_ae62f2e454789f56a4f498336158d9c52}{00054}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{chatBox::addMessage}(QString &message, QTime timeOfMessage)\{
+00055         QColor myColor(\textcolor{stringliteral}{"black"});
+00056         this->\hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{addMessage}(message,timeOfMessage, myColor);
+00057     \}
+00058 
+\hypertarget{chatbox_8cpp_source_l00059}{}\hyperlink{classclient_1_1chat_box_af59419ce231d4a16d3cb89974069a5e6}{00059}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_ade0d82e9e4a985f239abc201693c2a58}{chatBox::addMessage}(QString &message, QTime timeOfMessage, QColor &myColor)\{
+00060         \hyperlink{structclient_1_1chat_box_1_1content}{content} *myContent = \textcolor{keyword}{new} \hyperlink{structclient_1_1chat_box_1_1content}{content};
+00061         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget} = \textcolor{keyword}{new} \hyperlink{classclient_1_1chat_notification}{chatNotification}(message, timeOfMessage, myColor, \textcolor{keyword}{
+      this});
+00062         myContent->\hyperlink{structclient_1_1chat_box_1_1content_a2de7a80ee6075db0545e0412846cef82}{type} = \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada343c8885d52712f16acc9db401d79ebe}{WIDGETTYPES\_NOTIFICATION};
+00063 
+00064         this->\hyperlink{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{entries}.append(myContent);
+00065         this->\hyperlink{classclient_1_1chat_box_a2382f94a54ab5b232f8bb1b4e124aeea}{ui}->verticalLayout->addWidget(myContent->\hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget});
+00066     \}
+00067 
+00068 
+\hypertarget{chatbox_8cpp_source_l00069}{}\hyperlink{classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}{00069}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_box_a0d33977310a176a78d228eaeb1a0c39d}{chatBox::setAllUserNameSize}(\textcolor{keywordtype}{int} newSize)\{
+00070         this->\hyperlink{classclient_1_1chat_box_a53cb33664252841a8851f4f34077ca39}{widthOfNick} = newSize;
+00071         \textcolor{keywordflow}{foreach} (\hyperlink{structclient_1_1chat_box_1_1content}{content} *ce, this->\hyperlink{classclient_1_1chat_box_a7dfca52166c2acf049d5498600a4d222}{entries}) \{
+00072             \textcolor{keywordflow}{if}(ce->\hyperlink{structclient_1_1chat_box_1_1content_a2de7a80ee6075db0545e0412846cef82}{type} == \hyperlink{classclient_1_1chat_box_a48584884d56cec67ac35b8e8feeb21ada09becc7dd92ff1b9f4ff57a0eba4b097}{WIDGETTYPES\_CHATENTRY})\{
+00073                 \hyperlink{classclient_1_1chat_entry}{chatEntry} *myWidget = \textcolor{keyword}{dynamic\_cast<}\hyperlink{classclient_1_1chat_entry}{chatEntry}*\textcolor{keyword}{>}(ce->
+      \hyperlink{structclient_1_1chat_box_1_1content_a29b3c580e5b2c7ded4d0653d56a4f9de}{widget});
+00074                 myWidget->\hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{setUserWidth}(newSize);
+00075             \}
+00076         \}
+00077     \}
+00078 \}
+\end{DoxyCode}

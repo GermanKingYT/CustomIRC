@@ -1,0 +1,37 @@
+\hypertarget{eventuserchangenick_8cpp}{\section{eventuserchangenick.\-cpp}
+\label{dd/d4b/eventuserchangenick_8cpp}\index{C++/resources/events/eventuserchangenick.\-cpp@{C++/resources/events/eventuserchangenick.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventuserchangenick_8h}{eventuserchangenick.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared \{
+00004     \textcolor{keyword}{namespace }events \{
+00005 
+\hypertarget{eventuserchangenick_8cpp_source_l00006}{}\hyperlink{classshared_1_1events_1_1event_user_change_nick_af8377a977c01b8247ab744a190fe9a6b}{00006}         \hyperlink{classshared_1_1events_1_1event_user_change_nick_af8377a977c01b8247ab744a190fe9a6b}{eventUserChangeNick::eventUserChangeNick}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} userId,
+00007                                                      \textcolor{keyword}{const} QString newNick,
+00008                                                      \textcolor{keyword}{const} QString oldNick) \{
+00009             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{EVENTTYPE\_USER\_NICK};
+00010             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"userId"},userId);
+00011             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"newNick"},newNick);
+00012             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"oldNick"},oldNick);
+00013         \}
+00014 
+\hypertarget{eventuserchangenick_8cpp_source_l00015}{}\hyperlink{classshared_1_1events_1_1event_user_change_nick_a1aaf1820a5204385f6be44bea5fb02be}{00015}         \hyperlink{classshared_1_1events_1_1event_user_change_nick_af8377a977c01b8247ab744a190fe9a6b}{eventUserChangeNick::eventUserChangeNick}(QVariantMap data)
+00016             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00017         \{ \}
+00018 
+\hypertarget{eventuserchangenick_8cpp_source_l00019}{}\hyperlink{classshared_1_1events_1_1event_user_change_nick_ad79adbb7cd52aa5307ff59ddbc2d8b7d}{00019}         \textcolor{keywordtype}{int} \hyperlink{classshared_1_1events_1_1event_user_change_nick_ad79adbb7cd52aa5307ff59ddbc2d8b7d}{eventUserChangeNick::getUserId}()\textcolor{keyword}{ const }\{
+00020             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"userId"}].toInt();
+00021         \}
+00022 
+\hypertarget{eventuserchangenick_8cpp_source_l00023}{}\hyperlink{classshared_1_1events_1_1event_user_change_nick_a69ac7b5a6aa9bfab4d28e9fe54baf3d5}{00023}         QString \hyperlink{classshared_1_1events_1_1event_user_change_nick_a69ac7b5a6aa9bfab4d28e9fe54baf3d5}{eventUserChangeNick::getNewNick}()\textcolor{keyword}{ const }\{
+00024             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"newNick"}].toString();
+00025         \}
+00026 
+\hypertarget{eventuserchangenick_8cpp_source_l00027}{}\hyperlink{classshared_1_1events_1_1event_user_change_nick_a4eab71d2abb978c22f7207a46a9bc70e}{00027}         QString \hyperlink{classshared_1_1events_1_1event_user_change_nick_a4eab71d2abb978c22f7207a46a9bc70e}{eventUserChangeNick::getOldNick}()\textcolor{keyword}{ const }\{
+00028             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"oldNick"}].toString();
+00029         \}
+00030     \}
+00031 \}
+\end{DoxyCode}

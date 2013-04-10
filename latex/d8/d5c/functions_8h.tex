@@ -1,0 +1,44 @@
+\hypertarget{functions_8h}{\section{C++/custom\-Irc\-Server/functions.h File Reference}
+\label{d8/d5c/functions_8h}\index{C++/custom\-Irc\-Server/functions.\-h@{C++/custom\-Irc\-Server/functions.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$Q\-String$>$}\\*
+{\ttfamily \#include $<$Q\-String\-List$>$}\\*
+{\ttfamily \#include $<$Q\-Variant\-List$>$}\\*
+Include dependency graph for functions.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/functions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d07/functions_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structserver_1_1nick_and_status}{server\-::nick\-And\-Status}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceserver}{server}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{server\-::in\-Command} (const Q\-String $\ast$command, const char $\ast$search)
+\begin{DoxyCompactList}\small\item\em Just an instring command. Checks if search is in command. \end{DoxyCompactList}\item 
+const string \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{server\-::qts} (const Q\-String str)
+\begin{DoxyCompactList}\small\item\em Shorthand to convert a Q\-String to a std\-::string. \end{DoxyCompactList}\item 
+nick\-And\-Status \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{server\-::get\-Nick\-And\-Status} (const Q\-String d\-Nick)
+\begin{DoxyCompactList}\small\item\em Converts a nickname to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\item 
+const Q\-String \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{server\-::get\-Id} (const Q\-String full\-Id)
+\begin{DoxyCompactList}\small\item\em Converts a full I\-R\-C-\/\-I\-D to something without the nickname. \end{DoxyCompactList}\item 
+nick\-And\-Status \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{server\-::get\-Nick\-And\-Status\-From\-Id} (const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Converts an I\-R\-C-\/\-I\-D to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\end{DoxyCompactItemize}

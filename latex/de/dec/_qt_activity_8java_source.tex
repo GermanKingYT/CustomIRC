@@ -1,0 +1,1385 @@
+\hypertarget{_qt_activity_8java}{\section{Qt\-Activity.\-java}
+\label{de/dec/_qt_activity_8java}\index{C++/custom\-Irc\-Client/android/src/org/kde/necessitas/origo/\-Qt\-Activity.\-java@{C++/custom\-Irc\-Client/android/src/org/kde/necessitas/origo/\-Qt\-Activity.\-java}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{    Copyright (c) 2009-2011, BogDan Vatra <bog\_dan\_ro@yahoo.com>}
+00003 \textcolor{comment}{    All rights reserved.}
+00004 \textcolor{comment}{}
+00005 \textcolor{comment}{    Redistribution and use in source and binary forms, with or without}
+00006 \textcolor{comment}{    modification, are permitted provided that the following conditions are met:}
+00007 \textcolor{comment}{        * Redistributions of source code must retain the above copyright}
+00008 \textcolor{comment}{        notice, this list of conditions and the following disclaimer.}
+00009 \textcolor{comment}{        * Redistributions in binary form must reproduce the above copyright}
+00010 \textcolor{comment}{        notice, this list of conditions and the following disclaimer in the}
+00011 \textcolor{comment}{        documentation and/or other materials provided with the distribution.}
+00012 \textcolor{comment}{        * Neither the name of the  BogDan Vatra <bog\_dan\_ro@yahoo.com> nor the}
+00013 \textcolor{comment}{        names of its contributors may be used to endorse or promote products}
+00014 \textcolor{comment}{        derived from this software without specific prior written permission.}
+00015 \textcolor{comment}{}
+00016 \textcolor{comment}{    THIS SOFTWARE IS PROVIDED BY BogDan Vatra <bog\_dan\_ro@yahoo.com> ''AS IS'' AND ANY}
+00017 \textcolor{comment}{    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED}
+00018 \textcolor{comment}{    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}
+00019 \textcolor{comment}{    DISCLAIMED. IN NO EVENT SHALL BogDan Vatra <bog\_dan\_ro@yahoo.com> BE LIABLE FOR ANY}
+00020 \textcolor{comment}{    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES}
+00021 \textcolor{comment}{    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}
+00022 \textcolor{comment}{    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND}
+00023 \textcolor{comment}{    ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}
+00024 \textcolor{comment}{    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS}
+00025 \textcolor{comment}{    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}
+00026 \textcolor{comment}{*/}
+00027 
+\hypertarget{_qt_activity_8java_source_l00028}{}\hyperlink{namespaceorg_1_1kde_1_1necessitas_1_1origo}{00028} \textcolor{keyword}{package }org.kde.necessitas.origo;
+00029 
+00030 \textcolor{keyword}{import} java.io.File;
+00031 \textcolor{keyword}{import} java.lang.reflect.Method;
+00032 \textcolor{keyword}{import} java.util.ArrayList;
+00033 \textcolor{keyword}{import} java.util.Arrays;
+00034 
+00035 \textcolor{keyword}{import} org.kde.necessitas.ministro.IMinistro;
+00036 \textcolor{keyword}{import} org.kde.necessitas.ministro.IMinistroCallback;
+00037 
+00038 \textcolor{keyword}{import} android.app.Activity;
+00039 \textcolor{keyword}{import} android.app.AlertDialog;
+00040 \textcolor{keyword}{import} android.app.Dialog;
+00041 \textcolor{keyword}{import} android.content.ComponentName;
+00042 \textcolor{keyword}{import} android.content.Context;
+00043 \textcolor{keyword}{import} android.content.DialogInterface;
+00044 \textcolor{keyword}{import} android.content.Intent;
+00045 \textcolor{keyword}{import} android.content.ServiceConnection;
+00046 \textcolor{keyword}{import} android.content.pm.ActivityInfo;
+00047 \textcolor{keyword}{import} android.content.pm.PackageManager;
+00048 \textcolor{keyword}{import} android.content.pm.PackageManager.NameNotFoundException;
+00049 \textcolor{keyword}{import} android.content.res.Configuration;
+00050 \textcolor{keyword}{import} android.content.res.Resources.Theme;
+00051 \textcolor{keyword}{import} android.graphics.Bitmap;
+00052 \textcolor{keyword}{import} android.graphics.Canvas;
+00053 \textcolor{keyword}{import} android.net.Uri;
+00054 \textcolor{keyword}{import} android.os.Bundle;
+00055 \textcolor{keyword}{import} android.os.IBinder;
+00056 \textcolor{keyword}{import} android.os.RemoteException;
+00057 \textcolor{keyword}{import} android.util.AttributeSet;
+00058 \textcolor{keyword}{import} android.util.Log;
+00059 \textcolor{keyword}{import} android.view.ContextMenu;
+00060 \textcolor{keyword}{import} android.view.ContextMenu.ContextMenuInfo;
+00061 \textcolor{keyword}{import} android.view.KeyEvent;
+00062 \textcolor{keyword}{import} android.view.Menu;
+00063 \textcolor{keyword}{import} android.view.MenuItem;
+00064 \textcolor{keyword}{import} android.view.MotionEvent;
+00065 \textcolor{keyword}{import} android.view.View;
+00066 \textcolor{keyword}{import} android.view.Window;
+00067 \textcolor{keyword}{import} android.view.WindowManager.LayoutParams;
+00068 \textcolor{keyword}{import} android.view.accessibility.AccessibilityEvent;
+00069 \textcolor{keyword}{import} dalvik.system.DexClassLoader;
+00070 
+00071 \textcolor{comment}{//@ANDROID-11}
+00072 \textcolor{comment}{//QtCreator import android.app.Fragment;}
+00073 \textcolor{comment}{//QtCreator import android.view.ActionMode;}
+00074 \textcolor{comment}{//QtCreator import android.view.ActionMode.Callback;}
+00075 \textcolor{comment}{//@ANDROID-11}
+00076 
+\hypertarget{_qt_activity_8java_source_l00077}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{00077} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity} \textcolor{keyword}{extends} Activity
+00078 \{
+\hypertarget{_qt_activity_8java_source_l00079}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a617b92d7a4d1c24eb3f828351c3fea07}{00079}     \textcolor{keyword}{private} \textcolor{keyword}{final} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a617b92d7a4d1c24eb3f828351c3fea07}{MINISTRO\_INSTALL\_REQUEST\_CODE} = 0xf3ee; \textcolor{comment}{//
+       request code used to know when Ministro instalation is finished}
+\hypertarget{_qt_activity_8java_source_l00080}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a659118da1936f27736db994f82d89661}{00080}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a659118da1936f27736db994f82d89661}{MINISTRO\_API\_LEVEL}=2; \textcolor{comment}{// Ministro api level (check
+       IMinistro.aidl file)}
+\hypertarget{_qt_activity_8java_source_l00081}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa7b8f51c3fe2b1cab3f75694b0023582}{00081}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa7b8f51c3fe2b1cab3f75694b0023582}{NECESSITAS\_API\_LEVEL}=2; \textcolor{comment}{// Necessitas api level used by
+       platform plugin}
+\hypertarget{_qt_activity_8java_source_l00082}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a36c31c743ff4a2b8c364a4872f684343}{00082}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a36c31c743ff4a2b8c364a4872f684343}{QT\_PROVIDER}=\textcolor{stringliteral}{"necessitas"};
+\hypertarget{_qt_activity_8java_source_l00083}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaafca2c0ba4268de968bbb4a6dbdcabf}{00083}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaafca2c0ba4268de968bbb4a6dbdcabf}{QT\_VERSION}=0x040801; \textcolor{comment}{// Qt version 4.8.00 check
+       http://qt-project.org/doc/qt-4.8/qtglobal.html#QT\_VERSION}
+00084 
+\hypertarget{_qt_activity_8java_source_l00085}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9bc6099504df7d0b80744ba9c3f7906b}{00085}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9bc6099504df7d0b80744ba9c3f7906b}{ERROR\_CODE\_KEY}=\textcolor{stringliteral}{"error.code"};
+\hypertarget{_qt_activity_8java_source_l00086}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9c6e8b211887201a43cc8b762042c486}{00086}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9c6e8b211887201a43cc8b762042c486}{ERROR\_MESSAGE\_KEY}=\textcolor{stringliteral}{"error.message"};
+\hypertarget{_qt_activity_8java_source_l00087}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4c2669f7673023d2fb9d3e8a5d9e82f7}{00087}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4c2669f7673023d2fb9d3e8a5d9e82f7}{DEX\_PATH\_KEY}=\textcolor{stringliteral}{"dex.path"};
+\hypertarget{_qt_activity_8java_source_l00088}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3dfa8cb4dd668453d2b4a2a48fb580e5}{00088}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3dfa8cb4dd668453d2b4a2a48fb580e5}{LIB\_PATH\_KEY}=\textcolor{stringliteral}{"lib.path"};
+\hypertarget{_qt_activity_8java_source_l00089}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac7e045c85bcac829258169df8ae96ecb}{00089}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac7e045c85bcac829258169df8ae96ecb}{LOADER\_CLASS\_NAME\_KEY}=\textcolor{stringliteral}{"loader.class.name"};
+\hypertarget{_qt_activity_8java_source_l00090}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a56918618fb324be7fa3dd6597f62950c}{00090}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a56918618fb324be7fa3dd6597f62950c}{NATIVE\_LIBRARIES\_KEY}=\textcolor{stringliteral}{"native.libraries"};
+\hypertarget{_qt_activity_8java_source_l00091}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aef2f5cd34cd8064e99b9cc5592ad5ee0}{00091}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aef2f5cd34cd8064e99b9cc5592ad5ee0}{ENVIRONMENT\_VARIABLES\_KEY}=\textcolor{stringliteral}{"environment.variables"};
+\hypertarget{_qt_activity_8java_source_l00092}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad4cb5451db5a5ae0c174220a66459496}{00092}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad4cb5451db5a5ae0c174220a66459496}{APPLICATION\_PARAMETERS\_KEY}=\textcolor{stringliteral}{"
+      application.parameters"};
+\hypertarget{_qt_activity_8java_source_l00093}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac523e9851340bb3af119428162561bf1}{00093}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac523e9851340bb3af119428162561bf1}{BUNDLED\_LIBRARIES\_KEY}=\textcolor{stringliteral}{"bundled.libraries"};
+\hypertarget{_qt_activity_8java_source_l00094}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aba6131e6b2689a0fb0309814bde8b599}{00094}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aba6131e6b2689a0fb0309814bde8b599}{MAIN\_LIBRARY\_KEY}=\textcolor{stringliteral}{"main.library"};
+\hypertarget{_qt_activity_8java_source_l00095}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0641594e636e66172dac05565c7ca816}{00095}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0641594e636e66172dac05565c7ca816}{NECESSITAS\_API\_LEVEL\_KEY}=\textcolor{stringliteral}{"necessitas.api.level"};
+00096 
+\hypertarget{_qt_activity_8java_source_l00098}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab4dda3bbed3086481434f40629f026a2}{00098}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab4dda3bbed3086481434f40629f026a2}{REQUIRED\_MODULES\_KEY}=\textcolor{stringliteral}{"required.modules"};
+\hypertarget{_qt_activity_8java_source_l00099}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ace0f550c2c05dcc93164c547d17d01d6}{00099}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ace0f550c2c05dcc93164c547d17d01d6}{APPLICATION\_TITLE\_KEY}=\textcolor{stringliteral}{"application.title"};
+\hypertarget{_qt_activity_8java_source_l00100}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af7b23fdd694e3ec86e72ac81fdec1e6c}{00100}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af7b23fdd694e3ec86e72ac81fdec1e6c}{QT\_PROVIDER\_KEY}=\textcolor{stringliteral}{"qt.provider"};
+\hypertarget{_qt_activity_8java_source_l00101}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aab341c7fccc6ba9b45b9364651d6baa9}{00101}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aab341c7fccc6ba9b45b9364651d6baa9}{MINIMUM\_MINISTRO\_API\_KEY}=\textcolor{stringliteral}{"minimum.ministro.api"};
+\hypertarget{_qt_activity_8java_source_l00102}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac984cbcc3abf93023330dd24c3e23af7}{00102}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac984cbcc3abf93023330dd24c3e23af7}{MINIMUM\_QT\_VERSION\_KEY}=\textcolor{stringliteral}{"minimum.qt.version"};
+00103 \textcolor{comment}{//    private static final String REPOSITORIES="3rd.party.repositories"; // needs MINISTRO\_API\_LEVEL >=2
+       !!!}
+00104                                                                        \textcolor{comment}{// Use this key to specify any 3rd
+       party repositories urls}
+00105                                                                        \textcolor{comment}{// Ministro will download these
+       repositories into thier}
+00106                                                                        \textcolor{comment}{// own folders, check
+       http://community.kde.org/Necessitas/Ministro}
+00107                                                                        \textcolor{comment}{// for more details.}
+00108 
+\hypertarget{_qt_activity_8java_source_l00109}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8bd4c630b979791d666b5a57d224213}{00109}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8bd4c630b979791d666b5a57d224213}{APPLICATION\_PARAMETERS}=null; \textcolor{comment}{// use this variable to
+       pass any parameters to your application,}
+00110                                                              \textcolor{comment}{// the parameters must not contain any white
+       spaces}
+00111                                                              \textcolor{comment}{// and must be separated with "\(\backslash\)t"}
+00112                                                              \textcolor{comment}{// e.g
+       "-param1\(\backslash\)t-param2=value2\(\backslash\)t-param3\(\backslash\)tvalue3"}
+00113 
+\hypertarget{_qt_activity_8java_source_l00114}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4e69864219ca0057377c950f678ca5be}{00114}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4e69864219ca0057377c950f678ca5be}{ENVIRONMENT\_VARIABLES}=\textcolor{stringliteral}{"QT\_USE\_ANDROID\_NATIVE\_STYLE=1\(\backslash\)t
+      "};
+00115                                                              \textcolor{comment}{// use this variable to add any environment
+       variables to your application.}
+00116                                                              \textcolor{comment}{// the env vars must be separated with "\(\backslash\)t"}
+00117                                                              \textcolor{comment}{// e.g. "ENV\_VAR1=1\(\backslash\)tENV\_VAR2=2\(\backslash\)t"}
+00118                                                              \textcolor{comment}{// Currently the following vars are used by
+       the android plugin:}
+00119                                                              \textcolor{comment}{// * QT\_USE\_ANDROID\_NATIVE\_STYLE - 0 if you
+       don't want to use android style plugin, it will save a few ms at startup.}
+00120 
+\hypertarget{_qt_activity_8java_source_l00121}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa06c6d4207110f36a106c3c3a215ff7b}{00121}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa06c6d4207110f36a106c3c3a215ff7b}{INCOMPATIBLE\_MINISTRO\_VERSION}=1; \textcolor{comment}{// Incompatible
+       Ministro version. Ministro needs to be upgraded.}
+\hypertarget{_qt_activity_8java_source_l00122}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{00122}     \textcolor{keyword}{private} ActivityInfo \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo} = null; \textcolor{comment}{// activity info object, used to access the
+       libs and the strings}
+\hypertarget{_qt_activity_8java_source_l00123}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a74280d673d087888a250d3c182c075b9}{00123}     \textcolor{keyword}{private} DexClassLoader \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a74280d673d087888a250d3c182c075b9}{m\_classLoader} = null; \textcolor{comment}{// loader object}
+\hypertarget{_qt_activity_8java_source_l00124}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{00124}     \textcolor{keyword}{private} String[] \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs} = null; \textcolor{comment}{// required qt libs}
+00125 
+00126     \textcolor{comment}{// this function is used to load and start the loader}
+\hypertarget{_qt_activity_8java_source_l00127}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6efdacbcdcd7cea2d7a3785d7300e9ab}{00127}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6efdacbcdcd7cea2d7a3785d7300e9ab}{loadApplication}(Bundle loaderParams)
+00128     \{
+00129         \textcolor{keywordflow}{try}
+00130         \{
+00131             \textcolor{keyword}{final} \textcolor{keywordtype}{int} errorCode = loaderParams.getInt(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9bc6099504df7d0b80744ba9c3f7906b}{ERROR\_CODE\_KEY});
+00132             \textcolor{keywordflow}{if} (errorCode != 0)
+00133             \{
+00134                 \textcolor{keywordflow}{if} (errorCode == \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa06c6d4207110f36a106c3c3a215ff7b}{INCOMPATIBLE\_MINISTRO\_VERSION})
+00135                 \{
+00136                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03bce0e522e5d949a99f65ccf30916bf}{downloadUpgradeMinistro}(loaderParams.getString(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9c6e8b211887201a43cc8b762042c486}{ERROR\_MESSAGE\_KEY}));
+00137                     \textcolor{keywordflow}{return};
+00138                 \}
+00139 
+00140                 \textcolor{comment}{// fatal error, show the error and quit}
+00141                 AlertDialog errorDialog = \textcolor{keyword}{new} AlertDialog.Builder(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.this).create();
+00142                 errorDialog.setMessage(loaderParams.getString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9c6e8b211887201a43cc8b762042c486}{ERROR\_MESSAGE\_KEY}));
+00143                 errorDialog.setButton(getResources().getString(android.R.string.ok), \textcolor{keyword}{new} DialogInterface.
+      OnClickListener() \{
+00144                     @Override
+00145                     \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialog, \textcolor{keywordtype}{int} which) \{
+00146                         finish();
+00147                     \}
+00148                 \});
+00149                 errorDialog.show();
+00150                 \textcolor{keywordflow}{return};
+00151             \}
+00152 
+00153             \textcolor{comment}{// add all bundled Qt libs to loader params}
+00154             ArrayList<String> libs = \textcolor{keyword}{new} ArrayList<String>();
+00155             \textcolor{keywordflow}{if} ( \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.containsKey(\textcolor{stringliteral}{"android.app.bundled\_libs\_resource\_id"}) 
+      )
+00156                 libs.addAll(Arrays.asList(getResources().getStringArray(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getInt(\textcolor{stringliteral}{"android.app.bundled\_libs\_resource\_id"}))));
+00157 
+00158             String libName = null;
+00159             \textcolor{keywordflow}{if} ( \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.containsKey(\textcolor{stringliteral}{"android.app.lib\_name"}) ) \{
+00160                 libName = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getString(\textcolor{stringliteral}{"android.app.lib\_name"});
+00161                 loaderParams.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aba6131e6b2689a0fb0309814bde8b599}{MAIN\_LIBRARY\_KEY}, libName); \textcolor{comment}{//main library contains
+       main() function}
+00162             \}
+00163 
+00164             loaderParams.putStringArrayList(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac523e9851340bb3af119428162561bf1}{BUNDLED\_LIBRARIES\_KEY}, libs);
+00165             loaderParams.putInt(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0641594e636e66172dac05565c7ca816}{NECESSITAS\_API\_LEVEL\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa7b8f51c3fe2b1cab3f75694b0023582}{NECESSITAS\_API\_LEVEL});
+00166 
+00167             \textcolor{comment}{// load and start QtLoader class}
+00168             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a74280d673d087888a250d3c182c075b9}{m\_classLoader} = \textcolor{keyword}{new} DexClassLoader(loaderParams.getString(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4c2669f7673023d2fb9d3e8a5d9e82f7}{DEX\_PATH\_KEY}) \textcolor{comment}{// .jar/.apk files}
+00169                                             , getDir(\textcolor{stringliteral}{"outdex"}, Context.MODE\_PRIVATE).getAbsolutePath() \textcolor{comment}{//
+       directory where optimized DEX files should be written.}
+00170                                             , loaderParams.containsKey(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3dfa8cb4dd668453d2b4a2a48fb580e5}{LIB\_PATH\_KEY})?loaderParams.getString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3dfa8cb4dd668453d2b4a2a48fb580e5}{LIB\_PATH\_KEY}):null \textcolor{comment}{// libs folder (if exists)}
+00171                                             , getClassLoader()); \textcolor{comment}{// parent loader}
+00172 
+00173             @SuppressWarnings(\textcolor{stringliteral}{"rawtypes"})
+00174             Class loaderClass = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a74280d673d087888a250d3c182c075b9}{m\_classLoader}.loadClass(loaderParams.getString(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac7e045c85bcac829258169df8ae96ecb}{LOADER\_CLASS\_NAME\_KEY})); \textcolor{comment}{// load QtLoader class}
+00175             Object qtLoader = loaderClass.newInstance(); \textcolor{comment}{// create an instance}
+00176             Method perpareAppMethod=qtLoader.getClass().getMethod(\textcolor{stringliteral}{"loadApplication"}, Activity.class, 
+      ClassLoader.class, Bundle.class);
+00177             \textcolor{keywordflow}{if} (!(Boolean)perpareAppMethod.invoke(qtLoader, \textcolor{keyword}{this}, \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a74280d673d087888a250d3c182c075b9}{m\_classLoader}, loaderParams)
+      )
+00178                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{""});
+00179 
+00180             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_afea43576f6f8633639f721ce8bff907e}{setQtActivityDelegate}(qtLoader);
+00181 
+00182             \textcolor{comment}{// now load the application library so it's accessible from this class loader}
+00183             \textcolor{keywordflow}{if} (libName != null)
+00184                 System.loadLibrary(libName);
+00185 
+00186             Method startAppMethod=qtLoader.getClass().getMethod(\textcolor{stringliteral}{"startApplication"});
+00187             \textcolor{keywordflow}{if} (!(Boolean)startAppMethod.invoke(qtLoader))
+00188                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} Exception(\textcolor{stringliteral}{""});
+00189 
+00190         \} \textcolor{keywordflow}{catch} (Exception e) \{
+00191             e.printStackTrace();
+00192             AlertDialog errorDialog = \textcolor{keyword}{new} AlertDialog.Builder(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.this).create();
+00193             \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo} != null && \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.containsKey(\textcolor{stringliteral}{"
+      android.app.fatal\_error\_msg"}))
+00194                 errorDialog.setMessage(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getString(\textcolor{stringliteral}{"
+      android.app.fatal\_error\_msg"}));
+00195             \textcolor{keywordflow}{else}
+00196                 errorDialog.setMessage(\textcolor{stringliteral}{"Fatal error, your application can't be started."});
+00197             errorDialog.setButton(getResources().getString(android.R.string.ok), \textcolor{keyword}{new} DialogInterface.
+      OnClickListener() \{
+00198                 @Override
+00199                 \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialog, \textcolor{keywordtype}{int} which) \{
+00200                     finish();
+00201                 \}
+00202             \});
+00203             errorDialog.show();
+00204         \}
+00205     \}
+00206 
+\hypertarget{_qt_activity_8java_source_l00207}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac39b27250b5abe8701c4e96f1450f8e0}{00207}     \textcolor{keyword}{private} ServiceConnection \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac39b27250b5abe8701c4e96f1450f8e0}{m\_ministroConnection}=\textcolor{keyword}{new} ServiceConnection() \{
+00208         \textcolor{keyword}{private} \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro}{IMinistro} m\_service = null;
+00209     @Override
+00210         \textcolor{keyword}{public} \textcolor{keywordtype}{void} onServiceConnected(ComponentName name, IBinder service)
+00211         \{
+00212             m\_service = \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro}{IMinistro}.Stub.asInterface(service);
+00213             \textcolor{keywordflow}{try} \{
+00214                 \textcolor{keywordflow}{if} (m\_service!=null)
+00215                 \{
+00216                     Bundle parameters= \textcolor{keyword}{new} Bundle();
+00217                     parameters.putStringArray(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab4dda3bbed3086481434f40629f026a2}{REQUIRED\_MODULES\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs});
+00218                     parameters.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ace0f550c2c05dcc93164c547d17d01d6}{APPLICATION\_TITLE\_KEY}, (String)
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.this.getTitle());
+00219                     parameters.putInt(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aab341c7fccc6ba9b45b9364651d6baa9}{MINIMUM\_MINISTRO\_API\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a659118da1936f27736db994f82d89661}{MINISTRO\_API\_LEVEL});
+00220                     parameters.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af7b23fdd694e3ec86e72ac81fdec1e6c}{QT\_PROVIDER\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a36c31c743ff4a2b8c364a4872f684343}{QT\_PROVIDER});
+00221                     parameters.putInt(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac984cbcc3abf93023330dd24c3e23af7}{MINIMUM\_QT\_VERSION\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaafca2c0ba4268de968bbb4a6dbdcabf}{QT\_VERSION});
+00222                     parameters.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aef2f5cd34cd8064e99b9cc5592ad5ee0}{ENVIRONMENT\_VARIABLES\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4e69864219ca0057377c950f678ca5be}{ENVIRONMENT\_VARIABLES});
+00223                     \textcolor{keywordflow}{if} (null!=\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8bd4c630b979791d666b5a57d224213}{APPLICATION\_PARAMETERS})
+00224                         parameters.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad4cb5451db5a5ae0c174220a66459496}{APPLICATION\_PARAMETERS\_KEY}, 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8bd4c630b979791d666b5a57d224213}{APPLICATION\_PARAMETERS});
+00225                     \textcolor{comment}{// parameters.putStringArray(REPOSITORIES, null);}
+00226                     m\_service.\hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_a3d7c6602e2f6151d53df20f674b97af1}{requestLoader}(m\_ministroCallback, parameters);
+00227                 \}
+00228             \} \textcolor{keywordflow}{catch} (RemoteException e) \{
+00229                     e.printStackTrace();
+00230             \}
+00231         \}
+00232 
+00233     \textcolor{keyword}{private} \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{IMinistroCallback} m\_ministroCallback = \textcolor{keyword}{new} 
+      \hyperlink{interfaceorg_1_1kde_1_1necessitas_1_1ministro_1_1_i_ministro_callback}{IMinistroCallback}.Stub() \{
+00234         \textcolor{comment}{// this function is called back by Ministro.}
+00235         @Override
+00236         \textcolor{keyword}{public} \textcolor{keywordtype}{void} loaderReady(\textcolor{keyword}{final} Bundle loaderParams) \textcolor{keywordflow}{throws} RemoteException
+00237         \{
+00238             runOnUiThread( \textcolor{keyword}{new} Runnable() \{
+00239                 @Override
+00240                 \textcolor{keyword}{public} \textcolor{keywordtype}{void} run() \{
+00241                     unbindService(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac39b27250b5abe8701c4e96f1450f8e0}{m\_ministroConnection});
+00242                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6efdacbcdcd7cea2d7a3785d7300e9ab}{loadApplication}(loaderParams);
+00243                 \}
+00244             \});
+00245         \}
+00246     \};
+00247 
+00248         @Override
+00249         \textcolor{keyword}{public} \textcolor{keywordtype}{void} onServiceDisconnected(ComponentName name)
+00250         \{
+00251             m\_service = null;
+00252         \}
+00253     \};
+00254 
+\hypertarget{_qt_activity_8java_source_l00255}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03bce0e522e5d949a99f65ccf30916bf}{00255}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03bce0e522e5d949a99f65ccf30916bf}{downloadUpgradeMinistro}(String msg)
+00256     \{
+00257         AlertDialog.Builder downloadDialog = \textcolor{keyword}{new} AlertDialog.Builder(\textcolor{keyword}{this});
+00258         downloadDialog.setMessage(msg);
+00259         downloadDialog.setPositiveButton(android.R.string.yes, \textcolor{keyword}{new} DialogInterface.OnClickListener() \{
+00260             @Override
+00261             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialogInterface, \textcolor{keywordtype}{int} i) \{
+00262                 \textcolor{keywordflow}{try}
+00263                 \{
+00264                     Uri uri = Uri.parse(\textcolor{stringliteral}{"market://search?q=pname:org.kde.necessitas.ministro"});
+00265                     Intent intent = \textcolor{keyword}{new} Intent(Intent.ACTION\_VIEW, uri);
+00266                     startActivityForResult(intent, \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a617b92d7a4d1c24eb3f828351c3fea07}{MINISTRO\_INSTALL\_REQUEST\_CODE}
+      );
+00267                 \}
+00268                 \textcolor{keywordflow}{catch} (Exception e) \{
+00269                     e.printStackTrace();
+00270                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7fe5f4438970743566e67e12335d472f}{ministroNotFound}();
+00271                 \}
+00272             \}
+00273         \});
+00274 
+00275         downloadDialog.setNegativeButton(android.R.string.no, \textcolor{keyword}{new} DialogInterface.OnClickListener() \{
+00276             @Override
+00277             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialogInterface, \textcolor{keywordtype}{int} i) \{
+00278                 \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.this.finish();
+00279             \}
+00280         \});
+00281         downloadDialog.show();
+00282     \}
+00283 
+\hypertarget{_qt_activity_8java_source_l00284}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7fe5f4438970743566e67e12335d472f}{00284}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7fe5f4438970743566e67e12335d472f}{ministroNotFound}()
+00285     \{
+00286         AlertDialog errorDialog = \textcolor{keyword}{new} AlertDialog.Builder(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.this).create();
+00287 
+00288         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo} != null && \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.containsKey(\textcolor{stringliteral}{"
+      android.app.ministro\_not\_found\_msg"}))
+00289             errorDialog.setMessage(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getString(\textcolor{stringliteral}{"
+      android.app.ministro\_not\_found\_msg"}));
+00290         \textcolor{keywordflow}{else}
+00291             errorDialog.setMessage(\textcolor{stringliteral}{"Can't find Ministro service.\(\backslash\)nThe application can't start."});
+00292 
+00293         errorDialog.setButton(getResources().getString(android.R.string.ok), \textcolor{keyword}{new} DialogInterface.
+      OnClickListener() \{
+00294             @Override
+00295             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialog, \textcolor{keywordtype}{int} which) \{
+00296                 finish();
+00297             \}
+00298         \});
+00299         errorDialog.show();
+00300     \}
+00301 
+\hypertarget{_qt_activity_8java_source_l00302}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af3924b311d2966d6c7e48122899d3c35}{00302}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af3924b311d2966d6c7e48122899d3c35}{startApp}(\textcolor{keyword}{final} \textcolor{keywordtype}{boolean} firstStart)
+00303     \{
+00304         \textcolor{keywordflow}{try}
+00305         \{
+00306             ActivityInfo ai=getPackageManager().getActivityInfo(getComponentName(), PackageManager.
+      GET\_META\_DATA);
+00307             \textcolor{keywordflow}{if} (ai.metaData.containsKey(\textcolor{stringliteral}{"android.app.qt\_libs\_resource\_id"}))
+00308             \{
+00309                 \textcolor{keywordtype}{int} resourceId = ai.metaData.getInt(\textcolor{stringliteral}{"android.app.qt\_libs\_resource\_id"});
+00310                 \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs}=getResources().getStringArray(resourceId);
+00311             \}
+00312             \textcolor{keywordflow}{if} (getIntent().getExtras()!= null && getIntent().getExtras().containsKey(\textcolor{stringliteral}{"use\_local\_qt\_libs"})
+00313                     && getIntent().getExtras().getString(\textcolor{stringliteral}{"use\_local\_qt\_libs"}).equals(\textcolor{stringliteral}{"true"}))
+00314             \{
+00315                 ArrayList<String> libraryList= \textcolor{keyword}{new} ArrayList<String>();
+00316 
+00317                 String localPrefix=\textcolor{stringliteral}{"/data/local/qt/"};
+00318                 \textcolor{keywordflow}{if} (getIntent().getExtras().containsKey(\textcolor{stringliteral}{"libs\_prefix"}))
+00319                     localPrefix=getIntent().getExtras().getString(\textcolor{stringliteral}{"libs\_prefix"});
+00320 
+00321                 \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs} != null)
+00322                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs}.length;i++)
+00323                     \{
+00324                         libraryList.add(localPrefix+\textcolor{stringliteral}{"lib/lib"}+\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9d5760ab4fabf51a69e4e981c1ed0ac3}{m\_qtLibs}[i]+\textcolor{stringliteral}{".so"});
+00325                     \}
+00326 
+00327                 \textcolor{keywordflow}{if} (getIntent().getExtras().containsKey(\textcolor{stringliteral}{"load\_local\_libs"}))
+00328                 \{
+00329                     String []extraLibs=getIntent().getExtras().getString(\textcolor{stringliteral}{"load\_local\_libs"}).split(\textcolor{stringliteral}{":"});
+00330                     \textcolor{keywordflow}{for} (String lib:extraLibs)
+00331                         \textcolor{keywordflow}{if} (lib.length()>0)
+00332                             libraryList.add(localPrefix+lib);
+00333                 \}
+00334 
+00335                 String dexPaths = \textcolor{keyword}{new} String();
+00336                 String pathSeparator = System.getProperty(\textcolor{stringliteral}{"path.separator"}, \textcolor{stringliteral}{":"});
+00337                 \textcolor{keywordflow}{if} (getIntent().getExtras().containsKey(\textcolor{stringliteral}{"load\_local\_jars"}))
+00338                 \{
+00339                     String []jarFiles=getIntent().getExtras().getString(\textcolor{stringliteral}{"load\_local\_jars"}).split(\textcolor{stringliteral}{":"});
+00340                     \textcolor{keywordflow}{for} (String jar:jarFiles)
+00341                         \textcolor{keywordflow}{if} (jar.length()>0)
+00342                         \{
+00343                             \textcolor{keywordflow}{if} (dexPaths.length()>0)
+00344                                 dexPaths+=pathSeparator;
+00345                             dexPaths+=localPrefix+jar;
+00346                         \}
+00347                 \}
+00348 
+00349                 Bundle loaderParams = \textcolor{keyword}{new} Bundle();
+00350                 loaderParams.putInt(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9bc6099504df7d0b80744ba9c3f7906b}{ERROR\_CODE\_KEY}, 0);
+00351                 loaderParams.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4c2669f7673023d2fb9d3e8a5d9e82f7}{DEX\_PATH\_KEY}, dexPaths);
+00352                 loaderParams.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac7e045c85bcac829258169df8ae96ecb}{LOADER\_CLASS\_NAME\_KEY}, getIntent().getExtras().
+      containsKey(\textcolor{stringliteral}{"loader\_class\_name"})
+00353                                                             ?getIntent().getExtras().getString(\textcolor{stringliteral}{"
+      loader\_class\_name"})
+00354                                                             :\textcolor{stringliteral}{"
+      org.kde.necessitas.industrius.QtActivityDelegate"});
+00355                 loaderParams.putStringArrayList(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a56918618fb324be7fa3dd6597f62950c}{NATIVE\_LIBRARIES\_KEY}, libraryList);
+00356                 loaderParams.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aef2f5cd34cd8064e99b9cc5592ad5ee0}{ENVIRONMENT\_VARIABLES\_KEY},\textcolor{stringliteral}{"QML\_IMPORT\_PATH=
+      "}+localPrefix+\textcolor{stringliteral}{"/imports\(\backslash\)tQT\_PLUGIN\_PATH="}+localPrefix+\textcolor{stringliteral}{"/plugins"});
+00357                 loaderParams.putString(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad4cb5451db5a5ae0c174220a66459496}{APPLICATION\_PARAMETERS\_KEY},\textcolor{stringliteral}{"-platform\(\backslash\)t
+      android"});
+00358                 \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6efdacbcdcd7cea2d7a3785d7300e9ab}{loadApplication}(loaderParams);
+00359                 \textcolor{keywordflow}{return};
+00360             \}
+00361 
+00362             \textcolor{keywordflow}{try} \{
+00363                 \textcolor{keywordflow}{if} (!bindService(\textcolor{keyword}{new} Intent(org.kde.necessitas.ministro.IMinistro.class.getCanonicalName())
+      , \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac39b27250b5abe8701c4e96f1450f8e0}{m\_ministroConnection}, Context.BIND\_AUTO\_CREATE))
+00364                     \textcolor{keywordflow}{throw} \textcolor{keyword}{new} SecurityException(\textcolor{stringliteral}{""});
+00365             \} \textcolor{keywordflow}{catch} (Exception e) \{
+00366                 \textcolor{keywordflow}{if} (firstStart)
+00367                 \{
+00368                     String msg=\textcolor{stringliteral}{"This application requires Ministro service. Would you like to install it?"};
+00369                     \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo} != null && \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.
+      containsKey(\textcolor{stringliteral}{"android.app.ministro\_needed\_msg"}))
+00370                         msg=\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getString(\textcolor{stringliteral}{"
+      android.app.ministro\_needed\_msg"});
+00371                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03bce0e522e5d949a99f65ccf30916bf}{downloadUpgradeMinistro}(msg);
+00372                 \}
+00373                 \textcolor{keywordflow}{else}
+00374                 \{
+00375                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7fe5f4438970743566e67e12335d472f}{ministroNotFound}();
+00376                 \}
+00377             \}
+00378         \}
+00379         \textcolor{keywordflow}{catch} (Exception e)
+00380         \{
+00381             Log.e(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ad954a272f4a3259ceebc0b0a3d85dd82}{QtTAG}, \textcolor{stringliteral}{"Can't create main activity"}, e);
+00382         \}
+00383     \}
+00384 
+00385 
+00386 
+00391 
+00392     @Override
+\hypertarget{_qt_activity_8java_source_l00393}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac22d19aae04f89fa80184badce868514}{00393}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac22d19aae04f89fa80184badce868514}{dispatchKeyEvent}(KeyEvent event)
+00394     \{
+00395         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aab936e36af61fbebae2ba7f3d18f54d7}{dispatchKeyEvent} != null)
+00396             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aab936e36af61fbebae2ba7f3d18f54d7}{dispatchKeyEvent}, event);
+00397         \textcolor{keywordflow}{else}
+00398             \textcolor{keywordflow}{return} super.dispatchKeyEvent(event);
+00399     \}
+\hypertarget{_qt_activity_8java_source_l00400}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af8369ee2d06164a30821c804d1b16158}{00400}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af8369ee2d06164a30821c804d1b16158}{super\_dispatchKeyEvent}(KeyEvent event)
+00401     \{
+00402         \textcolor{keywordflow}{return} super.dispatchKeyEvent(event);
+00403     \}
+00404     \textcolor{comment}{//---------------------------------------------------------------------------}
+00405 
+00406     @Override
+\hypertarget{_qt_activity_8java_source_l00407}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af91f9ee6574ab6a42ee452384eb92c49}{00407}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af91f9ee6574ab6a42ee452384eb92c49}{dispatchPopulateAccessibilityEvent}(AccessibilityEvent 
+      event)
+00408     \{
+00409         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6efc44f694101237803c49b4a59387fc}{dispatchPopulateAccessibilityEvent} != null)
+00410             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6efc44f694101237803c49b4a59387fc}{dispatchPopulateAccessibilityEvent}, event);
+00411         \textcolor{keywordflow}{else}
+00412             \textcolor{keywordflow}{return} super.dispatchPopulateAccessibilityEvent(event);
+00413     \}
+\hypertarget{_qt_activity_8java_source_l00414}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6141c947466dec12fca641c5af1726e7}{00414}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6141c947466dec12fca641c5af1726e7}{super\_dispatchPopulateAccessibilityEvent}(
+      AccessibilityEvent event)
+00415     \{
+00416         \textcolor{keywordflow}{return} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6141c947466dec12fca641c5af1726e7}{super\_dispatchPopulateAccessibilityEvent}(event);
+00417     \}
+00418     \textcolor{comment}{//---------------------------------------------------------------------------}
+00419 
+00420     @Override
+\hypertarget{_qt_activity_8java_source_l00421}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa002f879af3c4621a55bcb83a999fbb3}{00421}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa002f879af3c4621a55bcb83a999fbb3}{dispatchTouchEvent}(MotionEvent ev)
+00422     \{
+00423         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af2295829d67b0f84d5bc349c583a2796}{dispatchTouchEvent} != null)
+00424             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af2295829d67b0f84d5bc349c583a2796}{dispatchTouchEvent}, ev);
+00425         \textcolor{keywordflow}{else}
+00426             \textcolor{keywordflow}{return} super.dispatchTouchEvent(ev);
+00427     \}
+\hypertarget{_qt_activity_8java_source_l00428}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a14b00aace71f0508a6830a849502c7ac}{00428}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a14b00aace71f0508a6830a849502c7ac}{super\_dispatchTouchEvent}(MotionEvent event)
+00429     \{
+00430         \textcolor{keywordflow}{return} super.dispatchTouchEvent(event);
+00431     \}
+00432     \textcolor{comment}{//---------------------------------------------------------------------------}
+00433 
+00434     @Override
+\hypertarget{_qt_activity_8java_source_l00435}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8788d4e182e9e92afcd68ec0901dc0e}{00435}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8788d4e182e9e92afcd68ec0901dc0e}{dispatchTrackballEvent}(MotionEvent ev)
+00436     \{
+00437         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a82788f38435ef4c08181497d41acaf69}{dispatchTrackballEvent} != null)
+00438             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a82788f38435ef4c08181497d41acaf69}{dispatchTrackballEvent}, ev);
+00439         \textcolor{keywordflow}{else}
+00440             \textcolor{keywordflow}{return} super.dispatchTrackballEvent(ev);
+00441     \}
+\hypertarget{_qt_activity_8java_source_l00442}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade426c508352ce6f10dcffd509974747}{00442}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade426c508352ce6f10dcffd509974747}{super\_dispatchTrackballEvent}(MotionEvent event)
+00443     \{
+00444         \textcolor{keywordflow}{return} super.dispatchTrackballEvent(event);
+00445     \}
+00446     \textcolor{comment}{//---------------------------------------------------------------------------}
+00447 
+00448     @Override
+\hypertarget{_qt_activity_8java_source_l00449}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8b40da707524bfa95b2f7f6b69ada582}{00449}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8b40da707524bfa95b2f7f6b69ada582}{onActivityResult}(\textcolor{keywordtype}{int} requestCode, \textcolor{keywordtype}{int} resultCode, Intent data)
+00450     \{
+00451 
+00452         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_add9ee10c3ded40d66ef7d8ce6d4d1aef}{onActivityResult} != null)
+00453         \{
+00454             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_add9ee10c3ded40d66ef7d8ce6d4d1aef}{onActivityResult}, requestCode, resultCode, data);
+00455             \textcolor{keywordflow}{return};
+00456         \}
+00457         \textcolor{keywordflow}{if} (requestCode == \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a617b92d7a4d1c24eb3f828351c3fea07}{MINISTRO\_INSTALL\_REQUEST\_CODE})
+00458                 \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af3924b311d2966d6c7e48122899d3c35}{startApp}(\textcolor{keyword}{false});
+00459         super.onActivityResult(requestCode, resultCode, data);
+00460     \}
+\hypertarget{_qt_activity_8java_source_l00461}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab37541f1d391cbbf16a9c99dc33f8cdb}{00461}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab37541f1d391cbbf16a9c99dc33f8cdb}{super\_onActivityResult}(\textcolor{keywordtype}{int} requestCode, \textcolor{keywordtype}{int} resultCode, Intent data)
+00462     \{
+00463         super.onActivityResult(requestCode, resultCode, data);
+00464     \}
+00465     \textcolor{comment}{//---------------------------------------------------------------------------}
+00466 
+00467     @Override
+\hypertarget{_qt_activity_8java_source_l00468}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_accf74ca274971366688bac9ab793122e}{00468}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_accf74ca274971366688bac9ab793122e}{onApplyThemeResource}(Theme theme, \textcolor{keywordtype}{int} resid, \textcolor{keywordtype}{boolean} first)
+00469     \{
+00470         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(theme, resid, first).invoked)
+00471             super.onApplyThemeResource(theme, resid, first);
+00472     \}
+\hypertarget{_qt_activity_8java_source_l00473}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9297f08171c93a4041760e918cc72664}{00473}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9297f08171c93a4041760e918cc72664}{super\_onApplyThemeResource}(Theme theme, \textcolor{keywordtype}{int} resid, \textcolor{keywordtype}{boolean} first)
+00474     \{
+00475         super.onApplyThemeResource(theme, resid, first);
+00476     \}
+00477     \textcolor{comment}{//---------------------------------------------------------------------------}
+00478 
+00479 
+00480     @Override
+\hypertarget{_qt_activity_8java_source_l00481}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a09fbad28096bb7042ff514b576c62f1c}{00481}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a09fbad28096bb7042ff514b576c62f1c}{onChildTitleChanged}(Activity childActivity, CharSequence title)
+00482     \{
+00483         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(childActivity, title).invoked)
+00484             super.onChildTitleChanged(childActivity, title);
+00485     \}
+\hypertarget{_qt_activity_8java_source_l00486}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8b2b111b57900a453b64eda1f15bc5db}{00486}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8b2b111b57900a453b64eda1f15bc5db}{super\_onChildTitleChanged}(Activity childActivity, CharSequence 
+      title)
+00487     \{
+00488         super.onChildTitleChanged(childActivity, title);
+00489     \}
+00490     \textcolor{comment}{//---------------------------------------------------------------------------}
+00491 
+00492     @Override
+\hypertarget{_qt_activity_8java_source_l00493}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46e6b2dd30d2af1c4b4002c21f9b7c43}{00493}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46e6b2dd30d2af1c4b4002c21f9b7c43}{onConfigurationChanged}(Configuration newConfig)
+00494     \{
+00495         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(newConfig).invoked)
+00496             super.onConfigurationChanged(newConfig);
+00497     \}
+\hypertarget{_qt_activity_8java_source_l00498}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adcf3eb25c3fb084f7a52e9e4abadf025}{00498}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adcf3eb25c3fb084f7a52e9e4abadf025}{super\_onConfigurationChanged}(Configuration newConfig)
+00499     \{
+00500         super.onConfigurationChanged(newConfig);
+00501     \}
+00502     \textcolor{comment}{//---------------------------------------------------------------------------}
+00503 
+00504     @Override
+\hypertarget{_qt_activity_8java_source_l00505}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abbe93805dc7145f00d662bfaa6b43da0}{00505}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abbe93805dc7145f00d662bfaa6b43da0}{onContentChanged}()
+00506     \{
+00507         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+00508             super.onContentChanged();
+00509     \}
+\hypertarget{_qt_activity_8java_source_l00510}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4ec1c02183a33a69ad0cb25666bc738c}{00510}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4ec1c02183a33a69ad0cb25666bc738c}{super\_onContentChanged}()
+00511     \{
+00512         super.onContentChanged();
+00513     \}
+00514     \textcolor{comment}{//---------------------------------------------------------------------------}
+00515 
+00516     @Override
+\hypertarget{_qt_activity_8java_source_l00517}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9f5e5fe637cd0d2d59950f57043e700d}{00517}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a9f5e5fe637cd0d2d59950f57043e700d}{onContextItemSelected}(MenuItem item)
+00518     \{
+00519         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(item);
+00520         \textcolor{keywordflow}{if} (res.invoked)
+00521             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00522         \textcolor{keywordflow}{else}
+00523             \textcolor{keywordflow}{return} super.onContextItemSelected(item);
+00524     \}
+\hypertarget{_qt_activity_8java_source_l00525}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8857e0c301825621f3a0d3cde475592b}{00525}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8857e0c301825621f3a0d3cde475592b}{super\_onContextItemSelected}(MenuItem item)
+00526     \{
+00527         \textcolor{keywordflow}{return} super.onContextItemSelected(item);
+00528     \}
+00529     \textcolor{comment}{//---------------------------------------------------------------------------}
+00530 
+00531     @Override
+\hypertarget{_qt_activity_8java_source_l00532}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abd19dc275b123e450280eb89fd426f6d}{00532}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abd19dc275b123e450280eb89fd426f6d}{onContextMenuClosed}(Menu menu)
+00533     \{
+00534         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(menu).invoked)
+00535             super.onContextMenuClosed(menu);
+00536     \}
+\hypertarget{_qt_activity_8java_source_l00537}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac571bfef1242e6d8861a9cfbb5f696e0}{00537}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac571bfef1242e6d8861a9cfbb5f696e0}{super\_onContextMenuClosed}(Menu menu)
+00538     \{
+00539         super.onContextMenuClosed(menu);
+00540     \}
+00541     \textcolor{comment}{//---------------------------------------------------------------------------}
+00542 
+00543     @Override
+\hypertarget{_qt_activity_8java_source_l00544}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a1698da7cf3dc0ff8e1180f301e2ef1b0}{00544}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a1698da7cf3dc0ff8e1180f301e2ef1b0}{onCreate}(Bundle savedInstanceState)
+00545     \{
+00546         super.onCreate(savedInstanceState);
+00547         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af48a7b3b90f3b9977d4968e4d9dea8dc}{onCreate} != null)
+00548         \{
+00549             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af48a7b3b90f3b9977d4968e4d9dea8dc}{onCreate}, savedInstanceState);
+00550             \textcolor{keywordflow}{return};
+00551         \}
+00552         requestWindowFeature(Window.FEATURE\_NO\_TITLE);
+00553         \textcolor{keywordflow}{try} \{
+00554             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo} = getPackageManager().getActivityInfo(getComponentName(), 
+      PackageManager.GET\_META\_DATA);
+00555         \} \textcolor{keywordflow}{catch} (NameNotFoundException e) \{
+00556             e.printStackTrace();
+00557             finish();
+00558             \textcolor{keywordflow}{return};
+00559         \}
+00560         \textcolor{keywordflow}{if} (null == getLastNonConfigurationInstance())
+00561         \{
+00562             \textcolor{comment}{// if splash screen is defined, then show it}
+00563             \textcolor{keywordflow}{if} ( \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.containsKey(\textcolor{stringliteral}{"android.app.splash\_screen"}) )
+00564                 setContentView(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_adefefee8d1e89be30fc46c957d4efc3a}{m\_activityInfo}.metaData.getInt(\textcolor{stringliteral}{"android.app.splash\_screen"}));
+00565             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af3924b311d2966d6c7e48122899d3c35}{startApp}(\textcolor{keyword}{true});
+00566         \}
+00567     \}
+00568     \textcolor{comment}{//---------------------------------------------------------------------------}
+00569 
+00570     @Override
+\hypertarget{_qt_activity_8java_source_l00571}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a73f190d875fd80aafd0f281191ca0b7d}{00571}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a73f190d875fd80aafd0f281191ca0b7d}{onCreateContextMenu}(ContextMenu menu, View v, ContextMenuInfo menuInfo)
+00572     \{
+00573         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(menu, v, menuInfo).invoked)
+00574             super.onCreateContextMenu(menu, v, menuInfo);
+00575     \}
+\hypertarget{_qt_activity_8java_source_l00576}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3da5e238ee78be8e0649c85e6070575b}{00576}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3da5e238ee78be8e0649c85e6070575b}{super\_onCreateContextMenu}(ContextMenu menu, View v, 
+      ContextMenuInfo menuInfo)
+00577     \{
+00578         super.onCreateContextMenu(menu, v, menuInfo);
+00579     \}
+00580     \textcolor{comment}{//---------------------------------------------------------------------------}
+00581 
+00582     @Override
+\hypertarget{_qt_activity_8java_source_l00583}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad965b0bf539d8503de3e3784fa9676a7}{00583}     \textcolor{keyword}{public} CharSequence \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad965b0bf539d8503de3e3784fa9676a7}{onCreateDescription}()
+00584     \{
+00585         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00586         \textcolor{keywordflow}{if} (res.invoked)
+00587             \textcolor{keywordflow}{return} (CharSequence)res.methodReturns;
+00588         \textcolor{keywordflow}{else}
+00589             \textcolor{keywordflow}{return} super.onCreateDescription();
+00590     \}
+\hypertarget{_qt_activity_8java_source_l00591}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a5d58d6128ad12b9480a9bbd7b1f52a11}{00591}     \textcolor{keyword}{public} CharSequence \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a5d58d6128ad12b9480a9bbd7b1f52a11}{super\_onCreateDescription}()
+00592     \{
+00593         \textcolor{keywordflow}{return} super.onCreateDescription();
+00594     \}
+00595     \textcolor{comment}{//---------------------------------------------------------------------------}
+00596 
+00597     @Override
+\hypertarget{_qt_activity_8java_source_l00598}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4594d7d857e15da0c5328e541846603c}{00598}     \textcolor{keyword}{protected} Dialog \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4594d7d857e15da0c5328e541846603c}{onCreateDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})
+00599     \{
+00600         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(\textcolor{keywordtype}{id});
+00601         \textcolor{keywordflow}{if} (res.invoked)
+00602             \textcolor{keywordflow}{return} (Dialog)res.methodReturns;
+00603         \textcolor{keywordflow}{else}
+00604             \textcolor{keywordflow}{return} super.onCreateDialog(\textcolor{keywordtype}{id});
+00605     \}
+\hypertarget{_qt_activity_8java_source_l00606}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab00e9c2433f2360c79cae5fc421e1313}{00606}     \textcolor{keyword}{public} Dialog \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab00e9c2433f2360c79cae5fc421e1313}{super\_onCreateDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})
+00607     \{
+00608         \textcolor{keywordflow}{return} super.onCreateDialog(\textcolor{keywordtype}{id});
+00609     \}
+00610     \textcolor{comment}{//---------------------------------------------------------------------------}
+00611 
+00612     @Override
+\hypertarget{_qt_activity_8java_source_l00613}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af600cf24cf2183b0695e6d1642641682}{00613}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af600cf24cf2183b0695e6d1642641682}{onCreateOptionsMenu}(Menu menu)
+00614     \{
+00615         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(menu);
+00616         \textcolor{keywordflow}{if} (res.invoked)
+00617             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00618         \textcolor{keywordflow}{else}
+00619             \textcolor{keywordflow}{return} super.onCreateOptionsMenu(menu);
+00620     \}
+\hypertarget{_qt_activity_8java_source_l00621}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03efe8bfdd9de88bbd6bbd8ecfdf400c}{00621}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a03efe8bfdd9de88bbd6bbd8ecfdf400c}{super\_onCreateOptionsMenu}(Menu menu)
+00622     \{
+00623         \textcolor{keywordflow}{return} super.onCreateOptionsMenu(menu);
+00624     \}
+00625     \textcolor{comment}{//---------------------------------------------------------------------------}
+00626 
+00627     @Override
+\hypertarget{_qt_activity_8java_source_l00628}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abb5532ee05bb4c8d329a83a86e4eaeab}{00628}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abb5532ee05bb4c8d329a83a86e4eaeab}{onCreatePanelMenu}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00629     \{
+00630         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId, menu);
+00631         \textcolor{keywordflow}{if} (res.invoked)
+00632             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00633         \textcolor{keywordflow}{else}
+00634             \textcolor{keywordflow}{return} super.onCreatePanelMenu(featureId, menu);
+00635     \}
+\hypertarget{_qt_activity_8java_source_l00636}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a39f358f47ca3880ccb597c60771980c1}{00636}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a39f358f47ca3880ccb597c60771980c1}{super\_onCreatePanelMenu}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00637     \{
+00638         \textcolor{keywordflow}{return} super.onCreatePanelMenu(featureId, menu);
+00639     \}
+00640     \textcolor{comment}{//---------------------------------------------------------------------------}
+00641 
+00642 
+00643     @Override
+\hypertarget{_qt_activity_8java_source_l00644}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aab02758f23d698bac8b05dbc30045442}{00644}     \textcolor{keyword}{public} View \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aab02758f23d698bac8b05dbc30045442}{onCreatePanelView}(\textcolor{keywordtype}{int} featureId)
+00645     \{
+00646         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId);
+00647         \textcolor{keywordflow}{if} (res.invoked)
+00648             \textcolor{keywordflow}{return} (View)res.methodReturns;
+00649         \textcolor{keywordflow}{else}
+00650             \textcolor{keywordflow}{return} super.onCreatePanelView(featureId);
+00651     \}
+\hypertarget{_qt_activity_8java_source_l00652}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a248b7566d9ec8f6e52a628dac640d51c}{00652}     \textcolor{keyword}{public} View \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a248b7566d9ec8f6e52a628dac640d51c}{super\_onCreatePanelView}(\textcolor{keywordtype}{int} featureId)
+00653     \{
+00654         \textcolor{keywordflow}{return} super.onCreatePanelView(featureId);
+00655     \}
+00656     \textcolor{comment}{//---------------------------------------------------------------------------}
+00657 
+00658     @Override
+\hypertarget{_qt_activity_8java_source_l00659}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_afb670c873c82d438955ba501b097ffb1}{00659}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_afb670c873c82d438955ba501b097ffb1}{onCreateThumbnail}(Bitmap outBitmap, Canvas canvas)
+00660     \{
+00661         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(outBitmap, canvas);
+00662         \textcolor{keywordflow}{if} (res.invoked)
+00663             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00664         \textcolor{keywordflow}{else}
+00665             \textcolor{keywordflow}{return} super.onCreateThumbnail(outBitmap, canvas);
+00666     \}
+\hypertarget{_qt_activity_8java_source_l00667}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a023d22633c6b4e9c92c2ed2bca99fa65}{00667}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a023d22633c6b4e9c92c2ed2bca99fa65}{super\_onCreateThumbnail}(Bitmap outBitmap, Canvas canvas)
+00668     \{
+00669         \textcolor{keywordflow}{return} super.onCreateThumbnail(outBitmap, canvas);
+00670     \}
+00671     \textcolor{comment}{//---------------------------------------------------------------------------}
+00672 
+00673     @Override
+\hypertarget{_qt_activity_8java_source_l00674}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad7742dcb081577bd0d7904e680c68fde}{00674}     \textcolor{keyword}{public} View \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad7742dcb081577bd0d7904e680c68fde}{onCreateView}(String name, Context context, AttributeSet attrs)
+00675     \{
+00676         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(name, context, attrs);
+00677         \textcolor{keywordflow}{if} (res.invoked)
+00678             \textcolor{keywordflow}{return} (View)res.methodReturns;
+00679         \textcolor{keywordflow}{else}
+00680             \textcolor{keywordflow}{return} super.onCreateView(name, context, attrs);
+00681     \}
+\hypertarget{_qt_activity_8java_source_l00682}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a775fe4e300f5d24d78fcf8f78a6d5ead}{00682}     \textcolor{keyword}{public} View \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a775fe4e300f5d24d78fcf8f78a6d5ead}{super\_onCreateView}(String name, Context context, AttributeSet attrs)
+00683     \{
+00684         \textcolor{keywordflow}{return} super.onCreateView(name, context, attrs);
+00685     \}
+00686     \textcolor{comment}{//---------------------------------------------------------------------------}
+00687 
+00688     @Override
+\hypertarget{_qt_activity_8java_source_l00689}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3afe4ca42dc4fc2b45a566d314468b0f}{00689}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3afe4ca42dc4fc2b45a566d314468b0f}{onDestroy}()
+00690     \{
+00691         super.onDestroy();
+00692         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00693     \}
+00694     \textcolor{comment}{//---------------------------------------------------------------------------}
+00695 
+00696 
+00697     @Override
+\hypertarget{_qt_activity_8java_source_l00698}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a127bfd86dedd0a49072db45801a395d3}{00698}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a127bfd86dedd0a49072db45801a395d3}{onKeyDown}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+00699     \{
+00700         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa7685aedb8e428ea4bc02e6ff6400ff6}{onKeyDown} != null)
+00701             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa7685aedb8e428ea4bc02e6ff6400ff6}{onKeyDown}, keyCode, event);
+00702         \textcolor{keywordflow}{else}
+00703             \textcolor{keywordflow}{return} super.onKeyDown(keyCode, event);
+00704     \}
+\hypertarget{_qt_activity_8java_source_l00705}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a584995d809a6af751dadfe50f09cfbf0}{00705}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a584995d809a6af751dadfe50f09cfbf0}{super\_onKeyDown}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+00706     \{
+00707         \textcolor{keywordflow}{return} super.onKeyDown(keyCode, event);
+00708     \}
+00709     \textcolor{comment}{//---------------------------------------------------------------------------}
+00710 
+00711 
+00712     @Override
+\hypertarget{_qt_activity_8java_source_l00713}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a87624f6e5e257cb4ddfdfd9ed73cd884}{00713}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a87624f6e5e257cb4ddfdfd9ed73cd884}{onKeyMultiple}(\textcolor{keywordtype}{int} keyCode, \textcolor{keywordtype}{int} repeatCount, KeyEvent event)
+00714     \{
+00715         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a2543739047707bc93dd3e3b4e1258a94}{onKeyMultiple} != null)
+00716             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a2543739047707bc93dd3e3b4e1258a94}{onKeyMultiple} ,keyCode, repeatCount, event);
+00717         \textcolor{keywordflow}{else}
+00718             \textcolor{keywordflow}{return} super.onKeyMultiple(keyCode, repeatCount, event);
+00719     \}
+\hypertarget{_qt_activity_8java_source_l00720}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8c3dc079ce0d5a260d16e704f2ad8504}{00720}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8c3dc079ce0d5a260d16e704f2ad8504}{super\_onKeyMultiple}(\textcolor{keywordtype}{int} keyCode, \textcolor{keywordtype}{int} repeatCount, KeyEvent event)
+00721     \{
+00722         \textcolor{keywordflow}{return} super.onKeyMultiple(keyCode, repeatCount, event);
+00723     \}
+00724     \textcolor{comment}{//---------------------------------------------------------------------------}
+00725 
+00726     @Override
+\hypertarget{_qt_activity_8java_source_l00727}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7dde4596c4412654c9c706cb0407f67b}{00727}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7dde4596c4412654c9c706cb0407f67b}{onKeyUp}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+00728     \{
+00729         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null  && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa7685aedb8e428ea4bc02e6ff6400ff6}{onKeyDown} != null)
+00730             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a14391cdd6db670ebc6476f3d77c98478}{onKeyUp}, keyCode, event);
+00731         \textcolor{keywordflow}{else}
+00732             \textcolor{keywordflow}{return} super.onKeyUp(keyCode, event);
+00733     \}
+\hypertarget{_qt_activity_8java_source_l00734}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac15d17c2dcb9a8c77540d45c91c76908}{00734}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac15d17c2dcb9a8c77540d45c91c76908}{super\_onKeyUp}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+00735     \{
+00736         \textcolor{keywordflow}{return} super.onKeyUp(keyCode, event);
+00737     \}
+00738     \textcolor{comment}{//---------------------------------------------------------------------------}
+00739 
+00740     @Override
+\hypertarget{_qt_activity_8java_source_l00741}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a99741e578bdfcc2faaa38cd4671c4454}{00741}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a99741e578bdfcc2faaa38cd4671c4454}{onLowMemory}()
+00742     \{
+00743         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+00744             super.onLowMemory();
+00745     \}
+00746     \textcolor{comment}{//---------------------------------------------------------------------------}
+00747 
+00748     @Override
+\hypertarget{_qt_activity_8java_source_l00749}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a47b8617cac3c92fe6d251e1e3884ac09}{00749}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a47b8617cac3c92fe6d251e1e3884ac09}{onMenuItemSelected}(\textcolor{keywordtype}{int} featureId, MenuItem item)
+00750     \{
+00751         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId, item);
+00752         \textcolor{keywordflow}{if} (res.invoked)
+00753             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00754         \textcolor{keywordflow}{else}
+00755             \textcolor{keywordflow}{return} super.onMenuItemSelected(featureId, item);
+00756     \}
+\hypertarget{_qt_activity_8java_source_l00757}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a2fe3e2d563daec3ba16f0c09d82ae8bf}{00757}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a2fe3e2d563daec3ba16f0c09d82ae8bf}{super\_onMenuItemSelected}(\textcolor{keywordtype}{int} featureId, MenuItem item)
+00758     \{
+00759         \textcolor{keywordflow}{return} super.onMenuItemSelected(featureId, item);
+00760     \}
+00761     \textcolor{comment}{//---------------------------------------------------------------------------}
+00762 
+00763     @Override
+\hypertarget{_qt_activity_8java_source_l00764}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade5cf3b2cd0f80c6b778447836b5186c}{00764}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade5cf3b2cd0f80c6b778447836b5186c}{onMenuOpened}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00765     \{
+00766         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId, menu);
+00767         \textcolor{keywordflow}{if} (res.invoked)
+00768             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00769         \textcolor{keywordflow}{else}
+00770             \textcolor{keywordflow}{return} super.onMenuOpened(featureId, menu);
+00771     \}
+\hypertarget{_qt_activity_8java_source_l00772}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abaa0e8a8abce8b59df3547a7e122c5ac}{00772}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abaa0e8a8abce8b59df3547a7e122c5ac}{super\_onMenuOpened}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00773     \{
+00774         \textcolor{keywordflow}{return} super.onMenuOpened(featureId, menu);
+00775     \}
+00776     \textcolor{comment}{//---------------------------------------------------------------------------}
+00777 
+00778     @Override
+\hypertarget{_qt_activity_8java_source_l00779}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab9fdd1e697db37a44dd6cab07913af72}{00779}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab9fdd1e697db37a44dd6cab07913af72}{onNewIntent}(Intent intent)
+00780     \{
+00781         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(intent).invoked)
+00782             super.onNewIntent(intent);
+00783     \}
+\hypertarget{_qt_activity_8java_source_l00784}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3e1a06b35a139d169082fe3207463183}{00784}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a3e1a06b35a139d169082fe3207463183}{super\_onNewIntent}(Intent intent)
+00785     \{
+00786         super.onNewIntent(intent);
+00787     \}
+00788     \textcolor{comment}{//---------------------------------------------------------------------------}
+00789 
+00790     @Override
+\hypertarget{_qt_activity_8java_source_l00791}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af694bbc80efa8a408cf2efb54c7161bd}{00791}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af694bbc80efa8a408cf2efb54c7161bd}{onOptionsItemSelected}(MenuItem item)
+00792     \{
+00793         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(item);
+00794         \textcolor{keywordflow}{if} (res.invoked)
+00795             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00796         \textcolor{keywordflow}{else}
+00797             \textcolor{keywordflow}{return} super.onOptionsItemSelected(item);
+00798     \}
+\hypertarget{_qt_activity_8java_source_l00799}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a63c4160b9446058bdd5bc70a446ebf18}{00799}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a63c4160b9446058bdd5bc70a446ebf18}{super\_onOptionsItemSelected}(MenuItem item)
+00800     \{
+00801         \textcolor{keywordflow}{return} super.onOptionsItemSelected(item);
+00802     \}
+00803     \textcolor{comment}{//---------------------------------------------------------------------------}
+00804 
+00805     @Override
+\hypertarget{_qt_activity_8java_source_l00806}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a968f7dbe7ba9affe78a4831e26cd97c6}{00806}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a968f7dbe7ba9affe78a4831e26cd97c6}{onOptionsMenuClosed}(Menu menu)
+00807     \{
+00808         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(menu).invoked)
+00809             super.onOptionsMenuClosed(menu);
+00810     \}
+\hypertarget{_qt_activity_8java_source_l00811}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7b1ddef3a886d020e131a7710897d4b3}{00811}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7b1ddef3a886d020e131a7710897d4b3}{super\_onOptionsMenuClosed}(Menu menu)
+00812     \{
+00813         super.onOptionsMenuClosed(menu);
+00814     \}
+00815     \textcolor{comment}{//---------------------------------------------------------------------------}
+00816 
+00817     @Override
+\hypertarget{_qt_activity_8java_source_l00818}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46abda947b20a891ffd62d1fda0d9312}{00818}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46abda947b20a891ffd62d1fda0d9312}{onPanelClosed}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00819     \{
+00820         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId, menu).invoked)
+00821             super.onPanelClosed(featureId, menu);
+00822     \}
+\hypertarget{_qt_activity_8java_source_l00823}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a43b971f832fe35cee98100fd3020ac74}{00823}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a43b971f832fe35cee98100fd3020ac74}{super\_onPanelClosed}(\textcolor{keywordtype}{int} featureId, Menu menu)
+00824     \{
+00825         super.onPanelClosed(featureId, menu);
+00826     \}
+00827     \textcolor{comment}{//---------------------------------------------------------------------------}
+00828 
+00829     @Override
+\hypertarget{_qt_activity_8java_source_l00830}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac8a77432e996e4ad24d9ad97222109d0}{00830}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ac8a77432e996e4ad24d9ad97222109d0}{onPause}()
+00831     \{
+00832         super.onPause();
+00833         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00834     \}
+00835     \textcolor{comment}{//---------------------------------------------------------------------------}
+00836 
+00837     @Override
+\hypertarget{_qt_activity_8java_source_l00838}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa8ac966715659b355d38e7723c09e2dd}{00838}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa8ac966715659b355d38e7723c09e2dd}{onPostCreate}(Bundle savedInstanceState)
+00839     \{
+00840         super.onPostCreate(savedInstanceState);
+00841         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(savedInstanceState);
+00842     \}
+00843     \textcolor{comment}{//---------------------------------------------------------------------------}
+00844 
+00845     @Override
+\hypertarget{_qt_activity_8java_source_l00846}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_acbc631d75fc430c2a282b0cbed47ada9}{00846}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_acbc631d75fc430c2a282b0cbed47ada9}{onPostResume}()
+00847     \{
+00848         super.onPostResume();
+00849         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00850     \}
+00851     \textcolor{comment}{//---------------------------------------------------------------------------}
+00852 
+00853     @Override
+\hypertarget{_qt_activity_8java_source_l00854}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_affd694682a617453952cdd8783e8ceea}{00854}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_affd694682a617453952cdd8783e8ceea}{onPrepareDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Dialog dialog)
+00855     \{
+00856         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(\textcolor{keywordtype}{id}, dialog).invoked)
+00857             super.onPrepareDialog(\textcolor{keywordtype}{id}, dialog);
+00858     \}
+\hypertarget{_qt_activity_8java_source_l00859}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abe64410ee4d7fdce48de8fe4eec292ca}{00859}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abe64410ee4d7fdce48de8fe4eec292ca}{super\_onPrepareDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Dialog dialog)
+00860     \{
+00861         super.onPrepareDialog(\textcolor{keywordtype}{id}, dialog);
+00862     \}
+00863     \textcolor{comment}{//---------------------------------------------------------------------------}
+00864 
+00865     @Override
+\hypertarget{_qt_activity_8java_source_l00866}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af8fdf85b125a1511f8fa9de17ef2fb3e}{00866}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af8fdf85b125a1511f8fa9de17ef2fb3e}{onPrepareOptionsMenu}(Menu menu)
+00867     \{
+00868         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(menu);
+00869         \textcolor{keywordflow}{if} (res.invoked)
+00870             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00871         \textcolor{keywordflow}{else}
+00872             \textcolor{keywordflow}{return} super.onPrepareOptionsMenu(menu);
+00873     \}
+\hypertarget{_qt_activity_8java_source_l00874}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a2bc1f780c3200c091102bbed2f65e169}{00874}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a2bc1f780c3200c091102bbed2f65e169}{super\_onPrepareOptionsMenu}(Menu menu)
+00875     \{
+00876         \textcolor{keywordflow}{return} super.onPrepareOptionsMenu(menu);
+00877     \}
+00878     \textcolor{comment}{//---------------------------------------------------------------------------}
+00879 
+00880     @Override
+\hypertarget{_qt_activity_8java_source_l00881}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaf7440c07d7d80c9a2667f1a2604a487}{00881}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaf7440c07d7d80c9a2667f1a2604a487}{onPreparePanel}(\textcolor{keywordtype}{int} featureId, View view, Menu menu)
+00882     \{
+00883         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(featureId, view, menu);
+00884         \textcolor{keywordflow}{if} (res.invoked)
+00885             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00886         \textcolor{keywordflow}{else}
+00887             \textcolor{keywordflow}{return} super.onPreparePanel(featureId, view, menu);
+00888     \}
+\hypertarget{_qt_activity_8java_source_l00889}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a5e3bc74ca0884e910574b37082be74a0}{00889}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a5e3bc74ca0884e910574b37082be74a0}{super\_onPreparePanel}(\textcolor{keywordtype}{int} featureId, View view, Menu menu)
+00890     \{
+00891         \textcolor{keywordflow}{return} super.onPreparePanel(featureId, view, menu);
+00892     \}
+00893     \textcolor{comment}{//---------------------------------------------------------------------------}
+00894 
+00895     @Override
+\hypertarget{_qt_activity_8java_source_l00896}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab5b2f523b153e87fbb977e5006f4ee2b}{00896}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab5b2f523b153e87fbb977e5006f4ee2b}{onRestart}()
+00897     \{
+00898         super.onRestart();
+00899         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00900     \}
+00901     \textcolor{comment}{//---------------------------------------------------------------------------}
+00902 
+00903     @Override
+\hypertarget{_qt_activity_8java_source_l00904}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46b8081c24c564e891162a6c853f26c8}{00904}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a46b8081c24c564e891162a6c853f26c8}{onRestoreInstanceState}(Bundle savedInstanceState)
+00905     \{
+00906         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(savedInstanceState).invoked)
+00907             super.onRestoreInstanceState(savedInstanceState);
+00908     \}
+\hypertarget{_qt_activity_8java_source_l00909}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0b709730ad56cf746a324e4092e36650}{00909}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0b709730ad56cf746a324e4092e36650}{super\_onRestoreInstanceState}(Bundle savedInstanceState)
+00910     \{
+00911         super.onRestoreInstanceState(savedInstanceState);
+00912     \}
+00913     \textcolor{comment}{//---------------------------------------------------------------------------}
+00914 
+00915     @Override
+\hypertarget{_qt_activity_8java_source_l00916}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab896135952040c849fccf0aa795aa860}{00916}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab896135952040c849fccf0aa795aa860}{onResume}()
+00917     \{
+00918         super.onResume();
+00919         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00920     \}
+00921     \textcolor{comment}{//---------------------------------------------------------------------------}
+00922 
+00923     @Override
+\hypertarget{_qt_activity_8java_source_l00924}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade8faaf5e6f822d385c41326b52aa3cc}{00924}     \textcolor{keyword}{public} Object \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade8faaf5e6f822d385c41326b52aa3cc}{onRetainNonConfigurationInstance}()
+00925     \{
+00926         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00927         \textcolor{keywordflow}{if} (res.invoked)
+00928             \textcolor{keywordflow}{return} res.methodReturns;
+00929         \textcolor{keywordflow}{else}
+00930             \textcolor{keywordflow}{return} super.onRetainNonConfigurationInstance();
+00931     \}
+\hypertarget{_qt_activity_8java_source_l00932}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4012dea1acd57ed154d791e9afbe7115}{00932}     \textcolor{keyword}{public} Object \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4012dea1acd57ed154d791e9afbe7115}{super\_onRetainNonConfigurationInstance}()
+00933     \{
+00934         \textcolor{keywordflow}{return} super.onRetainNonConfigurationInstance();
+00935     \}
+00936     \textcolor{comment}{//---------------------------------------------------------------------------}
+00937 
+00938     @Override
+\hypertarget{_qt_activity_8java_source_l00939}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a37b81ac0502a9d8c15e670a52948463e}{00939}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a37b81ac0502a9d8c15e670a52948463e}{onSaveInstanceState}(Bundle outState)
+00940     \{
+00941         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(outState).invoked)
+00942             super.onSaveInstanceState(outState);
+00943     \}
+\hypertarget{_qt_activity_8java_source_l00944}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a596c0a00b5845bb8aa56593c17f65ab2}{00944}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a596c0a00b5845bb8aa56593c17f65ab2}{super\_onSaveInstanceState}(Bundle outState)
+00945     \{
+00946         super.onSaveInstanceState(outState);
+00947 
+00948     \}
+00949     \textcolor{comment}{//---------------------------------------------------------------------------}
+00950 
+00951     @Override
+\hypertarget{_qt_activity_8java_source_l00952}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0a67a358a2048b86743f7e522dc629d6}{00952}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0a67a358a2048b86743f7e522dc629d6}{onSearchRequested}()
+00953     \{
+00954         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00955         \textcolor{keywordflow}{if} (res.invoked)
+00956             \textcolor{keywordflow}{return} (Boolean)res.methodReturns;
+00957         \textcolor{keywordflow}{else}
+00958             \textcolor{keywordflow}{return} super.onSearchRequested();
+00959     \}
+\hypertarget{_qt_activity_8java_source_l00960}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_acd1012ea18d7a2a87f3e127e8a991b0b}{00960}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_acd1012ea18d7a2a87f3e127e8a991b0b}{super\_onSearchRequested}()
+00961     \{
+00962         \textcolor{keywordflow}{return} super.onSearchRequested();
+00963     \}
+00964     \textcolor{comment}{//---------------------------------------------------------------------------}
+00965 
+00966     @Override
+\hypertarget{_qt_activity_8java_source_l00967}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa10945ea75fbdd9568b8b8202057bbec}{00967}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa10945ea75fbdd9568b8b8202057bbec}{onStart}()
+00968     \{
+00969         super.onStart();
+00970         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00971     \}
+00972     \textcolor{comment}{//---------------------------------------------------------------------------}
+00973 
+00974     @Override
+\hypertarget{_qt_activity_8java_source_l00975}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7055e970211a8bf0637d48ca4632980a}{00975}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a7055e970211a8bf0637d48ca4632980a}{onStop}()
+00976     \{
+00977         super.onStop();
+00978         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}();
+00979     \}
+00980     \textcolor{comment}{//---------------------------------------------------------------------------}
+00981 
+00982     @Override
+\hypertarget{_qt_activity_8java_source_l00983}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa40948204cbea803a4e5c18365efc2b7}{00983}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa40948204cbea803a4e5c18365efc2b7}{onTitleChanged}(CharSequence title, \textcolor{keywordtype}{int} color)
+00984     \{
+00985         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(title, color).invoked)
+00986             super.onTitleChanged(title, color);
+00987     \}
+\hypertarget{_qt_activity_8java_source_l00988}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a899e6c88e95cb5af10b3a3ef5de51a4e}{00988}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a899e6c88e95cb5af10b3a3ef5de51a4e}{super\_onTitleChanged}(CharSequence title, \textcolor{keywordtype}{int} color)
+00989     \{
+00990         super.onTitleChanged(title, color);
+00991     \}
+00992     \textcolor{comment}{//---------------------------------------------------------------------------}
+00993 
+00994     @Override
+\hypertarget{_qt_activity_8java_source_l00995}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad625ed7f98c44bcfb9ff38d37c3f1a40}{00995}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad625ed7f98c44bcfb9ff38d37c3f1a40}{onTouchEvent}(MotionEvent event)
+00996     \{
+00997         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null  && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6af32ee65449508fd3d725b9ea4509ec}{onTouchEvent} != null)
+00998             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6af32ee65449508fd3d725b9ea4509ec}{onTouchEvent}, event);
+00999         \textcolor{keywordflow}{else}
+01000             \textcolor{keywordflow}{return} super.onTouchEvent(event);
+01001     \}
+\hypertarget{_qt_activity_8java_source_l01002}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0143b0fde87c08997f0b2e07261221ad}{01002}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0143b0fde87c08997f0b2e07261221ad}{super\_onTouchEvent}(MotionEvent event)
+01003     \{
+01004         \textcolor{keywordflow}{return} super.onTouchEvent(event);
+01005     \}
+01006     \textcolor{comment}{//---------------------------------------------------------------------------}
+01007 
+01008     @Override
+\hypertarget{_qt_activity_8java_source_l01009}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aae6d32b88d404653b5946670820323d9}{01009}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aae6d32b88d404653b5946670820323d9}{onTrackballEvent}(MotionEvent event)
+01010     \{
+01011         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null  && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa3d5068cdf9e6a4a3163e3810908fef7}{onTrackballEvent} != null)
+01012             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa3d5068cdf9e6a4a3163e3810908fef7}{onTrackballEvent}, event);
+01013         \textcolor{keywordflow}{else}
+01014             \textcolor{keywordflow}{return} super.onTrackballEvent(event);
+01015     \}
+\hypertarget{_qt_activity_8java_source_l01016}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad1718dba3426950eea0bb8987eeb07a2}{01016}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad1718dba3426950eea0bb8987eeb07a2}{super\_onTrackballEvent}(MotionEvent event)
+01017     \{
+01018         \textcolor{keywordflow}{return} super.onTrackballEvent(event);
+01019     \}
+01020     \textcolor{comment}{//---------------------------------------------------------------------------}
+01021 
+01022     @Override
+\hypertarget{_qt_activity_8java_source_l01023}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8069d73567a81dc675d5378a6f9fec27}{01023}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8069d73567a81dc675d5378a6f9fec27}{onUserInteraction}()
+01024     \{
+01025         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+01026             super.onUserInteraction();
+01027     \}
+\hypertarget{_qt_activity_8java_source_l01028}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a58a0e91bb9679427f37645a6bc192ac2}{01028}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a58a0e91bb9679427f37645a6bc192ac2}{super\_onUserInteraction}()
+01029     \{
+01030         super.onUserInteraction();
+01031     \}
+01032     \textcolor{comment}{//---------------------------------------------------------------------------}
+01033 
+01034     @Override
+\hypertarget{_qt_activity_8java_source_l01035}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0cac0e48f2322ee42c1cdc195ec69598}{01035}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a0cac0e48f2322ee42c1cdc195ec69598}{onUserLeaveHint}()
+01036     \{
+01037         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+01038             super.onUserLeaveHint();
+01039     \}
+\hypertarget{_qt_activity_8java_source_l01040}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a34b564fd52539b8dcb9a1abb21dabb8a}{01040}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a34b564fd52539b8dcb9a1abb21dabb8a}{super\_onUserLeaveHint}()
+01041     \{
+01042         super.onUserLeaveHint();
+01043     \}
+01044     \textcolor{comment}{//---------------------------------------------------------------------------}
+01045 
+01046     @Override
+\hypertarget{_qt_activity_8java_source_l01047}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaf31349e01a5718b64008437cca1d0af}{01047}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aaf31349e01a5718b64008437cca1d0af}{onWindowAttributesChanged}(LayoutParams params)
+01048     \{
+01049         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(params).invoked)
+01050             super.onWindowAttributesChanged(params);
+01051     \}
+\hypertarget{_qt_activity_8java_source_l01052}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8405ee3366f9ea1d51ec529ff5c8349d}{01052}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8405ee3366f9ea1d51ec529ff5c8349d}{super\_onWindowAttributesChanged}(LayoutParams params)
+01053     \{
+01054         super.onWindowAttributesChanged(params);
+01055     \}
+01056     \textcolor{comment}{//---------------------------------------------------------------------------}
+01057 
+01058     @Override
+\hypertarget{_qt_activity_8java_source_l01059}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6edb0388b940e87601effda56e14adf6}{01059}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a6edb0388b940e87601effda56e14adf6}{onWindowFocusChanged}(\textcolor{keywordtype}{boolean} hasFocus)
+01060     \{
+01061         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(hasFocus).invoked)
+01062             super.onWindowFocusChanged(hasFocus);
+01063     \}
+\hypertarget{_qt_activity_8java_source_l01064}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ae9f86d811f63a8729dcc7bd7b4c729ea}{01064}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ae9f86d811f63a8729dcc7bd7b4c729ea}{super\_onWindowFocusChanged}(\textcolor{keywordtype}{boolean} hasFocus)
+01065     \{
+01066         super.onWindowFocusChanged(hasFocus);
+01067     \}
+01068     \textcolor{comment}{//---------------------------------------------------------------------------}
+01069 
+01071 \textcolor{comment}{//@ANDROID-5}
+01072     @Override
+\hypertarget{_qt_activity_8java_source_l01073}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa67cb23bac189a70d0f5c49be3a905ca}{01073}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aa67cb23bac189a70d0f5c49be3a905ca}{onAttachedToWindow}()
+01074     \{
+01075         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+01076             super.onAttachedToWindow();
+01077     \}
+\hypertarget{_qt_activity_8java_source_l01078}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade599fd32ba832b23b6c84f183e59bbf}{01078}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ade599fd32ba832b23b6c84f183e59bbf}{super\_onAttachedToWindow}()
+01079     \{
+01080         super.onAttachedToWindow();
+01081     \}
+01082     \textcolor{comment}{//---------------------------------------------------------------------------}
+01083 
+01084     @Override
+\hypertarget{_qt_activity_8java_source_l01085}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a75f03346c82032f991c2a788d6bff33b}{01085}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a75f03346c82032f991c2a788d6bff33b}{onBackPressed}()
+01086     \{
+01087         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+01088             super.onBackPressed();
+01089     \}
+\hypertarget{_qt_activity_8java_source_l01090}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8678975c6074486143c04c601037497}{01090}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ad8678975c6074486143c04c601037497}{super\_onBackPressed}()
+01091     \{
+01092         super.onBackPressed();
+01093     \}
+01094     \textcolor{comment}{//---------------------------------------------------------------------------}
+01095 
+01096     @Override
+\hypertarget{_qt_activity_8java_source_l01097}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a495ee58db28efc2ca9293e21b1dd59a5}{01097}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a495ee58db28efc2ca9293e21b1dd59a5}{onDetachedFromWindow}()
+01098     \{
+01099         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}().invoked)
+01100             super.onDetachedFromWindow();
+01101     \}
+\hypertarget{_qt_activity_8java_source_l01102}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af2947b05392e6252d0f6f04dd3981b79}{01102}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_af2947b05392e6252d0f6f04dd3981b79}{super\_onDetachedFromWindow}()
+01103     \{
+01104         super.onDetachedFromWindow();
+01105     \}
+01106     \textcolor{comment}{//---------------------------------------------------------------------------}
+01107 
+01108     @Override
+\hypertarget{_qt_activity_8java_source_l01109}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abb975ef5df46397f50d5556fd5ca28f7}{01109}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abb975ef5df46397f50d5556fd5ca28f7}{onKeyLongPress}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+01110     \{
+01111         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null  && 
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a1f77504534fe0f052fb86e5410b2235f}{onKeyLongPress} != null)
+01112             \textcolor{keywordflow}{return} (Boolean) \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a1f77504534fe0f052fb86e5410b2235f}{onKeyLongPress}, keyCode, event);
+01113         \textcolor{keywordflow}{else}
+01114             \textcolor{keywordflow}{return} super.onKeyLongPress(keyCode, event);
+01115     \}
+\hypertarget{_qt_activity_8java_source_l01116}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aeb8e6ff65bb972e9c6f9390d0d59a827}{01116}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aeb8e6ff65bb972e9c6f9390d0d59a827}{super\_onKeyLongPress}(\textcolor{keywordtype}{int} keyCode, KeyEvent event)
+01117     \{
+01118         \textcolor{keywordflow}{return} super.onKeyLongPress(keyCode, event);
+01119     \}
+01120     \textcolor{comment}{//---------------------------------------------------------------------------}
+01121 \textcolor{comment}{//@ANDROID-5}
+01122 
+01124 \textcolor{comment}{//@ANDROID-8}
+01125 @Override
+\hypertarget{_qt_activity_8java_source_l01126}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a8ed2ef09ad8b93d417b9a9f0f6e3f5fb}{01126}     \textcolor{keyword}{protected} Dialog \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a4594d7d857e15da0c5328e541846603c}{onCreateDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Bundle args)
+01127     \{
+01128         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.InvokeResult res = \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.
+      \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(\textcolor{keywordtype}{id}, args);
+01129         \textcolor{keywordflow}{if} (res.invoked)
+01130             \textcolor{keywordflow}{return} (Dialog)res.methodReturns;
+01131         \textcolor{keywordflow}{else}
+01132             \textcolor{keywordflow}{return} super.onCreateDialog(\textcolor{keywordtype}{id}, args);
+01133     \}
+\hypertarget{_qt_activity_8java_source_l01134}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_a963426613f6de6ff6d665b64c5a94315}{01134}     \textcolor{keyword}{public} Dialog \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_ab00e9c2433f2360c79cae5fc421e1313}{super\_onCreateDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Bundle args)
+01135     \{
+01136         \textcolor{keywordflow}{return} super.onCreateDialog(\textcolor{keywordtype}{id}, args);
+01137     \}
+01138     \textcolor{comment}{//---------------------------------------------------------------------------}
+01139 
+01140     @Override
+\hypertarget{_qt_activity_8java_source_l01141}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_aafaafd0dbcb59708982dc119082195ce}{01141}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_affd694682a617453952cdd8783e8ceea}{onPrepareDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Dialog dialog, Bundle args)
+01142     \{
+01143         \textcolor{keywordflow}{if} (!\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(\textcolor{keywordtype}{id}, dialog, args).invoked)
+01144             super.onPrepareDialog(\textcolor{keywordtype}{id}, dialog, args);
+01145     \}
+\hypertarget{_qt_activity_8java_source_l01146}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abd3cb4bf60bd28812cc36ab85769f7c9}{01146}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity_abe64410ee4d7fdce48de8fe4eec292ca}{super\_onPrepareDialog}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, Dialog dialog, Bundle args)
+01147     \{
+01148         super.onPrepareDialog(\textcolor{keywordtype}{id}, dialog, args);
+01149     \}
+01150     \textcolor{comment}{//---------------------------------------------------------------------------}
+01151 \textcolor{comment}{//@ANDROID-8}
+01153 \textcolor{comment}{}
+01154 \textcolor{comment}{//@ANDROID-11}
+01155 \textcolor{comment}{//QtCreator     @Override}
+01156 \textcolor{comment}{//QtCreator     public boolean dispatchKeyShortcutEvent(KeyEvent event)}
+01157 \textcolor{comment}{//QtCreator     \{}
+01158 \textcolor{comment}{//QtCreator         if (QtApplication.m\_delegateObject != null  && QtApplication.dispatchKeyShortcutEvent
+       != null)}
+01159 \textcolor{comment}{//QtCreator             return (Boolean)
+       QtApplication.invokeDelegateMethod(QtApplication.dispatchKeyShortcutEvent, event);}
+01160 \textcolor{comment}{//QtCreator         else}
+01161 \textcolor{comment}{//QtCreator             return super.dispatchKeyShortcutEvent(event);}
+01162 \textcolor{comment}{//QtCreator     \}}
+01163 \textcolor{comment}{//QtCreator     public boolean super\_dispatchKeyShortcutEvent(KeyEvent event)}
+01164 \textcolor{comment}{//QtCreator     \{}
+01165 \textcolor{comment}{//QtCreator         return super.dispatchKeyShortcutEvent(event);}
+01166 \textcolor{comment}{//QtCreator     \}}
+01167 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01168 \textcolor{comment}{//QtCreator }
+01169 \textcolor{comment}{//QtCreator     @Override}
+01170 \textcolor{comment}{//QtCreator     public void onActionModeFinished(ActionMode mode)}
+01171 \textcolor{comment}{//QtCreator     \{}
+01172 \textcolor{comment}{//QtCreator         if (!QtApplication.invokeDelegate(mode).invoked)}
+01173 \textcolor{comment}{//QtCreator             super.onActionModeFinished(mode);}
+01174 \textcolor{comment}{//QtCreator     \}}
+01175 \textcolor{comment}{//QtCreator     public void super\_onActionModeFinished(ActionMode mode)}
+01176 \textcolor{comment}{//QtCreator     \{}
+01177 \textcolor{comment}{//QtCreator         super.onActionModeFinished(mode);}
+01178 \textcolor{comment}{//QtCreator     \}}
+01179 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01180 \textcolor{comment}{//QtCreator }
+01181 \textcolor{comment}{//QtCreator     @Override}
+01182 \textcolor{comment}{//QtCreator     public void onActionModeStarted(ActionMode mode)}
+01183 \textcolor{comment}{//QtCreator     \{}
+01184 \textcolor{comment}{//QtCreator         if (!QtApplication.invokeDelegate(mode).invoked)}
+01185 \textcolor{comment}{//QtCreator             super.onActionModeStarted(mode);}
+01186 \textcolor{comment}{//QtCreator     \}}
+01187 \textcolor{comment}{//QtCreator     public void super\_onActionModeStarted(ActionMode mode)}
+01188 \textcolor{comment}{//QtCreator     \{}
+01189 \textcolor{comment}{//QtCreator         super.onActionModeStarted(mode);}
+01190 \textcolor{comment}{//QtCreator     \}}
+01191 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01192 \textcolor{comment}{//QtCreator }
+01193 \textcolor{comment}{//QtCreator     @Override}
+01194 \textcolor{comment}{//QtCreator     public void onAttachFragment(Fragment fragment)}
+01195 \textcolor{comment}{//QtCreator     \{}
+01196 \textcolor{comment}{//QtCreator         if (!QtApplication.invokeDelegate(fragment).invoked)}
+01197 \textcolor{comment}{//QtCreator             super.onAttachFragment(fragment);}
+01198 \textcolor{comment}{//QtCreator     \}}
+01199 \textcolor{comment}{//QtCreator     public void super\_onAttachFragment(Fragment fragment)}
+01200 \textcolor{comment}{//QtCreator     \{}
+01201 \textcolor{comment}{//QtCreator         super.onAttachFragment(fragment);}
+01202 \textcolor{comment}{//QtCreator     \}}
+01203 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01204 \textcolor{comment}{//QtCreator }
+01205 \textcolor{comment}{//QtCreator     @Override}
+01206 \textcolor{comment}{//QtCreator     public View onCreateView(View parent, String name, Context context, AttributeSet attrs)}
+01207 \textcolor{comment}{//QtCreator     \{}
+01208 \textcolor{comment}{//QtCreator         QtApplication.InvokeResult res = QtApplication.invokeDelegate(parent, name, context,
+       attrs);}
+01209 \textcolor{comment}{//QtCreator         if (res.invoked)}
+01210 \textcolor{comment}{//QtCreator             return (View)res.methodReturns;}
+01211 \textcolor{comment}{//QtCreator         else}
+01212 \textcolor{comment}{//QtCreator             return super.onCreateView(parent, name, context, attrs);}
+01213 \textcolor{comment}{//QtCreator     \}}
+01214 \textcolor{comment}{//QtCreator     public View super\_onCreateView(View parent, String name, Context context,}
+01215 \textcolor{comment}{//QtCreator             AttributeSet attrs) \{}
+01216 \textcolor{comment}{//QtCreator         return super.onCreateView(parent, name, context, attrs);}
+01217 \textcolor{comment}{//QtCreator     \}}
+01218 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01219 \textcolor{comment}{//QtCreator }
+01220 \textcolor{comment}{//QtCreator     @Override}
+01221 \textcolor{comment}{//QtCreator     public boolean onKeyShortcut(int keyCode, KeyEvent event)}
+01222 \textcolor{comment}{//QtCreator     \{}
+01223 \textcolor{comment}{//QtCreator         if (QtApplication.m\_delegateObject != null  && QtApplication.onKeyShortcut != null)}
+01224 \textcolor{comment}{//QtCreator             return (Boolean) QtApplication.invokeDelegateMethod(QtApplication.onKeyShortcut,
+       keyCode,event);}
+01225 \textcolor{comment}{//QtCreator         else}
+01226 \textcolor{comment}{//QtCreator             return super.onKeyShortcut(keyCode, event);}
+01227 \textcolor{comment}{//QtCreator     \}}
+01228 \textcolor{comment}{//QtCreator     public boolean super\_onKeyShortcut(int keyCode, KeyEvent event)}
+01229 \textcolor{comment}{//QtCreator     \{}
+01230 \textcolor{comment}{//QtCreator         return super.onKeyShortcut(keyCode, event);}
+01231 \textcolor{comment}{//QtCreator     \}}
+01232 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01233 \textcolor{comment}{//QtCreator }
+01234 \textcolor{comment}{//QtCreator     @Override}
+01235 \textcolor{comment}{//QtCreator     public ActionMode onWindowStartingActionMode(Callback callback)}
+01236 \textcolor{comment}{//QtCreator     \{}
+01237 \textcolor{comment}{//QtCreator         QtApplication.InvokeResult res = QtApplication.invokeDelegate(callback);}
+01238 \textcolor{comment}{//QtCreator         if (res.invoked)}
+01239 \textcolor{comment}{//QtCreator             return (ActionMode)res.methodReturns;}
+01240 \textcolor{comment}{//QtCreator         else}
+01241 \textcolor{comment}{//QtCreator             return super.onWindowStartingActionMode(callback);}
+01242 \textcolor{comment}{//QtCreator     \}}
+01243 \textcolor{comment}{//QtCreator     public ActionMode super\_onWindowStartingActionMode(Callback callback)}
+01244 \textcolor{comment}{//QtCreator     \{}
+01245 \textcolor{comment}{//QtCreator         return super.onWindowStartingActionMode(callback);}
+01246 \textcolor{comment}{//QtCreator     \}}
+01247 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01248 \textcolor{comment}{//@ANDROID-11}
+01250 \textcolor{comment}{}
+01251 \textcolor{comment}{//@ANDROID-12}
+01252 \textcolor{comment}{//QtCreator     @Override}
+01253 \textcolor{comment}{//QtCreator     public boolean dispatchGenericMotionEvent(MotionEvent ev)}
+01254 \textcolor{comment}{//QtCreator     \{}
+01255 \textcolor{comment}{//QtCreator         if (QtApplication.m\_delegateObject != null  && QtApplication.dispatchGenericMotionEvent
+       != null)}
+01256 \textcolor{comment}{//QtCreator             return (Boolean)
+       QtApplication.invokeDelegateMethod(QtApplication.dispatchGenericMotionEvent, ev);}
+01257 \textcolor{comment}{//QtCreator         else}
+01258 \textcolor{comment}{//QtCreator             return super.dispatchGenericMotionEvent(ev);}
+01259 \textcolor{comment}{//QtCreator     \}}
+01260 \textcolor{comment}{//QtCreator     public boolean super\_dispatchGenericMotionEvent(MotionEvent event)}
+01261 \textcolor{comment}{//QtCreator     \{}
+01262 \textcolor{comment}{//QtCreator         return super.dispatchGenericMotionEvent(event);}
+01263 \textcolor{comment}{//QtCreator     \}}
+01264 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01265 \textcolor{comment}{//QtCreator }
+01266 \textcolor{comment}{//QtCreator     @Override}
+01267 \textcolor{comment}{//QtCreator     public boolean onGenericMotionEvent(MotionEvent event)}
+01268 \textcolor{comment}{//QtCreator     \{}
+01269 \textcolor{comment}{//QtCreator         if (QtApplication.m\_delegateObject != null  && QtApplication.onGenericMotionEvent !=
+       null)}
+01270 \textcolor{comment}{//QtCreator             return (Boolean)
+       QtApplication.invokeDelegateMethod(QtApplication.onGenericMotionEvent, event);}
+01271 \textcolor{comment}{//QtCreator         else}
+01272 \textcolor{comment}{//QtCreator             return super.onGenericMotionEvent(event);}
+01273 \textcolor{comment}{//QtCreator     \}}
+01274 \textcolor{comment}{//QtCreator     public boolean super\_onGenericMotionEvent(MotionEvent event)}
+01275 \textcolor{comment}{//QtCreator     \{}
+01276 \textcolor{comment}{//QtCreator         return super.onGenericMotionEvent(event);}
+01277 \textcolor{comment}{//QtCreator     \}}
+01278 \textcolor{comment}{//QtCreator     //---------------------------------------------------------------------------}
+01279 \textcolor{comment}{//@ANDROID-12}
+01280 
+01281 \}
+\end{DoxyCode}

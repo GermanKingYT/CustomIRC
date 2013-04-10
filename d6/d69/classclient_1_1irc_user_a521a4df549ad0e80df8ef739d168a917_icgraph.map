@@ -1,0 +1,5 @@
+<map id="client::ircUser::getIcon" name="client::ircUser::getIcon">
+<area shape="rect" id="node2" href="$d0/ddb/classclient_1_1cls_user_entry.html#a906da840f42f13d4a0f398c8c5ad6da6" title="client::clsUserEntry\l::clsUserEntry" alt="" coords="389,27,525,69"/>
+<area shape="rect" id="node3" href="$d0/ddb/classclient_1_1cls_user_entry.html#a878c280a93fabf2651880629103e1ef3" title="client::clsUserEntry\l::refresh" alt="" coords="205,23,341,65"/>
+<area shape="rect" id="node4" href="$d0/ddb/classclient_1_1cls_user_entry.html#a3a0fe3fd86b54b785fac07a22a52f508" title="client::clsUserEntry\l::iconChanged" alt="" coords="205,89,341,130"/>
+</map>

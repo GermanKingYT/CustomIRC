@@ -1,0 +1,197 @@
+\hypertarget{classclient_1_1cls_settings}{\section{client\-:\-:cls\-Settings Class Reference}
+\label{d5/d08/classclient_1_1cls_settings}\index{client\-::cls\-Settings@{client\-::cls\-Settings}}
+}
+
+
+Settings class containing all the variables needed for the client.  
+
+
+
+
+{\ttfamily \#include $<$clssettings.\-h$>$}
+
+
+
+Collaboration diagram for client\-:\-:cls\-Settings\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{dd/d1a/classclient_1_1cls_settings__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}{cls\-Settings} (const Q\-String \&file\-Path)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classclient_1_1cls_settings}{cls\-Settings} Constructor \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{get\-Server} () const 
+\begin{DoxyCompactList}\small\item\em Gets the hostname of where the server is running. \end{DoxyCompactList}\item 
+int \hyperlink{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{get\-Port} () const 
+\begin{DoxyCompactList}\small\item\em Gets the port on which the server is listening. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{read\-Server} (Q\-Xml\-Stream\-Reader \&reader)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{server}
+\item 
+int \hyperlink{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{port}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Settings class containing all the variables needed for the client. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) Gets the settings from the xml file called settings.\-xml 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8h_source_l00016}{16} of file \hyperlink{custom_irc_client_2clssettings_8h_source}{clssettings.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!cls\-Settings@{cls\-Settings}}
+\index{cls\-Settings@{cls\-Settings}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{cls\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}client\-::cls\-Settings\-::cls\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{file\-Path}
+\end{DoxyParamCaption}
+)}}\label{d5/d08/classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}
+
+
+\hyperlink{classclient_1_1cls_settings}{cls\-Settings} Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Path} & the path where the settings.\-xml file is located \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8cpp_source_l00005}{5} of file \hyperlink{custom_irc_client_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d08/classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!get\-Port@{get\-Port}}
+\index{get\-Port@{get\-Port}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{get\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::cls\-Settings\-::get\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d5/d08/classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}
+
+
+Gets the port on which the server is listening. 
+
+\begin{DoxyReturn}{Returns}
+The port on which the server is listening 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8cpp_source_l00036}{36} of file \hyperlink{custom_irc_client_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{d5/d08/classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!get\-Server@{get\-Server}}
+\index{get\-Server@{get\-Server}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{get\-Server}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::cls\-Settings\-::get\-Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d5/d08/classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}
+
+
+Gets the hostname of where the server is running. 
+
+\begin{DoxyReturn}{Returns}
+The hostname of where the server is running 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8cpp_source_l00032}{32} of file \hyperlink{custom_irc_client_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{d5/d08/classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!read\-Server@{read\-Server}}
+\index{read\-Server@{read\-Server}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{read\-Server}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Settings\-::read\-Server (
+\begin{DoxyParamCaption}
+\item[{Q\-Xml\-Stream\-Reader \&}]{reader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d08/classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8cpp_source_l00041}{41} of file \hyperlink{custom_irc_client_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d5/d08/classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!port@{port}}
+\index{port@{port}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::cls\-Settings\-::port\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d08/classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8h_source_l00042}{42} of file \hyperlink{custom_irc_client_2clssettings_8h_source}{clssettings.\-h}.
+
+\hypertarget{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{\index{client\-::cls\-Settings@{client\-::cls\-Settings}!server@{server}}
+\index{server@{server}!client::clsSettings@{client\-::cls\-Settings}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::cls\-Settings\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d08/classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}
+
+
+Definition at line \hyperlink{custom_irc_client_2clssettings_8h_source_l00041}{41} of file \hyperlink{custom_irc_client_2clssettings_8h_source}{clssettings.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{custom_irc_client_2clssettings_8h}{clssettings.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{custom_irc_client_2clssettings_8cpp}{clssettings.\-cpp}\end{DoxyCompactItemize}

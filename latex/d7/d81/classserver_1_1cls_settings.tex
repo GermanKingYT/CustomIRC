@@ -1,0 +1,516 @@
+\hypertarget{classserver_1_1cls_settings}{\section{server\-:\-:cls\-Settings Class Reference}
+\label{d7/d81/classserver_1_1cls_settings}\index{server\-::cls\-Settings@{server\-::cls\-Settings}}
+}
+
+
+Settings class.  
+
+
+
+
+{\ttfamily \#include $<$clssettings.\-h$>$}
+
+
+
+Collaboration diagram for server\-:\-:cls\-Settings\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{d9/d5d/classserver_1_1cls_settings__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}{cls\-Settings} (const Q\-String \&file\-Path)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classserver_1_1cls_settings}{cls\-Settings} Constructor \end{DoxyCompactList}\item 
+int \hyperlink{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{get\-Listening\-Port} () const 
+\begin{DoxyCompactList}\small\item\em get\-Listening\-Port \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{get\-Server} () const 
+\begin{DoxyCompactList}\small\item\em get\-Server \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{get\-Channel} () const 
+\begin{DoxyCompactList}\small\item\em get\-Channel \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{get\-User\-Name} () const 
+\begin{DoxyCompactList}\small\item\em get\-User\-Name \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{get\-Own\-User} () const 
+\begin{DoxyCompactList}\small\item\em get\-Own\-User \end{DoxyCompactList}\item 
+Q\-Vector$<$ \hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{get\-Users} () const 
+\begin{DoxyCompactList}\small\item\em get\-Users \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{read\-Ui\-Settings} (Q\-Xml\-Stream\-Reader \&reader)
+\begin{DoxyCompactList}\small\item\em read\-Ui\-Settings \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{read\-Server} (Q\-Xml\-Stream\-Reader \&reader)
+\begin{DoxyCompactList}\small\item\em read\-Server \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{read\-Users} (Q\-Xml\-Stream\-Reader \&reader)
+\begin{DoxyCompactList}\small\item\em read\-Users \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{read\-User\-Info} (Q\-Xml\-Stream\-Reader \&reader)
+\begin{DoxyCompactList}\small\item\em read\-User\-Info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{server}
+\begin{DoxyCompactList}\small\item\em server Stores the irc server host \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{channel}
+\begin{DoxyCompactList}\small\item\em channel Stores the irc channel \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{own\-User}
+\begin{DoxyCompactList}\small\item\em own\-User Stores the own user to connect with \end{DoxyCompactList}\item 
+int \hyperlink{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{listening\-Port}
+\begin{DoxyCompactList}\small\item\em listening\-Port The port for the \hyperlink{classserver_1_1ui_server}{ui\-Server} to listen on \end{DoxyCompactList}\item 
+Q\-Vector$<$ \hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{users}
+\begin{DoxyCompactList}\small\item\em users The 'standard' users \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Settings class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) Gets the settings from the xml file called settings.\-xml 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00019}{19} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!cls\-Settings@{cls\-Settings}}
+\index{cls\-Settings@{cls\-Settings}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{cls\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}server\-::cls\-Settings\-::cls\-Settings (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{file\-Path}
+\end{DoxyParamCaption}
+)}}\label{d7/d81/classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}
+
+
+\hyperlink{classserver_1_1cls_settings}{cls\-Settings} Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Path} & the path where the settings.\-xml file is located \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00004}{4} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-Channel@{get\-Channel}}
+\index{get\-Channel@{get\-Channel}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::cls\-Settings\-::get\-Channel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}
+
+
+get\-Channel 
+
+\begin{DoxyReturn}{Returns}
+the channel to connect to. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00050}{50} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-Listening\-Port@{get\-Listening\-Port}}
+\index{get\-Listening\-Port@{get\-Listening\-Port}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-Listening\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::cls\-Settings\-::get\-Listening\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}
+
+
+get\-Listening\-Port 
+
+\begin{DoxyReturn}{Returns}
+the port where the server should listen on 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00042}{42} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-Own\-User@{get\-Own\-User}}
+\index{get\-Own\-User@{get\-Own\-User}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-Own\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User} $\ast$ server\-::cls\-Settings\-::get\-Own\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}
+
+
+get\-Own\-User 
+
+\begin{DoxyReturn}{Returns}
+our own user as an \hyperlink{classserver_1_1irc_user}{irc\-User} object. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00058}{58} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-Server@{get\-Server}}
+\index{get\-Server@{get\-Server}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-Server}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::cls\-Settings\-::get\-Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}
+
+
+get\-Server 
+
+\begin{DoxyReturn}{Returns}
+the host where the I\-R\-C Server is running 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00046}{46} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-User\-Name@{get\-User\-Name}}
+\index{get\-User\-Name@{get\-User\-Name}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::cls\-Settings\-::get\-User\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}
+
+
+get\-User\-Name 
+
+\begin{DoxyReturn}{Returns}
+the username to use for the bot. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00054}{54} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d7/d81/classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!get\-Users@{get\-Users}}
+\index{get\-Users@{get\-Users}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{get\-Users}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<$ {\bf irc\-User} $\ast$ $>$ server\-::cls\-Settings\-::get\-Users (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d7/d81/classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}
+
+
+get\-Users 
+
+\begin{DoxyReturn}{Returns}
+the 'standard' users which are always online. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00062}{62} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d81/classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!read\-Server@{read\-Server}}
+\index{read\-Server@{read\-Server}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{read\-Server}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::cls\-Settings\-::read\-Server (
+\begin{DoxyParamCaption}
+\item[{Q\-Xml\-Stream\-Reader \&}]{reader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}
+
+
+read\-Server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Parses the xml file opened by reader and fetches irc server info \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00077}{77} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d7/d81/classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!read\-Ui\-Settings@{read\-Ui\-Settings}}
+\index{read\-Ui\-Settings@{read\-Ui\-Settings}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{read\-Ui\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::cls\-Settings\-::read\-Ui\-Settings (
+\begin{DoxyParamCaption}
+\item[{Q\-Xml\-Stream\-Reader \&}]{reader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}
+
+
+read\-Ui\-Settings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Parses the xml file opened by reader and fetches ui\-Settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00066}{66} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d7/d81/classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!read\-User\-Info@{read\-User\-Info}}
+\index{read\-User\-Info@{read\-User\-Info}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{read\-User\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::cls\-Settings\-::read\-User\-Info (
+\begin{DoxyParamCaption}
+\item[{Q\-Xml\-Stream\-Reader \&}]{reader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}
+
+
+read\-User\-Info 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Parses the xml file opened by reader and fetches the own user settings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00115}{115} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d7/d81/classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d7/d81/classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!read\-Users@{read\-Users}}
+\index{read\-Users@{read\-Users}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{read\-Users}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::cls\-Settings\-::read\-Users (
+\begin{DoxyParamCaption}
+\item[{Q\-Xml\-Stream\-Reader \&}]{reader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}
+
+
+read\-Users 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Parses the xml file opened by reader and fetches the standard users \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8cpp_source_l00089}{89} of file \hyperlink{custom_irc_server_2clssettings_8cpp_source}{clssettings.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d7/d81/classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{d7/d81/classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!channel@{channel}}
+\index{channel@{channel}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{channel}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::cls\-Settings\-::channel\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}
+
+
+channel Stores the irc channel 
+
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00104}{104} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+\hypertarget{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!listening\-Port@{listening\-Port}}
+\index{listening\-Port@{listening\-Port}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{listening\-Port}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::cls\-Settings\-::listening\-Port\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}
+
+
+listening\-Port The port for the \hyperlink{classserver_1_1ui_server}{ui\-Server} to listen on 
+
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00116}{116} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+\hypertarget{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!own\-User@{own\-User}}
+\index{own\-User@{own\-User}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{own\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User}$\ast$ server\-::cls\-Settings\-::own\-User\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}
+
+
+own\-User Stores the own user to connect with 
+
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00110}{110} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+\hypertarget{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!server@{server}}
+\index{server@{server}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String server\-::cls\-Settings\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}
+
+
+server Stores the irc server host 
+
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00098}{98} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+\hypertarget{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{\index{server\-::cls\-Settings@{server\-::cls\-Settings}!users@{users}}
+\index{users@{users}!server::clsSettings@{server\-::cls\-Settings}}
+\subsubsection[{users}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<${\bf irc\-User}$\ast$$>$ server\-::cls\-Settings\-::users\hspace{0.3cm}{\ttfamily [private]}}}\label{d7/d81/classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}
+
+
+users The 'standard' users 
+
+
+
+Definition at line \hyperlink{custom_irc_server_2clssettings_8h_source_l00122}{122} of file \hyperlink{custom_irc_server_2clssettings_8h_source}{clssettings.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Server/\hyperlink{custom_irc_server_2clssettings_8h}{clssettings.\-h}\item 
+C++/custom\-Irc\-Server/\hyperlink{custom_irc_server_2clssettings_8cpp}{clssettings.\-cpp}\end{DoxyCompactItemize}

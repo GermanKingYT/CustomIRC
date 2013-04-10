@@ -1,0 +1,5 @@
+<map id="server::uiServer::sgnChangeOwnUserStatus" name="server::uiServer::sgnChangeOwnUserStatus">
+<area shape="rect" id="node2" href="$df/dd2/classserver_1_1ui_server.html#a1d221672f6efb29189e6ce398f7b07e3" title="Triggered when a client wants to change something about our own user." alt="" coords="237,5,397,46"/>
+<area shape="rect" id="node3" href="$df/dd2/classserver_1_1ui_server.html#af8300a694de27369a5f5d1a95ed1cc37" title="Triggered when a client connects." alt="" coords="445,5,603,46"/>
+<area shape="rect" id="node4" href="$df/dd2/classserver_1_1ui_server.html#a55e34b95359692ea9002408075e18b1a" title="uiServer constructor" alt="" coords="651,12,815,39"/>
+</map>

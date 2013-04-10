@@ -1,0 +1,761 @@
+\hypertarget{classclient_1_1_main_window}{\section{client\-:\-:Main\-Window Class Reference}
+\label{d2/da4/classclient_1_1_main_window}\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}}
+}
+
+
+Main U\-I window.  
+
+
+
+
+{\ttfamily \#include $<$mainwindow.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:Main\-Window\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{da/d6c/classclient_1_1_main_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:Main\-Window\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/de6/classclient_1_1_main_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}{Main\-Window} (Q\-Application $\ast$a, Q\-Widget $\ast$parent=0)
+\item 
+\hyperlink{classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\-Main\-Window} ()
+\item 
+void \hyperlink{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{show\-Message} (Q\-String msg, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{send\-Chat} (Q\-String message)
+\item 
+void \hyperlink{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{command\-Given} (Q\-String command, Q\-List$<$ Q\-String $>$ args)
+\item 
+void \hyperlink{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{move\-Scroll\-Bar\-To\-Bottom} (int min, int max)
+\item 
+void \hyperlink{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{server\-Connected} ()
+\item 
+void \hyperlink{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{server\-Disconnected} ()
+\item 
+void \hyperlink{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{chat\-Received} (\hyperlink{classshared_1_1events_1_1event_chat}{event\-Chat} $\ast$chat\-Event)
+\begin{DoxyCompactList}\small\item\em Triggered when a chat has been received. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{user\-Query\-Completed} (Q\-Vector$<$ \hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users})
+\begin{DoxyCompactList}\small\item\em Triggered when the user query came back. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{user\-Status\-Change} (\hyperlink{classshared_1_1events_1_1event_user_change_status}{event\-User\-Change\-Status} $\ast$status\-Event)
+\begin{DoxyCompactList}\small\item\em Triggered when a user changes his status (nick$|$status) \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{user\-Change\-Nick} (\hyperlink{classshared_1_1events_1_1event_user_change_nick}{event\-User\-Change\-Nick} $\ast$nick\-Event)
+\begin{DoxyCompactList}\small\item\em Triggered when a user changes his nick (nick$|$status) \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{user\-Leave} (\hyperlink{classshared_1_1events_1_1event_user_leave}{event\-User\-Leave} $\ast$leave\-Event)
+\begin{DoxyCompactList}\small\item\em Triggered when a user leaves the room. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{user\-Enter} (\hyperlink{classshared_1_1events_1_1event_user_join}{event\-User\-Join} $\ast$new\-User)
+\begin{DoxyCompactList}\small\item\em Triggered when a user enters the room. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{server\-Message\-Received} (\hyperlink{classshared_1_1events_1_1event_server_message}{event\-Server\-Message} $\ast$my\-Message)
+\begin{DoxyCompactList}\small\item\em Triggered when the server sends us a message that should be displayed in the U\-I. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{connected\-Timeout} ()
+\begin{DoxyCompactList}\small\item\em Triggered when we cannot connect to the server! \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{do\-Reconnect} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::\-Main\-Window $\ast$ \hyperlink{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{ui}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classclient_1_1_main_window_ad83b542f504d4d017661c0aa7ce630b7}{log}
+\item 
+\hyperlink{classclient_1_1chat_box}{chat\-Box} $\ast$ \hyperlink{classclient_1_1_main_window_aa1e651adf78ed0a72d8c028a8263e17d}{cb}
+\item 
+\hyperlink{classclient_1_1cls_server_conn}{cls\-Server\-Conn} $\ast$ \hyperlink{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{server}
+\item 
+Q\-Map$<$ int, \hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{users}
+\item 
+\hyperlink{classclient_1_1cls_settings}{cls\-Settings} $\ast$ \hyperlink{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{settings}
+\item 
+Q\-Timer $\ast$ \hyperlink{classclient_1_1_main_window_a5ee3a3827379da6df9f7e0348fa9d91d}{reconnect\-Timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main U\-I window. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) This main window is the same for android and desktop Please mind the defines 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00033}{33} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!Main\-Window@{Main\-Window}}
+\index{Main\-Window@{Main\-Window}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::\-Main\-Window (
+\begin{DoxyParamCaption}
+\item[{Q\-Application $\ast$}]{a, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d2/da4/classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00005}{5} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_ab4aedce719340218169c114b31b54f70_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!$\sim$\-Main\-Window@{$\sim$\-Main\-Window}}
+\index{$\sim$\-Main\-Window@{$\sim$\-Main\-Window}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{$\sim$\-Main\-Window}]{\setlength{\rightskip}{0pt plus 5cm}Main\-Window\-::$\sim$\-Main\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d2/da4/classclient_1_1_main_window_ae98d00a93bc118200eeef9f9bba1dba7}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00054}{54} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!chat\-Received@{chat\-Received}}
+\index{chat\-Received@{chat\-Received}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::chat\-Received (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-Chat} $\ast$}]{chat\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a}
+
+
+Triggered when a chat has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chat\-Event} & An event\-Chat object containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00060}{60} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_a51e1634c12eb7373b01dce36a03afc9a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!command\-Given@{command\-Given}}
+\index{command\-Given@{command\-Given}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{command\-Given}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::command\-Given (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{command, }
+\item[{Q\-List$<$ Q\-String $>$}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00072}{72} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_a75d241698eb127c089ed4703fbeb4999_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!connected\-Timeout@{connected\-Timeout}}
+\index{connected\-Timeout@{connected\-Timeout}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{connected\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::connected\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187}
+
+
+Triggered when we cannot connect to the server! 
+
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00226}{226} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_a6df87d6d4bb287478d307d7e45097187_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!do\-Reconnect@{do\-Reconnect}}
+\index{do\-Reconnect@{do\-Reconnect}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{do\-Reconnect}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::do\-Reconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00235}{235} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a4714272984f1518ea739cc5c809d8579_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!move\-Scroll\-Bar\-To\-Bottom@{move\-Scroll\-Bar\-To\-Bottom}}
+\index{move\-Scroll\-Bar\-To\-Bottom@{move\-Scroll\-Bar\-To\-Bottom}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{move\-Scroll\-Bar\-To\-Bottom}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::move\-Scroll\-Bar\-To\-Bottom (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00086}{86} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d2/da4/classclient_1_1_main_window_a0c9982277db418807d2611e80cb65983_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!send\-Chat@{send\-Chat}}
+\index{send\-Chat@{send\-Chat}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::send\-Chat (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00065}{65} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_aa32adfb179341040f2decbd0da19f1d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!server\-Connected@{server\-Connected}}
+\index{server\-Connected@{server\-Connected}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{server\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::server\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00091}{91} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_aae9222490d9f0d71ffa6585c35416bfb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!server\-Disconnected@{server\-Disconnected}}
+\index{server\-Disconnected@{server\-Disconnected}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{server\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::server\-Disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00100}{100} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{d2/da4/classclient_1_1_main_window_a1453a7da1874881b67aa919390012e36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!server\-Message\-Received@{server\-Message\-Received}}
+\index{server\-Message\-Received@{server\-Message\-Received}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{server\-Message\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::server\-Message\-Received (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-Server\-Message} $\ast$}]{my\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75}
+
+
+Triggered when the server sends us a message that should be displayed in the U\-I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\-Message} & An event\-Server\-Message object containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00195}{195} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d2/da4/classclient_1_1_main_window_ae738b40e6b83639304d84f3d9f117c75_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!show\-Message@{show\-Message}}
+\index{show\-Message@{show\-Message}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{show\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::show\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{msg, }
+\item[{{\bf level}}]{lvl}
+\end{DoxyParamCaption}
+)}}\label{d2/da4/classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00212}{212} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a39679af3cff16dcf78ae97733c3c1781_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!user\-Change\-Nick@{user\-Change\-Nick}}
+\index{user\-Change\-Nick@{user\-Change\-Nick}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{user\-Change\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::user\-Change\-Nick (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Change\-Nick} $\ast$}]{nick\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d}
+
+
+Triggered when a user changes his nick (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick\-Event} & An event\-User\-Change\-Nick object containing more data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not to be confused with user\-Status\-Change 
+\end{DoxyNote}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00139}{139} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{d2/da4/classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_ae966f5228762e7b6f4803127d087175d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!user\-Enter@{user\-Enter}}
+\index{user\-Enter@{user\-Enter}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{user\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::user\-Enter (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Join} $\ast$}]{new\-User}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4}
+
+
+Triggered when a user enters the room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-User} & An event\-User\-Join object containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00172}{172} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_a62f7f15ddd56fd52acd7ba01fa6354b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!user\-Leave@{user\-Leave}}
+\index{user\-Leave@{user\-Leave}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{user\-Leave}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::user\-Leave (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Leave} $\ast$}]{leave\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604}
+
+
+Triggered when a user leaves the room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leave\-Event} & An event\-User\-Leave object containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00149}{149} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{d2/da4/classclient_1_1_main_window_a9f16758ff23f279a244806cae35a1604_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!user\-Query\-Completed@{user\-Query\-Completed}}
+\index{user\-Query\-Completed@{user\-Query\-Completed}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{user\-Query\-Completed}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::user\-Query\-Completed (
+\begin{DoxyParamCaption}
+\item[{Q\-Vector$<$ {\bf irc\-User} $\ast$ $>$}]{users}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4}
+
+
+Triggered when the user query came back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em users} & A Q\-Vector$<$irc\-User$\ast$$>$ that contains all the users online at that point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00109}{109} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d2/da4/classclient_1_1_main_window_a13044cd00c53dbbbc6b945c0dfd9b4b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!user\-Status\-Change@{user\-Status\-Change}}
+\index{user\-Status\-Change@{user\-Status\-Change}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{user\-Status\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void Main\-Window\-::user\-Status\-Change (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Change\-Status} $\ast$}]{status\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{d2/da4/classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59}
+
+
+Triggered when a user changes his status (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\-Event} & An event\-User\-Change\-Status object containing more data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not to be confused with user\-Change\-Nick! 
+\end{DoxyNote}
+
+
+Definition at line \hyperlink{mainwindow_8cpp_source_l00129}{129} of file \hyperlink{mainwindow_8cpp_source}{mainwindow.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/da4/classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{d2/da4/classclient_1_1_main_window_a380097fa1faba7f0457886053f793c59_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1_main_window_aa1e651adf78ed0a72d8c028a8263e17d}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!cb@{cb}}
+\index{cb@{cb}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{cb}]{\setlength{\rightskip}{0pt plus 5cm}{\bf chat\-Box}$\ast$ client\-::\-Main\-Window\-::cb\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_aa1e651adf78ed0a72d8c028a8263e17d}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00115}{115} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_ad83b542f504d4d017661c0aa7ce630b7}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!log@{log}}
+\index{log@{log}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} client\-::\-Main\-Window\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_ad83b542f504d4d017661c0aa7ce630b7}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00114}{114} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_a5ee3a3827379da6df9f7e0348fa9d91d}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!reconnect\-Timer@{reconnect\-Timer}}
+\index{reconnect\-Timer@{reconnect\-Timer}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{reconnect\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer$\ast$ client\-::\-Main\-Window\-::reconnect\-Timer\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_a5ee3a3827379da6df9f7e0348fa9d91d}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00122}{122} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!server@{server}}
+\index{server@{server}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Server\-Conn}$\ast$ client\-::\-Main\-Window\-::server\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_a4766f55e461fd529caa84bf953e5151c}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00117}{117} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!settings@{settings}}
+\index{settings@{settings}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Settings}$\ast$ client\-::\-Main\-Window\-::settings\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_a2ae4ecf491386322fd60aee80ba9f9c7}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00121}{121} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!ui@{ui}}
+\index{ui@{ui}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::\-Main\-Window$\ast$ client\-::\-Main\-Window\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_a2ec3641144030d30cd5358d33576c06c}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00112}{112} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+\hypertarget{classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}{\index{client\-::\-Main\-Window@{client\-::\-Main\-Window}!users@{users}}
+\index{users@{users}!client::MainWindow@{client\-::\-Main\-Window}}
+\subsubsection[{users}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Map$<$int, {\bf irc\-User} $\ast$$>$ client\-::\-Main\-Window\-::users\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/da4/classclient_1_1_main_window_a1b6893fbe6201f0ab9d6e94695834bb5}
+
+
+Definition at line \hyperlink{mainwindow_8h_source_l00119}{119} of file \hyperlink{mainwindow_8h_source}{mainwindow.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{mainwindow_8h}{mainwindow.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{mainwindow_8cpp}{mainwindow.\-cpp}\end{DoxyCompactItemize}

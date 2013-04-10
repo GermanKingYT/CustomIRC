@@ -1,0 +1,64 @@
+\hypertarget{clslog_8h}{\section{clslog.\-h}
+\label{d7/d62/clslog_8h}\index{C++/resources/clslog.\-h@{C++/resources/clslog.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSLOG\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSLOG\_H}
+00003 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <QDebug>}
+00004 \textcolor{preprocessor}{#include <QDateTime>}
+00005 \textcolor{preprocessor}{#include <string>}
+00006 \textcolor{preprocessor}{#include <iostream>}
+00007 \textcolor{preprocessor}{#include <QStringList>}
+00008 
+00009 \textcolor{keyword}{namespace }K4U \{
+\hypertarget{clslog_8h_source_l00010}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{00010} \textcolor{keyword}{enum} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{logTags}\{
+\hypertarget{clslog_8h_source_l00011}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5ae09ad9a4554d7e5d1d3f4ad9cb8f6c80}{00011}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5ae09ad9a4554d7e5d1d3f4ad9cb8f6c80}{LOGTAGS\_UNKNOWN} = 0xFF,
+\hypertarget{clslog_8h_source_l00012}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5}{00012}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5}{LOGTAGS\_IRC} = 0x00,
+\hypertarget{clslog_8h_source_l00013}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372}{00013}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372}{LOGTAGS\_MAIN},
+\hypertarget{clslog_8h_source_l00014}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{00014}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER},
+\hypertarget{clslog_8h_source_l00015}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac}{00015}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac}{LOGTAGS\_SERVER},
+\hypertarget{clslog_8h_source_l00016}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{00016}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{LOGTAGS\_UI},
+\hypertarget{clslog_8h_source_l00017}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5aef657c8d7492572bd1596fceecc4340a}{00017}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5aef657c8d7492572bd1596fceecc4340a}{LOGTAGS\_WEB},
+\hypertarget{clslog_8h_source_l00018}{}\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252}{00018}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252}{LOGTAGS\_EVENT}
+00019 \};
+00020 
+\hypertarget{clslog_8h_source_l00027}{}\hyperlink{class_k4_u_1_1cls_log}{00027} \textcolor{keyword}{class }\hyperlink{class_k4_u_1_1cls_log}{clsLog}\{
+00028 \textcolor{keyword}{public}:
+00033     \hyperlink{class_k4_u_1_1cls_log_aa103ad48f639a4ba8c2ee45798068337}{clsLog}(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{logTags} \hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{tag});
+00034 
+00038     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator<<}(\hyperlink{class_k4_u_1_1cls_log}{clsLog}& (*manip)(\hyperlink{class_k4_u_1_1cls_log}{clsLog}&));
+00039 
+00040     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(QString msg);
+00041     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keyword}{const} QString *msg);
+00042     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* msg);
+00043     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keywordtype}{int} msg);
+00044     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\hyperlink{class_k4_u_1_1cls_log}{clsLog} *log);
+00045     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keywordtype}{bool} msg);
+00046     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(QVariantMap &map);
+00047     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keyword}{const} QVariantMap &map);
+00048     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keyword}{const} QVariant &msg);
+00049     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(QVariant &msg);
+00050     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(QByteArray &bArr);
+00051     \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator << }(\textcolor{keyword}{const} QByteArray &bArr);
+00052 
+00053 
+00054 
+00055     \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{doEndl}();
+00060     \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{setPrefix}(QString \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix});
+00061 \textcolor{keyword}{private}:
+\hypertarget{clslog_8h_source_l00062}{}\hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{00062}     \textcolor{keywordtype}{bool} \hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{isFirst};
+\hypertarget{clslog_8h_source_l00063}{}\hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{00063}     \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{logTags} \hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{tag};
+00064 
+00065     \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix}();
+00066     std::string \hyperlink{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{getTag}();
+\hypertarget{clslog_8h_source_l00067}{}\hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{00067}     QString \hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{prf};
+00068 \};
+00069 
+00070 \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl}(\hyperlink{class_k4_u_1_1cls_log}{clsLog}& log);
+00071 
+00072 
+00073 \}
+00074 
+00075 \textcolor{preprocessor}{#endif // CLSLOG\_H}
+\end{DoxyCode}

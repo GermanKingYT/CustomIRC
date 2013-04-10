@@ -1,0 +1,6 @@
+<map id="server::ircUser::setId" name="server::ircUser::setId">
+<area shape="rect" id="node2" href="$d4/d08/classserver_1_1irc_user_list.html#a19af488638607e1cc77e94692e3cf3b1" title="Adds a user to the list." alt="" coords="195,5,349,32"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="632,5,773,32"/>
+<area shape="rect" id="node5" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="398,31,583,57"/>
+<area shape="rect" id="node4" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="821,5,872,32"/>
+</map>

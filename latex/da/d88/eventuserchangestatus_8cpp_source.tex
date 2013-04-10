@@ -1,0 +1,39 @@
+\hypertarget{eventuserchangestatus_8cpp}{\section{eventuserchangestatus.\-cpp}
+\label{da/d88/eventuserchangestatus_8cpp}\index{C++/resources/events/eventuserchangestatus.\-cpp@{C++/resources/events/eventuserchangestatus.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventuserchangestatus_8h}{eventuserchangestatus.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared \{
+00004     \textcolor{keyword}{namespace }events \{
+00005 
+\hypertarget{eventuserchangestatus_8cpp_source_l00006}{}\hyperlink{classshared_1_1events_1_1event_user_change_status_ac46b3eaa016315086bd75441ac1b7122}{00006}         \hyperlink{classshared_1_1events_1_1event_user_change_status_ac46b3eaa016315086bd75441ac1b7122}{eventUserChangeStatus::eventUserChangeStatus}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} 
+      userId,
+00007                                                      \textcolor{keyword}{const} QString newStatus,
+00008                                                      \textcolor{keyword}{const} QString oldStatus) \{
+00009             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{EVENTTYPE\_USER\_STATUS};
+00010             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"userId"},userId);
+00011             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"newStatus"},newStatus);
+00012             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"oldStatus"},oldStatus);
+00013         \}
+00014 
+\hypertarget{eventuserchangestatus_8cpp_source_l00015}{}\hyperlink{classshared_1_1events_1_1event_user_change_status_a70327cca0345cdbbb7ba5e2c9daeae97}{00015}         \hyperlink{classshared_1_1events_1_1event_user_change_status_ac46b3eaa016315086bd75441ac1b7122}{eventUserChangeStatus::eventUserChangeStatus}(
+      QVariantMap data)
+00016             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00017         \{ \}
+00018 
+\hypertarget{eventuserchangestatus_8cpp_source_l00019}{}\hyperlink{classshared_1_1events_1_1event_user_change_status_a4c904f38f1ff994ebb9a9ec251604874}{00019}         \textcolor{keywordtype}{int} \hyperlink{classshared_1_1events_1_1event_user_change_status_a4c904f38f1ff994ebb9a9ec251604874}{eventUserChangeStatus::getUserId}()\textcolor{keyword}{ const }\{
+00020             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"userId"}].toInt();
+00021         \}
+00022 
+\hypertarget{eventuserchangestatus_8cpp_source_l00023}{}\hyperlink{classshared_1_1events_1_1event_user_change_status_a018d111b0b5b957754b20d777f7f1bef}{00023}         QString \hyperlink{classshared_1_1events_1_1event_user_change_status_a018d111b0b5b957754b20d777f7f1bef}{eventUserChangeStatus::getNewStatus}()\textcolor{keyword}{ const }\{
+00024             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"newStatus"}].toString();
+00025         \}
+00026 
+\hypertarget{eventuserchangestatus_8cpp_source_l00027}{}\hyperlink{classshared_1_1events_1_1event_user_change_status_a8c1539833c6073962215c8d02617a324}{00027}         QString \hyperlink{classshared_1_1events_1_1event_user_change_status_a8c1539833c6073962215c8d02617a324}{eventUserChangeStatus::getOldStatus}()\textcolor{keyword}{ const }\{
+00028             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}[\textcolor{stringliteral}{"oldStatus"}].toString();
+00029         \}
+00030     \}
+00031 \}
+\end{DoxyCode}

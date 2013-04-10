@@ -1,0 +1,33 @@
+\hypertarget{functions_8h}{\section{functions.\-h}
+\label{d8/d5c/functions_8h}\index{C++/custom\-Irc\-Server/functions.\-h@{C++/custom\-Irc\-Server/functions.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef FUNCTIONS\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define FUNCTIONS\_H}
+00003 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <string>}
+00004 \textcolor{preprocessor}{#include <QString>}
+00005 \textcolor{preprocessor}{#include <QStringList>}
+00006 \textcolor{preprocessor}{#include <QVariantList>}
+00007 
+00008 \textcolor{keyword}{namespace }server\{
+\hypertarget{functions_8h_source_l00013}{}\hyperlink{structserver_1_1nick_and_status}{00013} \textcolor{keyword}{struct }\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}\{
+\hypertarget{functions_8h_source_l00014}{}\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{00014}     QString \hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick};
+\hypertarget{functions_8h_source_l00015}{}\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{00015}     QString \hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status};
+00016 \};
+00017 
+00024 \textcolor{keyword}{extern} \textcolor{keywordtype}{bool} \hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{inCommand}(\textcolor{keyword}{const} QString *command, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* search);
+00025 
+00031 \textcolor{keyword}{extern} \textcolor{keyword}{const} std::string \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(\textcolor{keyword}{const} QString str);
+00032 
+00038 \textcolor{keyword}{extern} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(\textcolor{keyword}{const} QString dNick);
+00039 
+00045 \textcolor{keyword}{extern} \textcolor{keyword}{const} QString \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{getId}(\textcolor{keyword}{const} QString fullId);
+00046 
+00052 \textcolor{keyword}{extern} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(\textcolor{keyword}{const} QString \textcolor{keywordtype}{id});
+00053 
+00054 
+00055 
+00056 \}
+00057 \textcolor{preprocessor}{#endif // FUNCTIONS\_H}
+\end{DoxyCode}

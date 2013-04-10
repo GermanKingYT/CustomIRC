@@ -1,0 +1,306 @@
+\hypertarget{custom_irc_server_2ircuser_8cpp}{\section{ircuser.\-cpp}
+\label{d4/d8b/custom_irc_server_2ircuser_8cpp}\index{C++/custom\-Irc\-Server/ircuser.\-cpp@{C++/custom\-Irc\-Server/ircuser.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_server_2ircuser_8h}{ircuser.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }server \{
+00004 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00005}{}\hyperlink{classserver_1_1irc_user_aad16e165281140577c40f14c8e095373}{00005} \hyperlink{classserver_1_1irc_user_a7ed017d168ff4218d4076978a355ffaa}{ircUser::ircUser}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} name, \textcolor{keyword}{const} QString ircId)
+00006     :name(name.nick)
+00007     ,ircId(ircId)
+00008     ,id(0)
+00009     ,status(name.status)
+00010     ,online(true)
+00011     ,standard(false)
+00012     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00013 \{
+00014     \textcolor{keywordflow}{if}(this->name.left(1) == \textcolor{stringliteral}{":"})\{
+00015         this->name = this->name.mid(1);
+00016     \}
+00017     this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online} = \textcolor{keyword}{false};
+00018     \textcolor{keywordflow}{if}(this->name.indexOf(\textcolor{stringliteral}{"|"}) >= 0)\{
+00019         this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = this->name.mid(this->name.indexOf(\textcolor{stringliteral}{"|"})+1);
+00020         this->name = this->name.left(this->name.indexOf(\textcolor{stringliteral}{"|"}));
+00021     \}
+00022     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00023     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00024     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00025 \}
+00026 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00027}{}\hyperlink{classserver_1_1irc_user_a003aa5c9d137c132fa524a2caab9aed0}{00027} \hyperlink{classserver_1_1irc_user_a7ed017d168ff4218d4076978a355ffaa}{ircUser::ircUser}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} name)
+00028     :name(name.nick)
+00029     ,ircId(\textcolor{stringliteral}{"NaN"})
+00030     ,id(0)
+00031     ,status(name.status)
+00032     ,online(true)
+00033     ,standard(false)
+00034     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00035 \{
+00036     \textcolor{keywordflow}{if}(this->name.left(1) == \textcolor{stringliteral}{":"})\{
+00037         this->name = this->name.mid(1);
+00038     \}
+00039     this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online} = \textcolor{keyword}{false};
+00040     \textcolor{keywordflow}{if}(this->name.indexOf(\textcolor{stringliteral}{"|"}) >= 0)\{
+00041         this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = this->name.mid(this->name.indexOf(\textcolor{stringliteral}{"|"})+1);
+00042         this->name = this->name.left(this->name.indexOf(\textcolor{stringliteral}{"|"}));
+00043     \}
+00044     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00045     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00046     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00047 \}
+00048 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00049}{}\hyperlink{classserver_1_1irc_user_a2bde2b43662ec23784f9f98a7d671e25}{00049} \hyperlink{classserver_1_1irc_user_a7ed017d168ff4218d4076978a355ffaa}{ircUser::ircUser}(\textcolor{keyword}{const} QString name, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} standard)
+00050     :name(name)
+00051     ,ircId(\textcolor{stringliteral}{"NaN"})
+00052     ,id(0)
+00053     ,status(\textcolor{stringliteral}{"Offline"})
+00054     ,online(false)
+00055     ,standard(standard)
+00056     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00057 \{
+00058     \textcolor{keywordflow}{if}(this->name.left(1) == \textcolor{stringliteral}{":"})\{
+00059         this->name = this->name.mid(1);
+00060     \}
+00061     \textcolor{keywordflow}{if}(!standard)\{
+00062         this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online} = \textcolor{keyword}{true};
+00063         this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = \textcolor{stringliteral}{""};
+00064     \}
+00065 
+00066     \textcolor{keywordflow}{if}(this->name.indexOf(\textcolor{stringliteral}{"|"}) >= 0)\{
+00067         this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = this->name.mid(this->name.indexOf(\textcolor{stringliteral}{"|"})+1);
+00068         this->name = this->name.left(this->name.indexOf(\textcolor{stringliteral}{"|"}));
+00069     \}
+00070 
+00071     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00072     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00073     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00074 \}
+00075 
+00076 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00077}{}\hyperlink{classserver_1_1irc_user_a7ed017d168ff4218d4076978a355ffaa}{00077} \hyperlink{classserver_1_1irc_user_a7ed017d168ff4218d4076978a355ffaa}{ircUser::ircUser}()
+00078     :name(\textcolor{stringliteral}{"NaN"})
+00079     ,ircId(\textcolor{stringliteral}{"NaN"})
+00080     ,id(0)
+00081     ,status(\textcolor{stringliteral}{"Offline"})
+00082     ,online(false)
+00083     ,standard(false)
+00084     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00085 \{
+00086     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00087     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00088     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00089 \}
+00090 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00091}{}\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{00091} QString \hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{ircUser::getName}()\textcolor{keyword}{ const}\{
+00092     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name};
+00093 \}
+00094 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00095}{}\hyperlink{classserver_1_1irc_user_ac9c8f677bab0526311a94d16ad13fd61}{00095} QString \hyperlink{classserver_1_1irc_user_ac9c8f677bab0526311a94d16ad13fd61}{ircUser::getStatus}()\textcolor{keyword}{ const}\{
+00096     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status};
+00097 \}
+00098 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00099}{}\hyperlink{classserver_1_1irc_user_a83a421f05e507496a7cab349cd993b69}{00099} \textcolor{keywordtype}{bool} \hyperlink{classserver_1_1irc_user_a83a421f05e507496a7cab349cd993b69}{ircUser::isStandard}()\textcolor{keyword}{ const}\{
+00100     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_ac91172ae6a09106ed851634d1e7c6553}{standard};
+00101 \}
+00102 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00103}{}\hyperlink{classserver_1_1irc_user_af6bce76d6e000cf6c5ebfb4ce323f442}{00103} QVariantMap \hyperlink{classserver_1_1irc_user_af6bce76d6e000cf6c5ebfb4ce323f442}{ircUser::toVariantMap}()\textcolor{keyword}{ const}\{
+00104     QVariantMap ret;
+00105     QVariantMap color;
+00106     color[\textcolor{stringliteral}{"r"}] = this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r};
+00107     color[\textcolor{stringliteral}{"g"}] = this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g};
+00108     color[\textcolor{stringliteral}{"b"}] = this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b};
+00109 
+00110     ret[\textcolor{stringliteral}{"uColor"}] = QVariant(color);
+00111     ret[\textcolor{stringliteral}{"nick"}] = this->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name};
+00112     ret[\textcolor{stringliteral}{"ircId"}] = this->\hyperlink{classserver_1_1irc_user_a0380d5ace6770dbdc30187d348d837ed}{ircId};
+00113     ret[\textcolor{stringliteral}{"id"}] = this->\hyperlink{classserver_1_1irc_user_af55b2056fb7f59055417bda5d3187b4e}{id};
+00114     ret[\textcolor{stringliteral}{"status"}] = this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status};
+00115     ret[\textcolor{stringliteral}{"standard"}] = this->\hyperlink{classserver_1_1irc_user_ac91172ae6a09106ed851634d1e7c6553}{standard};
+00116     ret[\textcolor{stringliteral}{"isOnline"}] = this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online};
+00117     ret[\textcolor{stringliteral}{"email"}] = this->\hyperlink{classserver_1_1irc_user_aeadaf50889cd947cb5080cb9fe0707bd}{email};
+00118 
+00119     \textcolor{keywordflow}{return} ret;
+00120 
+00121 \}
+00122 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00123}{}\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{00123} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{ircUser::setOnline}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} isOnline)\{
+00124     this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online} = isOnline;
+00125 \}
+00126 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00127}{}\hyperlink{classserver_1_1irc_user_ae25138b12f396f27caf0765ee1dd34db}{00127} \textcolor{keywordtype}{bool} \hyperlink{classserver_1_1irc_user_ae25138b12f396f27caf0765ee1dd34db}{ircUser::getOnline}()\textcolor{keyword}{ const}\{
+00128     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online};
+00129 \}
+00130 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00131}{}\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{00131} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{ircUser::setStatus}(\textcolor{keyword}{const} QString &newStatus)\{
+00132     this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = newStatus;
+00133 \}
+00134 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00135}{}\hyperlink{classserver_1_1irc_user_a2581bbd3f9bb0db6a1bee2c58b8b21aa}{00135} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_a2581bbd3f9bb0db6a1bee2c58b8b21aa}{ircUser::setIrcId}(\textcolor{keyword}{const} QString &newId)\{
+00136     this->\hyperlink{classserver_1_1irc_user_a0380d5ace6770dbdc30187d348d837ed}{ircId} = newId;
+00137 \}
+00138 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00139}{}\hyperlink{classserver_1_1irc_user_a2002c82125ebd8502ec385e516bfa445}{00139} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_a2002c82125ebd8502ec385e516bfa445}{ircUser::setNick}(\textcolor{keyword}{const} QString &newNick)\{
+00140     this->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name} = newNick;
+00141 \}
+00142 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00143}{}\hyperlink{classserver_1_1irc_user_ae4669a1a72c600a7a238bc39cbd853ca}{00143} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_ae4669a1a72c600a7a238bc39cbd853ca}{ircUser::setColor}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} r, \textcolor{keyword}{const} \textcolor{keywordtype}{int} g, \textcolor{keyword}{const} \textcolor{keywordtype}{int} b)\{
+00144     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = r;
+00145     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = g;
+00146     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor}.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = b;
+00147 \}
+00148 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00149}{}\hyperlink{classserver_1_1irc_user_af0283ebe2bb3ea47e56ea440c9c4ce1c}{00149} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_ae4669a1a72c600a7a238bc39cbd853ca}{ircUser::setColor}(\textcolor{keyword}{const} \hyperlink{structserver_1_1irc_user_1_1user_color}{ircUser::userColor} &newColor)\{
+00150     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor} = newColor;
+00151 \}
+00152 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00153}{}\hyperlink{classserver_1_1irc_user_a8a8c4f9d36cf2572239b5b49b794f8c7}{00153} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_a8a8c4f9d36cf2572239b5b49b794f8c7}{ircUser::setEmail}(\textcolor{keyword}{const} QString &email)\{
+00154     this->email = \hyperlink{classserver_1_1irc_user_aeadaf50889cd947cb5080cb9fe0707bd}{email};
+00155 \}
+00156 
+00157 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00158}{}\hyperlink{classserver_1_1irc_user_adfd348f6686b4e96e94f289d10a13cd5}{00158} QString \hyperlink{classserver_1_1irc_user_adfd348f6686b4e96e94f289d10a13cd5}{ircUser::getIrcId}()\textcolor{keyword}{ const}\{
+00159     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_a0380d5ace6770dbdc30187d348d837ed}{ircId};
+00160 \}
+00161 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00162}{}\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{00162} \textcolor{keywordtype}{int} \hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{ircUser::getId}()\textcolor{keyword}{ const }\{
+00163     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_af55b2056fb7f59055417bda5d3187b4e}{id};
+00164 \}
+00165 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00166}{}\hyperlink{classserver_1_1irc_user_ad855efa6ab1fe94c35c992ac5cfd164d}{00166} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_ad855efa6ab1fe94c35c992ac5cfd164d}{ircUser::setId}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} &newId)\{
+00167     this->\textcolor{keywordtype}{id} = newId;
+00168 \}
+00169 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00170}{}\hyperlink{namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8}{00170} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8}{operator <<}(\hyperlink{class_k4_u_1_1cls_log}{clsLog} &log, \textcolor{keyword}{const} \hyperlink{classserver_1_1irc_user}{ircUser} *user)\{
+00171     log << \textcolor{stringliteral}{"USER: name: \(\backslash\)t"} << user->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name} << \textcolor{stringliteral}{"\(\backslash\)tStatus:\(\backslash\)t"} << user->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status};
+00172     log << \textcolor{stringliteral}{"\(\backslash\)tStandard: \(\backslash\)t"} << user->\hyperlink{classserver_1_1irc_user_ac91172ae6a09106ed851634d1e7c6553}{standard} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00173     \textcolor{keywordflow}{return} log;
+00174 \}
+00175 
+00176 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00177}{}\hyperlink{classserver_1_1irc_user_list_a9b9cf433ca7bd02e8a86b284edfce11f}{00177} \hyperlink{classserver_1_1irc_user_list_a9b9cf433ca7bd02e8a86b284edfce11f}{ircUserList::ircUserList}()\{
+00178     this->\hyperlink{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{lastId} = 0;
+00179 \}
+00180 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00181}{}\hyperlink{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{00181} \hyperlink{structserver_1_1irc_user_1_1user_color}{ircUser::userColor} \hyperlink{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{getColor}(\textcolor{keywordtype}{int} length)\{
+00182     \hyperlink{structserver_1_1irc_user_1_1user_color}{ircUser::userColor} retColor;
+00183     \textcolor{keywordflow}{switch}(length)\{
+00184         \textcolor{keywordflow}{case} 0:
+00185             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 160;
+00186             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 25;
+00187             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 25;
+00188             \textcolor{keywordflow}{break};
+00189         \textcolor{keywordflow}{case} 1:
+00190             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 25;
+00191             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 25;
+00192             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 160;
+00193             \textcolor{keywordflow}{break};
+00194         \textcolor{keywordflow}{case} 2:
+00195             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 25;
+00196             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 160;
+00197             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 25;
+00198             \textcolor{keywordflow}{break};
+00199         \textcolor{keywordflow}{case} 3:
+00200             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 160;
+00201             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 160;
+00202             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 25;
+00203             \textcolor{keywordflow}{break};
+00204         \textcolor{keywordflow}{case} 4:
+00205             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 25;
+00206             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 160;
+00207             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 160;
+00208             \textcolor{keywordflow}{break};
+00209         \textcolor{keywordflow}{case} 5:
+00210             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 255;
+00211             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00212             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00213             \textcolor{keywordflow}{break};
+00214         \textcolor{keywordflow}{case} 6:
+00215             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00216             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 160;
+00217             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00218             \textcolor{keywordflow}{break};
+00219         \textcolor{keywordflow}{case} 7:
+00220             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00221             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00222             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 255;
+00223             \textcolor{keywordflow}{break};
+00224         \textcolor{keywordflow}{default}:
+00225             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_abe837948b8877eb7faa9b229037b3af2}{r} = 0;
+00226             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_ab72c5a2e0c09cd2ea5ef195cb4edd3ae}{g} = 0;
+00227             retColor.\hyperlink{structserver_1_1irc_user_1_1user_color_a908b1b071395653458048d5b84de460f}{b} = 0;
+00228             \textcolor{keywordflow}{break};
+00229     \}
+00230     \textcolor{keywordflow}{return} retColor;
+00231 \}
+00232 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00233}{}\hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{00233} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{ircUserList::add}(\hyperlink{classserver_1_1irc_user}{ircUser} *userToAdd)\{
+00234     userToAdd->\hyperlink{classserver_1_1irc_user_ae4669a1a72c600a7a238bc39cbd853ca}{setColor}(\hyperlink{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{getColor}(this->\hyperlink{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{lastId} % 8));
+00235     this->\hyperlink{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{lastId}++;
+00236     userToAdd->\hyperlink{classserver_1_1irc_user_ad855efa6ab1fe94c35c992ac5cfd164d}{setId}(this->\hyperlink{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{lastId});
+00237     this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}.append(userToAdd);
+00238 \}
+00239 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00240}{}\hyperlink{classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}{00240} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}{ircUserList::del}(\hyperlink{classserver_1_1irc_user}{ircUser} *userToDel)\{
+00241     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}.size(); i++)\{
+00242         \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}[i]->getName() == userToDel->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}())\{
+00243             this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}.remove(i);
+00244         \}
+00245     \}
+00246 \}
+00247 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00248}{}\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{00248} \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{ircUserList::getUser}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} nick, \textcolor{keyword}{const} 
+      QString ircId)\{
+00249     \hyperlink{classserver_1_1irc_user}{ircUser} *searched = this->\hyperlink{classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}{getUserByIrcId}(ircId);
+00250     \textcolor{keywordflow}{if}(searched->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00251         searched = this->\hyperlink{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{getUserByNick}(nick);
+00252         \textcolor{keywordflow}{if}(searched->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00253             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser};
+00254         \}\textcolor{keywordflow}{else}\{
+00255             \textcolor{keywordflow}{return} searched;
+00256         \}
+00257     \}\textcolor{keywordflow}{else}\{
+00258         \textcolor{keywordflow}{return} searched;
+00259     \}
+00260 \}
+00261 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00262}{}\hyperlink{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{00262} \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{ircUserList::getUserByNick}(
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} nick) \{
+00263     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}.size(); i++)\{
+00264         \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}[i]->getName() == nick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick})\{
+00265             \textcolor{keywordflow}{return} &*this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}[i];
+00266         \}
+00267     \}
+00268     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser}();
+00269 \}
+00270 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00271}{}\hyperlink{classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}{00271} \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}{ircUserList::getUserByIrcId}(QString ircId)\{
+00272     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}.size(); i++)\{
+00273         \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}[i]->getIrcId() == ircId)\{
+00274             \textcolor{keywordflow}{return} &*this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}[i];
+00275         \}
+00276     \}
+00277     \textcolor{keywordflow}{return} \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser}();
+00278 \}
+00279 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00280}{}\hyperlink{classserver_1_1irc_user_list_aab10a6d6fdfb92580e68b84b1365f9b2}{00280} QVector<ircUser *> \hyperlink{classserver_1_1irc_user_list_aab10a6d6fdfb92580e68b84b1365f9b2}{ircUserList::getAll}()\textcolor{keyword}{ const}\{
+00281     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users};
+00282 \}
+00283 
+\hypertarget{custom_irc_server_2ircuser_8cpp_source_l00284}{}\hyperlink{classserver_1_1irc_user_a31a361c1984e271529a94ce2034a7ba7}{00284} \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1irc_user_a31a361c1984e271529a94ce2034a7ba7}{ircUser::operator =}(\textcolor{keyword}{const} \hyperlink{classserver_1_1irc_user}{ircUser} *user)\{
+00285     this->\textcolor{keywordtype}{id} = user->\hyperlink{classserver_1_1irc_user_af55b2056fb7f59055417bda5d3187b4e}{id};
+00286     this->\hyperlink{classserver_1_1irc_user_aeadaf50889cd947cb5080cb9fe0707bd}{email} = user->\hyperlink{classserver_1_1irc_user_aeadaf50889cd947cb5080cb9fe0707bd}{email};
+00287     this->\hyperlink{classserver_1_1irc_user_a0380d5ace6770dbdc30187d348d837ed}{ircId} = user->\hyperlink{classserver_1_1irc_user_a0380d5ace6770dbdc30187d348d837ed}{ircId};
+00288     this->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name} = user->\hyperlink{classserver_1_1irc_user_a741feff79ca2d07554a7fbf879efff63}{name};
+00289     this->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online} = user->\hyperlink{classserver_1_1irc_user_a4874a205aff9f60882022a94f73e125d}{online};
+00290     this->\hyperlink{classserver_1_1irc_user_ac91172ae6a09106ed851634d1e7c6553}{standard} = user->\hyperlink{classserver_1_1irc_user_ac91172ae6a09106ed851634d1e7c6553}{standard};
+00291     this->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status} = user->\hyperlink{classserver_1_1irc_user_acf198f11436cfa83a42048850d276c95}{status};
+00292     this->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor} = user->\hyperlink{classserver_1_1irc_user_a84807f272b7a5b30396f0b726c25202e}{uColor};
+00293 
+00294     \textcolor{keywordflow}{return} \textcolor{keyword}{this};
+00295 \}
+00296 
+00297 
+00298 \} \textcolor{comment}{/*End of namespace*/}
+\end{DoxyCode}

@@ -1,0 +1,200 @@
+\hypertarget{classshared_1_1events_1_1event_server_message}{\section{shared\-:\-:events\-:\-:event\-Server\-Message Class Reference}
+\label{d6/dfe/classshared_1_1events_1_1event_server_message}\index{shared\-::events\-::event\-Server\-Message@{shared\-::events\-::event\-Server\-Message}}
+}
+
+
+Class that contains data for when the server wants to say something.  
+
+
+
+
+{\ttfamily \#include $<$eventservermessage.\-h$>$}
+
+
+
+Inheritance diagram for shared\-:\-:events\-:\-:event\-Server\-Message\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d8/d2b/classshared_1_1events_1_1event_server_message__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shared\-:\-:events\-:\-:event\-Server\-Message\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{dc/d04/classshared_1_1events_1_1event_server_message__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{event\-Server\-Message} (Q\-String message, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classshared_1_1events_1_1event_server_message}{event\-Server\-Message} constructor taking a message \end{DoxyCompactList}\item 
+\hyperlink{classshared_1_1events_1_1event_server_message_ad2b4e273b5d1de7761aa751b9337d1f5}{event\-Server\-Message} (Q\-Variant\-Map \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data})
+\begin{DoxyCompactList}\small\item\em Initializer function that accepts data immediately. \end{DoxyCompactList}\item 
+Q\-String \hyperlink{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{get\-Message} () const 
+\begin{DoxyCompactList}\small\item\em Gets the message. \end{DoxyCompactList}\item 
+\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} \hyperlink{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{get\-Level} () const 
+\begin{DoxyCompactList}\small\item\em Gets the level of the message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that contains data for when the server wants to say something. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{eventservermessage_8h_source_l00015}{15} of file \hyperlink{eventservermessage_8h_source}{eventservermessage.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{\index{shared\-::events\-::event\-Server\-Message@{shared\-::events\-::event\-Server\-Message}!event\-Server\-Message@{event\-Server\-Message}}
+\index{event\-Server\-Message@{event\-Server\-Message}!shared::events::eventServerMessage@{shared\-::events\-::event\-Server\-Message}}
+\subsubsection[{event\-Server\-Message}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::event\-Server\-Message\-::event\-Server\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message, }
+\item[{{\bf level}}]{lvl}
+\end{DoxyParamCaption}
+)}}\label{d6/dfe/classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}
+
+
+\hyperlink{classshared_1_1events_1_1event_server_message}{event\-Server\-Message} constructor taking a message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message that was sent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{eventservermessage_8cpp_source_l00006}{6} of file \hyperlink{eventservermessage_8cpp_source}{eventservermessage.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1event_server_message_ad2b4e273b5d1de7761aa751b9337d1f5}{\index{shared\-::events\-::event\-Server\-Message@{shared\-::events\-::event\-Server\-Message}!event\-Server\-Message@{event\-Server\-Message}}
+\index{event\-Server\-Message@{event\-Server\-Message}!shared::events::eventServerMessage@{shared\-::events\-::event\-Server\-Message}}
+\subsubsection[{event\-Server\-Message}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::event\-Server\-Message\-::event\-Server\-Message (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map}]{data}
+\end{DoxyParamCaption}
+)}}\label{d6/dfe/classshared_1_1events_1_1event_server_message_ad2b4e273b5d1de7761aa751b9337d1f5}
+
+
+Initializer function that accepts data immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A Q\-Variant\-Map containing the event data, parsed from J\-S\-O\-N Mostly used on the receiving end. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{eventservermessage_8cpp_source_l00012}{12} of file \hyperlink{eventservermessage_8cpp_source}{eventservermessage.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{\index{shared\-::events\-::event\-Server\-Message@{shared\-::events\-::event\-Server\-Message}!get\-Level@{get\-Level}}
+\index{get\-Level@{get\-Level}!shared::events::eventServerMessage@{shared\-::events\-::event\-Server\-Message}}
+\subsubsection[{get\-Level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf level} shared\-::events\-::event\-Server\-Message\-::get\-Level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/dfe/classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}
+
+
+Gets the level of the message. 
+
+\begin{DoxyReturn}{Returns}
+The level of the message 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{eventservermessage_8cpp_source_l00020}{20} of file \hyperlink{eventservermessage_8cpp_source}{eventservermessage.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{\index{shared\-::events\-::event\-Server\-Message@{shared\-::events\-::event\-Server\-Message}!get\-Message@{get\-Message}}
+\index{get\-Message@{get\-Message}!shared::events::eventServerMessage@{shared\-::events\-::event\-Server\-Message}}
+\subsubsection[{get\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String shared\-::events\-::event\-Server\-Message\-::get\-Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d6/dfe/classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}
+
+
+Gets the message. 
+
+\begin{DoxyReturn}{Returns}
+The message 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{eventservermessage_8cpp_source_l00016}{16} of file \hyperlink{eventservermessage_8cpp_source}{eventservermessage.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/dfe/classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/resources/events/\hyperlink{eventservermessage_8h}{eventservermessage.\-h}\item 
+C++/resources/events/\hyperlink{eventservermessage_8cpp}{eventservermessage.\-cpp}\end{DoxyCompactItemize}

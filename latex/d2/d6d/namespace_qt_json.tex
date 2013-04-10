@@ -1,0 +1,207 @@
+\hypertarget{namespace_qt_json}{\section{Qt\-Json Namespace Reference}
+\label{d2/d6d/namespace_qt_json}\index{Qt\-Json@{Qt\-Json}}
+}
+
+
+A J\-S\-O\-N data parser.  
+
+
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5}{Json\-Token} \{ \\*
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{Json\-Token\-None} = 0, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{Json\-Token\-Curly\-Open} = 1, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{Json\-Token\-Curly\-Close} = 2, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{Json\-Token\-Squared\-Open} = 3, 
+\\*
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{Json\-Token\-Squared\-Close} = 4, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{Json\-Token\-Colon} = 5, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{Json\-Token\-Comma} = 6, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{Json\-Token\-String} = 7, 
+\\*
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{Json\-Token\-Number} = 8, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{Json\-Token\-True} = 9, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{Json\-Token\-False} = 10, 
+\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{Json\-Token\-Null} = 11
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Variant \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse} (const Q\-String \&json)
+\item 
+Q\-Variant \hyperlink{namespace_qt_json_ac4e31a9350b0df760c664c30f6e52162}{parse} (const Q\-String \&json, bool \&success)
+\item 
+Q\-Byte\-Array \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize} (const Q\-Variant \&data)
+\item 
+Q\-Byte\-Array \hyperlink{namespace_qt_json_a1ff5b8ee653a95a99a35ccff4c347a4c}{serialize} (const Q\-Variant \&data, bool \&success)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A J\-S\-O\-N data parser. Json parses a J\-S\-O\-N data into a Q\-Variant hierarchy. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5}{\index{Qt\-Json@{Qt\-Json}!Json\-Token@{Json\-Token}}
+\index{Json\-Token@{Json\-Token}!QtJson@{Qt\-Json}}
+\subsubsection[{Json\-Token}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Qt\-Json\-::\-Json\-Token}}}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Json\-Token\-None@{Json\-Token\-None}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-None@{Json\-Token\-None}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{Json\-Token\-None}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}
+}]\index{Json\-Token\-Curly\-Open@{Json\-Token\-Curly\-Open}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Curly\-Open@{Json\-Token\-Curly\-Open}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{Json\-Token\-Curly\-Open}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}
+}]\index{Json\-Token\-Curly\-Close@{Json\-Token\-Curly\-Close}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Curly\-Close@{Json\-Token\-Curly\-Close}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{Json\-Token\-Curly\-Close}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}
+}]\index{Json\-Token\-Squared\-Open@{Json\-Token\-Squared\-Open}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Squared\-Open@{Json\-Token\-Squared\-Open}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{Json\-Token\-Squared\-Open}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}
+}]\index{Json\-Token\-Squared\-Close@{Json\-Token\-Squared\-Close}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Squared\-Close@{Json\-Token\-Squared\-Close}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{Json\-Token\-Squared\-Close}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}
+}]\index{Json\-Token\-Colon@{Json\-Token\-Colon}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Colon@{Json\-Token\-Colon}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{Json\-Token\-Colon}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}
+}]\index{Json\-Token\-Comma@{Json\-Token\-Comma}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Comma@{Json\-Token\-Comma}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{Json\-Token\-Comma}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}
+}]\index{Json\-Token\-String@{Json\-Token\-String}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-String@{Json\-Token\-String}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{Json\-Token\-String}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}
+}]\index{Json\-Token\-Number@{Json\-Token\-Number}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Number@{Json\-Token\-Number}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{Json\-Token\-Number}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}
+}]\index{Json\-Token\-True@{Json\-Token\-True}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-True@{Json\-Token\-True}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{Json\-Token\-True}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}
+}]\index{Json\-Token\-False@{Json\-Token\-False}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-False@{Json\-Token\-False}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{Json\-Token\-False}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}
+}]\index{Json\-Token\-Null@{Json\-Token\-Null}!Qt\-Json@{Qt\-Json}}\index{Qt\-Json@{Qt\-Json}!Json\-Token\-Null@{Json\-Token\-Null}}\item[{\em 
+\hypertarget{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{Json\-Token\-Null}\label{d2/d6d/namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line \hyperlink{json_8cpp_source_l00224}{224} of file \hyperlink{json_8cpp_source}{json.\-cpp}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{\index{Qt\-Json@{Qt\-Json}!parse@{parse}}
+\index{parse@{parse}!QtJson@{Qt\-Json}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant Qt\-Json\-::parse (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{json}
+\end{DoxyParamCaption}
+)}}\label{d2/d6d/namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}
+parse
+
+Parse a J\-S\-O\-N string
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & The J\-S\-O\-N data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{json_8cpp_source_l00060}{60} of file \hyperlink{json_8cpp_source}{json.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d6d/namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespace_qt_json_ac4e31a9350b0df760c664c30f6e52162}{\index{Qt\-Json@{Qt\-Json}!parse@{parse}}
+\index{parse@{parse}!QtJson@{Qt\-Json}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant Qt\-Json\-::parse (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{json, }
+\item[{bool \&}]{success}
+\end{DoxyParamCaption}
+)}}\label{d2/d6d/namespace_qt_json_ac4e31a9350b0df760c664c30f6e52162}
+parse
+
+Parse a J\-S\-O\-N string
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & The J\-S\-O\-N data \\
+\hline
+{\em success} & The success of the parsing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{json_8cpp_source_l00069}{69} of file \hyperlink{json_8cpp_source}{json.\-cpp}.
+
+\hypertarget{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{\index{Qt\-Json@{Qt\-Json}!serialize@{serialize}}
+\index{serialize@{serialize}!QtJson@{Qt\-Json}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Byte\-Array Qt\-Json\-::serialize (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{d2/d6d/namespace_qt_json_ace7d6102379674932334bea04fb15c12}
+This method generates a textual J\-S\-O\-N representation
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The J\-S\-O\-N data generated by the parser.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\-Byte\-Array Textual J\-S\-O\-N representation 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{json_8cpp_source_l00093}{93} of file \hyperlink{json_8cpp_source}{json.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/d6d/namespace_qt_json_ace7d6102379674932334bea04fb15c12_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespace_qt_json_a1ff5b8ee653a95a99a35ccff4c347a4c}{\index{Qt\-Json@{Qt\-Json}!serialize@{serialize}}
+\index{serialize@{serialize}!QtJson@{Qt\-Json}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Byte\-Array Qt\-Json\-::serialize (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant \&}]{data, }
+\item[{bool \&}]{success}
+\end{DoxyParamCaption}
+)}}\label{d2/d6d/namespace_qt_json_a1ff5b8ee653a95a99a35ccff4c347a4c}
+This method generates a textual J\-S\-O\-N representation
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The J\-S\-O\-N data generated by the parser. \\
+\hline
+{\em success} & The success of the serialization\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\-Byte\-Array Textual J\-S\-O\-N representation 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{json_8cpp_source_l00099}{99} of file \hyperlink{json_8cpp_source}{json.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{d2/d6d/namespace_qt_json_a1ff5b8ee653a95a99a35ccff4c347a4c_cgraph}
+\end{center}
+\end{figure}
+
+

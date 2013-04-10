@@ -1,0 +1,23 @@
+\hypertarget{custom_irc_client_2main_8cpp}{\section{main.\-cpp}
+\label{df/d94/custom_irc_client_2main_8cpp}\index{C++/custom\-Irc\-Client/main.\-cpp@{C++/custom\-Irc\-Client/main.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{mainwindow_8h}{mainwindow.h}"}
+00002 \textcolor{preprocessor}{#include <QApplication>}
+00003 
+00004 \textcolor{keyword}{using namespace }client;
+\hypertarget{custom_irc_client_2main_8cpp_source_l00005}{}\hyperlink{custom_irc_client_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00005} \textcolor{keywordtype}{int} \hyperlink{custom_irc_client_2android_2main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00006 \{
+00007     QApplication a(argc, argv);
+00008     \hyperlink{classclient_1_1_main_window}{MainWindow} w(&a);
+00009 \textcolor{preprocessor}{#ifdef DESKTOP}
+00010 \textcolor{preprocessor}{}    w.show();
+00011 \textcolor{preprocessor}{#elif ANDROID}
+00012 \textcolor{preprocessor}{}    w.setOrientation(\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ac6b5fe3ca97c62b5c9c5c55edb09027d}{MainWindow::ScreenOrientationAuto});
+00013     w.showExpanded();
+00014 \textcolor{preprocessor}{#endif}
+00015 \textcolor{preprocessor}{}
+00016     \textcolor{keywordflow}{return} a.exec();
+00017 \}
+\end{DoxyCode}

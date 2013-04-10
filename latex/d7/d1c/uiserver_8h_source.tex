@@ -1,0 +1,66 @@
+\hypertarget{uiserver_8h}{\section{uiserver.\-h}
+\label{d7/d1c/uiserver_8h}\index{C++/custom\-Irc\-Server/uiserver.\-h@{C++/custom\-Irc\-Server/uiserver.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef SIMPLECHATSERVER\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define SIMPLECHATSERVER\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QTcpServer>}
+00005 \textcolor{preprocessor}{#include <QList>}
+00006 \textcolor{preprocessor}{#include <QHash>}
+00007 \textcolor{preprocessor}{#include "\hyperlink{uiclient_8h}{uiclient.h}"}
+00008 \textcolor{preprocessor}{#include "../resources/clslog.h"}
+00009 \textcolor{preprocessor}{#include "../resources/jsoncommand.h"}
+00010 
+\hypertarget{uiserver_8h_source_l00011}{}\hyperlink{uiserver_8h_abfcdb1becb6170a9ddc3b4e7090169e1}{00011} \textcolor{preprocessor}{#define DEFAULT\_LISTENING\_PORT 1337 }
+00013 \textcolor{preprocessor}{class QTcpSocket;}
+00014 \textcolor{preprocessor}{}
+00015 \textcolor{keyword}{namespace }server \{
+\hypertarget{uiserver_8h_source_l00021}{}\hyperlink{classserver_1_1ui_server}{00021} \textcolor{keyword}{class }\hyperlink{classserver_1_1ui_server}{uiServer} : \textcolor{keyword}{public} QTcpServer
+00022 \{
+00023     Q\_OBJECT
+00024 
+00025 \textcolor{keyword}{public}:
+00031     \hyperlink{classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}{uiServer}(\textcolor{keywordtype}{int} \hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port} = \hyperlink{uiserver_8h_abfcdb1becb6170a9ddc3b4e7090169e1}{DEFAULT\_LISTENING\_PORT}, QObject* parent = 0);
+00032     \hyperlink{classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}{~uiServer}();
+00033 
+00037     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}{startListen}();
+00038 
+00039 
+00044     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(\textcolor{keyword}{const} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend);
+00045 
+00051     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(\hyperlink{classserver_1_1ui_client}{uiClient} *client, \textcolor{keyword}{const} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend);
+00052 
+00053 \textcolor{keyword}{private} slots:
+00057     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{acceptConnection}();
+00058 
+00063     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{lostConnection}(\hyperlink{classserver_1_1ui_client}{uiClient}* client);
+00064 
+00069     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{chatReceived}(QString message);
+00070 
+00075     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{doUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient} *client);
+00076 
+00081     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{doSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient} *client);
+00082 
+00088     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{changeOwnUser}(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm);
+00089 signals:
+00094     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726}{sgnChatReceived}(QString message);
+00095 
+00101     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97}{sgnUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient} *client);
+00107     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87}{sgnSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient} *client);
+00108 
+00113     \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211}{sgnChangeOwnUserStatus}(QString newStatus);
+00114 
+00115 
+00116 \textcolor{keyword}{private}:
+\hypertarget{uiserver_8h_source_l00117}{}\hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{00117}     QList<uiClient*> \hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{connections};
+00118 
+\hypertarget{uiserver_8h_source_l00119}{}\hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{00119}     \hyperlink{class_k4_u_1_1cls_log}{clsLog} \hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{log};
+00120 
+\hypertarget{uiserver_8h_source_l00121}{}\hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{00121}     \textcolor{keywordtype}{int} \hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port};
+00122 \};
+00123 
+00124 \}
+00125 \textcolor{preprocessor}{#endif // SIMPLECHATSERVER\_H}
+\end{DoxyCode}

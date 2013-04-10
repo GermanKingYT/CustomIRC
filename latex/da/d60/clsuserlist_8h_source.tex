@@ -1,0 +1,46 @@
+\hypertarget{clsuserlist_8h}{\section{clsuserlist.\-h}
+\label{da/d60/clsuserlist_8h}\index{C++/custom\-Irc\-Client/desktop/clsuserlist.\-h@{C++/custom\-Irc\-Client/desktop/clsuserlist.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef clsUserList\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define clsUserList\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QWidget>}
+00005 \textcolor{preprocessor}{#include <QVBoxLayout>}
+00006 \textcolor{preprocessor}{#include <QSpacerItem>}
+00007 \textcolor{preprocessor}{#include <QWidget>}
+00008 \textcolor{preprocessor}{#include <QVector>}
+00009 \textcolor{preprocessor}{#include "\hyperlink{clsuserentry_8h}{clsuserentry.h}"}
+00010 \textcolor{preprocessor}{#include "../ircuser.h"}
+00011 
+00012 \textcolor{keyword}{namespace }Ui \{
+00013     \textcolor{keyword}{class }clsUserList;
+00014 \}
+00015 \textcolor{keyword}{namespace }client\{
+00016 
+\hypertarget{clsuserlist_8h_source_l00021}{}\hyperlink{classclient_1_1cls_user_list}{00021}     \textcolor{keyword}{class }\hyperlink{classclient_1_1cls_user_list}{clsUserList} : \textcolor{keyword}{public} QWidget
+00022     \{
+00023         Q\_OBJECT
+00024 
+00025         \textcolor{keyword}{public}:
+00026             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1cls_user_list_a91105ec3b18c4e62607146ba2aa7d72d}{clsUserList}(QWidget *parent = 0);
+00027             \hyperlink{classclient_1_1cls_user_list_a58e37bcc6f3dfa03b57661ab3fc2e8c8}{~clsUserList}();
+00028 
+00033             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_adf012bc4b8c266961028b5114619b8c2}{addUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user);
+00038             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_a545fe682c9cc507698703a5d7f3e25a4}{refreshUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user);
+00043             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_a1557093786f442bf1314bf763800445b}{removeUser}(\hyperlink{classclient_1_1irc_user}{ircUser} *user);
+00044 
+00048             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_acb1c07e842f8cba8fe04e41d672f1d07}{clear}();
+00049         \textcolor{keyword}{private}:
+00050             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_list_aca5601b1e79a265ddc203dbdf8c5c868}{setupUi}();
+\hypertarget{clsuserlist_8h_source_l00051}{}\hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{00051}             QVBoxLayout *\hyperlink{classclient_1_1cls_user_list_a48eb4d8d6f5513d819b8342d7c95af20}{verticalLayout};
+\hypertarget{clsuserlist_8h_source_l00052}{}\hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{00052}             QSpacerItem *\hyperlink{classclient_1_1cls_user_list_ab8a319c630d91c47a8b0bcbad56ab9f0}{verticalSpacer};
+00053 
+\hypertarget{clsuserlist_8h_source_l00054}{}\hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{00054}             QMap<ircUser*,clsUserEntry*> \hyperlink{classclient_1_1cls_user_list_a6d0e35cdea1d00a02c471a91b5a1aee6}{users};
+00055 
+00056 
+00057     \};
+00058 \}
+00059 \textcolor{preprocessor}{#endif // clsUserList\_H}
+\end{DoxyCode}

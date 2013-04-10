@@ -1,0 +1,31 @@
+\hypertarget{eventservermessage_8h}{\section{eventservermessage.\-h}
+\label{da/d66/eventservermessage_8h}\index{C++/resources/events/eventservermessage.\-h@{C++/resources/events/eventservermessage.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef EVENTSERVERMESSAGE\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define EVENTSERVERMESSAGE\_H}
+00003 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include "../clsevent.h"}
+00004 
+00005 \textcolor{keyword}{namespace }shared \{
+\hypertarget{eventservermessage_8h_source_l00006}{}\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{00006}     \textcolor{keyword}{enum} \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level}\{
+\hypertarget{eventservermessage_8h_source_l00007}{}\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{00007}         \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR} = 0x01,
+\hypertarget{eventservermessage_8h_source_l00008}{}\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{00008}         \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO}
+00009     \};
+00010     \textcolor{keyword}{namespace }events \{
+\hypertarget{eventservermessage_8h_source_l00015}{}\hyperlink{classshared_1_1events_1_1event_server_message}{00015}         \textcolor{keyword}{class }\hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage} : \textcolor{keyword}{public} \hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}
+00016         \{
+00017         \textcolor{keyword}{public}:
+00022             \hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{eventServerMessage}(QString message, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl);
+00023 
+00029             \hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{eventServerMessage}(QVariantMap \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data});
+00030 
+00035             QString \hyperlink{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{getMessage}() \textcolor{keyword}{const};
+00036 
+00041             \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} \hyperlink{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{getLevel}() \textcolor{keyword}{const};
+00042         \};
+00043     \}
+00044 \}
+00045 
+00046 \textcolor{preprocessor}{#endif // EVENTSERVERMESSAGE\_H}
+\end{DoxyCode}

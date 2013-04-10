@@ -1,0 +1,277 @@
+\hypertarget{namespaceserver}{\section{server Namespace Reference}
+\label{d9/db1/namespaceserver}\index{server@{server}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classserver_1_1cls_settings}{cls\-Settings}
+\begin{DoxyCompactList}\small\item\em Settings class. \end{DoxyCompactList}\item 
+struct \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} struct. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1irc_client}{irc\-Client}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classserver_1_1irc_client}{irc\-Client} class. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1irc_user}{irc\-User}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classserver_1_1irc_user}{irc\-User} class. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1irc_user_list}{irc\-User\-List}
+\begin{DoxyCompactList}\small\item\em Contains all the users. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1main_app}{main\-App}
+\begin{DoxyCompactList}\small\item\em The main application. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1ui_client}{ui\-Client}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classserver_1_1ui_client}{ui\-Client} class. \end{DoxyCompactList}\item 
+class \hyperlink{classserver_1_1ui_server}{ui\-Server}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classserver_1_1ui_server}{ui\-Server} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const string \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts} (const Q\-String str)
+\begin{DoxyCompactList}\small\item\em Shorthand to convert a Q\-String to a std\-::string. \end{DoxyCompactList}\item 
+\hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{get\-Nick\-And\-Status} (const Q\-String d\-Nick)
+\begin{DoxyCompactList}\small\item\em Converts a nickname to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\item 
+const Q\-String \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{get\-Id} (const Q\-String full\-Id)
+\begin{DoxyCompactList}\small\item\em Converts a full I\-R\-C-\/\-I\-D to something without the nickname. \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{in\-Command} (const Q\-String $\ast$command, const char $\ast$search)
+\begin{DoxyCompactList}\small\item\em Just an instring command. Checks if search is in command. \end{DoxyCompactList}\item 
+\hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{get\-Nick\-And\-Status\-From\-Id} (const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Converts an I\-R\-C-\/\-I\-D to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8}{operator$<$$<$} (\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \&log, const \hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$user)
+\item 
+\hyperlink{structserver_1_1irc_user_1_1user_color}{irc\-User\-::user\-Color} \hyperlink{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{get\-Color} (int length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{\index{server@{server}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!server@{server}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User\-::user\-Color} server\-::get\-Color (
+\begin{DoxyParamCaption}
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00181}{181} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{\index{server@{server}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!server@{server}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}const Q\-String server\-::get\-Id (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{full\-Id}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_ad244a00644a29a6c927a6ee9dd351351}
+
+
+Converts a full I\-R\-C-\/\-I\-D to something without the nickname. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em full\-Id} & A complete I\-R\-C-\/\-I\-D (nick$|$status!name) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An I\-R\-C-\/\-I\-D usefull to us 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{functions_8cpp_source_l00037}{37} of file \hyperlink{functions_8cpp_source}{functions.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_ad244a00644a29a6c927a6ee9dd351351_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{\index{server@{server}!get\-Nick\-And\-Status@{get\-Nick\-And\-Status}}
+\index{get\-Nick\-And\-Status@{get\-Nick\-And\-Status}!server@{server}}
+\subsubsection[{get\-Nick\-And\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf nick\-And\-Status} server\-::get\-Nick\-And\-Status (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{d\-Nick}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}
+
+
+Converts a nickname to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d\-Nick} & The nickname to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} object containing the nickname and status of the user 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{functions_8cpp_source_l00018}{18} of file \hyperlink{functions_8cpp_source}{functions.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{\index{server@{server}!get\-Nick\-And\-Status\-From\-Id@{get\-Nick\-And\-Status\-From\-Id}}
+\index{get\-Nick\-And\-Status\-From\-Id@{get\-Nick\-And\-Status\-From\-Id}!server@{server}}
+\subsubsection[{get\-Nick\-And\-Status\-From\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf nick\-And\-Status} server\-::get\-Nick\-And\-Status\-From\-Id (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{id}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}
+
+
+Converts an I\-R\-C-\/\-I\-D to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The I\-R\-C-\/\-I\-D to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} object containing the nickname and status of the user 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{functions_8cpp_source_l00046}{46} of file \hyperlink{functions_8cpp_source}{functions.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{\index{server@{server}!in\-Command@{in\-Command}}
+\index{in\-Command@{in\-Command}!server@{server}}
+\subsubsection[{in\-Command}]{\setlength{\rightskip}{0pt plus 5cm}bool server\-::in\-Command (
+\begin{DoxyParamCaption}
+\item[{const Q\-String $\ast$}]{command, }
+\item[{const char $\ast$}]{search}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}
+
+
+Just an instring command. Checks if search is in command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The haystack \\
+\hline
+{\em search} & The needle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True when needle is found. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{functions_8cpp_source_l00041}{41} of file \hyperlink{functions_8cpp_source}{functions.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_ab14f85d7268f4938433c3bd76aefd61e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8}{\index{server@{server}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!server@{server}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log}\& server\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Log} \&}]{log, }
+\item[{const irc\-User $\ast$}]{user}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00170}{170} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_aa5c4f8737f00b4b33cca775c3d85c1f8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{\index{server@{server}!qts@{qts}}
+\index{qts@{qts}!server@{server}}
+\subsubsection[{qts}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string server\-::qts (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{str}
+\end{DoxyParamCaption}
+)}}\label{d9/db1/namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}
+
+
+Shorthand to convert a Q\-String to a std\-::string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The Q\-String to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A std\-::string containing str 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{functions_8cpp_source_l00014}{14} of file \hyperlink{functions_8cpp_source}{functions.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/db1/namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9_icgraph}
+\end{center}
+\end{figure}
+
+

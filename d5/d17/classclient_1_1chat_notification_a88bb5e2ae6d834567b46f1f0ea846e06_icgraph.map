@@ -1,0 +1,4 @@
+<map id="client::chatNotification::calculateMessageWidth" name="client::chatNotification::calculateMessageWidth">
+<area shape="rect" id="node2" href="$d5/d17/classclient_1_1chat_notification.html#ae2fcac96b85efe37fd12c38282120e18" title="Constructor taking a message." alt="" coords="225,5,375,46"/>
+<area shape="rect" id="node3" href="$d5/d17/classclient_1_1chat_notification.html#ae6afe176382747d63b6e49b94741e82c" title="client::chatNotification\l::resizeEvent" alt="" coords="225,70,375,111"/>
+</map>

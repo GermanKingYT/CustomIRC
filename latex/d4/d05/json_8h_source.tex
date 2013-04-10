@@ -1,0 +1,55 @@
+\hypertarget{json_8h}{\section{json.\-h}
+\label{d4/d05/json_8h}\index{C++/resources/json.\-h@{C++/resources/json.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/* Copyright 2011 Eeli Reilin. All rights reserved.}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without }
+00004 \textcolor{comment}{ * modification, are permitted provided that the following conditions are met:}
+00005 \textcolor{comment}{ *}
+00006 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright notice, }
+00007 \textcolor{comment}{ *    this list of conditions and the following disclaimer.}
+00008 \textcolor{comment}{ *}
+00009 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright notice,}
+00010 \textcolor{comment}{ *    this list of conditions and the following disclaimer in the documentation }
+00011 \textcolor{comment}{ *    and/or other materials provided with the distribution.}
+00012 \textcolor{comment}{ *}
+00013 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> ''AS IS'' AND ANY EXPRESS OR }
+00014 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF }
+00015 \textcolor{comment}{ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO }
+00016 \textcolor{comment}{ * EVENT SHALL EELI REILIN OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, }
+00017 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT }
+00018 \textcolor{comment}{ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,}
+00019 \textcolor{comment}{ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF }
+00020 \textcolor{comment}{ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING }
+00021 \textcolor{comment}{ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,}
+00022 \textcolor{comment}{ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}
+00023 \textcolor{comment}{ *}
+00024 \textcolor{comment}{ * The views and conclusions contained in the software and documentation }
+00025 \textcolor{comment}{ * are those of the authors and should not be interpreted as representing }
+00026 \textcolor{comment}{ * official policies, either expressed or implied, of Eeli Reilin.}
+00027 \textcolor{comment}{ */}
+00028 
+00033 \textcolor{preprocessor}{#ifndef JSON\_H}
+00034 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define JSON\_H}
+00035 \textcolor{preprocessor}{}
+00036 \textcolor{preprocessor}{#include <QVariant>}
+00037 \textcolor{preprocessor}{#include <QString>}
+00038 
+00039 
+00046 \textcolor{keyword}{namespace }QtJson
+00047 \{
+00048 
+00054     QVariant \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse}(\textcolor{keyword}{const} QString &json);
+00055     
+00062     QVariant \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse}(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{bool} &success);
+00063     
+00071     QByteArray \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(\textcolor{keyword}{const} QVariant &data);
+00072     
+00081     QByteArray \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(\textcolor{keyword}{const} QVariant &data, \textcolor{keywordtype}{bool} &success);
+00082 
+00083 \} \textcolor{comment}{//end namespace}
+00084 
+00085 \textcolor{preprocessor}{#endif //JSON\_H}
+\end{DoxyCode}

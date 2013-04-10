@@ -1,0 +1,48 @@
+\hypertarget{chatentry_8h}{\section{chatentry.\-h}
+\label{d4/d48/chatentry_8h}\index{C++/custom\-Irc\-Client/chatentry.\-h@{C++/custom\-Irc\-Client/chatentry.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CHATENTRY\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CHATENTRY\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QFrame>}
+00005 \textcolor{preprocessor}{#include <QLabel>}
+00006 \textcolor{preprocessor}{#include <QTime>}
+00007 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2ircuser_8h}{ircuser.h}"}
+00008 
+00009 \textcolor{keyword}{namespace }Ui \{
+00010     \textcolor{keyword}{class }chatEntry;
+00011 \}
+00012 \textcolor{keyword}{namespace }client\{
+00013 
+\hypertarget{chatentry_8h_source_l00018}{}\hyperlink{classclient_1_1chat_entry}{00018}     \textcolor{keyword}{class }\hyperlink{classclient_1_1chat_entry}{chatEntry} : \textcolor{keyword}{public} QFrame
+00019     \{
+00020         Q\_OBJECT
+00021 
+00022         \textcolor{keyword}{public}:
+00030             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{chatEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString \hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message}, \textcolor{keywordtype}{int} width,
+00031                     QWidget *parent = 0);
+00040             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{chatEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QString message, \textcolor{keywordtype}{int} width,
+00041                     QTime \hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{timeOfMessage}, QWidget *parent = 0);
+00042             \hyperlink{classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}{~chatEntry}();
+00043 
+00048             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{setUserWidth}(\textcolor{keywordtype}{int} newWidth);
+00049 
+00050             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}{resizeEvent}(QResizeEvent *event);
+00051 
+00052 
+00053         \textcolor{keyword}{private}:
+\hypertarget{chatentry_8h_source_l00054}{}\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{00054}             Ui::chatEntry *\hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui};
+\hypertarget{chatentry_8h_source_l00055}{}\hyperlink{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{00055}             \hyperlink{classclient_1_1irc_user}{ircUser} *\hyperlink{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{name};
+\hypertarget{chatentry_8h_source_l00056}{}\hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{00056}             QString \hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message};
+00057             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{getWidth}(QLabel *l) \textcolor{keyword}{const};
+00058             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{getHeight}(QLabel *l) \textcolor{keyword}{const};
+00059             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{init}(QWidget *parent, \textcolor{keywordtype}{int} width);
+00060             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{calculateMessageWidth}();
+00061 
+\hypertarget{chatentry_8h_source_l00062}{}\hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{00062}             QTime \hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{timeOfMessage};
+00063     \};
+00064 \}
+00065 \textcolor{preprocessor}{#endif // CHATENTRY\_H}
+\end{DoxyCode}

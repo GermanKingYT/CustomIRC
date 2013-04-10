@@ -1,0 +1,6 @@
+<map id="org.kde.necessitas.origo.QtApplication.setQtActivityDelegate" name="org.kde.necessitas.origo.QtApplication.setQtActivityDelegate">
+<area shape="rect" id="node2" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.html#a6efdacbcdcd7cea2d7a3785d7300e9ab" title="org.kde.necessitas.origo.\lQtActivity.loadApplication" alt="" coords="283,38,453,79"/>
+<area shape="rect" id="node3" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.html#af3924b311d2966d6c7e48122899d3c35" title="org.kde.necessitas.origo.\lQtActivity.startApp" alt="" coords="501,38,669,79"/>
+<area shape="rect" id="node4" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.html#a8b40da707524bfa95b2f7f6b69ada582" title="org.kde.necessitas.origo.\lQtActivity.onActivityResult" alt="" coords="718,5,893,46"/>
+<area shape="rect" id="node5" href="$db/d37/classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity.html#a1698da7cf3dc0ff8e1180f301e2ef1b0" title="org.kde.necessitas.origo.\lQtActivity.onCreate" alt="" coords="721,70,889,111"/>
+</map>

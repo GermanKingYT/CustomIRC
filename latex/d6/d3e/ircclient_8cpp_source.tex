@@ -1,0 +1,290 @@
+\hypertarget{ircclient_8cpp}{\section{ircclient.\-cpp}
+\label{d6/d3e/ircclient_8cpp}\index{C++/custom\-Irc\-Server/ircclient.\-cpp@{C++/custom\-Irc\-Server/ircclient.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include <iostream>}
+00002 \textcolor{preprocessor}{#include <stdlib.h>}
+00003 \textcolor{preprocessor}{#include "\hyperlink{ircclient_8h}{ircclient.h}"}
+00004 
+00005 \textcolor{keyword}{using namespace }std;
+00006 \textcolor{keyword}{namespace }server \{
+00007 
+\hypertarget{ircclient_8cpp_source_l00008}{}\hyperlink{classserver_1_1irc_client_a0f263c3a5ae9d82109842518b4866ab5}{00008} ircClient::ircClient(\textcolor{keyword}{const} QString &hostname, \textcolor{keyword}{const} QString &channel
+00009                      , \textcolor{keyword}{const} QString &nick, \textcolor{keyword}{const} \textcolor{keywordtype}{int} port)
+00010     :hostname(QString(hostname))
+00011     ,port(port)
+00012     ,channel(QString(channel))
+00013     ,log(\hyperlink{class_k4_u_1_1cls_log}{clsLog}(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5}{LOGTAGS\_IRC}))
+00014     ,connected(false)
+00015     ,connecting(false)
+00016     ,suppressDisconnectSignal(false)
+00017 \{
+00018     this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus}.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} = nick;
+00019     this->\hyperlink{classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}{init}();
+00020 \}
+00021 
+\hypertarget{ircclient_8cpp_source_l00022}{}\hyperlink{classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}{00022} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a3991833ddcff72ca94d4c0ec588012ac}{ircClient::init}()\{
+00023     this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << \textcolor{stringliteral}{"Initializing IRC Client for host "} << this->\hyperlink{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{hostname} << \textcolor{stringliteral}{":"};
+00024     this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << this->\hyperlink{classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}{port} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00025 
+00026     \hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer} = \textcolor{keyword}{new} QBuffer(\textcolor{keyword}{this});
+00027     \hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->open(QIODevice::ReadWrite);
+00028 
+00029     this->\hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{timeOutChecker} = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+00030     this->\hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connectTimer} = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+00031 
+00032     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock} = \textcolor{keyword}{new} QTcpSocket(\textcolor{keyword}{this});
+00033     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->connect(this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}, SIGNAL(readyRead()), \textcolor{keyword}{this},
+00034                         SLOT(\hyperlink{classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}{readData}()));
+00035     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->connect(this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}, SIGNAL(\hyperlink{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{connected}()), \textcolor{keyword}{this},
+00036                         SLOT(\hyperlink{classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}{sltConnected}()));
+00037     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->connect(this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}, SIGNAL(\hyperlink{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{disconnected}()), \textcolor{keyword}{this},
+00038                         SLOT(\hyperlink{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{disconnected}()));
+00039 
+00040     this->\hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{timeOutChecker}->connect(this->\hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{timeOutChecker}, SIGNAL(timeout()),
+00041                                   \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}{checkForPing}()));
+00042     this->\hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connectTimer}->connect(this->\hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connectTimer}, SIGNAL(timeout()),
+00043                                 \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{connectTimeout}()));
+00044 \}
+00045 
+\hypertarget{ircclient_8cpp_source_l00046}{}\hyperlink{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{00046} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a32607649043e6053ff2ef9980df91800}{ircClient::disconnected}()\{
+00047     this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << \textcolor{stringliteral}{"Disconnected"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00048     \textcolor{keywordflow}{if}(\hyperlink{classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}{suppressDisconnectSignal} == \textcolor{keyword}{false})\{
+00049         emit this->\hyperlink{classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4}{IRCDisconnected}(\textcolor{stringliteral}{"Socket disconnect"});
+00050     \}
+00051     \hyperlink{classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}{suppressDisconnectSignal} = \textcolor{keyword}{false};
+00052 \}
+00053 
+00054 
+\hypertarget{ircclient_8cpp_source_l00055}{}\hyperlink{classserver_1_1irc_client_a4c82075fd5acb2f8fadfded3d9d3f21e}{00055} \hyperlink{classserver_1_1irc_client_a4c82075fd5acb2f8fadfded3d9d3f21e}{ircClient::~ircClient}()\{
+00056     \hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->close();
+00057     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->close();
+00058 \}
+00059 
+\hypertarget{ircclient_8cpp_source_l00060}{}\hyperlink{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{00060} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{ircClient::doConnect}()\{
+00061     this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << \textcolor{stringliteral}{"Connecting"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00062     \textcolor{comment}{//Set timeout}
+00063 
+00064     this->\hyperlink{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{connected} = \textcolor{keyword}{false};
+00065     this->\hyperlink{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{connecting} = \textcolor{keyword}{true};
+00066     \textcolor{comment}{//this->connectTimer->setInterval(MAX\_CONNECT\_TIMEOUT\_IN\_MS);}
+00067     \textcolor{comment}{//this->connectTimer->setSingleShot(true);}
+00068     \textcolor{comment}{//this->connectTimer->start();}
+00069     this->\hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connectTimer}->singleShot(\hyperlink{clsserverconn_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}{MAX\_CONNECT\_TIMEOUT\_IN\_MS}, \textcolor{keyword}{this}, 
+      SLOT(\hyperlink{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{connectTimeout}()));
+00070 
+00071 
+00072     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->connectToHost(this->\hyperlink{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{hostname},this->\hyperlink{classserver_1_1irc_client_a177e57fc5b5e19d591702644dd2a98e1}{port});
+00073 \}
+00074 
+\hypertarget{ircclient_8cpp_source_l00075}{}\hyperlink{classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}{00075} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}{ircClient::setOwnUser}(\hyperlink{classserver_1_1irc_user}{ircUser} *ownUser)\{
+00076     this->ownUser = \hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{ownUser};
+00077 \}
+00078 
+\hypertarget{ircclient_8cpp_source_l00079}{}\hyperlink{classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}{00079} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a31910635c17bd56be644084746653ba8}{ircClient::sltConnected}()\{
+00080     this->\hyperlink{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{connected} = \textcolor{keyword}{true};
+00081     this->\hyperlink{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{connecting} = \textcolor{keyword}{false};
+00082     this->\hyperlink{classserver_1_1irc_client_a3e10145fea758f4283eb8aa14f678c15}{connectTimer}->stop();
+00083     this->\hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{timeOutChecker}->start(\hyperlink{ircclient_8h_a757c2b05db2e531e6a3aaf20e68a0aa1}{PING\_CHECK\_INTERVAL}*1000);
+00084     \textcolor{comment}{//doLog(this->TAG, "Connected!");}
+00085     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(QString(\textcolor{stringliteral}{"USER %1 0 * :%1"}).arg(this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus}.
+      \hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick}));
+00086     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(QString(\textcolor{stringliteral}{"NICK %1"}).arg(this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus}.
+      \hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick}));
+00087 
+00088     emit this->\hyperlink{classserver_1_1irc_client_a47c67bb9fd8640adf17a6ae01f8b7154}{IRCConnected}();
+00089 
+00090 \}
+00091 
+00092 
+00093 
+\hypertarget{ircclient_8cpp_source_l00094}{}\hyperlink{classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}{00094} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}{ircClient::handleCommand}(\textcolor{keyword}{const} QString &sender, \textcolor{keyword}{const} QStringList &command)\{
+00095     \textcolor{keywordflow}{if}(sender == this->\hyperlink{classserver_1_1irc_client_a8a5a50ebf84488f46df38bfba2c692bd}{hostname})\{
+00096         \textcolor{comment}{//Message from the server:}
+00097         \hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286}{ircCodes::ircCode} code = (\hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286}{ircCodes::ircCode}) atoi(
+      \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(command[0]).c\_str());
+00098         QString userNick;
+00099         QString userId;
+00100         \textcolor{keywordflow}{switch} (code) \{
+00101         \textcolor{keywordflow}{case} \hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286a8ac197749edcd502205f508ccbfd9de7}{ircCodes::RPL\_ENDOFMOTD}:
+00102         \textcolor{keywordflow}{case} \hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286a2cfb33c9c1d90a426ed81fc316a852b5}{ircCodes::ERR\_NOMOTD}:
+00103             \textcolor{comment}{//OH YES!}
+00104             this->\hyperlink{classserver_1_1irc_client_aa5a321d1684c24415e65752c0359de2d}{motdReceived} = \textcolor{keyword}{true};
+00105             this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(QString(\textcolor{stringliteral}{"JOIN #%1"}).arg(this->\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}));
+00106             \textcolor{keywordflow}{break};
+00107          \textcolor{keywordflow}{case} \hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286aa0b10881cb0b261f994e5d3186201a4e}{ircCodes::RPL\_WHOREPLY}:
+00108             \textcolor{comment}{//Create ID}
+00109             \textcolor{keywordflow}{if}(\hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{inCommand}(&command[2],\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(this->\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}).c\_str()))\{
+00110                 userNick = command[6];
+00111                 \textcolor{keywordflow}{if}(userNick != this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus}.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick})\{
+00112                     userId = userNick + \textcolor{stringliteral}{"!"} + command[3] + \textcolor{stringliteral}{"@"} + command[4];
+00113                     emit this->\hyperlink{classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1}{userOnline}(\hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(userNick),userId,
+00114                                           this->\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel});
+00115                 \}
+00116             \}
+00117             \textcolor{keywordflow}{break};
+00118         \textcolor{keywordflow}{case} \hyperlink{namespaceirc_codes_a8113647a5ff54d42c1c26e7a0a555286ad01c9f16c60f0788d86679067af66b0d}{ircCodes::RPL\_ENDOFNAMES}:
+00119 
+00120             \textcolor{keywordflow}{break};
+00121          \textcolor{keywordflow}{default}:
+00122             \textcolor{keywordflow}{break};
+00123         \}
+00124     \}\textcolor{keywordflow}{else}\{ \textcolor{comment}{//Probably a user:}
+00125         \textcolor{keywordflow}{if}(command[0] == \textcolor{stringliteral}{"PRIVMSG"})\{
+00126             \textcolor{comment}{//Yep, it is!}
+00127             QStringList args = command;
+00128             args.pop\_front();
+00129             QString \hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel} = args[0];
+00130             args.pop\_front();
+00131 
+00132             emit this->\hyperlink{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{chatReceived}(channel, \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(sender), args.
+      join(\textcolor{stringliteral}{" "}).mid(1));
+00133         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command[0] == \textcolor{stringliteral}{"NICK"})\{
+00134             \textcolor{comment}{//Somebody changed nick!}
+00135             \textcolor{keywordflow}{if}(\hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(sender).\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} == this->
+      \hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{ownUser}.\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}())\{
+00136 
+00137             \}\textcolor{keywordflow}{else}\{
+00138                 \textcolor{keywordflow}{if}(\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender).\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} ==
+00139                         \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(command[1]).\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick})\{
+00140                     \textcolor{comment}{//Probably a status change:}
+00141                     emit this->\hyperlink{classserver_1_1irc_client_afa10a5c7c8ee0a4cfdae135d6737a0a2}{userChangeStatus}(
+      \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender),
+00142                                                 \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(command[1]),
+00143                             \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{getId}(sender));
+00144                 \}\textcolor{keywordflow}{else}\{
+00145                     emit this->\hyperlink{classserver_1_1irc_client_a566c94db09896197fdb8e982756b8c1e}{userChangeNick}(
+      \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender),
+00146                                               \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{getNickAndStatus}(command[1]),
+00147                             \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{getId}(sender));
+00148                 \}
+00149             \}
+00150         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command[0] == \textcolor{stringliteral}{"JOIN"})\{
+00151             \textcolor{comment}{//Somebody joined, goody! :D}
+00152             \textcolor{keywordflow}{if}(\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender).nick == this->
+      \hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{ownUser}.\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}())\{
+00153                 \textcolor{comment}{//We have succesfully joined the channel}
+00154                 \textcolor{comment}{//Yay, we can save our own ID.}
+00155                 \textcolor{comment}{//Also, get a list of all the people in there}
+00156                 this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(\textcolor{stringliteral}{"WHO"});
+00157             \}\textcolor{keywordflow}{else}\{
+00158                 emit this->\hyperlink{classserver_1_1irc_client_a1cd3512aac27b016945c5b66d0c777d1}{userOnline}(\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender), 
+      sender,
+00159                                       command[1].mid(1));
+00160             \}
+00161         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command[0] == \textcolor{stringliteral}{"PART"})\{
+00162             \textcolor{keywordflow}{if}(\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender).nick == this->
+      \hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{ownUser}.\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}())\{
+00163                 \textcolor{comment}{//Wait, what?}
+00164             \}\textcolor{keywordflow}{else}\{
+00165                 emit this->\hyperlink{classserver_1_1irc_client_a1ba37565db4acdfae3163d8d7217d9f2}{userOffline}(\hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{getNickAndStatusFromId}(sender), 
+      sender,
+00166                                        command[1]);
+00167             \}
+00168         \}
+00169     \}
+00170 \}
+00171 
+00172 
+00173 
+\hypertarget{ircclient_8cpp_source_l00174}{}\hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{00174} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{ircClient::sendChat}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* msg, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* channel)\{
+00175     QString cmd = \textcolor{stringliteral}{"PRIVMSG #"} + QString(channel) + \textcolor{stringliteral}{" :"} + QString(msg);
+00176     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(cmd).c\_str());
+00177 
+00178     emit this->\hyperlink{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{chatReceived}(QString(channel),this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus},QString(msg
+      ));
+00179 \}
+00180 
+\hypertarget{ircclient_8cpp_source_l00181}{}\hyperlink{classserver_1_1irc_client_aff095b9ea0faa07199be9edc474cffe6}{00181} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{ircClient::sendChat}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *msg)\{
+00182     QString cmd = \textcolor{stringliteral}{"PRIVMSG #"} + this->\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel} + \textcolor{stringliteral}{" :"} + QString(msg);
+00183     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(cmd).c\_str());
+00184     emit this->\hyperlink{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{chatReceived}(QString(\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}),this->
+      \hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus},QString(msg));
+00185 \}
+00186 
+\hypertarget{ircclient_8cpp_source_l00187}{}\hyperlink{classserver_1_1irc_client_a8c7ad810babb1f87de243688e1779352}{00187} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{ircClient::sendChat}(\textcolor{keyword}{const} QString &msg)\{
+00188     QString cmd = \textcolor{stringliteral}{"PRIVMSG #"} + this->\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel} + \textcolor{stringliteral}{" :"} + QString(msg);
+00189     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(cmd).c\_str());
+00190     emit this->\hyperlink{classserver_1_1irc_client_aa59470840fe4135454af200bf5259874}{chatReceived}(QString(\hyperlink{classserver_1_1irc_client_a01d41f735fe9f0227b72e794c060a798}{channel}),this->
+      \hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus},QString(msg));
+00191 \}
+00192 
+\hypertarget{ircclient_8cpp_source_l00193}{}\hyperlink{classserver_1_1irc_client_a1909d019dab9c0225b42c47928803835}{00193} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a1909d019dab9c0225b42c47928803835}{ircClient::setUser}(\hyperlink{classserver_1_1irc_user}{ircUser} &user)\{
+00194     this->\hyperlink{classserver_1_1irc_client_afaf929882986b927133e126a495e3939}{ownUser} = user;
+00195 \}
+00196 
+\hypertarget{ircclient_8cpp_source_l00197}{}\hyperlink{classserver_1_1irc_client_a210b13eb1f714bb48d84f256c8e2e8b4}{00197} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} \hyperlink{classserver_1_1irc_client_a210b13eb1f714bb48d84f256c8e2e8b4}{ircClient::getOwnNick}()\textcolor{keyword}{ const}\{
+00198     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1irc_client_a9cd79c3e48bbee04bd70596962a83ebc}{ownNickAndStatus};
+00199 \}
+00200 
+\hypertarget{ircclient_8cpp_source_l00201}{}\hyperlink{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{00201} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{ircClient::setOwnNick}(\textcolor{keyword}{const} QString &newNick)\{
+00202     QString cmd = \textcolor{stringliteral}{"NICK "} + newNick;
+00203     this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(cmd);
+00204 \}
+00205 
+00206 
+\hypertarget{ircclient_8cpp_source_l00207}{}\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{00207} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{ircClient::send}(\textcolor{keyword}{const} QString data)\{
+00208     \textcolor{comment}{//doLog(this->TAG, "Sending data: \(\backslash\)t%s",data);}
+00209     this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << \textcolor{stringliteral}{"Sending data: \(\backslash\)t"} << data << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00210     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->write(\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(data).c\_str());
+00211     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->write(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00212     this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->flush();
+00213 \}
+00214 
+\hypertarget{ircclient_8cpp_source_l00218}{}\hyperlink{classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}{00218} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a384327d5a800bd0d970cffaf1a6a55c1}{ircClient::readData}()\{
+00219     qint64 bytes = this->\hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->write(this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->readAll());
+00220     this->\hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->seek(this->\hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->pos() - bytes);
+00221     \textcolor{comment}{// read only full lines, line by line}
+00222     \textcolor{keywordflow}{while} (this->\hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->canReadLine())\{
+00223         QString line = this->\hyperlink{classserver_1_1irc_client_a58971045560368c18f171ef0acf1c7f9}{buffer}->readLine();
+00224         line = line.simplified();
+00225         \textcolor{comment}{//doLog(this->TAG, "Data received: \(\backslash\)t%s",qts(line).c\_str());}
+00226         this->\hyperlink{classserver_1_1irc_client_ae6f6e1a1512ba04edd299f21876a84d9}{log} << \textcolor{stringliteral}{"Data received: \(\backslash\)t"} << line << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00227         \textcolor{keywordflow}{if}(line.left(4) == QString(\textcolor{stringliteral}{"PING"}))\{
+00228             \textcolor{comment}{//Send a pong:}
+00229             QString toSend = \textcolor{stringliteral}{"PONG"} + line.mid(4);
+00230             this->\hyperlink{classserver_1_1irc_client_a2c1954be24f18aef7d8ec6a7a3e7f29c}{send}(\hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{qts}(toSend).c\_str());
+00231             \textcolor{comment}{//Previous one, put it somewhere}
+00232             \hyperlink{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{timeBetweenPings} = this->\hyperlink{classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}{lastPing}.elapsed();
+00233             this->\hyperlink{classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}{lastPing}.start();
+00234         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(line.left(5) == QString(\textcolor{stringliteral}{"ERROR"}))\{
+00235             \textcolor{comment}{//Handle.. once :P}
+00236         \}\textcolor{keywordflow}{else}\{
+00237             line = line.mid(1);
+00238             QStringList commandList = line.split(\textcolor{stringliteral}{" "});
+00239             QString sender = commandList.at(0);
+00240             commandList.pop\_front(); \textcolor{comment}{// Remove the sender}
+00241 
+00242             this->\hyperlink{classserver_1_1irc_client_af618e7f589a052d90e2dadbc87e83429}{handleCommand}(sender,commandList);
+00243 
+00244         \}
+00245     \}
+00246 \}
+00247 
+\hypertarget{ircclient_8cpp_source_l00248}{}\hyperlink{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{00248} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a9f9877406894f9b49bce12d8ad094bd7}{ircClient::connectTimeout}()\{
+00249     \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1irc_client_a04f2961ee284d05ad2ae358661304c17}{connected} == \textcolor{keyword}{false} && this->\hyperlink{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{connecting} == \textcolor{keyword}{true})\{
+00250         this->\hyperlink{classserver_1_1irc_client_a3492cfcbd64e62fd28db7ac326d87c78}{connecting} = \textcolor{keyword}{false};
+00251         this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->abort();
+00252         emit this->\hyperlink{classserver_1_1irc_client_a6e73d106182456e97f48db009a29642d}{IRCConnectTimeOut}(); \textcolor{comment}{//User can decide wether to reconnect immediately}
+00253     \}
+00254 \}
+00255 
+\hypertarget{ircclient_8cpp_source_l00256}{}\hyperlink{classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}{00256} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1irc_client_a6ea26ab5da3d338c84927312832f5b69}{ircClient::checkForPing}()\{
+00257     \textcolor{keywordflow}{if}((\hyperlink{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{timeBetweenPings} - this->\hyperlink{classserver_1_1irc_client_a522f1dcf5381da46bc18609b69ac6287}{lastPing}.elapsed()) < (
+      \hyperlink{ircclient_8h_a7cac398815cc7d4af178c1de36e0d0b0}{PING\_THRESHOLD}*-1000) &&
+00258             (\hyperlink{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{timeBetweenPings} > 0))\{
+00259         \hyperlink{classserver_1_1irc_client_a6aa6b409d9ef795a021d9e7bd44149d6}{suppressDisconnectSignal} = \textcolor{keyword}{true};
+00260         this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->abort();
+00261         this->\hyperlink{classserver_1_1irc_client_a9dffc339852e3c1e39983b56b921550c}{sock}->disconnectFromHost();
+00262         emit this->\hyperlink{classserver_1_1irc_client_acb710c977bd5411f99dc8fdaf92e91a4}{IRCDisconnected}(\textcolor{stringliteral}{"Ping timeout"});
+00263         this->\hyperlink{classserver_1_1irc_client_a3ad9869f193bd5218c0fa2bf2c73377f}{timeOutChecker}->stop();
+00264         \hyperlink{classserver_1_1irc_client_a71861748a52a4f4af0fba8652f440841}{timeBetweenPings} = 0;
+00265 
+00266 
+00267     \}
+00268 \}
+00269 
+00270 
+00271 \}
+\end{DoxyCode}

@@ -1,0 +1,6 @@
+<map id="client::ircUser::getColor" name="client::ircUser::getColor">
+<area shape="rect" id="node2" href="$d5/dfb/classclient_1_1chat_entry.html#a153e1d0693c3069839e04878844b431f" title="client::chatEntry::init" alt="" coords="214,12,357,39"/>
+<area shape="rect" id="node4" href="$d0/ddb/classclient_1_1cls_user_entry.html#a906da840f42f13d4a0f398c8c5ad6da6" title="client::clsUserEntry\l::clsUserEntry" alt="" coords="217,63,353,105"/>
+<area shape="rect" id="node5" href="$d0/ddb/classclient_1_1cls_user_entry.html#a878c280a93fabf2651880629103e1ef3" title="client::clsUserEntry\l::refresh" alt="" coords="217,129,353,170"/>
+<area shape="rect" id="node3" href="$d5/dfb/classclient_1_1chat_entry.html#a242327cb4a358fdbc182147d2fadf00c" title="Constructor not taking a time." alt="" coords="405,5,531,46"/>
+</map>

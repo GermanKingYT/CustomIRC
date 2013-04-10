@@ -1,0 +1,8 @@
+<map id="client::clsServerConn::sgnConnectTimeout" name="client::clsServerConn::sgnConnectTimeout">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.html#a5ec4520ae6b50789ef650436b6339d43" title="client::clsServerConn\l::connectTimeout" alt="" coords="200,38,344,79"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#af4589d93eb4b606423cb4b5e4a583f4e" title="Actually connect." alt="" coords="392,38,536,79"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#a4714272984f1518ea739cc5c809d8579" title="client::MainWindow\l::doReconnect" alt="" coords="585,38,719,79"/>
+<area shape="rect" id="node5" href="$d2/da4/classclient_1_1_main_window.html#a1453a7da1874881b67aa919390012e36" title="client::MainWindow\l::serverDisconnected" alt="" coords="769,5,911,46"/>
+<area shape="rect" id="node7" href="$d2/da4/classclient_1_1_main_window.html#a6df87d6d4bb287478d307d7e45097187" title="Triggered when we cannot connect to the server!" alt="" coords="772,70,908,111"/>
+<area shape="rect" id="node6" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="961,38,1095,79"/>
+</map>

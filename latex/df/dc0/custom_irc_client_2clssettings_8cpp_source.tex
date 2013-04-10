@@ -1,0 +1,59 @@
+\hypertarget{custom_irc_client_2clssettings_8cpp}{\section{clssettings.\-cpp}
+\label{df/dc0/custom_irc_client_2clssettings_8cpp}\index{C++/custom\-Irc\-Client/clssettings.\-cpp@{C++/custom\-Irc\-Client/clssettings.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2clssettings_8h}{clssettings.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }client\{
+00004 
+\hypertarget{custom_irc_client_2clssettings_8cpp_source_l00005}{}\hyperlink{classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}{00005}     \hyperlink{classclient_1_1cls_settings_ac4621f113c6e276f29395d9d2d947217}{clsSettings::clsSettings}(\textcolor{keyword}{const} QString &filePath)\{
+00006         QString fileName = filePath + \textcolor{stringliteral}{"/settings.xml"};
+00007         QXmlStreamReader Rxml;
+00008         QFile file(fileName);
+00009         \textcolor{keywordflow}{if} (!file.open(QFile::ReadOnly | QFile::Text))\{
+00010             std::cerr << \textcolor{stringliteral}{"Error: Cannot read file "} << fileName.toStdString()
+00011                 << \textcolor{stringliteral}{": "} << qPrintable(file.errorString())
+00012                 << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{std::endl};
+00013         \}
+00014         Rxml.setDevice(&file);
+00015         Rxml.readNext();
+00016 
+00017 
+00018         \textcolor{keywordflow}{while}(!Rxml.atEnd())\{
+00019             \textcolor{keywordflow}{if}(Rxml.isStartElement())\{
+00020                 \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"settings"})\{
+00021                     Rxml.readNext(); \textcolor{comment}{//Start}
+00022                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"server"})\{
+00023                     Rxml.readNext();
+00024                     this->\hyperlink{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{readServer}(Rxml);
+00025                 \}
+00026             \}
+00027             Rxml.readNext();
+00028         \}
+00029         file.close();
+00030     \}
+00031 
+\hypertarget{custom_irc_client_2clssettings_8cpp_source_l00032}{}\hyperlink{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{00032}     QString \hyperlink{classclient_1_1cls_settings_aea971041842324e96b90ef6b8b703d54}{clsSettings::getServer}()\textcolor{keyword}{ const}\{
+00033         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{server};
+00034     \}
+00035 
+\hypertarget{custom_irc_client_2clssettings_8cpp_source_l00036}{}\hyperlink{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{00036}     \textcolor{keywordtype}{int} \hyperlink{classclient_1_1cls_settings_a9cccda32a83a487cd88ce00de7c45ec1}{clsSettings::getPort}()\textcolor{keyword}{ const}\{
+00037         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{port};
+00038     \}
+00039 
+00040 
+\hypertarget{custom_irc_client_2clssettings_8cpp_source_l00041}{}\hyperlink{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{00041}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_settings_a9daa04175c479935f068bdbf52b65f63}{clsSettings::readServer}(QXmlStreamReader &reader)\{
+00042         \textcolor{keywordflow}{while}(!reader.isEndElement())\{
+00043             QString name = reader.name().toString();
+00044             \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"server"})\{
+00045                 this->\hyperlink{classclient_1_1cls_settings_adfc1a3a273bdb599bbaec0ba345c1f3b}{server} = reader.readElementText();
+00046             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"port"})\{
+00047                 this->\hyperlink{classclient_1_1cls_settings_a20136a6f81cb641f096b262f33f4a3b2}{port} = reader.readElementText().toInt();
+00048             \}
+00049             reader.readNext();
+00050         \}
+00051     \}
+00052 
+00053 \}
+\end{DoxyCode}

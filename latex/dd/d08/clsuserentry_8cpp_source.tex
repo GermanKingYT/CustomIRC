@@ -1,0 +1,64 @@
+\hypertarget{clsuserentry_8cpp}{\section{clsuserentry.\-cpp}
+\label{dd/d08/clsuserentry_8cpp}\index{C++/custom\-Irc\-Client/desktop/clsuserentry.\-cpp@{C++/custom\-Irc\-Client/desktop/clsuserentry.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clsuserentry_8h}{clsuserentry.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_clsuserentry.h"}
+00003 
+00004 \textcolor{keyword}{namespace }client\{
+00005 
+\hypertarget{clsuserentry_8cpp_source_l00006}{}\hyperlink{classclient_1_1cls_user_entry_a906da840f42f13d4a0f398c8c5ad6da6}{00006}     \hyperlink{classclient_1_1cls_user_entry_a906da840f42f13d4a0f398c8c5ad6da6}{clsUserEntry::clsUserEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *user, QWidget *parent)
+00007         :QWidget(parent)
+00008          ,ui(new Ui::\hyperlink{classclient_1_1cls_user_entry}{clsUserEntry})
+00009          ,user(user)
+00010     \{
+00011         \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->setupUi(\textcolor{keyword}{this});
+00012         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->setText(this->user->\hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{getNick}());
+00013         QString status = this->user->\hyperlink{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{getStatus}();
+00014         \textcolor{keywordflow}{if}(status == \textcolor{stringliteral}{""})\{
+00015             status = \textcolor{stringliteral}{"Online"};
+00016         \}
+00017 
+00018         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserStatus->setText(status);
+00019 
+00020         QPalette palette = \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->palette();
+00021         palette.setColor(\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->foregroundRole(), this->user->
+      \hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{getColor}());
+00022         \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->setPalette(palette);
+00023 
+00024         connect(this->user, SIGNAL(\hyperlink{classclient_1_1cls_user_entry_a3a0fe3fd86b54b785fac07a22a52f508}{iconChanged}()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classclient_1_1cls_user_entry_a3a0fe3fd86b54b785fac07a22a52f508}{iconChanged}()));
+00025         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->setPixmap(this->user->\hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{getIcon}().scaled(
+00026                     this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->size()));
+00027     \}
+00028 
+\hypertarget{clsuserentry_8cpp_source_l00029}{}\hyperlink{classclient_1_1cls_user_entry_ab52b88e70ae687236c85c5f5daebb0ea}{00029}     \hyperlink{classclient_1_1cls_user_entry_ab52b88e70ae687236c85c5f5daebb0ea}{clsUserEntry::~clsUserEntry}()\{
+00030         \textcolor{keyword}{delete} \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui};
+00031     \}
+00032 
+\hypertarget{clsuserentry_8cpp_source_l00033}{}\hyperlink{classclient_1_1cls_user_entry_a878c280a93fabf2651880629103e1ef3}{00033}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_entry_a878c280a93fabf2651880629103e1ef3}{clsUserEntry::refresh}()\{
+00034         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->setText(this->\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}->\hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{getNick}());
+00035         QString status = this->\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}->\hyperlink{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{getStatus}();
+00036         \textcolor{keywordflow}{if}(status == \textcolor{stringliteral}{""})\{
+00037             status = \textcolor{stringliteral}{"Online"};
+00038         \}
+00039 
+00040         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserStatus->setText(status);
+00041 
+00042         QPalette palette = \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->palette();
+00043         palette.setColor(\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->foregroundRole(), this->\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}->
+      \hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{getColor}());
+00044         \hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblUserName->setPalette(palette);
+00045 
+00046         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->setPixmap(this->\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}->\hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{getIcon}().scaled(
+00047                     this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->size()));
+00048     \}
+00049 
+\hypertarget{clsuserentry_8cpp_source_l00050}{}\hyperlink{classclient_1_1cls_user_entry_a3a0fe3fd86b54b785fac07a22a52f508}{00050}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_entry_a3a0fe3fd86b54b785fac07a22a52f508}{clsUserEntry::iconChanged}()\{
+00051         this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->setPixmap(this->\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}->\hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{getIcon}().scaled(
+00052                     this->\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui}->lblGravatar->size()));
+00053     \}
+00054 
+00055 \}
+\end{DoxyCode}

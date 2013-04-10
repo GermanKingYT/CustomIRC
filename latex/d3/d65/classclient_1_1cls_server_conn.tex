@@ -1,0 +1,946 @@
+\hypertarget{classclient_1_1cls_server_conn}{\section{client\-:\-:cls\-Server\-Conn Class Reference}
+\label{d3/d65/classclient_1_1cls_server_conn}\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}}
+}
+
+
+Class that has a connection to the server.  
+
+
+
+
+{\ttfamily \#include $<$clsserverconn.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:cls\-Server\-Conn\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{d9/d0c/classclient_1_1cls_server_conn__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:cls\-Server\-Conn\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/d6b/classclient_1_1cls_server_conn__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}{srv\-Disconnected} ()
+\item 
+void \hyperlink{classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}{srv\-Connected} ()
+\item 
+void \hyperlink{classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}{read\-Data} ()
+\item 
+void \hyperlink{classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}{connect\-Timeout} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1cls_server_conn_ada02a27f01478db29d10bde4c51110b4}{chat\-Received} (\hyperlink{classshared_1_1events_1_1event_chat}{event\-Chat} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Emitted when a chat event has been received. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca}{connected} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the client has a succesfull connection to the server. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6}{disconnected} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the client lost connection to the server. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_abad7931f40972d90b51e696b878b58c4}{user\-Query\-Completed} (Q\-Vector$<$ \hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$ $>$ users)
+\begin{DoxyCompactList}\small\item\em Emitted when the server has sent us all the users. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_aa7679dfddcf23ffa4ce4febbc005995a}{user\-Status\-Change} (\hyperlink{classshared_1_1events_1_1event_user_change_status}{event\-User\-Change\-Status} $\ast$change\-Event)
+\begin{DoxyCompactList}\small\item\em Emitted when a user has changed his status (nick$|$status) \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_af5b308ecbe7fda6ff5c7dd524e17817c}{user\-Change\-Nick} (\hyperlink{classshared_1_1events_1_1event_user_change_nick}{event\-User\-Change\-Nick} $\ast$change\-Event)
+\begin{DoxyCompactList}\small\item\em Emitted when a user has changed his nick (nick$|$status) \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a89ac2b4edd0a40b0fbfb5504904752c9}{user\-Leave} (\hyperlink{classshared_1_1events_1_1event_user_leave}{event\-User\-Leave} $\ast$leave\-Event)
+\begin{DoxyCompactList}\small\item\em Triggered when a user left the channel. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a9f3b4fe1b687bdb31ab584493b8dde91}{user\-Enter} (\hyperlink{classshared_1_1events_1_1event_user_join}{event\-User\-Join} $\ast$new\-User)
+\begin{DoxyCompactList}\small\item\em Triggered when a user enters the channel. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a7756cad0bea903cd816c1fb68cac65fe}{server\-Message\-Received} (\hyperlink{classshared_1_1events_1_1event_server_message}{event\-Server\-Message} $\ast$the\-Message)
+\begin{DoxyCompactList}\small\item\em Triggered when the server wants us to know something. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_af0d708fd1a5059ca1b2c8c0829bbb690}{sgn\-Connect\-Timeout} ()
+\begin{DoxyCompactList}\small\item\em Triggered when it cannot connect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0}{cls\-Server\-Conn} (const Q\-String \hyperlink{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{host\-Name}, const int \hyperlink{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{port}, Q\-Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor taking a hostname and port. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}{do\-Connect} ()
+\begin{DoxyCompactList}\small\item\em Actually connect. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{send\-Command} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} \&to\-Send)
+\begin{DoxyCompactList}\small\item\em Send a J\-S\-O\-N command to the server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}{check\-For\-Json\-Command} (Q\-Byte\-Array to\-Add, \hyperlink{class_k4_u_1_1json_command}{json\-Command} \&comm)
+\begin{DoxyCompactList}\small\item\em Adds data to buffer and checks for json commands. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}{handle\-Completed\-Query} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} \&comm)
+\begin{DoxyCompactList}\small\item\em The server has given us all the users. Handle it. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}{handle\-Own\-User\-Change} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} \&comm)
+\begin{DoxyCompactList}\small\item\em Another client has changed our own user status. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}{handle\-Event\-Request} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} \&comm)
+\begin{DoxyCompactList}\small\item\em Event request has been done by us, and data has been returned. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{handle\-Event\-Received} (Q\-Variant\-Map data)
+\begin{DoxyCompactList}\small\item\em Event has been received by the client. Parse it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{host\-Name}
+\item 
+int \hyperlink{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{port}
+\item 
+Q\-Tcp\-Socket $\ast$ \hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}
+\item 
+Q\-String $\ast$ \hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer}
+\item 
+int \hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{depth}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log}
+\item 
+Q\-Timer $\ast$ \hyperlink{classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}{connect\-Timer}
+\item 
+bool \hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{is\-Connected}
+\item 
+bool \hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{is\-Connecting}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that has a connection to the server. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00027}{27} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!cls\-Server\-Conn@{cls\-Server\-Conn}}
+\index{cls\-Server\-Conn@{cls\-Server\-Conn}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{cls\-Server\-Conn}]{\setlength{\rightskip}{0pt plus 5cm}client\-::cls\-Server\-Conn\-::cls\-Server\-Conn (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{host\-Name, }
+\item[{const int}]{port, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d3/d65/classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0}
+
+
+Constructor taking a hostname and port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\-Name} & The hostname to connect to \\
+\hline
+{\em port} & The port to connect on \\
+\hline
+{\em parent} & The parent widget, Not allways used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This only initializes the socket, it does not connect! 
+\end{DoxyNote}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00006}{6} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1cls_server_conn_ada02a27f01478db29d10bde4c51110b4}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!chat\-Received@{chat\-Received}}
+\index{chat\-Received@{chat\-Received}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::chat\-Received (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-Chat} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_ada02a27f01478db29d10bde4c51110b4}
+
+
+Emitted when a chat event has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_ada02a27f01478db29d10bde4c51110b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!check\-For\-Json\-Command@{check\-For\-Json\-Command}}
+\index{check\-For\-Json\-Command@{check\-For\-Json\-Command}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{check\-For\-Json\-Command}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::cls\-Server\-Conn\-::check\-For\-Json\-Command (
+\begin{DoxyParamCaption}
+\item[{Q\-Byte\-Array}]{to\-Add, }
+\item[{{\bf json\-Command} \&}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}
+
+
+Adds data to buffer and checks for json commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\-Add} & The bytes to add \\
+\hline
+{\em comm} & Pointer to a json\-Command to be filled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a json\-Command was detected Constantly looks for a J\-S\-O\-N command in the buffer This is done with the depth. Every time a \{ or \mbox{[} is detected, depth is raised. Every time a \} or \mbox{]} is detected, depth is decreased. When depth is 0, there should be a complete json command! 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00116}{116} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!connected@{connected}}
+\index{connected@{connected}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{connected}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca}
+
+
+Emitted when the client has a succesfull connection to the server. 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!connect\-Timeout@{connect\-Timeout}}
+\index{connect\-Timeout@{connect\-Timeout}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{connect\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::connect\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/d65/classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00160}{160} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{d3/d65/classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6}
+
+
+Emitted when the client lost connection to the server. 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!do\-Connect@{do\-Connect}}
+\index{do\-Connect@{do\-Connect}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{do\-Connect}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::do\-Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d3/d65/classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}
+
+
+Actually connect. 
+
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00028}{28} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!handle\-Completed\-Query@{handle\-Completed\-Query}}
+\index{handle\-Completed\-Query@{handle\-Completed\-Query}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{handle\-Completed\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::handle\-Completed\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} \&}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}
+
+
+The server has given us all the users. Handle it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & The json\-Command containing all the data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00061}{61} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!handle\-Event\-Received@{handle\-Event\-Received}}
+\index{handle\-Event\-Received@{handle\-Event\-Received}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{handle\-Event\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::handle\-Event\-Received (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}
+
+
+Event has been received by the client. Parse it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A Q\-Variant\-Map containing all the data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00088}{88} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!handle\-Event\-Request@{handle\-Event\-Request}}
+\index{handle\-Event\-Request@{handle\-Event\-Request}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{handle\-Event\-Request}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::handle\-Event\-Request (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} \&}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}
+
+
+Event request has been done by us, and data has been returned. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & The json\-Command containing all the events \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00080}{80} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!handle\-Own\-User\-Change@{handle\-Own\-User\-Change}}
+\index{handle\-Own\-User\-Change@{handle\-Own\-User\-Change}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{handle\-Own\-User\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::handle\-Own\-User\-Change (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} \&}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}
+
+
+Another client has changed our own user status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & The json\-Command containing all the data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00069}{69} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::read\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/d65/classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00139}{139} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d3/d65/classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!send\-Command@{send\-Command}}
+\index{send\-Command@{send\-Command}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{send\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::send\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} \&}]{to\-Send}
+\end{DoxyParamCaption}
+)}}\label{d3/d65/classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}
+
+
+Send a J\-S\-O\-N command to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\-Send} & json\-Command that should be sent \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00038}{38} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a7756cad0bea903cd816c1fb68cac65fe}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!server\-Message\-Received@{server\-Message\-Received}}
+\index{server\-Message\-Received@{server\-Message\-Received}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{server\-Message\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::server\-Message\-Received (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-Server\-Message} $\ast$}]{the\-Message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_a7756cad0bea903cd816c1fb68cac65fe}
+
+
+Triggered when the server wants us to know something. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Message} & The message it sends \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a7756cad0bea903cd816c1fb68cac65fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_af0d708fd1a5059ca1b2c8c0829bbb690}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!sgn\-Connect\-Timeout@{sgn\-Connect\-Timeout}}
+\index{sgn\-Connect\-Timeout@{sgn\-Connect\-Timeout}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{sgn\-Connect\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::sgn\-Connect\-Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_af0d708fd1a5059ca1b2c8c0829bbb690}
+
+
+Triggered when it cannot connect. 
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_af0d708fd1a5059ca1b2c8c0829bbb690_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!srv\-Connected@{srv\-Connected}}
+\index{srv\-Connected@{srv\-Connected}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{srv\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::srv\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/d65/classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00046}{46} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d3/d65/classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!srv\-Disconnected@{srv\-Disconnected}}
+\index{srv\-Disconnected@{srv\-Disconnected}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{srv\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::srv\-Disconnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d3/d65/classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}
+
+
+Definition at line \hyperlink{clsserverconn_8cpp_source_l00054}{54} of file \hyperlink{clsserverconn_8cpp_source}{clsserverconn.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d3/d65/classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_af5b308ecbe7fda6ff5c7dd524e17817c}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!user\-Change\-Nick@{user\-Change\-Nick}}
+\index{user\-Change\-Nick@{user\-Change\-Nick}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{user\-Change\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::user\-Change\-Nick (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Change\-Nick} $\ast$}]{change\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_af5b308ecbe7fda6ff5c7dd524e17817c}
+
+
+Emitted when a user has changed his nick (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change\-Event} & And event\-User\-Change\-Nick containing more data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not to be confused with user\-Status\-Change 
+\end{DoxyNote}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_af5b308ecbe7fda6ff5c7dd524e17817c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a9f3b4fe1b687bdb31ab584493b8dde91}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!user\-Enter@{user\-Enter}}
+\index{user\-Enter@{user\-Enter}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{user\-Enter}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::user\-Enter (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Join} $\ast$}]{new\-User}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_a9f3b4fe1b687bdb31ab584493b8dde91}
+
+
+Triggered when a user enters the channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-User} & An event\-User\-Join containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a9f3b4fe1b687bdb31ab584493b8dde91_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_a89ac2b4edd0a40b0fbfb5504904752c9}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!user\-Leave@{user\-Leave}}
+\index{user\-Leave@{user\-Leave}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{user\-Leave}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::user\-Leave (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Leave} $\ast$}]{leave\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_a89ac2b4edd0a40b0fbfb5504904752c9}
+
+
+Triggered when a user left the channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leave\-Event} & An event\-User\-Leave containing more data \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_a89ac2b4edd0a40b0fbfb5504904752c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_abad7931f40972d90b51e696b878b58c4}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!user\-Query\-Completed@{user\-Query\-Completed}}
+\index{user\-Query\-Completed@{user\-Query\-Completed}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{user\-Query\-Completed}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::user\-Query\-Completed (
+\begin{DoxyParamCaption}
+\item[{Q\-Vector$<$ {\bf irc\-User} $\ast$ $>$}]{users}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_abad7931f40972d90b51e696b878b58c4}
+
+
+Emitted when the server has sent us all the users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em users} & A Q\-Vector$<$irc\-User$\ast$$>$ of all the users \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_abad7931f40972d90b51e696b878b58c4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1cls_server_conn_aa7679dfddcf23ffa4ce4febbc005995a}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!user\-Status\-Change@{user\-Status\-Change}}
+\index{user\-Status\-Change@{user\-Status\-Change}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{user\-Status\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::cls\-Server\-Conn\-::user\-Status\-Change (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-User\-Change\-Status} $\ast$}]{change\-Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d3/d65/classclient_1_1cls_server_conn_aa7679dfddcf23ffa4ce4febbc005995a}
+
+
+Emitted when a user has changed his status (nick$|$status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change\-Event} & An event\-User\-Change\-Status containing more data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Not to be confused with user\-Change\-Nick! 
+\end{DoxyNote}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d65/classclient_1_1cls_server_conn_aa7679dfddcf23ffa4ce4febbc005995a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!buffer@{buffer}}
+\index{buffer@{buffer}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String$\ast$ client\-::cls\-Server\-Conn\-::buffer\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00158}{158} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!connect\-Timer@{connect\-Timer}}
+\index{connect\-Timer@{connect\-Timer}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{connect\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer$\ast$ client\-::cls\-Server\-Conn\-::connect\-Timer\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00163}{163} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!depth@{depth}}
+\index{depth@{depth}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::cls\-Server\-Conn\-::depth\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00159}{159} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!host\-Name@{host\-Name}}
+\index{host\-Name@{host\-Name}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{host\-Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::cls\-Server\-Conn\-::host\-Name\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00154}{154} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!is\-Connected@{is\-Connected}}
+\index{is\-Connected@{is\-Connected}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{is\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::cls\-Server\-Conn\-::is\-Connected\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00164}{164} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!is\-Connecting@{is\-Connecting}}
+\index{is\-Connecting@{is\-Connecting}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{is\-Connecting}]{\setlength{\rightskip}{0pt plus 5cm}bool client\-::cls\-Server\-Conn\-::is\-Connecting\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00165}{165} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!log@{log}}
+\index{log@{log}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} client\-::cls\-Server\-Conn\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00161}{161} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!port@{port}}
+\index{port@{port}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::cls\-Server\-Conn\-::port\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00155}{155} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+\hypertarget{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{\index{client\-::cls\-Server\-Conn@{client\-::cls\-Server\-Conn}!sock@{sock}}
+\index{sock@{sock}!client::clsServerConn@{client\-::cls\-Server\-Conn}}
+\subsubsection[{sock}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Tcp\-Socket$\ast$ client\-::cls\-Server\-Conn\-::sock\hspace{0.3cm}{\ttfamily [private]}}}\label{d3/d65/classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}
+
+
+Definition at line \hyperlink{clsserverconn_8h_source_l00157}{157} of file \hyperlink{clsserverconn_8h_source}{clsserverconn.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{clsserverconn_8h}{clsserverconn.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{clsserverconn_8cpp}{clsserverconn.\-cpp}\end{DoxyCompactItemize}

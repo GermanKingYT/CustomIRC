@@ -1,0 +1,64 @@
+\hypertarget{android_2mainwindow_8cpp}{\section{mainwindow.\-cpp}
+\label{dc/d1d/android_2mainwindow_8cpp}\index{C++/custom\-Irc\-Client/android/mainwindow.\-cpp@{C++/custom\-Irc\-Client/android/mainwindow.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{android_2mainwindow_8h}{mainwindow.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_mainwindow.h"}
+00003 
+00004 \textcolor{preprocessor}{#include <QCoreApplication>}
+00005 
+\hypertarget{android_2mainwindow_8cpp_source_l00006}{}\hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{00006} \hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{MainWindow::MainWindow}(QWidget *parent)
+00007     : QMainWindow(parent), ui(new Ui::\hyperlink{class_main_window}{MainWindow})
+00008 \{
+00009     \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}->setupUi(\textcolor{keyword}{this});
+00010 \}
+00011 
+\hypertarget{android_2mainwindow_8cpp_source_l00012}{}\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{00012} \hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::~MainWindow}()
+00013 \{
+00014     \textcolor{keyword}{delete} \hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui};
+00015 \}
+00016 
+\hypertarget{android_2mainwindow_8cpp_source_l00017}{}\hyperlink{class_main_window_a9597b97cef9da0760a06e8e04ca3d138}{00017} \textcolor{keywordtype}{void} \hyperlink{class_main_window_a9597b97cef9da0760a06e8e04ca3d138}{MainWindow::setOrientation}(\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903}{ScreenOrientation} orientation)
+00018 \{
+00019     Qt::WidgetAttribute attribute;
+00020     \textcolor{keywordflow}{switch} (orientation) \{
+00021 \textcolor{preprocessor}{#if QT\_VERSION < 0x040702}
+00022 \textcolor{preprocessor}{}    \textcolor{comment}{// Qt < 4.7.2 does not yet have the Qt::WA\_*Orientation attributes}
+00023     \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903a13a4781d324c19835f8673230efc7b3d}{ScreenOrientationLockPortrait}:
+00024         attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(128);
+00025         \textcolor{keywordflow}{break};
+00026     \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ad17797d910e72ac4ae7fd7c88ee43224}{ScreenOrientationLockLandscape}:
+00027         attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(129);
+00028         \textcolor{keywordflow}{break};
+00029     \textcolor{keywordflow}{default}:
+00030     \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ac6b5fe3ca97c62b5c9c5c55edb09027d}{ScreenOrientationAuto}:
+00031         attribute = \textcolor{keyword}{static\_cast<}Qt::WidgetAttribute\textcolor{keyword}{>}(130);
+00032         \textcolor{keywordflow}{break};
+00033 \textcolor{preprocessor}{#else // QT\_VERSION < 0x040702}
+00034 \textcolor{preprocessor}{}    \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903a13a4781d324c19835f8673230efc7b3d}{ScreenOrientationLockPortrait}:
+00035         attribute = Qt::WA\_LockPortraitOrientation;
+00036         \textcolor{keywordflow}{break};
+00037     \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ad17797d910e72ac4ae7fd7c88ee43224}{ScreenOrientationLockLandscape}:
+00038         attribute = Qt::WA\_LockLandscapeOrientation;
+00039         \textcolor{keywordflow}{break};
+00040     \textcolor{keywordflow}{default}:
+00041     \textcolor{keywordflow}{case} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ac6b5fe3ca97c62b5c9c5c55edb09027d}{ScreenOrientationAuto}:
+00042         attribute = Qt::WA\_AutoOrientation;
+00043         \textcolor{keywordflow}{break};
+00044 \textcolor{preprocessor}{#endif // QT\_VERSION < 0x040702}
+00045 \textcolor{preprocessor}{}    \};
+00046     setAttribute(attribute, \textcolor{keyword}{true});
+00047 \}
+00048 
+\hypertarget{android_2mainwindow_8cpp_source_l00049}{}\hyperlink{class_main_window_ae66038a9d909fd409d781bf7c3f3ff2c}{00049} \textcolor{keywordtype}{void} \hyperlink{class_main_window_ae66038a9d909fd409d781bf7c3f3ff2c}{MainWindow::showExpanded}()
+00050 \{
+00051 \textcolor{preprocessor}{#if defined(Q\_WS\_SIMULATOR)}
+00052 \textcolor{preprocessor}{}    showFullScreen();
+00053 \textcolor{preprocessor}{#elif defined(Q\_WS\_MAEMO\_5)}
+00054 \textcolor{preprocessor}{}    showMaximized();
+00055 \textcolor{preprocessor}{#else}
+00056 \textcolor{preprocessor}{}    show();
+00057 \textcolor{preprocessor}{#endif}
+00058 \textcolor{preprocessor}{}\}
+\end{DoxyCode}

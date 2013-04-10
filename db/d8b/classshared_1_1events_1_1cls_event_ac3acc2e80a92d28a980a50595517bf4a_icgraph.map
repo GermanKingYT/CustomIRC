@@ -1,0 +1,14 @@
+<map id="shared::events::clsEvent::getData" name="shared::events::clsEvent::getData">
+<area shape="rect" id="node2" href="$d1/d68/classshared_1_1events_1_1event_chat.html#affa9c414f40d61277b690efd4013f550" title="Gets the DB&#45;ID of the user that sent the message." alt="" coords="221,5,392,46"/>
+<area shape="rect" id="node5" href="$d1/d68/classshared_1_1events_1_1event_chat.html#a10a61f130fb402e63922cd0b34468c8e" title="Gets the chat message." alt="" coords="221,70,392,111"/>
+<area shape="rect" id="node6" href="$d6/dfe/classshared_1_1events_1_1event_server_message.html#a8d893e8dbb1289d2552a3a48d1323edd" title="Gets the message." alt="" coords="217,135,397,177"/>
+<area shape="rect" id="node8" href="$d6/dfe/classshared_1_1events_1_1event_server_message.html#a578aacc79570f1c7302c6c69be564ac1" title="Gets the level of the message." alt="" coords="217,201,397,242"/>
+<area shape="rect" id="node9" href="$dd/d05/classshared_1_1events_1_1event_user_join.html#ab1386fad8a4b2bb51e62589565090d5a" title="Gets the DB&#45;ID of the user that joined." alt="" coords="221,266,392,307"/>
+<area shape="rect" id="node10" href="$dd/d05/classshared_1_1events_1_1event_user_join.html#afd49e93a57440f97dd02ccbec353cdb8" title="Gets a QVariantMap of the user that joined." alt="" coords="221,331,392,373"/>
+<area shape="rect" id="node12" href="$d9/d9f/classshared_1_1events_1_1event_user_leave.html#afb9cb12d52415109349d1469f1577353" title="Gets the DB&#45;ID of the user that left." alt="" coords="221,397,392,438"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#a51e1634c12eb7373b01dce36a03afc9a" title="Triggered when a chat has been received." alt="" coords="463,70,598,111"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="665,234,799,275"/>
+<area shape="rect" id="node7" href="$d2/da4/classclient_1_1_main_window.html#ae738b40e6b83639304d84f3d9f117c75" title="Triggered when the server sends us a message that should be displayed in the UI." alt="" coords="446,201,615,242"/>
+<area shape="rect" id="node11" href="$d2/da4/classclient_1_1_main_window.html#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="463,283,598,325"/>
+<area shape="rect" id="node13" href="$d2/da4/classclient_1_1_main_window.html#a9f16758ff23f279a244806cae35a1604" title="Triggered when a user leaves the room." alt="" coords="463,381,598,422"/>
+</map>

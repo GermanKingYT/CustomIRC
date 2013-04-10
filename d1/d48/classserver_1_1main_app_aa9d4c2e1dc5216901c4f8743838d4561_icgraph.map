@@ -1,0 +1,6 @@
+<map id="server::mainApp::doIrcReconnect" name="server::mainApp::doIrcReconnect">
+<area shape="rect" id="node2" href="$d1/d48/classserver_1_1main_app.html#a931aedd34bb38252acfc8880f9716fab" title="Triggered when the IRC client cannot connect." alt="" coords="282,5,467,46"/>
+<area shape="rect" id="node5" href="$d1/d48/classserver_1_1main_app.html#af6e8c9d1f06514b33e5f88f9e66884be" title="Triggered when the IRC client has disconnected." alt="" coords="267,71,483,97"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="531,41,672,68"/>
+<area shape="rect" id="node4" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="720,41,771,68"/>
+</map>

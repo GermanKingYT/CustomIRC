@@ -1,0 +1,139 @@
+\hypertarget{custom_irc_server_2clssettings_8cpp}{\section{clssettings.\-cpp}
+\label{d0/d85/custom_irc_server_2clssettings_8cpp}\index{C++/custom\-Irc\-Server/clssettings.\-cpp@{C++/custom\-Irc\-Server/clssettings.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_server_2clssettings_8h}{clssettings.h}"}
+00002 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00003}{}\hyperlink{namespaceserver}{00003} \textcolor{keyword}{namespace }server \{
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00004}{}\hyperlink{classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}{00004} \hyperlink{classserver_1_1cls_settings_aba9713d2408ce6ae7acb28a36647ebaf}{clsSettings::clsSettings}(\textcolor{keyword}{const} QString &filePath)
+00005     :listeningPort(\hyperlink{custom_irc_server_2clssettings_8h_ae0f057cabde3e6a18a0a16aad8bfc2cc}{DEFAULT\_LISTEN\_PORT})
+00006 \{
+00007     QString fileName = filePath + \textcolor{stringliteral}{"/settings.xml"};
+00008     QXmlStreamReader Rxml;
+00009     QFile file(fileName);
+00010     \textcolor{keywordflow}{if} (!file.open(QFile::ReadOnly | QFile::Text))\{
+00011         std::cerr << \textcolor{stringliteral}{"Error: Cannot read file "} << fileName.toStdString()
+00012          << \textcolor{stringliteral}{": "} << qPrintable(file.errorString())
+00013          << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{std::endl};
+00014     \}
+00015     Rxml.setDevice(&file);
+00016     Rxml.readNext();
+00017 
+00018 
+00019     \textcolor{keywordflow}{while}(!Rxml.atEnd())\{
+00020         \textcolor{keywordflow}{if}(Rxml.isStartElement())\{
+00021             \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"settings"})\{
+00022                 Rxml.readNext(); \textcolor{comment}{//Start}
+00023             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"server"})\{
+00024                 Rxml.readNext();
+00025                 this->\hyperlink{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{readServer}(Rxml);
+00026             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"users"})\{
+00027                 Rxml.readNext();
+00028                 this->\hyperlink{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{readUsers}(Rxml);
+00029             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"userInfo"})\{
+00030                 Rxml.readNext();
+00031                 this->\hyperlink{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{readUserInfo}(Rxml);
+00032             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Rxml.name() == \textcolor{stringliteral}{"uiServer"})\{
+00033                 Rxml.readNext();
+00034                 this->\hyperlink{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{readUiSettings}(Rxml);
+00035             \}
+00036         \}
+00037         Rxml.readNext();
+00038    \}
+00039     file.close();
+00040 \}
+00041 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00042}{}\hyperlink{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{00042} \textcolor{keywordtype}{int} \hyperlink{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{clsSettings::getListeningPort}()\textcolor{keyword}{ const}\{
+00043     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{listeningPort};
+00044 \}
+00045 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00046}{}\hyperlink{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{00046} QString \hyperlink{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{clsSettings::getServer}()\textcolor{keyword}{ const}\{
+00047     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{server};
+00048 \}
+00049 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00050}{}\hyperlink{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{00050} QString \hyperlink{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{clsSettings::getChannel}()\textcolor{keyword}{ const}\{
+00051     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{channel};
+00052 \}
+00053 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00054}{}\hyperlink{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{00054} QString \hyperlink{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{clsSettings::getUserName}()\textcolor{keyword}{ const}\{
+00055     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser}->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}();
+00056 \}
+00057 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00058}{}\hyperlink{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{00058} \hyperlink{classserver_1_1irc_user}{ircUser} *\hyperlink{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{clsSettings::getOwnUser}()\textcolor{keyword}{ const}\{
+00059     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser};
+00060 \}
+00061 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00062}{}\hyperlink{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{00062} QVector<ircUser *> \hyperlink{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{clsSettings::getUsers}()\textcolor{keyword}{ const}\{
+00063     \textcolor{keywordflow}{return} this->\hyperlink{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{users};
+00064 \}
+00065 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00066}{}\hyperlink{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{00066} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_adbc68e6d583e346496479ace0f590000}{clsSettings::readUiSettings}(QXmlStreamReader &reader)\{
+00067     \textcolor{keywordflow}{while}(!reader.isEndElement())\{
+00068         QString name = reader.name().toString();
+00069         \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"listenPort"})\{
+00070             this->\hyperlink{classserver_1_1cls_settings_a54004af066c09dc076417852f280cfa5}{listeningPort} = reader.readElementText().toInt();
+00071         \}
+00072         reader.readNext();
+00073     \}
+00074 \}
+00075 
+00076 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00077}{}\hyperlink{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{00077} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_a52c740c0cbe7683fe82797a11a4fffd0}{clsSettings::readServer}(QXmlStreamReader &reader)\{
+00078     \textcolor{keywordflow}{while}(!reader.isEndElement())\{
+00079         QString name = reader.name().toString();
+00080         \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"server"})\{
+00081             this->\hyperlink{classserver_1_1cls_settings_a154a999eefd3fca39cf4d867f2d7ecaa}{server} = reader.readElementText();
+00082         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"channel"})\{
+00083             this->\hyperlink{classserver_1_1cls_settings_a13a2164fcd81177958521ec4171aa07c}{channel} = reader.readElementText();
+00084         \}
+00085         reader.readNext();
+00086     \}
+00087 \}
+00088 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00089}{}\hyperlink{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{00089} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_aa4eefe64194d1d21f5c9414355f3f5f3}{clsSettings::readUsers}(QXmlStreamReader &reader)\{
+00090     \textcolor{keywordflow}{while}(!reader.isEndElement())\{
+00091         \textcolor{keywordflow}{if}(reader.name().toString() == \textcolor{stringliteral}{"user"})\{
+00092             reader.readNext();
+00093             QString username;
+00094             QString email;
+00095             \textcolor{keywordtype}{bool} endElement = reader.isEndElement();
+00096             \textcolor{keywordflow}{while}(!endElement)\{
+00097                 endElement = reader.isEndElement();
+00098                 QString name = reader.name().toString();
+00099                 \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"username"})\{
+00100                     username = reader.readElementText();
+00101                 \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"email"})\{
+00102                     email = reader.readElementText();
+00103                 \}
+00104                 reader.readNext();
+00105             \}
+00106             \hyperlink{classserver_1_1irc_user}{ircUser} *myUser = \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser}(username,\textcolor{keyword}{true});
+00107             myUser->\hyperlink{classserver_1_1irc_user_a8a8c4f9d36cf2572239b5b49b794f8c7}{setEmail}(email);
+00108 
+00109             this->\hyperlink{classserver_1_1cls_settings_a089480b066c0a095426261cd3219506d}{users}.append(myUser);
+00110         \}
+00111         reader.readNext();
+00112     \}
+00113 \}
+00114 
+\hypertarget{custom_irc_server_2clssettings_8cpp_source_l00115}{}\hyperlink{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{00115} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1cls_settings_abc09034b2b4c0e9419051b71a4d2d299}{clsSettings::readUserInfo}(QXmlStreamReader &reader)\{
+00116     QString username;
+00117     QString email;
+00118     \textcolor{keywordflow}{while}(!reader.isEndElement())\{
+00119         QString name = reader.name().toString();
+00120         \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"username"})\{
+00121             username = reader.readElementText();
+00122         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(name == \textcolor{stringliteral}{"email"})\{
+00123             email = reader.readElementText();
+00124         \}
+00125         reader.readNext();
+00126     \}
+00127     this->\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser} = \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser}(username,\textcolor{keyword}{true});
+00128     this->\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser}->\hyperlink{classserver_1_1irc_user_a8a8c4f9d36cf2572239b5b49b794f8c7}{setEmail}(email);
+00129     this->\hyperlink{classserver_1_1cls_settings_af1cf9d75815351217ad046c926a23669}{ownUser}->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{true});
+00130 \}
+00131 
+00132 
+00133 \} \textcolor{comment}{/*End of namespace*/}
+\end{DoxyCode}

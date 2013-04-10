@@ -1,0 +1,33 @@
+\hypertarget{eventservermessage_8cpp}{\section{eventservermessage.\-cpp}
+\label{d3/d54/eventservermessage_8cpp}\index{C++/resources/events/eventservermessage.\-cpp@{C++/resources/events/eventservermessage.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventservermessage_8h}{eventservermessage.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared\{
+00004     \textcolor{keyword}{namespace }events\{
+00005 
+\hypertarget{eventservermessage_8cpp_source_l00006}{}\hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{00006}         \hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{eventServerMessage::eventServerMessage}(QString message, 
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)\{
+00007             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{EVENTTYPE\_SERVERMSG};
+00008             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"message"}, message);
+00009             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"level"},lvl);
+00010         \}
+00011 
+\hypertarget{eventservermessage_8cpp_source_l00012}{}\hyperlink{classshared_1_1events_1_1event_server_message_ad2b4e273b5d1de7761aa751b9337d1f5}{00012}         \hyperlink{classshared_1_1events_1_1event_server_message_ae12d1373b82828c26fe2e74439dd60eb}{eventServerMessage::eventServerMessage}(QVariantMap data)
+00013             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00014         \{ \}
+00015 
+\hypertarget{eventservermessage_8cpp_source_l00016}{}\hyperlink{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{00016}         QString \hyperlink{classshared_1_1events_1_1event_server_message_a8d893e8dbb1289d2552a3a48d1323edd}{eventServerMessage::getMessage}()\textcolor{keyword}{ const}\{
+00017             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"message"}).toString();
+00018         \}
+00019 
+\hypertarget{eventservermessage_8cpp_source_l00020}{}\hyperlink{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{00020}         \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} \hyperlink{classshared_1_1events_1_1event_server_message_a578aacc79570f1c7302c6c69be564ac1}{eventServerMessage::getLevel}()\textcolor{keyword}{ const }\{
+00021             \textcolor{keywordflow}{return} (\hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level})this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"level"}).toInt();
+00022         \}
+00023 
+00024 
+00025     \}
+00026 \}
+\end{DoxyCode}

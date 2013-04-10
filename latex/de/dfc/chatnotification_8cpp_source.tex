@@ -1,0 +1,84 @@
+\hypertarget{chatnotification_8cpp}{\section{chatnotification.\-cpp}
+\label{de/dfc/chatnotification_8cpp}\index{C++/custom\-Irc\-Client/chatnotification.\-cpp@{C++/custom\-Irc\-Client/chatnotification.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{chatnotification_8h}{chatnotification.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_chatnotification.h"}
+00003 \textcolor{preprocessor}{#include <math.h>}
+00004 \textcolor{preprocessor}{#include "../resources/clslog.h"}
+00005 
+00006 
+00007 \textcolor{keyword}{namespace }client\{
+\hypertarget{chatnotification_8cpp_source_l00008}{}\hyperlink{classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}{00008}     \hyperlink{classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}{chatNotification::chatNotification}(QString message, QWidget *parent)
+00009         :QWidget(parent)
+00010          ,ui(new Ui::\hyperlink{classclient_1_1chat_notification}{chatNotification})
+00011          ,message(message)
+00012          ,timeOfMessage(QTime::currentTime())
+00013     \{
+00014         \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->setupUi(\textcolor{keyword}{this});
+00015         this->setMinimumWidth(parent->width());
+00016 
+00017         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblTime->setText(this->\hyperlink{classclient_1_1chat_notification_ac2cf7f6030625593ba26f5f62ebd3482}{timeOfMessage}.toString());
+00018 
+00019         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->setText(this->message);
+00020 
+00021         this->\hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{calculateMessageWidth}();
+00022     \}
+00023 
+\hypertarget{chatnotification_8cpp_source_l00024}{}\hyperlink{classclient_1_1chat_notification_a684a7cdcf71cda53fcc61a0a94d5ed23}{00024}     \hyperlink{classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}{chatNotification::chatNotification}(QString message, QTime 
+      timeOfMessage, QColor myColor, QWidget *parent)
+00025         :QWidget(parent)
+00026         ,ui(new Ui::\hyperlink{classclient_1_1chat_notification}{chatNotification})
+00027         ,message(message)
+00028         ,timeOfMessage(timeOfMessage)
+00029     \{
+00030         \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->setupUi(\textcolor{keyword}{this});
+00031         this->setMinimumWidth(parent->width());
+00032 
+00033         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblTime->setText(this->timeOfMessage.toString());
+00034 
+00035         QPalette palette = \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->palette();
+00036         palette.setColor(\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->foregroundRole(), myColor);
+00037         \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->setPalette(palette);
+00038 
+00039         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->setText(this->message);
+00040 
+00041         this->\hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{calculateMessageWidth}();
+00042     \}
+00043 
+\hypertarget{chatnotification_8cpp_source_l00044}{}\hyperlink{classclient_1_1chat_notification_a8123fd954f4aede301f59474b8e3752d}{00044}     \hyperlink{classclient_1_1chat_notification_a8123fd954f4aede301f59474b8e3752d}{chatNotification::~chatNotification}()
+00045     \{
+00046         \textcolor{keyword}{delete} \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui};
+00047     \}
+00048 
+\hypertarget{chatnotification_8cpp_source_l00049}{}\hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{00049}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{chatNotification::calculateMessageWidth}()\{
+00050         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->setGeometry(this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblTime->width() + 4,0,
+00051                 this->width() -
+00052                 (this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblTime->width() + 16),
+00053                 16);
+00054 
+00055         \textcolor{keywordtype}{int} lines = ceil((\textcolor{keywordtype}{double})this->\hyperlink{classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}{getWidth}(this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification) /
+00056                 (\textcolor{keywordtype}{double})this->ui->lblNotification->width());
+00057 
+00058         this->setMinimumHeight(lines * this->\hyperlink{classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}{getHeight}(this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification));
+00059         this->\hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}->lblNotification->setMinimumHeight(this->minimumHeight() + 4);
+00060     \}
+00061 
+\hypertarget{chatnotification_8cpp_source_l00062}{}\hyperlink{classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}{00062}     \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}{chatNotification::getWidth}(QLabel *l)\textcolor{keyword}{ const}\{
+00063         \textcolor{keywordflow}{return} l->fontMetrics().width(l->text());
+00064     \}
+00065 
+\hypertarget{chatnotification_8cpp_source_l00066}{}\hyperlink{classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}{00066}     \textcolor{keywordtype}{int} \hyperlink{classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}{chatNotification::getHeight}(QLabel *l)\textcolor{keyword}{ const}\{
+00067         \textcolor{keywordflow}{return} l->fontMetrics().height();
+00068     \}
+00069 
+00070 
+00071 
+\hypertarget{chatnotification_8cpp_source_l00072}{}\hyperlink{classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c}{00072}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c}{chatNotification::resizeEvent}(QResizeEvent *event)\{
+00073         Q\_UNUSED(event);
+00074         this->\hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{calculateMessageWidth}();
+00075     \}
+00076 
+00077 \}
+\end{DoxyCode}

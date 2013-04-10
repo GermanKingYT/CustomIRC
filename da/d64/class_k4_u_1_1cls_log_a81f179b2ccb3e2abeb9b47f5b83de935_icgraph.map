@@ -1,0 +1,51 @@
+<map id="K4U::clsLog::doEndl" name="K4U::clsLog::doEndl">
+<area shape="rect" id="node2" href="$d6/d75/namespace_k4_u.html#aaddaee50fab2801df390147891b0c09d" title="K4U::endl" alt="" coords="195,1003,274,1029"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#af4589d93eb4b606423cb4b5e4a583f4e" title="Actually connect." alt="" coords="340,273,484,314"/>
+<area shape="rect" id="node8" href="$d3/d65/classclient_1_1cls_server_conn.html#a997f9cd3d63321807f60472308acc459" title="Send a JSON command to the server." alt="" coords="587,135,731,177"/>
+<area shape="rect" id="node13" href="$d3/d65/classclient_1_1cls_server_conn.html#adaecfe74ef1fb16f35613587aa1dada8" title="client::clsServerConn\l::srvConnected" alt="" coords="340,338,484,379"/>
+<area shape="rect" id="node15" href="$d3/d65/classclient_1_1cls_server_conn.html#acd2aa4131c06ed51738fb041c86ed640" title="client::clsServerConn\l::srvDisconnected" alt="" coords="340,403,484,445"/>
+<area shape="rect" id="node16" href="$d3/d65/classclient_1_1cls_server_conn.html#a8fc1a3ef72ba0480d521781f84983afe" title="Adds data to buffer and checks for json commands." alt="" coords="327,469,497,510"/>
+<area shape="rect" id="node18" href="$d5/d08/classclient_1_1cls_settings.html#ac4621f113c6e276f29395d9d2d947217" title="clsSettings Constructor" alt="" coords="349,534,475,575"/>
+<area shape="rect" id="node19" href="$d7/d81/classserver_1_1cls_settings.html#aba9713d2408ce6ae7acb28a36647ebaf" title="clsSettings Constructor" alt="" coords="347,599,477,641"/>
+<area shape="rect" id="node20" href="$d9/db1/namespaceserver.html#aa5c4f8737f00b4b33cca775c3d85c1f8" title="server::operator\&lt;\&lt;" alt="" coords="349,665,475,692"/>
+<area shape="rect" id="node21" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="1077,793,1213,820"/>
+<area shape="rect" id="node23" href="$d1/d10/classserver_1_1irc_client.html#a32607649043e6053ff2ef9980df91800" title="server::ircClient::\ldisconnected" alt="" coords="863,915,982,957"/>
+<area shape="rect" id="node24" href="$d1/d10/classserver_1_1irc_client.html#a43b0e50c5bf5ba76b5a09917e779c1ea" title="connects to the IRC server. Sets the whole thing in motion" alt="" coords="599,966,718,1007"/>
+<area shape="rect" id="node28" href="$d1/d10/classserver_1_1irc_client.html#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="339,767,485,793"/>
+<area shape="rect" id="node31" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="863,594,982,635"/>
+<area shape="rect" id="node25" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="852,1209,993,1236"/>
+<area shape="rect" id="node34" href="$d1/d48/classserver_1_1main_app.html#a0970ee01d48b04ebc1390ffb8edecfc0" title="Triggered when a chat has been received." alt="" coords="559,1133,759,1160"/>
+<area shape="rect" id="node35" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="566,1184,751,1211"/>
+<area shape="rect" id="node36" href="$d1/d48/classserver_1_1main_app.html#aae86b15c001a235de78a90334e697b5f" title="Triggered when a user leaves trough a PART message." alt="" coords="567,1403,751,1429"/>
+<area shape="rect" id="node37" href="$d1/d48/classserver_1_1main_app.html#ae15deb9260c486854af7fac7b063fdf5" title="Triggered when a user changes his nickname (nick|Status)" alt="" coords="549,1453,768,1480"/>
+<area shape="rect" id="node38" href="$d1/d48/classserver_1_1main_app.html#aaa3dd74b510e2d797f21293a622a4f7d" title="Triggered when a user changes his status (nick|Status)" alt="" coords="563,1505,755,1546"/>
+<area shape="rect" id="node39" href="$dc/d4d/classserver_1_1ui_client.html#a215d811cbfada73ff8344ed7e5664113" title="uiClient constructor" alt="" coords="843,1621,1002,1648"/>
+<area shape="rect" id="node40" href="$dc/d4d/classserver_1_1ui_client.html#aa66a0dc28bb1d07f22467b127ff90cc6" title="server::uiClient::remove\lConnection" alt="" coords="334,1603,490,1645"/>
+<area shape="rect" id="node41" href="$dc/d4d/classserver_1_1ui_client.html#a8237b1a02c7877a7c853b6ef23995b9b" title="Adds data to buffer and checks for json commands." alt="" coords="327,1669,497,1710"/>
+<area shape="rect" id="node43" href="$df/dd2/classserver_1_1ui_server.html#a7df8c4bff6f0dea8259f91aec65715c9" title="Starts to listen on the port." alt="" coords="323,1735,501,1761"/>
+<area shape="rect" id="node44" href="$df/dd2/classserver_1_1ui_server.html#ab9e9ed944311c42f019c645c3e0539cf" title="Sends a jsonCommand to all the clients." alt="" coords="339,1239,485,1265"/>
+<area shape="rect" id="node49" href="$da/d64/class_k4_u_1_1cls_log.html#ab6ac3e9c2f6f577b576fe1570ca95d66" title="K4U::clsLog::operator\&lt;\&lt;" alt="" coords="330,1785,494,1812"/>
+<area shape="rect" id="node50" href="$d6/d75/namespace_k4_u.html#ac6dc12e99e9f8aac74f9b654ddbb199a" title="K4U::operator\&lt;\&lt;" alt="" coords="353,1836,471,1863"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#a4714272984f1518ea739cc5c809d8579" title="client::MainWindow\l::doReconnect" alt="" coords="591,273,726,314"/>
+<area shape="rect" id="node5" href="$d2/da4/classclient_1_1_main_window.html#a1453a7da1874881b67aa919390012e36" title="client::MainWindow\l::serverDisconnected" alt="" coords="851,266,994,307"/>
+<area shape="rect" id="node7" href="$d2/da4/classclient_1_1_main_window.html#a6df87d6d4bb287478d307d7e45097187" title="Triggered when we cannot connect to the server!" alt="" coords="855,331,991,373"/>
+<area shape="rect" id="node6" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="1078,169,1213,210"/>
+<area shape="rect" id="node9" href="$d2/da4/classclient_1_1_main_window.html#aa32adfb179341040f2decbd0da19f1d9" title="client::MainWindow\l::sendChat" alt="" coords="855,135,990,177"/>
+<area shape="rect" id="node10" href="$d2/da4/classclient_1_1_main_window.html#a75d241698eb127c089ed4703fbeb4999" title="client::MainWindow\l::commandGiven" alt="" coords="855,201,990,242"/>
+<area shape="rect" id="node11" href="$d2/da4/classclient_1_1_main_window.html#aae9222490d9f0d71ffa6585c35416bfb" title="client::MainWindow\l::serverConnected" alt="" coords="855,5,990,46"/>
+<area shape="rect" id="node12" href="$d2/da4/classclient_1_1_main_window.html#a13044cd00c53dbbbc6b945c0dfd9b4b4" title="Triggered when the user query came back." alt="" coords="847,70,999,111"/>
+<area shape="rect" id="node14" href="$d3/d65/classclient_1_1cls_server_conn.html#ad9d8caf021df2cd15ce27bcf207d86d0" title="Constructor taking a hostname and port." alt="" coords="851,397,995,438"/>
+<area shape="rect" id="node17" href="$d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="587,447,731,489"/>
+<area shape="rect" id="node22" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="1262,786,1381,827"/>
+<area shape="rect" id="node27" href="$d1/d48/classserver_1_1main_app.html#aa9d4c2e1dc5216901c4f8743838d4561" title="Emitted when the reconnect timer reaches 0." alt="" coords="816,1032,1029,1059"/>
+<area shape="rect" id="node26" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1120,1209,1171,1236"/>
+<area shape="rect" id="node29" href="$d1/d10/classserver_1_1irc_client.html#a31910635c17bd56be644084746653ba8" title="server::ircClient::\lsltConnected" alt="" coords="863,714,982,755"/>
+<area shape="rect" id="node30" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="599,565,718,606"/>
+<area shape="rect" id="node32" href="$d1/d10/classserver_1_1irc_client.html#a6b62de4b4dc3c1f7f0fe7c6f91c1cf05" title="Sends a chat message to a certain channel." alt="" coords="599,733,718,774"/>
+<area shape="rect" id="node33" href="$d1/d10/classserver_1_1irc_client.html#aef3233c03f42190f1c89b77c357e9f7f" title="Sets our own nickname." alt="" coords="599,798,718,839"/>
+<area shape="rect" id="node42" href="$dc/d4d/classserver_1_1ui_client.html#afdda23f96c586fdcb47f1abad7be99f5" title="server::uiClient::receive\lMessage" alt="" coords="581,1673,736,1714"/>
+<area shape="rect" id="node45" href="$d1/d48/classserver_1_1main_app.html#aea819e4b8f297de7f1e3fc2f8513b0a4" title="Triggered when a UI client wants all the users." alt="" coords="559,1352,758,1379"/>
+<area shape="rect" id="node46" href="$d1/d48/classserver_1_1main_app.html#aba9c03c1c353a57f43404bb149bee50b" title="Triggered when a UI client wants all the events known to the server." alt="" coords="555,1235,762,1261"/>
+<area shape="rect" id="node47" href="$d1/d48/classserver_1_1main_app.html#a7263ca5b3630b0a2774f556b96c333c8" title="For logging to the clients." alt="" coords="553,1083,764,1109"/>
+<area shape="rect" id="node48" href="$df/dd2/classserver_1_1ui_server.html#a1d221672f6efb29189e6ce398f7b07e3" title="Triggered when a client wants to change something about our own user." alt="" coords="579,1286,739,1327"/>
+</map>

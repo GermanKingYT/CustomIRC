@@ -1,0 +1,8 @@
+<map id="client::ircUser::getNick" name="client::ircUser::getNick">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="213,7,347,49"/>
+<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.html#a153e1d0693c3069839e04878844b431f" title="client::chatEntry::init" alt="" coords="209,75,351,101"/>
+<area shape="rect" id="node6" href="$d0/ddb/classclient_1_1cls_user_entry.html#a906da840f42f13d4a0f398c8c5ad6da6" title="client::clsUserEntry\l::clsUserEntry" alt="" coords="212,126,348,167"/>
+<area shape="rect" id="node7" href="$d0/ddb/classclient_1_1cls_user_entry.html#a878c280a93fabf2651880629103e1ef3" title="client::clsUserEntry\l::refresh" alt="" coords="212,191,348,233"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="401,5,535,46"/>
+<area shape="rect" id="node5" href="$d5/dfb/classclient_1_1chat_entry.html#a242327cb4a358fdbc182147d2fadf00c" title="Constructor not taking a time." alt="" coords="405,70,531,111"/>
+</map>

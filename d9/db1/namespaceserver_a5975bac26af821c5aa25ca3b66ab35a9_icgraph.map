@@ -1,0 +1,14 @@
+<map id="server::qts" name="server::qts">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="331,26,450,67"/>
+<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.html#a6b62de4b4dc3c1f7f0fe7c6f91c1cf05" title="Sends a chat message to a certain channel." alt="" coords="331,259,450,300"/>
+<area shape="rect" id="node10" href="$d1/d10/classserver_1_1irc_client.html#a2c1954be24f18aef7d8ec6a7a3e7f29c" title="Sends a message to the IRC server." alt="" coords="136,128,283,154"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="535,34,654,75"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="741,85,877,112"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="929,78,1047,119"/>
+<area shape="rect" id="node7" href="$d1/d48/classserver_1_1main_app.html#a022d0310199da514b250fec2541ada4a" title="Triggered when a UI client wants to send a chat message." alt="" coords="499,265,690,292"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="739,234,880,261"/>
+<area shape="rect" id="node9" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="963,234,1013,261"/>
+<area shape="rect" id="node11" href="$d1/d10/classserver_1_1irc_client.html#a31910635c17bd56be644084746653ba8" title="server::ircClient::\lsltConnected" alt="" coords="535,120,654,162"/>
+<area shape="rect" id="node12" href="$d1/d10/classserver_1_1irc_client.html#aef3233c03f42190f1c89b77c357e9f7f" title="Sets our own nickname." alt="" coords="331,194,450,235"/>
+<area shape="rect" id="node13" href="$d1/d48/classserver_1_1main_app.html#af498e3b109e1bc2b9f8e87b215efdb27" title="Triggered when a UI client wants to change the status." alt="" coords="508,196,681,238"/>
+</map>

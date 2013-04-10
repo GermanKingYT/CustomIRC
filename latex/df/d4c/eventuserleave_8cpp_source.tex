@@ -1,0 +1,26 @@
+\hypertarget{eventuserleave_8cpp}{\section{eventuserleave.\-cpp}
+\label{df/d4c/eventuserleave_8cpp}\index{C++/resources/events/eventuserleave.\-cpp@{C++/resources/events/eventuserleave.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{eventuserleave_8h}{eventuserleave.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }shared \{
+00004     \textcolor{keyword}{namespace }events \{
+00005 
+\hypertarget{eventuserleave_8cpp_source_l00006}{}\hyperlink{classshared_1_1events_1_1event_user_leave_a76851237caa9a3624141051a812eece6}{00006}         \hyperlink{classshared_1_1events_1_1event_user_leave_a76851237caa9a3624141051a812eece6}{eventUserLeave::eventUserLeave}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} userId)\{
+00007             \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType} = \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{EVENTTYPE\_USER\_LEFT};
+00008             this->\hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{addToData}(\textcolor{stringliteral}{"userId"}, userId);
+00009         \}
+00010 
+\hypertarget{eventuserleave_8cpp_source_l00011}{}\hyperlink{classshared_1_1events_1_1event_user_leave_a0e21c3c648f12950c674897b96e321c4}{00011}         \hyperlink{classshared_1_1events_1_1event_user_leave_a76851237caa9a3624141051a812eece6}{eventUserLeave::eventUserLeave}(QVariantMap data)
+00012             :\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(data)
+00013         \{ \}
+00014 
+\hypertarget{eventuserleave_8cpp_source_l00015}{}\hyperlink{classshared_1_1events_1_1event_user_leave_afb9cb12d52415109349d1469f1577353}{00015}         \textcolor{keywordtype}{int} \hyperlink{classshared_1_1events_1_1event_user_leave_afb9cb12d52415109349d1469f1577353}{eventUserLeave::getUserId}()\textcolor{keyword}{ const}\{
+00016             \textcolor{keywordflow}{return} this->\hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{getData}(\textcolor{stringliteral}{"userId"}).toInt();
+00017         \}
+00018 
+00019     \}
+00020 \}
+\end{DoxyCode}

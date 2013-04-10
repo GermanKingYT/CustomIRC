@@ -1,0 +1,8 @@
+<map id="shared::events::clsEvent::addToData" name="shared::events::clsEvent::addToData">
+<area shape="rect" id="node2" href="$d1/d68/classshared_1_1events_1_1event_chat.html#ae8e23aacd573c9d738fa092706012e98" title="eventChat constructor taking a userId and a message" alt="" coords="256,5,427,46"/>
+<area shape="rect" id="node3" href="$d6/dfe/classshared_1_1events_1_1event_server_message.html#ae12d1373b82828c26fe2e74439dd60eb" title="eventServerMessage constructor taking a message" alt="" coords="240,70,443,111"/>
+<area shape="rect" id="node4" href="$d5/de1/classshared_1_1events_1_1event_user_change_nick.html#af8377a977c01b8247ab744a190fe9a6b" title="eventUserChangeNick constructor taking only a userId" alt="" coords="228,135,455,177"/>
+<area shape="rect" id="node5" href="$d3/dcc/classshared_1_1events_1_1event_user_change_status.html#ac46b3eaa016315086bd75441ac1b7122" title="eventUserChangeStatus constructor taking only a userId" alt="" coords="216,201,467,242"/>
+<area shape="rect" id="node6" href="$dd/d05/classshared_1_1events_1_1event_user_join.html#ab486ae25fa5933ec647e5d19574d3f66" title="eventUserJoin constructor taking a userId and a message" alt="" coords="256,266,427,307"/>
+<area shape="rect" id="node7" href="$d9/d9f/classshared_1_1events_1_1event_user_leave.html#a76851237caa9a3624141051a812eece6" title="eventUserLeave constructor taking only a userId" alt="" coords="256,331,427,373"/>
+</map>

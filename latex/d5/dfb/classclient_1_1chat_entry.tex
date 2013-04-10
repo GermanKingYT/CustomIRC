@@ -1,0 +1,394 @@
+\hypertarget{classclient_1_1chat_entry}{\section{client\-:\-:chat\-Entry Class Reference}
+\label{d5/dfb/classclient_1_1chat_entry}\index{client\-::chat\-Entry@{client\-::chat\-Entry}}
+}
+
+
+Class that holds a chatmessage for U\-I.  
+
+
+
+
+{\ttfamily \#include $<$chatentry.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:chat\-Entry\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d3/d73/classclient_1_1chat_entry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:chat\-Entry\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{da/da6/classclient_1_1chat_entry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{chat\-Entry} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user, Q\-String \hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message}, int width, Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor not taking a time. \end{DoxyCompactList}\item 
+\hyperlink{classclient_1_1chat_entry_a0e3b3fa3e530a8ddfe86c2c714620dc3}{chat\-Entry} (\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$user, Q\-String \hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message}, int width, Q\-Time \hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{time\-Of\-Message}, Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor taking a time as argument. \end{DoxyCompactList}\item 
+\hyperlink{classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}{$\sim$chat\-Entry} ()
+\item 
+void \hyperlink{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{set\-User\-Width} (int new\-Width)
+\begin{DoxyCompactList}\small\item\em Used for setting the width of the nick label after initializing. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}{resize\-Event} (Q\-Resize\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{get\-Width} (Q\-Label $\ast$l) const 
+\item 
+int \hyperlink{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{get\-Height} (Q\-Label $\ast$l) const 
+\item 
+void \hyperlink{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{init} (Q\-Widget $\ast$parent, int width)
+\item 
+void \hyperlink{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{calculate\-Message\-Width} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::chat\-Entry $\ast$ \hyperlink{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{ui}
+\item 
+\hyperlink{classclient_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{name}
+\item 
+Q\-String \hyperlink{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{message}
+\item 
+Q\-Time \hyperlink{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{time\-Of\-Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that holds a chatmessage for U\-I. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{chatentry_8h_source_l00018}{18} of file \hyperlink{chatentry_8h_source}{chatentry.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!chat\-Entry@{chat\-Entry}}
+\index{chat\-Entry@{chat\-Entry}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{chat\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Entry\-::chat\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user, }
+\item[{Q\-String}]{message, }
+\item[{int}]{width, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d5/dfb/classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c}
+
+
+Constructor not taking a time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user that sent the message \\
+\hline
+{\em message} & The chat message itself \\
+\hline
+{\em width} & The width of the nick label \\
+\hline
+{\em parent} & The parent widget \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00009}{9} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_a242327cb4a358fdbc182147d2fadf00c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_a0e3b3fa3e530a8ddfe86c2c714620dc3}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!chat\-Entry@{chat\-Entry}}
+\index{chat\-Entry@{chat\-Entry}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{chat\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Entry\-::chat\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user, }
+\item[{Q\-String}]{message, }
+\item[{int}]{width, }
+\item[{Q\-Time}]{time\-Of\-Message, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d5/dfb/classclient_1_1chat_entry_a0e3b3fa3e530a8ddfe86c2c714620dc3}
+
+
+Constructor taking a time as argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user that sent the message \\
+\hline
+{\em message} & The chat message itself \\
+\hline
+{\em width} & The width of the nick label \\
+\hline
+{\em time\-Of\-Message} & The time at which the message was sent \\
+\hline
+{\em parent} & The parent widget \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00041}{41} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_a0e3b3fa3e530a8ddfe86c2c714620dc3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!$\sim$chat\-Entry@{$\sim$chat\-Entry}}
+\index{$\sim$chat\-Entry@{$\sim$chat\-Entry}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{$\sim$chat\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Entry\-::$\sim$chat\-Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/dfb/classclient_1_1chat_entry_ac85afd36a4a9efc6dc91905461f2e2e0}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00074}{74} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!calculate\-Message\-Width@{calculate\-Message\-Width}}
+\index{calculate\-Message\-Width@{calculate\-Message\-Width}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{calculate\-Message\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Entry\-::calculate\-Message\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00051}{51} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{d5/dfb/classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_ae663e1a715924f6743c7e9d235ad334b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!get\-Height@{get\-Height}}
+\index{get\-Height@{get\-Height}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::chat\-Entry\-::get\-Height (
+\begin{DoxyParamCaption}
+\item[{Q\-Label $\ast$}]{l}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00070}{70} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_aacb386fcc022798feb9dd02b43d56861_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!get\-Width@{get\-Width}}
+\index{get\-Width@{get\-Width}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{get\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::chat\-Entry\-::get\-Width (
+\begin{DoxyParamCaption}
+\item[{Q\-Label $\ast$}]{l}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00066}{66} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_a23b44a93f980e59387a289c9282b5f78_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!init@{init}}
+\index{init@{init}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Entry\-::init (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent, }
+\item[{int}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00019}{19} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{d5/dfb/classclient_1_1chat_entry_a153e1d0693c3069839e04878844b431f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!resize\-Event@{resize\-Event}}
+\index{resize\-Event@{resize\-Event}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{resize\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Entry\-::resize\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{d5/dfb/classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00085}{85} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_a853a6468432e8f44e66d335b9dc7ece9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!set\-User\-Width@{set\-User\-Width}}
+\index{set\-User\-Width@{set\-User\-Width}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{set\-User\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Entry\-::set\-User\-Width (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Width}
+\end{DoxyParamCaption}
+)}}\label{d5/dfb/classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6}
+
+
+Used for setting the width of the nick label after initializing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Width} & The new width \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatentry_8cpp_source_l00078}{78} of file \hyperlink{chatentry_8cpp_source}{chatentry.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dfb/classclient_1_1chat_entry_ac3d69f6791e2497c86fe99c068b832b6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!message@{message}}
+\index{message@{message}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::chat\-Entry\-::message\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_acfae1b7b634153673eae05866945cba8}
+
+
+Definition at line \hyperlink{chatentry_8h_source_l00056}{56} of file \hyperlink{chatentry_8h_source}{chatentry.\-h}.
+
+\hypertarget{classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!name@{name}}
+\index{name@{name}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User}$\ast$ client\-::chat\-Entry\-::name\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_a6e879b3384d8fc7ba149709a370e6d60}
+
+
+Definition at line \hyperlink{chatentry_8h_source_l00055}{55} of file \hyperlink{chatentry_8h_source}{chatentry.\-h}.
+
+\hypertarget{classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!time\-Of\-Message@{time\-Of\-Message}}
+\index{time\-Of\-Message@{time\-Of\-Message}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{time\-Of\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Time client\-::chat\-Entry\-::time\-Of\-Message\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_a935d9a9755f8c46eb97723ba296c2b30}
+
+
+Definition at line \hyperlink{chatentry_8h_source_l00062}{62} of file \hyperlink{chatentry_8h_source}{chatentry.\-h}.
+
+\hypertarget{classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}{\index{client\-::chat\-Entry@{client\-::chat\-Entry}!ui@{ui}}
+\index{ui@{ui}!client::chatEntry@{client\-::chat\-Entry}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::chat\-Entry$\ast$ client\-::chat\-Entry\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/dfb/classclient_1_1chat_entry_a46e4de005b1411b97653601b34810ff8}
+
+
+Definition at line \hyperlink{chatentry_8h_source_l00054}{54} of file \hyperlink{chatentry_8h_source}{chatentry.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{chatentry_8h}{chatentry.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{chatentry_8cpp}{chatentry.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,951 @@
+\contentsline {chapter}{\numberline {1}Todo List}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Namespace Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Namespace List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Class Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Class List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}File Index}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}File List}{9}{section.5.1}
+\contentsline {chapter}{\numberline {6}Namespace Documentation}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}client Namespace Reference}{11}{section.6.1}
+\contentsline {section}{\numberline {6.2}irc\discretionary {-}{}{}Codes Namespace Reference}{11}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Enumeration Type Documentation}{15}{subsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1.1}irc\discretionary {-}{}{}Code}{15}{subsubsection.6.2.1.1}
+\contentsline {section}{\numberline {6.3}K4\discretionary {-}{}{}U Namespace Reference}{25}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{25}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Enumeration Type Documentation}{25}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}json\discretionary {-}{}{}Commands}{25}{subsubsection.6.3.2.1}
+\contentsline {subsubsection}{\numberline {6.3.2.2}log\discretionary {-}{}{}Tags}{26}{subsubsection.6.3.2.2}
+\contentsline {subsection}{\numberline {6.3.3}Function Documentation}{26}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}endl}{26}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}operator$<$$<$}{27}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}operator$<$$<$}{28}{subsubsection.6.3.3.3}
+\contentsline {section}{\numberline {6.4}Package org}{28}{section.6.4}
+\contentsline {section}{\numberline {6.5}Package org.\discretionary {-}{}{}k4u}{28}{section.6.5}
+\contentsline {section}{\numberline {6.6}Package org.\discretionary {-}{}{}k4u.\discretionary {-}{}{}custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client}{28}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{29}{subsection.6.6.1}
+\contentsline {section}{\numberline {6.7}Package org.\discretionary {-}{}{}kde}{29}{section.6.7}
+\contentsline {section}{\numberline {6.8}Package org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas}{29}{section.6.8}
+\contentsline {section}{\numberline {6.9}Package org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}ministro}{29}{section.6.9}
+\contentsline {section}{\numberline {6.10}Package org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}origo}{29}{section.6.10}
+\contentsline {section}{\numberline {6.11}Qt\discretionary {-}{}{}Json Namespace Reference}{29}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{30}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}Enumeration Type Documentation}{30}{subsection.6.11.2}
+\contentsline {subsubsection}{\numberline {6.11.2.1}Json\discretionary {-}{}{}Token}{30}{subsubsection.6.11.2.1}
+\contentsline {subsection}{\numberline {6.11.3}Function Documentation}{30}{subsection.6.11.3}
+\contentsline {subsubsection}{\numberline {6.11.3.1}parse}{30}{subsubsection.6.11.3.1}
+\contentsline {subsubsection}{\numberline {6.11.3.2}parse}{31}{subsubsection.6.11.3.2}
+\contentsline {subsubsection}{\numberline {6.11.3.3}serialize}{31}{subsubsection.6.11.3.3}
+\contentsline {subsubsection}{\numberline {6.11.3.4}serialize}{31}{subsubsection.6.11.3.4}
+\contentsline {section}{\numberline {6.12}server Namespace Reference}{32}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Function Documentation}{33}{subsection.6.12.1}
+\contentsline {subsubsection}{\numberline {6.12.1.1}get\discretionary {-}{}{}Color}{33}{subsubsection.6.12.1.1}
+\contentsline {subsubsection}{\numberline {6.12.1.2}get\discretionary {-}{}{}Id}{33}{subsubsection.6.12.1.2}
+\contentsline {subsubsection}{\numberline {6.12.1.3}get\discretionary {-}{}{}Nick\discretionary {-}{}{}And\discretionary {-}{}{}Status}{33}{subsubsection.6.12.1.3}
+\contentsline {subsubsection}{\numberline {6.12.1.4}get\discretionary {-}{}{}Nick\discretionary {-}{}{}And\discretionary {-}{}{}Status\discretionary {-}{}{}From\discretionary {-}{}{}Id}{34}{subsubsection.6.12.1.4}
+\contentsline {subsubsection}{\numberline {6.12.1.5}in\discretionary {-}{}{}Command}{34}{subsubsection.6.12.1.5}
+\contentsline {subsubsection}{\numberline {6.12.1.6}operator$<$$<$}{35}{subsubsection.6.12.1.6}
+\contentsline {subsubsection}{\numberline {6.12.1.7}qts}{35}{subsubsection.6.12.1.7}
+\contentsline {section}{\numberline {6.13}shared Namespace Reference}{36}{section.6.13}
+\contentsline {subsection}{\numberline {6.13.1}Enumeration Type Documentation}{36}{subsection.6.13.1}
+\contentsline {subsubsection}{\numberline {6.13.1.1}level}{36}{subsubsection.6.13.1.1}
+\contentsline {section}{\numberline {6.14}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events Namespace Reference}{36}{section.6.14}
+\contentsline {subsection}{\numberline {6.14.1}Enumeration Type Documentation}{37}{subsection.6.14.1}
+\contentsline {subsubsection}{\numberline {6.14.1.1}event\discretionary {-}{}{}Types}{37}{subsubsection.6.14.1.1}
+\contentsline {section}{\numberline {6.15}Ui Namespace Reference}{37}{section.6.15}
+\contentsline {chapter}{\numberline {7}Class Documentation}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}org.\discretionary {-}{}{}k4u.\discretionary {-}{}{}custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client.\discretionary {-}{}{}Build\discretionary {-}{}{}Config Class Reference}{39}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{39}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Member Data Documentation}{39}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}D\discretionary {-}{}{}E\discretionary {-}{}{}B\discretionary {-}{}{}U\discretionary {-}{}{}G}{39}{subsubsection.7.1.2.1}
+\contentsline {section}{\numberline {7.2}client\discretionary {-}{}{}:\discretionary {-}{}{}:chat\discretionary {-}{}{}Box Class Reference}{40}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{42}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Member Enumeration Documentation}{42}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}widget\discretionary {-}{}{}Types}{42}{subsubsection.7.2.2.1}
+\contentsline {subsection}{\numberline {7.2.3}Constructor \& Destructor Documentation}{42}{subsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.3.1}chat\discretionary {-}{}{}Box}{42}{subsubsection.7.2.3.1}
+\contentsline {subsubsection}{\numberline {7.2.3.2}$\sim $chat\discretionary {-}{}{}Box}{42}{subsubsection.7.2.3.2}
+\contentsline {subsection}{\numberline {7.2.4}Member Function Documentation}{42}{subsection.7.2.4}
+\contentsline {subsubsection}{\numberline {7.2.4.1}add\discretionary {-}{}{}Chat}{42}{subsubsection.7.2.4.1}
+\contentsline {subsubsection}{\numberline {7.2.4.2}add\discretionary {-}{}{}Chat}{43}{subsubsection.7.2.4.2}
+\contentsline {subsubsection}{\numberline {7.2.4.3}add\discretionary {-}{}{}Message}{43}{subsubsection.7.2.4.3}
+\contentsline {subsubsection}{\numberline {7.2.4.4}add\discretionary {-}{}{}Message}{43}{subsubsection.7.2.4.4}
+\contentsline {subsubsection}{\numberline {7.2.4.5}add\discretionary {-}{}{}Message}{44}{subsubsection.7.2.4.5}
+\contentsline {subsubsection}{\numberline {7.2.4.6}add\discretionary {-}{}{}Message}{44}{subsubsection.7.2.4.6}
+\contentsline {subsubsection}{\numberline {7.2.4.7}add\discretionary {-}{}{}Message}{45}{subsubsection.7.2.4.7}
+\contentsline {subsubsection}{\numberline {7.2.4.8}set\discretionary {-}{}{}All\discretionary {-}{}{}User\discretionary {-}{}{}Name\discretionary {-}{}{}Size}{45}{subsubsection.7.2.4.8}
+\contentsline {subsection}{\numberline {7.2.5}Member Data Documentation}{45}{subsection.7.2.5}
+\contentsline {subsubsection}{\numberline {7.2.5.1}entries}{45}{subsubsection.7.2.5.1}
+\contentsline {subsubsection}{\numberline {7.2.5.2}ui}{45}{subsubsection.7.2.5.2}
+\contentsline {subsubsection}{\numberline {7.2.5.3}width\discretionary {-}{}{}Of\discretionary {-}{}{}Nick}{46}{subsubsection.7.2.5.3}
+\contentsline {section}{\numberline {7.3}client\discretionary {-}{}{}:\discretionary {-}{}{}:chat\discretionary {-}{}{}Entry Class Reference}{46}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{48}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Constructor \& Destructor Documentation}{48}{subsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.2.1}chat\discretionary {-}{}{}Entry}{48}{subsubsection.7.3.2.1}
+\contentsline {subsubsection}{\numberline {7.3.2.2}chat\discretionary {-}{}{}Entry}{49}{subsubsection.7.3.2.2}
+\contentsline {subsubsection}{\numberline {7.3.2.3}$\sim $chat\discretionary {-}{}{}Entry}{49}{subsubsection.7.3.2.3}
+\contentsline {subsection}{\numberline {7.3.3}Member Function Documentation}{49}{subsection.7.3.3}
+\contentsline {subsubsection}{\numberline {7.3.3.1}calculate\discretionary {-}{}{}Message\discretionary {-}{}{}Width}{49}{subsubsection.7.3.3.1}
+\contentsline {subsubsection}{\numberline {7.3.3.2}get\discretionary {-}{}{}Height}{50}{subsubsection.7.3.3.2}
+\contentsline {subsubsection}{\numberline {7.3.3.3}get\discretionary {-}{}{}Width}{50}{subsubsection.7.3.3.3}
+\contentsline {subsubsection}{\numberline {7.3.3.4}init}{51}{subsubsection.7.3.3.4}
+\contentsline {subsubsection}{\numberline {7.3.3.5}resize\discretionary {-}{}{}Event}{51}{subsubsection.7.3.3.5}
+\contentsline {subsubsection}{\numberline {7.3.3.6}set\discretionary {-}{}{}User\discretionary {-}{}{}Width}{51}{subsubsection.7.3.3.6}
+\contentsline {subsection}{\numberline {7.3.4}Member Data Documentation}{52}{subsection.7.3.4}
+\contentsline {subsubsection}{\numberline {7.3.4.1}message}{52}{subsubsection.7.3.4.1}
+\contentsline {subsubsection}{\numberline {7.3.4.2}name}{52}{subsubsection.7.3.4.2}
+\contentsline {subsubsection}{\numberline {7.3.4.3}time\discretionary {-}{}{}Of\discretionary {-}{}{}Message}{52}{subsubsection.7.3.4.3}
+\contentsline {subsubsection}{\numberline {7.3.4.4}ui}{52}{subsubsection.7.3.4.4}
+\contentsline {section}{\numberline {7.4}client\discretionary {-}{}{}:\discretionary {-}{}{}:chat\discretionary {-}{}{}Input Class Reference}{53}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{54}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Constructor \& Destructor Documentation}{54}{subsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.2.1}chat\discretionary {-}{}{}Input}{54}{subsubsection.7.4.2.1}
+\contentsline {subsection}{\numberline {7.4.3}Member Function Documentation}{54}{subsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.3.1}check\discretionary {-}{}{}For\discretionary {-}{}{}Command}{54}{subsubsection.7.4.3.1}
+\contentsline {subsubsection}{\numberline {7.4.3.2}command\discretionary {-}{}{}Given}{55}{subsubsection.7.4.3.2}
+\contentsline {subsubsection}{\numberline {7.4.3.3}key\discretionary {-}{}{}Press\discretionary {-}{}{}Event}{55}{subsubsection.7.4.3.3}
+\contentsline {subsubsection}{\numberline {7.4.3.4}send\discretionary {-}{}{}Chat}{56}{subsubsection.7.4.3.4}
+\contentsline {section}{\numberline {7.5}client\discretionary {-}{}{}:\discretionary {-}{}{}:chat\discretionary {-}{}{}Notification Class Reference}{56}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{59}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}Constructor \& Destructor Documentation}{59}{subsection.7.5.2}
+\contentsline {subsubsection}{\numberline {7.5.2.1}chat\discretionary {-}{}{}Notification}{59}{subsubsection.7.5.2.1}
+\contentsline {subsubsection}{\numberline {7.5.2.2}chat\discretionary {-}{}{}Notification}{59}{subsubsection.7.5.2.2}
+\contentsline {subsubsection}{\numberline {7.5.2.3}$\sim $chat\discretionary {-}{}{}Notification}{60}{subsubsection.7.5.2.3}
+\contentsline {subsection}{\numberline {7.5.3}Member Function Documentation}{60}{subsection.7.5.3}
+\contentsline {subsubsection}{\numberline {7.5.3.1}calculate\discretionary {-}{}{}Message\discretionary {-}{}{}Width}{60}{subsubsection.7.5.3.1}
+\contentsline {subsubsection}{\numberline {7.5.3.2}get\discretionary {-}{}{}Height}{61}{subsubsection.7.5.3.2}
+\contentsline {subsubsection}{\numberline {7.5.3.3}get\discretionary {-}{}{}Width}{61}{subsubsection.7.5.3.3}
+\contentsline {subsubsection}{\numberline {7.5.3.4}resize\discretionary {-}{}{}Event}{61}{subsubsection.7.5.3.4}
+\contentsline {subsection}{\numberline {7.5.4}Member Data Documentation}{62}{subsection.7.5.4}
+\contentsline {subsubsection}{\numberline {7.5.4.1}message}{62}{subsubsection.7.5.4.1}
+\contentsline {subsubsection}{\numberline {7.5.4.2}time\discretionary {-}{}{}Of\discretionary {-}{}{}Message}{62}{subsubsection.7.5.4.2}
+\contentsline {subsubsection}{\numberline {7.5.4.3}ui}{62}{subsubsection.7.5.4.3}
+\contentsline {section}{\numberline {7.6}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Event Class Reference}{62}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{64}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2}Constructor \& Destructor Documentation}{64}{subsection.7.6.2}
+\contentsline {subsubsection}{\numberline {7.6.2.1}cls\discretionary {-}{}{}Event}{64}{subsubsection.7.6.2.1}
+\contentsline {subsubsection}{\numberline {7.6.2.2}cls\discretionary {-}{}{}Event}{64}{subsubsection.7.6.2.2}
+\contentsline {subsection}{\numberline {7.6.3}Member Function Documentation}{65}{subsection.7.6.3}
+\contentsline {subsubsection}{\numberline {7.6.3.1}add\discretionary {-}{}{}To\discretionary {-}{}{}Data}{65}{subsubsection.7.6.3.1}
+\contentsline {subsubsection}{\numberline {7.6.3.2}get\discretionary {-}{}{}Data}{66}{subsubsection.7.6.3.2}
+\contentsline {subsubsection}{\numberline {7.6.3.3}get\discretionary {-}{}{}Event\discretionary {-}{}{}Type}{66}{subsubsection.7.6.3.3}
+\contentsline {subsubsection}{\numberline {7.6.3.4}get\discretionary {-}{}{}Time}{67}{subsubsection.7.6.3.4}
+\contentsline {subsubsection}{\numberline {7.6.3.5}get\discretionary {-}{}{}Type}{67}{subsubsection.7.6.3.5}
+\contentsline {subsubsection}{\numberline {7.6.3.6}set\discretionary {-}{}{}Event\discretionary {-}{}{}Type}{67}{subsubsection.7.6.3.6}
+\contentsline {subsubsection}{\numberline {7.6.3.7}to\discretionary {-}{}{}Variant}{68}{subsubsection.7.6.3.7}
+\contentsline {subsection}{\numberline {7.6.4}Member Data Documentation}{68}{subsection.7.6.4}
+\contentsline {subsubsection}{\numberline {7.6.4.1}data}{69}{subsubsection.7.6.4.1}
+\contentsline {subsubsection}{\numberline {7.6.4.2}log}{69}{subsubsection.7.6.4.2}
+\contentsline {subsubsection}{\numberline {7.6.4.3}our\discretionary {-}{}{}Type}{69}{subsubsection.7.6.4.3}
+\contentsline {subsubsection}{\numberline {7.6.4.4}time\discretionary {-}{}{}Of\discretionary {-}{}{}Event}{69}{subsubsection.7.6.4.4}
+\contentsline {section}{\numberline {7.7}K4\discretionary {-}{}{}U\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Log Class Reference}{69}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{70}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2}Constructor \& Destructor Documentation}{70}{subsection.7.7.2}
+\contentsline {subsubsection}{\numberline {7.7.2.1}cls\discretionary {-}{}{}Log}{70}{subsubsection.7.7.2.1}
+\contentsline {subsection}{\numberline {7.7.3}Member Function Documentation}{71}{subsection.7.7.3}
+\contentsline {subsubsection}{\numberline {7.7.3.1}do\discretionary {-}{}{}Endl}{71}{subsubsection.7.7.3.1}
+\contentsline {subsubsection}{\numberline {7.7.3.2}get\discretionary {-}{}{}Tag}{72}{subsubsection.7.7.3.2}
+\contentsline {subsubsection}{\numberline {7.7.3.3}operator$<$$<$}{73}{subsubsection.7.7.3.3}
+\contentsline {subsubsection}{\numberline {7.7.3.4}operator$<$$<$}{73}{subsubsection.7.7.3.4}
+\contentsline {subsubsection}{\numberline {7.7.3.5}operator$<$$<$}{73}{subsubsection.7.7.3.5}
+\contentsline {subsubsection}{\numberline {7.7.3.6}operator$<$$<$}{73}{subsubsection.7.7.3.6}
+\contentsline {subsubsection}{\numberline {7.7.3.7}operator$<$$<$}{73}{subsubsection.7.7.3.7}
+\contentsline {subsubsection}{\numberline {7.7.3.8}operator$<$$<$}{74}{subsubsection.7.7.3.8}
+\contentsline {subsubsection}{\numberline {7.7.3.9}operator$<$$<$}{74}{subsubsection.7.7.3.9}
+\contentsline {subsubsection}{\numberline {7.7.3.10}operator$<$$<$}{74}{subsubsection.7.7.3.10}
+\contentsline {subsubsection}{\numberline {7.7.3.11}operator$<$$<$}{74}{subsubsection.7.7.3.11}
+\contentsline {subsubsection}{\numberline {7.7.3.12}operator$<$$<$}{74}{subsubsection.7.7.3.12}
+\contentsline {subsubsection}{\numberline {7.7.3.13}operator$<$$<$}{74}{subsubsection.7.7.3.13}
+\contentsline {subsubsection}{\numberline {7.7.3.14}operator$<$$<$}{75}{subsubsection.7.7.3.14}
+\contentsline {subsubsection}{\numberline {7.7.3.15}operator$<$$<$}{75}{subsubsection.7.7.3.15}
+\contentsline {subsubsection}{\numberline {7.7.3.16}prefix}{75}{subsubsection.7.7.3.16}
+\contentsline {subsubsection}{\numberline {7.7.3.17}set\discretionary {-}{}{}Prefix}{75}{subsubsection.7.7.3.17}
+\contentsline {subsection}{\numberline {7.7.4}Member Data Documentation}{76}{subsection.7.7.4}
+\contentsline {subsubsection}{\numberline {7.7.4.1}is\discretionary {-}{}{}First}{76}{subsubsection.7.7.4.1}
+\contentsline {subsubsection}{\numberline {7.7.4.2}prf}{76}{subsubsection.7.7.4.2}
+\contentsline {subsubsection}{\numberline {7.7.4.3}tag}{76}{subsubsection.7.7.4.3}
+\contentsline {section}{\numberline {7.8}client\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Notify Class Reference}{76}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{77}{subsection.7.8.1}
+\contentsline {subsection}{\numberline {7.8.2}Constructor \& Destructor Documentation}{78}{subsection.7.8.2}
+\contentsline {subsubsection}{\numberline {7.8.2.1}cls\discretionary {-}{}{}Notify}{78}{subsubsection.7.8.2.1}
+\contentsline {subsection}{\numberline {7.8.3}Member Function Documentation}{78}{subsection.7.8.3}
+\contentsline {subsubsection}{\numberline {7.8.3.1}show}{78}{subsubsection.7.8.3.1}
+\contentsline {section}{\numberline {7.9}client\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Server\discretionary {-}{}{}Conn Class Reference}{78}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{82}{subsection.7.9.1}
+\contentsline {subsection}{\numberline {7.9.2}Constructor \& Destructor Documentation}{82}{subsection.7.9.2}
+\contentsline {subsubsection}{\numberline {7.9.2.1}cls\discretionary {-}{}{}Server\discretionary {-}{}{}Conn}{82}{subsubsection.7.9.2.1}
+\contentsline {subsection}{\numberline {7.9.3}Member Function Documentation}{83}{subsection.7.9.3}
+\contentsline {subsubsection}{\numberline {7.9.3.1}chat\discretionary {-}{}{}Received}{83}{subsubsection.7.9.3.1}
+\contentsline {subsubsection}{\numberline {7.9.3.2}check\discretionary {-}{}{}For\discretionary {-}{}{}Json\discretionary {-}{}{}Command}{83}{subsubsection.7.9.3.2}
+\contentsline {subsubsection}{\numberline {7.9.3.3}connected}{84}{subsubsection.7.9.3.3}
+\contentsline {subsubsection}{\numberline {7.9.3.4}connect\discretionary {-}{}{}Timeout}{84}{subsubsection.7.9.3.4}
+\contentsline {subsubsection}{\numberline {7.9.3.5}disconnected}{85}{subsubsection.7.9.3.5}
+\contentsline {subsubsection}{\numberline {7.9.3.6}do\discretionary {-}{}{}Connect}{85}{subsubsection.7.9.3.6}
+\contentsline {subsubsection}{\numberline {7.9.3.7}handle\discretionary {-}{}{}Completed\discretionary {-}{}{}Query}{86}{subsubsection.7.9.3.7}
+\contentsline {subsubsection}{\numberline {7.9.3.8}handle\discretionary {-}{}{}Event\discretionary {-}{}{}Received}{86}{subsubsection.7.9.3.8}
+\contentsline {subsubsection}{\numberline {7.9.3.9}handle\discretionary {-}{}{}Event\discretionary {-}{}{}Request}{87}{subsubsection.7.9.3.9}
+\contentsline {subsubsection}{\numberline {7.9.3.10}handle\discretionary {-}{}{}Own\discretionary {-}{}{}User\discretionary {-}{}{}Change}{88}{subsubsection.7.9.3.10}
+\contentsline {subsubsection}{\numberline {7.9.3.11}read\discretionary {-}{}{}Data}{89}{subsubsection.7.9.3.11}
+\contentsline {subsubsection}{\numberline {7.9.3.12}send\discretionary {-}{}{}Command}{90}{subsubsection.7.9.3.12}
+\contentsline {subsubsection}{\numberline {7.9.3.13}server\discretionary {-}{}{}Message\discretionary {-}{}{}Received}{91}{subsubsection.7.9.3.13}
+\contentsline {subsubsection}{\numberline {7.9.3.14}sgn\discretionary {-}{}{}Connect\discretionary {-}{}{}Timeout}{91}{subsubsection.7.9.3.14}
+\contentsline {subsubsection}{\numberline {7.9.3.15}srv\discretionary {-}{}{}Connected}{91}{subsubsection.7.9.3.15}
+\contentsline {subsubsection}{\numberline {7.9.3.16}srv\discretionary {-}{}{}Disconnected}{92}{subsubsection.7.9.3.16}
+\contentsline {subsubsection}{\numberline {7.9.3.17}user\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{92}{subsubsection.7.9.3.17}
+\contentsline {subsubsection}{\numberline {7.9.3.18}user\discretionary {-}{}{}Enter}{93}{subsubsection.7.9.3.18}
+\contentsline {subsubsection}{\numberline {7.9.3.19}user\discretionary {-}{}{}Leave}{93}{subsubsection.7.9.3.19}
+\contentsline {subsubsection}{\numberline {7.9.3.20}user\discretionary {-}{}{}Query\discretionary {-}{}{}Completed}{93}{subsubsection.7.9.3.20}
+\contentsline {subsubsection}{\numberline {7.9.3.21}user\discretionary {-}{}{}Status\discretionary {-}{}{}Change}{94}{subsubsection.7.9.3.21}
+\contentsline {subsection}{\numberline {7.9.4}Member Data Documentation}{94}{subsection.7.9.4}
+\contentsline {subsubsection}{\numberline {7.9.4.1}buffer}{94}{subsubsection.7.9.4.1}
+\contentsline {subsubsection}{\numberline {7.9.4.2}connect\discretionary {-}{}{}Timer}{94}{subsubsection.7.9.4.2}
+\contentsline {subsubsection}{\numberline {7.9.4.3}depth}{94}{subsubsection.7.9.4.3}
+\contentsline {subsubsection}{\numberline {7.9.4.4}host\discretionary {-}{}{}Name}{94}{subsubsection.7.9.4.4}
+\contentsline {subsubsection}{\numberline {7.9.4.5}is\discretionary {-}{}{}Connected}{94}{subsubsection.7.9.4.5}
+\contentsline {subsubsection}{\numberline {7.9.4.6}is\discretionary {-}{}{}Connecting}{95}{subsubsection.7.9.4.6}
+\contentsline {subsubsection}{\numberline {7.9.4.7}log}{95}{subsubsection.7.9.4.7}
+\contentsline {subsubsection}{\numberline {7.9.4.8}port}{95}{subsubsection.7.9.4.8}
+\contentsline {subsubsection}{\numberline {7.9.4.9}sock}{95}{subsubsection.7.9.4.9}
+\contentsline {section}{\numberline {7.10}client\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Settings Class Reference}{95}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{96}{subsection.7.10.1}
+\contentsline {subsection}{\numberline {7.10.2}Constructor \& Destructor Documentation}{96}{subsection.7.10.2}
+\contentsline {subsubsection}{\numberline {7.10.2.1}cls\discretionary {-}{}{}Settings}{96}{subsubsection.7.10.2.1}
+\contentsline {subsection}{\numberline {7.10.3}Member Function Documentation}{96}{subsection.7.10.3}
+\contentsline {subsubsection}{\numberline {7.10.3.1}get\discretionary {-}{}{}Port}{96}{subsubsection.7.10.3.1}
+\contentsline {subsubsection}{\numberline {7.10.3.2}get\discretionary {-}{}{}Server}{97}{subsubsection.7.10.3.2}
+\contentsline {subsubsection}{\numberline {7.10.3.3}read\discretionary {-}{}{}Server}{97}{subsubsection.7.10.3.3}
+\contentsline {subsection}{\numberline {7.10.4}Member Data Documentation}{97}{subsection.7.10.4}
+\contentsline {subsubsection}{\numberline {7.10.4.1}port}{98}{subsubsection.7.10.4.1}
+\contentsline {subsubsection}{\numberline {7.10.4.2}server}{98}{subsubsection.7.10.4.2}
+\contentsline {section}{\numberline {7.11}server\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}Settings Class Reference}{98}{section.7.11}
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{100}{subsection.7.11.1}
+\contentsline {subsection}{\numberline {7.11.2}Constructor \& Destructor Documentation}{100}{subsection.7.11.2}
+\contentsline {subsubsection}{\numberline {7.11.2.1}cls\discretionary {-}{}{}Settings}{100}{subsubsection.7.11.2.1}
+\contentsline {subsection}{\numberline {7.11.3}Member Function Documentation}{101}{subsection.7.11.3}
+\contentsline {subsubsection}{\numberline {7.11.3.1}get\discretionary {-}{}{}Channel}{101}{subsubsection.7.11.3.1}
+\contentsline {subsubsection}{\numberline {7.11.3.2}get\discretionary {-}{}{}Listening\discretionary {-}{}{}Port}{101}{subsubsection.7.11.3.2}
+\contentsline {subsubsection}{\numberline {7.11.3.3}get\discretionary {-}{}{}Own\discretionary {-}{}{}User}{102}{subsubsection.7.11.3.3}
+\contentsline {subsubsection}{\numberline {7.11.3.4}get\discretionary {-}{}{}Server}{102}{subsubsection.7.11.3.4}
+\contentsline {subsubsection}{\numberline {7.11.3.5}get\discretionary {-}{}{}User\discretionary {-}{}{}Name}{103}{subsubsection.7.11.3.5}
+\contentsline {subsubsection}{\numberline {7.11.3.6}get\discretionary {-}{}{}Users}{103}{subsubsection.7.11.3.6}
+\contentsline {subsubsection}{\numberline {7.11.3.7}read\discretionary {-}{}{}Server}{104}{subsubsection.7.11.3.7}
+\contentsline {subsubsection}{\numberline {7.11.3.8}read\discretionary {-}{}{}Ui\discretionary {-}{}{}Settings}{104}{subsubsection.7.11.3.8}
+\contentsline {subsubsection}{\numberline {7.11.3.9}read\discretionary {-}{}{}User\discretionary {-}{}{}Info}{105}{subsubsection.7.11.3.9}
+\contentsline {subsubsection}{\numberline {7.11.3.10}read\discretionary {-}{}{}Users}{105}{subsubsection.7.11.3.10}
+\contentsline {subsection}{\numberline {7.11.4}Member Data Documentation}{106}{subsection.7.11.4}
+\contentsline {subsubsection}{\numberline {7.11.4.1}channel}{106}{subsubsection.7.11.4.1}
+\contentsline {subsubsection}{\numberline {7.11.4.2}listening\discretionary {-}{}{}Port}{106}{subsubsection.7.11.4.2}
+\contentsline {subsubsection}{\numberline {7.11.4.3}own\discretionary {-}{}{}User}{106}{subsubsection.7.11.4.3}
+\contentsline {subsubsection}{\numberline {7.11.4.4}server}{106}{subsubsection.7.11.4.4}
+\contentsline {subsubsection}{\numberline {7.11.4.5}users}{107}{subsubsection.7.11.4.5}
+\contentsline {section}{\numberline {7.12}client\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}User\discretionary {-}{}{}Entry Class Reference}{107}{section.7.12}
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{109}{subsection.7.12.1}
+\contentsline {subsection}{\numberline {7.12.2}Constructor \& Destructor Documentation}{109}{subsection.7.12.2}
+\contentsline {subsubsection}{\numberline {7.12.2.1}cls\discretionary {-}{}{}User\discretionary {-}{}{}Entry}{109}{subsubsection.7.12.2.1}
+\contentsline {subsubsection}{\numberline {7.12.2.2}$\sim $cls\discretionary {-}{}{}User\discretionary {-}{}{}Entry}{109}{subsubsection.7.12.2.2}
+\contentsline {subsection}{\numberline {7.12.3}Member Function Documentation}{109}{subsection.7.12.3}
+\contentsline {subsubsection}{\numberline {7.12.3.1}icon\discretionary {-}{}{}Changed}{109}{subsubsection.7.12.3.1}
+\contentsline {subsubsection}{\numberline {7.12.3.2}refresh}{110}{subsubsection.7.12.3.2}
+\contentsline {subsection}{\numberline {7.12.4}Member Data Documentation}{110}{subsection.7.12.4}
+\contentsline {subsubsection}{\numberline {7.12.4.1}ui}{111}{subsubsection.7.12.4.1}
+\contentsline {subsubsection}{\numberline {7.12.4.2}user}{111}{subsubsection.7.12.4.2}
+\contentsline {section}{\numberline {7.13}client\discretionary {-}{}{}:\discretionary {-}{}{}:cls\discretionary {-}{}{}User\discretionary {-}{}{}List Class Reference}{111}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{113}{subsection.7.13.1}
+\contentsline {subsection}{\numberline {7.13.2}Constructor \& Destructor Documentation}{113}{subsection.7.13.2}
+\contentsline {subsubsection}{\numberline {7.13.2.1}cls\discretionary {-}{}{}User\discretionary {-}{}{}List}{113}{subsubsection.7.13.2.1}
+\contentsline {subsubsection}{\numberline {7.13.2.2}$\sim $cls\discretionary {-}{}{}User\discretionary {-}{}{}List}{113}{subsubsection.7.13.2.2}
+\contentsline {subsection}{\numberline {7.13.3}Member Function Documentation}{113}{subsection.7.13.3}
+\contentsline {subsubsection}{\numberline {7.13.3.1}add\discretionary {-}{}{}User}{113}{subsubsection.7.13.3.1}
+\contentsline {subsubsection}{\numberline {7.13.3.2}clear}{113}{subsubsection.7.13.3.2}
+\contentsline {subsubsection}{\numberline {7.13.3.3}refresh\discretionary {-}{}{}User}{114}{subsubsection.7.13.3.3}
+\contentsline {subsubsection}{\numberline {7.13.3.4}remove\discretionary {-}{}{}User}{114}{subsubsection.7.13.3.4}
+\contentsline {subsubsection}{\numberline {7.13.3.5}setup\discretionary {-}{}{}Ui}{114}{subsubsection.7.13.3.5}
+\contentsline {subsection}{\numberline {7.13.4}Member Data Documentation}{115}{subsection.7.13.4}
+\contentsline {subsubsection}{\numberline {7.13.4.1}users}{115}{subsubsection.7.13.4.1}
+\contentsline {subsubsection}{\numberline {7.13.4.2}vertical\discretionary {-}{}{}Layout}{115}{subsubsection.7.13.4.2}
+\contentsline {subsubsection}{\numberline {7.13.4.3}vertical\discretionary {-}{}{}Spacer}{115}{subsubsection.7.13.4.3}
+\contentsline {section}{\numberline {7.14}client\discretionary {-}{}{}:\discretionary {-}{}{}:chat\discretionary {-}{}{}Box\discretionary {-}{}{}:\discretionary {-}{}{}:content Struct Reference}{115}{section.7.14}
+\contentsline {subsection}{\numberline {7.14.1}Detailed Description}{115}{subsection.7.14.1}
+\contentsline {subsection}{\numberline {7.14.2}Member Data Documentation}{115}{subsection.7.14.2}
+\contentsline {subsubsection}{\numberline {7.14.2.1}type}{115}{subsubsection.7.14.2.1}
+\contentsline {subsubsection}{\numberline {7.14.2.2}widget}{116}{subsubsection.7.14.2.2}
+\contentsline {section}{\numberline {7.15}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}Chat Class Reference}{116}{section.7.15}
+\contentsline {subsection}{\numberline {7.15.1}Detailed Description}{118}{subsection.7.15.1}
+\contentsline {subsection}{\numberline {7.15.2}Constructor \& Destructor Documentation}{118}{subsection.7.15.2}
+\contentsline {subsubsection}{\numberline {7.15.2.1}event\discretionary {-}{}{}Chat}{118}{subsubsection.7.15.2.1}
+\contentsline {subsubsection}{\numberline {7.15.2.2}event\discretionary {-}{}{}Chat}{118}{subsubsection.7.15.2.2}
+\contentsline {subsection}{\numberline {7.15.3}Member Function Documentation}{118}{subsection.7.15.3}
+\contentsline {subsubsection}{\numberline {7.15.3.1}get\discretionary {-}{}{}Message}{119}{subsubsection.7.15.3.1}
+\contentsline {subsubsection}{\numberline {7.15.3.2}get\discretionary {-}{}{}User}{119}{subsubsection.7.15.3.2}
+\contentsline {section}{\numberline {7.16}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}Server\discretionary {-}{}{}Message Class Reference}{120}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Detailed Description}{122}{subsection.7.16.1}
+\contentsline {subsection}{\numberline {7.16.2}Constructor \& Destructor Documentation}{122}{subsection.7.16.2}
+\contentsline {subsubsection}{\numberline {7.16.2.1}event\discretionary {-}{}{}Server\discretionary {-}{}{}Message}{122}{subsubsection.7.16.2.1}
+\contentsline {subsubsection}{\numberline {7.16.2.2}event\discretionary {-}{}{}Server\discretionary {-}{}{}Message}{122}{subsubsection.7.16.2.2}
+\contentsline {subsection}{\numberline {7.16.3}Member Function Documentation}{122}{subsection.7.16.3}
+\contentsline {subsubsection}{\numberline {7.16.3.1}get\discretionary {-}{}{}Level}{123}{subsubsection.7.16.3.1}
+\contentsline {subsubsection}{\numberline {7.16.3.2}get\discretionary {-}{}{}Message}{123}{subsubsection.7.16.3.2}
+\contentsline {section}{\numberline {7.17}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Nick Class Reference}{124}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Detailed Description}{127}{subsection.7.17.1}
+\contentsline {subsection}{\numberline {7.17.2}Constructor \& Destructor Documentation}{127}{subsection.7.17.2}
+\contentsline {subsubsection}{\numberline {7.17.2.1}event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{127}{subsubsection.7.17.2.1}
+\contentsline {subsubsection}{\numberline {7.17.2.2}event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{127}{subsubsection.7.17.2.2}
+\contentsline {subsection}{\numberline {7.17.3}Member Function Documentation}{128}{subsection.7.17.3}
+\contentsline {subsubsection}{\numberline {7.17.3.1}get\discretionary {-}{}{}New\discretionary {-}{}{}Nick}{128}{subsubsection.7.17.3.1}
+\contentsline {subsubsection}{\numberline {7.17.3.2}get\discretionary {-}{}{}Old\discretionary {-}{}{}Nick}{128}{subsubsection.7.17.3.2}
+\contentsline {subsubsection}{\numberline {7.17.3.3}get\discretionary {-}{}{}User\discretionary {-}{}{}Id}{128}{subsubsection.7.17.3.3}
+\contentsline {section}{\numberline {7.18}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Status Class Reference}{129}{section.7.18}
+\contentsline {subsection}{\numberline {7.18.1}Detailed Description}{132}{subsection.7.18.1}
+\contentsline {subsection}{\numberline {7.18.2}Constructor \& Destructor Documentation}{132}{subsection.7.18.2}
+\contentsline {subsubsection}{\numberline {7.18.2.1}event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Status}{132}{subsubsection.7.18.2.1}
+\contentsline {subsubsection}{\numberline {7.18.2.2}event\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Status}{132}{subsubsection.7.18.2.2}
+\contentsline {subsection}{\numberline {7.18.3}Member Function Documentation}{133}{subsection.7.18.3}
+\contentsline {subsubsection}{\numberline {7.18.3.1}get\discretionary {-}{}{}New\discretionary {-}{}{}Status}{133}{subsubsection.7.18.3.1}
+\contentsline {subsubsection}{\numberline {7.18.3.2}get\discretionary {-}{}{}Old\discretionary {-}{}{}Status}{133}{subsubsection.7.18.3.2}
+\contentsline {subsubsection}{\numberline {7.18.3.3}get\discretionary {-}{}{}User\discretionary {-}{}{}Id}{133}{subsubsection.7.18.3.3}
+\contentsline {section}{\numberline {7.19}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}User\discretionary {-}{}{}Join Class Reference}{134}{section.7.19}
+\contentsline {subsection}{\numberline {7.19.1}Detailed Description}{136}{subsection.7.19.1}
+\contentsline {subsection}{\numberline {7.19.2}Constructor \& Destructor Documentation}{136}{subsection.7.19.2}
+\contentsline {subsubsection}{\numberline {7.19.2.1}event\discretionary {-}{}{}User\discretionary {-}{}{}Join}{136}{subsubsection.7.19.2.1}
+\contentsline {subsubsection}{\numberline {7.19.2.2}event\discretionary {-}{}{}User\discretionary {-}{}{}Join}{136}{subsubsection.7.19.2.2}
+\contentsline {subsection}{\numberline {7.19.3}Member Function Documentation}{136}{subsection.7.19.3}
+\contentsline {subsubsection}{\numberline {7.19.3.1}get\discretionary {-}{}{}User}{137}{subsubsection.7.19.3.1}
+\contentsline {subsubsection}{\numberline {7.19.3.2}get\discretionary {-}{}{}User\discretionary {-}{}{}Id}{137}{subsubsection.7.19.3.2}
+\contentsline {section}{\numberline {7.20}shared\discretionary {-}{}{}:\discretionary {-}{}{}:events\discretionary {-}{}{}:\discretionary {-}{}{}:event\discretionary {-}{}{}User\discretionary {-}{}{}Leave Class Reference}{138}{section.7.20}
+\contentsline {subsection}{\numberline {7.20.1}Detailed Description}{140}{subsection.7.20.1}
+\contentsline {subsection}{\numberline {7.20.2}Constructor \& Destructor Documentation}{140}{subsection.7.20.2}
+\contentsline {subsubsection}{\numberline {7.20.2.1}event\discretionary {-}{}{}User\discretionary {-}{}{}Leave}{140}{subsubsection.7.20.2.1}
+\contentsline {subsubsection}{\numberline {7.20.2.2}event\discretionary {-}{}{}User\discretionary {-}{}{}Leave}{140}{subsubsection.7.20.2.2}
+\contentsline {subsection}{\numberline {7.20.3}Member Function Documentation}{140}{subsection.7.20.3}
+\contentsline {subsubsection}{\numberline {7.20.3.1}get\discretionary {-}{}{}User\discretionary {-}{}{}Id}{140}{subsubsection.7.20.3.1}
+\contentsline {section}{\numberline {7.21}org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}ministro.\discretionary {-}{}{}I\discretionary {-}{}{}Ministro Interface Reference}{142}{section.7.21}
+\contentsline {subsection}{\numberline {7.21.1}Detailed Description}{143}{subsection.7.21.1}
+\contentsline {subsection}{\numberline {7.21.2}Member Function Documentation}{143}{subsection.7.21.2}
+\contentsline {subsubsection}{\numberline {7.21.2.1}request\discretionary {-}{}{}Loader}{143}{subsubsection.7.21.2.1}
+\contentsline {section}{\numberline {7.22}org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}ministro.\discretionary {-}{}{}I\discretionary {-}{}{}Ministro\discretionary {-}{}{}Callback Interface Reference}{144}{section.7.22}
+\contentsline {subsection}{\numberline {7.22.1}Detailed Description}{145}{subsection.7.22.1}
+\contentsline {subsection}{\numberline {7.22.2}Member Function Documentation}{145}{subsection.7.22.2}
+\contentsline {subsubsection}{\numberline {7.22.2.1}loader\discretionary {-}{}{}Ready}{145}{subsubsection.7.22.2.1}
+\contentsline {section}{\numberline {7.23}server\discretionary {-}{}{}:\discretionary {-}{}{}:irc\discretionary {-}{}{}Client Class Reference}{146}{section.7.23}
+\contentsline {subsection}{\numberline {7.23.1}Detailed Description}{150}{subsection.7.23.1}
+\contentsline {subsection}{\numberline {7.23.2}Constructor \& Destructor Documentation}{151}{subsection.7.23.2}
+\contentsline {subsubsection}{\numberline {7.23.2.1}irc\discretionary {-}{}{}Client}{151}{subsubsection.7.23.2.1}
+\contentsline {subsubsection}{\numberline {7.23.2.2}$\sim $irc\discretionary {-}{}{}Client}{151}{subsubsection.7.23.2.2}
+\contentsline {subsection}{\numberline {7.23.3}Member Function Documentation}{151}{subsection.7.23.3}
+\contentsline {subsubsection}{\numberline {7.23.3.1}chat\discretionary {-}{}{}Received}{151}{subsubsection.7.23.3.1}
+\contentsline {subsubsection}{\numberline {7.23.3.2}check\discretionary {-}{}{}For\discretionary {-}{}{}Ping}{152}{subsubsection.7.23.3.2}
+\contentsline {subsubsection}{\numberline {7.23.3.3}connect\discretionary {-}{}{}Timeout}{152}{subsubsection.7.23.3.3}
+\contentsline {subsubsection}{\numberline {7.23.3.4}disconnected}{153}{subsubsection.7.23.3.4}
+\contentsline {subsubsection}{\numberline {7.23.3.5}do\discretionary {-}{}{}Connect}{154}{subsubsection.7.23.3.5}
+\contentsline {subsubsection}{\numberline {7.23.3.6}get\discretionary {-}{}{}Own\discretionary {-}{}{}Nick}{154}{subsubsection.7.23.3.6}
+\contentsline {subsubsection}{\numberline {7.23.3.7}handle\discretionary {-}{}{}Command}{154}{subsubsection.7.23.3.7}
+\contentsline {subsubsection}{\numberline {7.23.3.8}init}{155}{subsubsection.7.23.3.8}
+\contentsline {subsubsection}{\numberline {7.23.3.9}I\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}Connected}{156}{subsubsection.7.23.3.9}
+\contentsline {subsubsection}{\numberline {7.23.3.10}I\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}Connect\discretionary {-}{}{}Time\discretionary {-}{}{}Out}{157}{subsubsection.7.23.3.10}
+\contentsline {subsubsection}{\numberline {7.23.3.11}I\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}Disconnected}{157}{subsubsection.7.23.3.11}
+\contentsline {subsubsection}{\numberline {7.23.3.12}read\discretionary {-}{}{}Data}{157}{subsubsection.7.23.3.12}
+\contentsline {subsubsection}{\numberline {7.23.3.13}send}{158}{subsubsection.7.23.3.13}
+\contentsline {subsubsection}{\numberline {7.23.3.14}send\discretionary {-}{}{}Chat}{159}{subsubsection.7.23.3.14}
+\contentsline {subsubsection}{\numberline {7.23.3.15}send\discretionary {-}{}{}Chat}{160}{subsubsection.7.23.3.15}
+\contentsline {subsubsection}{\numberline {7.23.3.16}send\discretionary {-}{}{}Chat}{160}{subsubsection.7.23.3.16}
+\contentsline {subsubsection}{\numberline {7.23.3.17}send\discretionary {-}{}{}Pong}{161}{subsubsection.7.23.3.17}
+\contentsline {subsubsection}{\numberline {7.23.3.18}set\discretionary {-}{}{}Own\discretionary {-}{}{}Nick}{161}{subsubsection.7.23.3.18}
+\contentsline {subsubsection}{\numberline {7.23.3.19}set\discretionary {-}{}{}Own\discretionary {-}{}{}User}{161}{subsubsection.7.23.3.19}
+\contentsline {subsubsection}{\numberline {7.23.3.20}set\discretionary {-}{}{}User}{162}{subsubsection.7.23.3.20}
+\contentsline {subsubsection}{\numberline {7.23.3.21}slt\discretionary {-}{}{}Connected}{162}{subsubsection.7.23.3.21}
+\contentsline {subsubsection}{\numberline {7.23.3.22}startup\discretionary {-}{}{}Complete}{162}{subsubsection.7.23.3.22}
+\contentsline {subsubsection}{\numberline {7.23.3.23}user\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{163}{subsubsection.7.23.3.23}
+\contentsline {subsubsection}{\numberline {7.23.3.24}user\discretionary {-}{}{}Change\discretionary {-}{}{}Status}{163}{subsubsection.7.23.3.24}
+\contentsline {subsubsection}{\numberline {7.23.3.25}user\discretionary {-}{}{}Offline}{163}{subsubsection.7.23.3.25}
+\contentsline {subsubsection}{\numberline {7.23.3.26}user\discretionary {-}{}{}Online}{164}{subsubsection.7.23.3.26}
+\contentsline {subsection}{\numberline {7.23.4}Member Data Documentation}{164}{subsection.7.23.4}
+\contentsline {subsubsection}{\numberline {7.23.4.1}buffer}{164}{subsubsection.7.23.4.1}
+\contentsline {subsubsection}{\numberline {7.23.4.2}channel}{164}{subsubsection.7.23.4.2}
+\contentsline {subsubsection}{\numberline {7.23.4.3}connected}{164}{subsubsection.7.23.4.3}
+\contentsline {subsubsection}{\numberline {7.23.4.4}connecting}{164}{subsubsection.7.23.4.4}
+\contentsline {subsubsection}{\numberline {7.23.4.5}connect\discretionary {-}{}{}Timer}{165}{subsubsection.7.23.4.5}
+\contentsline {subsubsection}{\numberline {7.23.4.6}hostname}{165}{subsubsection.7.23.4.6}
+\contentsline {subsubsection}{\numberline {7.23.4.7}last\discretionary {-}{}{}Ping}{165}{subsubsection.7.23.4.7}
+\contentsline {subsubsection}{\numberline {7.23.4.8}log}{165}{subsubsection.7.23.4.8}
+\contentsline {subsubsection}{\numberline {7.23.4.9}motd\discretionary {-}{}{}Received}{165}{subsubsection.7.23.4.9}
+\contentsline {subsubsection}{\numberline {7.23.4.10}own\discretionary {-}{}{}Nick\discretionary {-}{}{}And\discretionary {-}{}{}Status}{165}{subsubsection.7.23.4.10}
+\contentsline {subsubsection}{\numberline {7.23.4.11}own\discretionary {-}{}{}User}{165}{subsubsection.7.23.4.11}
+\contentsline {subsubsection}{\numberline {7.23.4.12}port}{165}{subsubsection.7.23.4.12}
+\contentsline {subsubsection}{\numberline {7.23.4.13}sock}{165}{subsubsection.7.23.4.13}
+\contentsline {subsubsection}{\numberline {7.23.4.14}suppress\discretionary {-}{}{}Disconnect\discretionary {-}{}{}Signal}{165}{subsubsection.7.23.4.14}
+\contentsline {subsubsection}{\numberline {7.23.4.15}time\discretionary {-}{}{}Between\discretionary {-}{}{}Pings}{165}{subsubsection.7.23.4.15}
+\contentsline {subsubsection}{\numberline {7.23.4.16}time\discretionary {-}{}{}Out\discretionary {-}{}{}Checker}{166}{subsubsection.7.23.4.16}
+\contentsline {section}{\numberline {7.24}server\discretionary {-}{}{}:\discretionary {-}{}{}:irc\discretionary {-}{}{}User Class Reference}{166}{section.7.24}
+\contentsline {subsection}{\numberline {7.24.1}Detailed Description}{168}{subsection.7.24.1}
+\contentsline {subsection}{\numberline {7.24.2}Constructor \& Destructor Documentation}{169}{subsection.7.24.2}
+\contentsline {subsubsection}{\numberline {7.24.2.1}irc\discretionary {-}{}{}User}{169}{subsubsection.7.24.2.1}
+\contentsline {subsubsection}{\numberline {7.24.2.2}irc\discretionary {-}{}{}User}{169}{subsubsection.7.24.2.2}
+\contentsline {subsubsection}{\numberline {7.24.2.3}irc\discretionary {-}{}{}User}{169}{subsubsection.7.24.2.3}
+\contentsline {subsubsection}{\numberline {7.24.2.4}irc\discretionary {-}{}{}User}{169}{subsubsection.7.24.2.4}
+\contentsline {subsection}{\numberline {7.24.3}Member Function Documentation}{169}{subsection.7.24.3}
+\contentsline {subsubsection}{\numberline {7.24.3.1}get\discretionary {-}{}{}Id}{169}{subsubsection.7.24.3.1}
+\contentsline {subsubsection}{\numberline {7.24.3.2}get\discretionary {-}{}{}Irc\discretionary {-}{}{}Id}{170}{subsubsection.7.24.3.2}
+\contentsline {subsubsection}{\numberline {7.24.3.3}get\discretionary {-}{}{}Name}{170}{subsubsection.7.24.3.3}
+\contentsline {subsubsection}{\numberline {7.24.3.4}get\discretionary {-}{}{}Online}{171}{subsubsection.7.24.3.4}
+\contentsline {subsubsection}{\numberline {7.24.3.5}get\discretionary {-}{}{}Status}{171}{subsubsection.7.24.3.5}
+\contentsline {subsubsection}{\numberline {7.24.3.6}is\discretionary {-}{}{}Standard}{171}{subsubsection.7.24.3.6}
+\contentsline {subsubsection}{\numberline {7.24.3.7}operator=}{171}{subsubsection.7.24.3.7}
+\contentsline {subsubsection}{\numberline {7.24.3.8}set\discretionary {-}{}{}Color}{171}{subsubsection.7.24.3.8}
+\contentsline {subsubsection}{\numberline {7.24.3.9}set\discretionary {-}{}{}Color}{171}{subsubsection.7.24.3.9}
+\contentsline {subsubsection}{\numberline {7.24.3.10}set\discretionary {-}{}{}Email}{172}{subsubsection.7.24.3.10}
+\contentsline {subsubsection}{\numberline {7.24.3.11}set\discretionary {-}{}{}Id}{172}{subsubsection.7.24.3.11}
+\contentsline {subsubsection}{\numberline {7.24.3.12}set\discretionary {-}{}{}Irc\discretionary {-}{}{}Id}{172}{subsubsection.7.24.3.12}
+\contentsline {subsubsection}{\numberline {7.24.3.13}set\discretionary {-}{}{}Nick}{172}{subsubsection.7.24.3.13}
+\contentsline {subsubsection}{\numberline {7.24.3.14}set\discretionary {-}{}{}Online}{172}{subsubsection.7.24.3.14}
+\contentsline {subsubsection}{\numberline {7.24.3.15}set\discretionary {-}{}{}Status}{173}{subsubsection.7.24.3.15}
+\contentsline {subsubsection}{\numberline {7.24.3.16}to\discretionary {-}{}{}Variant\discretionary {-}{}{}Map}{173}{subsubsection.7.24.3.16}
+\contentsline {subsection}{\numberline {7.24.4}Friends And Related Function Documentation}{174}{subsection.7.24.4}
+\contentsline {subsubsection}{\numberline {7.24.4.1}operator$<$$<$}{174}{subsubsection.7.24.4.1}
+\contentsline {subsection}{\numberline {7.24.5}Member Data Documentation}{174}{subsection.7.24.5}
+\contentsline {subsubsection}{\numberline {7.24.5.1}email}{174}{subsubsection.7.24.5.1}
+\contentsline {subsubsection}{\numberline {7.24.5.2}id}{174}{subsubsection.7.24.5.2}
+\contentsline {subsubsection}{\numberline {7.24.5.3}irc\discretionary {-}{}{}Id}{174}{subsubsection.7.24.5.3}
+\contentsline {subsubsection}{\numberline {7.24.5.4}log}{174}{subsubsection.7.24.5.4}
+\contentsline {subsubsection}{\numberline {7.24.5.5}name}{174}{subsubsection.7.24.5.5}
+\contentsline {subsubsection}{\numberline {7.24.5.6}online}{174}{subsubsection.7.24.5.6}
+\contentsline {subsubsection}{\numberline {7.24.5.7}standard}{174}{subsubsection.7.24.5.7}
+\contentsline {subsubsection}{\numberline {7.24.5.8}status}{174}{subsubsection.7.24.5.8}
+\contentsline {subsubsection}{\numberline {7.24.5.9}u\discretionary {-}{}{}Color}{174}{subsubsection.7.24.5.9}
+\contentsline {section}{\numberline {7.25}client\discretionary {-}{}{}:\discretionary {-}{}{}:irc\discretionary {-}{}{}User Class Reference}{175}{section.7.25}
+\contentsline {subsection}{\numberline {7.25.1}Detailed Description}{177}{subsection.7.25.1}
+\contentsline {subsection}{\numberline {7.25.2}Constructor \& Destructor Documentation}{177}{subsection.7.25.2}
+\contentsline {subsubsection}{\numberline {7.25.2.1}irc\discretionary {-}{}{}User}{177}{subsubsection.7.25.2.1}
+\contentsline {subsubsection}{\numberline {7.25.2.2}irc\discretionary {-}{}{}User}{178}{subsubsection.7.25.2.2}
+\contentsline {subsubsection}{\numberline {7.25.2.3}$\sim $irc\discretionary {-}{}{}User}{178}{subsubsection.7.25.2.3}
+\contentsline {subsection}{\numberline {7.25.3}Member Function Documentation}{178}{subsection.7.25.3}
+\contentsline {subsubsection}{\numberline {7.25.3.1}copy\discretionary {-}{}{}From}{178}{subsubsection.7.25.3.1}
+\contentsline {subsubsection}{\numberline {7.25.3.2}get\discretionary {-}{}{}Color}{178}{subsubsection.7.25.3.2}
+\contentsline {subsubsection}{\numberline {7.25.3.3}get\discretionary {-}{}{}Email}{179}{subsubsection.7.25.3.3}
+\contentsline {subsubsection}{\numberline {7.25.3.4}get\discretionary {-}{}{}Icon}{179}{subsubsection.7.25.3.4}
+\contentsline {subsubsection}{\numberline {7.25.3.5}get\discretionary {-}{}{}Id}{179}{subsubsection.7.25.3.5}
+\contentsline {subsubsection}{\numberline {7.25.3.6}get\discretionary {-}{}{}Nick}{179}{subsubsection.7.25.3.6}
+\contentsline {subsubsection}{\numberline {7.25.3.7}get\discretionary {-}{}{}Online}{180}{subsubsection.7.25.3.7}
+\contentsline {subsubsection}{\numberline {7.25.3.8}get\discretionary {-}{}{}Standard}{180}{subsubsection.7.25.3.8}
+\contentsline {subsubsection}{\numberline {7.25.3.9}get\discretionary {-}{}{}Status}{180}{subsubsection.7.25.3.9}
+\contentsline {subsubsection}{\numberline {7.25.3.10}icon\discretionary {-}{}{}Changed}{181}{subsubsection.7.25.3.10}
+\contentsline {subsubsection}{\numberline {7.25.3.11}set\discretionary {-}{}{}Color}{181}{subsubsection.7.25.3.11}
+\contentsline {subsubsection}{\numberline {7.25.3.12}set\discretionary {-}{}{}Email}{181}{subsubsection.7.25.3.12}
+\contentsline {subsubsection}{\numberline {7.25.3.13}set\discretionary {-}{}{}Nick}{181}{subsubsection.7.25.3.13}
+\contentsline {subsubsection}{\numberline {7.25.3.14}set\discretionary {-}{}{}Online}{181}{subsubsection.7.25.3.14}
+\contentsline {subsubsection}{\numberline {7.25.3.15}set\discretionary {-}{}{}Status}{181}{subsubsection.7.25.3.15}
+\contentsline {subsubsection}{\numberline {7.25.3.16}slot\discretionary {-}{}{}\_\discretionary {-}{}{}netw\discretionary {-}{}{}Manager\discretionary {-}{}{}Finished}{181}{subsubsection.7.25.3.16}
+\contentsline {subsection}{\numberline {7.25.4}Member Data Documentation}{182}{subsection.7.25.4}
+\contentsline {subsubsection}{\numberline {7.25.4.1}email}{182}{subsubsection.7.25.4.1}
+\contentsline {subsubsection}{\numberline {7.25.4.2}icon}{182}{subsubsection.7.25.4.2}
+\contentsline {subsubsection}{\numberline {7.25.4.3}id}{182}{subsubsection.7.25.4.3}
+\contentsline {subsubsection}{\numberline {7.25.4.4}log}{182}{subsubsection.7.25.4.4}
+\contentsline {subsubsection}{\numberline {7.25.4.5}nick}{182}{subsubsection.7.25.4.5}
+\contentsline {subsubsection}{\numberline {7.25.4.6}online}{182}{subsubsection.7.25.4.6}
+\contentsline {subsubsection}{\numberline {7.25.4.7}standard}{183}{subsubsection.7.25.4.7}
+\contentsline {subsubsection}{\numberline {7.25.4.8}status}{183}{subsubsection.7.25.4.8}
+\contentsline {subsubsection}{\numberline {7.25.4.9}u\discretionary {-}{}{}Color}{183}{subsubsection.7.25.4.9}
+\contentsline {section}{\numberline {7.26}server\discretionary {-}{}{}:\discretionary {-}{}{}:irc\discretionary {-}{}{}User\discretionary {-}{}{}List Class Reference}{183}{section.7.26}
+\contentsline {subsection}{\numberline {7.26.1}Detailed Description}{184}{subsection.7.26.1}
+\contentsline {subsection}{\numberline {7.26.2}Constructor \& Destructor Documentation}{184}{subsection.7.26.2}
+\contentsline {subsubsection}{\numberline {7.26.2.1}irc\discretionary {-}{}{}User\discretionary {-}{}{}List}{184}{subsubsection.7.26.2.1}
+\contentsline {subsection}{\numberline {7.26.3}Member Function Documentation}{184}{subsection.7.26.3}
+\contentsline {subsubsection}{\numberline {7.26.3.1}add}{184}{subsubsection.7.26.3.1}
+\contentsline {subsubsection}{\numberline {7.26.3.2}del}{185}{subsubsection.7.26.3.2}
+\contentsline {subsubsection}{\numberline {7.26.3.3}find\discretionary {-}{}{}User}{186}{subsubsection.7.26.3.3}
+\contentsline {subsubsection}{\numberline {7.26.3.4}get\discretionary {-}{}{}All}{186}{subsubsection.7.26.3.4}
+\contentsline {subsubsection}{\numberline {7.26.3.5}get\discretionary {-}{}{}User}{186}{subsubsection.7.26.3.5}
+\contentsline {subsubsection}{\numberline {7.26.3.6}get\discretionary {-}{}{}User\discretionary {-}{}{}By\discretionary {-}{}{}Id}{187}{subsubsection.7.26.3.6}
+\contentsline {subsubsection}{\numberline {7.26.3.7}get\discretionary {-}{}{}User\discretionary {-}{}{}By\discretionary {-}{}{}Irc\discretionary {-}{}{}Id}{188}{subsubsection.7.26.3.7}
+\contentsline {subsubsection}{\numberline {7.26.3.8}get\discretionary {-}{}{}User\discretionary {-}{}{}By\discretionary {-}{}{}Nick}{188}{subsubsection.7.26.3.8}
+\contentsline {subsection}{\numberline {7.26.4}Member Data Documentation}{189}{subsection.7.26.4}
+\contentsline {subsubsection}{\numberline {7.26.4.1}last\discretionary {-}{}{}Id}{189}{subsubsection.7.26.4.1}
+\contentsline {subsubsection}{\numberline {7.26.4.2}users}{189}{subsubsection.7.26.4.2}
+\contentsline {section}{\numberline {7.27}K4\discretionary {-}{}{}U\discretionary {-}{}{}:\discretionary {-}{}{}:json\discretionary {-}{}{}Command Class Reference}{189}{section.7.27}
+\contentsline {subsection}{\numberline {7.27.1}Detailed Description}{190}{subsection.7.27.1}
+\contentsline {subsection}{\numberline {7.27.2}Constructor \& Destructor Documentation}{190}{subsection.7.27.2}
+\contentsline {subsubsection}{\numberline {7.27.2.1}json\discretionary {-}{}{}Command}{190}{subsubsection.7.27.2.1}
+\contentsline {subsubsection}{\numberline {7.27.2.2}json\discretionary {-}{}{}Command}{191}{subsubsection.7.27.2.2}
+\contentsline {subsubsection}{\numberline {7.27.2.3}json\discretionary {-}{}{}Command}{191}{subsubsection.7.27.2.3}
+\contentsline {subsection}{\numberline {7.27.3}Member Function Documentation}{191}{subsection.7.27.3}
+\contentsline {subsubsection}{\numberline {7.27.3.1}add\discretionary {-}{}{}To\discretionary {-}{}{}Data}{191}{subsubsection.7.27.3.1}
+\contentsline {subsubsection}{\numberline {7.27.3.2}get\discretionary {-}{}{}Command}{192}{subsubsection.7.27.3.2}
+\contentsline {subsubsection}{\numberline {7.27.3.3}get\discretionary {-}{}{}Command\discretionary {-}{}{}String}{192}{subsubsection.7.27.3.3}
+\contentsline {subsubsection}{\numberline {7.27.3.4}get\discretionary {-}{}{}Data}{193}{subsubsection.7.27.3.4}
+\contentsline {subsubsection}{\numberline {7.27.3.5}get\discretionary {-}{}{}Data}{194}{subsubsection.7.27.3.5}
+\contentsline {subsubsection}{\numberline {7.27.3.6}operator=}{194}{subsubsection.7.27.3.6}
+\contentsline {subsubsection}{\numberline {7.27.3.7}set\discretionary {-}{}{}Command}{194}{subsubsection.7.27.3.7}
+\contentsline {subsubsection}{\numberline {7.27.3.8}set\discretionary {-}{}{}Command\discretionary {-}{}{}Int}{194}{subsubsection.7.27.3.8}
+\contentsline {subsubsection}{\numberline {7.27.3.9}set\discretionary {-}{}{}Data}{195}{subsubsection.7.27.3.9}
+\contentsline {subsubsection}{\numberline {7.27.3.10}to\discretionary {-}{}{}Json\discretionary {-}{}{}String}{195}{subsubsection.7.27.3.10}
+\contentsline {subsection}{\numberline {7.27.4}Friends And Related Function Documentation}{196}{subsection.7.27.4}
+\contentsline {subsubsection}{\numberline {7.27.4.1}operator$<$$<$}{196}{subsubsection.7.27.4.1}
+\contentsline {subsubsection}{\numberline {7.27.4.2}operator$<$$<$}{196}{subsubsection.7.27.4.2}
+\contentsline {subsection}{\numberline {7.27.5}Member Data Documentation}{196}{subsection.7.27.5}
+\contentsline {subsubsection}{\numberline {7.27.5.1}command}{196}{subsubsection.7.27.5.1}
+\contentsline {subsubsection}{\numberline {7.27.5.2}data}{196}{subsubsection.7.27.5.2}
+\contentsline {section}{\numberline {7.28}server\discretionary {-}{}{}:\discretionary {-}{}{}:main\discretionary {-}{}{}App Class Reference}{196}{section.7.28}
+\contentsline {subsection}{\numberline {7.28.1}Detailed Description}{200}{subsection.7.28.1}
+\contentsline {subsection}{\numberline {7.28.2}Constructor \& Destructor Documentation}{200}{subsection.7.28.2}
+\contentsline {subsubsection}{\numberline {7.28.2.1}main\discretionary {-}{}{}App}{200}{subsubsection.7.28.2.1}
+\contentsline {subsection}{\numberline {7.28.3}Member Function Documentation}{200}{subsection.7.28.3}
+\contentsline {subsubsection}{\numberline {7.28.3.1}add\discretionary {-}{}{}To\discretionary {-}{}{}Event\discretionary {-}{}{}History}{200}{subsubsection.7.28.3.1}
+\contentsline {subsubsection}{\numberline {7.28.3.2}chat\discretionary {-}{}{}Received}{200}{subsubsection.7.28.3.2}
+\contentsline {subsubsection}{\numberline {7.28.3.3}do\discretionary {-}{}{}Irc\discretionary {-}{}{}Reconnect}{201}{subsubsection.7.28.3.3}
+\contentsline {subsubsection}{\numberline {7.28.3.4}do\discretionary {-}{}{}Send\discretionary {-}{}{}Events}{202}{subsubsection.7.28.3.4}
+\contentsline {subsubsection}{\numberline {7.28.3.5}do\discretionary {-}{}{}User\discretionary {-}{}{}Query}{202}{subsubsection.7.28.3.5}
+\contentsline {subsubsection}{\numberline {7.28.3.6}irc\discretionary {-}{}{}Connected}{203}{subsubsection.7.28.3.6}
+\contentsline {subsubsection}{\numberline {7.28.3.7}irc\discretionary {-}{}{}Connect\discretionary {-}{}{}Time\discretionary {-}{}{}Out}{203}{subsubsection.7.28.3.7}
+\contentsline {subsubsection}{\numberline {7.28.3.8}irc\discretionary {-}{}{}Disconnected}{204}{subsubsection.7.28.3.8}
+\contentsline {subsubsection}{\numberline {7.28.3.9}own\discretionary {-}{}{}User\discretionary {-}{}{}Change\discretionary {-}{}{}Status}{204}{subsubsection.7.28.3.9}
+\contentsline {subsubsection}{\numberline {7.28.3.10}run}{205}{subsubsection.7.28.3.10}
+\contentsline {subsubsection}{\numberline {7.28.3.11}server\discretionary {-}{}{}Message}{206}{subsubsection.7.28.3.11}
+\contentsline {subsubsection}{\numberline {7.28.3.12}ui\discretionary {-}{}{}Send\discretionary {-}{}{}Chat}{207}{subsubsection.7.28.3.12}
+\contentsline {subsubsection}{\numberline {7.28.3.13}user\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{208}{subsubsection.7.28.3.13}
+\contentsline {subsubsection}{\numberline {7.28.3.14}user\discretionary {-}{}{}Change\discretionary {-}{}{}Status}{208}{subsubsection.7.28.3.14}
+\contentsline {subsubsection}{\numberline {7.28.3.15}user\discretionary {-}{}{}Offline}{209}{subsubsection.7.28.3.15}
+\contentsline {subsubsection}{\numberline {7.28.3.16}user\discretionary {-}{}{}Online}{210}{subsubsection.7.28.3.16}
+\contentsline {subsection}{\numberline {7.28.4}Member Data Documentation}{211}{subsection.7.28.4}
+\contentsline {subsubsection}{\numberline {7.28.4.1}events}{211}{subsubsection.7.28.4.1}
+\contentsline {subsubsection}{\numberline {7.28.4.2}irc}{211}{subsubsection.7.28.4.2}
+\contentsline {subsubsection}{\numberline {7.28.4.3}log}{211}{subsubsection.7.28.4.3}
+\contentsline {subsubsection}{\numberline {7.28.4.4}own\discretionary {-}{}{}User}{212}{subsubsection.7.28.4.4}
+\contentsline {subsubsection}{\numberline {7.28.4.5}reconnect\discretionary {-}{}{}Timer}{212}{subsubsection.7.28.4.5}
+\contentsline {subsubsection}{\numberline {7.28.4.6}settings}{212}{subsubsection.7.28.4.6}
+\contentsline {subsubsection}{\numberline {7.28.4.7}T\discretionary {-}{}{}A\discretionary {-}{}{}G}{212}{subsubsection.7.28.4.7}
+\contentsline {subsubsection}{\numberline {7.28.4.8}ui}{212}{subsubsection.7.28.4.8}
+\contentsline {subsubsection}{\numberline {7.28.4.9}users}{212}{subsubsection.7.28.4.9}
+\contentsline {section}{\numberline {7.29}Main\discretionary {-}{}{}Window Class Reference}{212}{section.7.29}
+\contentsline {subsection}{\numberline {7.29.1}Detailed Description}{214}{subsection.7.29.1}
+\contentsline {subsection}{\numberline {7.29.2}Member Enumeration Documentation}{214}{subsection.7.29.2}
+\contentsline {subsubsection}{\numberline {7.29.2.1}Screen\discretionary {-}{}{}Orientation}{214}{subsubsection.7.29.2.1}
+\contentsline {subsection}{\numberline {7.29.3}Constructor \& Destructor Documentation}{214}{subsection.7.29.3}
+\contentsline {subsubsection}{\numberline {7.29.3.1}Main\discretionary {-}{}{}Window}{214}{subsubsection.7.29.3.1}
+\contentsline {subsubsection}{\numberline {7.29.3.2}$\sim $\discretionary {-}{}{}Main\discretionary {-}{}{}Window}{214}{subsubsection.7.29.3.2}
+\contentsline {subsection}{\numberline {7.29.4}Member Function Documentation}{214}{subsection.7.29.4}
+\contentsline {subsubsection}{\numberline {7.29.4.1}set\discretionary {-}{}{}Orientation}{214}{subsubsection.7.29.4.1}
+\contentsline {subsubsection}{\numberline {7.29.4.2}show\discretionary {-}{}{}Expanded}{215}{subsubsection.7.29.4.2}
+\contentsline {subsection}{\numberline {7.29.5}Member Data Documentation}{215}{subsection.7.29.5}
+\contentsline {subsubsection}{\numberline {7.29.5.1}ui}{215}{subsubsection.7.29.5.1}
+\contentsline {section}{\numberline {7.30}client\discretionary {-}{}{}:\discretionary {-}{}{}:Main\discretionary {-}{}{}Window Class Reference}{215}{section.7.30}
+\contentsline {subsection}{\numberline {7.30.1}Detailed Description}{218}{subsection.7.30.1}
+\contentsline {subsection}{\numberline {7.30.2}Constructor \& Destructor Documentation}{218}{subsection.7.30.2}
+\contentsline {subsubsection}{\numberline {7.30.2.1}Main\discretionary {-}{}{}Window}{218}{subsubsection.7.30.2.1}
+\contentsline {subsubsection}{\numberline {7.30.2.2}$\sim $\discretionary {-}{}{}Main\discretionary {-}{}{}Window}{219}{subsubsection.7.30.2.2}
+\contentsline {subsection}{\numberline {7.30.3}Member Function Documentation}{219}{subsection.7.30.3}
+\contentsline {subsubsection}{\numberline {7.30.3.1}chat\discretionary {-}{}{}Received}{219}{subsubsection.7.30.3.1}
+\contentsline {subsubsection}{\numberline {7.30.3.2}command\discretionary {-}{}{}Given}{220}{subsubsection.7.30.3.2}
+\contentsline {subsubsection}{\numberline {7.30.3.3}connected\discretionary {-}{}{}Timeout}{221}{subsubsection.7.30.3.3}
+\contentsline {subsubsection}{\numberline {7.30.3.4}do\discretionary {-}{}{}Reconnect}{221}{subsubsection.7.30.3.4}
+\contentsline {subsubsection}{\numberline {7.30.3.5}move\discretionary {-}{}{}Scroll\discretionary {-}{}{}Bar\discretionary {-}{}{}To\discretionary {-}{}{}Bottom}{222}{subsubsection.7.30.3.5}
+\contentsline {subsubsection}{\numberline {7.30.3.6}send\discretionary {-}{}{}Chat}{222}{subsubsection.7.30.3.6}
+\contentsline {subsubsection}{\numberline {7.30.3.7}server\discretionary {-}{}{}Connected}{223}{subsubsection.7.30.3.7}
+\contentsline {subsubsection}{\numberline {7.30.3.8}server\discretionary {-}{}{}Disconnected}{224}{subsubsection.7.30.3.8}
+\contentsline {subsubsection}{\numberline {7.30.3.9}server\discretionary {-}{}{}Message\discretionary {-}{}{}Received}{224}{subsubsection.7.30.3.9}
+\contentsline {subsubsection}{\numberline {7.30.3.10}show\discretionary {-}{}{}Message}{225}{subsubsection.7.30.3.10}
+\contentsline {subsubsection}{\numberline {7.30.3.11}user\discretionary {-}{}{}Change\discretionary {-}{}{}Nick}{225}{subsubsection.7.30.3.11}
+\contentsline {subsubsection}{\numberline {7.30.3.12}user\discretionary {-}{}{}Enter}{226}{subsubsection.7.30.3.12}
+\contentsline {subsubsection}{\numberline {7.30.3.13}user\discretionary {-}{}{}Leave}{227}{subsubsection.7.30.3.13}
+\contentsline {subsubsection}{\numberline {7.30.3.14}user\discretionary {-}{}{}Query\discretionary {-}{}{}Completed}{228}{subsubsection.7.30.3.14}
+\contentsline {subsubsection}{\numberline {7.30.3.15}user\discretionary {-}{}{}Status\discretionary {-}{}{}Change}{228}{subsubsection.7.30.3.15}
+\contentsline {subsection}{\numberline {7.30.4}Member Data Documentation}{229}{subsection.7.30.4}
+\contentsline {subsubsection}{\numberline {7.30.4.1}cb}{229}{subsubsection.7.30.4.1}
+\contentsline {subsubsection}{\numberline {7.30.4.2}log}{229}{subsubsection.7.30.4.2}
+\contentsline {subsubsection}{\numberline {7.30.4.3}reconnect\discretionary {-}{}{}Timer}{229}{subsubsection.7.30.4.3}
+\contentsline {subsubsection}{\numberline {7.30.4.4}server}{229}{subsubsection.7.30.4.4}
+\contentsline {subsubsection}{\numberline {7.30.4.5}settings}{230}{subsubsection.7.30.4.5}
+\contentsline {subsubsection}{\numberline {7.30.4.6}ui}{230}{subsubsection.7.30.4.6}
+\contentsline {subsubsection}{\numberline {7.30.4.7}users}{230}{subsubsection.7.30.4.7}
+\contentsline {section}{\numberline {7.31}server\discretionary {-}{}{}:\discretionary {-}{}{}:nick\discretionary {-}{}{}And\discretionary {-}{}{}Status Struct Reference}{230}{section.7.31}
+\contentsline {subsection}{\numberline {7.31.1}Detailed Description}{230}{subsection.7.31.1}
+\contentsline {subsection}{\numberline {7.31.2}Member Data Documentation}{230}{subsection.7.31.2}
+\contentsline {subsubsection}{\numberline {7.31.2.1}nick}{231}{subsubsection.7.31.2.1}
+\contentsline {subsubsection}{\numberline {7.31.2.2}status}{231}{subsubsection.7.31.2.2}
+\contentsline {section}{\numberline {7.32}org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}origo.\discretionary {-}{}{}Qt\discretionary {-}{}{}Activity Class Reference}{232}{section.7.32}
+\contentsline {subsection}{\numberline {7.32.1}Detailed Description}{236}{subsection.7.32.1}
+\contentsline {subsection}{\numberline {7.32.2}Member Function Documentation}{236}{subsection.7.32.2}
+\contentsline {subsubsection}{\numberline {7.32.2.1}dispatch\discretionary {-}{}{}Key\discretionary {-}{}{}Event}{236}{subsubsection.7.32.2.1}
+\contentsline {subsubsection}{\numberline {7.32.2.2}dispatch\discretionary {-}{}{}Populate\discretionary {-}{}{}Accessibility\discretionary {-}{}{}Event}{237}{subsubsection.7.32.2.2}
+\contentsline {subsubsection}{\numberline {7.32.2.3}dispatch\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{237}{subsubsection.7.32.2.3}
+\contentsline {subsubsection}{\numberline {7.32.2.4}dispatch\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{237}{subsubsection.7.32.2.4}
+\contentsline {subsubsection}{\numberline {7.32.2.5}download\discretionary {-}{}{}Upgrade\discretionary {-}{}{}Ministro}{237}{subsubsection.7.32.2.5}
+\contentsline {subsubsection}{\numberline {7.32.2.6}load\discretionary {-}{}{}Application}{238}{subsubsection.7.32.2.6}
+\contentsline {subsubsection}{\numberline {7.32.2.7}ministro\discretionary {-}{}{}Not\discretionary {-}{}{}Found}{238}{subsubsection.7.32.2.7}
+\contentsline {subsubsection}{\numberline {7.32.2.8}on\discretionary {-}{}{}Activity\discretionary {-}{}{}Result}{239}{subsubsection.7.32.2.8}
+\contentsline {subsubsection}{\numberline {7.32.2.9}on\discretionary {-}{}{}Apply\discretionary {-}{}{}Theme\discretionary {-}{}{}Resource}{239}{subsubsection.7.32.2.9}
+\contentsline {subsubsection}{\numberline {7.32.2.10}on\discretionary {-}{}{}Attached\discretionary {-}{}{}To\discretionary {-}{}{}Window}{239}{subsubsection.7.32.2.10}
+\contentsline {subsubsection}{\numberline {7.32.2.11}on\discretionary {-}{}{}Back\discretionary {-}{}{}Pressed}{240}{subsubsection.7.32.2.11}
+\contentsline {subsubsection}{\numberline {7.32.2.12}on\discretionary {-}{}{}Child\discretionary {-}{}{}Title\discretionary {-}{}{}Changed}{240}{subsubsection.7.32.2.12}
+\contentsline {subsubsection}{\numberline {7.32.2.13}on\discretionary {-}{}{}Configuration\discretionary {-}{}{}Changed}{240}{subsubsection.7.32.2.13}
+\contentsline {subsubsection}{\numberline {7.32.2.14}on\discretionary {-}{}{}Content\discretionary {-}{}{}Changed}{240}{subsubsection.7.32.2.14}
+\contentsline {subsubsection}{\numberline {7.32.2.15}on\discretionary {-}{}{}Context\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{241}{subsubsection.7.32.2.15}
+\contentsline {subsubsection}{\numberline {7.32.2.16}on\discretionary {-}{}{}Context\discretionary {-}{}{}Menu\discretionary {-}{}{}Closed}{241}{subsubsection.7.32.2.16}
+\contentsline {subsubsection}{\numberline {7.32.2.17}on\discretionary {-}{}{}Create}{241}{subsubsection.7.32.2.17}
+\contentsline {subsubsection}{\numberline {7.32.2.18}on\discretionary {-}{}{}Create\discretionary {-}{}{}Context\discretionary {-}{}{}Menu}{241}{subsubsection.7.32.2.18}
+\contentsline {subsubsection}{\numberline {7.32.2.19}on\discretionary {-}{}{}Create\discretionary {-}{}{}Description}{242}{subsubsection.7.32.2.19}
+\contentsline {subsubsection}{\numberline {7.32.2.20}on\discretionary {-}{}{}Create\discretionary {-}{}{}Dialog}{242}{subsubsection.7.32.2.20}
+\contentsline {subsubsection}{\numberline {7.32.2.21}on\discretionary {-}{}{}Create\discretionary {-}{}{}Dialog}{242}{subsubsection.7.32.2.21}
+\contentsline {subsubsection}{\numberline {7.32.2.22}on\discretionary {-}{}{}Create\discretionary {-}{}{}Options\discretionary {-}{}{}Menu}{242}{subsubsection.7.32.2.22}
+\contentsline {subsubsection}{\numberline {7.32.2.23}on\discretionary {-}{}{}Create\discretionary {-}{}{}Panel\discretionary {-}{}{}Menu}{243}{subsubsection.7.32.2.23}
+\contentsline {subsubsection}{\numberline {7.32.2.24}on\discretionary {-}{}{}Create\discretionary {-}{}{}Panel\discretionary {-}{}{}View}{243}{subsubsection.7.32.2.24}
+\contentsline {subsubsection}{\numberline {7.32.2.25}on\discretionary {-}{}{}Create\discretionary {-}{}{}Thumbnail}{243}{subsubsection.7.32.2.25}
+\contentsline {subsubsection}{\numberline {7.32.2.26}on\discretionary {-}{}{}Create\discretionary {-}{}{}View}{243}{subsubsection.7.32.2.26}
+\contentsline {subsubsection}{\numberline {7.32.2.27}on\discretionary {-}{}{}Destroy}{244}{subsubsection.7.32.2.27}
+\contentsline {subsubsection}{\numberline {7.32.2.28}on\discretionary {-}{}{}Detached\discretionary {-}{}{}From\discretionary {-}{}{}Window}{244}{subsubsection.7.32.2.28}
+\contentsline {subsubsection}{\numberline {7.32.2.29}on\discretionary {-}{}{}Key\discretionary {-}{}{}Down}{244}{subsubsection.7.32.2.29}
+\contentsline {subsubsection}{\numberline {7.32.2.30}on\discretionary {-}{}{}Key\discretionary {-}{}{}Long\discretionary {-}{}{}Press}{244}{subsubsection.7.32.2.30}
+\contentsline {subsubsection}{\numberline {7.32.2.31}on\discretionary {-}{}{}Key\discretionary {-}{}{}Multiple}{245}{subsubsection.7.32.2.31}
+\contentsline {subsubsection}{\numberline {7.32.2.32}on\discretionary {-}{}{}Key\discretionary {-}{}{}Up}{245}{subsubsection.7.32.2.32}
+\contentsline {subsubsection}{\numberline {7.32.2.33}on\discretionary {-}{}{}Low\discretionary {-}{}{}Memory}{245}{subsubsection.7.32.2.33}
+\contentsline {subsubsection}{\numberline {7.32.2.34}on\discretionary {-}{}{}Menu\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{246}{subsubsection.7.32.2.34}
+\contentsline {subsubsection}{\numberline {7.32.2.35}on\discretionary {-}{}{}Menu\discretionary {-}{}{}Opened}{246}{subsubsection.7.32.2.35}
+\contentsline {subsubsection}{\numberline {7.32.2.36}on\discretionary {-}{}{}New\discretionary {-}{}{}Intent}{246}{subsubsection.7.32.2.36}
+\contentsline {subsubsection}{\numberline {7.32.2.37}on\discretionary {-}{}{}Options\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{246}{subsubsection.7.32.2.37}
+\contentsline {subsubsection}{\numberline {7.32.2.38}on\discretionary {-}{}{}Options\discretionary {-}{}{}Menu\discretionary {-}{}{}Closed}{247}{subsubsection.7.32.2.38}
+\contentsline {subsubsection}{\numberline {7.32.2.39}on\discretionary {-}{}{}Panel\discretionary {-}{}{}Closed}{247}{subsubsection.7.32.2.39}
+\contentsline {subsubsection}{\numberline {7.32.2.40}on\discretionary {-}{}{}Pause}{247}{subsubsection.7.32.2.40}
+\contentsline {subsubsection}{\numberline {7.32.2.41}on\discretionary {-}{}{}Post\discretionary {-}{}{}Create}{247}{subsubsection.7.32.2.41}
+\contentsline {subsubsection}{\numberline {7.32.2.42}on\discretionary {-}{}{}Post\discretionary {-}{}{}Resume}{248}{subsubsection.7.32.2.42}
+\contentsline {subsubsection}{\numberline {7.32.2.43}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Dialog}{248}{subsubsection.7.32.2.43}
+\contentsline {subsubsection}{\numberline {7.32.2.44}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Dialog}{248}{subsubsection.7.32.2.44}
+\contentsline {subsubsection}{\numberline {7.32.2.45}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Options\discretionary {-}{}{}Menu}{248}{subsubsection.7.32.2.45}
+\contentsline {subsubsection}{\numberline {7.32.2.46}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Panel}{249}{subsubsection.7.32.2.46}
+\contentsline {subsubsection}{\numberline {7.32.2.47}on\discretionary {-}{}{}Restart}{249}{subsubsection.7.32.2.47}
+\contentsline {subsubsection}{\numberline {7.32.2.48}on\discretionary {-}{}{}Restore\discretionary {-}{}{}Instance\discretionary {-}{}{}State}{249}{subsubsection.7.32.2.48}
+\contentsline {subsubsection}{\numberline {7.32.2.49}on\discretionary {-}{}{}Resume}{249}{subsubsection.7.32.2.49}
+\contentsline {subsubsection}{\numberline {7.32.2.50}on\discretionary {-}{}{}Retain\discretionary {-}{}{}Non\discretionary {-}{}{}Configuration\discretionary {-}{}{}Instance}{250}{subsubsection.7.32.2.50}
+\contentsline {subsubsection}{\numberline {7.32.2.51}on\discretionary {-}{}{}Save\discretionary {-}{}{}Instance\discretionary {-}{}{}State}{250}{subsubsection.7.32.2.51}
+\contentsline {subsubsection}{\numberline {7.32.2.52}on\discretionary {-}{}{}Search\discretionary {-}{}{}Requested}{250}{subsubsection.7.32.2.52}
+\contentsline {subsubsection}{\numberline {7.32.2.53}on\discretionary {-}{}{}Start}{250}{subsubsection.7.32.2.53}
+\contentsline {subsubsection}{\numberline {7.32.2.54}on\discretionary {-}{}{}Stop}{251}{subsubsection.7.32.2.54}
+\contentsline {subsubsection}{\numberline {7.32.2.55}on\discretionary {-}{}{}Title\discretionary {-}{}{}Changed}{251}{subsubsection.7.32.2.55}
+\contentsline {subsubsection}{\numberline {7.32.2.56}on\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{251}{subsubsection.7.32.2.56}
+\contentsline {subsubsection}{\numberline {7.32.2.57}on\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{252}{subsubsection.7.32.2.57}
+\contentsline {subsubsection}{\numberline {7.32.2.58}on\discretionary {-}{}{}User\discretionary {-}{}{}Interaction}{252}{subsubsection.7.32.2.58}
+\contentsline {subsubsection}{\numberline {7.32.2.59}on\discretionary {-}{}{}User\discretionary {-}{}{}Leave\discretionary {-}{}{}Hint}{252}{subsubsection.7.32.2.59}
+\contentsline {subsubsection}{\numberline {7.32.2.60}on\discretionary {-}{}{}Window\discretionary {-}{}{}Attributes\discretionary {-}{}{}Changed}{252}{subsubsection.7.32.2.60}
+\contentsline {subsubsection}{\numberline {7.32.2.61}on\discretionary {-}{}{}Window\discretionary {-}{}{}Focus\discretionary {-}{}{}Changed}{253}{subsubsection.7.32.2.61}
+\contentsline {subsubsection}{\numberline {7.32.2.62}start\discretionary {-}{}{}App}{253}{subsubsection.7.32.2.62}
+\contentsline {subsubsection}{\numberline {7.32.2.63}super\discretionary {-}{}{}\_\discretionary {-}{}{}dispatch\discretionary {-}{}{}Key\discretionary {-}{}{}Event}{253}{subsubsection.7.32.2.63}
+\contentsline {subsubsection}{\numberline {7.32.2.64}super\discretionary {-}{}{}\_\discretionary {-}{}{}dispatch\discretionary {-}{}{}Populate\discretionary {-}{}{}Accessibility\discretionary {-}{}{}Event}{253}{subsubsection.7.32.2.64}
+\contentsline {subsubsection}{\numberline {7.32.2.65}super\discretionary {-}{}{}\_\discretionary {-}{}{}dispatch\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{254}{subsubsection.7.32.2.65}
+\contentsline {subsubsection}{\numberline {7.32.2.66}super\discretionary {-}{}{}\_\discretionary {-}{}{}dispatch\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{254}{subsubsection.7.32.2.66}
+\contentsline {subsubsection}{\numberline {7.32.2.67}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Activity\discretionary {-}{}{}Result}{254}{subsubsection.7.32.2.67}
+\contentsline {subsubsection}{\numberline {7.32.2.68}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Apply\discretionary {-}{}{}Theme\discretionary {-}{}{}Resource}{254}{subsubsection.7.32.2.68}
+\contentsline {subsubsection}{\numberline {7.32.2.69}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Attached\discretionary {-}{}{}To\discretionary {-}{}{}Window}{254}{subsubsection.7.32.2.69}
+\contentsline {subsubsection}{\numberline {7.32.2.70}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Back\discretionary {-}{}{}Pressed}{254}{subsubsection.7.32.2.70}
+\contentsline {subsubsection}{\numberline {7.32.2.71}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Child\discretionary {-}{}{}Title\discretionary {-}{}{}Changed}{254}{subsubsection.7.32.2.71}
+\contentsline {subsubsection}{\numberline {7.32.2.72}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Configuration\discretionary {-}{}{}Changed}{254}{subsubsection.7.32.2.72}
+\contentsline {subsubsection}{\numberline {7.32.2.73}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Content\discretionary {-}{}{}Changed}{254}{subsubsection.7.32.2.73}
+\contentsline {subsubsection}{\numberline {7.32.2.74}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Context\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{254}{subsubsection.7.32.2.74}
+\contentsline {subsubsection}{\numberline {7.32.2.75}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Context\discretionary {-}{}{}Menu\discretionary {-}{}{}Closed}{254}{subsubsection.7.32.2.75}
+\contentsline {subsubsection}{\numberline {7.32.2.76}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Context\discretionary {-}{}{}Menu}{255}{subsubsection.7.32.2.76}
+\contentsline {subsubsection}{\numberline {7.32.2.77}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Description}{255}{subsubsection.7.32.2.77}
+\contentsline {subsubsection}{\numberline {7.32.2.78}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Dialog}{255}{subsubsection.7.32.2.78}
+\contentsline {subsubsection}{\numberline {7.32.2.79}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Dialog}{255}{subsubsection.7.32.2.79}
+\contentsline {subsubsection}{\numberline {7.32.2.80}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Options\discretionary {-}{}{}Menu}{255}{subsubsection.7.32.2.80}
+\contentsline {subsubsection}{\numberline {7.32.2.81}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Panel\discretionary {-}{}{}Menu}{255}{subsubsection.7.32.2.81}
+\contentsline {subsubsection}{\numberline {7.32.2.82}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Panel\discretionary {-}{}{}View}{255}{subsubsection.7.32.2.82}
+\contentsline {subsubsection}{\numberline {7.32.2.83}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}Thumbnail}{255}{subsubsection.7.32.2.83}
+\contentsline {subsubsection}{\numberline {7.32.2.84}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Create\discretionary {-}{}{}View}{255}{subsubsection.7.32.2.84}
+\contentsline {subsubsection}{\numberline {7.32.2.85}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Detached\discretionary {-}{}{}From\discretionary {-}{}{}Window}{255}{subsubsection.7.32.2.85}
+\contentsline {subsubsection}{\numberline {7.32.2.86}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Key\discretionary {-}{}{}Down}{255}{subsubsection.7.32.2.86}
+\contentsline {subsubsection}{\numberline {7.32.2.87}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Key\discretionary {-}{}{}Long\discretionary {-}{}{}Press}{255}{subsubsection.7.32.2.87}
+\contentsline {subsubsection}{\numberline {7.32.2.88}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Key\discretionary {-}{}{}Multiple}{256}{subsubsection.7.32.2.88}
+\contentsline {subsubsection}{\numberline {7.32.2.89}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Key\discretionary {-}{}{}Up}{256}{subsubsection.7.32.2.89}
+\contentsline {subsubsection}{\numberline {7.32.2.90}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Menu\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{256}{subsubsection.7.32.2.90}
+\contentsline {subsubsection}{\numberline {7.32.2.91}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Menu\discretionary {-}{}{}Opened}{256}{subsubsection.7.32.2.91}
+\contentsline {subsubsection}{\numberline {7.32.2.92}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}New\discretionary {-}{}{}Intent}{256}{subsubsection.7.32.2.92}
+\contentsline {subsubsection}{\numberline {7.32.2.93}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Options\discretionary {-}{}{}Item\discretionary {-}{}{}Selected}{256}{subsubsection.7.32.2.93}
+\contentsline {subsubsection}{\numberline {7.32.2.94}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Options\discretionary {-}{}{}Menu\discretionary {-}{}{}Closed}{256}{subsubsection.7.32.2.94}
+\contentsline {subsubsection}{\numberline {7.32.2.95}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Panel\discretionary {-}{}{}Closed}{256}{subsubsection.7.32.2.95}
+\contentsline {subsubsection}{\numberline {7.32.2.96}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Dialog}{256}{subsubsection.7.32.2.96}
+\contentsline {subsubsection}{\numberline {7.32.2.97}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Dialog}{256}{subsubsection.7.32.2.97}
+\contentsline {subsubsection}{\numberline {7.32.2.98}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Options\discretionary {-}{}{}Menu}{256}{subsubsection.7.32.2.98}
+\contentsline {subsubsection}{\numberline {7.32.2.99}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Prepare\discretionary {-}{}{}Panel}{256}{subsubsection.7.32.2.99}
+\contentsline {subsubsection}{\numberline {7.32.2.100}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Restore\discretionary {-}{}{}Instance\discretionary {-}{}{}State}{257}{subsubsection.7.32.2.100}
+\contentsline {subsubsection}{\numberline {7.32.2.101}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Retain\discretionary {-}{}{}Non\discretionary {-}{}{}Configuration\discretionary {-}{}{}Instance}{257}{subsubsection.7.32.2.101}
+\contentsline {subsubsection}{\numberline {7.32.2.102}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Save\discretionary {-}{}{}Instance\discretionary {-}{}{}State}{257}{subsubsection.7.32.2.102}
+\contentsline {subsubsection}{\numberline {7.32.2.103}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Search\discretionary {-}{}{}Requested}{257}{subsubsection.7.32.2.103}
+\contentsline {subsubsection}{\numberline {7.32.2.104}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Title\discretionary {-}{}{}Changed}{257}{subsubsection.7.32.2.104}
+\contentsline {subsubsection}{\numberline {7.32.2.105}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{257}{subsubsection.7.32.2.105}
+\contentsline {subsubsection}{\numberline {7.32.2.106}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{257}{subsubsection.7.32.2.106}
+\contentsline {subsubsection}{\numberline {7.32.2.107}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}User\discretionary {-}{}{}Interaction}{257}{subsubsection.7.32.2.107}
+\contentsline {subsubsection}{\numberline {7.32.2.108}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}User\discretionary {-}{}{}Leave\discretionary {-}{}{}Hint}{257}{subsubsection.7.32.2.108}
+\contentsline {subsubsection}{\numberline {7.32.2.109}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Window\discretionary {-}{}{}Attributes\discretionary {-}{}{}Changed}{257}{subsubsection.7.32.2.109}
+\contentsline {subsubsection}{\numberline {7.32.2.110}super\discretionary {-}{}{}\_\discretionary {-}{}{}on\discretionary {-}{}{}Window\discretionary {-}{}{}Focus\discretionary {-}{}{}Changed}{257}{subsubsection.7.32.2.110}
+\contentsline {subsection}{\numberline {7.32.3}Member Data Documentation}{258}{subsection.7.32.3}
+\contentsline {subsubsection}{\numberline {7.32.3.1}A\discretionary {-}{}{}P\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}C\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}T\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}S}{258}{subsubsection.7.32.3.1}
+\contentsline {subsubsection}{\numberline {7.32.3.2}A\discretionary {-}{}{}P\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}C\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}T\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.2}
+\contentsline {subsubsection}{\numberline {7.32.3.3}A\discretionary {-}{}{}P\discretionary {-}{}{}P\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}C\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.3}
+\contentsline {subsubsection}{\numberline {7.32.3.4}B\discretionary {-}{}{}U\discretionary {-}{}{}N\discretionary {-}{}{}D\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.4}
+\contentsline {subsubsection}{\numberline {7.32.3.5}D\discretionary {-}{}{}E\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.5}
+\contentsline {subsubsection}{\numberline {7.32.3.6}E\discretionary {-}{}{}N\discretionary {-}{}{}V\discretionary {-}{}{}I\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}V\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}A\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}S}{258}{subsubsection.7.32.3.6}
+\contentsline {subsubsection}{\numberline {7.32.3.7}E\discretionary {-}{}{}N\discretionary {-}{}{}V\discretionary {-}{}{}I\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}V\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}A\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.7}
+\contentsline {subsubsection}{\numberline {7.32.3.8}E\discretionary {-}{}{}R\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.8}
+\contentsline {subsubsection}{\numberline {7.32.3.9}E\discretionary {-}{}{}R\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}S\discretionary {-}{}{}A\discretionary {-}{}{}G\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.9}
+\contentsline {subsubsection}{\numberline {7.32.3.10}I\discretionary {-}{}{}N\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N}{258}{subsubsection.7.32.3.10}
+\contentsline {subsubsection}{\numberline {7.32.3.11}L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{258}{subsubsection.7.32.3.11}
+\contentsline {subsubsection}{\numberline {7.32.3.12}L\discretionary {-}{}{}O\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}L\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{259}{subsubsection.7.32.3.12}
+\contentsline {subsubsection}{\numberline {7.32.3.13}m\discretionary {-}{}{}\_\discretionary {-}{}{}activity\discretionary {-}{}{}Info}{259}{subsubsection.7.32.3.13}
+\contentsline {subsubsection}{\numberline {7.32.3.14}m\discretionary {-}{}{}\_\discretionary {-}{}{}class\discretionary {-}{}{}Loader}{259}{subsubsection.7.32.3.14}
+\contentsline {subsubsection}{\numberline {7.32.3.15}m\discretionary {-}{}{}\_\discretionary {-}{}{}ministro\discretionary {-}{}{}Connection}{259}{subsubsection.7.32.3.15}
+\contentsline {subsubsection}{\numberline {7.32.3.16}m\discretionary {-}{}{}\_\discretionary {-}{}{}qt\discretionary {-}{}{}Libs}{259}{subsubsection.7.32.3.16}
+\contentsline {subsubsection}{\numberline {7.32.3.17}M\discretionary {-}{}{}A\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}Y\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{259}{subsubsection.7.32.3.17}
+\contentsline {subsubsection}{\numberline {7.32.3.18}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{259}{subsubsection.7.32.3.18}
+\contentsline {subsubsection}{\numberline {7.32.3.19}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Q\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{259}{subsubsection.7.32.3.19}
+\contentsline {subsubsection}{\numberline {7.32.3.20}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}L}{259}{subsubsection.7.32.3.20}
+\contentsline {subsubsection}{\numberline {7.32.3.21}M\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}Q\discretionary {-}{}{}U\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}E}{259}{subsubsection.7.32.3.21}
+\contentsline {subsubsection}{\numberline {7.32.3.22}N\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{259}{subsubsection.7.32.3.22}
+\contentsline {subsubsection}{\numberline {7.32.3.23}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}L}{260}{subsubsection.7.32.3.23}
+\contentsline {subsubsection}{\numberline {7.32.3.24}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}A\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{260}{subsubsection.7.32.3.24}
+\contentsline {subsubsection}{\numberline {7.32.3.25}Q\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}V\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{260}{subsubsection.7.32.3.25}
+\contentsline {subsubsection}{\numberline {7.32.3.26}Q\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}R\discretionary {-}{}{}O\discretionary {-}{}{}V\discretionary {-}{}{}I\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{260}{subsubsection.7.32.3.26}
+\contentsline {subsubsection}{\numberline {7.32.3.27}Q\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}S\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}N}{260}{subsubsection.7.32.3.27}
+\contentsline {subsubsection}{\numberline {7.32.3.28}R\discretionary {-}{}{}E\discretionary {-}{}{}Q\discretionary {-}{}{}U\discretionary {-}{}{}I\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}O\discretionary {-}{}{}D\discretionary {-}{}{}U\discretionary {-}{}{}L\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}Y}{260}{subsubsection.7.32.3.28}
+\contentsline {section}{\numberline {7.33}org.\discretionary {-}{}{}kde.\discretionary {-}{}{}necessitas.\discretionary {-}{}{}origo.\discretionary {-}{}{}Qt\discretionary {-}{}{}Application Class Reference}{261}{section.7.33}
+\contentsline {subsection}{\numberline {7.33.1}Detailed Description}{263}{subsection.7.33.1}
+\contentsline {subsection}{\numberline {7.33.2}Member Function Documentation}{263}{subsection.7.33.2}
+\contentsline {subsubsection}{\numberline {7.33.2.1}invoke\discretionary {-}{}{}Delegate}{263}{subsubsection.7.33.2.1}
+\contentsline {subsubsection}{\numberline {7.33.2.2}invoke\discretionary {-}{}{}Delegate\discretionary {-}{}{}Method}{264}{subsubsection.7.33.2.2}
+\contentsline {subsubsection}{\numberline {7.33.2.3}on\discretionary {-}{}{}Terminate}{265}{subsubsection.7.33.2.3}
+\contentsline {subsubsection}{\numberline {7.33.2.4}set\discretionary {-}{}{}Qt\discretionary {-}{}{}Activity\discretionary {-}{}{}Delegate}{266}{subsubsection.7.33.2.4}
+\contentsline {subsection}{\numberline {7.33.3}Member Data Documentation}{266}{subsection.7.33.3}
+\contentsline {subsubsection}{\numberline {7.33.3.1}dispatch\discretionary {-}{}{}Generic\discretionary {-}{}{}Motion\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.1}
+\contentsline {subsubsection}{\numberline {7.33.3.2}dispatch\discretionary {-}{}{}Key\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.2}
+\contentsline {subsubsection}{\numberline {7.33.3.3}dispatch\discretionary {-}{}{}Key\discretionary {-}{}{}Shortcut\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.3}
+\contentsline {subsubsection}{\numberline {7.33.3.4}dispatch\discretionary {-}{}{}Populate\discretionary {-}{}{}Accessibility\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.4}
+\contentsline {subsubsection}{\numberline {7.33.3.5}dispatch\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.5}
+\contentsline {subsubsection}{\numberline {7.33.3.6}dispatch\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{266}{subsubsection.7.33.3.6}
+\contentsline {subsubsection}{\numberline {7.33.3.7}m\discretionary {-}{}{}\_\discretionary {-}{}{}delegate\discretionary {-}{}{}Methods}{267}{subsubsection.7.33.3.7}
+\contentsline {subsubsection}{\numberline {7.33.3.8}m\discretionary {-}{}{}\_\discretionary {-}{}{}delegate\discretionary {-}{}{}Object}{267}{subsubsection.7.33.3.8}
+\contentsline {subsubsection}{\numberline {7.33.3.9}on\discretionary {-}{}{}Activity\discretionary {-}{}{}Result}{267}{subsubsection.7.33.3.9}
+\contentsline {subsubsection}{\numberline {7.33.3.10}on\discretionary {-}{}{}Create}{267}{subsubsection.7.33.3.10}
+\contentsline {subsubsection}{\numberline {7.33.3.11}on\discretionary {-}{}{}Generic\discretionary {-}{}{}Motion\discretionary {-}{}{}Event}{267}{subsubsection.7.33.3.11}
+\contentsline {subsubsection}{\numberline {7.33.3.12}on\discretionary {-}{}{}Key\discretionary {-}{}{}Down}{267}{subsubsection.7.33.3.12}
+\contentsline {subsubsection}{\numberline {7.33.3.13}on\discretionary {-}{}{}Key\discretionary {-}{}{}Long\discretionary {-}{}{}Press}{267}{subsubsection.7.33.3.13}
+\contentsline {subsubsection}{\numberline {7.33.3.14}on\discretionary {-}{}{}Key\discretionary {-}{}{}Multiple}{267}{subsubsection.7.33.3.14}
+\contentsline {subsubsection}{\numberline {7.33.3.15}on\discretionary {-}{}{}Key\discretionary {-}{}{}Shortcut}{267}{subsubsection.7.33.3.15}
+\contentsline {subsubsection}{\numberline {7.33.3.16}on\discretionary {-}{}{}Key\discretionary {-}{}{}Up}{267}{subsubsection.7.33.3.16}
+\contentsline {subsubsection}{\numberline {7.33.3.17}on\discretionary {-}{}{}Touch\discretionary {-}{}{}Event}{267}{subsubsection.7.33.3.17}
+\contentsline {subsubsection}{\numberline {7.33.3.18}on\discretionary {-}{}{}Trackball\discretionary {-}{}{}Event}{267}{subsubsection.7.33.3.18}
+\contentsline {subsubsection}{\numberline {7.33.3.19}Qt\discretionary {-}{}{}T\discretionary {-}{}{}A\discretionary {-}{}{}G}{268}{subsubsection.7.33.3.19}
+\contentsline {subsubsection}{\numberline {7.33.3.20}stack\discretionary {-}{}{}Deep}{268}{subsubsection.7.33.3.20}
+\contentsline {section}{\numberline {7.34}org.\discretionary {-}{}{}k4u.\discretionary {-}{}{}custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client.\discretionary {-}{}{}R Class Reference}{268}{section.7.34}
+\contentsline {subsection}{\numberline {7.34.1}Detailed Description}{268}{subsection.7.34.1}
+\contentsline {section}{\numberline {7.35}server\discretionary {-}{}{}:\discretionary {-}{}{}:ui\discretionary {-}{}{}Client Class Reference}{268}{section.7.35}
+\contentsline {subsection}{\numberline {7.35.1}Detailed Description}{271}{subsection.7.35.1}
+\contentsline {subsection}{\numberline {7.35.2}Constructor \& Destructor Documentation}{271}{subsection.7.35.2}
+\contentsline {subsubsection}{\numberline {7.35.2.1}ui\discretionary {-}{}{}Client}{271}{subsubsection.7.35.2.1}
+\contentsline {subsection}{\numberline {7.35.3}Member Function Documentation}{272}{subsection.7.35.3}
+\contentsline {subsubsection}{\numberline {7.35.3.1}change\discretionary {-}{}{}Own\discretionary {-}{}{}User}{272}{subsubsection.7.35.3.1}
+\contentsline {subsubsection}{\numberline {7.35.3.2}chat\discretionary {-}{}{}Received}{272}{subsubsection.7.35.3.2}
+\contentsline {subsubsection}{\numberline {7.35.3.3}check\discretionary {-}{}{}For\discretionary {-}{}{}Json\discretionary {-}{}{}Command}{273}{subsubsection.7.35.3.3}
+\contentsline {subsubsection}{\numberline {7.35.3.4}disconnected}{273}{subsubsection.7.35.3.4}
+\contentsline {subsubsection}{\numberline {7.35.3.5}get\discretionary {-}{}{}Events}{274}{subsubsection.7.35.3.5}
+\contentsline {subsubsection}{\numberline {7.35.3.6}receive\discretionary {-}{}{}Message}{274}{subsubsection.7.35.3.6}
+\contentsline {subsubsection}{\numberline {7.35.3.7}remove\discretionary {-}{}{}Connection}{275}{subsubsection.7.35.3.7}
+\contentsline {subsubsection}{\numberline {7.35.3.8}send}{275}{subsubsection.7.35.3.8}
+\contentsline {subsubsection}{\numberline {7.35.3.9}user\discretionary {-}{}{}Query}{276}{subsubsection.7.35.3.9}
+\contentsline {subsection}{\numberline {7.35.4}Member Data Documentation}{276}{subsection.7.35.4}
+\contentsline {subsubsection}{\numberline {7.35.4.1}buffer}{276}{subsubsection.7.35.4.1}
+\contentsline {subsubsection}{\numberline {7.35.4.2}depth}{276}{subsubsection.7.35.4.2}
+\contentsline {subsubsection}{\numberline {7.35.4.3}log}{276}{subsubsection.7.35.4.3}
+\contentsline {subsubsection}{\numberline {7.35.4.4}sock}{276}{subsubsection.7.35.4.4}
+\contentsline {section}{\numberline {7.36}server\discretionary {-}{}{}:\discretionary {-}{}{}:ui\discretionary {-}{}{}Server Class Reference}{277}{section.7.36}
+\contentsline {subsection}{\numberline {7.36.1}Detailed Description}{279}{subsection.7.36.1}
+\contentsline {subsection}{\numberline {7.36.2}Constructor \& Destructor Documentation}{279}{subsection.7.36.2}
+\contentsline {subsubsection}{\numberline {7.36.2.1}ui\discretionary {-}{}{}Server}{279}{subsubsection.7.36.2.1}
+\contentsline {subsubsection}{\numberline {7.36.2.2}$\sim $ui\discretionary {-}{}{}Server}{280}{subsubsection.7.36.2.2}
+\contentsline {subsection}{\numberline {7.36.3}Member Function Documentation}{280}{subsection.7.36.3}
+\contentsline {subsubsection}{\numberline {7.36.3.1}accept\discretionary {-}{}{}Connection}{280}{subsubsection.7.36.3.1}
+\contentsline {subsubsection}{\numberline {7.36.3.2}change\discretionary {-}{}{}Own\discretionary {-}{}{}User}{281}{subsubsection.7.36.3.2}
+\contentsline {subsubsection}{\numberline {7.36.3.3}chat\discretionary {-}{}{}Received}{281}{subsubsection.7.36.3.3}
+\contentsline {subsubsection}{\numberline {7.36.3.4}do\discretionary {-}{}{}Send\discretionary {-}{}{}Events}{282}{subsubsection.7.36.3.4}
+\contentsline {subsubsection}{\numberline {7.36.3.5}do\discretionary {-}{}{}User\discretionary {-}{}{}Query}{282}{subsubsection.7.36.3.5}
+\contentsline {subsubsection}{\numberline {7.36.3.6}lost\discretionary {-}{}{}Connection}{283}{subsubsection.7.36.3.6}
+\contentsline {subsubsection}{\numberline {7.36.3.7}send}{283}{subsubsection.7.36.3.7}
+\contentsline {subsubsection}{\numberline {7.36.3.8}send}{284}{subsubsection.7.36.3.8}
+\contentsline {subsubsection}{\numberline {7.36.3.9}sgn\discretionary {-}{}{}Change\discretionary {-}{}{}Own\discretionary {-}{}{}User\discretionary {-}{}{}Status}{285}{subsubsection.7.36.3.9}
+\contentsline {subsubsection}{\numberline {7.36.3.10}sgn\discretionary {-}{}{}Chat\discretionary {-}{}{}Received}{285}{subsubsection.7.36.3.10}
+\contentsline {subsubsection}{\numberline {7.36.3.11}sgn\discretionary {-}{}{}Send\discretionary {-}{}{}Events}{285}{subsubsection.7.36.3.11}
+\contentsline {subsubsection}{\numberline {7.36.3.12}sgn\discretionary {-}{}{}User\discretionary {-}{}{}Query}{286}{subsubsection.7.36.3.12}
+\contentsline {subsubsection}{\numberline {7.36.3.13}start\discretionary {-}{}{}Listen}{286}{subsubsection.7.36.3.13}
+\contentsline {subsection}{\numberline {7.36.4}Member Data Documentation}{286}{subsection.7.36.4}
+\contentsline {subsubsection}{\numberline {7.36.4.1}connections}{287}{subsubsection.7.36.4.1}
+\contentsline {subsubsection}{\numberline {7.36.4.2}log}{287}{subsubsection.7.36.4.2}
+\contentsline {subsubsection}{\numberline {7.36.4.3}port}{287}{subsubsection.7.36.4.3}
+\contentsline {section}{\numberline {7.37}server\discretionary {-}{}{}:\discretionary {-}{}{}:irc\discretionary {-}{}{}User\discretionary {-}{}{}:\discretionary {-}{}{}:user\discretionary {-}{}{}Color Struct Reference}{287}{section.7.37}
+\contentsline {subsection}{\numberline {7.37.1}Detailed Description}{287}{subsection.7.37.1}
+\contentsline {subsection}{\numberline {7.37.2}Member Data Documentation}{288}{subsection.7.37.2}
+\contentsline {subsubsection}{\numberline {7.37.2.1}b}{288}{subsubsection.7.37.2.1}
+\contentsline {subsubsection}{\numberline {7.37.2.2}g}{288}{subsubsection.7.37.2.2}
+\contentsline {subsubsection}{\numberline {7.37.2.3}r}{288}{subsubsection.7.37.2.3}
+\contentsline {chapter}{\numberline {8}File Documentation}{289}{chapter.8}
+\contentsline {section}{\numberline {8.1}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/k4u/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/\discretionary {-}{}{}Build\discretionary {-}{}{}Config.java File Reference}{289}{section.8.1}
+\contentsline {section}{\numberline {8.2}Build\discretionary {-}{}{}Config.\discretionary {-}{}{}java}{289}{section.8.2}
+\contentsline {section}{\numberline {8.3}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/k4u/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/\discretionary {-}{}{}R.java File Reference}{289}{section.8.3}
+\contentsline {section}{\numberline {8.4}R.\discretionary {-}{}{}java}{290}{section.8.4}
+\contentsline {section}{\numberline {8.5}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/kde/necessitas/ministro/\discretionary {-}{}{}I\discretionary {-}{}{}Ministro.java File Reference}{290}{section.8.5}
+\contentsline {section}{\numberline {8.6}I\discretionary {-}{}{}Ministro.\discretionary {-}{}{}java}{290}{section.8.6}
+\contentsline {section}{\numberline {8.7}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/kde/necessitas/ministro/\discretionary {-}{}{}I\discretionary {-}{}{}Ministro.java.\discretionary {-}{}{}d File Reference}{292}{section.8.7}
+\contentsline {section}{\numberline {8.8}I\discretionary {-}{}{}Ministro.\discretionary {-}{}{}java.\discretionary {-}{}{}d}{292}{section.8.8}
+\contentsline {section}{\numberline {8.9}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/kde/necessitas/ministro/\discretionary {-}{}{}I\discretionary {-}{}{}Ministro\discretionary {-}{}{}Callback.java File Reference}{292}{section.8.9}
+\contentsline {section}{\numberline {8.10}I\discretionary {-}{}{}Ministro\discretionary {-}{}{}Callback.\discretionary {-}{}{}java}{292}{section.8.10}
+\contentsline {section}{\numberline {8.11}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/org/kde/necessitas/ministro/\discretionary {-}{}{}I\discretionary {-}{}{}Ministro\discretionary {-}{}{}Callback.java.\discretionary {-}{}{}d File Reference}{293}{section.8.11}
+\contentsline {section}{\numberline {8.12}I\discretionary {-}{}{}Ministro\discretionary {-}{}{}Callback.\discretionary {-}{}{}java.\discretionary {-}{}{}d}{293}{section.8.12}
+\contentsline {section}{\numberline {8.13}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/gen/\discretionary {-}{}{}R.java.\discretionary {-}{}{}d File Reference}{293}{section.8.13}
+\contentsline {section}{\numberline {8.14}R.\discretionary {-}{}{}java.\discretionary {-}{}{}d}{294}{section.8.14}
+\contentsline {section}{\numberline {8.15}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/main.cpp File Reference}{294}{section.8.15}
+\contentsline {subsection}{\numberline {8.15.1}Function Documentation}{295}{subsection.8.15.1}
+\contentsline {subsubsection}{\numberline {8.15.1.1}main}{295}{subsubsection.8.15.1.1}
+\contentsline {section}{\numberline {8.16}main.\discretionary {-}{}{}cpp}{295}{section.8.16}
+\contentsline {section}{\numberline {8.17}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/main.cpp File Reference}{295}{section.8.17}
+\contentsline {subsection}{\numberline {8.17.1}Function Documentation}{296}{subsection.8.17.1}
+\contentsline {subsubsection}{\numberline {8.17.1.1}main}{296}{subsubsection.8.17.1.1}
+\contentsline {section}{\numberline {8.18}main.\discretionary {-}{}{}cpp}{296}{section.8.18}
+\contentsline {section}{\numberline {8.19}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/main.cpp File Reference}{296}{section.8.19}
+\contentsline {subsection}{\numberline {8.19.1}Function Documentation}{296}{subsection.8.19.1}
+\contentsline {subsubsection}{\numberline {8.19.1.1}main}{296}{subsubsection.8.19.1.1}
+\contentsline {section}{\numberline {8.20}main.\discretionary {-}{}{}cpp}{297}{section.8.20}
+\contentsline {section}{\numberline {8.21}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/mainwindow.cpp File Reference}{297}{section.8.21}
+\contentsline {section}{\numberline {8.22}mainwindow.\discretionary {-}{}{}cpp}{298}{section.8.22}
+\contentsline {section}{\numberline {8.23}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/mainwindow.cpp File Reference}{299}{section.8.23}
+\contentsline {section}{\numberline {8.24}mainwindow.\discretionary {-}{}{}cpp}{299}{section.8.24}
+\contentsline {section}{\numberline {8.25}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/mainwindow.h File Reference}{303}{section.8.25}
+\contentsline {section}{\numberline {8.26}mainwindow.\discretionary {-}{}{}h}{303}{section.8.26}
+\contentsline {section}{\numberline {8.27}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/mainwindow.h File Reference}{304}{section.8.27}
+\contentsline {subsection}{\numberline {8.27.1}Macro Definition Documentation}{305}{subsection.8.27.1}
+\contentsline {subsubsection}{\numberline {8.27.1.1}R\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S}{305}{subsubsection.8.27.1.1}
+\contentsline {section}{\numberline {8.28}mainwindow.\discretionary {-}{}{}h}{305}{section.8.28}
+\contentsline {section}{\numberline {8.29}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/src/org/kde/necessitas/origo/\discretionary {-}{}{}Qt\discretionary {-}{}{}Activity.java File Reference}{306}{section.8.29}
+\contentsline {section}{\numberline {8.30}Qt\discretionary {-}{}{}Activity.\discretionary {-}{}{}java}{307}{section.8.30}
+\contentsline {section}{\numberline {8.31}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/android/src/org/kde/necessitas/origo/\discretionary {-}{}{}Qt\discretionary {-}{}{}Application.java File Reference}{323}{section.8.31}
+\contentsline {section}{\numberline {8.32}Qt\discretionary {-}{}{}Application.\discretionary {-}{}{}java}{323}{section.8.32}
+\contentsline {section}{\numberline {8.33}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatbox.cpp File Reference}{325}{section.8.33}
+\contentsline {section}{\numberline {8.34}chatbox.\discretionary {-}{}{}cpp}{326}{section.8.34}
+\contentsline {section}{\numberline {8.35}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatbox.h File Reference}{327}{section.8.35}
+\contentsline {section}{\numberline {8.36}chatbox.\discretionary {-}{}{}h}{328}{section.8.36}
+\contentsline {section}{\numberline {8.37}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatentry.cpp File Reference}{329}{section.8.37}
+\contentsline {section}{\numberline {8.38}chatentry.\discretionary {-}{}{}cpp}{329}{section.8.38}
+\contentsline {section}{\numberline {8.39}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatentry.h File Reference}{331}{section.8.39}
+\contentsline {section}{\numberline {8.40}chatentry.\discretionary {-}{}{}h}{332}{section.8.40}
+\contentsline {section}{\numberline {8.41}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatinput.cpp File Reference}{332}{section.8.41}
+\contentsline {section}{\numberline {8.42}chatinput.\discretionary {-}{}{}cpp}{333}{section.8.42}
+\contentsline {section}{\numberline {8.43}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatinput.h File Reference}{333}{section.8.43}
+\contentsline {section}{\numberline {8.44}chatinput.\discretionary {-}{}{}h}{334}{section.8.44}
+\contentsline {section}{\numberline {8.45}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatnotification.cpp File Reference}{335}{section.8.45}
+\contentsline {section}{\numberline {8.46}chatnotification.\discretionary {-}{}{}cpp}{335}{section.8.46}
+\contentsline {section}{\numberline {8.47}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/chatnotification.h File Reference}{336}{section.8.47}
+\contentsline {section}{\numberline {8.48}chatnotification.\discretionary {-}{}{}h}{337}{section.8.48}
+\contentsline {section}{\numberline {8.49}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/clsserverconn.cpp File Reference}{338}{section.8.49}
+\contentsline {section}{\numberline {8.50}clsserverconn.\discretionary {-}{}{}cpp}{338}{section.8.50}
+\contentsline {section}{\numberline {8.51}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/clsserverconn.h File Reference}{340}{section.8.51}
+\contentsline {subsection}{\numberline {8.51.1}Macro Definition Documentation}{342}{subsection.8.51.1}
+\contentsline {subsubsection}{\numberline {8.51.1.1}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}O\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}S}{342}{subsubsection.8.51.1.1}
+\contentsline {section}{\numberline {8.52}clsserverconn.\discretionary {-}{}{}h}{342}{section.8.52}
+\contentsline {section}{\numberline {8.53}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/clssettings.cpp File Reference}{343}{section.8.53}
+\contentsline {section}{\numberline {8.54}clssettings.\discretionary {-}{}{}cpp}{343}{section.8.54}
+\contentsline {section}{\numberline {8.55}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/clssettings.cpp File Reference}{344}{section.8.55}
+\contentsline {section}{\numberline {8.56}clssettings.\discretionary {-}{}{}cpp}{344}{section.8.56}
+\contentsline {section}{\numberline {8.57}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/clssettings.h File Reference}{346}{section.8.57}
+\contentsline {section}{\numberline {8.58}clssettings.\discretionary {-}{}{}h}{347}{section.8.58}
+\contentsline {section}{\numberline {8.59}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/clssettings.h File Reference}{348}{section.8.59}
+\contentsline {subsection}{\numberline {8.59.1}Macro Definition Documentation}{349}{subsection.8.59.1}
+\contentsline {subsubsection}{\numberline {8.59.1.1}D\discretionary {-}{}{}E\discretionary {-}{}{}F\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}L\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}T}{349}{subsubsection.8.59.1.1}
+\contentsline {section}{\numberline {8.60}clssettings.\discretionary {-}{}{}h}{349}{section.8.60}
+\contentsline {section}{\numberline {8.61}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsnotify.cpp File Reference}{350}{section.8.61}
+\contentsline {section}{\numberline {8.62}clsnotify.\discretionary {-}{}{}cpp}{350}{section.8.62}
+\contentsline {section}{\numberline {8.63}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsnotify.h File Reference}{351}{section.8.63}
+\contentsline {section}{\numberline {8.64}clsnotify.\discretionary {-}{}{}h}{351}{section.8.64}
+\contentsline {section}{\numberline {8.65}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsuserentry.cpp File Reference}{352}{section.8.65}
+\contentsline {section}{\numberline {8.66}clsuserentry.\discretionary {-}{}{}cpp}{352}{section.8.66}
+\contentsline {section}{\numberline {8.67}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsuserentry.h File Reference}{353}{section.8.67}
+\contentsline {section}{\numberline {8.68}clsuserentry.\discretionary {-}{}{}h}{354}{section.8.68}
+\contentsline {section}{\numberline {8.69}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsuserlist.cpp File Reference}{355}{section.8.69}
+\contentsline {section}{\numberline {8.70}clsuserlist.\discretionary {-}{}{}cpp}{355}{section.8.70}
+\contentsline {section}{\numberline {8.71}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/desktop/clsuserlist.h File Reference}{356}{section.8.71}
+\contentsline {section}{\numberline {8.72}clsuserlist.\discretionary {-}{}{}h}{357}{section.8.72}
+\contentsline {section}{\numberline {8.73}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/ircuser.cpp File Reference}{357}{section.8.73}
+\contentsline {section}{\numberline {8.74}ircuser.\discretionary {-}{}{}cpp}{358}{section.8.74}
+\contentsline {section}{\numberline {8.75}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/ircuser.cpp File Reference}{359}{section.8.75}
+\contentsline {section}{\numberline {8.76}ircuser.\discretionary {-}{}{}cpp}{360}{section.8.76}
+\contentsline {section}{\numberline {8.77}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Client/ircuser.h File Reference}{364}{section.8.77}
+\contentsline {section}{\numberline {8.78}ircuser.\discretionary {-}{}{}h}{364}{section.8.78}
+\contentsline {section}{\numberline {8.79}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/ircuser.h File Reference}{365}{section.8.79}
+\contentsline {section}{\numberline {8.80}ircuser.\discretionary {-}{}{}h}{366}{section.8.80}
+\contentsline {section}{\numberline {8.81}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/functions.cpp File Reference}{368}{section.8.81}
+\contentsline {section}{\numberline {8.82}functions.\discretionary {-}{}{}cpp}{368}{section.8.82}
+\contentsline {section}{\numberline {8.83}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/functions.h File Reference}{369}{section.8.83}
+\contentsline {section}{\numberline {8.84}functions.\discretionary {-}{}{}h}{370}{section.8.84}
+\contentsline {section}{\numberline {8.85}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/ircclient.cpp File Reference}{371}{section.8.85}
+\contentsline {section}{\numberline {8.86}ircclient.\discretionary {-}{}{}cpp}{371}{section.8.86}
+\contentsline {section}{\numberline {8.87}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/ircclient.h File Reference}{375}{section.8.87}
+\contentsline {subsection}{\numberline {8.87.1}Macro Definition Documentation}{376}{subsection.8.87.1}
+\contentsline {subsubsection}{\numberline {8.87.1.1}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}E\discretionary {-}{}{}O\discretionary {-}{}{}U\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}S}{376}{subsubsection.8.87.1.1}
+\contentsline {subsubsection}{\numberline {8.87.1.2}P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}H\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}V\discretionary {-}{}{}A\discretionary {-}{}{}L}{376}{subsubsection.8.87.1.2}
+\contentsline {subsubsection}{\numberline {8.87.1.3}P\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D}{377}{subsubsection.8.87.1.3}
+\contentsline {subsubsection}{\numberline {8.87.1.4}P\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}T}{377}{subsubsection.8.87.1.4}
+\contentsline {section}{\numberline {8.88}ircclient.\discretionary {-}{}{}h}{377}{section.8.88}
+\contentsline {section}{\numberline {8.89}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/irc\discretionary {-}{}{}Codes.h File Reference}{379}{section.8.89}
+\contentsline {section}{\numberline {8.90}irc\discretionary {-}{}{}Codes.\discretionary {-}{}{}h}{383}{section.8.90}
+\contentsline {section}{\numberline {8.91}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/mainapp.cpp File Reference}{386}{section.8.91}
+\contentsline {section}{\numberline {8.92}mainapp.\discretionary {-}{}{}cpp}{386}{section.8.92}
+\contentsline {section}{\numberline {8.93}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/mainapp.h File Reference}{390}{section.8.93}
+\contentsline {subsection}{\numberline {8.93.1}Macro Definition Documentation}{391}{subsection.8.93.1}
+\contentsline {subsubsection}{\numberline {8.93.1.1}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}E\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}T\discretionary {-}{}{}S}{391}{subsubsection.8.93.1.1}
+\contentsline {subsubsection}{\numberline {8.93.1.2}R\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}N\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S}{391}{subsubsection.8.93.1.2}
+\contentsline {section}{\numberline {8.94}mainapp.\discretionary {-}{}{}h}{391}{section.8.94}
+\contentsline {section}{\numberline {8.95}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/uiclient.cpp File Reference}{392}{section.8.95}
+\contentsline {section}{\numberline {8.96}uiclient.\discretionary {-}{}{}cpp}{392}{section.8.96}
+\contentsline {section}{\numberline {8.97}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/uiclient.h File Reference}{393}{section.8.97}
+\contentsline {section}{\numberline {8.98}uiclient.\discretionary {-}{}{}h}{394}{section.8.98}
+\contentsline {section}{\numberline {8.99}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/uiserver.cpp File Reference}{395}{section.8.99}
+\contentsline {section}{\numberline {8.100}uiserver.\discretionary {-}{}{}cpp}{396}{section.8.100}
+\contentsline {section}{\numberline {8.101}C++/custom\discretionary {-}{}{}Irc\discretionary {-}{}{}Server/uiserver.h File Reference}{397}{section.8.101}
+\contentsline {subsection}{\numberline {8.101.1}Macro Definition Documentation}{398}{subsection.8.101.1}
+\contentsline {subsubsection}{\numberline {8.101.1.1}D\discretionary {-}{}{}E\discretionary {-}{}{}F\discretionary {-}{}{}A\discretionary {-}{}{}U\discretionary {-}{}{}L\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}L\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}T\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}T}{398}{subsubsection.8.101.1.1}
+\contentsline {section}{\numberline {8.102}uiserver.\discretionary {-}{}{}h}{398}{section.8.102}
+\contentsline {section}{\numberline {8.103}C++/resources/clsevent.cpp File Reference}{399}{section.8.103}
+\contentsline {section}{\numberline {8.104}clsevent.\discretionary {-}{}{}cpp}{399}{section.8.104}
+\contentsline {section}{\numberline {8.105}C++/resources/clsevent.h File Reference}{400}{section.8.105}
+\contentsline {section}{\numberline {8.106}clsevent.\discretionary {-}{}{}h}{401}{section.8.106}
+\contentsline {section}{\numberline {8.107}C++/resources/clslog.cpp File Reference}{402}{section.8.107}
+\contentsline {section}{\numberline {8.108}clslog.\discretionary {-}{}{}cpp}{403}{section.8.108}
+\contentsline {section}{\numberline {8.109}C++/resources/clslog.h File Reference}{405}{section.8.109}
+\contentsline {section}{\numberline {8.110}clslog.\discretionary {-}{}{}h}{406}{section.8.110}
+\contentsline {section}{\numberline {8.111}C++/resources/events/eventchat.cpp File Reference}{406}{section.8.111}
+\contentsline {section}{\numberline {8.112}eventchat.\discretionary {-}{}{}cpp}{407}{section.8.112}
+\contentsline {section}{\numberline {8.113}C++/resources/events/eventchat.h File Reference}{407}{section.8.113}
+\contentsline {section}{\numberline {8.114}eventchat.\discretionary {-}{}{}h}{408}{section.8.114}
+\contentsline {section}{\numberline {8.115}C++/resources/events/events.h File Reference}{409}{section.8.115}
+\contentsline {section}{\numberline {8.116}events.\discretionary {-}{}{}h}{410}{section.8.116}
+\contentsline {section}{\numberline {8.117}C++/resources/events/eventservermessage.cpp File Reference}{410}{section.8.117}
+\contentsline {section}{\numberline {8.118}eventservermessage.\discretionary {-}{}{}cpp}{411}{section.8.118}
+\contentsline {section}{\numberline {8.119}C++/resources/events/eventservermessage.h File Reference}{411}{section.8.119}
+\contentsline {section}{\numberline {8.120}eventservermessage.\discretionary {-}{}{}h}{412}{section.8.120}
+\contentsline {section}{\numberline {8.121}C++/resources/events/eventuserchangenick.cpp File Reference}{413}{section.8.121}
+\contentsline {section}{\numberline {8.122}eventuserchangenick.\discretionary {-}{}{}cpp}{413}{section.8.122}
+\contentsline {section}{\numberline {8.123}C++/resources/events/eventuserchangenick.h File Reference}{414}{section.8.123}
+\contentsline {section}{\numberline {8.124}eventuserchangenick.\discretionary {-}{}{}h}{415}{section.8.124}
+\contentsline {section}{\numberline {8.125}C++/resources/events/eventuserchangestatus.cpp File Reference}{415}{section.8.125}
+\contentsline {section}{\numberline {8.126}eventuserchangestatus.\discretionary {-}{}{}cpp}{416}{section.8.126}
+\contentsline {section}{\numberline {8.127}C++/resources/events/eventuserchangestatus.h File Reference}{416}{section.8.127}
+\contentsline {section}{\numberline {8.128}eventuserchangestatus.\discretionary {-}{}{}h}{417}{section.8.128}
+\contentsline {section}{\numberline {8.129}C++/resources/events/eventuserjoin.cpp File Reference}{418}{section.8.129}
+\contentsline {section}{\numberline {8.130}eventuserjoin.\discretionary {-}{}{}cpp}{418}{section.8.130}
+\contentsline {section}{\numberline {8.131}C++/resources/events/eventuserjoin.h File Reference}{418}{section.8.131}
+\contentsline {section}{\numberline {8.132}eventuserjoin.\discretionary {-}{}{}h}{419}{section.8.132}
+\contentsline {section}{\numberline {8.133}C++/resources/events/eventuserleave.cpp File Reference}{420}{section.8.133}
+\contentsline {section}{\numberline {8.134}eventuserleave.\discretionary {-}{}{}cpp}{420}{section.8.134}
+\contentsline {section}{\numberline {8.135}C++/resources/events/eventuserleave.h File Reference}{421}{section.8.135}
+\contentsline {section}{\numberline {8.136}eventuserleave.\discretionary {-}{}{}h}{422}{section.8.136}
+\contentsline {section}{\numberline {8.137}C++/resources/json.cpp File Reference}{422}{section.8.137}
+\contentsline {section}{\numberline {8.138}json.\discretionary {-}{}{}cpp}{423}{section.8.138}
+\contentsline {section}{\numberline {8.139}C++/resources/json.h File Reference}{430}{section.8.139}
+\contentsline {section}{\numberline {8.140}json.\discretionary {-}{}{}h}{431}{section.8.140}
+\contentsline {section}{\numberline {8.141}C++/resources/jsoncommand.cpp File Reference}{432}{section.8.141}
+\contentsline {section}{\numberline {8.142}jsoncommand.\discretionary {-}{}{}cpp}{432}{section.8.142}
+\contentsline {section}{\numberline {8.143}C++/resources/jsoncommand.h File Reference}{434}{section.8.143}
+\contentsline {section}{\numberline {8.144}jsoncommand.\discretionary {-}{}{}h}{435}{section.8.144}
+\contentsline {part}{Index}{436}{section.8.144}

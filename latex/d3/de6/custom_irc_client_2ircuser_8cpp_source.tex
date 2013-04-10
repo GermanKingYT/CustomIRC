@@ -1,0 +1,125 @@
+\hypertarget{custom_irc_client_2ircuser_8cpp}{\section{ircuser.\-cpp}
+\label{d3/de6/custom_irc_client_2ircuser_8cpp}\index{C++/custom\-Irc\-Client/ircuser.\-cpp@{C++/custom\-Irc\-Client/ircuser.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2ircuser_8h}{ircuser.h}"}
+00002 \textcolor{preprocessor}{#include <QCryptographicHash>}
+00003 
+00004 \textcolor{keyword}{namespace }client\{
+00005 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00006}{}\hyperlink{classclient_1_1irc_user_aff2073482ef95c7719f13390414dd197}{00006}     \hyperlink{classclient_1_1irc_user_aff2073482ef95c7719f13390414dd197}{ircUser::~ircUser}()\{
+00007     \}
+00008 
+00009 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00010}{}\hyperlink{classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}{00010}     \hyperlink{classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}{ircUser::ircUser}(QVariant jsonData)
+00011         :log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00012     \{
+00013         QVariantMap data = jsonData.toMap();
+00014         this->\textcolor{keywordtype}{id} = data[\textcolor{stringliteral}{"id"}].toInt();
+00015         this->\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick} = data[\textcolor{stringliteral}{"nick"}].toString();
+00016         this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status} = data[\textcolor{stringliteral}{"status"}].toString();
+00017         this->\hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{standard} = data[\textcolor{stringliteral}{"standard"}].toBool();
+00018         this->\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor} = QColor(data[\textcolor{stringliteral}{"uColor"}].toMap()[\textcolor{stringliteral}{"r"}].toInt(),
+00019                 data[\textcolor{stringliteral}{"uColor"}].toMap()[\textcolor{stringliteral}{"g"}].toInt(),
+00020                 data[\textcolor{stringliteral}{"uColor"}].toMap()[\textcolor{stringliteral}{"b"}].toInt());
+00021         this->\hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{email} = data[\textcolor{stringliteral}{"email"}].toString();
+00022         this->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online} = data[\textcolor{stringliteral}{"online"}].toBool();
+00023         \textcolor{comment}{//Fetch gravatar here plox}
+00024         \textcolor{comment}{//Fetch gravatar}
+00025         QNetworkAccessManager *m\_netwManager = \textcolor{keyword}{new} QNetworkAccessManager();
+00026         connect(m\_netwManager, SIGNAL(finished(QNetworkReply*)), \textcolor{keyword}{this},
+00027                 SLOT(\hyperlink{classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}{slot\_netwManagerFinished}(QNetworkReply*)));
+00028 
+00029         QString hash = QString(
+00030                 QCryptographicHash::hash(this->\hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{email}.trimmed().toLower().toUtf8(),
+00031                     QCryptographicHash::Md5).toHex());
+00032         QUrl url(\textcolor{stringliteral}{"http://www.gravatar.com/avatar/"} + hash);
+00033         QNetworkRequest request(url);
+00034         m\_netwManager->get(request);
+00035     \}
+00036 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00037}{}\hyperlink{classclient_1_1irc_user_a4dd04ceda1776113771b4ddd66d6aeda}{00037}     \hyperlink{classclient_1_1irc_user_a4756f42dc5c84f94e97ec5b5eda2b9e2}{ircUser::ircUser}(qint32 \textcolor{keywordtype}{id}, QString nick, QString status, QColor uColor, \textcolor{keywordtype}{bool} standard)
+00038         :id(id)
+00039          ,nick(nick)
+00040          ,status(status)
+00041          ,uColor(uColor)
+00042          ,standard(standard)
+00043          ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER})
+00044     \{\}
+00045 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00046}{}\hyperlink{classclient_1_1irc_user_a1a92b2fc3fe322e1a8d73ac2207edff2}{00046}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_a1a92b2fc3fe322e1a8d73ac2207edff2}{ircUser::copyFrom}(\hyperlink{classclient_1_1irc_user}{ircUser} *userToCopy)\{
+00047         this->\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick} = userToCopy->\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick};
+00048         this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status} = userToCopy->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status};
+00049         this->\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor} = userToCopy->\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor};
+00050         this->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online} = userToCopy->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online};
+00051     \}
+00052 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00053}{}\hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{00053}     \textcolor{keyword}{const} QString \hyperlink{classclient_1_1irc_user_aba9ee79c126657f6d31b349f9aa45491}{ircUser::getNick}()\textcolor{keyword}{ const}\{
+00054         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick};
+00055     \}
+00056 
+00057 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00058}{}\hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{00058}     qint32 \hyperlink{classclient_1_1irc_user_a7cfd7dd6670a4f1b2af75914a1e1f4ae}{ircUser::getId}()\textcolor{keyword}{ const}\{
+00059         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{id};
+00060     \}
+00061 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00062}{}\hyperlink{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{00062}     \textcolor{keyword}{const} QString \hyperlink{classclient_1_1irc_user_ad800b80a1dc3b1fd2bacffaee6ceb7e7}{ircUser::getStatus}()\textcolor{keyword}{ const}\{
+00063         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status};
+00064     \}
+00065 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00066}{}\hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{00066}     \textcolor{keyword}{const} QColor \hyperlink{classclient_1_1irc_user_a7d4549d1722c3dea93d83114c70b8aae}{ircUser::getColor}()\textcolor{keyword}{ const}\{
+00067         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor};
+00068     \}
+00069 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00070}{}\hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{00070}     \textcolor{keyword}{const} QPixmap \hyperlink{classclient_1_1irc_user_a521a4df549ad0e80df8ef739d168a917}{ircUser::getIcon}()\textcolor{keyword}{ const}\{
+00071         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{icon};
+00072     \}
+00073 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00074}{}\hyperlink{classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}{00074}     \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1irc_user_a6a361f6ed53e82efe4e442db7023ae49}{ircUser::getStandard}()\textcolor{keyword}{ const}\{
+00075         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{standard};
+00076     \}
+00077 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00078}{}\hyperlink{classclient_1_1irc_user_af60811d51ad2e145727c0d6689f3bb8b}{00078}     \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1irc_user_af60811d51ad2e145727c0d6689f3bb8b}{ircUser::getOnline}()\textcolor{keyword}{ const}\{
+00079         \textcolor{keywordflow}{return} this->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online};
+00080     \}
+00081 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00082}{}\hyperlink{classclient_1_1irc_user_afea3839060b77227e83a0f84067a680d}{00082}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_afea3839060b77227e83a0f84067a680d}{ircUser::setNick}(\textcolor{keyword}{const} QString &newNick)\{
+00083         this->\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick} = newNick;
+00084     \}
+00085 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00086}{}\hyperlink{classclient_1_1irc_user_a0e73c2523b27cd4aeef5b85af753ed26}{00086}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_a0e73c2523b27cd4aeef5b85af753ed26}{ircUser::setStatus}(\textcolor{keyword}{const} QString &newStatus)\{
+00087         \textcolor{keywordflow}{if}(newStatus == \textcolor{stringliteral}{""})\{
+00088             this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status} = \textcolor{stringliteral}{"Online"};
+00089         \}\textcolor{keywordflow}{else}\{
+00090             this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status} = newStatus;
+00091         \}
+00092     \}
+00093 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00094}{}\hyperlink{classclient_1_1irc_user_a244bb548bf70054af24e540bfe10ef48}{00094}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_a244bb548bf70054af24e540bfe10ef48}{ircUser::setColor}(\textcolor{keyword}{const} QColor &newColor)\{
+00095         this->\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor} = newColor;
+00096     \}
+00097 
+00098 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00099}{}\hyperlink{classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}{00099}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_a10dddba7236ce4577fd11eb906005d55}{ircUser::slot\_netwManagerFinished}(QNetworkReply *reply)\{
+00100         \textcolor{keywordflow}{if} (reply->error() != QNetworkReply::NoError) \{
+00101             qDebug() << \textcolor{stringliteral}{"Error in"} << reply->url() << \textcolor{stringliteral}{":"} << reply->errorString();
+00102             \textcolor{keywordflow}{return};
+00103         \}
+00104 
+00105         QByteArray jpegData = reply->readAll();
+00106         this->\hyperlink{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{icon}.loadFromData(jpegData);
+00107         \textcolor{comment}{//this->ui->lblGravatar->setPixmap(pixmap.scaled(this->ui->lblGravatar->size()));}
+00108         emit this->\hyperlink{classclient_1_1irc_user_a80f421ad537905c9bb6b3ecca9356984}{iconChanged}();
+00109     \}
+00110 
+00111 
+\hypertarget{custom_irc_client_2ircuser_8cpp_source_l00112}{}\hyperlink{classclient_1_1irc_user_a3ba95d7e1584d9004b449494a62302a3}{00112}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1irc_user_a3ba95d7e1584d9004b449494a62302a3}{ircUser::setOnline}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} isOnline)\{
+00113         this->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online} = isOnline;
+00114         \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online} == \textcolor{keyword}{false})\{
+00115             this->\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status} = \textcolor{stringliteral}{"Offline"};
+00116         \}
+00117     \}
+00118 
+00119 \}
+\end{DoxyCode}

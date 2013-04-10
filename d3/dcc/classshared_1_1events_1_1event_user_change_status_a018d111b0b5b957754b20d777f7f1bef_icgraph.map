@@ -1,0 +1,4 @@
+<map id="shared::events::eventUserChangeStatus::getNewStatus" name="shared::events::eventUserChangeStatus::getNewStatus">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#a380097fa1faba7f0457886053f793c59" title="Triggered when a user changes his status (nick|status)" alt="" coords="249,5,386,46"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="435,5,570,46"/>
+</map>

@@ -1,0 +1,38 @@
+\hypertarget{clsuserentry_8h}{\section{clsuserentry.\-h}
+\label{dc/da0/clsuserentry_8h}\index{C++/custom\-Irc\-Client/desktop/clsuserentry.\-h@{C++/custom\-Irc\-Client/desktop/clsuserentry.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSUSERENTRY\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSUSERENTRY\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QWidget>}
+00005 \textcolor{preprocessor}{#include <QLabel>}
+00006 \textcolor{preprocessor}{#include "../ircuser.h"}
+00007 
+00008 \textcolor{keyword}{namespace }Ui \{
+00009     \textcolor{keyword}{class }clsUserEntry;
+00010 \}
+00011 
+00012 \textcolor{keyword}{namespace }client\{
+\hypertarget{clsuserentry_8h_source_l00017}{}\hyperlink{classclient_1_1cls_user_entry}{00017}     \textcolor{keyword}{class }\hyperlink{classclient_1_1cls_user_entry}{clsUserEntry} : \textcolor{keyword}{public} QWidget
+00018     \{
+00019         Q\_OBJECT
+00020 
+00021         \textcolor{keyword}{public}:
+00022             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1cls_user_entry_a906da840f42f13d4a0f398c8c5ad6da6}{clsUserEntry}(\hyperlink{classclient_1_1irc_user}{ircUser} *\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user}, QWidget *parent = 0);
+00023             \hyperlink{classclient_1_1cls_user_entry_ab52b88e70ae687236c85c5f5daebb0ea}{~clsUserEntry}();
+00024 
+00025             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_entry_a878c280a93fabf2651880629103e1ef3}{refresh}();
+00026         \textcolor{keyword}{private} slots:
+00027             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_user_entry_a3a0fe3fd86b54b785fac07a22a52f508}{iconChanged}();
+00028 
+00029         \textcolor{keyword}{private}:
+\hypertarget{clsuserentry_8h_source_l00030}{}\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{00030}             Ui::clsUserEntry *\hyperlink{classclient_1_1cls_user_entry_ac2989d85ad732aeb8bceabf6ef01d6d1}{ui};
+00031 
+\hypertarget{clsuserentry_8h_source_l00032}{}\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{00032}             \hyperlink{classclient_1_1irc_user}{ircUser} *\hyperlink{classclient_1_1cls_user_entry_a17a901ba37f7a81041453cc9135f2d4c}{user};
+00033     \};
+00034 
+00035 \}
+00036 \textcolor{preprocessor}{#endif // CLSUSERENTRY\_H}
+\end{DoxyCode}

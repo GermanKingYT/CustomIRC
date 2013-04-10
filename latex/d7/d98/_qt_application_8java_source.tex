@@ -1,0 +1,223 @@
+\hypertarget{_qt_application_8java}{\section{Qt\-Application.\-java}
+\label{d7/d98/_qt_application_8java}\index{C++/custom\-Irc\-Client/android/src/org/kde/necessitas/origo/\-Qt\-Application.\-java@{C++/custom\-Irc\-Client/android/src/org/kde/necessitas/origo/\-Qt\-Application.\-java}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{    Copyright (c) 2009-2011, BogDan Vatra <bog\_dan\_ro@yahoo.com>}
+00003 \textcolor{comment}{    All rights reserved.}
+00004 \textcolor{comment}{}
+00005 \textcolor{comment}{    Redistribution and use in source and binary forms, with or without}
+00006 \textcolor{comment}{    modification, are permitted provided that the following conditions are met:}
+00007 \textcolor{comment}{        * Redistributions of source code must retain the above copyright}
+00008 \textcolor{comment}{        notice, this list of conditions and the following disclaimer.}
+00009 \textcolor{comment}{        * Redistributions in binary form must reproduce the above copyright}
+00010 \textcolor{comment}{        notice, this list of conditions and the following disclaimer in the}
+00011 \textcolor{comment}{        documentation and/or other materials provided with the distribution.}
+00012 \textcolor{comment}{        * Neither the name of the  BogDan Vatra <bog\_dan\_ro@yahoo.com> nor the}
+00013 \textcolor{comment}{        names of its contributors may be used to endorse or promote products}
+00014 \textcolor{comment}{        derived from this software without specific prior written permission.}
+00015 \textcolor{comment}{}
+00016 \textcolor{comment}{    THIS SOFTWARE IS PROVIDED BY BogDan Vatra <bog\_dan\_ro@yahoo.com> ''AS IS'' AND ANY}
+00017 \textcolor{comment}{    EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED}
+00018 \textcolor{comment}{    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE}
+00019 \textcolor{comment}{    DISCLAIMED. IN NO EVENT SHALL BogDan Vatra <bog\_dan\_ro@yahoo.com> BE LIABLE FOR ANY}
+00020 \textcolor{comment}{    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES}
+00021 \textcolor{comment}{    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;}
+00022 \textcolor{comment}{    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND}
+00023 \textcolor{comment}{    ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT}
+00024 \textcolor{comment}{    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS}
+00025 \textcolor{comment}{    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}
+00026 \textcolor{comment}{*/}
+00027 
+00028 \textcolor{keyword}{package }org.kde.necessitas.origo;
+00029 
+00030 \textcolor{keyword}{import} java.lang.reflect.Field;
+00031 \textcolor{keyword}{import} java.lang.reflect.Method;
+00032 \textcolor{keyword}{import} java.util.ArrayList;
+00033 \textcolor{keyword}{import} java.util.HashMap;
+00034 
+00035 \textcolor{keyword}{import} android.app.Application;
+00036 
+\hypertarget{_qt_application_8java_source_l00037}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{00037} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication} \textcolor{keyword}{extends} Application
+00038 \{
+\hypertarget{_qt_application_8java_source_l00039}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ad954a272f4a3259ceebc0b0a3d85dd82}{00039}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{static} String \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ad954a272f4a3259ceebc0b0a3d85dd82}{QtTAG}=\textcolor{stringliteral}{"Qt"};
+\hypertarget{_qt_application_8java_source_l00040}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{00040}     \textcolor{keyword}{public} \textcolor{keyword}{static} Object \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} = null;
+\hypertarget{_qt_application_8java_source_l00041}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{00041}     \textcolor{keyword}{public} \textcolor{keyword}{static} HashMap<String, ArrayList<Method>> \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}= \textcolor{keyword}{new} 
+      HashMap<String, ArrayList<Method>>();
+\hypertarget{_qt_application_8java_source_l00042}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aab936e36af61fbebae2ba7f3d18f54d7}{00042}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aab936e36af61fbebae2ba7f3d18f54d7}{dispatchKeyEvent} = null;
+\hypertarget{_qt_application_8java_source_l00043}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6efc44f694101237803c49b4a59387fc}{00043}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6efc44f694101237803c49b4a59387fc}{dispatchPopulateAccessibilityEvent} = null;
+\hypertarget{_qt_application_8java_source_l00044}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af2295829d67b0f84d5bc349c583a2796}{00044}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af2295829d67b0f84d5bc349c583a2796}{dispatchTouchEvent} = null;
+\hypertarget{_qt_application_8java_source_l00045}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a82788f38435ef4c08181497d41acaf69}{00045}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a82788f38435ef4c08181497d41acaf69}{dispatchTrackballEvent} = null;
+\hypertarget{_qt_application_8java_source_l00046}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa7685aedb8e428ea4bc02e6ff6400ff6}{00046}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa7685aedb8e428ea4bc02e6ff6400ff6}{onKeyDown} = null;
+\hypertarget{_qt_application_8java_source_l00047}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a2543739047707bc93dd3e3b4e1258a94}{00047}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a2543739047707bc93dd3e3b4e1258a94}{onKeyMultiple} = null;
+\hypertarget{_qt_application_8java_source_l00048}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a14391cdd6db670ebc6476f3d77c98478}{00048}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a14391cdd6db670ebc6476f3d77c98478}{onKeyUp} = null;
+\hypertarget{_qt_application_8java_source_l00049}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6af32ee65449508fd3d725b9ea4509ec}{00049}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a6af32ee65449508fd3d725b9ea4509ec}{onTouchEvent} = null;
+\hypertarget{_qt_application_8java_source_l00050}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa3d5068cdf9e6a4a3163e3810908fef7}{00050}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aa3d5068cdf9e6a4a3163e3810908fef7}{onTrackballEvent} = null;
+\hypertarget{_qt_application_8java_source_l00051}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_add9ee10c3ded40d66ef7d8ce6d4d1aef}{00051}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_add9ee10c3ded40d66ef7d8ce6d4d1aef}{onActivityResult} = null;
+\hypertarget{_qt_application_8java_source_l00052}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af48a7b3b90f3b9977d4968e4d9dea8dc}{00052}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_af48a7b3b90f3b9977d4968e4d9dea8dc}{onCreate} = null;
+\hypertarget{_qt_application_8java_source_l00053}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a1f77504534fe0f052fb86e5410b2235f}{00053}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a1f77504534fe0f052fb86e5410b2235f}{onKeyLongPress} = null;
+\hypertarget{_qt_application_8java_source_l00054}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a4a5361e0ccac0f7a8890dd2fed6f6d20}{00054}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a4a5361e0ccac0f7a8890dd2fed6f6d20}{dispatchKeyShortcutEvent} = null;
+\hypertarget{_qt_application_8java_source_l00055}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a98b2c8ed32427b53f59310a81ca43b48}{00055}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a98b2c8ed32427b53f59310a81ca43b48}{onKeyShortcut} = null;
+\hypertarget{_qt_application_8java_source_l00056}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a3cbf08100c28cac6537d5f2692d5294c}{00056}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a3cbf08100c28cac6537d5f2692d5294c}{dispatchGenericMotionEvent} = null;
+\hypertarget{_qt_application_8java_source_l00057}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a8b387a48af075841808ff0a6b6821f38}{00057}     \textcolor{keyword}{public} \textcolor{keyword}{static} Method \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a8b387a48af075841808ff0a6b6821f38}{onGenericMotionEvent} = null;
+00058 \textcolor{comment}{/*}
+00059 \textcolor{comment}{    public static Method onTerminate = null;}
+00060 \textcolor{comment}{    public static Method onApplyThemeResource = null;}
+00061 \textcolor{comment}{    public static Method onChildTitleChanged = null;}
+00062 \textcolor{comment}{    public static Method onConfigurationChanged = null;}
+00063 \textcolor{comment}{    public static Method onContentChanged  = null;}
+00064 \textcolor{comment}{    public static Method onContextItemSelected  = null;}
+00065 \textcolor{comment}{    public static Method onContextMenuClosed = null;}
+00066 \textcolor{comment}{    public static Method onCreateContextMenu = null;}
+00067 \textcolor{comment}{    public static Method onCreateDescription = null;}
+00068 \textcolor{comment}{    public static Method onCreateDialog = null;}
+00069 \textcolor{comment}{    public static Method onCreateOptionsMenu = null;}
+00070 \textcolor{comment}{    public static Method onCreatePanelMenu = null;}
+00071 \textcolor{comment}{    public static Method onCreatePanelView = null;}
+00072 \textcolor{comment}{    public static Method onCreateThumbnail = null;}
+00073 \textcolor{comment}{    public static Method onCreateView = null;}
+00074 \textcolor{comment}{    public static Method onDestroy = null;}
+00075 \textcolor{comment}{    public static Method onLowMemory = null;}
+00076 \textcolor{comment}{    public static Method onMenuItemSelected = null;}
+00077 \textcolor{comment}{    public static Method onMenuOpened = null;}
+00078 \textcolor{comment}{    public static Method onNewIntent = null;}
+00079 \textcolor{comment}{    public static Method onOptionsItemSelected = null;}
+00080 \textcolor{comment}{    public static Method onOptionsMenuClosed = null;}
+00081 \textcolor{comment}{    public static Method onPanelClosed = null;}
+00082 \textcolor{comment}{    public static Method onPause = null;}
+00083 \textcolor{comment}{    public static Method onPostCreate = null;}
+00084 \textcolor{comment}{    public static Method onPostResume = null;}
+00085 \textcolor{comment}{    public static Method onPrepareDialog = null;}
+00086 \textcolor{comment}{    public static Method onPrepareOptionsMenu = null;}
+00087 \textcolor{comment}{    public static Method onPreparePanel = null;}
+00088 \textcolor{comment}{    public static Method onRestart = null;}
+00089 \textcolor{comment}{    public static Method onRestoreInstanceState = null;}
+00090 \textcolor{comment}{    public static Method onResume = null;}
+00091 \textcolor{comment}{    public static Method onRetainNonConfigurationInstance = null;}
+00092 \textcolor{comment}{    public static Method onSaveInstanceState = null;}
+00093 \textcolor{comment}{    public static Method onSearchRequested = null;}
+00094 \textcolor{comment}{    public static Method onStart = null;}
+00095 \textcolor{comment}{    public static Method onStop = null;}
+00096 \textcolor{comment}{    public static Method onTitleChanged = null;}
+00097 \textcolor{comment}{    public static Method onUserInteraction = null;}
+00098 \textcolor{comment}{    public static Method onUserLeaveHint = null;}
+00099 \textcolor{comment}{    public static Method onWindowAttributesChanged = null;}
+00100 \textcolor{comment}{    public static Method onWindowFocusChanged = null;}
+00101 \textcolor{comment}{    public static Method onAttachedToWindow = null;}
+00102 \textcolor{comment}{    public static Method onBackPressed = null;}
+00103 \textcolor{comment}{    public static Method onDetachedFromWindow = null;}
+00104 \textcolor{comment}{    public static Method onCreateDialog8 = null;}
+00105 \textcolor{comment}{    public static Method onPrepareDialog8 = null;}
+00106 \textcolor{comment}{    public static Method onActionModeFinished = null;}
+00107 \textcolor{comment}{    public static Method onActionModeStarted = null;}
+00108 \textcolor{comment}{    public static Method onAttachFragment = null;}
+00109 \textcolor{comment}{    public static Method onCreateView11 = null;}
+00110 \textcolor{comment}{    public static Method onWindowStartingActionMode = null;}
+00111 \textcolor{comment}{*/}
+00112 
+\hypertarget{_qt_application_8java_source_l00113}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_afea43576f6f8633639f721ce8bff907e}{00113}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_afea43576f6f8633639f721ce8bff907e}{setQtActivityDelegate}(Object listener)
+00114     \{
+00115         \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} = listener;
+00116 
+00117         ArrayList<Method> delegateMethods = \textcolor{keyword}{new} ArrayList<Method>();
+00118         \textcolor{keywordflow}{for} (Method m: listener.getClass().getMethods())
+00119             \textcolor{keywordflow}{if} (m.getDeclaringClass().getName().startsWith(\textcolor{stringliteral}{"org.kde.necessitas"}))
+00120                 delegateMethods.add(m);
+00121 
+00122         ArrayList<Field> applicationFields = \textcolor{keyword}{new} ArrayList<Field>();
+00123         \textcolor{keywordflow}{for} (Field f: \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.class.getFields())
+00124             \textcolor{keywordflow}{if} (f.getDeclaringClass().getName().equals(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.class.getName()))
+00125                 applicationFields.add(f);
+00126 
+00127         \textcolor{keywordflow}{for} (Method delegateMethod:delegateMethods)
+00128         \{
+00129             \textcolor{keywordflow}{try} \{
+00130                 \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.class.getDeclaredMethod(delegateMethod.getName(), delegateMethod.
+      getParameterTypes());
+00131                 \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.containsKey(
+      delegateMethod.getName()))
+00132                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.get(delegateMethod.
+      getName()).add(delegateMethod);
+00133                 \textcolor{keywordflow}{else}
+00134                 \{
+00135                     ArrayList<Method> delegateSet = \textcolor{keyword}{new} ArrayList<Method>();
+00136                     delegateSet.add(delegateMethod);
+00137                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application}{QtApplication}.\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.put(delegateMethod.
+      getName(), delegateSet);
+00138                 \}
+00139                 \textcolor{keywordflow}{for}(Field applicationField:applicationFields)
+00140                 \{
+00141                     \textcolor{keywordflow}{if} (applicationField.getName().equals(delegateMethod.getName()))
+00142                     \{
+00143                         \textcolor{keywordflow}{try} \{
+00144                             applicationField.set(null, delegateMethod);
+00145                         \} \textcolor{keywordflow}{catch} (Exception e) \{
+00146                             e.printStackTrace();
+00147                         \}
+00148                     \}
+00149                 \}
+00150             \}
+00151             \textcolor{keywordflow}{catch} (Exception e)
+00152             \{
+00153             \}
+00154         \}
+00155     \}
+00156 
+00157     @Override
+\hypertarget{_qt_application_8java_source_l00158}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aeaea892f6a4223f462e6546534718266}{00158}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_aeaea892f6a4223f462e6546534718266}{onTerminate}() \{
+00159         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject} != null && \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.containsKey(\textcolor{stringliteral}{"
+      onTerminate"}))
+00160             \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.get(\textcolor{stringliteral}{"onTerminate"}).
+      get(0));
+00161         super.onTerminate();
+00162     \}
+00163 
+00164     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }InvokeResult
+00165     \{
+00166         \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} invoked = \textcolor{keyword}{false};
+00167         \textcolor{keyword}{public} Object methodReturns = null;
+00168     \}
+00169 
+\hypertarget{_qt_application_8java_source_l00170}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{00170}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{stackDeep}=-1;
+\hypertarget{_qt_application_8java_source_l00171}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{00171}     \textcolor{keyword}{public} \textcolor{keyword}{static} InvokeResult \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a9007552e161bf57f2a75125825d4444b}{invokeDelegate}(Object... args)
+00172     \{
+00173         InvokeResult result = \textcolor{keyword}{new} InvokeResult();
+00174         \textcolor{keywordflow}{if} (\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject}==null)
+00175             \textcolor{keywordflow}{return} result;
+00176         StackTraceElement[] elements=Thread.currentThread().getStackTrace();
+00177         \textcolor{keywordflow}{if} (-1 == \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{stackDeep})
+00178         \{
+00179             String activityClassName=\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_activity}{QtActivity}.class.getCanonicalName();
+00180             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} it=0;it<elements.length;it++)
+00181                 \textcolor{keywordflow}{if} (elements[it].getClassName().equals(activityClassName))
+00182                 \{
+00183                     \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{stackDeep}=it;
+00184                     \textcolor{keywordflow}{break};
+00185                 \}
+00186         \}
+00187         \textcolor{keyword}{final} String methodName=elements[\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{stackDeep}].getMethodName();
+00188         \textcolor{keywordflow}{if} (-1 == \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_ab072f0cec7e921c7decb2aa1d532fea3}{stackDeep} || !\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.containsKey(methodName))
+00189             \textcolor{keywordflow}{return} result;
+00190 
+00191         \textcolor{keywordflow}{for} (Method m:\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a011b58e35a86b2e68c73c08bba0d4401}{m\_delegateMethods}.get(methodName))
+00192             \textcolor{keywordflow}{if} (m.getParameterTypes().length == args.length)
+00193             \{
+00194                 result.methodReturns=\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(m, args);
+00195                 result.invoked=\textcolor{keyword}{true};
+00196                 \textcolor{keywordflow}{return} result;
+00197             \}
+00198         \textcolor{keywordflow}{return} result;
+00199     \}
+00200 
+\hypertarget{_qt_application_8java_source_l00201}{}\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{00201}     \textcolor{keyword}{public} \textcolor{keyword}{static} Object \hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a329e95a39e56530f3745aa0d8e057761}{invokeDelegateMethod}(Method m, Object... args)
+00202     \{
+00203         \textcolor{keywordflow}{try} \{
+00204             \textcolor{keywordflow}{return} m.invoke(\hyperlink{classorg_1_1kde_1_1necessitas_1_1origo_1_1_qt_application_a29798ea60f352144962f0b83b585a140}{m\_delegateObject}, args);
+00205         \} \textcolor{keywordflow}{catch} (Exception e) \{
+00206             e.printStackTrace();
+00207         \}
+00208         \textcolor{keywordflow}{return} null;
+00209     \}
+00210 \}
+\end{DoxyCode}

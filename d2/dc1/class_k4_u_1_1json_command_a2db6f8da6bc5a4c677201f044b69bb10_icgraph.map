@@ -1,0 +1,8 @@
+<map id="K4U::jsonCommand::getCommand" name="K4U::jsonCommand::getCommand">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.html#a8fc1a3ef72ba0480d521781f84983afe" title="Adds data to buffer and checks for json commands." alt="" coords="277,5,448,46"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="501,47,645,89"/>
+<area shape="rect" id="node5" href="$dc/d4d/classserver_1_1ui_client.html#a8237b1a02c7877a7c853b6ef23995b9b" title="Adds data to buffer and checks for json commands." alt="" coords="278,122,447,163"/>
+<area shape="rect" id="node6" href="$dc/d4d/classserver_1_1ui_client.html#afdda23f96c586fdcb47f1abad7be99f5" title="server::uiClient::receive\lMessage" alt="" coords="496,138,651,179"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#ad9d8caf021df2cd15ce27bcf207d86d0" title="Constructor taking a hostname and port." alt="" coords="707,47,851,89"/>
+<area shape="rect" id="node7" href="$dc/d4d/classserver_1_1ui_client.html#a215d811cbfada73ff8344ed7e5664113" title="uiClient constructor" alt="" coords="699,145,858,172"/>
+</map>

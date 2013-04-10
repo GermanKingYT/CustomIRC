@@ -1,0 +1,86 @@
+\hypertarget{uiclient_8cpp}{\section{uiclient.\-cpp}
+\label{d2/d44/uiclient_8cpp}\index{C++/custom\-Irc\-Server/uiclient.\-cpp@{C++/custom\-Irc\-Server/uiclient.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{uiclient_8h}{uiclient.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }server \{
+00004 
+\hypertarget{uiclient_8cpp_source_l00005}{}\hyperlink{classserver_1_1ui_client_a215d811cbfada73ff8344ed7e5664113}{00005} \hyperlink{classserver_1_1ui_client_a215d811cbfada73ff8344ed7e5664113}{uiClient::uiClient}(QTcpSocket *parent)
+00006     :sock(parent)
+00007     ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{LOGTAGS\_UI})
+00008     ,depth(0)
+00009 \{
+00010 
+00011     QHostAddress myRemote = this->\hyperlink{classserver_1_1ui_client_af7c6a86556bf18c15c06692b636a2d1a}{sock}->peerAddress();
+00012     this->\hyperlink{classserver_1_1ui_client_a446457889b90bd163b4d50fed2792cf0}{log}.\hyperlink{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{setPrefix}(myRemote.toString());
+00013     this->\hyperlink{classserver_1_1ui_client_a446457889b90bd163b4d50fed2792cf0}{log} << \textcolor{stringliteral}{"Initialized tcp client "} << myRemote.toString() << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00014     this->\hyperlink{classserver_1_1ui_client_a102a1aab0f3e076a042b709d1d627f93}{buffer} = \textcolor{keyword}{new} QString();
+00015 
+00016     connect(this->\hyperlink{classserver_1_1ui_client_af7c6a86556bf18c15c06692b636a2d1a}{sock}, SIGNAL(\hyperlink{classserver_1_1ui_client_a3d11b3850540e70abe814f3a3831a5f5}{disconnected}()), SLOT(
+      \hyperlink{classserver_1_1ui_client_aa66a0dc28bb1d07f22467b127ff90cc6}{removeConnection}()));
+00017     connect(this->\hyperlink{classserver_1_1ui_client_af7c6a86556bf18c15c06692b636a2d1a}{sock}, SIGNAL(readyRead()),    SLOT(\hyperlink{classserver_1_1ui_client_afdda23f96c586fdcb47f1abad7be99f5}{receiveMessage}()));
+00018 \}
+00019 
+00020 
+\hypertarget{uiclient_8cpp_source_l00021}{}\hyperlink{classserver_1_1ui_client_ad3f8f8690155b186b54e40dcfee0df23}{00021} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_client_ad3f8f8690155b186b54e40dcfee0df23}{uiClient::send}(QString data)\{
+00022     this->\hyperlink{classserver_1_1ui_client_af7c6a86556bf18c15c06692b636a2d1a}{sock}->write(data.toStdString().c\_str());
+00023 \}
+00024 
+\hypertarget{uiclient_8cpp_source_l00025}{}\hyperlink{classserver_1_1ui_client_aa66a0dc28bb1d07f22467b127ff90cc6}{00025} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_client_aa66a0dc28bb1d07f22467b127ff90cc6}{uiClient::removeConnection}()\{
+00026     this->\hyperlink{classserver_1_1ui_client_a446457889b90bd163b4d50fed2792cf0}{log} << \textcolor{stringliteral}{"Connection lost"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00027     \textcolor{comment}{//Tell our parent class to remove this item}
+00028     emit this->\hyperlink{classserver_1_1ui_client_a3d11b3850540e70abe814f3a3831a5f5}{disconnected}(\textcolor{keyword}{this});
+00029 \}
+00030 
+00031 
+\hypertarget{uiclient_8cpp_source_l00032}{}\hyperlink{classserver_1_1ui_client_a8237b1a02c7877a7c853b6ef23995b9b}{00032} \textcolor{keywordtype}{bool} \hyperlink{classserver_1_1ui_client_a8237b1a02c7877a7c853b6ef23995b9b}{uiClient::checkForJsonCommand}(QByteArray toAdd, 
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00033     \textcolor{keywordtype}{bool} ret = \textcolor{keyword}{false};
+00034     \textcolor{keywordflow}{foreach}(\textcolor{keywordtype}{char} b, toAdd)\{
+00035         \textcolor{keywordflow}{if}(b == \textcolor{charliteral}{'\{'} || b == \textcolor{charliteral}{'['})\{
+00036             \hyperlink{classserver_1_1ui_client_a396480feb2fc63a8eac9b737d53bf7ba}{depth}++;
+00037         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b == \textcolor{charliteral}{'\}'} || b == \textcolor{charliteral}{']'})\{
+00038             \hyperlink{classserver_1_1ui_client_a396480feb2fc63a8eac9b737d53bf7ba}{depth}--;
+00039         \}
+00040         this->\hyperlink{classserver_1_1ui_client_a102a1aab0f3e076a042b709d1d627f93}{buffer}->append(b);
+00041 
+00042         \textcolor{keywordflow}{if}(\hyperlink{classserver_1_1ui_client_a396480feb2fc63a8eac9b737d53bf7ba}{depth} == 0)\{
+00043             \textcolor{comment}{//Clear the buffer.}
+00044             \textcolor{keywordflow}{if}(comm.\hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{getCommand}() == \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE})\{
+00045                 ret = \textcolor{keyword}{true};
+00046                 comm = \textcolor{keyword}{new} \hyperlink{class_k4_u_1_1json_command}{jsonCommand}(*this->\hyperlink{classserver_1_1ui_client_a102a1aab0f3e076a042b709d1d627f93}{buffer});
+00047                 this->\hyperlink{classserver_1_1ui_client_a446457889b90bd163b4d50fed2792cf0}{log} << \textcolor{stringliteral}{"Data received: \(\backslash\)t"} << this->\hyperlink{classserver_1_1ui_client_a102a1aab0f3e076a042b709d1d627f93}{buffer} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00048                 this->\hyperlink{classserver_1_1ui_client_a102a1aab0f3e076a042b709d1d627f93}{buffer}->clear();
+00049             \}
+00050         \}
+00051     \}
+00052     \textcolor{keywordflow}{return} ret;
+00053 \}
+00054 
+\hypertarget{uiclient_8cpp_source_l00055}{}\hyperlink{classserver_1_1ui_client_afdda23f96c586fdcb47f1abad7be99f5}{00055} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1ui_client_afdda23f96c586fdcb47f1abad7be99f5}{uiClient::receiveMessage}()\{
+00056     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} comm (\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE});
+00057     \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1ui_client_a8237b1a02c7877a7c853b6ef23995b9b}{checkForJsonCommand}(this->\hyperlink{classserver_1_1ui_client_af7c6a86556bf18c15c06692b636a2d1a}{sock}->readAll(), comm))\{
+00058         \textcolor{keywordflow}{switch} (comm.\hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{getCommand}()) \{
+00059             \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eaafa4f30da47ec31cfac97c6dcd3f6791}{JSONCOMMAND\_OWNCHAT}:
+00060                 emit this->\hyperlink{classserver_1_1ui_client_a970bb30d534e08d2537e2ef495ad7427}{chatReceived}(comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"chat"}).toString());
+00061                 \textcolor{keywordflow}{break};
+00062             \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY}:
+00063                 emit this->\hyperlink{classserver_1_1ui_client_a334fdbafee59c9007c38466550572d83}{userQuery}(\textcolor{keyword}{this});
+00064                 \textcolor{keywordflow}{break};
+00065             \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea38ec768fb3babd5e8c66361a081aacae}{JSONCOMMAND\_CHANGEOWNUSER}:
+00066                 emit this->\hyperlink{classserver_1_1ui_client_af31e3f327761e528ddabb232d1224620}{changeOwnUser}(comm);
+00067                 \textcolor{keywordflow}{break};
+00068             \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS}:
+00069                 emit this->\hyperlink{classserver_1_1ui_client_a06de500dff0e31a8367b1988e2a0b414}{getEvents}(\textcolor{keyword}{this});
+00070                 \textcolor{keywordflow}{break};
+00071             \textcolor{keywordflow}{default}:
+00072                 \textcolor{keywordflow}{break};
+00073         \}
+00074     \}
+00075 \}
+00076 
+00077 \}
+\end{DoxyCode}

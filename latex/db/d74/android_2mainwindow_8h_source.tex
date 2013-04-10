@@ -1,0 +1,38 @@
+\hypertarget{android_2mainwindow_8h}{\section{mainwindow.\-h}
+\label{db/d74/android_2mainwindow_8h}\index{C++/custom\-Irc\-Client/android/mainwindow.\-h@{C++/custom\-Irc\-Client/android/mainwindow.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef MAINWINDOW\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define MAINWINDOW\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QMainWindow>}
+00005 
+\hypertarget{android_2mainwindow_8h_source_l00006}{}\hyperlink{namespace_ui}{00006} \textcolor{keyword}{namespace }Ui \{
+00007     \textcolor{keyword}{class }\hyperlink{class_main_window}{MainWindow};
+00008 \}
+00009 
+\hypertarget{android_2mainwindow_8h_source_l00010}{}\hyperlink{class_main_window}{00010} \textcolor{keyword}{class }\hyperlink{class_main_window}{MainWindow} : \textcolor{keyword}{public} QMainWindow
+00011 \{
+00012     Q\_OBJECT
+00013 \textcolor{keyword}{public}:
+\hypertarget{android_2mainwindow_8h_source_l00014}{}\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903}{00014}     \textcolor{keyword}{enum} \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903}{ScreenOrientation} \{
+\hypertarget{android_2mainwindow_8h_source_l00015}{}\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903a13a4781d324c19835f8673230efc7b3d}{00015}         \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903a13a4781d324c19835f8673230efc7b3d}{ScreenOrientationLockPortrait},
+\hypertarget{android_2mainwindow_8h_source_l00016}{}\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ad17797d910e72ac4ae7fd7c88ee43224}{00016}         \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ad17797d910e72ac4ae7fd7c88ee43224}{ScreenOrientationLockLandscape},
+\hypertarget{android_2mainwindow_8h_source_l00017}{}\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ac6b5fe3ca97c62b5c9c5c55edb09027d}{00017}         \hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903ac6b5fe3ca97c62b5c9c5c55edb09027d}{ScreenOrientationAuto}
+00018     \};
+00019 
+00020     \textcolor{keyword}{explicit} \hyperlink{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{MainWindow}(QWidget *parent = 0);
+00021     \textcolor{keyword}{virtual} \hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{~MainWindow}();
+00022 
+00023     \textcolor{comment}{// Note that this will only have an effect on Fremantle.}
+00024     \textcolor{keywordtype}{void} \hyperlink{class_main_window_a9597b97cef9da0760a06e8e04ca3d138}{setOrientation}(\hyperlink{class_main_window_abd5f153be5c4988dbc35ae7c1f25d903}{ScreenOrientation} orientation);
+00025 
+00026     \textcolor{keywordtype}{void} \hyperlink{class_main_window_ae66038a9d909fd409d781bf7c3f3ff2c}{showExpanded}();
+00027 
+00028 \textcolor{keyword}{private}:
+\hypertarget{android_2mainwindow_8h_source_l00029}{}\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{00029}     Ui::MainWindow *\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui};
+00030 \};
+00031 
+00032 \textcolor{preprocessor}{#endif // MAINWINDOW\_H}
+\end{DoxyCode}

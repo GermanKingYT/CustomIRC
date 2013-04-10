@@ -1,0 +1,71 @@
+\hypertarget{custom_irc_client_2ircuser_8h}{\section{ircuser.\-h}
+\label{d5/d98/custom_irc_client_2ircuser_8h}\index{C++/custom\-Irc\-Client/ircuser.\-h@{C++/custom\-Irc\-Client/ircuser.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef IRCUSER\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define IRCUSER\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QObject>}
+00005 \textcolor{preprocessor}{#include <QString>}
+00006 \textcolor{preprocessor}{#include <QColor>}
+00007 \textcolor{preprocessor}{#include <QGraphicsView>}
+00008 \textcolor{preprocessor}{#include <QNetworkAccessManager>}
+00009 \textcolor{preprocessor}{#include <QNetworkRequest>}
+00010 \textcolor{preprocessor}{#include <QNetworkReply>}
+00011 \textcolor{preprocessor}{#include "../resources/clslog.h"}
+00012 
+00013 \textcolor{keyword}{using namespace }K4U;
+00014 \textcolor{keyword}{namespace }client\{
+00015 
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00023}{}\hyperlink{classclient_1_1irc_user}{00023}     \textcolor{keyword}{class }\hyperlink{classclient_1_1irc_user}{ircUser} : \textcolor{keyword}{public} QObject
+00024     \{
+00025         Q\_OBJECT
+00026 
+00027         \textcolor{keyword}{public}:
+00032             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1irc_user}{ircUser}(QVariant jsonData);
+00041             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1irc_user}{ircUser}(qint32 \textcolor{keywordtype}{id}, QString nick, QString status, QColor uColor, \textcolor{keywordtype}{bool} standard);
+00042 
+00043             \textcolor{keywordtype}{void} copyFrom(\hyperlink{classclient_1_1irc_user}{ircUser} *userToCopy);
+00044             ~\hyperlink{classclient_1_1irc_user}{ircUser}();
+00045 
+00046             \textcolor{comment}{//Getters}
+00047             \textcolor{keyword}{const} QString getNick() \textcolor{keyword}{const};
+00048             qint32 \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{getId}() \textcolor{keyword}{const};
+00049             \textcolor{keyword}{const} QString getStatus() \textcolor{keyword}{const};
+00050             \textcolor{keyword}{const} QColor \hyperlink{namespaceserver_a2a6ca6577f352c7d095faf91c8e8dd5a}{getColor}() \textcolor{keyword}{const};
+00051             \textcolor{keyword}{const} QString getEmail() \textcolor{keyword}{const};
+00052             \textcolor{keyword}{const} QPixmap getIcon() \textcolor{keyword}{const};
+00053             \textcolor{keywordtype}{bool} getStandard() \textcolor{keyword}{const};
+00054             \textcolor{keywordtype}{bool} getOnline() \textcolor{keyword}{const};
+00055 
+00056             \textcolor{comment}{//Setters}
+00057             \textcolor{keywordtype}{void} setNick(\textcolor{keyword}{const} QString &newNick); \textcolor{comment}{//Probably never used}
+00058             \textcolor{keywordtype}{void} setStatus(\textcolor{keyword}{const} QString &newStatus);
+00059             \textcolor{keywordtype}{void} setColor(\textcolor{keyword}{const} QColor &newColor); \textcolor{comment}{//Also probably never used}
+00060             \textcolor{keywordtype}{void} setEmail(\textcolor{keyword}{const} QString &email);
+00061             \textcolor{keywordtype}{void} setOnline(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} isOnline);
+00062 
+00063 
+00064 
+00065         signals:
+00066             \textcolor{keywordtype}{void} iconChanged() \textcolor{keyword}{const};
+00067 
+00068         \textcolor{keyword}{private} slots:
+00069                 \textcolor{keywordtype}{void} slot\_netwManagerFinished(QNetworkReply* reply);
+00070 
+00071         \textcolor{keyword}{private}:
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00072}{}\hyperlink{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{00072}             qint32 \hyperlink{classclient_1_1irc_user_a650c7744e4a6a7ffbaa0f699ba71ed1d}{id};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00073}{}\hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{00073}             QString \hyperlink{classclient_1_1irc_user_a142534dfbf6f70067fdfa757e0758380}{nick};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00074}{}\hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{00074}             QString \hyperlink{classclient_1_1irc_user_a71be3d4ca53a96871ebc584f1351aa02}{status};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00075}{}\hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{00075}             QColor \hyperlink{classclient_1_1irc_user_a13123b613f595f9d47bf172641be9d8a}{uColor};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00076}{}\hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{00076}             \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1irc_user_a623bda8de196cde55e9a0ab3298e818f}{standard};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00077}{}\hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{00077}             QString \hyperlink{classclient_1_1irc_user_a6bdc381efdca6c1ab4bd4bdc3bcb4bb9}{email};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00078}{}\hyperlink{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{00078}             QPixmap \hyperlink{classclient_1_1irc_user_adfd6c8d3a595b6ad3eeb2eec1b57f5fb}{icon};
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00079}{}\hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{00079}             \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1irc_user_ac20bc8cf5f9fda9c39f15dff37c115b8}{online};
+00080 
+\hypertarget{custom_irc_client_2ircuser_8h_source_l00081}{}\hyperlink{classclient_1_1irc_user_a538637b8b76561d02dc0a0ee98f91264}{00081}             \hyperlink{class_k4_u_1_1cls_log}{clsLog} \hyperlink{classclient_1_1irc_user_a538637b8b76561d02dc0a0ee98f91264}{log};
+00082     \};
+00083 \}
+00084 \textcolor{preprocessor}{#endif // IRCUSER\_H}
+\end{DoxyCode}

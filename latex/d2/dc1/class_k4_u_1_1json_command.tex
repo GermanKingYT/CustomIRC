@@ -1,0 +1,478 @@
+\hypertarget{class_k4_u_1_1json_command}{\section{K4\-U\-:\-:json\-Command Class Reference}
+\label{d2/dc1/class_k4_u_1_1json_command}\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}}
+}
+
+
+The \hyperlink{class_k4_u_1_1json_command}{json\-Command} class.  
+
+
+
+
+{\ttfamily \#include $<$jsoncommand.\-h$>$}
+
+
+
+Collaboration diagram for K4\-U\-:\-:json\-Command\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{d0/d94/class_k4_u_1_1json_command__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{json\-Command} (Q\-String json)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor taking a J\-S\-O\-N string \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1json_command_af168a08b5a37459cfd5564d648b49a78}{json\-Command} (Q\-Variant\-Map parent)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor taking a Q\-Variant\-Map entry \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1json_command_ae101f9ad219e455b8868b3d13ea6c251}{json\-Command} (\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{json\-Commands} \hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor initializing an empty command \end{DoxyCompactList}\item 
+\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{json\-Commands} \hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{get\-Command} () const 
+\begin{DoxyCompactList}\small\item\em get\-Command \end{DoxyCompactList}\item 
+Q\-String \hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{get\-Command\-String} () const 
+\begin{DoxyCompactList}\small\item\em get\-Command\-String \end{DoxyCompactList}\item 
+void \hyperlink{class_k4_u_1_1json_command_a50c17e574aae380cd21d76029fcd07b6}{set\-Command} (const \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{json\-Commands} \&new\-Command)
+\item 
+void \hyperlink{class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}{set\-Command\-Int} (Q\-String \hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command})
+\item 
+Q\-Variant \hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{get\-Data} (const Q\-String key)
+\begin{DoxyCompactList}\small\item\em Gets an item from the internal data map. \end{DoxyCompactList}\item 
+Q\-Variant\-Map \hyperlink{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{get\-Data} () const 
+\begin{DoxyCompactList}\small\item\em Gets all data items. \end{DoxyCompactList}\item 
+void \hyperlink{class_k4_u_1_1json_command_aa5528a10032e013f668b3d33e02c37ed}{set\-Data} (const Q\-Variant\-Map \&new\-Data)
+\begin{DoxyCompactList}\small\item\em Sets a new internal data map. \end{DoxyCompactList}\item 
+void \hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{add\-To\-Data} (const Q\-String key, const Q\-Variant \&\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data})
+\begin{DoxyCompactList}\small\item\em Adds data to the internal data map. \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1json_command}{json\-Command} \hyperlink{class_k4_u_1_1json_command_a598c14a90fbdb237c0746070be2de591}{operator=} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} $\ast$other)
+\item 
+Q\-String \hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{to\-Json\-String} () const 
+\begin{DoxyCompactList}\small\item\em Transforms this object to a nice J\-S\-O\-N string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{json\-Commands} \hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command}
+\item 
+Q\-Variant\-Map \hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1json_command_ac2e7d48c1f0b922b9d51542d1b0e37fe}{operator$<$$<$} (\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \&log, \hyperlink{class_k4_u_1_1json_command}{json\-Command} \&\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command})
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1json_command_a374f91a013dcfff0ddd4d1c4959107a6}{operator$<$$<$} (\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \&log, const \hyperlink{class_k4_u_1_1json_command}{json\-Command} \&\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_k4_u_1_1json_command}{json\-Command} class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U)
+\end{DoxyAuthor}
+Example command\-: 
+\begin{DoxyCode}
+\{
+   \textcolor{stringliteral}{"command"}: \textcolor{stringliteral}{"OWNCHAT"},
+   \textcolor{stringliteral}{"data"}: \{
+       \textcolor{stringliteral}{"message"}:\textcolor{stringliteral}{"Derp"}
+       \}
+\}
+\end{DoxyCode}
+ 
+
+Definition at line \hyperlink{jsoncommand_8h_source_l00040}{40} of file \hyperlink{jsoncommand_8h_source}{jsoncommand.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!json\-Command@{json\-Command}}
+\index{json\-Command@{json\-Command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{json\-Command}]{\setlength{\rightskip}{0pt plus 5cm}K4\-U\-::json\-Command\-::json\-Command (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{json}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}
+
+
+\hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor taking a J\-S\-O\-N string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & A Q\-String containing J\-S\-O\-N \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00005}{5} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_af168a08b5a37459cfd5564d648b49a78}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!json\-Command@{json\-Command}}
+\index{json\-Command@{json\-Command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{json\-Command}]{\setlength{\rightskip}{0pt plus 5cm}K4\-U\-::json\-Command\-::json\-Command (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map}]{parent}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_af168a08b5a37459cfd5564d648b49a78}
+
+
+\hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor taking a Q\-Variant\-Map entry 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The Q\-Variant\-Map containing J\-S\-O\-N data This will mostly be used when a J\-S\-O\-N entry has been parsed by the J\-S\-O\-N parser \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00013}{13} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+\hypertarget{class_k4_u_1_1json_command_ae101f9ad219e455b8868b3d13ea6c251}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!json\-Command@{json\-Command}}
+\index{json\-Command@{json\-Command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{json\-Command}]{\setlength{\rightskip}{0pt plus 5cm}K4\-U\-::json\-Command\-::json\-Command (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Commands}}]{command}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_ae101f9ad219e455b8868b3d13ea6c251}
+
+
+\hyperlink{class_k4_u_1_1json_command}{json\-Command} constructor initializing an empty command 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command type to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00019}{19} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!add\-To\-Data@{add\-To\-Data}}
+\index{add\-To\-Data@{add\-To\-Data}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{add\-To\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::json\-Command\-::add\-To\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{key, }
+\item[{const Q\-Variant \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}
+
+
+Adds data to the internal data map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to add the data under \\
+\hline
+{\em data} & The data to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00098}{98} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!get\-Command@{get\-Command}}
+\index{get\-Command@{get\-Command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{get\-Command}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-Commands} K4\-U\-::json\-Command\-::get\-Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d2/dc1/class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}
+
+
+get\-Command 
+
+\begin{DoxyReturn}{Returns}
+A json\-Commands object containing the current command type 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00024}{24} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!get\-Command\-String@{get\-Command\-String}}
+\index{get\-Command\-String@{get\-Command\-String}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{get\-Command\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String K4\-U\-::json\-Command\-::get\-Command\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d2/dc1/class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}
+
+
+get\-Command\-String 
+
+\begin{DoxyReturn}{Returns}
+A Q\-String containing the current command type 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00028}{28} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant K4\-U\-::json\-Command\-::get\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{key}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}
+
+
+Gets an item from the internal data map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Q\-Variant Object containing the data 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00089}{89} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant\-Map K4\-U\-::json\-Command\-::get\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d2/dc1/class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}
+
+
+Gets all data items. 
+
+\begin{DoxyReturn}{Returns}
+A Q\-Variant\-Map containg all the data 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00085}{85} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_a598c14a90fbdb237c0746070be2de591}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!operator=@{operator=}}
+\index{operator=@{operator=}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-Command} K4\-U\-::json\-Command\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} $\ast$}]{other}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_a598c14a90fbdb237c0746070be2de591}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00123}{123} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+\hypertarget{class_k4_u_1_1json_command_a50c17e574aae380cd21d76029fcd07b6}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!set\-Command@{set\-Command}}
+\index{set\-Command@{set\-Command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{set\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::json\-Command\-::set\-Command (
+\begin{DoxyParamCaption}
+\item[{const {\bf json\-Commands} \&}]{new\-Command}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_a50c17e574aae380cd21d76029fcd07b6}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00080}{80} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+\hypertarget{class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!set\-Command\-Int@{set\-Command\-Int}}
+\index{set\-Command\-Int@{set\-Command\-Int}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{set\-Command\-Int}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::json\-Command\-::set\-Command\-Int (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{command}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00059}{59} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1json_command_aa5528a10032e013f668b3d33e02c37ed}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!set\-Data@{set\-Data}}
+\index{set\-Data@{set\-Data}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{set\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::json\-Command\-::set\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant\-Map \&}]{new\-Data}
+\end{DoxyParamCaption}
+)}}\label{d2/dc1/class_k4_u_1_1json_command_aa5528a10032e013f668b3d33e02c37ed}
+
+
+Sets a new internal data map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Data} & The new map to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00094}{94} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+\hypertarget{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!to\-Json\-String@{to\-Json\-String}}
+\index{to\-Json\-String@{to\-Json\-String}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{to\-Json\-String}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String K4\-U\-::json\-Command\-::to\-Json\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d2/dc1/class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}
+
+
+Transforms this object to a nice J\-S\-O\-N string. 
+
+\begin{DoxyReturn}{Returns}
+The J\-S\-O\-N string 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00102}{102} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dc1/class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_k4_u_1_1json_command_ac2e7d48c1f0b922b9d51542d1b0e37fe}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Log} \&}]{log, }
+\item[{{\bf json\-Command} \&}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{d2/dc1/class_k4_u_1_1json_command_ac2e7d48c1f0b922b9d51542d1b0e37fe}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00110}{110} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+\hypertarget{class_k4_u_1_1json_command_a374f91a013dcfff0ddd4d1c4959107a6}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Log} \&}]{log, }
+\item[{const {\bf json\-Command} \&}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{d2/dc1/class_k4_u_1_1json_command_a374f91a013dcfff0ddd4d1c4959107a6}
+
+
+Definition at line \hyperlink{jsoncommand_8cpp_source_l00117}{117} of file \hyperlink{jsoncommand_8cpp_source}{jsoncommand.\-cpp}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!command@{command}}
+\index{command@{command}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{command}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-Commands} K4\-U\-::json\-Command\-::command\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/dc1/class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}
+
+
+Definition at line \hyperlink{jsoncommand_8h_source_l00111}{111} of file \hyperlink{jsoncommand_8h_source}{jsoncommand.\-h}.
+
+\hypertarget{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{\index{K4\-U\-::json\-Command@{K4\-U\-::json\-Command}!data@{data}}
+\index{data@{data}!K4U::jsonCommand@{K4\-U\-::json\-Command}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant\-Map K4\-U\-::json\-Command\-::data\hspace{0.3cm}{\ttfamily [private]}}}\label{d2/dc1/class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}
+
+
+Definition at line \hyperlink{jsoncommand_8h_source_l00112}{112} of file \hyperlink{jsoncommand_8h_source}{jsoncommand.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/resources/\hyperlink{jsoncommand_8h}{jsoncommand.\-h}\item 
+C++/resources/\hyperlink{jsoncommand_8cpp}{jsoncommand.\-cpp}\end{DoxyCompactItemize}

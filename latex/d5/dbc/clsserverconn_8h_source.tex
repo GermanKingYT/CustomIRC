@@ -1,0 +1,92 @@
+\hypertarget{clsserverconn_8h}{\section{clsserverconn.\-h}
+\label{d5/dbc/clsserverconn_8h}\index{C++/custom\-Irc\-Client/clsserverconn.\-h@{C++/custom\-Irc\-Client/clsserverconn.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSSERVERCONN\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSSERVERCONN\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QObject>}
+00005 \textcolor{preprocessor}{#include <QTcpSocket>}
+00006 \textcolor{preprocessor}{#include <QTextStream>}
+00007 \textcolor{preprocessor}{#include <QTime>}
+00008 \textcolor{preprocessor}{#include "../resources/clslog.h"}
+00009 \textcolor{preprocessor}{#include <QTimer>}
+00010 \textcolor{preprocessor}{#include "\hyperlink{custom_irc_client_2ircuser_8h}{ircuser.h}"}
+00011 \textcolor{preprocessor}{#include "../resources/jsoncommand.h"}
+00012 \textcolor{preprocessor}{#include "../resources/json.h"}
+00013 \textcolor{preprocessor}{#include "../resources/clsevent.h"}
+00014 \textcolor{preprocessor}{#include "../resources/events/events.h"}
+00015 
+00016 
+\hypertarget{clsserverconn_8h_source_l00017}{}\hyperlink{clsserverconn_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}{00017} \textcolor{preprocessor}{#define MAX\_CONNECT\_TIMEOUT\_IN\_MS 5000}
+00018 \textcolor{preprocessor}{}
+00019 \textcolor{keyword}{using namespace }shared;
+00020 \textcolor{keyword}{using namespace }shared::events;
+00021 \textcolor{keyword}{namespace }client\{
+00022 
+\hypertarget{clsserverconn_8h_source_l00027}{}\hyperlink{classclient_1_1cls_server_conn}{00027}     \textcolor{keyword}{class }\hyperlink{classclient_1_1cls_server_conn}{clsServerConn} : \textcolor{keyword}{public} QObject
+00028     \{
+00029         Q\_OBJECT
+00030         \textcolor{keyword}{public}:
+00038             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1cls_server_conn}{clsServerConn}(\textcolor{keyword}{const} QString hostName, \textcolor{keyword}{const} \textcolor{keywordtype}{int} port,
+00039                     QObject *parent = 0);
+00040 
+00044             \textcolor{keywordtype}{void} doConnect();
+00049             \textcolor{keywordtype}{void} sendCommand(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend);
+00050 
+00051 
+00052 
+00053         \textcolor{keyword}{private}:
+00065             \textcolor{keywordtype}{bool} checkForJsonCommand(QByteArray toAdd, \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm);
+00070             \textcolor{keywordtype}{void} handleCompletedQuery(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm);
+00071 
+00076             \textcolor{keywordtype}{void} handleOwnUserChange(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm);
+00077 
+00082             \textcolor{keywordtype}{void} handleEventRequest(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm);
+00083 
+00088             \textcolor{keywordtype}{void} handleEventReceived(QVariantMap data);
+00089 
+00090 signals:
+00095             \textcolor{keywordtype}{void} chatReceived(\hyperlink{classshared_1_1events_1_1event_chat}{eventChat}* event);
+00099             \textcolor{keywordtype}{void} connected();
+00103             \textcolor{keywordtype}{void} disconnected();
+00104 
+00109             \textcolor{keywordtype}{void} userQueryCompleted(QVector<ircUser*> users);
+00110 
+00116             \textcolor{keywordtype}{void} userStatusChange(\hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus} *changeEvent);
+00117 
+00123             \textcolor{keywordtype}{void} userChangeNick(\hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick} *changeEvent);
+00124 
+00129             \textcolor{keywordtype}{void} userLeave(\hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave} *leaveEvent);
+00130 
+00135             \textcolor{keywordtype}{void} userEnter(\hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin} *newUser);
+00136 
+00141             \textcolor{keywordtype}{void} serverMessageReceived(\hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage} *theMessage);
+00142 
+00146             \textcolor{keywordtype}{void} sgnConnectTimeout();
+00147         \textcolor{keyword}{public} slots:
+00148             \textcolor{keywordtype}{void} srvDisconnected();
+00149             \textcolor{keywordtype}{void} srvConnected();
+00150             \textcolor{keywordtype}{void} readData();
+00151             \textcolor{keywordtype}{void} connectTimeout();
+00152 
+00153         \textcolor{keyword}{private}:
+\hypertarget{clsserverconn_8h_source_l00154}{}\hyperlink{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{00154}             QString \hyperlink{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{hostName};
+\hypertarget{clsserverconn_8h_source_l00155}{}\hyperlink{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{00155}             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{port};
+00156 
+\hypertarget{clsserverconn_8h_source_l00157}{}\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{00157}             QTcpSocket *\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock};
+\hypertarget{clsserverconn_8h_source_l00158}{}\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{00158}             QString *\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer};
+\hypertarget{clsserverconn_8h_source_l00159}{}\hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{00159}             \textcolor{keywordtype}{int} \hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{depth};
+00160 
+\hypertarget{clsserverconn_8h_source_l00161}{}\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{00161}             \hyperlink{class_k4_u_1_1cls_log}{clsLog} \hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log};
+00162 
+\hypertarget{clsserverconn_8h_source_l00163}{}\hyperlink{classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}{00163}             QTimer *\hyperlink{classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}{connectTimer};
+\hypertarget{clsserverconn_8h_source_l00164}{}\hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{00164}             \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{isConnected};
+\hypertarget{clsserverconn_8h_source_l00165}{}\hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{00165}             \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{isConnecting};
+00166 
+00167 
+00168     \};
+00169 \}
+00170 \textcolor{preprocessor}{#endif // CLSSERVERCONN\_H}
+\end{DoxyCode}

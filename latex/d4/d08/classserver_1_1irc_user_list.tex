@@ -1,0 +1,371 @@
+\hypertarget{classserver_1_1irc_user_list}{\section{server\-:\-:irc\-User\-List Class Reference}
+\label{d4/d08/classserver_1_1irc_user_list}\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}}
+}
+
+
+Contains all the users.  
+
+
+
+
+{\ttfamily \#include $<$ircuser.\-h$>$}
+
+
+
+Collaboration diagram for server\-:\-:irc\-User\-List\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{d0/d1b/classserver_1_1irc_user_list__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1irc_user_list_a9b9cf433ca7bd02e8a86b284edfce11f}{irc\-User\-List} ()
+\item 
+void \hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{add} (\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$user\-To\-Add)
+\begin{DoxyCompactList}\small\item\em Adds a user to the list. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}{del} (\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$user\-To\-Del)
+\begin{DoxyCompactList}\small\item\em Removes a user from the list. \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{get\-User\-By\-Nick} (\hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick)
+\begin{DoxyCompactList}\small\item\em Finds a user based on his nick and status. \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{get\-User} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick, const Q\-String irc\-Id)
+\begin{DoxyCompactList}\small\item\em Finds a user based on I\-R\-C-\/\-I\-D or nick. \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1irc_user_list_a1bb31b8891ba4a6b5587ece131000244}{find\-User} (\hyperlink{classserver_1_1irc_user}{irc\-User} \&user\-To\-Find)
+\begin{DoxyCompactList}\small\item\em Finds a user based on an exact copy. \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1irc_user_list_a4bf0057be15b4baf8528fa263be2a74a}{get\-User\-By\-Id} (int id)
+\begin{DoxyCompactList}\small\item\em Gets a user by his database I\-D. \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}{get\-User\-By\-Irc\-Id} (Q\-String irc\-Id)
+\begin{DoxyCompactList}\small\item\em Gets a user by his I\-R\-C-\/\-I\-D. \end{DoxyCompactList}\item 
+Q\-Vector$<$ \hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classserver_1_1irc_user_list_aab10a6d6fdfb92580e68b84b1365f9b2}{get\-All} () const 
+\begin{DoxyCompactList}\small\item\em Get all the users. Used for foreach. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Vector$<$ \hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ $>$ \hyperlink{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{users}
+\item 
+int \hyperlink{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{last\-Id}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all the users. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8h_source_l00113}{113} of file \hyperlink{custom_irc_server_2ircuser_8h_source}{ircuser.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classserver_1_1irc_user_list_a9b9cf433ca7bd02e8a86b284edfce11f}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!irc\-User\-List@{irc\-User\-List}}
+\index{irc\-User\-List@{irc\-User\-List}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{irc\-User\-List}]{\setlength{\rightskip}{0pt plus 5cm}server\-::irc\-User\-List\-::irc\-User\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a9b9cf433ca7bd02e8a86b284edfce11f}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00177}{177} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!add@{add}}
+\index{add@{add}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-User\-List\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user\-To\-Add}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}
+
+
+Adds a user to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\-To\-Add} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00233}{233} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!del@{del}}
+\index{del@{del}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::irc\-User\-List\-::del (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} $\ast$}]{user\-To\-Del}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}
+
+
+Removes a user from the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\-To\-Del} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00240}{240} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_user_list_a1bb31b8891ba4a6b5587ece131000244}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!find\-User@{find\-User}}
+\index{find\-User@{find\-User}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{find\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User}$\ast$ server\-::irc\-User\-List\-::find\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf irc\-User} \&}]{user\-To\-Find}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a1bb31b8891ba4a6b5587ece131000244}
+
+
+Finds a user based on an exact copy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\-To\-Find} & The user to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the correct \hyperlink{classserver_1_1irc_user}{irc\-User} object if found. Else a pointer to 0x00 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Not sure why this function exists. If you have the user, why would you want to find it again? 
+\end{DoxyNote}
+\hypertarget{classserver_1_1irc_user_list_aab10a6d6fdfb92580e68b84b1365f9b2}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!get\-All@{get\-All}}
+\index{get\-All@{get\-All}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{get\-All}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<$ {\bf irc\-User} $\ast$ $>$ server\-::irc\-User\-List\-::get\-All (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{d4/d08/classserver_1_1irc_user_list_aab10a6d6fdfb92580e68b84b1365f9b2}
+
+
+Get all the users. Used for foreach. 
+
+\begin{DoxyReturn}{Returns}
+A vector with pointers to all the users. 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00280}{280} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+\hypertarget{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!get\-User@{get\-User}}
+\index{get\-User@{get\-User}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{get\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User} $\ast$ server\-::irc\-User\-List\-::get\-User (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{nick, }
+\item[{const Q\-String}]{irc\-Id}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}
+
+
+Finds a user based on I\-R\-C-\/\-I\-D or nick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick} & The nick and status to search for \\
+\hline
+{\em irc\-Id} & The I\-R\-C-\/\-I\-D to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the correct \hyperlink{classserver_1_1irc_user}{irc\-User} object if found. Else a pointer to 0x00 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00248}{248} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d4/d08/classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_user_list_a4bf0057be15b4baf8528fa263be2a74a}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!get\-User\-By\-Id@{get\-User\-By\-Id}}
+\index{get\-User\-By\-Id@{get\-User\-By\-Id}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{get\-User\-By\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User}$\ast$ server\-::irc\-User\-List\-::get\-User\-By\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a4bf0057be15b4baf8528fa263be2a74a}
+
+
+Gets a user by his database I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The I\-D to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the correct \hyperlink{classserver_1_1irc_user}{irc\-User} object if found. Else a pointer to 0x00 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Do not confuse this with get\-User\-By\-Irc\-Id which searches for a user based on his I\-R\-C-\/\-I\-D! 
+\end{DoxyWarning}
+\hypertarget{classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!get\-User\-By\-Irc\-Id@{get\-User\-By\-Irc\-Id}}
+\index{get\-User\-By\-Irc\-Id@{get\-User\-By\-Irc\-Id}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{get\-User\-By\-Irc\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User} $\ast$ server\-::irc\-User\-List\-::get\-User\-By\-Irc\-Id (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{irc\-Id}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b}
+
+
+Gets a user by his I\-R\-C-\/\-I\-D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em irc\-Id} & The I\-R\-C-\/\-I\-D to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the correct \hyperlink{classserver_1_1irc_user}{irc\-User} object if found. Else a pointer to 0x00 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Do not confuse this with get\-User\-By\-Id which searches for a user based on his database I\-D! 
+\end{DoxyWarning}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00271}{271} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_a105ff952c0e653bdc765adc58d3e702b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!get\-User\-By\-Nick@{get\-User\-By\-Nick}}
+\index{get\-User\-By\-Nick@{get\-User\-By\-Nick}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{get\-User\-By\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User} $\ast$ server\-::irc\-User\-List\-::get\-User\-By\-Nick (
+\begin{DoxyParamCaption}
+\item[{{\bf nick\-And\-Status}}]{nick}
+\end{DoxyParamCaption}
+)}}\label{d4/d08/classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}
+
+
+Finds a user based on his nick and status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick} & The nick and status to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the correct \hyperlink{classserver_1_1irc_user}{irc\-User} object if found. Else a pointer to 0x00 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8cpp_source_l00262}{262} of file \hyperlink{custom_irc_server_2ircuser_8cpp_source}{ircuser.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d08/classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!last\-Id@{last\-Id}}
+\index{last\-Id@{last\-Id}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{last\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::irc\-User\-List\-::last\-Id\hspace{0.3cm}{\ttfamily [private]}}}\label{d4/d08/classserver_1_1irc_user_list_a1ed9d9889dcc65de41ed6988fc89bb13}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8h_source_l00174}{174} of file \hyperlink{custom_irc_server_2ircuser_8h_source}{ircuser.\-h}.
+
+\hypertarget{classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}{\index{server\-::irc\-User\-List@{server\-::irc\-User\-List}!users@{users}}
+\index{users@{users}!server::ircUserList@{server\-::irc\-User\-List}}
+\subsubsection[{users}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<${\bf irc\-User}$\ast$$>$ server\-::irc\-User\-List\-::users\hspace{0.3cm}{\ttfamily [private]}}}\label{d4/d08/classserver_1_1irc_user_list_aed148b0d15f108c3e08d4705033aa2d3}
+
+
+Definition at line \hyperlink{custom_irc_server_2ircuser_8h_source_l00173}{173} of file \hyperlink{custom_irc_server_2ircuser_8h_source}{ircuser.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Server/\hyperlink{custom_irc_server_2ircuser_8h}{ircuser.\-h}\item 
+C++/custom\-Irc\-Server/\hyperlink{custom_irc_server_2ircuser_8cpp}{ircuser.\-cpp}\end{DoxyCompactItemize}

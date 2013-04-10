@@ -1,0 +1,199 @@
+\hypertarget{classclient_1_1chat_input}{\section{client\-:\-:chat\-Input Class Reference}
+\label{d1/d34/classclient_1_1chat_input}\index{client\-::chat\-Input@{client\-::chat\-Input}}
+}
+
+
+U\-I segment containing the chat input.  
+
+
+
+
+{\ttfamily \#include $<$chatinput.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:chat\-Input\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{d3/de6/classclient_1_1chat_input__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:chat\-Input\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{d2/da1/classclient_1_1chat_input__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1chat_input_abfb6a31b8691c93a03c3bda792e14f34}{send\-Chat} (Q\-String message)
+\begin{DoxyCompactList}\small\item\em Emitted when the user presses enter and the chatbox does not contain a command. \end{DoxyCompactList}\item 
+void \hyperlink{classclient_1_1chat_input_a955c343e83632ba1cc0a0b089c06803e}{command\-Given} (Q\-String command, Q\-List$<$ Q\-String $>$ args)
+\begin{DoxyCompactList}\small\item\em Emitted when the users presses enter and the chatbox contains a command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1chat_input_aedaf9d2d9c72302f3b3e679ce7758806}{chat\-Input} (Q\-Widget $\ast$parent=0)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e}{key\-Press\-Event} (Q\-Key\-Event $\ast$e)
+\item 
+void \hyperlink{classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}{check\-For\-Command} (Q\-String text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-I segment containing the chat input. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{chatinput_8h_source_l00013}{13} of file \hyperlink{chatinput_8h_source}{chatinput.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1chat_input_aedaf9d2d9c72302f3b3e679ce7758806}{\index{client\-::chat\-Input@{client\-::chat\-Input}!chat\-Input@{chat\-Input}}
+\index{chat\-Input@{chat\-Input}!client::chatInput@{client\-::chat\-Input}}
+\subsubsection[{chat\-Input}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Input\-::chat\-Input (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d1/d34/classclient_1_1chat_input_aedaf9d2d9c72302f3b3e679ce7758806}
+
+
+Definition at line \hyperlink{chatinput_8cpp_source_l00007}{7} of file \hyperlink{chatinput_8cpp_source}{chatinput.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}{\index{client\-::chat\-Input@{client\-::chat\-Input}!check\-For\-Command@{check\-For\-Command}}
+\index{check\-For\-Command@{check\-For\-Command}!client::chatInput@{client\-::chat\-Input}}
+\subsubsection[{check\-For\-Command}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Input\-::check\-For\-Command (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d34/classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf}
+
+
+Definition at line \hyperlink{chatinput_8cpp_source_l00031}{31} of file \hyperlink{chatinput_8cpp_source}{chatinput.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d1/d34/classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{d1/d34/classclient_1_1chat_input_a16941b1cc04b2333d3d5328e23b4afdf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_input_a955c343e83632ba1cc0a0b089c06803e}{\index{client\-::chat\-Input@{client\-::chat\-Input}!command\-Given@{command\-Given}}
+\index{command\-Given@{command\-Given}!client::chatInput@{client\-::chat\-Input}}
+\subsubsection[{command\-Given}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Input\-::command\-Given (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{command, }
+\item[{Q\-List$<$ Q\-String $>$}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d34/classclient_1_1chat_input_a955c343e83632ba1cc0a0b089c06803e}
+
+
+Emitted when the users presses enter and the chatbox contains a command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The command send \\
+\hline
+{\em args} & A Q\-List$<$\-Q\-String$>$ of arguments (split at space) \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d34/classclient_1_1chat_input_a955c343e83632ba1cc0a0b089c06803e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e}{\index{client\-::chat\-Input@{client\-::chat\-Input}!key\-Press\-Event@{key\-Press\-Event}}
+\index{key\-Press\-Event@{key\-Press\-Event}!client::chatInput@{client\-::chat\-Input}}
+\subsubsection[{key\-Press\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Input\-::key\-Press\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Key\-Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d34/classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e}
+
+
+Definition at line \hyperlink{chatinput_8cpp_source_l00013}{13} of file \hyperlink{chatinput_8cpp_source}{chatinput.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d34/classclient_1_1chat_input_a18489fc74edbd3948434ec0be0e3fe7e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_input_abfb6a31b8691c93a03c3bda792e14f34}{\index{client\-::chat\-Input@{client\-::chat\-Input}!send\-Chat@{send\-Chat}}
+\index{send\-Chat@{send\-Chat}!client::chatInput@{client\-::chat\-Input}}
+\subsubsection[{send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Input\-::send\-Chat (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{d1/d34/classclient_1_1chat_input_abfb6a31b8691c93a03c3bda792e14f34}
+
+
+Emitted when the user presses enter and the chatbox does not contain a command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be sent \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d34/classclient_1_1chat_input_abfb6a31b8691c93a03c3bda792e14f34_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{chatinput_8h}{chatinput.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{chatinput_8cpp}{chatinput.\-cpp}\end{DoxyCompactItemize}

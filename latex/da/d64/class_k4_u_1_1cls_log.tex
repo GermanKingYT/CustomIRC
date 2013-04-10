@@ -1,0 +1,483 @@
+\hypertarget{class_k4_u_1_1cls_log}{\section{K4\-U\-:\-:cls\-Log Class Reference}
+\label{da/d64/class_k4_u_1_1cls_log}\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}}
+}
+
+
+Custom logging class.  
+
+
+
+
+{\ttfamily \#include $<$clslog.\-h$>$}
+
+
+
+Collaboration diagram for K4\-U\-:\-:cls\-Log\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{d4/de8/class_k4_u_1_1cls_log__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_k4_u_1_1cls_log_aa103ad48f639a4ba8c2ee45798068337}{cls\-Log} (\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{log\-Tags} \hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{tag})
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_k4_u_1_1cls_log}{cls\-Log} constructor \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{operator$<$$<$} (\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \&($\ast$manip)(\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \&))
+\begin{DoxyCompactList}\small\item\em Used for end line. \end{DoxyCompactList}\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a6fb4b7a4e52a6b113268421e03fc389e}{operator$<$$<$} (Q\-String msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a72dbdacaafcc42d2e1c01ec76257ca6c}{operator$<$$<$} (const Q\-String $\ast$msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a12dd838824409850684fefe038ef3f67}{operator$<$$<$} (const char $\ast$msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a372f11dd502fa0e9b20e88740da2d39d}{operator$<$$<$} (int msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a4b942dd1a81afe8d1eb2af9a643b79c2}{operator$<$$<$} (\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} $\ast$log)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_ac16d9a6fbd8ef4ea1d03e813bb6466c0}{operator$<$$<$} (bool msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_ab6ac3e9c2f6f577b576fe1570ca95d66}{operator$<$$<$} (Q\-Variant\-Map \&map)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_ad3c6cb4ff134f40925f8d19177a461b6}{operator$<$$<$} (const Q\-Variant\-Map \&map)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a667d8d0b430593af7caf563410214187}{operator$<$$<$} (const Q\-Variant \&msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a99d9c23284e9bb462858f4d6ca33a93a}{operator$<$$<$} (Q\-Variant \&msg)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a265b09c82c550e8957f29724ec0d1198}{operator$<$$<$} (Q\-Byte\-Array \&b\-Arr)
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \& \hyperlink{class_k4_u_1_1cls_log_a3efb08c54070b1bbd22e297e1b69e202}{operator$<$$<$} (const Q\-Byte\-Array \&b\-Arr)
+\item 
+void \hyperlink{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{do\-Endl} ()
+\item 
+void \hyperlink{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{set\-Prefix} (Q\-String \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix})
+\begin{DoxyCompactList}\small\item\em Sets a custom prefix, used for when more than one object uses the same log tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix} ()
+\item 
+std\-::string \hyperlink{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{get\-Tag} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{is\-First}
+\item 
+\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{log\-Tags} \hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{tag}
+\item 
+Q\-String \hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{prf}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Custom logging class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) Because std\-::out doesn't allow for Q\-T-\/objects, i wrote my own parser on top of this. It also allows tags and date, so that you can allways see where the debug came from 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{clslog_8h_source_l00027}{27} of file \hyperlink{clslog_8h_source}{clslog.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_k4_u_1_1cls_log_aa103ad48f639a4ba8c2ee45798068337}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!cls\-Log@{cls\-Log}}
+\index{cls\-Log@{cls\-Log}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{cls\-Log}]{\setlength{\rightskip}{0pt plus 5cm}K4\-U\-::cls\-Log\-::cls\-Log (
+\begin{DoxyParamCaption}
+\item[{{\bf log\-Tags}}]{tag}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_aa103ad48f639a4ba8c2ee45798068337}
+
+
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & The tag to use while printing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00007}{7} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!do\-Endl@{do\-Endl}}
+\index{do\-Endl@{do\-Endl}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{do\-Endl}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::cls\-Log\-::do\-Endl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00070}{70} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{da/d64/class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!get\-Tag@{get\-Tag}}
+\index{get\-Tag@{get\-Tag}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{get\-Tag}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string K4\-U\-::cls\-Log\-::get\-Tag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d64/class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00125}{125} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Log} \&($\ast$)({\bf cls\-Log} \&)}]{manip}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}
+
+
+Used for end line. 
+
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00013}{13} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_a6fb4b7a4e52a6b113268421e03fc389e}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a6fb4b7a4e52a6b113268421e03fc389e}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00096}{96} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_a6fb4b7a4e52a6b113268421e03fc389e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_a72dbdacaafcc42d2e1c01ec76257ca6c}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const Q\-String $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a72dbdacaafcc42d2e1c01ec76257ca6c}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00103}{103} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_a72dbdacaafcc42d2e1c01ec76257ca6c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_a12dd838824409850684fefe038ef3f67}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a12dd838824409850684fefe038ef3f67}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00110}{110} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_a12dd838824409850684fefe038ef3f67_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_a372f11dd502fa0e9b20e88740da2d39d}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{int}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a372f11dd502fa0e9b20e88740da2d39d}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00117}{117} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_a372f11dd502fa0e9b20e88740da2d39d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_a4b942dd1a81afe8d1eb2af9a643b79c2}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log}\& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Log} $\ast$}]{log}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a4b942dd1a81afe8d1eb2af9a643b79c2}
+\hypertarget{class_k4_u_1_1cls_log_ac16d9a6fbd8ef4ea1d03e813bb6466c0}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{bool}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_ac16d9a6fbd8ef4ea1d03e813bb6466c0}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00017}{17} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_ab6ac3e9c2f6f577b576fe1570ca95d66}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map \&}]{map}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_ab6ac3e9c2f6f577b576fe1570ca95d66}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00026}{26} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_ab6ac3e9c2f6f577b576fe1570ca95d66_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_ad3c6cb4ff134f40925f8d19177a461b6}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant\-Map \&}]{map}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_ad3c6cb4ff134f40925f8d19177a461b6}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00034}{34} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_ad3c6cb4ff134f40925f8d19177a461b6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_a667d8d0b430593af7caf563410214187}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const Q\-Variant \&}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a667d8d0b430593af7caf563410214187}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00042}{42} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_a99d9c23284e9bb462858f4d6ca33a93a}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant \&}]{msg}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a99d9c23284e9bb462858f4d6ca33a93a}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00048}{48} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_a265b09c82c550e8957f29724ec0d1198}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{Q\-Byte\-Array \&}]{b\-Arr}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a265b09c82c550e8957f29724ec0d1198}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00054}{54} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_a3efb08c54070b1bbd22e297e1b69e202}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} \& K4\-U\-::cls\-Log\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const Q\-Byte\-Array \&}]{b\-Arr}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_a3efb08c54070b1bbd22e297e1b69e202}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00059}{59} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+\hypertarget{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!prefix@{prefix}}
+\index{prefix@{prefix}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{prefix}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::cls\-Log\-::prefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d64/class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00079}{79} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{da/d64/class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!set\-Prefix@{set\-Prefix}}
+\index{set\-Prefix@{set\-Prefix}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{set\-Prefix}]{\setlength{\rightskip}{0pt plus 5cm}void K4\-U\-::cls\-Log\-::set\-Prefix (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{prefix}
+\end{DoxyParamCaption}
+)}}\label{da/d64/class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}
+
+
+Sets a custom prefix, used for when more than one object uses the same log tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & The prefix to show \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clslog_8cpp_source_l00075}{75} of file \hyperlink{clslog_8cpp_source}{clslog.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/d64/class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!is\-First@{is\-First}}
+\index{is\-First@{is\-First}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{is\-First}]{\setlength{\rightskip}{0pt plus 5cm}bool K4\-U\-::cls\-Log\-::is\-First\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d64/class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}
+
+
+Definition at line \hyperlink{clslog_8h_source_l00062}{62} of file \hyperlink{clslog_8h_source}{clslog.\-h}.
+
+\hypertarget{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!prf@{prf}}
+\index{prf@{prf}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{prf}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String K4\-U\-::cls\-Log\-::prf\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d64/class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}
+
+
+Definition at line \hyperlink{clslog_8h_source_l00067}{67} of file \hyperlink{clslog_8h_source}{clslog.\-h}.
+
+\hypertarget{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{\index{K4\-U\-::cls\-Log@{K4\-U\-::cls\-Log}!tag@{tag}}
+\index{tag@{tag}!K4U::clsLog@{K4\-U\-::cls\-Log}}
+\subsubsection[{tag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf log\-Tags} K4\-U\-::cls\-Log\-::tag\hspace{0.3cm}{\ttfamily [private]}}}\label{da/d64/class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}
+
+
+Definition at line \hyperlink{clslog_8h_source_l00063}{63} of file \hyperlink{clslog_8h_source}{clslog.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/resources/\hyperlink{clslog_8h}{clslog.\-h}\item 
+C++/resources/\hyperlink{clslog_8cpp}{clslog.\-cpp}\end{DoxyCompactItemize}

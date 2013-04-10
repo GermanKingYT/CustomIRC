@@ -1,0 +1,4 @@
+<map id="shared::events::eventUserJoin::getUser" name="shared::events::eventUserJoin::getUser">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#a62f7f15ddd56fd52acd7ba01fa6354b4" title="Triggered when a user enters the room." alt="" coords="225,5,359,46"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="409,5,543,46"/>
+</map>

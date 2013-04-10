@@ -1,0 +1,5 @@
+<map id="client::clsServerConn::userQueryCompleted" name="client::clsServerConn::userQueryCompleted">
+<area shape="rect" id="node2" href="$d3/d65/classclient_1_1cls_server_conn.html#a034a72332abdeeb8dbd9483954a235dd" title="The server has given us all the users. Handle it." alt="" coords="205,5,371,46"/>
+<area shape="rect" id="node3" href="$d3/d65/classclient_1_1cls_server_conn.html#a0f7c8da07639a563b9d88780eb22748e" title="client::clsServerConn\l::readData" alt="" coords="419,5,563,46"/>
+<area shape="rect" id="node4" href="$d3/d65/classclient_1_1cls_server_conn.html#ad9d8caf021df2cd15ce27bcf207d86d0" title="Constructor taking a hostname and port." alt="" coords="611,5,755,46"/>
+</map>

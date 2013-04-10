@@ -1,0 +1,60 @@
+\hypertarget{clsevent_8h}{\section{clsevent.\-h}
+\label{db/d97/clsevent_8h}\index{C++/resources/clsevent.\-h@{C++/resources/clsevent.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSEVENT\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSEVENT\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{preprocessor}{#include <QObject>}
+00005 \textcolor{preprocessor}{#include <QString>}
+00006 \textcolor{preprocessor}{#include <QVariant>}
+00007 \textcolor{preprocessor}{#include <QDateTime>}
+00008 \textcolor{preprocessor}{#include "\hyperlink{clslog_8h}{clslog.h}"}
+00009 
+00010 \textcolor{keyword}{using namespace }K4U;
+00011 \textcolor{keyword}{namespace }shared\{
+00012 
+00013     \textcolor{keyword}{namespace }events\{
+\hypertarget{clsevent_8h_source_l00017}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{00017}         \textcolor{keyword}{enum} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{eventTypes}\{
+\hypertarget{clsevent_8h_source_l00018}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aa9e485704f21f82413549a0228364596}{00018}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aa9e485704f21f82413549a0228364596}{EVENTTYPE\_NONE} = 0x00, 
+\hypertarget{clsevent_8h_source_l00019}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{00019}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{EVENTTYPE\_CHAT}, 
+\hypertarget{clsevent_8h_source_l00020}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{00020}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{EVENTTYPE\_USER\_LEFT}, 
+\hypertarget{clsevent_8h_source_l00021}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{00021}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{EVENTTYPE\_USER\_STATUS}, 
+\hypertarget{clsevent_8h_source_l00022}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{00022}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{EVENTTYPE\_USER\_JOIN}, 
+\hypertarget{clsevent_8h_source_l00023}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{00023}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{EVENTTYPE\_USER\_NICK}, 
+\hypertarget{clsevent_8h_source_l00024}{}\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{00024}             \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{EVENTTYPE\_SERVERMSG} 
+00025         \};
+00026 
+00027 
+\hypertarget{clsevent_8h_source_l00032}{}\hyperlink{classshared_1_1events_1_1cls_event}{00032}         \textcolor{keyword}{class }\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}
+00033         \{
+00034             \textcolor{keyword}{public}:
+00038                 \textcolor{keyword}{explicit} \hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}();
+00044                 \textcolor{keyword}{explicit} \hyperlink{classshared_1_1events_1_1cls_event}{clsEvent}(QVariantMap data);
+00045 
+00051                 \textcolor{keywordtype}{void} addToData(\textcolor{keyword}{const} QString &key, \textcolor{keyword}{const} QVariant data);
+00052 
+00057                 QVariant toVariant() \textcolor{keyword}{const};
+00058 
+00064                 QVariant getData(QString key) \textcolor{keyword}{const};
+00065 
+00070                 \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{eventTypes} getType() \textcolor{keyword}{const};
+00071 
+00076                 QTime getTime() \textcolor{keyword}{const};
+00077 
+00078             \textcolor{keyword}{protected}:
+\hypertarget{clsevent_8h_source_l00082}{}\hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{00082}                 QVariantMap \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data};
+\hypertarget{clsevent_8h_source_l00083}{}\hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{00083}                 \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{eventTypes} \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{ourType};
+\hypertarget{clsevent_8h_source_l00084}{}\hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{00084}                 QDateTime \hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{timeOfEvent};
+00085 
+00090                 QString getEventType() \textcolor{keyword}{const};
+00091 
+00096                 \textcolor{keywordtype}{void} setEventType(\textcolor{keyword}{const} QString eventString);
+00097 
+\hypertarget{clsevent_8h_source_l00098}{}\hyperlink{classshared_1_1events_1_1cls_event_ac7f241779485316bf8a6016ee35d21db}{00098}                 \hyperlink{class_k4_u_1_1cls_log}{clsLog} \hyperlink{classshared_1_1events_1_1cls_event_ac7f241779485316bf8a6016ee35d21db}{log};
+00099         \};
+00100     \}
+00101 \}
+00102 \textcolor{preprocessor}{#endif // CLSEVENT\_H}
+\end{DoxyCode}

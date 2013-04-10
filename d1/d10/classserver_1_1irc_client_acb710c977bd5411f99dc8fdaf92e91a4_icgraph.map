@@ -1,0 +1,6 @@
+<map id="server::ircClient::IRCDisconnected" name="server::ircClient::IRCDisconnected">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.html#a32607649043e6053ff2ef9980df91800" title="server::ircClient::\ldisconnected" alt="" coords="177,5,295,46"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a6ea26ab5da3d338c84927312832f5b69" title="Runs every CHECK_PING_INTERVAL to check if the last ping was there." alt="" coords="177,70,295,111"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="344,45,480,72"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="529,38,647,79"/>
+</map>

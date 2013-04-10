@@ -1,0 +1,884 @@
+\hypertarget{classserver_1_1main_app}{\section{server\-:\-:main\-App Class Reference}
+\label{d1/d48/classserver_1_1main_app}\index{server\-::main\-App@{server\-::main\-App}}
+}
+
+
+The main application.  
+
+
+
+
+{\ttfamily \#include $<$mainapp.\-h$>$}
+
+
+
+Inheritance diagram for server\-:\-:main\-App\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{d9/d6d/classserver_1_1main_app__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for server\-:\-:main\-App\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dd/d48/classserver_1_1main_app__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{chat\-Received} (const Q\-String channel, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} user, const Q\-String message)
+\begin{DoxyCompactList}\small\item\em Triggered when a chat has been received. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{user\-Online} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick, const Q\-String irc\-Id, const Q\-String channel)
+\begin{DoxyCompactList}\small\item\em Triggered when a user joins trough a J\-O\-I\-N message. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{user\-Offline} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} nick, const Q\-String id, const Q\-String channel)
+\begin{DoxyCompactList}\small\item\em Triggered when a user leaves trough a P\-A\-R\-T message. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{user\-Change\-Nick} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} old\-Nick, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} new\-Nick, const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Triggered when a user changes his nickname (nick$|$\-Status) \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{user\-Change\-Status} (const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} old\-Nick, const \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} new\-Nick, const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Triggered when a user changes his status (nick$|$\-Status) \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}{ui\-Send\-Chat} (const Q\-String message)
+\begin{DoxyCompactList}\small\item\em Triggered when a U\-I client wants to send a chat message. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}{do\-User\-Query} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Triggered when a U\-I client wants all the users. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}{do\-Send\-Events} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Triggered when a U\-I client wants all the events known to the server. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}{own\-User\-Change\-Status} (Q\-String new\-Status)
+\begin{DoxyCompactList}\small\item\em Triggered when a U\-I client wants to change the status. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}{irc\-Connect\-Time\-Out} ()
+\begin{DoxyCompactList}\small\item\em Triggered when the I\-R\-C client cannot connect. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}{irc\-Connected} ()
+\begin{DoxyCompactList}\small\item\em Triggered when the I\-R\-C client has connected. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}{irc\-Disconnected} (Q\-String reason)
+\begin{DoxyCompactList}\small\item\em Triggered when the I\-R\-C client has disconnected. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{do\-Irc\-Reconnect} ()
+\begin{DoxyCompactList}\small\item\em Emitted when the reconnect timer reaches 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1main_app_a3e07813343ad98135e619cec6b0cbfdc}{main\-App} (Q\-String parent\-Path, Q\-Object $\ast$parent=0)
+\item 
+void \hyperlink{classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188}{run} ()
+\item 
+void \hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{server\-Message} (const Q\-String \&message, const \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)
+\begin{DoxyCompactList}\small\item\em For logging to the clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{add\-To\-Event\-History} (\hyperlink{classshared_1_1events_1_1cls_event}{cls\-Event} $\ast$event)
+\begin{DoxyCompactList}\small\item\em Adds an event to the history, checking for the maximum number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1irc_client}{irc\-Client} $\ast$ \hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}
+\item 
+\hyperlink{classserver_1_1irc_user_list}{irc\-User\-List} $\ast$ \hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log}
+\item 
+\hyperlink{classserver_1_1ui_server}{ui\-Server} $\ast$ \hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}
+\item 
+\hyperlink{classserver_1_1irc_user}{irc\-User} $\ast$ \hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{own\-User}
+\item 
+Q\-Vector$<$ \hyperlink{classshared_1_1events_1_1cls_event}{cls\-Event} $\ast$ $>$ \hyperlink{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{events}
+\item 
+\hyperlink{classserver_1_1cls_settings}{cls\-Settings} $\ast$ \hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}
+\item 
+Q\-Timer \hyperlink{classserver_1_1main_app_a1152ce37df612511638cfc6192e5fe9e}{reconnect\-Timer}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{log\-Tags} \hyperlink{classserver_1_1main_app_aed05f9dc959d800c4d641c31185e3693}{T\-A\-G} = L\-O\-G\-T\-A\-G\-S\-\_\-\-M\-A\-I\-N
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main application. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00025}{25} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classserver_1_1main_app_a3e07813343ad98135e619cec6b0cbfdc}{\index{server\-::main\-App@{server\-::main\-App}!main\-App@{main\-App}}
+\index{main\-App@{main\-App}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{main\-App}]{\setlength{\rightskip}{0pt plus 5cm}server\-::main\-App\-::main\-App (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{parent\-Path, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d1/d48/classserver_1_1main_app_a3e07813343ad98135e619cec6b0cbfdc}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00005}{5} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{\index{server\-::main\-App@{server\-::main\-App}!add\-To\-Event\-History@{add\-To\-Event\-History}}
+\index{add\-To\-Event\-History@{add\-To\-Event\-History}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{add\-To\-Event\-History}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::add\-To\-Event\-History (
+\begin{DoxyParamCaption}
+\item[{{\bf cls\-Event} $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}
+
+
+Adds an event to the history, checking for the maximum number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event to add The event can be any event, as these classes are derived from eachother \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00067}{67} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{\index{server\-::main\-App@{server\-::main\-App}!chat\-Received@{chat\-Received}}
+\index{chat\-Received@{chat\-Received}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::chat\-Received (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{channel, }
+\item[{const {\bf nick\-And\-Status}}]{user, }
+\item[{const Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}
+
+
+Triggered when a chat has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel in which the chat has been received \\
+\hline
+{\em user} & The nick and status of the user that send the chat \\
+\hline
+{\em message} & The message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00074}{74} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{\index{server\-::main\-App@{server\-::main\-App}!do\-Irc\-Reconnect@{do\-Irc\-Reconnect}}
+\index{do\-Irc\-Reconnect@{do\-Irc\-Reconnect}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{do\-Irc\-Reconnect}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::do\-Irc\-Reconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}
+
+
+Emitted when the reconnect timer reaches 0. 
+
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00264}{264} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}{\index{server\-::main\-App@{server\-::main\-App}!do\-Send\-Events@{do\-Send\-Events}}
+\index{do\-Send\-Events@{do\-Send\-Events}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{do\-Send\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::do\-Send\-Events (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}
+
+
+Triggered when a U\-I client wants all the events known to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client which requested the events \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00203}{203} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}{\index{server\-::main\-App@{server\-::main\-App}!do\-User\-Query@{do\-User\-Query}}
+\index{do\-User\-Query@{do\-User\-Query}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{do\-User\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::do\-User\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}
+
+
+Triggered when a U\-I client wants all the users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client which requested the user query \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00190}{190} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}{\index{server\-::main\-App@{server\-::main\-App}!irc\-Connected@{irc\-Connected}}
+\index{irc\-Connected@{irc\-Connected}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{irc\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::irc\-Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}
+
+
+Triggered when the I\-R\-C client has connected. 
+
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00250}{250} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}{\index{server\-::main\-App@{server\-::main\-App}!irc\-Connect\-Time\-Out@{irc\-Connect\-Time\-Out}}
+\index{irc\-Connect\-Time\-Out@{irc\-Connect\-Time\-Out}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{irc\-Connect\-Time\-Out}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::irc\-Connect\-Time\-Out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}
+
+
+Triggered when the I\-R\-C client cannot connect. 
+
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00240}{240} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}{\index{server\-::main\-App@{server\-::main\-App}!irc\-Disconnected@{irc\-Disconnected}}
+\index{irc\-Disconnected@{irc\-Disconnected}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{irc\-Disconnected}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::irc\-Disconnected (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{reason}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}
+
+
+Triggered when the I\-R\-C client has disconnected. 
+
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00254}{254} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}{\index{server\-::main\-App@{server\-::main\-App}!own\-User\-Change\-Status@{own\-User\-Change\-Status}}
+\index{own\-User\-Change\-Status@{own\-User\-Change\-Status}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{own\-User\-Change\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::own\-User\-Change\-Status (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{new\-Status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}
+
+
+Triggered when a U\-I client wants to change the status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Status} & The status to change to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00214}{214} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188}{\index{server\-::main\-App@{server\-::main\-App}!run@{run}}
+\index{run@{run}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d1/d48/classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00014}{14} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{d1/d48/classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{\index{server\-::main\-App@{server\-::main\-App}!server\-Message@{server\-Message}}
+\index{server\-Message@{server\-Message}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{server\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::server\-Message (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{message, }
+\item[{const {\bf level}}]{lvl}
+\end{DoxyParamCaption}
+)}}\label{d1/d48/classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}
+
+
+For logging to the clients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to log \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00229}{229} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}{\index{server\-::main\-App@{server\-::main\-App}!ui\-Send\-Chat@{ui\-Send\-Chat}}
+\index{ui\-Send\-Chat@{ui\-Send\-Chat}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{ui\-Send\-Chat}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::ui\-Send\-Chat (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}
+
+
+Triggered when a U\-I client wants to send a chat message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00186}{186} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a022d0310199da514b250fec2541ada4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a022d0310199da514b250fec2541ada4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{\index{server\-::main\-App@{server\-::main\-App}!user\-Change\-Nick@{user\-Change\-Nick}}
+\index{user\-Change\-Nick@{user\-Change\-Nick}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{user\-Change\-Nick}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::user\-Change\-Nick (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{old\-Nick, }
+\item[{const {\bf nick\-And\-Status}}]{new\-Nick, }
+\item[{const Q\-String}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}
+
+
+Triggered when a user changes his nickname (nick$|$\-Status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\-Nick\-Name} & The old nick and status this user had \\
+\hline
+{\em new\-Nick\-Name} & The new nick and status this user now has \\
+\hline
+{\em id} & His I\-R\-C-\/\-I\-D. The only thing probably that remained the same. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Not to be confused with user\-Change\-Status! 
+\end{DoxyWarning}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00138}{138} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{\index{server\-::main\-App@{server\-::main\-App}!user\-Change\-Status@{user\-Change\-Status}}
+\index{user\-Change\-Status@{user\-Change\-Status}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{user\-Change\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::user\-Change\-Status (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{old\-Nick, }
+\item[{const {\bf nick\-And\-Status}}]{new\-Nick, }
+\item[{const Q\-String}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}
+
+
+Triggered when a user changes his status (nick$|$\-Status) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\-Nick} & The old nick and status this user had \\
+\hline
+{\em new\-Nick} & The new nick and status this user now has \\
+\hline
+{\em id} & His I\-R\-C-\/\-I\-D. The only thing probably that remained the same. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Not to be confused with user\-Change\-Nick! 
+\end{DoxyWarning}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00162}{162} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{\index{server\-::main\-App@{server\-::main\-App}!user\-Offline@{user\-Offline}}
+\index{user\-Offline@{user\-Offline}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{user\-Offline}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::user\-Offline (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{nick, }
+\item[{const Q\-String}]{id, }
+\item[{const Q\-String}]{channel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}
+
+
+Triggered when a user leaves trough a P\-A\-R\-T message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick} & The nick and status of the user that left \\
+\hline
+{\em id} & The I\-R\-C-\/\-I\-D of the user that left \\
+\hline
+{\em channel} & The channel which the user has left \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00113}{113} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{\index{server\-::main\-App@{server\-::main\-App}!user\-Online@{user\-Online}}
+\index{user\-Online@{user\-Online}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{user\-Online}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::main\-App\-::user\-Online (
+\begin{DoxyParamCaption}
+\item[{const {\bf nick\-And\-Status}}]{nick, }
+\item[{const Q\-String}]{irc\-Id, }
+\item[{const Q\-String}]{channel}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{d1/d48/classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}
+
+
+Triggered when a user joins trough a J\-O\-I\-N message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nick} & The nick and status of the user that joins \\
+\hline
+{\em irc\-Id} & The I\-R\-C-\/\-I\-D of the user that joins \\
+\hline
+{\em channel} & The channel in which the user has joined \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{mainapp_8cpp_source_l00092}{92} of file \hyperlink{mainapp_8cpp_source}{mainapp.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d48/classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{\index{server\-::main\-App@{server\-::main\-App}!events@{events}}
+\index{events@{events}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{events}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Vector$<${\bf cls\-Event} $\ast$$>$ server\-::main\-App\-::events\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00146}{146} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{\index{server\-::main\-App@{server\-::main\-App}!irc@{irc}}
+\index{irc@{irc}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{irc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-Client}$\ast$ server\-::main\-App\-::irc\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00140}{140} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{\index{server\-::main\-App@{server\-::main\-App}!log@{log}}
+\index{log@{log}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} server\-::main\-App\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00142}{142} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{\index{server\-::main\-App@{server\-::main\-App}!own\-User@{own\-User}}
+\index{own\-User@{own\-User}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{own\-User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User}$\ast$ server\-::main\-App\-::own\-User\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00145}{145} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a1152ce37df612511638cfc6192e5fe9e}{\index{server\-::main\-App@{server\-::main\-App}!reconnect\-Timer@{reconnect\-Timer}}
+\index{reconnect\-Timer@{reconnect\-Timer}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{reconnect\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer server\-::main\-App\-::reconnect\-Timer\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a1152ce37df612511638cfc6192e5fe9e}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00150}{150} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{\index{server\-::main\-App@{server\-::main\-App}!settings@{settings}}
+\index{settings@{settings}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Settings}$\ast$ server\-::main\-App\-::settings\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00148}{148} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_aed05f9dc959d800c4d641c31185e3693}{\index{server\-::main\-App@{server\-::main\-App}!T\-A\-G@{T\-A\-G}}
+\index{T\-A\-G@{T\-A\-G}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{T\-A\-G}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf log\-Tags} server\-::main\-App\-::\-T\-A\-G = L\-O\-G\-T\-A\-G\-S\-\_\-\-M\-A\-I\-N\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_aed05f9dc959d800c4d641c31185e3693}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00139}{139} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{\index{server\-::main\-App@{server\-::main\-App}!ui@{ui}}
+\index{ui@{ui}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ui\-Server}$\ast$ server\-::main\-App\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00143}{143} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+\hypertarget{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{\index{server\-::main\-App@{server\-::main\-App}!users@{users}}
+\index{users@{users}!server::mainApp@{server\-::main\-App}}
+\subsubsection[{users}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irc\-User\-List}$\ast$ server\-::main\-App\-::users\hspace{0.3cm}{\ttfamily [private]}}}\label{d1/d48/classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}
+
+
+Definition at line \hyperlink{mainapp_8h_source_l00141}{141} of file \hyperlink{mainapp_8h_source}{mainapp.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Server/\hyperlink{mainapp_8h}{mainapp.\-h}\item 
+C++/custom\-Irc\-Server/\hyperlink{mainapp_8cpp}{mainapp.\-cpp}\end{DoxyCompactItemize}

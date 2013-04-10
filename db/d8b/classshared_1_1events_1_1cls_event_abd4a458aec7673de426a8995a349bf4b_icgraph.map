@@ -1,0 +1,16 @@
+<map id="shared::events::clsEvent::getEventType" name="shared::events::clsEvent::getEventType">
+<area shape="rect" id="node2" href="$db/d8b/classshared_1_1events_1_1cls_event.html#a48d11c9b50a2569c1065f19ca87d0715" title="Converts the current data to a QVariant for sending with JSON." alt="" coords="216,159,379,200"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#a0970ee01d48b04ebc1390ffb8edecfc0" title="Triggered when a chat has been received." alt="" coords="692,14,892,41"/>
+<area shape="rect" id="node6" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="963,65,1149,91"/>
+<area shape="rect" id="node7" href="$d1/d48/classserver_1_1main_app.html#aae86b15c001a235de78a90334e697b5f" title="Triggered when a user leaves trough a PART message." alt="" coords="700,115,884,142"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#ae15deb9260c486854af7fac7b063fdf5" title="Triggered when a user changes his nickname (nick|Status)" alt="" coords="947,166,1165,193"/>
+<area shape="rect" id="node9" href="$d1/d48/classserver_1_1main_app.html#aaa3dd74b510e2d797f21293a622a4f7d" title="Triggered when a user changes his status (nick|Status)" alt="" coords="436,217,628,259"/>
+<area shape="rect" id="node10" href="$d1/d48/classserver_1_1main_app.html#aba9c03c1c353a57f43404bb149bee50b" title="Triggered when a UI client wants all the events known to the server." alt="" coords="429,283,635,310"/>
+<area shape="rect" id="node11" href="$d1/d48/classserver_1_1main_app.html#a7263ca5b3630b0a2774f556b96c333c8" title="For logging to the clients." alt="" coords="427,394,637,421"/>
+<area shape="rect" id="node4" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="1213,242,1355,269"/>
+<area shape="rect" id="node5" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1403,242,1453,269"/>
+<area shape="rect" id="node12" href="$d1/d48/classserver_1_1main_app.html#a931aedd34bb38252acfc8880f9716fab" title="Triggered when the IRC client cannot connect." alt="" coords="963,471,1149,512"/>
+<area shape="rect" id="node13" href="$d1/d48/classserver_1_1main_app.html#a6e6e952e3048cfeefcdfeea7bbb5b83e" title="Triggered when the IRC client has connected." alt="" coords="693,369,891,395"/>
+<area shape="rect" id="node14" href="$d1/d48/classserver_1_1main_app.html#af6e8c9d1f06514b33e5f88f9e66884be" title="Triggered when the IRC client has disconnected." alt="" coords="948,419,1164,446"/>
+<area shape="rect" id="node15" href="$d1/d48/classserver_1_1main_app.html#aa9d4c2e1dc5216901c4f8743838d4561" title="Emitted when the reconnect timer reaches 0." alt="" coords="685,470,899,497"/>
+</map>

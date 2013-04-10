@@ -1,0 +1,6 @@
+<map id="server::getId" name="server::getId">
+<area shape="rect" id="node2" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="147,5,266,46"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="315,5,434,46"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="483,12,619,39"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="667,5,786,46"/>
+</map>

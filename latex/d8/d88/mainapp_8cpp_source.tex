@@ -1,0 +1,298 @@
+\hypertarget{mainapp_8cpp}{\section{mainapp.\-cpp}
+\label{d8/d88/mainapp_8cpp}\index{C++/custom\-Irc\-Server/mainapp.\-cpp@{C++/custom\-Irc\-Server/mainapp.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{mainapp_8h}{mainapp.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }server \{
+00004 
+\hypertarget{mainapp_8cpp_source_l00005}{}\hyperlink{classserver_1_1main_app_a3e07813343ad98135e619cec6b0cbfdc}{00005} \hyperlink{classserver_1_1main_app_a3e07813343ad98135e619cec6b0cbfdc}{mainApp::mainApp}(QString parentPath, QObject *parent)
+00006     :QObject(parent)
+00007     ,users(new \hyperlink{classserver_1_1irc_user_list}{ircUserList}())
+00008     ,log(\hyperlink{class_k4_u_1_1cls_log}{clsLog}(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372}{LOGTAGS\_MAIN}))
+00009 \{
+00010     this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings} = \textcolor{keyword}{new} \hyperlink{classserver_1_1cls_settings}{clsSettings}(parentPath);
+00011 \}
+00012 
+00013 
+\hypertarget{mainapp_8cpp_source_l00014}{}\hyperlink{classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188}{00014} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_af331bc3bf60e745f3ddc95ab3abe5188}{mainApp::run}()\{
+00015     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << \textcolor{stringliteral}{"Starting up"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00016 
+00017     this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc} = \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_client}{ircClient}(this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_a8c004b75e4b5a0770eab757556896754}{getServer}(),
+00018                               this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_aeda4880e005f6f7de1b6fd0a31f78de6}{getChannel}(),
+00019                               this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_ab63cf5761cd958b9dea502caaecd268d}{getUserName}());
+00020     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui} = \textcolor{keyword}{new} \hyperlink{classserver_1_1ui_server}{uiServer}(this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_a602fc63e38ce02cbac95414b506422f6}{getListeningPort}(), \textcolor{keyword}{this});
+00021 
+00022     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc},SIGNAL(\hyperlink{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{chatReceived}(QString,\hyperlink{structserver_1_1nick_and_status}{nickAndStatus},QString)), \textcolor{keyword}{this}
+      ,
+00023             SLOT(\hyperlink{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{chatReceived}(QString,\hyperlink{structserver_1_1nick_and_status}{nickAndStatus},QString)));
+00024 
+00025     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(\hyperlink{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{userOnline}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, QString, QString)), \textcolor{keyword}{this},
+00026             SLOT(\hyperlink{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{userOnline}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, QString, QString )));
+00027 
+00028     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(\hyperlink{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{userOffline}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, QString, QString)), \textcolor{keyword}{
+      this},
+00029             SLOT(\hyperlink{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{userOffline}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, QString, QString )));
+00030 
+00031 
+00032     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(\hyperlink{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{userChangeNick}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, 
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus},
+00033                                              QString))
+00034             ,\textcolor{keyword}{this},SLOT(\hyperlink{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{userChangeNick}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus},
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus},QString)));
+00035 
+00036     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(\hyperlink{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{userChangeStatus}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus}, 
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus},
+00037                                                QString))
+00038             ,\textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{userChangeStatus}(\hyperlink{structserver_1_1nick_and_status}{nickAndStatus},
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus},QString)));
+00039 
+00040     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(IRCConnectTimeOut()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}{ircConnectTimeOut}()));
+00041     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(IRCConnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}{ircConnected}()));
+00042     connect(this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}, SIGNAL(IRCDisconnected(QString)), \textcolor{keyword}{this},
+00043             SLOT(\hyperlink{classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}{ircDisconnected}(QString)));
+00044 
+00045     connect(this->ui,SIGNAL(sgnChatReceived(QString)),\textcolor{keyword}{this},SLOT(\hyperlink{classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}{uiSendChat}(QString)));
+00046     connect(this->ui,SIGNAL(sgnUserQuery(\hyperlink{classserver_1_1ui_client}{uiClient}*)), \textcolor{keyword}{this},SLOT(
+      \hyperlink{classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}{doUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient}*)));
+00047     connect(this->ui, SIGNAL(sgnSendEvents(\hyperlink{classserver_1_1ui_client}{uiClient}*)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}{doSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient}*)));
+00048     connect(this->ui,SIGNAL(sgnChangeOwnUserStatus(QString)),
+00049             \textcolor{keyword}{this}, SLOT(\hyperlink{classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}{ownUserChangeStatus}(QString)));
+00050 
+00051 
+00052     \textcolor{comment}{//Init db of 'standard' irc users:}
+00053     \hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser} = this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_afcd5b687d43d225219f78f532b88e1a0}{getOwnUser}();
+00054     \hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{true});
+00055     \hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{setStatus}(\textcolor{stringliteral}{""});
+00056     this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_ac25cc917018cde96b0ba9e03b6f6022e}{setOwnUser}(\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser});
+00057     this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{add}(\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser});
+00058     \textcolor{keywordflow}{foreach}(\hyperlink{classserver_1_1irc_user}{ircUser}* user, this->\hyperlink{classserver_1_1main_app_a5664d0e28cd8826e504098e13e3c644a}{settings}->\hyperlink{classserver_1_1cls_settings_a5a0d72a0acc847fcfb9aaebb2b51af6f}{getUsers}())\{
+00059         this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{add}(user);
+00060     \}
+00061 
+00062     this->\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{serverMessage}(\textcolor{stringliteral}{"Connecting to irc."}, 
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00063     this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{doConnect}();
+00064     this->ui->startListen();
+00065 \}
+00066 
+\hypertarget{mainapp_8cpp_source_l00067}{}\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{00067} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{mainApp::addToEventHistory}(\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent} *event)\{
+00068     this->\hyperlink{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{events}.append(event);
+00069     \textcolor{keywordflow}{while}(this->\hyperlink{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{events}.count() > \hyperlink{mainapp_8h_ae42954bb8545d24e3e9dcde5920c9a0b}{MAX\_EVENTS})\{
+00070         this->\hyperlink{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{events}.pop\_front();
+00071     \}
+00072 \}
+00073 
+\hypertarget{mainapp_8cpp_source_l00074}{}\hyperlink{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{00074} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a0970ee01d48b04ebc1390ffb8edecfc0}{mainApp::chatReceived}(\textcolor{keyword}{const} QString channel, \textcolor{keyword}{const} 
+      \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} user,
+00075                            \textcolor{keyword}{const} QString message)\{
+00076     Q\_UNUSED(channel);
+00077     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << \textcolor{stringliteral}{"Chat received:\(\backslash\)t<"} << user.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{">\(\backslash\)t"} << message << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00078 
+00079     \textcolor{comment}{//Create event:}
+00080     \hyperlink{classshared_1_1events_1_1event_chat}{eventChat} *chatEvent = \textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_chat}{eventChat}(
+00081                 this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_a7f99e64e1cabde876fa6a827c6614a4e}{getUserByNick}(user)->\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{getId}(), message);
+00082 
+00083     this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(chatEvent);
+00084     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} chatMessage(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00085     chatMessage.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},chatEvent->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00086 
+00087     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(chatMessage);
+00088 
+00089 \}
+00090 
+00091 
+\hypertarget{mainapp_8cpp_source_l00092}{}\hyperlink{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{00092} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a92448c1219ad89999c983b04adaa4236}{mainApp::userOnline}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} nick, \textcolor{keyword}{const} QString ircId, \textcolor{keyword}{
+      const} QString channel)\{
+00093     Q\_UNUSED(channel);
+00094     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << \textcolor{stringliteral}{"Online\(\backslash\)t"} << nick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{"\(\backslash\)t"} << nick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00095     \hyperlink{classserver_1_1irc_user}{ircUser} *user = this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{getUser}(nick, ircId);
+00096     \textcolor{keywordflow}{if}(user->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00097         user = \textcolor{keyword}{new} \hyperlink{classserver_1_1irc_user}{ircUser}(nick,ircId);
+00098         this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_a19af488638607e1cc77e94692e3cf3b1}{add}(user);
+00099     \}\textcolor{keywordflow}{else}\{
+00100         user->\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{setStatus}(nick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status});
+00101         user->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{true});
+00102     \}
+00103     \textcolor{comment}{//Create event}
+00104     \hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin} *joinEvent = \textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin}(
+00105                 user->\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{getId}(),user->\hyperlink{classserver_1_1irc_user_af6bce76d6e000cf6c5ebfb4ce323f442}{toVariantMap}());
+00106     this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(joinEvent);
+00107     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} uUser(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00108 
+00109     uUser.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},joinEvent->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00110     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(uUser);
+00111 \}
+00112 
+\hypertarget{mainapp_8cpp_source_l00113}{}\hyperlink{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{00113} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_aae86b15c001a235de78a90334e697b5f}{mainApp::userOffline}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} nick, \textcolor{keyword}{const} QString \textcolor{keywordtype}{id}, \textcolor{keyword}{
+      const} QString channel)\{
+00114     Q\_UNUSED(channel);
+00115     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << \textcolor{stringliteral}{"Offline\(\backslash\)t"} << nick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{"\(\backslash\)t"} << nick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00116     \hyperlink{classserver_1_1irc_user}{ircUser} *user = this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{getUser}(nick, \textcolor{keywordtype}{id});
+00117     \textcolor{keywordflow}{if}(user->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00118         \textcolor{comment}{//Say WHAT!?}
+00119         this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << nick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{" bestaat niet!?"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00120     \}\textcolor{keywordflow}{else}\{
+00121         user->\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{setStatus}(\textcolor{stringliteral}{""});
+00122         user->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{false});
+00123         \textcolor{keywordflow}{if}(user->\hyperlink{classserver_1_1irc_user_a83a421f05e507496a7cab349cd993b69}{isStandard}() == \textcolor{keyword}{false})\{
+00124             this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_ae42c9f84545a97b504a25c399cc43666}{del}(user);
+00125         \}
+00126 
+00127         \textcolor{comment}{//Create event}
+00128         \hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave} *leaveEvent = \textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave}(
+00129                     user->\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{getId}());
+00130         this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(leaveEvent);
+00131         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} uUser(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00132 
+00133         uUser.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},leaveEvent->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00134         this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(uUser);
+00135     \}
+00136 \}
+00137 
+\hypertarget{mainapp_8cpp_source_l00138}{}\hyperlink{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{00138} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_ae15deb9260c486854af7fac7b063fdf5}{mainApp::userChangeNick}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} oldNick,
+00139                              \textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} newNick, \textcolor{keyword}{const} QString \textcolor{keywordtype}{id})\{
+00140     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << oldNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{" changed nick to "} << newNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00141 
+00142     \hyperlink{classserver_1_1irc_user}{ircUser} *user = this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{getUser}(oldNick, \textcolor{keywordtype}{id});
+00143     \textcolor{keywordflow}{if}(user->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00144         \textcolor{comment}{//Say WHAT!?}
+00145         this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << oldNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{" bestaat niet!?"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00146     \}\textcolor{keywordflow}{else}\{
+00147         user->\hyperlink{classserver_1_1irc_user_a2002c82125ebd8502ec385e516bfa445}{setNick}(newNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick});
+00148 
+00149         \textcolor{comment}{//Create event}
+00150         \hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick} *changeEvent = \textcolor{keyword}{new} 
+      \hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick}(
+00151                     user->\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{getId}(),
+00152                     newNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick},
+00153                     oldNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick});
+00154         this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(changeEvent);
+00155         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} uUser(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00156 
+00157         uUser.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},changeEvent->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00158         this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(uUser);
+00159     \}
+00160 \}
+00161 
+\hypertarget{mainapp_8cpp_source_l00162}{}\hyperlink{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{00162} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_aaa3dd74b510e2d797f21293a622a4f7d}{mainApp::userChangeStatus}(\textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} oldNick,
+00163                                \textcolor{keyword}{const} \hyperlink{structserver_1_1nick_and_status}{nickAndStatus} newNick, \textcolor{keyword}{const} QString \textcolor{keywordtype}{id})\{
+00164     this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << oldNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{" changed status to "} << newNick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00165 
+00166     \hyperlink{classserver_1_1irc_user}{ircUser} *user = this->\hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users}->\hyperlink{classserver_1_1irc_user_list_af2d5bdaf2ccd658679c933390500f0e2}{getUser}(oldNick,\textcolor{keywordtype}{id});
+00167     \textcolor{keywordflow}{if}(user->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() == \textcolor{stringliteral}{"NaN"})\{
+00168         \textcolor{comment}{//Say WHAT!?}
+00169         this->\hyperlink{classserver_1_1main_app_a909a71dae4778f8fcd7f998eba857ff4}{log} << oldNick.\hyperlink{structserver_1_1nick_and_status_a891d63cf912fdaa75ad5bac58da22230}{nick} << \textcolor{stringliteral}{" bestaat niet!?"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00170     \}\textcolor{keywordflow}{else}\{
+00171         user->\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{setStatus}(newNick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status});
+00172         \textcolor{comment}{//Create event}
+00173         \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus} *changeEvent = \textcolor{keyword}{new} 
+      \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus}(
+00174                     user->\hyperlink{classserver_1_1irc_user_a7d729b6e71c3f381a1db0cec57520c39}{getId}(),
+00175                     newNick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status},
+00176                     oldNick.\hyperlink{structserver_1_1nick_and_status_a33c2bc84bed373bf34f66ebf1f318fc0}{status});
+00177         this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(changeEvent);
+00178         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} uUser(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00179 
+00180         uUser.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},changeEvent->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00181         this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(uUser);
+00182     \}
+00183 
+00184 \}
+00185 
+\hypertarget{mainapp_8cpp_source_l00186}{}\hyperlink{classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}{00186} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a022d0310199da514b250fec2541ada4a}{mainApp::uiSendChat}(\textcolor{keyword}{const} QString message)\{
+00187     this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_a6b62de4b4dc3c1f7f0fe7c6f91c1cf05}{sendChat}(message);
+00188 \}
+00189 
+\hypertarget{mainapp_8cpp_source_l00190}{}\hyperlink{classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}{00190} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_aea819e4b8f297de7f1e3fc2f8513b0a4}{mainApp::doUserQuery}(\hyperlink{classserver_1_1ui_client}{uiClient} *client)\{
+00191     \textcolor{comment}{//Send all the users back}
+00192     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} uQuery(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY});
+00193     QList<QVariant> \hyperlink{classserver_1_1main_app_a0ddcb17051b89af83cd188bf86f6de6e}{users};
+00194     \textcolor{keywordflow}{foreach}(\hyperlink{classserver_1_1irc_user}{ircUser} *user, this->users->getAll())\{
+00195         users.append(QVariant(user->\hyperlink{classserver_1_1irc_user_af6bce76d6e000cf6c5ebfb4ce323f442}{toVariantMap}()));
+00196     \}
+00197     uQuery.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"users"},QVariant::fromValue(users));
+00198 
+00199     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(client,uQuery);
+00200 
+00201 \}
+00202 
+\hypertarget{mainapp_8cpp_source_l00203}{}\hyperlink{classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}{00203} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_aba9c03c1c353a57f43404bb149bee50b}{mainApp::doSendEvents}(\hyperlink{classserver_1_1ui_client}{uiClient} *client)\{
+00204     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} toSend(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS});
+00205     QList<QVariant> \hyperlink{classserver_1_1main_app_acafd4b774e4e3ee6333fb7477d114330}{events};
+00206     \textcolor{keywordflow}{foreach}(\hyperlink{classshared_1_1events_1_1cls_event}{clsEvent} *ev, this->events)\{
+00207         events.append(ev->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00208     \}
+00209     toSend.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"events"},QVariant(events));
+00210 
+00211     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(client, toSend);
+00212 \}
+00213 
+\hypertarget{mainapp_8cpp_source_l00214}{}\hyperlink{classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}{00214} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_af498e3b109e1bc2b9f8e87b215efdb27}{mainApp::ownUserChangeStatus}(QString newStatus)\{
+00215     this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_afb3f6602401d493fb06fc48973123bf9}{setStatus}(newStatus);
+00216     \textcolor{keywordflow}{if}(newStatus == \textcolor{stringliteral}{"Offline"})\{
+00217         this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{false});
+00218     \}\textcolor{keywordflow}{else}\{
+00219         this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_a692aec882619dc575ac64ec8fabf02e9}{setOnline}(\textcolor{keyword}{true});
+00220     \}
+00221     \textcolor{keywordflow}{if}(this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_ac9c8f677bab0526311a94d16ad13fd61}{getStatus}() == \textcolor{stringliteral}{""})\{
+00222         this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{setOwnNick}(this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}());
+00223     \}\textcolor{keywordflow}{else}\{
+00224         this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_aef3233c03f42190f1c89b77c357e9f7f}{setOwnNick}(this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_a9b5683eaeb89557d6e1b1e57708aeb35}{getName}() + \textcolor{stringliteral}{"|"} +
+00225                               this->\hyperlink{classserver_1_1main_app_a01ad62ed879b9964ae2398be7d537c1c}{ownUser}->\hyperlink{classserver_1_1irc_user_ac9c8f677bab0526311a94d16ad13fd61}{getStatus}());
+00226     \}
+00227 \}
+00228 
+\hypertarget{mainapp_8cpp_source_l00229}{}\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{00229} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{mainApp::serverMessage}(\textcolor{keyword}{const} QString &message, \textcolor{keyword}{const} 
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1db}{level} lvl)\{
+00230     \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage} *myMessage = \textcolor{keyword}{new}
+00231             \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage}(message, lvl);
+00232 
+00233     \hyperlink{class_k4_u_1_1json_command}{jsonCommand} eventMsg(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT});
+00234 
+00235     eventMsg.\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{addToData}(\textcolor{stringliteral}{"event"},myMessage->\hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{toVariant}());
+00236     this->\hyperlink{classserver_1_1main_app_a79270f76b62ff1a9d89c61a85978df94}{ui}->\hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send}(eventMsg);
+00237     this->\hyperlink{classserver_1_1main_app_a3f2522c9bfcd7593aad9c906d24b6016}{addToEventHistory}(myMessage);
+00238 \}
+00239 
+\hypertarget{mainapp_8cpp_source_l00240}{}\hyperlink{classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}{00240} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a931aedd34bb38252acfc8880f9716fab}{mainApp::ircConnectTimeOut}()\{
+00241     this->\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{serverMessage}(
+00242                 QString(\textcolor{stringliteral}{"Connection to IRC failed. Reconnecting in %1 seconds"}).
+00243                         arg(qint32(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S})), 
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR});
+00244 
+00245     \textcolor{comment}{//Now, let's reconnect in RECONNECT\_IN\_S}
+00246     this->\hyperlink{classserver_1_1main_app_a1152ce37df612511638cfc6192e5fe9e}{reconnectTimer}.singleShot(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}*1000, \textcolor{keyword}{this},
+00247                                     SLOT(\hyperlink{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{doIrcReconnect}()));
+00248 \}
+00249 
+\hypertarget{mainapp_8cpp_source_l00250}{}\hyperlink{classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}{00250} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_a6e6e952e3048cfeefcdfeea7bbb5b83e}{mainApp::ircConnected}()\{
+00251     this->\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{serverMessage}(\textcolor{stringliteral}{"Connected to IRC!"}, 
+      \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00252 \}
+00253 
+\hypertarget{mainapp_8cpp_source_l00254}{}\hyperlink{classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}{00254} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_af6e8c9d1f06514b33e5f88f9e66884be}{mainApp::ircDisconnected}(QString reason)\{
+00255     QString msg(\textcolor{stringliteral}{"Disconnected from IRC: %1. Reconnecting in %2 seconds"});
+00256     msg = msg.arg(reason, qint32(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}));
+00257 
+00258     this->\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{serverMessage}(msg, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dba44c7e1aed7f01960e4ad399108ac0050}{SERVERMESSAGE\_LEVEL\_ERROR});
+00259     \textcolor{comment}{//Reconnect in RECONNECT\_IN\_S}
+00260     this->\hyperlink{classserver_1_1main_app_a1152ce37df612511638cfc6192e5fe9e}{reconnectTimer}.singleShot(\hyperlink{mainwindow_8h_a10611883846fc00606e1e14216b2de76}{RECONNECT\_IN\_S}*1000, \textcolor{keyword}{this},
+00261                                     SLOT(\hyperlink{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{doIrcReconnect}()));
+00262 \}
+00263 
+\hypertarget{mainapp_8cpp_source_l00264}{}\hyperlink{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{00264} \textcolor{keywordtype}{void} \hyperlink{classserver_1_1main_app_aa9d4c2e1dc5216901c4f8743838d4561}{mainApp::doIrcReconnect}()\{
+00265     this->\hyperlink{classserver_1_1main_app_a7263ca5b3630b0a2774f556b96c333c8}{serverMessage}(\textcolor{stringliteral}{"Reconnecting"}, \hyperlink{namespaceshared_ac45ebac56812e48d57e16c9cf057a1dbabbd7360132ef139c387c39bf6c949144}{SERVERMESSAGE\_LEVEL\_INFO});
+00266     this->\hyperlink{classserver_1_1main_app_aba3a1f9b10639ec4ffc21dfbe70e0d35}{irc}->\hyperlink{classserver_1_1irc_client_a43b0e50c5bf5ba76b5a09917e779c1ea}{doConnect}();
+00267 \}
+00268 
+00269 \}
+\end{DoxyCode}

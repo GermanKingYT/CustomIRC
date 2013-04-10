@@ -1,0 +1,298 @@
+\hypertarget{classclient_1_1chat_notification}{\section{client\-:\-:chat\-Notification Class Reference}
+\label{d5/d17/classclient_1_1chat_notification}\index{client\-::chat\-Notification@{client\-::chat\-Notification}}
+}
+
+
+U\-I Segment containing a notification in the chatbox.  
+
+
+
+
+{\ttfamily \#include $<$chatnotification.\-h$>$}
+
+
+
+Inheritance diagram for client\-:\-:chat\-Notification\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{d4/d6d/classclient_1_1chat_notification__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for client\-:\-:chat\-Notification\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{dc/dfd/classclient_1_1chat_notification__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}{chat\-Notification} (Q\-String \hyperlink{classclient_1_1chat_notification_a0052e2119fe7620b3dc955ba6135c915}{message}, Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor taking a message. \end{DoxyCompactList}\item 
+\hyperlink{classclient_1_1chat_notification_a684a7cdcf71cda53fcc61a0a94d5ed23}{chat\-Notification} (Q\-String \hyperlink{classclient_1_1chat_notification_a0052e2119fe7620b3dc955ba6135c915}{message}, Q\-Time \hyperlink{classclient_1_1chat_notification_ac2cf7f6030625593ba26f5f62ebd3482}{time\-Of\-Message}, Q\-Color my\-Color, Q\-Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor taking a message and a time. \end{DoxyCompactList}\item 
+\hyperlink{classclient_1_1chat_notification_a8123fd954f4aede301f59474b8e3752d}{$\sim$chat\-Notification} ()
+\item 
+void \hyperlink{classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c}{resize\-Event} (Q\-Resize\-Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{calculate\-Message\-Width} ()
+\begin{DoxyCompactList}\small\item\em Calculates the message width to detirmine it should be wrapped. \end{DoxyCompactList}\item 
+int \hyperlink{classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}{get\-Height} (Q\-Label $\ast$l) const 
+\item 
+int \hyperlink{classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}{get\-Width} (Q\-Label $\ast$l) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::chat\-Notification $\ast$ \hyperlink{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{ui}
+\item 
+Q\-String \hyperlink{classclient_1_1chat_notification_a0052e2119fe7620b3dc955ba6135c915}{message}
+\item 
+Q\-Time \hyperlink{classclient_1_1chat_notification_ac2cf7f6030625593ba26f5f62ebd3482}{time\-Of\-Message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+U\-I Segment containing a notification in the chatbox. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{chatnotification_8h_source_l00017}{17} of file \hyperlink{chatnotification_8h_source}{chatnotification.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!chat\-Notification@{chat\-Notification}}
+\index{chat\-Notification@{chat\-Notification}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{chat\-Notification}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Notification\-::chat\-Notification (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d5/d17/classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18}
+
+
+Constructor taking a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be shown \\
+\hline
+{\em parent} & The parent widget \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00008}{8} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_ae2fcac96b85efe37fd12c38282120e18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_notification_a684a7cdcf71cda53fcc61a0a94d5ed23}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!chat\-Notification@{chat\-Notification}}
+\index{chat\-Notification@{chat\-Notification}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{chat\-Notification}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Notification\-::chat\-Notification (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message, }
+\item[{Q\-Time}]{time\-Of\-Message, }
+\item[{Q\-Color}]{my\-Color, }
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{d5/d17/classclient_1_1chat_notification_a684a7cdcf71cda53fcc61a0a94d5ed23}
+
+
+Constructor taking a message and a time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be shown \\
+\hline
+{\em time\-Of\-Message} & The time on which the message has occured \\
+\hline
+{\em my\-Color} & The color of the message \\
+\hline
+{\em parent} & The parent widget \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00024}{24} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_a684a7cdcf71cda53fcc61a0a94d5ed23_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_notification_a8123fd954f4aede301f59474b8e3752d}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!$\sim$chat\-Notification@{$\sim$chat\-Notification}}
+\index{$\sim$chat\-Notification@{$\sim$chat\-Notification}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{$\sim$chat\-Notification}]{\setlength{\rightskip}{0pt plus 5cm}client\-::chat\-Notification\-::$\sim$chat\-Notification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{d5/d17/classclient_1_1chat_notification_a8123fd954f4aede301f59474b8e3752d}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00044}{44} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!calculate\-Message\-Width@{calculate\-Message\-Width}}
+\index{calculate\-Message\-Width@{calculate\-Message\-Width}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{calculate\-Message\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Notification\-::calculate\-Message\-Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06}
+
+
+Calculates the message width to detirmine it should be wrapped. 
+
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00049}{49} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_a88bb5e2ae6d834567b46f1f0ea846e06_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!get\-Height@{get\-Height}}
+\index{get\-Height@{get\-Height}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{get\-Height}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::chat\-Notification\-::get\-Height (
+\begin{DoxyParamCaption}
+\item[{Q\-Label $\ast$}]{l}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00066}{66} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_ac3e7bb4220cd0accabf071539af0c19b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!get\-Width@{get\-Width}}
+\index{get\-Width@{get\-Width}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{get\-Width}]{\setlength{\rightskip}{0pt plus 5cm}int client\-::chat\-Notification\-::get\-Width (
+\begin{DoxyParamCaption}
+\item[{Q\-Label $\ast$}]{l}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00062}{62} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_a4629f1c83084f928a5efced7a79a1655_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!resize\-Event@{resize\-Event}}
+\index{resize\-Event@{resize\-Event}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{resize\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void client\-::chat\-Notification\-::resize\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Resize\-Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)}}\label{d5/d17/classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c}
+
+
+Definition at line \hyperlink{chatnotification_8cpp_source_l00072}{72} of file \hyperlink{chatnotification_8cpp_source}{chatnotification.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d17/classclient_1_1chat_notification_ae6afe176382747d63b6e49b94741e82c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classclient_1_1chat_notification_a0052e2119fe7620b3dc955ba6135c915}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!message@{message}}
+\index{message@{message}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String client\-::chat\-Notification\-::message\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_a0052e2119fe7620b3dc955ba6135c915}
+
+
+Definition at line \hyperlink{chatnotification_8h_source_l00050}{50} of file \hyperlink{chatnotification_8h_source}{chatnotification.\-h}.
+
+\hypertarget{classclient_1_1chat_notification_ac2cf7f6030625593ba26f5f62ebd3482}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!time\-Of\-Message@{time\-Of\-Message}}
+\index{time\-Of\-Message@{time\-Of\-Message}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{time\-Of\-Message}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Time client\-::chat\-Notification\-::time\-Of\-Message\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_ac2cf7f6030625593ba26f5f62ebd3482}
+
+
+Definition at line \hyperlink{chatnotification_8h_source_l00051}{51} of file \hyperlink{chatnotification_8h_source}{chatnotification.\-h}.
+
+\hypertarget{classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}{\index{client\-::chat\-Notification@{client\-::chat\-Notification}!ui@{ui}}
+\index{ui@{ui}!client::chatNotification@{client\-::chat\-Notification}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::chat\-Notification$\ast$ client\-::chat\-Notification\-::ui\hspace{0.3cm}{\ttfamily [private]}}}\label{d5/d17/classclient_1_1chat_notification_af80ab0e57d9b0a0bb79abf5a991fdfab}
+
+
+Definition at line \hyperlink{chatnotification_8h_source_l00049}{49} of file \hyperlink{chatnotification_8h_source}{chatnotification.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Client/\hyperlink{chatnotification_8h}{chatnotification.\-h}\item 
+C++/custom\-Irc\-Client/\hyperlink{chatnotification_8cpp}{chatnotification.\-cpp}\end{DoxyCompactItemize}

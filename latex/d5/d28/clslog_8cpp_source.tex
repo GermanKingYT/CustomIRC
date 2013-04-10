@@ -1,0 +1,164 @@
+\hypertarget{clslog_8cpp}{\section{clslog.\-cpp}
+\label{d5/d28/clslog_8cpp}\index{C++/resources/clslog.\-cpp@{C++/resources/clslog.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clslog_8h}{clslog.h}"}
+00002 
+00003 \textcolor{keyword}{using namespace }std;
+00004 
+\hypertarget{clslog_8cpp_source_l00005}{}\hyperlink{namespace_k4_u}{00005} \textcolor{keyword}{namespace }K4U\{
+00006 
+\hypertarget{clslog_8cpp_source_l00007}{}\hyperlink{class_k4_u_1_1cls_log_aa103ad48f639a4ba8c2ee45798068337}{00007} clsLog::clsLog(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5}{logTags} tag)
+00008     :isFirst(true)
+00009     ,tag(tag)
+00010 \{\}
+00011 
+00012 
+\hypertarget{clslog_8cpp_source_l00013}{}\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{00013} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\hyperlink{class_k4_u_1_1cls_log}{clsLog} &(*manip)(
+      \hyperlink{class_k4_u_1_1cls_log}{clsLog} &))\{
+00014     \textcolor{keywordflow}{return} manip(*\textcolor{keyword}{this});
+00015 \}
+00016 
+\hypertarget{clslog_8cpp_source_l00017}{}\hyperlink{class_k4_u_1_1cls_log_ac16d9a6fbd8ef4ea1d03e813bb6466c0}{00017} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keywordtype}{bool} msg)\{
+00018     \textcolor{keywordflow}{if}(msg == \textcolor{keyword}{true})\{
+00019         std::cout << \textcolor{stringliteral}{"True"};
+00020     \}\textcolor{keywordflow}{else}\{
+00021         std::cout << \textcolor{stringliteral}{"False"};
+00022     \}
+00023     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00024 \}
+00025 
+\hypertarget{clslog_8cpp_source_l00026}{}\hyperlink{class_k4_u_1_1cls_log_ab6ac3e9c2f6f577b576fe1570ca95d66}{00026} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(QVariantMap &map)\{
+00027     \textcolor{keywordflow}{foreach}(QString key, map.keys())\{
+00028         *\textcolor{keyword}{this} << key << \textcolor{stringliteral}{"\(\backslash\)t"}
+00029                   << map[key] << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00030     \}
+00031     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00032 \}
+00033 
+\hypertarget{clslog_8cpp_source_l00034}{}\hyperlink{class_k4_u_1_1cls_log_ad3c6cb4ff134f40925f8d19177a461b6}{00034} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keyword}{const} QVariantMap &map)\{
+00035     \textcolor{keywordflow}{foreach}(\textcolor{keyword}{const} QString key, map.keys())\{
+00036         *\textcolor{keyword}{this} << key << \textcolor{stringliteral}{"\(\backslash\)t"}
+00037                   << map[key] << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00038     \}
+00039     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00040 \}
+00041 
+\hypertarget{clslog_8cpp_source_l00042}{}\hyperlink{class_k4_u_1_1cls_log_a667d8d0b430593af7caf563410214187}{00042} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keyword}{const} QVariant &msg)\{
+00043     *\textcolor{keyword}{this} << msg.toString();
+00044 
+00045     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00046 \}
+00047 
+\hypertarget{clslog_8cpp_source_l00048}{}\hyperlink{class_k4_u_1_1cls_log_a99d9c23284e9bb462858f4d6ca33a93a}{00048} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(QVariant &msg)\{
+00049     *\textcolor{keyword}{this} << msg.toString();
+00050 
+00051     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00052 \}
+00053 
+\hypertarget{clslog_8cpp_source_l00054}{}\hyperlink{class_k4_u_1_1cls_log_a265b09c82c550e8957f29724ec0d1198}{00054} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(QByteArray &bArr)\{
+00055     *\textcolor{keyword}{this} << QString(bArr);
+00056     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00057 \}
+00058 
+\hypertarget{clslog_8cpp_source_l00059}{}\hyperlink{class_k4_u_1_1cls_log_a3efb08c54070b1bbd22e297e1b69e202}{00059} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keyword}{const} QByteArray &bArr)\{
+00060     *\textcolor{keyword}{this} << QString(bArr);
+00061     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00062 \}
+00063 
+00064 
+\hypertarget{clslog_8cpp_source_l00065}{}\hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{00065} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl}(\hyperlink{class_k4_u_1_1cls_log}{clsLog} &log)\{
+00066     log.\hyperlink{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{doEndl}();
+00067     \textcolor{keywordflow}{return} log;
+00068 \}
+00069 
+\hypertarget{clslog_8cpp_source_l00070}{}\hyperlink{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{00070} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_a81f179b2ccb3e2abeb9b47f5b83de935}{clsLog::doEndl}()\{
+00071     std::cout << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{std::endl};
+00072     \hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{isFirst} = \textcolor{keyword}{true};
+00073 \}
+00074 
+\hypertarget{clslog_8cpp_source_l00075}{}\hyperlink{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{00075} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_acce6f46545b0de7dcc21b69dda54b246}{clsLog::setPrefix}(QString prefix)\{
+00076     this->\hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{prf} = \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix};
+00077 \}
+00078 
+\hypertarget{clslog_8cpp_source_l00079}{}\hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{00079} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{clsLog::prefix}()\{
+00080     \textcolor{keywordflow}{if}(\hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{isFirst} == \textcolor{keyword}{true})\{
+00081         \hyperlink{class_k4_u_1_1cls_log_aacbc8798b8923df2c0c45333f88b8c5a}{isFirst} = \textcolor{keyword}{false};
+00082         QDateTime dateTime = QDateTime::currentDateTime();
+00083         QString dateTimeString = dateTime.toString();
+00084 
+00085         std::cout << \textcolor{stringliteral}{"["} << this->\hyperlink{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{getTag}() << \textcolor{stringliteral}{"]\(\backslash\)t"};
+00086         std::cout << dateTimeString.toStdString() << \textcolor{stringliteral}{"\(\backslash\)t"};
+00087         \textcolor{keywordflow}{if}(this->\hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{prf} != \textcolor{stringliteral}{""})\{
+00088             std::cout << this->\hyperlink{class_k4_u_1_1cls_log_ae3b65749abbcf2a7bb5fa4edbd1702ad}{prf}.toStdString() << \textcolor{stringliteral}{"\(\backslash\)t"};
+00089         \}\textcolor{keywordflow}{else}\{
+00090             std::cout << \textcolor{stringliteral}{"\(\backslash\)t"};
+00091         \}
+00092         std::cout << \textcolor{stringliteral}{"\(\backslash\)t"};
+00093     \}
+00094 \}
+00095 
+\hypertarget{clslog_8cpp_source_l00096}{}\hyperlink{class_k4_u_1_1cls_log_a6fb4b7a4e52a6b113268421e03fc389e}{00096} \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(QString msg)\{
+00097     this->\hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix}();
+00098     std::cout << msg.toStdString();
+00099 
+00100     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00101 \}
+00102 
+\hypertarget{clslog_8cpp_source_l00103}{}\hyperlink{class_k4_u_1_1cls_log_a72dbdacaafcc42d2e1c01ec76257ca6c}{00103} \hyperlink{class_k4_u_1_1cls_log}{clsLog} &\hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keyword}{const} QString *msg)\{
+00104     this->\hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix}();
+00105     std::cout << msg->toStdString();
+00106 
+00107     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00108 \}
+00109 
+\hypertarget{clslog_8cpp_source_l00110}{}\hyperlink{class_k4_u_1_1cls_log_a12dd838824409850684fefe038ef3f67}{00110} \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *msg)\{
+00111     this->\hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix}();
+00112     std::cout << msg;
+00113 
+00114     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00115 \}
+00116 
+\hypertarget{clslog_8cpp_source_l00117}{}\hyperlink{class_k4_u_1_1cls_log_a372f11dd502fa0e9b20e88740da2d39d}{00117} \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{class_k4_u_1_1cls_log_ab196d884ab7808e0a3a8c0ea4d38a70e}{clsLog::operator <<}(\textcolor{keywordtype}{int} msg)\{
+00118     this->\hyperlink{class_k4_u_1_1cls_log_add7e9e8581a8d558c15c5f194dea4e5a}{prefix}();
+00119     std::cout << msg;
+00120 
+00121     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00122 \}
+00123 
+00124 
+\hypertarget{clslog_8cpp_source_l00125}{}\hyperlink{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{00125} std::string \hyperlink{class_k4_u_1_1cls_log_ad71c460835263e52b7c3d24063fa4ea0}{clsLog::getTag}()\{
+00126     \textcolor{keywordtype}{string} ret = \textcolor{stringliteral}{""};
+00127     \textcolor{keywordflow}{switch}(this->\hyperlink{class_k4_u_1_1cls_log_a5ccda7703f98df03a812bc5c6f51aae9}{tag})\{
+00128         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a6ffa6254072ab9b5f7e871dac69c8ff5}{LOGTAGS\_IRC}:
+00129             ret = \textcolor{stringliteral}{"IRC"};
+00130             \textcolor{keywordflow}{break};
+00131         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5abdfc254118c648a179595baf02257372}{LOGTAGS\_MAIN}:
+00132             ret = \textcolor{stringliteral}{"MAIN"};
+00133             \textcolor{keywordflow}{break};
+00134         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a883b8c88c4b49d1dd7ae77fa0644409d}{LOGTAGS\_USER}:
+00135             ret= \textcolor{stringliteral}{"USER"};
+00136             \textcolor{keywordflow}{break};
+00137         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5af605a54b379010e0fbfaa77ea3e361ac}{LOGTAGS\_SERVER}:
+00138             ret = \textcolor{stringliteral}{"SRVR"};
+00139             \textcolor{keywordflow}{break};
+00140         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{LOGTAGS\_UI}:
+00141             ret = \textcolor{stringliteral}{"UI"};
+00142             \textcolor{keywordflow}{break};
+00143         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5aef657c8d7492572bd1596fceecc4340a}{LOGTAGS\_WEB}:
+00144             ret = \textcolor{stringliteral}{"WEB"};
+00145             \textcolor{keywordflow}{break};
+00146         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5a14eab9eadc1941fa62b0da9da2d0e252}{LOGTAGS\_EVENT}:
+00147             ret = \textcolor{stringliteral}{"EVNT"};
+00148             \textcolor{keywordflow}{break};
+00149         \textcolor{keywordflow}{default}:
+00150             ret = \textcolor{stringliteral}{"UNK"};
+00151             \textcolor{keywordflow}{break};
+00152     \}
+00153     \textcolor{keywordflow}{return} ret;
+00154 \}
+00155 
+00156 
+00157 \}
+\end{DoxyCode}

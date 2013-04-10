@@ -1,0 +1,35 @@
+\hypertarget{functions_8cpp}{\section{C++/custom\-Irc\-Server/functions.cpp File Reference}
+\label{d3/d36/functions_8cpp}\index{C++/custom\-Irc\-Server/functions.\-cpp@{C++/custom\-Irc\-Server/functions.\-cpp}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+{\ttfamily \#include $<$Q\-Debug$>$}\\*
+{\ttfamily \#include \char`\"{}functions.\-h\char`\"{}}\\*
+Include dependency graph for functions.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d57/functions_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceserver}{server}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const string \hyperlink{namespaceserver_a5975bac26af821c5aa25ca3b66ab35a9}{server\-::qts} (const Q\-String str)
+\begin{DoxyCompactList}\small\item\em Shorthand to convert a Q\-String to a std\-::string. \end{DoxyCompactList}\item 
+nick\-And\-Status \hyperlink{namespaceserver_abefc8e9cd145a8a00676c9bf43b877ef}{server\-::get\-Nick\-And\-Status} (const Q\-String d\-Nick)
+\begin{DoxyCompactList}\small\item\em Converts a nickname to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\item 
+const Q\-String \hyperlink{namespaceserver_ad244a00644a29a6c927a6ee9dd351351}{server\-::get\-Id} (const Q\-String full\-Id)
+\begin{DoxyCompactList}\small\item\em Converts a full I\-R\-C-\/\-I\-D to something without the nickname. \end{DoxyCompactList}\item 
+bool \hyperlink{namespaceserver_ab14f85d7268f4938433c3bd76aefd61e}{server\-::in\-Command} (const Q\-String $\ast$command, const char $\ast$search)
+\begin{DoxyCompactList}\small\item\em Just an instring command. Checks if search is in command. \end{DoxyCompactList}\item 
+nick\-And\-Status \hyperlink{namespaceserver_a4ab136076f9a5f1ae8a6d78020f07c07}{server\-::get\-Nick\-And\-Status\-From\-Id} (const Q\-String id)
+\begin{DoxyCompactList}\small\item\em Converts an I\-R\-C-\/\-I\-D to a \hyperlink{structserver_1_1nick_and_status}{nick\-And\-Status} (nick$|$status) \end{DoxyCompactList}\end{DoxyCompactItemize}

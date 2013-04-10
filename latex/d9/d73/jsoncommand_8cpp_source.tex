@@ -1,0 +1,136 @@
+\hypertarget{jsoncommand_8cpp}{\section{jsoncommand.\-cpp}
+\label{d9/d73/jsoncommand_8cpp}\index{C++/resources/jsoncommand.\-cpp@{C++/resources/jsoncommand.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{jsoncommand_8h}{jsoncommand.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }K4U\{
+00004 
+\hypertarget{jsoncommand_8cpp_source_l00005}{}\hyperlink{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{00005} \hyperlink{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{jsonCommand::jsonCommand}(QString json)\{
+00006     QVariant \hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data} = \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{QtJson::parse}(json);
+00007     QVariantMap parent = qvariant\_cast<QVariantMap>(\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data});
+00008     this->\hyperlink{class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}{setCommandInt}(parent[\textcolor{stringliteral}{"command"}].toString());
+00009     this->data = parent[\textcolor{stringliteral}{"data"}].toMap();
+00010 \}
+00011 
+00012 
+\hypertarget{jsoncommand_8cpp_source_l00013}{}\hyperlink{class_k4_u_1_1json_command_af168a08b5a37459cfd5564d648b49a78}{00013} \hyperlink{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{jsonCommand::jsonCommand}(QVariantMap parent)
+00014 \{
+00015     this->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command} = (\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{jsonCommands}) parent[\textcolor{stringliteral}{"command"}].toInt();
+00016     this->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data} = parent[\textcolor{stringliteral}{"data"}].toMap();
+00017 \}
+00018 
+\hypertarget{jsoncommand_8cpp_source_l00019}{}\hyperlink{class_k4_u_1_1json_command_ae101f9ad219e455b8868b3d13ea6c251}{00019} \hyperlink{class_k4_u_1_1json_command_abe7de86a0eda411ce7099c93f1c44910}{jsonCommand::jsonCommand}(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{jsonCommands} command)
+00020     :command(command)
+00021 \{ \}
+00022 
+00023 
+\hypertarget{jsoncommand_8cpp_source_l00024}{}\hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{00024} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{jsonCommands} \hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{jsonCommand::getCommand}()\textcolor{keyword}{ const}\{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command};
+00026 \}
+00027 
+\hypertarget{jsoncommand_8cpp_source_l00028}{}\hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{00028} QString \hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{jsonCommand::getCommandString}()\textcolor{keyword}{ const}\{
+00029     QString ret = \textcolor{stringliteral}{""};
+00030     \textcolor{keywordflow}{switch}(this->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command})\{
+00031         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eac24a31e43c8840b2bd52506c988f3922}{JSONCOMMAND\_PING}:
+00032             ret = \textcolor{stringliteral}{"PING"};
+00033             \textcolor{keywordflow}{break};
+00034         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT}:
+00035             ret = \textcolor{stringliteral}{"EVENT"};
+00036             \textcolor{keywordflow}{break};
+00037         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea25e5fc4f20d36f1cc57ff16a8cc64319}{JSONCOMMAND\_USERINFOREQ}:
+00038             ret = \textcolor{stringliteral}{"USERINFOREQ"};
+00039             \textcolor{keywordflow}{break};
+00040         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY}:
+00041             ret = \textcolor{stringliteral}{"USERQUERY"};
+00042             \textcolor{keywordflow}{break};
+00043         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE}:
+00044             ret = \textcolor{stringliteral}{"NONE"};
+00045             \textcolor{keywordflow}{break};
+00046         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eaafa4f30da47ec31cfac97c6dcd3f6791}{JSONCOMMAND\_OWNCHAT}:
+00047             ret = \textcolor{stringliteral}{"OWNCHAT"};
+00048             \textcolor{keywordflow}{break};
+00049         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea38ec768fb3babd5e8c66361a081aacae}{JSONCOMMAND\_CHANGEOWNUSER}:
+00050             ret = \textcolor{stringliteral}{"CHANGEOWNUSER"};
+00051             \textcolor{keywordflow}{break};
+00052         \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS}:
+00053             ret = \textcolor{stringliteral}{"GETEVENTS"};
+00054             \textcolor{keywordflow}{break};
+00055     \}
+00056     \textcolor{keywordflow}{return} ret;
+00057 \}
+00058 
+\hypertarget{jsoncommand_8cpp_source_l00059}{}\hyperlink{class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}{00059} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1json_command_af6610a609295d3aa428d46260a33e1de}{jsonCommand::setCommandInt}(QString command)\{
+00060     \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{jsonCommands} \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE};
+00061     \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"PING"})\{
+00062         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eac24a31e43c8840b2bd52506c988f3922}{JSONCOMMAND\_PING};
+00063     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"EVENT"})\{
+00064         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT};
+00065     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"USERINFOREQ"})\{
+00066         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea25e5fc4f20d36f1cc57ff16a8cc64319}{JSONCOMMAND\_USERINFOREQ};
+00067     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"USERQUERY"})\{
+00068         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY};
+00069     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"OWNCHAT"})\{
+00070         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75eaafa4f30da47ec31cfac97c6dcd3f6791}{JSONCOMMAND\_OWNCHAT};
+00071     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"CHANGEOWNUSER"})\{
+00072         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea38ec768fb3babd5e8c66361a081aacae}{JSONCOMMAND\_CHANGEOWNUSER};
+00073     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(command == \textcolor{stringliteral}{"GETEVENTS"})\{
+00074         \textcolor{keyword}{set} = \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS};
+00075     \}
+00076     this->command = \textcolor{keyword}{set};
+00077 \}
+00078 
+00079 
+\hypertarget{jsoncommand_8cpp_source_l00080}{}\hyperlink{class_k4_u_1_1json_command_a50c17e574aae380cd21d76029fcd07b6}{00080} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1json_command_a50c17e574aae380cd21d76029fcd07b6}{jsonCommand::setCommand}(\textcolor{keyword}{const} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75e}{jsonCommands} &newCommand)\{
+00081     this->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command} = newCommand;
+00082 \}
+00083 
+00084 
+\hypertarget{jsoncommand_8cpp_source_l00085}{}\hyperlink{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{00085} QVariantMap \hyperlink{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{jsonCommand::getData}()\textcolor{keyword}{ const}\{
+00086     \textcolor{keywordflow}{return} this->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data};
+00087 \}
+00088 
+\hypertarget{jsoncommand_8cpp_source_l00089}{}\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{00089} QVariant \hyperlink{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{jsonCommand::getData}(\textcolor{keyword}{const} QString key)\{
+00090     \textcolor{keywordflow}{return} this->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data}[key];
+00091 \}
+00092 
+00093 
+\hypertarget{jsoncommand_8cpp_source_l00094}{}\hyperlink{class_k4_u_1_1json_command_aa5528a10032e013f668b3d33e02c37ed}{00094} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1json_command_aa5528a10032e013f668b3d33e02c37ed}{jsonCommand::setData}(\textcolor{keyword}{const} QVariantMap &newData)\{
+00095     this->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data} = newData;
+00096 \}
+00097 
+\hypertarget{jsoncommand_8cpp_source_l00098}{}\hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{00098} \textcolor{keywordtype}{void} \hyperlink{class_k4_u_1_1json_command_aa0629328322fb09be4494a0826bb19b5}{jsonCommand::addToData}(\textcolor{keyword}{const} QString key, \textcolor{keyword}{const} QVariant &data)\{
+00099     this->data.insert(key,data);
+00100 \}
+00101 
+\hypertarget{jsoncommand_8cpp_source_l00102}{}\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{00102} QString \hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{jsonCommand::toJsonString}()\textcolor{keyword}{ const}\{
+00103     QVariantMap vmRet;
+00104     vmRet[\textcolor{stringliteral}{"command"}] = this->\hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{getCommandString}();
+00105     vmRet[\textcolor{stringliteral}{"data"}] = QVariant(this->\hyperlink{class_k4_u_1_1json_command_ab408a8b051e005a7156e19ea8a1f7f3a}{getData}());
+00106 
+00107     \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{QtJson::serialize}(QVariant(vmRet));
+00108 \}
+00109 
+\hypertarget{jsoncommand_8cpp_source_l00110}{}\hyperlink{namespace_k4_u_ac6dc12e99e9f8aac74f9b654ddbb199a}{00110} \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{namespace_k4_u_ac6dc12e99e9f8aac74f9b654ddbb199a}{operator <<}(\hyperlink{class_k4_u_1_1cls_log}{clsLog} &log, \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &command)\{
+00111     log << \textcolor{stringliteral}{"JSON command: "} << command.\hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{getCommandString}();
+00112     log << \textcolor{stringliteral}{" Data: "} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl} << command.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}() << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00113     \textcolor{keywordflow}{return} log;
+00114 \}
+00115 
+00116 
+\hypertarget{jsoncommand_8cpp_source_l00117}{}\hyperlink{namespace_k4_u_a0c716ceb468c5d67c805ba246f06c79d}{00117} \hyperlink{class_k4_u_1_1cls_log}{clsLog}& \hyperlink{namespace_k4_u_ac6dc12e99e9f8aac74f9b654ddbb199a}{operator <<}(\hyperlink{class_k4_u_1_1cls_log}{clsLog} &log, \textcolor{keyword}{const} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &command)\{
+00118     log << \textcolor{stringliteral}{"JSON command: "} << command.\hyperlink{class_k4_u_1_1json_command_ac6bc0d606265f47db9bae5a6a40cb244}{getCommandString}();
+00119     log << \textcolor{stringliteral}{" Data: "} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl} << command.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}() << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00120     \textcolor{keywordflow}{return} log;
+00121 \}
+00122 
+\hypertarget{jsoncommand_8cpp_source_l00123}{}\hyperlink{class_k4_u_1_1json_command_a598c14a90fbdb237c0746070be2de591}{00123} \hyperlink{class_k4_u_1_1json_command}{jsonCommand} \hyperlink{class_k4_u_1_1json_command_a598c14a90fbdb237c0746070be2de591}{jsonCommand::operator =}(
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} *other)\{
+00124     this->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command} = other->\hyperlink{class_k4_u_1_1json_command_ab78518e19fe664d54b9c4743a3521b04}{command};
+00125     this->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data} = other->\hyperlink{class_k4_u_1_1json_command_a56def41d467d060783b4c2b4f2178540}{data};
+00126     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+00127 \}
+00128 
+00129 \}
+\end{DoxyCode}

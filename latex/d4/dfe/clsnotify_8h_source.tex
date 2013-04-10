@@ -1,0 +1,37 @@
+\hypertarget{clsnotify_8h}{\section{clsnotify.\-h}
+\label{d4/dfe/clsnotify_8h}\index{C++/custom\-Irc\-Client/desktop/clsnotify.\-h@{C++/custom\-Irc\-Client/desktop/clsnotify.\-h}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLSNOTIFY\_H}
+00002 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define CLSNOTIFY\_H}
+00003 \textcolor{preprocessor}{}
+00004 \textcolor{comment}{//#define QT\_NO\_KEYWORDS// To prevent prevent symbol collisions between GTK+ and Qt}
+00005 \textcolor{preprocessor}{#include <QObject>}
+00006 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+00007 \textcolor{preprocessor}{}\textcolor{preprocessor}{#undef signals}
+00008 \textcolor{preprocessor}{}\textcolor{preprocessor}{#include <libnotify/notify.h>}
+00009 \textcolor{preprocessor}{#else}
+00010 \textcolor{preprocessor}{}
+00011 \textcolor{preprocessor}{#endif}
+00012 \textcolor{preprocessor}{}\textcolor{keyword}{namespace }client\{
+\hypertarget{clsnotify_8h_source_l00018}{}\hyperlink{classclient_1_1cls_notify}{00018}     \textcolor{keyword}{class }\hyperlink{classclient_1_1cls_notify}{clsNotify} : \textcolor{keyword}{public} QObject
+00019     \{
+00020         Q\_OBJECT
+00021         \textcolor{keyword}{public}:
+00022             \textcolor{keyword}{explicit} \hyperlink{classclient_1_1cls_notify_a8fd6a74d4c71a4b6b8737e3ec5b0812f}{clsNotify}(\textcolor{keyword}{const} QString title, \textcolor{keyword}{const} QString body, QObject *parent = 0);
+00023 
+00024             \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_notify_accfa335b19c62f58da973c8049a7131e}{show}() \textcolor{keyword}{const};
+00025             \textcolor{keyword}{public} slots:
+00026 
+00027 
+00028         \textcolor{keyword}{private}:
+00029 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+00030 \textcolor{preprocessor}{}            NotifyNotification *thisNot;
+00031 \textcolor{preprocessor}{#endif}
+00032 \textcolor{preprocessor}{}    \};
+00033 
+00034 \}
+00035 
+00036 \textcolor{preprocessor}{#endif // CLSNOTIFY\_H}
+\end{DoxyCode}

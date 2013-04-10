@@ -1,0 +1,80 @@
+\hypertarget{ircclient_8h}{\section{C++/custom\-Irc\-Server/ircclient.h File Reference}
+\label{d4/df9/ircclient_8h}\index{C++/custom\-Irc\-Server/ircclient.\-h@{C++/custom\-Irc\-Server/ircclient.\-h}}
+}
+{\ttfamily \#include $<$Q\-Vector$>$}\\*
+{\ttfamily \#include $<$Q\-Timer$>$}\\*
+{\ttfamily \#include $<$Q\-Buffer$>$}\\*
+{\ttfamily \#include $<$Q\-String$>$}\\*
+{\ttfamily \#include $<$Q\-Tcp\-Socket$>$}\\*
+{\ttfamily \#include $<$Q\-String\-List$>$}\\*
+{\ttfamily \#include $<$Q\-Text\-Stream$>$}\\*
+{\ttfamily \#include \char`\"{}irc\-Codes.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}functions.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../resources/clslog.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ircuser.\-h\char`\"{}}\\*
+Include dependency graph for ircclient.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d60/ircclient_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/db7/ircclient_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classserver_1_1irc_client}{server\-::irc\-Client}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classserver_1_1irc_client}{irc\-Client} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceserver}{server}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ircclient_8h_a614217d263be1fb1a5f76e2ff7be19a2}{P\-O\-R\-T}~6667
+\item 
+\#define \hyperlink{ircclient_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S}~5000
+\item 
+\#define \hyperlink{ircclient_8h_a7cac398815cc7d4af178c1de36e0d0b0}{P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}~50
+\item 
+\#define \hyperlink{ircclient_8h_a757c2b05db2e531e6a3aaf20e68a0aa1}{P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}~5
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ircclient_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}{\index{ircclient.\-h@{ircclient.\-h}!M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S@{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S}}
+\index{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S@{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S}!ircclient.h@{ircclient.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-I\-N\-\_\-\-M\-S~5000}}\label{d4/df9/ircclient_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}
+Max timeout for connecting, in M\-S 
+
+Definition at line \hyperlink{ircclient_8h_source_l00017}{17} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{ircclient_8h_a757c2b05db2e531e6a3aaf20e68a0aa1}{\index{ircclient.\-h@{ircclient.\-h}!P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}}
+\index{P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L@{P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}!ircclient.h@{ircclient.\-h}}
+\subsubsection[{P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-G\-\_\-\-C\-H\-E\-C\-K\-\_\-\-I\-N\-T\-E\-R\-V\-A\-L~5}}\label{d4/df9/ircclient_8h_a757c2b05db2e531e6a3aaf20e68a0aa1}
+
+
+Definition at line \hyperlink{ircclient_8h_source_l00019}{19} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{ircclient_8h_a7cac398815cc7d4af178c1de36e0d0b0}{\index{ircclient.\-h@{ircclient.\-h}!P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!ircclient.h@{ircclient.\-h}}
+\subsubsection[{P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-I\-N\-G\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D~50}}\label{d4/df9/ircclient_8h_a7cac398815cc7d4af178c1de36e0d0b0}
+How long ago a ping may have been send 
+
+Definition at line \hyperlink{ircclient_8h_source_l00018}{18} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+
+\hypertarget{ircclient_8h_a614217d263be1fb1a5f76e2ff7be19a2}{\index{ircclient.\-h@{ircclient.\-h}!P\-O\-R\-T@{P\-O\-R\-T}}
+\index{P\-O\-R\-T@{P\-O\-R\-T}!ircclient.h@{ircclient.\-h}}
+\subsubsection[{P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-R\-T~6667}}\label{d4/df9/ircclient_8h_a614217d263be1fb1a5f76e2ff7be19a2}
+Standard I\-R\-C Port 
+
+Definition at line \hyperlink{ircclient_8h_source_l00016}{16} of file \hyperlink{ircclient_8h_source}{ircclient.\-h}.
+

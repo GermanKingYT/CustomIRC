@@ -1,0 +1,403 @@
+\hypertarget{classshared_1_1events_1_1cls_event}{\section{shared\-:\-:events\-:\-:cls\-Event Class Reference}
+\label{db/d8b/classshared_1_1events_1_1cls_event}\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}}
+}
+
+
+The main event class.  
+
+
+
+
+{\ttfamily \#include $<$clsevent.\-h$>$}
+
+
+
+Inheritance diagram for shared\-:\-:events\-:\-:cls\-Event\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d20/classshared_1_1events_1_1cls_event__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for shared\-:\-:events\-:\-:cls\-Event\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{de/df0/classshared_1_1events_1_1cls_event__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}{cls\-Event} ()
+\begin{DoxyCompactList}\small\item\em Empty initializer function. \end{DoxyCompactList}\item 
+\hyperlink{classshared_1_1events_1_1cls_event_a192623e78217baaf5b286790d809521b}{cls\-Event} (Q\-Variant\-Map \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data})
+\begin{DoxyCompactList}\small\item\em Initializer function that accepts data immediately. \end{DoxyCompactList}\item 
+void \hyperlink{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{add\-To\-Data} (const Q\-String \&key, const Q\-Variant \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data})
+\begin{DoxyCompactList}\small\item\em Adds data to the events data map. \end{DoxyCompactList}\item 
+Q\-Variant \hyperlink{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{to\-Variant} () const 
+\begin{DoxyCompactList}\small\item\em Converts the current data to a Q\-Variant for sending with J\-S\-O\-N. \end{DoxyCompactList}\item 
+Q\-Variant \hyperlink{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{get\-Data} (Q\-String key) const 
+\begin{DoxyCompactList}\small\item\em Get data from the events data map. \end{DoxyCompactList}\item 
+\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{event\-Types} \hyperlink{classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}{get\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Gets this events type. \end{DoxyCompactList}\item 
+Q\-Time \hyperlink{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{get\-Time} () const 
+\begin{DoxyCompactList}\small\item\em Gets the time on which the event was created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-String \hyperlink{classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}{get\-Event\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Gets the event type as a string. \end{DoxyCompactList}\item 
+void \hyperlink{classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}{set\-Event\-Type} (const Q\-String event\-String)
+\begin{DoxyCompactList}\small\item\em Sets the event type as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Variant\-Map \hyperlink{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{data}
+\begin{DoxyCompactList}\small\item\em The events data map. \end{DoxyCompactList}\item 
+\hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7}{event\-Types} \hyperlink{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{our\-Type}
+\item 
+Q\-Date\-Time \hyperlink{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{time\-Of\-Event}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classshared_1_1events_1_1cls_event_ac7f241779485316bf8a6016ee35d21db}{log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The main event class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{clsevent_8h_source_l00032}{32} of file \hyperlink{clsevent_8h_source}{clsevent.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!cls\-Event@{cls\-Event}}
+\index{cls\-Event@{cls\-Event}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{cls\-Event}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::cls\-Event\-::cls\-Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_a365cd41df39086701ec250126da6e026}
+
+
+Empty initializer function. 
+
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00005}{5} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+\hypertarget{classshared_1_1events_1_1cls_event_a192623e78217baaf5b286790d809521b}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!cls\-Event@{cls\-Event}}
+\index{cls\-Event@{cls\-Event}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{cls\-Event}]{\setlength{\rightskip}{0pt plus 5cm}shared\-::events\-::cls\-Event\-::cls\-Event (
+\begin{DoxyParamCaption}
+\item[{Q\-Variant\-Map}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_a192623e78217baaf5b286790d809521b}
+
+
+Initializer function that accepts data immediately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & A Q\-Variant\-Map containing the event data, parsed from J\-S\-O\-N Mostly used on the receiving end. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00011}{11} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a192623e78217baaf5b286790d809521b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!add\-To\-Data@{add\-To\-Data}}
+\index{add\-To\-Data@{add\-To\-Data}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{add\-To\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void shared\-::events\-::cls\-Event\-::add\-To\-Data (
+\begin{DoxyParamCaption}
+\item[{const Q\-String \&}]{key, }
+\item[{const Q\-Variant}]{data}
+\end{DoxyParamCaption}
+)}}\label{db/d8b/classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851}
+
+
+Adds data to the events data map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to add the data under \\
+\hline
+{\em data} & The data to add \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00019}{19} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_ae7cb0f0606ecf456e4005783a33f5851_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant shared\-::events\-::cls\-Event\-::get\-Data (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{key}
+\end{DoxyParamCaption}
+) const}}\label{db/d8b/classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a}
+
+
+Get data from the events data map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Q\-Variant containing the data 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00032}{32} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_ac3acc2e80a92d28a980a50595517bf4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!get\-Event\-Type@{get\-Event\-Type}}
+\index{get\-Event\-Type@{get\-Event\-Type}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{get\-Event\-Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\-String shared\-::events\-::cls\-Event\-::get\-Event\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b}
+
+
+Gets the event type as a string. 
+
+\begin{DoxyReturn}{Returns}
+The event type as a string 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00063}{63} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_abd4a458aec7673de426a8995a349bf4b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!get\-Time@{get\-Time}}
+\index{get\-Time@{get\-Time}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{get\-Time}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Time shared\-::events\-::cls\-Event\-::get\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{db/d8b/classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151}
+
+
+Gets the time on which the event was created. 
+
+\begin{DoxyReturn}{Returns}
+The time on which the event was created 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00041}{41} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a2b450c42e2a6603add85738c19ea7151_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\-Types} shared\-::events\-::cls\-Event\-::get\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{db/d8b/classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}
+
+
+Gets this events type. 
+
+\begin{DoxyReturn}{Returns}
+An event\-Types object containing the event\-Type 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00036}{36} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!set\-Event\-Type@{set\-Event\-Type}}
+\index{set\-Event\-Type@{set\-Event\-Type}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{set\-Event\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void shared\-::events\-::cls\-Event\-::set\-Event\-Type (
+\begin{DoxyParamCaption}
+\item[{const Q\-String}]{event\-String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6}
+
+
+Sets the event type as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\-String} & The event\-Type as a string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00045}{45} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a488bd12dc62687ddfcbe89e3bba094c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!to\-Variant@{to\-Variant}}
+\index{to\-Variant@{to\-Variant}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{to\-Variant}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant shared\-::events\-::cls\-Event\-::to\-Variant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{db/d8b/classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715}
+
+
+Converts the current data to a Q\-Variant for sending with J\-S\-O\-N. 
+
+\begin{DoxyReturn}{Returns}
+The event as a Q\-Variant object 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{clsevent_8cpp_source_l00023}{23} of file \hyperlink{clsevent_8cpp_source}{clsevent.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d8b/classshared_1_1events_1_1cls_event_a48d11c9b50a2569c1065f19ca87d0715_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!data@{data}}
+\index{data@{data}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Variant\-Map shared\-::events\-::cls\-Event\-::data\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_a6cfb6b96d72fc1e7a101e61061ec2755}
+
+
+The events data map. 
+
+
+
+Definition at line \hyperlink{clsevent_8h_source_l00082}{82} of file \hyperlink{clsevent_8h_source}{clsevent.\-h}.
+
+\hypertarget{classshared_1_1events_1_1cls_event_ac7f241779485316bf8a6016ee35d21db}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!log@{log}}
+\index{log@{log}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} shared\-::events\-::cls\-Event\-::log\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_ac7f241779485316bf8a6016ee35d21db}
+
+
+Definition at line \hyperlink{clsevent_8h_source_l00098}{98} of file \hyperlink{clsevent_8h_source}{clsevent.\-h}.
+
+\hypertarget{classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!our\-Type@{our\-Type}}
+\index{our\-Type@{our\-Type}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{our\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf event\-Types} shared\-::events\-::cls\-Event\-::our\-Type\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_a3d8dd58c9e974ab19c2de66b300c4c79}
+
+
+Definition at line \hyperlink{clsevent_8h_source_l00083}{83} of file \hyperlink{clsevent_8h_source}{clsevent.\-h}.
+
+\hypertarget{classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}{\index{shared\-::events\-::cls\-Event@{shared\-::events\-::cls\-Event}!time\-Of\-Event@{time\-Of\-Event}}
+\index{time\-Of\-Event@{time\-Of\-Event}!shared::events::clsEvent@{shared\-::events\-::cls\-Event}}
+\subsubsection[{time\-Of\-Event}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Date\-Time shared\-::events\-::cls\-Event\-::time\-Of\-Event\hspace{0.3cm}{\ttfamily [protected]}}}\label{db/d8b/classshared_1_1events_1_1cls_event_aecf9544cf664b22d6419275f1ad6bd9d}
+
+
+Definition at line \hyperlink{clsevent_8h_source_l00084}{84} of file \hyperlink{clsevent_8h_source}{clsevent.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/resources/\hyperlink{clsevent_8h}{clsevent.\-h}\item 
+C++/resources/\hyperlink{clsevent_8cpp}{clsevent.\-cpp}\end{DoxyCompactItemize}

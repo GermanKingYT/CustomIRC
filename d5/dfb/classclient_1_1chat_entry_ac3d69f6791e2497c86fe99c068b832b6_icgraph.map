@@ -1,0 +1,5 @@
+<map id="client::chatEntry::setUserWidth" name="client::chatEntry::setUserWidth">
+<area shape="rect" id="node2" href="$da/d72/classclient_1_1chat_box.html#a0d33977310a176a78d228eaeb1a0c39d" title="Sets all the user name labels to the same size." alt="" coords="179,5,357,46"/>
+<area shape="rect" id="node3" href="$d5/dfb/classclient_1_1chat_entry.html#a153e1d0693c3069839e04878844b431f" title="client::chatEntry::init" alt="" coords="406,41,549,68"/>
+<area shape="rect" id="node4" href="$d5/dfb/classclient_1_1chat_entry.html#a242327cb4a358fdbc182147d2fadf00c" title="Constructor not taking a time." alt="" coords="597,34,723,75"/>
+</map>

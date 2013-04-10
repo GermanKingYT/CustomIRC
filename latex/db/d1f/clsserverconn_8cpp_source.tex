@@ -1,0 +1,182 @@
+\hypertarget{clsserverconn_8cpp}{\section{clsserverconn.\-cpp}
+\label{db/d1f/clsserverconn_8cpp}\index{C++/custom\-Irc\-Client/clsserverconn.\-cpp@{C++/custom\-Irc\-Client/clsserverconn.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clsserverconn_8h}{clsserverconn.h}"}
+00002 \textcolor{preprocessor}{#include "../resources/jsoncommand.h"}
+00003 
+00004 \textcolor{keyword}{namespace }client\{
+00005 
+\hypertarget{clsserverconn_8cpp_source_l00006}{}\hyperlink{classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0}{00006}     \hyperlink{classclient_1_1cls_server_conn_ad9d8caf021df2cd15ce27bcf207d86d0}{clsServerConn::clsServerConn}(\textcolor{keyword}{const} QString hostName, \textcolor{keyword}{const} \textcolor{keywordtype}{int} port,
+00007             QObject *parent)
+00008         :QObject(parent)
+00009         ,hostName(hostName)
+00010         ,port(port)
+00011         ,depth(0)
+00012         ,log(\hyperlink{namespace_k4_u_afd00b8cce0ab5037b155e37caed9a3a5afccbff174c0d96e0a2866ff942fe8ba4}{LOGTAGS\_UI})
+00013         ,isConnected(false)
+00014         ,isConnecting(false)
+00015     \{
+00016         this->\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer} = \textcolor{keyword}{new} QString();
+00017 
+00018         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock} = \textcolor{keyword}{new} QTcpSocket(\textcolor{keyword}{this});
+00019 
+00020         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->connect(this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}, SIGNAL(readyRead()), \textcolor{keyword}{this},
+00021                 SLOT(\hyperlink{classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}{readData}()));
+00022         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->connect(this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}, SIGNAL(\hyperlink{classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca}{connected}()), \textcolor{keyword}{this},
+00023                 SLOT(\hyperlink{classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}{srvConnected}()));
+00024         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->connect(this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}, SIGNAL(\hyperlink{classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6}{disconnected}()), \textcolor{keyword}{this},
+00025                 SLOT(\hyperlink{classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}{srvDisconnected}()));
+00026     \}
+00027 
+\hypertarget{clsserverconn_8cpp_source_l00028}{}\hyperlink{classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}{00028}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_af4589d93eb4b606423cb4b5e4a583f4e}{clsServerConn::doConnect}()\{
+00029         this->\hyperlink{classclient_1_1cls_server_conn_ae7fe91be71bfb453f3f9b9013935d222}{connectTimer}->singleShot(\hyperlink{clsserverconn_8h_a64df1aa5ef6c76904afc6c1dcbba1e26}{MAX\_CONNECT\_TIMEOUT\_IN\_MS}, \textcolor{keyword}{this}
+      , SLOT(\hyperlink{classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}{connectTimeout}()));
+00030         this->\hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{isConnecting} = \textcolor{keyword}{true};
+00031         this->\hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{isConnected} = \textcolor{keyword}{false};
+00032         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->connectToHost(this->\hyperlink{classclient_1_1cls_server_conn_a4d20263884ea30ec6874547856081bef}{hostName},this->\hyperlink{classclient_1_1cls_server_conn_acd1b648e44713f2ae1fc375848b3cdf5}{port});
+00033 
+00034 
+00035         this->\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log} << \textcolor{stringliteral}{"Connecting"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00036     \}
+00037 
+\hypertarget{clsserverconn_8cpp_source_l00038}{}\hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{00038}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a997f9cd3d63321807f60472308acc459}{clsServerConn::sendCommand}(\hyperlink{class_k4_u_1_1json_command}{jsonCommand} &toSend)\{
+00039         \textcolor{comment}{//this->log << "Sending json object: " << docToSend->toJson() << endl;}
+00040         this->\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log} << \textcolor{stringliteral}{"Sending JSON: "} << toSend << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00041         QByteArray bAToSend;
+00042         bAToSend.append(toSend.\hyperlink{class_k4_u_1_1json_command_a0b681a1fedfb2e89397b1f71e29edf78}{toJsonString}() + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00043         this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->write(bAToSend);
+00044     \}
+00045 
+\hypertarget{clsserverconn_8cpp_source_l00046}{}\hyperlink{classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}{00046}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_adaecfe74ef1fb16f35613587aa1dada8}{clsServerConn::srvConnected}()\{
+00047         this->\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log} << \textcolor{stringliteral}{"Connected!"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00048         this->\hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{isConnecting} = \textcolor{keyword}{false};
+00049         this->\hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{isConnected} = \textcolor{keyword}{true};
+00050         emit this->\hyperlink{classclient_1_1cls_server_conn_af4d99891fc606ce032facfd9e27692ca}{connected}();
+00051     \}
+00052 
+00053 
+\hypertarget{clsserverconn_8cpp_source_l00054}{}\hyperlink{classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}{00054}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_acd2aa4131c06ed51738fb041c86ed640}{clsServerConn::srvDisconnected}()\{
+00055         this->\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log} << \textcolor{stringliteral}{"Disconnected"} << \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00056         this->\hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{isConnecting} = \textcolor{keyword}{false};
+00057         this->\hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{isConnected} = \textcolor{keyword}{false};
+00058         emit this->\hyperlink{classclient_1_1cls_server_conn_ad5a08372105d83e34538e457374525f6}{disconnected}();
+00059     \}
+00060 
+\hypertarget{clsserverconn_8cpp_source_l00061}{}\hyperlink{classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}{00061}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}{clsServerConn::handleCompletedQuery}(
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00062         QVector<ircUser*> users;
+00063         \textcolor{keywordflow}{foreach}(QVariant user, comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"users"}).toList())\{
+00064             users.append(\textcolor{keyword}{new} \hyperlink{classclient_1_1irc_user}{ircUser}(user));
+00065         \}
+00066         emit this->\hyperlink{classclient_1_1cls_server_conn_abad7931f40972d90b51e696b878b58c4}{userQueryCompleted}(users);
+00067     \}
+00068 
+\hypertarget{clsserverconn_8cpp_source_l00069}{}\hyperlink{classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}{00069}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}{clsServerConn::handleOwnUserChange}(
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00070         \textcolor{comment}{//This function might have the same body as handleUserInfo.}
+00071         \textcolor{comment}{//But for now this is the only thing changeable.}
+00072         \textcolor{comment}{//Maybe later there will be more stuff added here}
+00073         \textcolor{keywordflow}{if}(comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"change"}) == \textcolor{stringliteral}{"STATUS"})\{
+00074             \textcolor{comment}{//Own user is always ID 1..}
+00075             \textcolor{comment}{//FIXME: Own user no longer receives updates. Probaby move this to an event}
+00076             \textcolor{comment}{//emit this->userStatusChange(1, comm.getData("new").toString());}
+00077         \}
+00078     \}
+00079 
+\hypertarget{clsserverconn_8cpp_source_l00080}{}\hyperlink{classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}{00080}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}{clsServerConn::handleEventRequest}(
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00081         \textcolor{comment}{//Let them flow, all the chats!}
+00082         QList<QVariant> events = comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"events"}).toList();
+00083         \textcolor{keywordflow}{foreach}(QVariant myEvent, events)\{
+00084             this->\hyperlink{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{handleEventReceived}(myEvent.toMap());
+00085         \}
+00086     \}
+00087 
+\hypertarget{clsserverconn_8cpp_source_l00088}{}\hyperlink{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{00088}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{clsServerConn::handleEventReceived}(QVariantMap data)\{
+00089         \hyperlink{classshared_1_1events_1_1cls_event}{clsEvent} myEvent(data);
+00090         \textcolor{keywordflow}{switch}(myEvent.\hyperlink{classshared_1_1events_1_1cls_event_a33943d736db49d2a7781325357f34063}{getType}())\{
+00091             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a5ab6f914eb6843be3d428f43169810c5}{EVENTTYPE\_CHAT}:
+00092                 emit this->\hyperlink{classclient_1_1cls_server_conn_ada02a27f01478db29d10bde4c51110b4}{chatReceived}(\textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_chat}{eventChat}(data));
+00093                 \textcolor{keywordflow}{break};
+00094             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a9cb818acb5b5437a704503b7ac27a7ae}{EVENTTYPE\_USER\_JOIN}:
+00095                 emit this->\hyperlink{classclient_1_1cls_server_conn_a9f3b4fe1b687bdb31ab584493b8dde91}{userEnter}(\textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_user_join}{eventUserJoin}(data));
+00096                 \textcolor{keywordflow}{break};
+00097             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7a11a907ca7840fc633c2dfb6efd6cc782}{EVENTTYPE\_USER\_LEFT}:
+00098                 emit this->\hyperlink{classclient_1_1cls_server_conn_a89ac2b4edd0a40b0fbfb5504904752c9}{userLeave}(\textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_user_leave}{eventUserLeave}(data));
+00099                 \textcolor{keywordflow}{break};
+00100             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7aac1455886686436f7d0bb87b9a4554cf}{EVENTTYPE\_USER\_STATUS}:
+00101                 emit this->\hyperlink{classclient_1_1cls_server_conn_aa7679dfddcf23ffa4ce4febbc005995a}{userStatusChange}(\textcolor{keyword}{new} 
+      \hyperlink{classshared_1_1events_1_1event_user_change_status}{eventUserChangeStatus}(data));
+00102                 \textcolor{keywordflow}{break};
+00103             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7adec15b9d171b2e8ab5955a675ef3d6e9}{EVENTTYPE\_USER\_NICK}:
+00104                 emit this->\hyperlink{classclient_1_1cls_server_conn_af5b308ecbe7fda6ff5c7dd524e17817c}{userChangeNick}(\textcolor{keyword}{new} \hyperlink{classshared_1_1events_1_1event_user_change_nick}{eventUserChangeNick}(data));
+00105                 \textcolor{keywordflow}{break};
+00106             \textcolor{keywordflow}{case} \hyperlink{namespaceshared_1_1events_a758b1a88b2eb1c9ef9388755f8869ad7ad90944ea70ecf0dcf722b0d44d35cac9}{EVENTTYPE\_SERVERMSG}:
+00107                 emit this->\hyperlink{classclient_1_1cls_server_conn_a7756cad0bea903cd816c1fb68cac65fe}{serverMessageReceived}(\textcolor{keyword}{new} 
+      \hyperlink{classshared_1_1events_1_1event_server_message}{eventServerMessage}(data));
+00108                 \textcolor{keywordflow}{break};
+00109             \textcolor{keywordflow}{default}:
+00110                 \textcolor{keywordflow}{break}; \textcolor{comment}{//ERROR!}
+00111         \}
+00112 
+00113     \}
+00114 
+00115 
+\hypertarget{clsserverconn_8cpp_source_l00116}{}\hyperlink{classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}{00116}     \textcolor{keywordtype}{bool} \hyperlink{classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}{clsServerConn::checkForJsonCommand}(QByteArray toAdd, 
+      \hyperlink{class_k4_u_1_1json_command}{jsonCommand} &comm)\{
+00117         \textcolor{keywordtype}{bool} ret = \textcolor{keyword}{false};
+00118         \textcolor{keywordflow}{foreach}(\textcolor{keywordtype}{char} b, toAdd)\{
+00119             \textcolor{keywordflow}{if}(b == \textcolor{charliteral}{'\{'} || b == \textcolor{charliteral}{'['})\{
+00120                 \hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{depth}++;
+00121             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(b == \textcolor{charliteral}{'\}'} || b == \textcolor{charliteral}{']'})\{
+00122                 \hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{depth}--;
+00123             \}
+00124             this->\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer}->append(b);
+00125 
+00126             \textcolor{keywordflow}{if}(\hyperlink{classclient_1_1cls_server_conn_a88a917c19535b9ab06983f11904b1ddb}{depth} == 0)\{
+00127                 \textcolor{comment}{//Clear the buffer.}
+00128                 \textcolor{keywordflow}{if}(comm.\hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{getCommand}() == \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE})\{
+00129                     ret = \textcolor{keyword}{true};
+00130                     comm = \textcolor{keyword}{new} \hyperlink{class_k4_u_1_1json_command}{jsonCommand}(*this->\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer});
+00131                     this->\hyperlink{classclient_1_1cls_server_conn_afcf2aa947f9e71eabcab017c77730d8f}{log} << \textcolor{stringliteral}{"Data received: \(\backslash\)t"} << this->\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer} << 
+      \hyperlink{namespace_k4_u_aaddaee50fab2801df390147891b0c09d}{endl};
+00132                     this->\hyperlink{classclient_1_1cls_server_conn_ac1da1dd86f59f8249d32506e220ec523}{buffer}->clear();
+00133                 \}
+00134             \}
+00135         \}
+00136         \textcolor{keywordflow}{return} ret;
+00137     \}
+00138 
+\hypertarget{clsserverconn_8cpp_source_l00139}{}\hyperlink{classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}{00139}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a0f7c8da07639a563b9d88780eb22748e}{clsServerConn::readData}()\{
+00140         \hyperlink{class_k4_u_1_1json_command}{jsonCommand} comm(\hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5a1225369cff150bae9fe4fa44ae3094}{JSONCOMMAND\_NONE});
+00141         \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1cls_server_conn_a8fc1a3ef72ba0480d521781f84983afe}{checkForJsonCommand}(this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->readAll(), comm))\{
+00142             \textcolor{keywordflow}{switch} (comm.\hyperlink{class_k4_u_1_1json_command_a2db6f8da6bc5a4c677201f044b69bb10}{getCommand}()) \{
+00143                 \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea8f959603b734b8f0bfdff3918e6292de}{JSONCOMMAND\_EVENT}:
+00144                     this->\hyperlink{classclient_1_1cls_server_conn_ad5d3a03440fdec33270247486fb5500c}{handleEventReceived}(comm.\hyperlink{class_k4_u_1_1json_command_ae829f45e11a50fa00024a5d9951cd748}{getData}(\textcolor{stringliteral}{"event"}).toMap());
+00145                     \textcolor{keywordflow}{break};
+00146                 \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea4cd6d9159bbc0bc655f8c9acd9ee43a0}{JSONCOMMAND\_USERQUERY}:
+00147                     this->\hyperlink{classclient_1_1cls_server_conn_a034a72332abdeeb8dbd9483954a235dd}{handleCompletedQuery}(comm);
+00148                     \textcolor{keywordflow}{break};
+00149                 \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea38ec768fb3babd5e8c66361a081aacae}{JSONCOMMAND\_CHANGEOWNUSER}:
+00150                     this->\hyperlink{classclient_1_1cls_server_conn_a2f4257ed2b9677919567a060fb31887b}{handleOwnUserChange}(comm);
+00151                     \textcolor{keywordflow}{break};
+00152                 \textcolor{keywordflow}{case} \hyperlink{namespace_k4_u_a7edfadcc446c5a68af90f9aec6abd75ea5f6a483b10d9aebb8f138f7e8a87df03}{JSONCOMMAND\_GETEVENTS}:
+00153                     this->\hyperlink{classclient_1_1cls_server_conn_a25abb840bb0764068d9a72dfb1e403b5}{handleEventRequest}(comm);
+00154                 \textcolor{keywordflow}{default}:
+00155                     \textcolor{keywordflow}{break};
+00156             \}
+00157         \}
+00158     \}
+00159 
+\hypertarget{clsserverconn_8cpp_source_l00160}{}\hyperlink{classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}{00160}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_server_conn_a5ec4520ae6b50789ef650436b6339d43}{clsServerConn::connectTimeout}()\{
+00161         \textcolor{keywordflow}{if}(this->\hyperlink{classclient_1_1cls_server_conn_aec00b35661dd2f98dd0fd57331f11883}{isConnecting} && this->\hyperlink{classclient_1_1cls_server_conn_a9b495d36fa12f4454170b94a5f46d3d4}{isConnected} == \textcolor{keyword}{false})\{
+00162             this->\hyperlink{classclient_1_1cls_server_conn_a482564a7684e6ba545efb80cd1b5f20b}{sock}->abort();
+00163             emit this->\hyperlink{classclient_1_1cls_server_conn_af0d708fd1a5059ca1b2c8c0829bbb690}{sgnConnectTimeout}();
+00164         \}
+00165 
+00166     \}
+00167 
+00168 \}
+\end{DoxyCode}

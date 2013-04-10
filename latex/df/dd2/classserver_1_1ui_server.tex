@@ -1,0 +1,636 @@
+\hypertarget{classserver_1_1ui_server}{\section{server\-:\-:ui\-Server Class Reference}
+\label{df/dd2/classserver_1_1ui_server}\index{server\-::ui\-Server@{server\-::ui\-Server}}
+}
+
+
+The \hyperlink{classserver_1_1ui_server}{ui\-Server} class.  
+
+
+
+
+{\ttfamily \#include $<$uiserver.\-h$>$}
+
+
+
+Inheritance diagram for server\-:\-:ui\-Server\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{d6/d9a/classserver_1_1ui_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for server\-:\-:ui\-Server\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{df/dd7/classserver_1_1ui_server__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726}{sgn\-Chat\-Received} (Q\-String message)
+\begin{DoxyCompactList}\small\item\em Emitted when a chatmessage has been send from a client. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97}{sgn\-User\-Query} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Emitted when a client wants all the users. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87}{sgn\-Send\-Events} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Emitted when a client wants all the events. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211}{sgn\-Change\-Own\-User\-Status} (Q\-String new\-Status)
+\begin{DoxyCompactList}\small\item\em Emitted when a client wants to change our own status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}{ui\-Server} (int \hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port}=\hyperlink{uiserver_8h_abfcdb1becb6170a9ddc3b4e7090169e1}{D\-E\-F\-A\-U\-L\-T\-\_\-\-L\-I\-S\-T\-E\-N\-I\-N\-G\-\_\-\-P\-O\-R\-T}, Q\-Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classserver_1_1ui_server}{ui\-Server} constructor \end{DoxyCompactList}\item 
+\hyperlink{classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}{$\sim$ui\-Server} ()
+\item 
+void \hyperlink{classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}{start\-Listen} ()
+\begin{DoxyCompactList}\small\item\em Starts to listen on the port. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{send} (const \hyperlink{class_k4_u_1_1json_command}{json\-Command} \&to\-Send)
+\begin{DoxyCompactList}\small\item\em Sends a json\-Command to all the clients. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_a643cfadd56a92b52edbcee2201fd8924}{send} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client, const \hyperlink{class_k4_u_1_1json_command}{json\-Command} \&to\-Send)
+\begin{DoxyCompactList}\small\item\em Sends a json\-Command to given client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{accept\-Connection} ()
+\begin{DoxyCompactList}\small\item\em Triggered when a client connects. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{lost\-Connection} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Triggered when a client disconnects. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{chat\-Received} (Q\-String message)
+\begin{DoxyCompactList}\small\item\em Triggered when a client sends a chatmessage. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{do\-User\-Query} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Triggered when a client wants all the users. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{do\-Send\-Events} (\hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$client)
+\begin{DoxyCompactList}\small\item\em Triggered when a client wants all the events. \end{DoxyCompactList}\item 
+void \hyperlink{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{change\-Own\-User} (\hyperlink{class_k4_u_1_1json_command}{json\-Command} \&comm)
+\begin{DoxyCompactList}\small\item\em Triggered when a client wants to change something about our own user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\-List$<$ \hyperlink{classserver_1_1ui_client}{ui\-Client} $\ast$ $>$ \hyperlink{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{connections}
+\item 
+\hyperlink{class_k4_u_1_1cls_log}{cls\-Log} \hyperlink{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{log}
+\item 
+int \hyperlink{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{port}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classserver_1_1ui_server}{ui\-Server} class. 
+
+\begin{DoxyAuthor}{Author}
+Koen Beckers (K-\/4\-U) Listens for incoming connections 
+\end{DoxyAuthor}
+
+
+Definition at line \hyperlink{uiserver_8h_source_l00021}{21} of file \hyperlink{uiserver_8h_source}{uiserver.\-h}.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}{\index{server\-::ui\-Server@{server\-::ui\-Server}!ui\-Server@{ui\-Server}}
+\index{ui\-Server@{ui\-Server}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{ui\-Server}]{\setlength{\rightskip}{0pt plus 5cm}server\-::ui\-Server\-::ui\-Server (
+\begin{DoxyParamCaption}
+\item[{int}]{port = {\ttfamily {\bf D\-E\-F\-A\-U\-L\-T\-\_\-\-L\-I\-S\-T\-E\-N\-I\-N\-G\-\_\-\-P\-O\-R\-T}}, }
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{df/dd2/classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a}
+
+
+\hyperlink{classserver_1_1ui_server}{ui\-Server} constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The port to listen on, defaults to D\-E\-F\-A\-U\-L\-T\-\_\-\-L\-I\-S\-T\-E\-N\-I\-N\-G\-\_\-\-P\-O\-R\-T \\
+\hline
+{\em parent} & The Q\-T parent object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00008}{8} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a55e34b95359692ea9002408075e18b1a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}{\index{server\-::ui\-Server@{server\-::ui\-Server}!$\sim$ui\-Server@{$\sim$ui\-Server}}
+\index{$\sim$ui\-Server@{$\sim$ui\-Server}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{$\sim$ui\-Server}]{\setlength{\rightskip}{0pt plus 5cm}server\-::ui\-Server\-::$\sim$ui\-Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{df/dd2/classserver_1_1ui_server_ac56c764040625f23de20dbc0ffcd5298}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00016}{16} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}{\index{server\-::ui\-Server@{server\-::ui\-Server}!accept\-Connection@{accept\-Connection}}
+\index{accept\-Connection@{accept\-Connection}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{accept\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::accept\-Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37}
+
+
+Triggered when a client connects. 
+
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00040}{40} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_af8300a694de27369a5f5d1a95ed1cc37_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}{\index{server\-::ui\-Server@{server\-::ui\-Server}!change\-Own\-User@{change\-Own\-User}}
+\index{change\-Own\-User@{change\-Own\-User}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{change\-Own\-User}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::change\-Own\-User (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-Command} \&}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3}
+
+
+Triggered when a client wants to change something about our own user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm} & The json\-Command holding the data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Replace json\-Command by something else \end{DoxyRefDesc}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00068}{68} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a1d221672f6efb29189e6ce398f7b07e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}{\index{server\-::ui\-Server@{server\-::ui\-Server}!chat\-Received@{chat\-Received}}
+\index{chat\-Received@{chat\-Received}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::chat\-Received (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a}
+
+
+Triggered when a client sends a chatmessage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The chatmessage received \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00056}{56} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_ad6b939c26280e2c3c4a6306e0599a10a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}{\index{server\-::ui\-Server@{server\-::ui\-Server}!do\-Send\-Events@{do\-Send\-Events}}
+\index{do\-Send\-Events@{do\-Send\-Events}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{do\-Send\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::do\-Send\-Events (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1}
+
+
+Triggered when a client wants all the events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client instance that wants the events \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00064}{64} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_acab729e9722d3a3c432c65248757c2f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}{\index{server\-::ui\-Server@{server\-::ui\-Server}!do\-User\-Query@{do\-User\-Query}}
+\index{do\-User\-Query@{do\-User\-Query}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{do\-User\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::do\-User\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376}
+
+
+Triggered when a client wants all the users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client instance that wants the users \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00060}{60} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_af5f79bcf932095d2b0976581409e0376_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}{\index{server\-::ui\-Server@{server\-::ui\-Server}!lost\-Connection@{lost\-Connection}}
+\index{lost\-Connection@{lost\-Connection}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{lost\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::lost\-Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}}\label{df/dd2/classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4}
+
+
+Triggered when a client disconnects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client instance that disconnected \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00052}{52} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a7d6448c91d341e29919ebc10047ef4a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}{\index{server\-::ui\-Server@{server\-::ui\-Server}!send@{send}}
+\index{send@{send}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::send (
+\begin{DoxyParamCaption}
+\item[{const {\bf json\-Command} \&}]{to\-Send}
+\end{DoxyParamCaption}
+)}}\label{df/dd2/classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf}
+
+
+Sends a json\-Command to all the clients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em to\-Send} & The command to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00024}{24} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_ab9e9ed944311c42f019c645c3e0539cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a643cfadd56a92b52edbcee2201fd8924}{\index{server\-::ui\-Server@{server\-::ui\-Server}!send@{send}}
+\index{send@{send}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::send (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client, }
+\item[{const {\bf json\-Command} \&}]{to\-Send}
+\end{DoxyParamCaption}
+)}}\label{df/dd2/classserver_1_1ui_server_a643cfadd56a92b52edbcee2201fd8924}
+
+
+Sends a json\-Command to given client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client to send the command to \\
+\hline
+{\em to\-Send} & The command to send \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00033}{33} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a643cfadd56a92b52edbcee2201fd8924_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211}{\index{server\-::ui\-Server@{server\-::ui\-Server}!sgn\-Change\-Own\-User\-Status@{sgn\-Change\-Own\-User\-Status}}
+\index{sgn\-Change\-Own\-User\-Status@{sgn\-Change\-Own\-User\-Status}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{sgn\-Change\-Own\-User\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::sgn\-Change\-Own\-User\-Status (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{new\-Status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{df/dd2/classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211}
+
+
+Emitted when a client wants to change our own status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\-Status} & The new status to take \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_afcd9f0421bb52f2b83be4fa924958211_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726}{\index{server\-::ui\-Server@{server\-::ui\-Server}!sgn\-Chat\-Received@{sgn\-Chat\-Received}}
+\index{sgn\-Chat\-Received@{sgn\-Chat\-Received}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{sgn\-Chat\-Received}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::sgn\-Chat\-Received (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{df/dd2/classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726}
+
+
+Emitted when a chatmessage has been send from a client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message that has been sent \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_af8accf173f4aa7dc5f59c56016645726_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87}{\index{server\-::ui\-Server@{server\-::ui\-Server}!sgn\-Send\-Events@{sgn\-Send\-Events}}
+\index{sgn\-Send\-Events@{sgn\-Send\-Events}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{sgn\-Send\-Events}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::sgn\-Send\-Events (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{df/dd2/classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87}
+
+
+Emitted when a client wants all the events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client instance that wants the events \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is D\-I\-R\-E\-C\-T\-L\-Y hooked to the slot do\-Send\-Events of this class 
+\end{DoxyNote}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a1097da2f20a545c302e9f4cab29a4a87_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97}{\index{server\-::ui\-Server@{server\-::ui\-Server}!sgn\-User\-Query@{sgn\-User\-Query}}
+\index{sgn\-User\-Query@{sgn\-User\-Query}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{sgn\-User\-Query}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::sgn\-User\-Query (
+\begin{DoxyParamCaption}
+\item[{{\bf ui\-Client} $\ast$}]{client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{df/dd2/classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97}
+
+
+Emitted when a client wants all the users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & The client instance that wants the users \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This is D\-I\-R\-E\-C\-T\-L\-Y hooked to the slot do\-User\-Query of this class 
+\end{DoxyNote}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a8ac8c9444c217209d1e30983d60cad97_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}{\index{server\-::ui\-Server@{server\-::ui\-Server}!start\-Listen@{start\-Listen}}
+\index{start\-Listen@{start\-Listen}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{start\-Listen}]{\setlength{\rightskip}{0pt plus 5cm}void server\-::ui\-Server\-::start\-Listen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{df/dd2/classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9}
+
+
+Starts to listen on the port. 
+
+
+
+Definition at line \hyperlink{uiserver_8cpp_source_l00018}{18} of file \hyperlink{uiserver_8cpp_source}{uiserver.\-cpp}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/dd2/classserver_1_1ui_server_a7df8c4bff6f0dea8259f91aec65715c9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}{\index{server\-::ui\-Server@{server\-::ui\-Server}!connections@{connections}}
+\index{connections@{connections}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{connections}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<${\bf ui\-Client}$\ast$$>$ server\-::ui\-Server\-::connections\hspace{0.3cm}{\ttfamily [private]}}}\label{df/dd2/classserver_1_1ui_server_a8e2c0099cfa061c41eb45bb050f55321}
+
+
+Definition at line \hyperlink{uiserver_8h_source_l00117}{117} of file \hyperlink{uiserver_8h_source}{uiserver.\-h}.
+
+\hypertarget{classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}{\index{server\-::ui\-Server@{server\-::ui\-Server}!log@{log}}
+\index{log@{log}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cls\-Log} server\-::ui\-Server\-::log\hspace{0.3cm}{\ttfamily [private]}}}\label{df/dd2/classserver_1_1ui_server_a0c287bc3691a6aabe181158cf1176632}
+
+
+Definition at line \hyperlink{uiserver_8h_source_l00119}{119} of file \hyperlink{uiserver_8h_source}{uiserver.\-h}.
+
+\hypertarget{classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}{\index{server\-::ui\-Server@{server\-::ui\-Server}!port@{port}}
+\index{port@{port}!server::uiServer@{server\-::ui\-Server}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int server\-::ui\-Server\-::port\hspace{0.3cm}{\ttfamily [private]}}}\label{df/dd2/classserver_1_1ui_server_a960211cb9716f5d3b403d10ccface8b8}
+
+
+Definition at line \hyperlink{uiserver_8h_source_l00121}{121} of file \hyperlink{uiserver_8h_source}{uiserver.\-h}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C++/custom\-Irc\-Server/\hyperlink{uiserver_8h}{uiserver.\-h}\item 
+C++/custom\-Irc\-Server/\hyperlink{uiserver_8cpp}{uiserver.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,621 @@
+\hypertarget{json_8cpp}{\section{json.\-cpp}
+\label{dd/d55/json_8cpp}\index{C++/resources/json.\-cpp@{C++/resources/json.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/* Copyright 2011 Eeli Reilin. All rights reserved.}
+00002 \textcolor{comment}{ *}
+00003 \textcolor{comment}{ * Redistribution and use in source and binary forms, with or without }
+00004 \textcolor{comment}{ * modification, are permitted provided that the following conditions are met:}
+00005 \textcolor{comment}{ *}
+00006 \textcolor{comment}{ * 1. Redistributions of source code must retain the above copyright notice, }
+00007 \textcolor{comment}{ *    this list of conditions and the following disclaimer.}
+00008 \textcolor{comment}{ *}
+00009 \textcolor{comment}{ * 2. Redistributions in binary form must reproduce the above copyright notice,}
+00010 \textcolor{comment}{ *    this list of conditions and the following disclaimer in the documentation }
+00011 \textcolor{comment}{ *    and/or other materials provided with the distribution.}
+00012 \textcolor{comment}{ *}
+00013 \textcolor{comment}{ * THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> ''AS IS'' AND ANY EXPRESS OR }
+00014 \textcolor{comment}{ * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF }
+00015 \textcolor{comment}{ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO }
+00016 \textcolor{comment}{ * EVENT SHALL EELI REILIN OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, }
+00017 \textcolor{comment}{ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT }
+00018 \textcolor{comment}{ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,}
+00019 \textcolor{comment}{ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF }
+00020 \textcolor{comment}{ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING }
+00021 \textcolor{comment}{ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,}
+00022 \textcolor{comment}{ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.}
+00023 \textcolor{comment}{ *}
+00024 \textcolor{comment}{ * The views and conclusions contained in the software and documentation }
+00025 \textcolor{comment}{ * are those of the authors and should not be interpreted as representing }
+00026 \textcolor{comment}{ * official policies, either expressed or implied, of Eeli Reilin.}
+00027 \textcolor{comment}{ */}
+00028 
+00033 \textcolor{preprocessor}{#include "\hyperlink{json_8h}{json.h}"}
+00034 
+\hypertarget{json_8cpp_source_l00035}{}\hyperlink{namespace_qt_json}{00035} \textcolor{keyword}{namespace }QtJson
+00036 \{
+00037 
+00038 
+00039 \textcolor{keyword}{static} QString sanitizeString(QString str);
+00040 \textcolor{keyword}{static} QByteArray join(\textcolor{keyword}{const} QList<QByteArray> &list, \textcolor{keyword}{const} QByteArray &sep);
+00041 \textcolor{keyword}{static} QVariant parseValue(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success);
+00042 \textcolor{keyword}{static} QVariant parseObject(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success);
+00043 \textcolor{keyword}{static} QVariant parseArray(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success);
+00044 \textcolor{keyword}{static} QVariant parseString(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success);
+00045 \textcolor{keyword}{static} QVariant parseNumber(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index);
+00046 \textcolor{keyword}{static} \textcolor{keywordtype}{int} lastIndexOfNumber(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} index);
+00047 \textcolor{keyword}{static} \textcolor{keywordtype}{void} eatWhitespace(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index);
+00048 \textcolor{keyword}{static} \textcolor{keywordtype}{int} lookAhead(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} index);
+00049 \textcolor{keyword}{static} \textcolor{keywordtype}{int} nextToken(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index);
+00050 
+00051 
+00052 
+00053 
+00054 \textcolor{comment}{/***** public *****/}
+00055 
+00056 
+\hypertarget{json_8cpp_source_l00060}{}\hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{00060} QVariant \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse}(\textcolor{keyword}{const} QString &json)
+00061 \{
+00062         \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+00063         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse}(json, success);
+00064 \}
+00065 
+\hypertarget{json_8cpp_source_l00069}{}\hyperlink{namespace_qt_json_ac4e31a9350b0df760c664c30f6e52162}{00069} QVariant \hyperlink{namespace_qt_json_ad92865ae39b2b148f6c788d7cf28c894}{parse}(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{bool} &success)
+00070 \{
+00071         success = \textcolor{keyword}{true};
+00072 
+00073         \textcolor{comment}{//Return an empty QVariant if the JSON data is either null or empty}
+00074         \textcolor{keywordflow}{if}(!json.isNull() || !json.isEmpty())
+00075         \{
+00076                 QString data = json;
+00077                 \textcolor{comment}{//We'll start from index 0}
+00078                 \textcolor{keywordtype}{int} index = 0;
+00079 
+00080                 \textcolor{comment}{//Parse the first value}
+00081                 QVariant value = parseValue(data, index, success);
+00082 
+00083                 \textcolor{comment}{//Return the parsed value}
+00084                 \textcolor{keywordflow}{return} value;
+00085         \}
+00086         \textcolor{keywordflow}{else}
+00087         \{
+00088                 \textcolor{comment}{//Return the empty QVariant}
+00089                 \textcolor{keywordflow}{return} QVariant();
+00090         \}
+00091 \}
+00092 
+\hypertarget{json_8cpp_source_l00093}{}\hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{00093} QByteArray \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(\textcolor{keyword}{const} QVariant &data)
+00094 \{
+00095         \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+00096         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(data, success);
+00097 \}
+00098 
+\hypertarget{json_8cpp_source_l00099}{}\hyperlink{namespace_qt_json_a1ff5b8ee653a95a99a35ccff4c347a4c}{00099} QByteArray \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(\textcolor{keyword}{const} QVariant &data, \textcolor{keywordtype}{bool} &success)
+00100 \{
+00101         QByteArray str;
+00102         success = \textcolor{keyword}{true};
+00103 
+00104         \textcolor{keywordflow}{if}(!data.isValid()) \textcolor{comment}{// invalid or null?}
+00105         \{
+00106                 str = \textcolor{stringliteral}{"null"};
+00107         \}
+00108         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((data.type() == QVariant::List) || (data.type() == QVariant::StringList)) \textcolor{comment}{// variant is a
+       list?}
+00109         \{
+00110                 QList<QByteArray> values;
+00111                 \textcolor{keyword}{const} QVariantList list = data.toList();
+00112                 Q\_FOREACH(\textcolor{keyword}{const} QVariant& v, list)
+00113                 \{
+00114                         QByteArray serializedValue = \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(v);
+00115                         \textcolor{keywordflow}{if}(serializedValue.isNull())
+00116                         \{
+00117                                 success = \textcolor{keyword}{false};
+00118                                 \textcolor{keywordflow}{break};
+00119                         \}
+00120                         values << serializedValue;
+00121                 \}
+00122 
+00123                 str = \textcolor{stringliteral}{"[ "} + join( values, \textcolor{stringliteral}{", "} ) + \textcolor{stringliteral}{" ]"};
+00124         \}
+00125         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(data.type() == QVariant::Hash) \textcolor{comment}{// variant is a hash?}
+00126         \{
+00127             \textcolor{keyword}{const} QVariantHash vhash = data.toHash();
+00128             QHashIterator<QString, QVariant> it( vhash );
+00129             str = \textcolor{stringliteral}{"\{ "};
+00130             QList<QByteArray> pairs;
+00131 
+00132             \textcolor{keywordflow}{while}(it.hasNext())
+00133             \{
+00134                 it.next();
+00135                 QByteArray serializedValue = \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(it.value());
+00136 
+00137                 \textcolor{keywordflow}{if}(serializedValue.isNull())
+00138                 \{
+00139                     success = \textcolor{keyword}{false};
+00140                     \textcolor{keywordflow}{break};
+00141                 \}
+00142 
+00143                 pairs << sanitizeString(it.key()).toUtf8() + \textcolor{stringliteral}{" : "} + serializedValue;
+00144             \}
+00145 
+00146             str += join(pairs, \textcolor{stringliteral}{", "});
+00147             str += \textcolor{stringliteral}{" \}"};
+00148         \}
+00149         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(data.type() == QVariant::Map) \textcolor{comment}{// variant is a map?}
+00150         \{
+00151                 \textcolor{keyword}{const} QVariantMap vmap = data.toMap();
+00152                 QMapIterator<QString, QVariant> it( vmap );
+00153                 str = \textcolor{stringliteral}{"\{ "};
+00154                 QList<QByteArray> pairs;
+00155                 \textcolor{keywordflow}{while}(it.hasNext())
+00156                 \{
+00157                         it.next();
+00158                         QByteArray serializedValue = \hyperlink{namespace_qt_json_ace7d6102379674932334bea04fb15c12}{serialize}(it.value());
+00159                         \textcolor{keywordflow}{if}(serializedValue.isNull())
+00160                         \{
+00161                                 success = \textcolor{keyword}{false};
+00162                                 \textcolor{keywordflow}{break};
+00163                         \}
+00164                         pairs << sanitizeString(it.key()).toUtf8() + \textcolor{stringliteral}{" : "} + serializedValue;
+00165                 \}
+00166                 str += join(pairs, \textcolor{stringliteral}{", "});
+00167                 str += \textcolor{stringliteral}{" \}"};
+00168         \}
+00169         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((data.type() == QVariant::String) || (data.type() == QVariant::ByteArray)) \textcolor{comment}{// a string or a
+       byte array?}
+00170         \{
+00171                 str = sanitizeString(data.toString()).toUtf8();
+00172         \}
+00173         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(data.type() == QVariant::Double) \textcolor{comment}{// double?}
+00174         \{
+00175                 str = QByteArray::number(data.toDouble(), \textcolor{charliteral}{'g'}, 20);
+00176                 \textcolor{keywordflow}{if}(!str.contains(\textcolor{stringliteral}{"."}) && ! str.contains(\textcolor{stringliteral}{"e"}))
+00177                 \{
+00178                         str += \textcolor{stringliteral}{".0"};
+00179                 \}
+00180         \}
+00181         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (data.type() == QVariant::Bool) \textcolor{comment}{// boolean value?}
+00182         \{
+00183                 str = data.toBool() ? \textcolor{stringliteral}{"true"} : \textcolor{stringliteral}{"false"};
+00184         \}
+00185         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (data.type() == QVariant::ULongLong) \textcolor{comment}{// large unsigned number?}
+00186         \{
+00187                 str = QByteArray::number(data.value<qulonglong>());
+00188         \}
+00189         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( data.canConvert<qlonglong>() ) \textcolor{comment}{// any signed number?}
+00190         \{
+00191                 str = QByteArray::number(data.value<qlonglong>());
+00192         \}
+00193         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (data.canConvert<\textcolor{keywordtype}{long}>())
+00194         \{
+00195                 str = QString::number(data.value<\textcolor{keywordtype}{long}>()).toUtf8();
+00196         \}
+00197         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (data.canConvert<QString>()) \textcolor{comment}{// can value be converted to string?}
+00198         \{
+00199                 \textcolor{comment}{// this will catch QDate, QDateTime, QUrl, ...}
+00200                 str = sanitizeString(data.toString()).toUtf8();
+00201         \}
+00202         \textcolor{keywordflow}{else}
+00203         \{
+00204                 success = \textcolor{keyword}{false};
+00205         \}
+00206         \textcolor{keywordflow}{if} (success)
+00207         \{
+00208                 \textcolor{keywordflow}{return} str;
+00209         \}
+00210         \textcolor{keywordflow}{else}
+00211         \{
+00212                 \textcolor{keywordflow}{return} QByteArray();
+00213         \}
+00214 \}
+00215 
+00216 
+00217 
+00218 \textcolor{comment}{/***** private *****/}
+00219 
+00220 
+\hypertarget{json_8cpp_source_l00224}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5}{00224} \textcolor{keyword}{enum} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5}{JsonToken}
+00225 \{
+\hypertarget{json_8cpp_source_l00226}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{00226}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone} = 0,
+\hypertarget{json_8cpp_source_l00227}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{00227}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{JsonTokenCurlyOpen} = 1,
+\hypertarget{json_8cpp_source_l00228}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{00228}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{JsonTokenCurlyClose} = 2,
+\hypertarget{json_8cpp_source_l00229}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{00229}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{JsonTokenSquaredOpen} = 3,
+\hypertarget{json_8cpp_source_l00230}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{00230}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{JsonTokenSquaredClose} = 4,
+\hypertarget{json_8cpp_source_l00231}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{00231}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{JsonTokenColon} = 5,
+\hypertarget{json_8cpp_source_l00232}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{00232}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{JsonTokenComma} = 6,
+\hypertarget{json_8cpp_source_l00233}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{00233}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{JsonTokenString} = 7,
+\hypertarget{json_8cpp_source_l00234}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{00234}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{JsonTokenNumber} = 8,
+\hypertarget{json_8cpp_source_l00235}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{00235}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{JsonTokenTrue} = 9,
+\hypertarget{json_8cpp_source_l00236}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{00236}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{JsonTokenFalse} = 10,
+\hypertarget{json_8cpp_source_l00237}{}\hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{00237}         \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{JsonTokenNull} = 11
+00238 \};
+00239 
+00240 \textcolor{keyword}{static} QString sanitizeString(QString str)
+00241 \{
+00242         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)\(\backslash\)"}));
+00243         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)""}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)\(\backslash\)""}));
+00244         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)b"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)b"}));
+00245         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)f"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)f"}));
+00246         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)n"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)n"}));
+00247         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)r"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)r"}));
+00248         str.replace(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)t"}), QLatin1String(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)t"}));
+00249         \textcolor{keywordflow}{return} QString(QLatin1String(\textcolor{stringliteral}{"\(\backslash\)"%1\(\backslash\)""})).arg(str);
+00250 \}
+00251 
+00252 \textcolor{keyword}{static} QByteArray join(\textcolor{keyword}{const} QList<QByteArray> &list, \textcolor{keyword}{const} QByteArray &sep)
+00253 \{
+00254         QByteArray res;
+00255         Q\_FOREACH(\textcolor{keyword}{const} QByteArray &i, list)
+00256         \{
+00257                 \textcolor{keywordflow}{if}(!res.isEmpty())
+00258                 \{
+00259                         res += sep;
+00260                 \}
+00261                 res += i;
+00262         \}
+00263         \textcolor{keywordflow}{return} res;
+00264 \}
+00265 
+00269 \textcolor{keyword}{static} QVariant parseValue(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success)
+00270 \{
+00271         \textcolor{comment}{//Determine what kind of data we should parse by}
+00272         \textcolor{comment}{//checking out the upcoming token}
+00273         \textcolor{keywordflow}{switch}(lookAhead(json, index))
+00274         \{
+00275                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{JsonTokenString}:
+00276                         \textcolor{keywordflow}{return} parseString(json, index, success);
+00277                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{JsonTokenNumber}:
+00278                         \textcolor{keywordflow}{return} parseNumber(json, index);
+00279                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{JsonTokenCurlyOpen}:
+00280                         \textcolor{keywordflow}{return} parseObject(json, index, success);
+00281                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{JsonTokenSquaredOpen}:
+00282                         \textcolor{keywordflow}{return} parseArray(json, index, success);
+00283                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{JsonTokenTrue}:
+00284                         nextToken(json, index);
+00285                         \textcolor{keywordflow}{return} QVariant(\textcolor{keyword}{true});
+00286                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{JsonTokenFalse}:
+00287                         nextToken(json, index);
+00288                         \textcolor{keywordflow}{return} QVariant(\textcolor{keyword}{false});
+00289                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{JsonTokenNull}:
+00290                         nextToken(json, index);
+00291                         \textcolor{keywordflow}{return} QVariant();
+00292                 \textcolor{keywordflow}{case} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone}:
+00293                         \textcolor{keywordflow}{break};
+00294         \}
+00295 
+00296         \textcolor{comment}{//If there were no tokens, flag the failure and return an empty QVariant}
+00297         success = \textcolor{keyword}{false};
+00298         \textcolor{keywordflow}{return} QVariant();
+00299 \}
+00300 
+00304 \textcolor{keyword}{static} QVariant parseObject(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success)
+00305 \{
+00306         QVariantMap map;
+00307         \textcolor{keywordtype}{int} token;
+00308 
+00309         \textcolor{comment}{//Get rid of the whitespace and increment index}
+00310         nextToken(json, index);
+00311 
+00312         \textcolor{comment}{//Loop through all of the key/value pairs of the object}
+00313         \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false};
+00314         \textcolor{keywordflow}{while}(!done)
+00315         \{
+00316                 \textcolor{comment}{//Get the upcoming token}
+00317                 token = lookAhead(json, index);
+00318 
+00319                 \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone})
+00320                 \{
+00321                          success = \textcolor{keyword}{false};
+00322                          \textcolor{keywordflow}{return} QVariantMap();
+00323                 \}
+00324                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{JsonTokenComma})
+00325                 \{
+00326                         nextToken(json, index);
+00327                 \}
+00328                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{JsonTokenCurlyClose})
+00329                 \{
+00330                         nextToken(json, index);
+00331                         \textcolor{keywordflow}{return} map;
+00332                 \}
+00333                 \textcolor{keywordflow}{else}
+00334                 \{
+00335                         \textcolor{comment}{//Parse the key/value pair's name}
+00336                         QString name = parseString(json, index, success).toString();
+00337 
+00338                         \textcolor{keywordflow}{if}(!success)
+00339                         \{
+00340                                 \textcolor{keywordflow}{return} QVariantMap();
+00341                         \}
+00342 
+00343                         \textcolor{comment}{//Get the next token}
+00344                         token = nextToken(json, index);
+00345 
+00346                         \textcolor{comment}{//If the next token is not a colon, flag the failure}
+00347                         \textcolor{comment}{//return an empty QVariant}
+00348                         \textcolor{keywordflow}{if}(token != \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{JsonTokenColon})
+00349                         \{
+00350                                 success = \textcolor{keyword}{false};
+00351                                 \textcolor{keywordflow}{return} QVariant(QVariantMap());
+00352                         \}
+00353 
+00354                         \textcolor{comment}{//Parse the key/value pair's value}
+00355                         QVariant value = parseValue(json, index, success);
+00356 
+00357                         \textcolor{keywordflow}{if}(!success)
+00358                         \{
+00359                                 \textcolor{keywordflow}{return} QVariantMap();
+00360                         \}
+00361 
+00362                         \textcolor{comment}{//Assign the value to the key in the map}
+00363                         map[name] = value;
+00364                 \}
+00365         \}
+00366 
+00367         \textcolor{comment}{//Return the map successfully}
+00368         \textcolor{keywordflow}{return} QVariant(map);
+00369 \}
+00370 
+00374 \textcolor{keyword}{static} QVariant parseArray(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success)
+00375 \{
+00376         QVariantList list;
+00377 
+00378         nextToken(json, index);
+00379 
+00380         \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false};
+00381         \textcolor{keywordflow}{while}(!done)
+00382         \{
+00383                 \textcolor{keywordtype}{int} token = lookAhead(json, index);
+00384 
+00385                 \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone})
+00386                 \{
+00387                         success = \textcolor{keyword}{false};
+00388                         \textcolor{keywordflow}{return} QVariantList();
+00389                 \}
+00390                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{JsonTokenComma})
+00391                 \{
+00392                         nextToken(json, index);
+00393                 \}
+00394                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(token == \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{JsonTokenSquaredClose})
+00395                 \{
+00396                         nextToken(json, index);
+00397                         \textcolor{keywordflow}{break};
+00398                 \}
+00399                 \textcolor{keywordflow}{else}
+00400                 \{
+00401                         QVariant value = parseValue(json, index, success);
+00402 
+00403                         \textcolor{keywordflow}{if}(!success)
+00404                         \{
+00405                                 \textcolor{keywordflow}{return} QVariantList();
+00406                         \}
+00407 
+00408                         list.push\_back(value);
+00409                 \}
+00410         \}
+00411 
+00412         \textcolor{keywordflow}{return} QVariant(list);
+00413 \}
+00414 
+00418 \textcolor{keyword}{static} QVariant parseString(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index, \textcolor{keywordtype}{bool} &success)
+00419 \{
+00420         QString s;
+00421         QChar c;
+00422 
+00423         eatWhitespace(json, index);
+00424 
+00425         c = json[index++];
+00426 
+00427         \textcolor{keywordtype}{bool} complete = \textcolor{keyword}{false};
+00428         \textcolor{keywordflow}{while}(!complete)
+00429         \{
+00430                 \textcolor{keywordflow}{if}(index == json.size())
+00431                 \{
+00432                         \textcolor{keywordflow}{break};
+00433                 \}
+00434 
+00435                 c = json[index++];
+00436 
+00437                 \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)"'})
+00438                 \{
+00439                         complete = \textcolor{keyword}{true};
+00440                         \textcolor{keywordflow}{break};
+00441                 \}
+00442                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})
+00443                 \{
+00444                         \textcolor{keywordflow}{if}(index == json.size())
+00445                         \{
+00446                                 \textcolor{keywordflow}{break};
+00447                         \}
+00448 
+00449                         c = json[index++];
+00450 
+00451                         \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)"'})
+00452                         \{
+00453                                 s.append(\textcolor{charliteral}{'\(\backslash\)"'});
+00454                         \}
+00455                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})
+00456                         \{
+00457                                 s.append(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
+00458                         \}
+00459                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'/'})
+00460                         \{
+00461                                 s.append(\textcolor{charliteral}{'/'});
+00462                         \}
+00463                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'b'})
+00464                         \{
+00465                                 s.append(\textcolor{charliteral}{'\(\backslash\)b'});
+00466                         \}
+00467                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'f'})
+00468                         \{
+00469                                 s.append(\textcolor{charliteral}{'\(\backslash\)f'});
+00470                         \}
+00471                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'n'})
+00472                         \{
+00473                                 s.append(\textcolor{charliteral}{'\(\backslash\)n'});
+00474                         \}
+00475                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'r'})
+00476                         \{
+00477                                 s.append(\textcolor{charliteral}{'\(\backslash\)r'});
+00478                         \}
+00479                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'t'})
+00480                         \{
+00481                                 s.append(\textcolor{charliteral}{'\(\backslash\)t'});
+00482                         \}
+00483                         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(c == \textcolor{charliteral}{'u'})
+00484                         \{
+00485                                 \textcolor{keywordtype}{int} remainingLength = json.size() - index;
+00486 
+00487                                 \textcolor{keywordflow}{if}(remainingLength >= 4)
+00488                                 \{
+00489                                         QString unicodeStr = json.mid(index, 4);
+00490 
+00491                                         \textcolor{keywordtype}{int} symbol = unicodeStr.toInt(0, 16);
+00492 
+00493                                         s.append(QChar(symbol));
+00494 
+00495                                         index += 4;
+00496                                 \}
+00497                                 \textcolor{keywordflow}{else}
+00498                                 \{
+00499                                         \textcolor{keywordflow}{break};
+00500                                 \}
+00501                         \}
+00502                 \}
+00503                 \textcolor{keywordflow}{else}
+00504                 \{
+00505                         s.append(c);
+00506                 \}
+00507         \}
+00508 
+00509         \textcolor{keywordflow}{if}(!complete)
+00510         \{
+00511                 success = \textcolor{keyword}{false};
+00512                 \textcolor{keywordflow}{return} QVariant();
+00513         \}
+00514 
+00515         \textcolor{keywordflow}{return} QVariant(s);
+00516 \}
+00517 
+00521 \textcolor{keyword}{static} QVariant parseNumber(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index)
+00522 \{
+00523         eatWhitespace(json, index);
+00524 
+00525         \textcolor{keywordtype}{int} lastIndex = lastIndexOfNumber(json, index);
+00526         \textcolor{keywordtype}{int} charLength = (lastIndex - index) + 1;
+00527         QString numberStr;
+00528 
+00529         numberStr = json.mid(index, charLength);
+00530 
+00531         index = lastIndex + 1;
+00532 
+00533         \textcolor{keywordflow}{if} (numberStr.contains(\textcolor{charliteral}{'.'})) \{
+00534                 \textcolor{keywordflow}{return} QVariant(numberStr.toDouble(NULL));
+00535         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (numberStr.startsWith(\textcolor{charliteral}{'-'})) \{
+00536                 \textcolor{keywordflow}{return} QVariant(numberStr.toLongLong(NULL));
+00537         \} \textcolor{keywordflow}{else} \{
+00538                 \textcolor{keywordflow}{return} QVariant(numberStr.toULongLong(NULL));
+00539         \}
+00540 \}
+00541 
+00545 \textcolor{keyword}{static} \textcolor{keywordtype}{int} lastIndexOfNumber(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} index)
+00546 \{
+00547         \textcolor{keywordtype}{int} lastIndex;
+00548 
+00549         \textcolor{keywordflow}{for}(lastIndex = index; lastIndex < json.size(); lastIndex++)
+00550         \{
+00551                 \textcolor{keywordflow}{if}(QString(\textcolor{stringliteral}{"0123456789+-.eE"}).indexOf(json[lastIndex]) == -1)
+00552                 \{
+00553                         \textcolor{keywordflow}{break};
+00554                 \}
+00555         \}
+00556 
+00557         \textcolor{keywordflow}{return} lastIndex -1;
+00558 \}
+00559 
+00563 \textcolor{keyword}{static} \textcolor{keywordtype}{void} eatWhitespace(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index)
+00564 \{
+00565         \textcolor{keywordflow}{for}(; index < json.size(); index++)
+00566         \{
+00567                 \textcolor{keywordflow}{if}(QString(\textcolor{stringliteral}{" \(\backslash\)t\(\backslash\)n\(\backslash\)r"}).indexOf(json[index]) == -1)
+00568                 \{
+00569                         \textcolor{keywordflow}{break};
+00570                 \}
+00571         \}
+00572 \}
+00573 
+00577 \textcolor{keyword}{static} \textcolor{keywordtype}{int} lookAhead(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} index)
+00578 \{
+00579         \textcolor{keywordtype}{int} saveIndex = index;
+00580         \textcolor{keywordflow}{return} nextToken(json, saveIndex);
+00581 \}
+00582 
+00586 \textcolor{keyword}{static} \textcolor{keywordtype}{int} nextToken(\textcolor{keyword}{const} QString &json, \textcolor{keywordtype}{int} &index)
+00587 \{
+00588         eatWhitespace(json, index);
+00589 
+00590         \textcolor{keywordflow}{if}(index == json.size())
+00591         \{
+00592                 \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone};
+00593         \}
+00594 
+00595         QChar c = json[index];
+00596         index++;
+00597         \textcolor{keywordflow}{switch}(c.toLatin1())
+00598         \{
+00599                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\{'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a367bd0ab2b0ab1036ee53dd48f0f4afa}{JsonTokenCurlyOpen};
+00600                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\}'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a7009219d4073e0827c8e958b54ff57f5}{JsonTokenCurlyClose};
+00601                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a48d3d020e6814adb3b883e8ca5c5d3a1}{JsonTokenSquaredOpen};
+00602                 \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e6250ea5f55e5de97af5057c7b534ca}{JsonTokenSquaredClose};
+00603                 \textcolor{keywordflow}{case} \textcolor{charliteral}{','}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5ad1c597ad17bef5dad078ea52ded0d287}{JsonTokenComma};
+00604                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a1c6ed8295954a12ba80f6c2a9565829d}{JsonTokenString};
+00605                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:
+00606                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'7'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'8'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'9'}:
+00607                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'-'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a6e190b194567f0399d9c4dc8bda013eb}{JsonTokenNumber};
+00608                 \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}: \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5abfb15d89c9e4acc48bce8107c23c51fe}{JsonTokenColon};
+00609         \}
+00610 
+00611         index--;
+00612 
+00613         \textcolor{keywordtype}{int} remainingLength = json.size() - index;
+00614 
+00615         \textcolor{comment}{//True}
+00616         \textcolor{keywordflow}{if}(remainingLength >= 4)
+00617         \{
+00618                 \textcolor{keywordflow}{if} (json[index] == \textcolor{charliteral}{'t'} && json[index + 1] == \textcolor{charliteral}{'r'} &&
+00619                         json[index + 2] == \textcolor{charliteral}{'u'} && json[index + 3] == \textcolor{charliteral}{'e'})
+00620                 \{
+00621                         index += 4;
+00622                         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a67f8a97a5a8ed721646382e67e4d8885}{JsonTokenTrue};
+00623                 \}
+00624         \}
+00625 
+00626         \textcolor{comment}{//False}
+00627         \textcolor{keywordflow}{if} (remainingLength >= 5)
+00628         \{
+00629                 \textcolor{keywordflow}{if} (json[index] == \textcolor{charliteral}{'f'} && json[index + 1] == \textcolor{charliteral}{'a'} &&
+00630                         json[index + 2] == \textcolor{charliteral}{'l'} && json[index + 3] == \textcolor{charliteral}{'s'} &&
+00631                         json[index + 4] == \textcolor{charliteral}{'e'})
+00632                 \{
+00633                         index += 5;
+00634                         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a505049fcaa83f2b410ffca0c50fb2085}{JsonTokenFalse};
+00635                 \}
+00636         \}
+00637 
+00638         \textcolor{comment}{//Null}
+00639         \textcolor{keywordflow}{if} (remainingLength >= 4)
+00640         \{
+00641                 \textcolor{keywordflow}{if} (json[index] == \textcolor{charliteral}{'n'} && json[index + 1] == \textcolor{charliteral}{'u'} &&
+00642                         json[index + 2] == \textcolor{charliteral}{'l'} && json[index + 3] == \textcolor{charliteral}{'l'})
+00643                 \{
+00644                         index += 4;
+00645                         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a05a0d316386867b0f7ba1f0813dbb25b}{JsonTokenNull};
+00646                 \}
+00647         \}
+00648 
+00649         \textcolor{keywordflow}{return} \hyperlink{namespace_qt_json_ae6d1c0e24dd59604363a6130cbdca5d5a9e21c9aaf533f7f7d3ff3f450d6f3f48}{JsonTokenNone};
+00650 \}
+00651 
+00652 
+00653 \} \textcolor{comment}{//end namespace}
+\end{DoxyCode}

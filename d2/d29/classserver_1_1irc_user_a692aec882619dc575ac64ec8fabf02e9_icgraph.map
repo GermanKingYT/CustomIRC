@@ -1,0 +1,9 @@
+<map id="server::ircUser::setOnline" name="server::ircUser::setOnline">
+<area shape="rect" id="node2" href="$d7/d81/classserver_1_1cls_settings.html#abc09034b2b4c0e9419051b71a4d2d299" title="readUserInfo" alt="" coords="250,5,379,46"/>
+<area shape="rect" id="node4" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="456,147,597,173"/>
+<area shape="rect" id="node6" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="222,121,407,148"/>
+<area shape="rect" id="node7" href="$d1/d48/classserver_1_1main_app.html#aae86b15c001a235de78a90334e697b5f" title="Triggered when a user leaves trough a PART message." alt="" coords="223,172,407,199"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#af498e3b109e1bc2b9f8e87b215efdb27" title="Triggered when a UI client wants to change the status." alt="" coords="228,223,401,265"/>
+<area shape="rect" id="node3" href="$d7/d81/classserver_1_1cls_settings.html#aba9713d2408ce6ae7acb28a36647ebaf" title="clsSettings Constructor" alt="" coords="462,5,591,46"/>
+<area shape="rect" id="node5" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="645,147,696,173"/>
+</map>

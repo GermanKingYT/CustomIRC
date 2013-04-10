@@ -1,0 +1,6 @@
+<map id="server::ircUser::toVariantMap" name="server::ircUser::toVariantMap">
+<area shape="rect" id="node2" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="253,5,438,32"/>
+<area shape="rect" id="node5" href="$d1/d48/classserver_1_1main_app.html#aea819e4b8f297de7f1e3fc2f8513b0a4" title="Triggered when a UI client wants all the users." alt="" coords="246,56,445,83"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="493,31,635,57"/>
+<area shape="rect" id="node4" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="683,31,733,57"/>
+</map>

@@ -1,0 +1,28 @@
+\hypertarget{clsnotify_8cpp}{\section{clsnotify.\-cpp}
+\label{d5/d16/clsnotify_8cpp}\index{C++/custom\-Irc\-Client/desktop/clsnotify.\-cpp@{C++/custom\-Irc\-Client/desktop/clsnotify.\-cpp}}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{clsnotify_8h}{clsnotify.h}"}
+00002 
+00003 \textcolor{keyword}{namespace }client\{
+00004 
+\hypertarget{clsnotify_8cpp_source_l00005}{}\hyperlink{classclient_1_1cls_notify_a8fd6a74d4c71a4b6b8737e3ec5b0812f}{00005}     \hyperlink{classclient_1_1cls_notify_a8fd6a74d4c71a4b6b8737e3ec5b0812f}{clsNotify::clsNotify}(\textcolor{keyword}{const} QString title, \textcolor{keyword}{const} QString body, QObject *parent) :
+00006         QObject(parent)
+00007     \{
+00008 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+00009 \textcolor{preprocessor}{}        notify\_init (\textcolor{stringliteral}{"customIrcClient"});
+00010         this->thisNot = notify\_notification\_new (title.toStdString().c\_str(),
+00011                 body.toStdString().c\_str(),
+00012                 \textcolor{stringliteral}{"dialog-information"});
+00013 \textcolor{preprocessor}{#endif}
+00014 \textcolor{preprocessor}{}    \}
+00015 
+\hypertarget{clsnotify_8cpp_source_l00016}{}\hyperlink{classclient_1_1cls_notify_accfa335b19c62f58da973c8049a7131e}{00016}     \textcolor{keywordtype}{void} \hyperlink{classclient_1_1cls_notify_accfa335b19c62f58da973c8049a7131e}{clsNotify::show}()\textcolor{keyword}{ const}\{
+00017 \textcolor{preprocessor}{#ifdef Q\_OS\_LINUX}
+00018 \textcolor{preprocessor}{}        notify\_notification\_show (this->thisNot, NULL);
+00019 \textcolor{preprocessor}{#endif}
+00020 \textcolor{preprocessor}{}    \}
+00021 
+00022 \}
+\end{DoxyCode}

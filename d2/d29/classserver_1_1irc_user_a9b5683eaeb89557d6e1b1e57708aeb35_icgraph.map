@@ -1,0 +1,16 @@
+<map id="server::ircUser::getName" name="server::ircUser::getName">
+<area shape="rect" id="node2" href="$d7/d81/classserver_1_1cls_settings.html#ab63cf5761cd958b9dea502caaecd268d" title="getUserName" alt="" coords="241,70,370,111"/>
+<area shape="rect" id="node5" href="$d4/d08/classserver_1_1irc_user_list.html#ae42c9f84545a97b504a25c399cc43666" title="Removes a user from the list." alt="" coords="230,187,381,213"/>
+<area shape="rect" id="node7" href="$d4/d08/classserver_1_1irc_user_list.html#af2d5bdaf2ccd658679c933390500f0e2" title="Finds a user based on IRC&#45;ID or nick." alt="" coords="242,289,369,330"/>
+<area shape="rect" id="node11" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="246,457,365,498"/>
+<area shape="rect" id="node8" href="$d1/d48/classserver_1_1main_app.html#a92448c1219ad89999c983b04adaa4236" title="Triggered when a user joins trough a JOIN message." alt="" coords="457,237,642,264"/>
+<area shape="rect" id="node6" href="$d1/d48/classserver_1_1main_app.html#aae86b15c001a235de78a90334e697b5f" title="Triggered when a user leaves trough a PART message." alt="" coords="457,187,641,213"/>
+<area shape="rect" id="node9" href="$d1/d48/classserver_1_1main_app.html#ae15deb9260c486854af7fac7b063fdf5" title="Triggered when a user changes his nickname (nick|Status)" alt="" coords="440,292,659,319"/>
+<area shape="rect" id="node10" href="$d1/d48/classserver_1_1main_app.html#aaa3dd74b510e2d797f21293a622a4f7d" title="Triggered when a user changes his status (nick|Status)" alt="" coords="453,343,645,385"/>
+<area shape="rect" id="node15" href="$d1/d48/classserver_1_1main_app.html#af498e3b109e1bc2b9f8e87b215efdb27" title="Triggered when a UI client wants to change the status." alt="" coords="219,5,392,46"/>
+<area shape="rect" id="node3" href="$d1/d48/classserver_1_1main_app.html#af331bc3bf60e745f3ddc95ab3abe5188" title="server::mainApp::run" alt="" coords="707,212,848,239"/>
+<area shape="rect" id="node4" href="$dc/d17/custom_irc_server_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="931,212,981,239"/>
+<area shape="rect" id="node12" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="490,457,609,498"/>
+<area shape="rect" id="node13" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="709,464,845,491"/>
+<area shape="rect" id="node14" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="897,457,1015,498"/>
+</map>

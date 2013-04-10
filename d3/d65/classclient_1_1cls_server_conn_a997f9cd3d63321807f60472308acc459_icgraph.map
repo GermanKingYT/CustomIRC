@@ -1,0 +1,7 @@
+<map id="client::clsServerConn::sendCommand" name="client::clsServerConn::sendCommand">
+<area shape="rect" id="node2" href="$d2/da4/classclient_1_1_main_window.html#aa32adfb179341040f2decbd0da19f1d9" title="client::MainWindow\l::sendChat" alt="" coords="206,5,341,46"/>
+<area shape="rect" id="node4" href="$d2/da4/classclient_1_1_main_window.html#a75d241698eb127c089ed4703fbeb4999" title="client::MainWindow\l::commandGiven" alt="" coords="206,70,341,111"/>
+<area shape="rect" id="node5" href="$d2/da4/classclient_1_1_main_window.html#aae9222490d9f0d71ffa6585c35416bfb" title="client::MainWindow\l::serverConnected" alt="" coords="206,135,341,177"/>
+<area shape="rect" id="node6" href="$d2/da4/classclient_1_1_main_window.html#a13044cd00c53dbbbc6b945c0dfd9b4b4" title="Triggered when the user query came back." alt="" coords="197,201,349,242"/>
+<area shape="rect" id="node3" href="$d2/da4/classclient_1_1_main_window.html#ab4aedce719340218169c114b31b54f70" title="client::MainWindow\l::MainWindow" alt="" coords="398,103,533,145"/>
+</map>

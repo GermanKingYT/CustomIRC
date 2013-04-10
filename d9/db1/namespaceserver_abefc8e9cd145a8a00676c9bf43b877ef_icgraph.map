@@ -1,0 +1,7 @@
+<map id="server::getNickAndStatus" name="server::getNickAndStatus">
+<area shape="rect" id="node2" href="$d9/db1/namespaceserver.html#a4ab136076f9a5f1ae8a6d78020f07c07" title="Converts an IRC&#45;ID to a nickAndStatus (nick|status)" alt="" coords="225,5,394,46"/>
+<area shape="rect" id="node3" href="$d1/d10/classserver_1_1irc_client.html#af618e7f589a052d90e2dadbc87e83429" title="Handles a command sent from the irc server." alt="" coords="443,34,562,75"/>
+<area shape="rect" id="node4" href="$d1/d10/classserver_1_1irc_client.html#a384327d5a800bd0d970cffaf1a6a55c1" title="Reads data from the IRC Socket." alt="" coords="611,34,730,75"/>
+<area shape="rect" id="node5" href="$d1/d10/classserver_1_1irc_client.html#a3991833ddcff72ca94d4c0ec588012ac" title="Initializes the IRC Client. Does not yet connect!" alt="" coords="779,41,915,68"/>
+<area shape="rect" id="node6" href="$d1/d10/classserver_1_1irc_client.html#a0f263c3a5ae9d82109842518b4866ab5" title="ircClient constructor" alt="" coords="963,34,1082,75"/>
+</map>
