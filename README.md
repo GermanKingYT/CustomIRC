@@ -3,6 +3,9 @@ CustomIRC
 
 Build with QT5 with QT Creator.
 
+[![build status](http://ci.k-4u.nl/projects/1/status.png?ref=master)](http://ci.k-4u.nl/projects/1?ref=master)
+
+
 To run the server:
 ------------------
 Create a settings.xml file in your build directory.
