@@ -249,7 +249,7 @@ void ircClient::connectTimeout(){
 	if(this->connected == false && this->connecting == true){
 		this->connecting = false;
 		this->sock->abort();
-		emit this->IRCConnectTimeOut(); //User can decide wether to reconnect immediately
+		emit this->IRCConnectTimeOut(); //User can decide whether to reconnect immediately
 	}
 }
 
