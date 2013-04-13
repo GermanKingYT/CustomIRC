@@ -9,8 +9,8 @@ namespace client{
         server()
     {
         this->settings = new clsSettings(a->applicationDirPath());
-        this->server = new clsServerConn(settings->getServer(),settings->getPort());
-        //this->server = new clsServerConn("localhost",1337);
+        //this->server = new clsServerConn(settings->getServer(),settings->getPort());
+        this->server = new clsServerConn("localhost",1337);
 
         ui->setupUi(this);
 

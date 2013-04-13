@@ -17,7 +17,8 @@
 #include "desktop/clsnotify.h"
 #endif
 
-
+using namespace shared;
+using namespace shared::events;
 #define RECONNECT_IN_S 5
 namespace Ui {
     class MainWindow;

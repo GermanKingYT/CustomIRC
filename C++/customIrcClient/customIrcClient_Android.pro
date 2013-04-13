@@ -25,7 +25,13 @@ SOURCES += main.cpp mainwindow.cpp \
     ../resources/clsevent.cpp \
     ircuser.cpp \
     clssettings.cpp \
-    clsserverconn.cpp
+    clsserverconn.cpp \
+    ../resources/events/eventuserleave.cpp \
+    ../resources/events/eventuserjoin.cpp \
+    ../resources/events/eventuserchangestatus.cpp \
+    ../resources/events/eventuserchangenick.cpp \
+    ../resources/events/eventservermessage.cpp \
+    ../resources/events/eventchat.cpp
 HEADERS += mainwindow.h \
     chatnotification.h \
     chatinput.h \
@@ -37,7 +43,14 @@ HEADERS += mainwindow.h \
     ../resources/clsevent.h \
     ircuser.h \
     clssettings.h \
-    clsserverconn.h
+    clsserverconn.h \
+    ../resources/events/eventuserleave.h \
+    ../resources/events/eventuserjoin.h \
+    ../resources/events/eventuserchangestatus.h \
+    ../resources/events/eventuserchangenick.h \
+    ../resources/events/eventservermessage.h \
+    ../resources/events/events.h \
+    ../resources/events/eventchat.h
 FORMS += android/mainwindow.ui \
     android/chatnotification.ui \
     android/chatentry.ui \

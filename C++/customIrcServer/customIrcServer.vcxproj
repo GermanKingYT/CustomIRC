@@ -59,7 +59,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include";"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include\QtNetwork";"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include\QtCore";"release";G:\Qt\Qt5.0.1\5.0.1\msvc2010\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-Wno-switch -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -71,6 +71,8 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -98,7 +100,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include";"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include\QtNetwork";"G:\Qt\Qt5.0.1\5.0.1\msvc2010\include\QtCore";"debug";G:\Qt\Qt5.0.1\5.0.1\msvc2010\mkspecs\win32-msvc2010;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -111,6 +113,8 @@
       <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
@@ -135,7 +139,15 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\resources\clsevent.cpp" />
     <ClCompile Include="..\resources\clslog.cpp" />
+    <ClCompile Include="clssettings.cpp" />
+    <ClCompile Include="..\resources\events\eventchat.cpp" />
+    <ClCompile Include="..\resources\events\eventservermessage.cpp" />
+    <ClCompile Include="..\resources\events\eventuserchangenick.cpp" />
+    <ClCompile Include="..\resources\events\eventuserchangestatus.cpp" />
+    <ClCompile Include="..\resources\events\eventuserjoin.cpp" />
+    <ClCompile Include="..\resources\events\eventuserleave.cpp" />
     <ClCompile Include="Debug\moc_ircclient.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -171,7 +183,16 @@
     <ClCompile Include="uiserver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\resources\clsevent.h" />
     <ClInclude Include="..\resources\clslog.h" />
+    <ClInclude Include="clssettings.h" />
+    <ClInclude Include="..\resources\events\eventchat.h" />
+    <ClInclude Include="..\resources\events\events.h" />
+    <ClInclude Include="..\resources\events\eventservermessage.h" />
+    <ClInclude Include="..\resources\events\eventuserchangenick.h" />
+    <ClInclude Include="..\resources\events\eventuserchangestatus.h" />
+    <ClInclude Include="..\resources\events\eventuserjoin.h" />
+    <ClInclude Include="..\resources\events\eventuserleave.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="ircCodes.h" />
     <CustomBuild Include="ircclient.h">

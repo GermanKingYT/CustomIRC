@@ -35,7 +35,7 @@
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="chatBox" name="chatbox">
+      <widget class="client::chatBox" name="chatbox">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -48,7 +48,7 @@
      </widget>
     </item>
     <item>
-     <widget class="chatInput" name="mChatInput">
+     <widget class="client::chatInput" name="mChatInput">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -73,13 +73,13 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>chatBox</class>
+   <class>client::chatBox</class>
    <extends>QWidget</extends>
    <header>chatbox.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>chatInput</class>
+   <class>client::chatInput</class>
    <extends>QPlainTextEdit</extends>
    <header>chatinput.h</header>
   </customwidget>
